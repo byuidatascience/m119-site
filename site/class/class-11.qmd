@@ -18,7 +18,7 @@ Pick something from your prep today that you can share with your group in class.
 <details>
 <summary>Intermediate Value Theorem (IVT)</summary>
 
-If $f(x)$ is a continuous function on a closed interval $ [a, b] $, where $f(a) \neq f(b)$, and $y_0$ is any $y$-value strictly between $f(a)$ and $f(b)$, then $y_0 = f(x_0)$ for some $x$-value, $x_0$, in $ [a, b] $.
+If $f(x)$ is a continuous function on a closed interval $[a, b]$, where $f(a) \neq f(b)$, and $y_0$ is any $y$-value strictly between $f(a)$ and $f(b)$, then $y_0 = f(x_0)$ for some $x$-value, $x_0$, in $[a, b]$.
 
 Note: While there is a rigorous mathematical definition for what it means to be a continuous function, for our purposes the following concept with suffice, a function is continuous on an interval if the graph of that function can be traced with a pencil without lifting the pencil from the page.
 
@@ -30,7 +30,7 @@ Note: While there is a rigorous mathematical definition for what it means to be 
     ![uniroot error message](../assets/uploads/Prep/ErrorMessage.png)
 
 - When we don't know the solution, what could we use to help us pick the interval to use in uniroot()?
-    - For example, if we want to solve the equation $3x-15 = e^{-0.25x}-20$ the interval $( 3, 10 ) $ will not work. What interval should we use?
+    - For example, if we want to solve the equation $3x-15 = e^{-0.25x}-20$ the interval $(3, 10)$ will not work. What interval should we use?
     - Does the equation $3x-15 = e^{-0.25x}-20$ have a solution? Can you find the solution analytically?
 
 ### (2) Project 1 Task 3 Practice
@@ -153,7 +153,7 @@ By identifying the characteristics we see in the data we know what behavior we w
     - What is the width of the peak?
 
 - What did you notice about the general model $f_0$ and its parameters?<br>
-$f_0(x;a,b) = \frac{1}{b-a}$ with $ -\infty < a < x < b < \infty $
+$f_0(x;a,b) = \frac{1}{b-a}$ with $-\infty < a < x < b < \infty$
     - What is the domain of $f_0$?
 [Desmos file for function $f_0$ (Example Project)](https://www.desmos.com/calculator/is6afqy4yd){target="_blank"}
     - What does $a$ do?
