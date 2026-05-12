@@ -128,10 +128,10 @@ Now answer the following and come with answers to compare with your group in cla
 
 # During Class
 ## Brain Gains
-Let $ h(t) = \sqrt{3t+1} $.
+Let $h(t) = \sqrt{3t+1}$.
 
-- Compute $ h(2) $.
-- Solve $ h(t) = 2 $ for $ t $. 
+- Compute $h(2)$.
+- Solve $h(t) = 2$ for $t$.
 Let $X_1$, $X_2$, and $X_3$ be independent random variables which each return the value of a single toss of one fair six-sided die. 
 
 - Compute $P(X_1 = 1, X_2 = 4, \text{ and } X_3 = 5)$. 
@@ -154,11 +154,11 @@ p <- function(x,lambda=2){
 <details>
 <summary>Answers</summary>
 
-- $ h(2) = \sqrt{7} $
-- $ t = 1 $
+- $h(2) = \sqrt{7}$
+- $t = 1$
 
-- $P(X_1 = 1, X_2 = 4, \text{ and } X_3 = 5) = \frac{1}{216} \approx 0.00463 $
-- $P(X_1 \leq 3, X_2\leq 3,\text{ and }X_3\leq 3) = \frac{1}{8} = 0.125 $
+- $P(X_1 = 1, X_2 = 4, \text{ and } X_3 = 5) = \frac{1}{216} \approx 0.00463$
+- $P(X_1 \leq 3, X_2\leq 3,\text{ and }X_3\leq 3) = \frac{1}{8} = 0.125$
 
 - Compute $P(Y=1) \approx 0.3679$.
 - Compute $P(Y=0) \approx 0.3679$.
