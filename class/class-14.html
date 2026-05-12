@@ -589,13 +589,19 @@ Answers
 <h2 class="anchored" data-anchor-id="brain-gains">Brain Gains</h2>
 <p>Let <span class="math inline">\(h(t) = \sqrt{3t+1}\)</span>.</p>
 <ul>
-<li><p>Compute <span class="math inline">\(h(2)\)</span>.</p></li>
-<li><p>Solve <span class="math inline">\(h(t) = 2\)</span> for <span class="math inline">\(t\)</span>. Let <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, and <span class="math inline">\(X_3\)</span> be independent random variables which each return the value of a single toss of one fair six-sided die.</p></li>
-<li><p>Compute <span class="math inline">\(P(X_1 = 1, X_2 = 4, \text{ and } X_3 = 5)\)</span>.</p></li>
-<li><p>Compute <span class="math inline">\(P(X_1 \leq 3, X_2\leq 3,\text{ and }X_3\leq 3)\)</span>. Recall that the probability mass function (pmf) for a Poisson distribution is <span class="math inline">\(p(x; \lambda) = \frac{\lambda^x}{x!}e^{-\lambda}\)</span> with <span class="math inline">\(x = 0, 1, 2, 3, ...\)</span> where <span class="math inline">\(\lambda &gt; 0\)</span>. Suppose that <span class="math inline">\(Y\)</span> is a random variable with a Poisson distribution with <span class="math inline">\(\lambda = 1\)</span>.</p></li>
-<li><p>Compute <span class="math inline">\(P(Y=1)\)</span>.</p></li>
-<li><p>Compute <span class="math inline">\(P(Y=0)\)</span>.</p></li>
-<li><p>Compute <span class="math inline">\(P(Y&gt;1)\)</span>.</p></li>
+<li>Compute <span class="math inline">\(h(2)\)</span>.</li>
+<li>Solve <span class="math inline">\(h(t) = 2\)</span> for <span class="math inline">\(t\)</span>.</li>
+</ul>
+<p>Let <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, and <span class="math inline">\(X_3\)</span> be independent random variables which each return the value of a single toss of one fair six-sided die.</p>
+<ul>
+<li>Compute <span class="math inline">\(P(X_1 = 1, X_2 = 4, \text{ and } X_3 = 5)\)</span>.</li>
+<li>Compute <span class="math inline">\(P(X_1 \leq 3, X_2\leq 3,\text{ and }X_3\leq 3)\)</span>.</li>
+</ul>
+<p>Recall that the probability mass function (pmf) for a Poisson distribution is <span class="math display">\[p(x; \lambda) = \frac{\lambda^x}{x!}e^{-\lambda}\text{ with }x = 0, 1, 2, 3, ...\text{ where }\lambda &gt; 0.\]</span> Suppose that <span class="math inline">\(Y\)</span> is a random variable with a Poisson distribution with <span class="math inline">\(\lambda = 1\)</span>.</p>
+<ul>
+<li>Compute <span class="math inline">\(P(Y=1)\)</span>.</li>
+<li>Compute <span class="math inline">\(P(Y=0)\)</span>.</li>
+<li>Compute <span class="math inline">\(P(Y&gt;1)\)</span>.</li>
 </ul>
 <p>You may use the code below to help you code in the Poisson distribution.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">lambda=</span><span class="dv">2</span>){</span>
@@ -688,7 +694,12 @@ p(0,1)
 </section>
 <section id="activity---florida-tropical-storms-extended" class="level3">
 <h3 class="anchored" data-anchor-id="activity---florida-tropical-storms-extended">Activity - Florida Tropical Storms Extended</h3>
-<p>Let <span class="math inline">\(X_1\)</span> be the random variable that counts the number of tropical storms in Florida this year, <span class="math inline">\(X_2\)</span> be the random variable that counts the number of tropical storms in Florida next year, and <span class="math inline">\(X_3\)</span> be the random variable that counts the number of tropical storms in Florida the year after. Assuming <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, and <span class="math inline">\(X_3\)</span> are independent Poisson random variables each with the the same parameter <span class="math inline">\(\lambda = 2\)</span>. This means we have <span class="math display">\[p_{3yr}(x_1, x_2, x_3; \lambda) = \left(\frac{\lambda^{x_1}}{x_1!}e^{-\lambda}\right) \left(\frac{\lambda^{x_2}}{x_2!}e^{-\lambda}\right) \left(\frac{\lambda^{x_3}}{x_3!}e^{-\lambda}\right) = \frac{\lambda^{x_1 + x_2 + x_3}}{x_1!x_2!x_3!}e^{-3\lambda}\]</span> with <span class="math inline">\(x_1 = 0, 1, 2, 3, ...\)</span>, <span class="math inline">\(x_2 = 0, 1, 2, 3, ...\)</span>, and <span class="math inline">\(x_3 = 0, 1, 2, 3, ...\)</span>, (and zero otherwise) where <span class="math inline">\(\lambda &gt; 0.\)</span> The following code chunk provides two versions to input this function. The first requires you input a vector <span class="math inline">\(x\)</span> consisting of the number of tropical storms that occurred each year (and can be used if you want to look at a period of 3 years, or even 7 years, by just changing the number of inputs to the vector). The second version will only work with a 3 year period.</p>
+<p>Let <span class="math inline">\(X_1\)</span> be the random variable that counts the number of tropical storms in Florida this year, <span class="math inline">\(X_2\)</span> be the random variable that counts the number of tropical storms in Florida next year, and <span class="math inline">\(X_3\)</span> be the random variable that counts the number of tropical storms in Florida the year after. Assuming <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, and <span class="math inline">\(X_3\)</span> are independent Poisson random variables each with the the same parameter <span class="math inline">\(\lambda = 2\)</span>. This means we have <span class="math display">\[
+\begin{aligned}
+p_{3yr}(x_1, x_2, x_3; \lambda) &amp;= \left(\frac{\lambda^{x_1}}{x_1!}e^{-\lambda}\right) \left(\frac{\lambda^{x_2}}{x_2!}e^{-\lambda}\right) \left(\frac{\lambda^{x_3}}{x_3!}e^{-\lambda}\right) \\
+&amp;= \frac{\lambda^{x_1 + x_2 + x_3}}{x_1!x_2!x_3!}e^{-3\lambda}
+\end{aligned}
+\]</span> with <span class="math inline">\(x_1 = 0, 1, 2, 3, ...\)</span>, <span class="math inline">\(x_2 = 0, 1, 2, 3, ...\)</span>, and <span class="math inline">\(x_3 = 0, 1, 2, 3, ...\)</span>, (and zero otherwise) where <span class="math inline">\(\lambda &gt; 0.\)</span> The following code chunk provides two versions to input this function. The first requires you input a vector <span class="math inline">\(x\)</span> consisting of the number of tropical storms that occurred each year (and can be used if you want to look at a period of 3 years, or even 7 years, by just changing the number of inputs to the vector). The second version will only work with a 3 year period.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>p3v1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">lambda=</span><span class="dv">2</span>){</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># each element of x must be a whole number</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prod</span>((lambda<span class="sc">^</span>x<span class="sc">/</span><span class="fu">factorial</span>(x))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda))</span>
