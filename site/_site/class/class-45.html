@@ -394,7 +394,11 @@ window.Quarto = {
   <ul>
   <li><a href="#between-class-sessions---prep-for-day-45" id="toc-between-class-sessions---prep-for-day-45" class="nav-link active" data-scroll-target="#between-class-sessions---prep-for-day-45">Between Class Sessions - Prep for Day 45 </a><a id="tasklist" class="nav-link" data-scroll-target="undefined"></a>
   <ul class="collapse">
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation">Preparation</a>
+  <ul class="collapse">
+  <li><a href="#cdfs-and-pdfs-making-connections" id="toc-cdfs-and-pdfs-making-connections" class="nav-link" data-scroll-target="#cdfs-and-pdfs-making-connections">(1) CDF’s and PDF’s (Making Connections)</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">(2) Practice</a></li>
+  </ul></li>
   <li><a href="#regular-reminders" id="toc-regular-reminders" class="nav-link" data-scroll-target="#regular-reminders">Regular Reminders</a>
   <ul class="collapse">
   <li><a href="#skill-practice-ka-homework" id="toc-skill-practice-ka-homework" class="nav-link" data-scroll-target="#skill-practice-ka-homework">Skill Practice (KA Homework)</a></li>
@@ -443,7 +447,12 @@ window.Quarto = {
 <!-- from Prep.GeneralInstructions -->
 <p>Please spend around 2 hours working between class sessions, focusing on the tasks below. Use any extra time to complete KnewtonAlta assignments and/or work on Project tasks.</p>
 <p>Pick something from your prep today that you can share with your group in class. It might be something new that you learned. It might be questions you have that are still unanswered, or a question along with what helped you eventually answer it. It might be something tricky that you solved. It might be a review topic that helped you remember something. It might be a conversation you had with AI that was helpful. You will have a chance to share this with your peers during class. Come ready to articulate your thinking and questions.</p>
-<p><a id="Prep"></a> ## Preparation ### (1) CDF’s and PDF’s (Making Connections) Let <span class="math inline">\(g(x)\)</span> be a function that defines the top of a target. Each time we throw a dart, it hits a a random spot on the target. We let <span class="math inline">\(X\)</span> be the random variable that records the <span class="math inline">\(x\)</span>-coordinate of the dart’s location.</p>
+<p><a id="Prep"></a></p>
+<section id="preparation" class="level2">
+<h2 class="anchored" data-anchor-id="preparation">Preparation</h2>
+<section id="cdfs-and-pdfs-making-connections" class="level3">
+<h3 class="anchored" data-anchor-id="cdfs-and-pdfs-making-connections">(1) CDF’s and PDF’s (Making Connections)</h3>
+<p>Let <span class="math inline">\(g(x)\)</span> be a function that defines the top of a target. Each time we throw a dart, it hits a a random spot on the target. We let <span class="math inline">\(X\)</span> be the random variable that records the <span class="math inline">\(x\)</span>-coordinate of the dart’s location.</p>
 <section id="calculating-a-pdf-from-a-nonnegative-function-with-finite-area" class="level4">
 <h4 class="anchored" data-anchor-id="calculating-a-pdf-from-a-nonnegative-function-with-finite-area">Calculating a PDF (from a nonnegative function with finite area)</h4>
 <p>Given a “target” function, <span class="math inline">\(g(x)\)</span>, there are two ways to calculate the <strong>probability density function</strong>, <span class="math inline">\(f\)</span>:<br> <em>Method 1</em> - <em>Calculate</em> <span class="math inline">\(F(x) = P(X \leq x)\)</span> for every real number <span class="math inline">\(x\)</span>. - Calculate probabilities as ratios of areas, $ P(X x) = $. - <strong>Take the derivative</strong> of the CDF to find the PDF, <span class="math inline">\(f(x) = F'(x)\)</span>.</p>
@@ -453,6 +462,7 @@ window.Quarto = {
 <h4 class="anchored" data-anchor-id="calculating-a-cdf-from-a-nonnegative-function-with-finite-area">Calculating a CDF (from a nonnegative function with finite area)</h4>
 <p>Given a “target” function, <span class="math inline">\(g(x)\)</span>, there are two ways to calculate the <strong>cumulative distribution function</strong>, <span class="math inline">\(F\)</span>:<br> <em>Method 1</em> - <em>Normalize</em> <span class="math inline">\(g(x)\)</span> to find the PDF, <span class="math inline">\(f(x)\)</span>. - Multiple <span class="math inline">\(g(x)\)</span> by <span class="math inline">\(k = \frac{1}{\int_{-\infty}^\infty g(x) dx}\)</span>. Pick <span class="math inline">\(k\)</span> so that <span class="math inline">\(\int_{-\infty}^\infty f(x)dx = 1\)</span>. - <strong>Find the Antiderivative (“undo the derivative”)</strong> to find the CDF. - $ F(x) = _{-}^x f(t)dt $</p>
 <p><em>Method 2</em> - <em>Calculate</em> <span class="math inline">\(F(x) = P(X \leq x)\)</span> for every real number <span class="math inline">\(x\)</span>. - Calculate probabilities as ratios of areas, $ F(x) = P(X x) = $.</p>
+</section>
 </section>
 <section id="practice" class="level3">
 <h3 class="anchored" data-anchor-id="practice">(2) Practice</h3>
@@ -492,6 +502,7 @@ e^{-\lambda x} &amp; x \geq 0 \\ \\
 </ol>
 <p><a id="PP"></a></p>
 </section>
+</section>
 <section id="regular-reminders" class="level2">
 <h2 class="anchored" data-anchor-id="regular-reminders">Regular Reminders</h2>
 <section id="skill-practice-ka-homework" class="level3">
@@ -521,8 +532,18 @@ e^{-\lambda x} &amp; x \geq 0 \\ \\
 <summary>
 Summary: Calculating Probability with the PDF and CDF
 </summary>
-<p>To calculate a probability with the PDF of a continuous random variable, we use the following: - <span class="math inline">\(P(X \leq a) = \int_{-\infty}^a f(x)dx\)</span>, - <span class="math inline">\(P(a \leq X \leq b) = \int_a^b f(x)dx\)</span>, - <span class="math inline">\(P(X \geq a) = \int_a^\infty f(x)dx\)</span>.</p>
-<p>To calculate a probability with the CDF of a continuous random variable, we use the following: - <span class="math inline">\(P(X \leq a) = F(a)\)</span> - <span class="math inline">\(P(a \leq X \leq b) = F(b) - F(a)\)</span> - <span class="math inline">\(P(X \geq a) = 1 - F(a)\)</span></p>
+<p>To calculate a probability with the PDF of a continuous random variable, we use the following:</p>
+<ul>
+<li><span class="math inline">\(P(X \leq a) = \int_{-\infty}^a f(x)dx\)</span>,</li>
+<li><span class="math inline">\(P(a \leq X \leq b) = \int_a^b f(x)dx\)</span>,</li>
+<li><span class="math inline">\(P(X \geq a) = \int_a^\infty f(x)dx\)</span>.</li>
+</ul>
+<p>To calculate a probability with the CDF of a continuous random variable, we use the following:</p>
+<ul>
+<li><span class="math inline">\(P(X \leq a) = F(a)\)</span></li>
+<li><span class="math inline">\(P(a \leq X \leq b) = F(b) - F(a)\)</span></li>
+<li><span class="math inline">\(P(X \geq a) = 1 - F(a)\)</span></li>
+</ul>
 </details>
 <details>
 <summary>
@@ -645,8 +666,13 @@ Fundamental Theorem of Calculus (FTC)
 <summary>
 Definition: Percentile
 </summary>
-<p>Let <span class="math inline">\(X\)</span> be a random variable. - A percentile is a number <span class="math inline">\(x_p\)</span> that satisfies the equation <span class="math inline">\(P(X \leq x_p) = \frac{p}{100}\)</span>. - This means <span class="math inline">\(x_p\)</span> satisfies the equation <span class="math inline">\(F(x_p) = \frac{p}{100}\)</span> where <span class="math inline">\(F(x)\)</span> is the cumulative distribution function for <span class="math inline">\(X\)</span>. - This means <span class="math inline">\(x_p\)</span> satisfies the equation <span class="math inline">\(\int_{-\infty}^{x_p}f(t)dt = \frac{p}{100}\)</span> where <span class="math inline">\(f(x)\)</span> is the probability density function for <span class="math inline">\(X\)</span>.</p>
+<p>Let <span class="math inline">\(X\)</span> be a random variable.</p>
 <ul>
+<li>A percentile is a number <span class="math inline">\(x_p\)</span> that satisfies the equation <span class="math inline">\(P(X \leq x_p) = \frac{p}{100}\)</span>.
+<ul>
+<li>This means <span class="math inline">\(x_p\)</span> satisfies the equation <span class="math inline">\(F(x_p) = \frac{p}{100}\)</span> where <span class="math inline">\(F(x)\)</span> is the cumulative distribution function for <span class="math inline">\(X\)</span>.</li>
+<li>This means <span class="math inline">\(x_p\)</span> satisfies the equation <span class="math inline">\(\int_{-\infty}^{x_p}f(t)dt = \frac{p}{100}\)</span> where <span class="math inline">\(f(x)\)</span> is the probability density function for <span class="math inline">\(X\)</span>.</li>
+</ul></li>
 <li>A percentile divides probability into 100 equal groups (per 100).</li>
 <li>A percentile is a number <span class="math inline">\(x_p\)</span> such that <span class="math inline">\(p\)</span>% of the probability is at or below this number.</li>
 </ul>

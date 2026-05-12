@@ -24,10 +24,11 @@ DAY_ABBR = {0: "Mon", 1: "Tue", 3: "Thu", 4: "Fri"}
 WEEKDAY_MAP = {"Mon": 0, "Tue": 1, "Wed": 2, "Thu": 3, "Fri": 4, "Sat": 5, "Sun": 6}
 
 SESSION_LABELS = {
-    "review":  "Review Day",
-    "project": "Project Work Day",
-    "testing": "Testing Day",
-    "holiday": "(No Class)",
+    "review":   "Review Day",
+    "project":  "Project Work Day",
+    "testing":  "Testing Day",
+    "open-lab": "Open Lab",
+    "holiday":  "(No Class)",
 }
 
 
@@ -97,7 +98,7 @@ def find_today_entry(calendar: list[dict], today: date) -> dict | None:
 def find_next_class(calendar: list[dict], today: date) -> dict | None:
     today_str = today.isoformat()
     for entry in calendar:
-        if entry["date"] > today_str and not entry.get("is_holiday") and entry["session"] not in ("review", "testing", "project"):
+        if entry["date"] > today_str and not entry.get("is_holiday") and entry["session"] not in ("review", "testing", "project", "open-lab"):
             return entry
     return None
 

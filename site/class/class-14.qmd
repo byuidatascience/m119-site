@@ -130,17 +130,21 @@ Now answer the following and come with answers to compare with your group in cla
 ## Brain Gains
 Let $h(t) = \sqrt{3t+1}$.
 
-- Compute $h(2)$.
-- Solve $h(t) = 2$ for $t$.
+  - Compute $h(2)$.
+  - Solve $h(t) = 2$ for $t$.
+
 Let $X_1$, $X_2$, and $X_3$ be independent random variables which each return the value of a single toss of one fair six-sided die. 
 
-- Compute $P(X_1 = 1, X_2 = 4, \text{ and } X_3 = 5)$. 
-- Compute $P(X_1 \leq 3, X_2\leq 3,\text{ and }X_3\leq 3)$. 
-Recall that the probability mass function (pmf) for a Poisson distribution is $p(x; \lambda) = \frac{\lambda^x}{x!}e^{-\lambda}$ with $x = 0, 1, 2, 3, ...$ where $\lambda > 0$.  Suppose that $Y$ is a random variable with a Poisson distribution with $\lambda = 1$. 
+  - Compute $P(X_1 = 1, X_2 = 4, \text{ and } X_3 = 5)$. 
+  - Compute $P(X_1 \leq 3, X_2\leq 3,\text{ and }X_3\leq 3)$.  
+  
+Recall that the probability mass function (pmf) for a Poisson distribution is
+$$p(x; \lambda) = \frac{\lambda^x}{x!}e^{-\lambda}\text{ with }x = 0, 1, 2, 3, ...\text{ where }\lambda > 0.$$
+Suppose that $Y$ is a random variable with a Poisson distribution with $\lambda = 1$.
 
-- Compute $P(Y=1)$.
-- Compute $P(Y=0)$.
-- Compute $P(Y>1)$.
+  - Compute $P(Y=1)$.
+  - Compute $P(Y=0)$.
+  - Compute $P(Y>1)$.
 
 You may use the code below to help you code in the Poisson distribution. 
 
@@ -249,7 +253,12 @@ p(0:10,1)
 Let $X_1$ be the random variable that counts the number of tropical storms in Florida this year, $X_2$ be the random variable that counts the number of tropical storms in Florida next year, and $X_3$ be the random variable that counts the number of tropical storms in Florida the year after. 
 Assuming $X_1$, $X_2$, and $X_3$ are independent Poisson random variables each with the the same parameter $\lambda = 2$. 
 This means we have 
-$$p_{3yr}(x_1, x_2, x_3; \lambda) = \left(\frac{\lambda^{x_1}}{x_1!}e^{-\lambda}\right) \left(\frac{\lambda^{x_2}}{x_2!}e^{-\lambda}\right) \left(\frac{\lambda^{x_3}}{x_3!}e^{-\lambda}\right) = \frac{\lambda^{x_1 + x_2 + x_3}}{x_1!x_2!x_3!}e^{-3\lambda}$$
+$$
+\begin{aligned}
+p_{3yr}(x_1, x_2, x_3; \lambda) &= \left(\frac{\lambda^{x_1}}{x_1!}e^{-\lambda}\right) \left(\frac{\lambda^{x_2}}{x_2!}e^{-\lambda}\right) \left(\frac{\lambda^{x_3}}{x_3!}e^{-\lambda}\right) \\
+&= \frac{\lambda^{x_1 + x_2 + x_3}}{x_1!x_2!x_3!}e^{-3\lambda}
+\end{aligned}
+$$
 with $x_1 = 0, 1, 2, 3, ...$,  $x_2 = 0, 1, 2, 3, ...$, and $x_3 = 0, 1, 2, 3, ...$, (and zero otherwise) where $\lambda > 0.$
 The following code chunk provides two versions to input this function.  The first requires you input a vector $x$ consisting of the number of tropical storms that occurred each year (and can be used if you want to look at a period of 3 years, or even 7 years, by just changing the number of inputs to the vector).  The second version will only work with a 3 year period. 
 

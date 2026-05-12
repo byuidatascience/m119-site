@@ -1,7 +1,7 @@
 # Math 119 — Spring 2026 Schedule Configuration
 #
 # HOW TO EDIT:
-#   - To slow down: insert a session twice, or insert "flex-N" / "review" / "project"
+#   - To slow down: insert a session twice, or insert "flex-N" / "review" / "project" / "open-lab"
 #   - To skip a class: add the date to holidays
 #   - Sessions are assigned to MTRF dates in order, skipping holidays
 #   - Run: uv run python tools/generate_schedule.py  to regenerate site/_today.qmd
@@ -26,6 +26,7 @@ holidays:
 #   review      → no link, shows "Review Day"
 #   project     → no link, shows "Project Work Day"
 #   testing     → no link, shows "Testing Day"
+#   open-lab    → no link, shows "Open Lab"
 #   holiday     → skip this slot (alternative to adding to holidays above)
 #
 # Edit this list to adjust pacing. The script handles the date math.
@@ -46,6 +47,8 @@ sessions:
   - class-13
   - class-14
   - class-15
+  # OPTIONAL (SP26 teacher choice — remove if you don't want open lab days):
+  - open-lab     # 5/15 — students finish Project 1 tasks in class
   - class-16
   - class-17
   - class-18
@@ -63,6 +66,8 @@ sessions:
   - class-30
   - class-31
   - class-32
+  # OPTIONAL (SP26 teacher choice — remove if you don't want open lab days):
+  - open-lab     # 6/18 — day before Juneteenth, students finish project tasks
   - class-33
   - class-34
   - class-35
@@ -78,7 +83,5 @@ sessions:
   - class-45
   - class-46
   - flex-1
-  - flex-2
-  - flex-3
   - project
   - project
