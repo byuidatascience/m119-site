@@ -155,28 +155,7 @@ p <- function(x,lambda=2){
 }
 ```
 
-<details>
-<summary>Answers</summary>
-
-- $h(2) = \sqrt{7}$
-- $t = 1$
-
-- $P(X_1 = 1, X_2 = 4, \text{ and } X_3 = 5) = \frac{1}{216} \approx 0.00463$
-- $P(X_1 \leq 3, X_2\leq 3,\text{ and }X_3\leq 3) = \frac{1}{8} = 0.125$
-
-- Compute $P(Y=1) \approx 0.3679$.
-- Compute $P(Y=0) \approx 0.3679$.
-- Compute $P(Y>1) \approx 0.2642$.
-
-```
-p(1,1)
-p(0,1)
-1-(p(0,1)+p(1,1))
-```
-
-</details>
-
-## Group Meeting 
+## Group Meeting
 Start by giving each person a moment to share what they chose to prepare for class. Help each other address any questions.  When each person has had a chance to share, move on the other activities.
 
 ### Probability Exercise (Tropical Storms Example from Prep)
@@ -197,6 +176,27 @@ Compare your answers that you got for the last 4 questions of yesterday's prep w
 - The probability of less than 8 Florida tropical storms this year using $\lambda = 6$.
 - The probability of at least 8 Florida tropical storms this year using $\lambda = 6$.
 - The probability of more than 12 Florida tropical storms this year using $\lambda  = 5$.
+
+<details>
+<summary>Answers</summary>
+
+$$
+\begin{aligned}
+P(X < 8 \mid \lambda = 3)   &= \sum_{i=0}^{7} p(i;3)               &&\approx 0.9881 \\
+P(X < 8 \mid \lambda = 6)   &= \sum_{i=0}^{7} p(i;6)               &&\approx 0.7440 \\
+P(X \geq 8 \mid \lambda = 6) &= 1 - P(X < 8 \mid \lambda = 6)      &&\approx 0.2560 \\
+P(X > 12 \mid \lambda = 5)  &= 1 - \sum_{i=0}^{12} p(i;5)          &&\approx 0.0020
+\end{aligned}
+$$
+
+```r
+sum(p(0:7, 3))
+sum(p(0:7, 6))
+1 - sum(p(0:7, 6))
+1 - sum(p(0:12, 5))
+```
+
+</details>
 
 ### Activity - Florida Tropical Storms Revisited
 Read through the following work, execute the code chunks, and then complete the additional calculations and discuss the questions shown at the end. 
@@ -246,8 +246,44 @@ p(0:10,1)
 - Compute the probability of 7 Florida tropical storms in a year assuming $\lambda  = 6.3$. (Wait, can we use decimals for $\lambda$?)
 - Compute the probability of 7 Florida tropical storms in a year using various values for $\lambda$.  Then as a group decide what value you think is the best value to assume for $\lambda$ if we actually did see 7 tropical storms in a year.
 - Construct a plot that has $\lambda$ on the horizontal($x$) axis, and on the vertical($y$) axis we place the probability of 7 Florida tropical storms in a year assuming that value for $\lambda$. Describe the shape of this plot, and how can we use it to find the "best value" for $\lambda$.
-- How does your choice of "best" $\lambda$ change if we know there will be 4 tropical storms (rather than 7 storms)?  
+- How does your choice of "best" $\lambda$ change if we know there will be 4 tropical storms (rather than 7 storms)?
 - How does your choice for $\lambda$ change if we know there will be 5 tropical storms (rather than 7 storms)?
+
+<details>
+<summary>Answers</summary>
+
+Computed probabilities of 7 storms under several values of $\lambda$:
+
+$$
+\begin{aligned}
+p(7; \lambda = 8)   &\approx 0.1396 \\
+p(7; \lambda = 4)   &\approx 0.0595 \\
+p(7; \lambda = 6.3) &\approx 0.1435 \\
+p(7; \lambda = 7)   &\approx 0.1490
+\end{aligned}
+$$
+
+- Observing 7 storms is more likely under $\lambda = 8$ than $\lambda = 4$ (the larger probability), so $\lambda = 8$ is the more plausible choice. *(Discuss with your group why.)*
+- Yes, $\lambda$ may be any positive real number; only $x$ must be a non-negative integer.
+- The probability is maximized at $\lambda = 7$. *(Discuss with your group why $\lambda = x$ maximizes $p(x;\lambda)$ here.)*
+- The plot of $p(7; \lambda)$ vs. $\lambda$ is a hump that rises, peaks at $\lambda = 7$, then decays. The "best value" for $\lambda$ is the location of the peak — i.e., the value that maximizes the probability of the observed outcome. *(Discuss with your group.)*
+- If the observation is 4 storms, the peak shifts to $\lambda = 4$.
+- If the observation is 5 storms, the peak shifts to $\lambda = 5$. The pattern:
+
+$$
+\lambda_\text{best} = x_\text{observed}
+$$
+
+```r
+p(7, 8)
+p(7, 4)
+p(7, 6.3)
+p(7, 7)
+lambda <- seq(0, 20, 0.1)
+plot(lambda, p(7, lambda), type = "l")
+```
+
+</details>
 
 ### Activity - Florida Tropical Storms Extended
 Let $X_1$ be the random variable that counts the number of tropical storms in Florida this year, $X_2$ be the random variable that counts the number of tropical storms in Florida next year, and $X_3$ be the random variable that counts the number of tropical storms in Florida the year after. 
@@ -309,6 +345,43 @@ If we know there will be 4 Florida tropical storms this year, 4 Florida tropical
 - Construct a plot (use p3v2) that has $\lambda$ on the horizontal($x$) axis, and on the vertical($y$) axis we place the probability of 4, then 4, then 8 Florida tropical storms for the next three years assuming that value for $\lambda$. Describe the shape of this plot, and how can we use it to find the "best value" for $\lambda$. 
 - In the plot you made, update your code to use p3v1 instead of p3v2. If you notice an error, that's OK.  The problem is that R does not know how to use two vectors as an input to $p$ without more information. The sapply function deals with this and shows up in the prep tomorrow. 
 - Use the data from the [List of Florida hurricanes (2000–present)](https://en.wikipedia.org/wiki/List_of_Florida_hurricanes_(2000%E2%80%93present)) for the years 2000-2005 (6 years) to estimate a good value for lambda (you'll need to use p3v1 now, as there are 6 data points instead of 3).
+
+<details>
+<summary>Answers</summary>
+
+Reference probabilities for the observation $(x_1, x_2, x_3) = (4, 4, 8)$:
+
+$$
+\begin{aligned}
+p_{3yr}(4,4,8;\,\lambda = 2)  &\approx 6.99\times 10^{-6} \\
+p_{3yr}(4,4,8;\,\lambda = 5)  &\approx 2.01\times 10^{-3} \\
+p_{3yr}(4,4,8;\,\lambda = 10) &\approx 4.03\times 10^{-5}
+\end{aligned}
+$$
+
+- A good criterion is *maximum likelihood*: pick the $\lambda$ that makes the observed outcome most probable. *(Discuss with your group why this is reasonable.)*
+- The plot of $p_{3yr}(4, 4, 8;\,\lambda)$ vs. $\lambda$ rises, peaks, then decays — same hump shape as the single-year case. The peak occurs at the sample mean:
+
+$$
+\begin{aligned}
+\lambda_\text{best} &= \frac{4 + 4 + 8}{3} \\
+                    &= \frac{16}{3} \\
+                    &\approx 5.33
+\end{aligned}
+$$
+
+with $p_{3yr}(4, 4, 8;\, \lambda_\text{best}) \approx 2.08\times 10^{-3}$.
+
+- Using `p3v1` directly with a vector of $\lambda$ values fails because `p3v1` expects a single $\lambda$, not a vector — `sapply` will fix this (shows up in tomorrow's prep).
+- For 2000–2005 data (using `p3v1` with 6 inputs), the best $\lambda$ is again the sample mean of the 6 observed storm counts. *(Look up the actual counts and compute the mean as a group.)*
+
+```r
+lambda <- seq(0, 20, 0.1)
+plot(lambda, sapply(lambda, function(L) p3v2(4, 4, 8, L)), type = "l")
+abline(v = (4 + 4 + 8) / 3, lty = 2)
+```
+
+</details>
 
 ---
 

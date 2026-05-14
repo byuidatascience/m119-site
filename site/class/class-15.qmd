@@ -83,17 +83,42 @@ plot(lambda, probs, type='l')
 <details>
 <summary>Residuals</summary>
 
-The **residual** for an observation is defined as the vertical distance between the observed value, $y$, and value predicted by a fitted model, represented with a $\hat{y}$ (read "y hat"). 
+The **residual** for an observation is defined as the vertical distance between the observed value, $y$, and value predicted by a fitted model, represented with a $\hat{y}$ (read "y hat").
 
-Examples:
+**Examples:**
 
-- Given the model $f(x) = ax^2 + bx + c$ and the data point $(x,y)$, the residual is $y-\hat{y} = y - f(x) = y - (ax^2 + bx + c) = y- ax^2 - bx - c.$
-- Given the model $g(x) = k$ and the data point $(x,y)$, the residual is $y-\hat{y} = y - g(x) = y - k.$
-- Given the model $h(x) = ae^{-bx} + cxe^{-bx}$ and the data point $(x,y)$, the residual is $y-\hat{y} = y - h(x) = y - (ae^{-bx} + cxe^{-bx}) = y - ae^{-bx} - cxe^{-bx}.$
+Given the model $f(x) = ax^2 + bx + c$ and the data point $(x, y)$, the residual is
+
+$$
+\begin{aligned}
+y - \hat{y} &= y - f(x) \\
+            &= y - (ax^2 + bx + c) \\
+            &= y - ax^2 - bx - c
+\end{aligned}
+$$
+
+Given the model $g(x) = k$ and the data point $(x, y)$, the residual is
+
+$$
+\begin{aligned}
+y - \hat{y} &= y - g(x) \\
+            &= y - k
+\end{aligned}
+$$
+
+Given the model $h(x) = ae^{-bx} + cxe^{-bx}$ and the data point $(x, y)$, the residual is
+
+$$
+\begin{aligned}
+y - \hat{y} &= y - h(x) \\
+            &= y - (ae^{-bx} + cxe^{-bx}) \\
+            &= y - ae^{-bx} - cxe^{-bx}
+\end{aligned}
+$$
 
 </details>
 
-Consider the 6 functions you have been fitting in Project 1. 
+Consider the 6 functions you have been fitting in Project 1.
 
 - Write down a formula for the residual given model $f_1$.
 - Write down a formula for the residual given model $f_2$.
@@ -118,9 +143,27 @@ Consider the 6 functions you have been fitting in Project 1.
 <details>
 <summary>Answers</summary>
 
-- Given the model $f(x) = b + mx$ and the data point $(x,y) = (4,7)$, the residual is $y−\hat{y} = y−f(x) =7−(b + m4)=7−b−4m$.
-- Given the model $g(x) = c + bx + a\ln(4x)$ and the data point $(x,y) = (x_3,y_3)$, the residual is $y−\hat{y} = y_3−g(x_3) =y_3−(c + bx_3 + a\ln(4x_3))=y_3−c-bx_3-a\ln(4x_3)$.
-In the formula $r=y−f(x)$, we just replace $x$, $y$, and $f(x)$ with what they equal.  We are computing the ERROR between an observed value $y$ and predicted value $f(x)$.
+Given the model $f(x) = b + mx$ and the data point $(x, y) = (4, 7)$, the residual is
+
+$$
+\begin{aligned}
+y - \hat{y} &= y - f(x) \\
+            &= 7 - (b + m\cdot 4) \\
+            &= 7 - b - 4m
+\end{aligned}
+$$
+
+Given the model $g(x) = c + bx + a\ln(4x)$ and the data point $(x, y) = (x_3, y_3)$, the residual is
+
+$$
+\begin{aligned}
+y - \hat{y} &= y_3 - g(x_3) \\
+            &= y_3 - \bigl(c + bx_3 + a\ln(4x_3)\bigr) \\
+            &= y_3 - c - bx_3 - a\ln(4x_3)
+\end{aligned}
+$$
+
+In the formula $r = y - f(x)$, we just replace $x$, $y$, and $f(x)$ with what they equal. We are computing the **error** between an observed value $y$ and predicted value $f(x)$.
 
 </details>
 
@@ -153,8 +196,9 @@ What do you notice about $L_1$ and $p$? What are the similarities? What are the 
 - Each value of $\lambda$ gives a specific probability function $p$. 
 - Each value of $x$ is an observation made. We can plug $x$ into a specific probability function, to get a probability, or we can use that value of $x$ to create a specific likelihood function.
 
-----
-We created the *joint probability mass function* for three independent Poisson Random variables by multiplying three functions together to obtain 
+***
+
+We created the *joint probability mass function* for three independent Poisson Random variables by multiplying three functions together to obtain
 
 - $p_3(x_1, x_2, x_3; \lambda) = \frac{\lambda^{x_1 + x_2 + x_3}}{x_1!x_2!x_3!}e^{-3\lambda}$ for every $x_1 = 0, 1, 2, 3, ...$, $x_2 = 0, 1, 2, 3, ...$, and $x_3 = 0, 1, 2, 3, ...$, for some $\lambda > 0$. 
 
@@ -190,13 +234,38 @@ Start by giving each person a moment to share what they chose to prepare for cla
 <details>
 <summary>Residuals</summary>
 
-The **residual** for an observation is defined as the vertical distance between the observed value, $y$, and value predicted by a fitted model, represented with a $\hat{y}$ (read "y hat"). 
+The **residual** for an observation is defined as the vertical distance between the observed value, $y$, and value predicted by a fitted model, represented with a $\hat{y}$ (read "y hat").
 
-Examples:
+**Examples:**
 
-- Given the model $f(x) = ax^2 + bx + c$ and the data point $(x,y)$, the residual is $y-\hat{y} = y - f(x) = y - (ax^2 + bx + c) = y- ax^2 - bx - c).$
-- Given the model $g(x) = k$ and the data point $(x,y)$, the residual is $y-\hat{y} = y - g(x) = y - k.$
-- Given the model $h(x) = ae^{-bx} + cxe^{-bx}$ and the data point $(x,y)$, the residual is $y-\hat{y} = y - h(x) = y - (ae^{-bx} + cxe^{-bx}) = y - ae^{-bx} - cxe^{-bx}.$
+Given the model $f(x) = ax^2 + bx + c$ and the data point $(x, y)$, the residual is
+
+$$
+\begin{aligned}
+y - \hat{y} &= y - f(x) \\
+            &= y - (ax^2 + bx + c) \\
+            &= y - ax^2 - bx - c
+\end{aligned}
+$$
+
+Given the model $g(x) = k$ and the data point $(x, y)$, the residual is
+
+$$
+\begin{aligned}
+y - \hat{y} &= y - g(x) \\
+            &= y - k
+\end{aligned}
+$$
+
+Given the model $h(x) = ae^{-bx} + cxe^{-bx}$ and the data point $(x, y)$, the residual is
+
+$$
+\begin{aligned}
+y - \hat{y} &= y - h(x) \\
+            &= y - (ae^{-bx} + cxe^{-bx}) \\
+            &= y - ae^{-bx} - cxe^{-bx}
+\end{aligned}
+$$
 
 </details>
 

@@ -606,23 +606,6 @@ Answers
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># x must be a whole number</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  (lambda<span class="sc">^</span>x<span class="sc">/</span><span class="fu">factorial</span>(x))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<details>
-<summary>
-Answers
-</summary>
-<ul>
-<li><p><span class="math inline">\(h(2) = \sqrt{7}\)</span></p></li>
-<li><p><span class="math inline">\(t = 1\)</span></p></li>
-<li><p><span class="math inline">\(P(X_1 = 1, X_2 = 4, \text{ and } X_3 = 5) = \frac{1}{216} \approx 0.00463\)</span></p></li>
-<li><p><span class="math inline">\(P(X_1 \leq 3, X_2\leq 3,\text{ and }X_3\leq 3) = \frac{1}{8} = 0.125\)</span></p></li>
-<li><p>Compute <span class="math inline">\(P(Y=1) \approx 0.3679\)</span>.</p></li>
-<li><p>Compute <span class="math inline">\(P(Y=0) \approx 0.3679\)</span>.</p></li>
-<li><p>Compute <span class="math inline">\(P(Y&gt;1) \approx 0.2642\)</span>.</p></li>
-</ul>
-<pre><code>p(1,1)
-p(0,1)
-1-(p(0,1)+p(1,1))</code></pre>
-</details>
 </section>
 <section id="group-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="group-meeting">Group Meeting</h2>
@@ -630,10 +613,10 @@ p(0,1)
 <section id="probability-exercise-tropical-storms-example-from-prep" class="level3">
 <h3 class="anchored" data-anchor-id="probability-exercise-tropical-storms-example-from-prep">Probability Exercise (Tropical Storms Example from Prep)</h3>
 <p>Between class we worked with a <a href="https://en.wikipedia.org/wiki/Poisson_distribution">Poisson distribution</a> to model the number of tropical storms in Florida in a given year. The probability mass function for a Poisson distribution is given by <span class="math inline">\(p(x; \lambda) = \frac{\lambda^x}{x!}e^{-\lambda}\)</span> with <span class="math inline">\(x = 0, 1, 2, 3, ...\)</span> where <span class="math inline">\(\lambda &gt; 0\)</span>. You can use the following code to use this function in R.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">lambda=</span><span class="dv">2</span>){</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># x must be a whole number</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  (lambda<span class="sc">^</span>x<span class="sc">/</span><span class="fu">factorial</span>(x))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">lambda=</span><span class="dv">2</span>){</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># x must be a whole number</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  (lambda<span class="sc">^</span>x<span class="sc">/</span><span class="fu">factorial</span>(x))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Compare your answers that you got for the last 4 questions of yesterday’s prep work. These 4 problems asked you to compute each of the things below.</p>
 <ul>
 <li>The probability of less than 8 Florida tropical storms this year using <span class="math inline">\(\lambda = 3\)</span>.</li>
@@ -641,6 +624,23 @@ p(0,1)
 <li>The probability of at least 8 Florida tropical storms this year using <span class="math inline">\(\lambda = 6\)</span>.</li>
 <li>The probability of more than 12 Florida tropical storms this year using <span class="math inline">\(\lambda  = 5\)</span>.</li>
 </ul>
+<details>
+<summary>
+Answers
+</summary>
+<p><span class="math display">\[
+\begin{aligned}
+P(X &lt; 8 \mid \lambda = 3)   &amp;= \sum_{i=0}^{7} p(i;3)               &amp;&amp;\approx 0.9881 \\
+P(X &lt; 8 \mid \lambda = 6)   &amp;= \sum_{i=0}^{7} p(i;6)               &amp;&amp;\approx 0.7440 \\
+P(X \geq 8 \mid \lambda = 6) &amp;= 1 - P(X &lt; 8 \mid \lambda = 6)      &amp;&amp;\approx 0.2560 \\
+P(X &gt; 12 \mid \lambda = 5)  &amp;= 1 - \sum_{i=0}^{12} p(i;5)          &amp;&amp;\approx 0.0020
+\end{aligned}
+\]</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">p</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">3</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">p</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">6</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">sum</span>(<span class="fu">p</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">6</span>))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">sum</span>(<span class="fu">p</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">12</span>, <span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </section>
 <section id="activity---florida-tropical-storms-revisited" class="level3">
 <h3 class="anchored" data-anchor-id="activity---florida-tropical-storms-revisited">Activity - Florida Tropical Storms Revisited</h3>
@@ -684,10 +684,40 @@ p(0,1)
 <li>Compute the probability of 7 Florida tropical storms in a year assuming <span class="math inline">\(\lambda  = 6.3\)</span>. (Wait, can we use decimals for <span class="math inline">\(\lambda\)</span>?)</li>
 <li>Compute the probability of 7 Florida tropical storms in a year using various values for <span class="math inline">\(\lambda\)</span>. Then as a group decide what value you think is the best value to assume for <span class="math inline">\(\lambda\)</span> if we actually did see 7 tropical storms in a year.</li>
 <li>Construct a plot that has <span class="math inline">\(\lambda\)</span> on the horizontal(<span class="math inline">\(x\)</span>) axis, and on the vertical(<span class="math inline">\(y\)</span>) axis we place the probability of 7 Florida tropical storms in a year assuming that value for <span class="math inline">\(\lambda\)</span>. Describe the shape of this plot, and how can we use it to find the “best value” for <span class="math inline">\(\lambda\)</span>.</li>
-<li>How does your choice of “best” <span class="math inline">\(\lambda\)</span> change if we know there will be 4 tropical storms (rather than 7 storms)?<br>
-</li>
+<li>How does your choice of “best” <span class="math inline">\(\lambda\)</span> change if we know there will be 4 tropical storms (rather than 7 storms)?</li>
 <li>How does your choice for <span class="math inline">\(\lambda\)</span> change if we know there will be 5 tropical storms (rather than 7 storms)?</li>
 </ul>
+<details>
+<summary>
+Answers
+</summary>
+<p>Computed probabilities of 7 storms under several values of <span class="math inline">\(\lambda\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+p(7; \lambda = 8)   &amp;\approx 0.1396 \\
+p(7; \lambda = 4)   &amp;\approx 0.0595 \\
+p(7; \lambda = 6.3) &amp;\approx 0.1435 \\
+p(7; \lambda = 7)   &amp;\approx 0.1490
+\end{aligned}
+\]</span></p>
+<ul>
+<li>Observing 7 storms is more likely under <span class="math inline">\(\lambda = 8\)</span> than <span class="math inline">\(\lambda = 4\)</span> (the larger probability), so <span class="math inline">\(\lambda = 8\)</span> is the more plausible choice. <em>(Discuss with your group why.)</em></li>
+<li>Yes, <span class="math inline">\(\lambda\)</span> may be any positive real number; only <span class="math inline">\(x\)</span> must be a non-negative integer.</li>
+<li>The probability is maximized at <span class="math inline">\(\lambda = 7\)</span>. <em>(Discuss with your group why <span class="math inline">\(\lambda = x\)</span> maximizes <span class="math inline">\(p(x;\lambda)\)</span> here.)</em></li>
+<li>The plot of <span class="math inline">\(p(7; \lambda)\)</span> vs.&nbsp;<span class="math inline">\(\lambda\)</span> is a hump that rises, peaks at <span class="math inline">\(\lambda = 7\)</span>, then decays. The “best value” for <span class="math inline">\(\lambda\)</span> is the location of the peak — i.e., the value that maximizes the probability of the observed outcome. <em>(Discuss with your group.)</em></li>
+<li>If the observation is 4 storms, the peak shifts to <span class="math inline">\(\lambda = 4\)</span>.</li>
+<li>If the observation is 5 storms, the peak shifts to <span class="math inline">\(\lambda = 5\)</span>. The pattern:</li>
+</ul>
+<p><span class="math display">\[
+\lambda_\text{best} = x_\text{observed}
+\]</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="dv">7</span>, <span class="dv">8</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="dv">7</span>, <span class="dv">4</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="dv">7</span>, <span class="fl">6.3</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="dv">7</span>, <span class="dv">7</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="fl">0.1</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lambda, <span class="fu">p</span>(<span class="dv">7</span>, lambda), <span class="at">type =</span> <span class="st">"l"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </section>
 </section>
 <section id="activity---florida-tropical-storms-extended" class="level3">
@@ -698,35 +728,35 @@ p_{3yr}(x_1, x_2, x_3; \lambda) &amp;= \left(\frac{\lambda^{x_1}}{x_1!}e^{-\lamb
 &amp;= \frac{\lambda^{x_1 + x_2 + x_3}}{x_1!x_2!x_3!}e^{-3\lambda}
 \end{aligned}
 \]</span> with <span class="math inline">\(x_1 = 0, 1, 2, 3, ...\)</span>, <span class="math inline">\(x_2 = 0, 1, 2, 3, ...\)</span>, and <span class="math inline">\(x_3 = 0, 1, 2, 3, ...\)</span>, (and zero otherwise) where <span class="math inline">\(\lambda &gt; 0.\)</span> The following code chunk provides two versions to input this function. The first requires you input a vector <span class="math inline">\(x\)</span> consisting of the number of tropical storms that occurred each year (and can be used if you want to look at a period of 3 years, or even 7 years, by just changing the number of inputs to the vector). The second version will only work with a 3 year period.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>p3v1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">lambda=</span><span class="dv">2</span>){</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># each element of x must be a whole number</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prod</span>((lambda<span class="sc">^</span>x<span class="sc">/</span><span class="fu">factorial</span>(x))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda))</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>p3v2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2,x3,<span class="at">lambda=</span><span class="dv">2</span>){</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># x1, x2, and x3 must be whole numbers</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  (lambda<span class="sc">^</span>(x1<span class="sc">+</span>x2<span class="sc">+</span>x3)<span class="sc">/</span>(<span class="fu">factorial</span>(x1)<span class="sc">*</span><span class="fu">factorial</span>(x2)<span class="sc">*</span><span class="fu">factorial</span>(x3)))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span><span class="dv">3</span><span class="sc">*</span>lambda)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>p3v1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">lambda=</span><span class="dv">2</span>){</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># each element of x must be a whole number</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prod</span>((lambda<span class="sc">^</span>x<span class="sc">/</span><span class="fu">factorial</span>(x))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>p3v2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2,x3,<span class="at">lambda=</span><span class="dv">2</span>){</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># x1, x2, and x3 must be whole numbers</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  (lambda<span class="sc">^</span>(x1<span class="sc">+</span>x2<span class="sc">+</span>x3)<span class="sc">/</span>(<span class="fu">factorial</span>(x1)<span class="sc">*</span><span class="fu">factorial</span>(x2)<span class="sc">*</span><span class="fu">factorial</span>(x3)))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span><span class="dv">3</span><span class="sc">*</span>lambda)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We can now calculate the following probabilities:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The probability of 4 Florida tropical storms this year, 4 Florida tropical storms next year, and 8 Florida tropical storms the year after (using $\lambda = 2$ as assumed).</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v1</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>))</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#The same probability as above, using the other version</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v2</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#The same probabilty as above by just multiplying probabilities of independent events together. </span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="dv">4</span>)<span class="sc">*</span><span class="fu">p</span>(<span class="dv">4</span>)<span class="sc">*</span><span class="fu">p</span>(<span class="dv">8</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#The probability of 2 Florida tropical storms this year, 5 Florida tropical storms next year, and 3 Florida tropical storms the year after.</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v1</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Again, we can change <span class="math inline">\(\lambda\)</span> to another value, and see how these probabilities change.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The probability of 4 Florida tropical storms this year, 4 Florida tropical storms next year, and 8 Florida tropical storms the year after, assuming the parameter $\lambda = 5$.</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v1</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>),<span class="dv">5</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Repeat the above, but with lambda = 1, and then with lambda = 10</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v1</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>),<span class="dv">1</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v1</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>),<span class="dv">10</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The probability of 4 Florida tropical storms this year, 4 Florida tropical storms next year, and 8 Florida tropical storms the year after (using $\lambda = 2$ as assumed).</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v1</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#The same probability as above, using the other version</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v2</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#The same probabilty as above by just multiplying probabilities of independent events together. </span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="dv">4</span>)<span class="sc">*</span><span class="fu">p</span>(<span class="dv">4</span>)<span class="sc">*</span><span class="fu">p</span>(<span class="dv">8</span>)</span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v2</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">1</span>)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v2</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#The probability of 2 Florida tropical storms this year, 5 Florida tropical storms next year, and 3 Florida tropical storms the year after.</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v1</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Again, we can change <span class="math inline">\(\lambda\)</span> to another value, and see how these probabilities change.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The probability of 4 Florida tropical storms this year, 4 Florida tropical storms next year, and 8 Florida tropical storms the year after, assuming the parameter $\lambda = 5$.</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v1</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>),<span class="dv">5</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Repeat the above, but with lambda = 1, and then with lambda = 10</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v1</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>),<span class="dv">1</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v1</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>),<span class="dv">10</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v2</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">1</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">p3v2</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If we know there will be 4 Florida tropical storms this year, 4 Florida tropical storms next year, and 8 Florida tropical storms the year after, then our calculations above can help us determine a good value for the parameter <span class="math inline">\(\lambda\)</span>. The value <span class="math inline">\(\lambda=10\)</span> is a better option that <span class="math inline">\(\lambda = 1\)</span> because <span class="math inline">\(p3(4,4,8,10) = 4.029234e-05 &gt; 2.143747e-09 = p3(4,4,8,1)\)</span>.</p>
 <ul>
 <li>Try various other values for <span class="math inline">\(\lambda\)</span> and calculate the probability of 4 Florida tropical storms this year, 4 Florida tropical storms next year, and 8 Florida tropical storms the year after.</li>
@@ -735,6 +765,38 @@ p_{3yr}(x_1, x_2, x_3; \lambda) &amp;= \left(\frac{\lambda^{x_1}}{x_1!}e^{-\lamb
 <li>In the plot you made, update your code to use p3v1 instead of p3v2. If you notice an error, that’s OK. The problem is that R does not know how to use two vectors as an input to <span class="math inline">\(p\)</span> without more information. The sapply function deals with this and shows up in the prep tomorrow.</li>
 <li>Use the data from the <a href="https://en.wikipedia.org/wiki/List_of_Florida_hurricanes_(2000%E2%80%93present)">List of Florida hurricanes (2000–present)</a> for the years 2000-2005 (6 years) to estimate a good value for lambda (you’ll need to use p3v1 now, as there are 6 data points instead of 3).</li>
 </ul>
+<details>
+<summary>
+Answers
+</summary>
+<p>Reference probabilities for the observation <span class="math inline">\((x_1, x_2, x_3) = (4, 4, 8)\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+p_{3yr}(4,4,8;\,\lambda = 2)  &amp;\approx 6.99\times 10^{-6} \\
+p_{3yr}(4,4,8;\,\lambda = 5)  &amp;\approx 2.01\times 10^{-3} \\
+p_{3yr}(4,4,8;\,\lambda = 10) &amp;\approx 4.03\times 10^{-5}
+\end{aligned}
+\]</span></p>
+<ul>
+<li>A good criterion is <em>maximum likelihood</em>: pick the <span class="math inline">\(\lambda\)</span> that makes the observed outcome most probable. <em>(Discuss with your group why this is reasonable.)</em></li>
+<li>The plot of <span class="math inline">\(p_{3yr}(4, 4, 8;\,\lambda)\)</span> vs.&nbsp;<span class="math inline">\(\lambda\)</span> rises, peaks, then decays — same hump shape as the single-year case. The peak occurs at the sample mean:</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\lambda_\text{best} &amp;= \frac{4 + 4 + 8}{3} \\
+                    &amp;= \frac{16}{3} \\
+                    &amp;\approx 5.33
+\end{aligned}
+\]</span></p>
+<p>with <span class="math inline">\(p_{3yr}(4, 4, 8;\, \lambda_\text{best}) \approx 2.08\times 10^{-3}\)</span>.</p>
+<ul>
+<li>Using <code>p3v1</code> directly with a vector of <span class="math inline">\(\lambda\)</span> values fails because <code>p3v1</code> expects a single <span class="math inline">\(\lambda\)</span>, not a vector — <code>sapply</code> will fix this (shows up in tomorrow’s prep).</li>
+<li>For 2000–2005 data (using <code>p3v1</code> with 6 inputs), the best <span class="math inline">\(\lambda\)</span> is again the sample mean of the 6 observed storm counts. <em>(Look up the actual counts and compute the mean as a group.)</em></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="fl">0.1</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lambda, <span class="fu">sapply</span>(lambda, <span class="cf">function</span>(L) <span class="fu">p3v2</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">8</span>, L)), <span class="at">type =</span> <span class="st">"l"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> (<span class="dv">4</span> <span class="sc">+</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">8</span>) <span class="sc">/</span> <span class="dv">3</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <hr>
 <p><em>Source: <a href="https://byuimath.com/clarkc/all/119/index.php?n=Class.14">Class.14 on byuimath.com</a></em></p>
 
