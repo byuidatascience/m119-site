@@ -1,7 +1,7 @@
 [project]
-name = "canvas-toolbox"
+name = "m119-site"
 version = "0.1.0"
-description = "Add your description here"
+description = "Published Quarto course site for Math 119 — Applied Calculus for Data Analysis (BYU-Idaho)."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [

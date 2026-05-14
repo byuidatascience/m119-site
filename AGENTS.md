@@ -51,11 +51,9 @@ m119-site/
 ├── .claude/knowledge/                 # Project-specific knowledge files (load on demand; see Knowledge Index)
 ├── schedule_config.yml                # Schedule input consumed by tools/generate_schedule.py (mirror of m119-master)
 ├── schedule_visual.md                 # Rendered schedule preview
-├── pyproject.toml / uv.lock           # Python env spec (scaffold — not the active surface)
-└── README.md                          # ⚠️ This README is the upstream canvas-toolbox scaffold README,
-                                       #    NOT a project-specific README for m119-site. Do not treat its
-                                       #    content as authoritative for this repo. See AGENTS.md (this file)
-                                       #    for what m119-site actually is.
+├── pyproject.toml / uv.lock           # Python env spec (dependencies trimmed; canvas-toolbox residue cleaned)
+└── README.md                          # Project README — points readers at FACULTY.md for content edits
+                                       #    and at this AGENTS.md for non-trivial work / agent context.
 ```
 
 Note: `gh_issues_agent/`, `handoff/`, `canvas_toolbox/`, and `course_ref/` may appear at the root as untracked sibling clones (the `.gitignore` lists them). They are NOT part of m119-site — they're separate repos cloned alongside for convenience. When in doubt about a top-level directory, check whether it's tracked by git before treating it as part of this repo. The previous canvas-toolbox-derived `tools/` (15 unused scripts: `canvas_sync.py`, `pmwiki_to_quarto.py`, `course_mirror.py`, `after_class_*.py`, etc.) and `agents/` (20 v3.1 agent files) directories were removed in the cleanup that landed alongside the AGENTS.md adoption — see git history if you need to recover one.
@@ -72,7 +70,7 @@ The four no-override principles — **P-001 Read Before Claiming, P-003 Stop on 
 - **`site/_site/` is build output.** Do not commit it; do not hand-edit it. Let Quarto regenerate it.
 - **Schedule ownership lives upstream.** `schedule.qmd`, `schedule_config.yml`, `schedule_full.json`, and `_today.qmd` are produced by the m119-master pipeline; `tools/generate_schedule.py` here is a mirror copy that CI runs daily. The intended workflow: edit the schedule config in m119-master, sync downstream. If you edit `schedule_config.yml` or `tools/generate_schedule.py` here directly (because m119-master isn't open in front of you), **back-propagate the change to m119-master afterwards** so the two don't drift.
 - **No Sunday due dates.** BYU-Idaho hard rule — applies to anything date-bearing on this site (schedule entries, assignment references, "next class" pointers). If you see one, flag it.
-- **The root `README.md` is a scaffold, not the project README.** Don't pull content from it into agent context for "what is m119-site." Use this AGENTS.md, the `site/_quarto.yml` title, and the actual `.qmd` content under `site/`.
+- **For content edits, point faculty at [FACULTY.md](FACULTY.md); for non-trivial work, point at this AGENTS.md.** The root `README.md` is now a thin pointer to both — don't expand it into a project explainer.
 - **Render locally before pushing.** `cd site && quarto render` to validate. CI also renders, but catching errors locally is cheaper than red CI runs.
 
 ## Active Context
