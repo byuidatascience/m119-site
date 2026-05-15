@@ -20,7 +20,7 @@ Complete the four exercises below, and come ready to share with (or teach) your 
 | $x$ | $y = f(x)$ | slope of line through $(3,0)$ and $(x,y)$ |
 | --- | --- | --- |
 | 2 | -18 | slope of line through $(3,0)$ and $(2,-18)$ is $\frac{-18-0}{2-3} = 18$ |
-| 2.5 | -15.9375 | slope of line through $(3,0)$ and $(2,-15.9375)$ is $\frac{-15.9375-0}{2.5-3} = 31.875$ |
+| 2.5 | -15.9375 | slope of line through $(3,0)$ and $(2.5,-15.9375)$ is $\frac{-15.9375-0}{2.5-3} = 31.875$ |
 | 2.9 | -4.6719 | 46.719 |
 | 2.99 | -0.50561199 | 50.561199 |
 | 2.999 |  |  |
