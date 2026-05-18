@@ -22,6 +22,11 @@ handoff/
 # macOS
 .DS_Store
 
+# Quarto build output — re-rendered by CI and deployed to the gh-pages
+# branch; never served from main. See AGENTS.md ("site/_site/ is build output").
+site/_site/
+site/.quarto/
+
 # R
 .Rhistory
 .RData
