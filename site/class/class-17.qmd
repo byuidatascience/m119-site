@@ -60,7 +60,7 @@ Begin Knewton Alta assignment 2 -- Derivative Rules (Power Function, Sum/Differe
 - Complete Project 1
 - Begin Project 2 Task 1
     - Read the instructions
-    - Write down a formula for residuals $r_i = y_i - \hat{y_i} = y_i - f(t_i)$ for each general function listed in Project 2 Task 1 and points $ ( t_i, y_i ) $. Write your formula so you can clearly see how the parameters $a_1$ and $a_2$ contribute to the calculation of $r_i$ in each case. For example, given the model $f_1$ the formula for the residuals will be $r_i = y_i - f_1(t_i; a_1) = y_i - (100 + a_1t_i) = y_i - 100 - a_1t_i$.
+    - Write down a formula for residuals $r_i = y_i - \hat{y_i} = y_i - f(t_i)$ for each general function listed in Project 2 Task 1 and points $(t_i, y_i)$. Write your formula so you can clearly see how the parameters $a_1$ and $a_2$ contribute to the calculation of $r_i$ in each case. For example, given the model $f_1$ the formula for the residuals will be $r_i = y_i - f_1(t_i; a_1) = y_i - (100 + a_1t_i) = y_i - 100 - a_1t_i$.
 
 
 # During Class
@@ -75,7 +75,7 @@ Begin Knewton Alta assignment 2 -- Derivative Rules (Power Function, Sum/Differe
 ## Summary (What is a derivative?)
 - Many nonlinear functions look linear when we zoom in far enough at a location $x=a$.
 - We can make a guess for what the **local rate of change** (or slope) of a function is at $x=a$ by constructing a table and looking at what happens when the $x$-values get close to the location of interest ($x=a$).
-- With the slope (or a guess for the slope) and the point $ (a,f(a)) $ we can write the equation the **linearization** (or **local linear approximation** or **"tangent line"**), the line that the function looks like when we zoom in. 
+- With the slope (or a guess for the slope) and the point $(a, f(a))$ we can write the equation the **linearization** (or **local linear approximation** or **"tangent line"**), the line that the function looks like when we zoom in. 
 - The **derivative** of $f$ at a point ($x=a$) is the **local rate of change** of $f$ at that location.
     - The derivative of $f$ at $x=a$ is the slope of the line that approximates $f$ at $x=a$.
     - The derivative of $f$ at $x=a$ is the slope of the local linear approximation of $f$ at $x=a$.

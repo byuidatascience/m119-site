@@ -46,7 +46,7 @@ Compute $\frac{df}{dx}$ for $f(x) = 5x^8+3e^x-7\ln x-4\sqrt{x}+\frac{5}{x^3}$.
 <details>
 <summary>Answer</summary>
 
-$ f'(x) = 40x^7 + 3e^x -\frac{7}{x} - \frac{2}{\sqrt{x}} - \frac{15}{x^4} $
+$$f'(x) = 40x^7 + 3e^x - \frac{7}{x} - \frac{2}{\sqrt{x}} - \frac{15}{x^4}$$
 
 </details>
 
@@ -56,7 +56,7 @@ Compute $g'(x)$ for $g(x) = (e^x)(x^3)$.
 <details>
 <summary>Answer</summary>
 
-$ \frac{dg}{dx} = 3x^2e^x+x^3e^x $
+$$\frac{dg}{dx} = 3x^2 e^x + x^3 e^x$$
 
 </details>
 
@@ -66,7 +66,7 @@ Compute $h'(x)$ for $h(x) = \dfrac{3x^2}{2\ln x}$.
 <details>
 <summary>Answer</summary>
 
-$ D_xh(x) = \frac{3x}{\ln x} - \frac{3x}{2(\ln x)^2}$
+$$D_x h(x) = \frac{3x}{\ln x} - \frac{3x}{2(\ln x)^2}$$
 
 </details>
 
@@ -80,7 +80,13 @@ Assume the residuals (errors) are independent and normally distributed (with mea
 which means we're assuming the probability model for the residuals is $p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}$. 
 Match each function below with a term on the right.
 
-$r_i(m, b; x_i, t_i) = t_i - f(x_i; m,b) = t_i - (mx_i+b) = t_i - mx_i - b$
+$$
+\begin{aligned}
+r_i(m, b; x_i, t_i) &= t_i - f(x_i; m, b) \\
+                    &= t_i - (mx_i + b) \\
+                    &= t_i - mx_i - b
+\end{aligned}
+$$
 
 Likelihood function
 
@@ -101,8 +107,15 @@ Now simplify the loglikelihood function using properties of logs and sums.
 <details>
 <summary>Answers</summary>
 
-First we write a formula for the residuals (or errors) to obtain 
-$$r_i(m, b; x_i, t_i) = t_i - f(x_i; m,b) = t_i - (mx_i+b) = t_i - mx_i - b$$
+First we write a formula for the residuals (or errors) to obtain
+
+$$
+\begin{aligned}
+r_i(m, b; x_i, t_i) &= t_i - f(x_i; m, b) \\
+                    &= t_i - (mx_i + b) \\
+                    &= t_i - mx_i - b
+\end{aligned}
+$$
 
 Because the errors are independent we can multiply the probability models to find the joint probability model as 
 $$J(x_i,t_i;m,b) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}.$$ 
