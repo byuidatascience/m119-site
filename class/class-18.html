@@ -500,7 +500,7 @@ window.Quarto = {
 <summary>
 Answer
 </summary>
-<p>$ f’(x) = 40x^7 + 3e^x - - - $</p>
+<p><span class="math display">\[f'(x) = 40x^7 + 3e^x - \frac{7}{x} - \frac{2}{\sqrt{x}} - \frac{15}{x^4}\]</span></p>
 </details>
 <ol start="2" type="1">
 <li>Compute <span class="math inline">\(g'(x)\)</span> for <span class="math inline">\(g(x) = (e^x)(x^3)\)</span>.</li>
@@ -509,7 +509,7 @@ Answer
 <summary>
 Answer
 </summary>
-<p>$ = 3x<sup>2e</sup>x+x<sup>3e</sup>x $</p>
+<p><span class="math display">\[\frac{dg}{dx} = 3x^2 e^x + x^3 e^x\]</span></p>
 </details>
 <ol start="3" type="1">
 <li>Compute <span class="math inline">\(h'(x)\)</span> for <span class="math inline">\(h(x) = \dfrac{3x^2}{2\ln x}\)</span>.</li>
@@ -518,7 +518,7 @@ Answer
 <summary>
 Answer
 </summary>
-<p>$ D_xh(x) = - $</p>
+<p><span class="math display">\[D_x h(x) = \frac{3x}{\ln x} - \frac{3x}{2(\ln x)^2}\]</span></p>
 </details>
 </section>
 <section id="more-likelihood-practice" class="level2">
@@ -528,7 +528,13 @@ Answer
 <li>Write the formula for the residuals.</li>
 </ul>
 <p>Assume the residuals (errors) are independent and normally distributed (with mean of 0 and standard deviation of 1), which means we’re assuming the probability model for the residuals is <span class="math inline">\(p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}\)</span>. Match each function below with a term on the right.</p>
-<p><span class="math inline">\(r_i(m, b; x_i, t_i) = t_i - f(x_i; m,b) = t_i - (mx_i+b) = t_i - mx_i - b\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+r_i(m, b; x_i, t_i) &amp;= t_i - f(x_i; m, b) \\
+                    &amp;= t_i - (mx_i + b) \\
+                    &amp;= t_i - mx_i - b
+\end{aligned}
+\]</span></p>
 <p>Likelihood function</p>
 <p><span class="math inline">\(J(x_i,t_i;m,b) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}\)</span></p>
 <p><span class="math inline">\(i\)</span>th residual</p>
@@ -541,7 +547,14 @@ Answer
 <summary>
 Answers
 </summary>
-<p>First we write a formula for the residuals (or errors) to obtain <span class="math display">\[r_i(m, b; x_i, t_i) = t_i - f(x_i; m,b) = t_i - (mx_i+b) = t_i - mx_i - b\]</span></p>
+<p>First we write a formula for the residuals (or errors) to obtain</p>
+<p><span class="math display">\[
+\begin{aligned}
+r_i(m, b; x_i, t_i) &amp;= t_i - f(x_i; m, b) \\
+                    &amp;= t_i - (mx_i + b) \\
+                    &amp;= t_i - mx_i - b
+\end{aligned}
+\]</span></p>
 <p>Because the errors are independent we can multiply the probability models to find the joint probability model as <span class="math display">\[J(x_i,t_i;m,b) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}.\]</span></p>
 <p>The likelihood function (interchange the role of variables and parameters) is then <span class="math display">\[L(m,b; x_i,t_i) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}.\]</span></p>
 <p>The natural log of the likelihood function gives the loglikelihood function as <span class="math display">\[\ell(m,b; x_i,t_i) = \ln\left(\prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}\right).\]</span></p>
