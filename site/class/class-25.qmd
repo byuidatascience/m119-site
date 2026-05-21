@@ -89,7 +89,13 @@ plot(a1,Y,type='l')
 <details>
 <summary>Solution</summary>
 
-The base has area $x^2$. Letting $h$ be the height of the box, the volume of the box is $V(x,h) = x^2h$.  Each the sides has area $4xh$, which means the total area of 6 must satistify $6 = x^2+4xh$. From here we can get $h$ by itself as $ h =\frac{6-x^2}{4x}$.  This means the volume is $$V(x) = x^2h = x^2 \frac{6-x^2}{4x} = \frac{1}{4}x(6-x^2).$$
+The base has area $x^2$. Letting $h$ be the height of the box, the volume of the box is $V(x,h) = x^2h$.  Each the sides has area $4xh$, which means the total area of 6 must satistify $6 = x^2+4xh$. From here we can get $h$ by itself as $h =\frac{6-x^2}{4x}$.  This means the volume is $$
+\begin{aligned}
+V(x) &= x^2 h \\
+     &= x^2 \, \frac{6 - x^2}{4x} \\
+     &= \frac{1}{4} x (6 - x^2).
+\end{aligned}
+$$
 
 </details>
 
@@ -109,7 +115,7 @@ You may need some of definitions, theorem, or tests below as you complete the ne
 <details>
 <summary>Intermediate Value Theorem (IVT)</summary>
 
-If $f(x)$ is a continuous function on a closed interval $ [a, b] $, where $f(a) \neq f(b)$, and $y_0$ is any $y$-value strictly between $f(a)$ and $f(b)$, then $y_0 = f(x_0)$ for some $x$-value, $x_0$, in $ [a, b] $.
+If $f(x)$ is a continuous function on a closed interval $[a, b]$, where $f(a) \neq f(b)$, and $y_0$ is any $y$-value strictly between $f(a)$ and $f(b)$, then $y_0 = f(x_0)$ for some $x$-value, $x_0$, in $[a, b]$.
 
 Note: While there is a rigorous mathematical definition for what it means to be a continuous function, for our purposes the following concept with suffice, a function is continuous on an interval if the graph of that function can be traced with a pencil without lifting the pencil from the page.
 
@@ -118,14 +124,14 @@ Note: While there is a rigorous mathematical definition for what it means to be 
 <details>
 <summary>Rolle's Theorem</summary>
 
-Let $f$ be a continuous function over the closed interval $ [ a, b ] $ and differentiable over the open interval $ ( a, b ) $ such that $f(a) = f(b)$. Then there exists at least one $ c \in ( a, b ) $ such that $f'(c) = 0$.
+Let $f$ be a continuous function over the closed interval $[ a, b ]$ and differentiable over the open interval $( a, b )$ such that $f(a) = f(b)$. Then there exists at least one $c \in ( a, b )$ such that $f'(c) = 0$.
 
 </details>
 
 <details>
 <summary>Extreme Value Theorem</summary>
 
-If $f$ is a continuous function over the closed, bounded interval $ [a, b] $, then there is a point in $ [a, b] $ at which $f$ has an absolute maximum over $ [a, b] $ and there is a point in $ [a, b] $ at which $f$ has an absolute minimum over $ [a, b] $.
+If $f$ is a continuous function over the closed, bounded interval $[a, b]$, then there is a point in $[a, b]$ at which $f$ has an absolute maximum over $[a, b]$ and there is a point in $[a, b]$ at which $f$ has an absolute minimum over $[a, b]$.
 
 </details>
 
@@ -235,7 +241,7 @@ Number your graphs, keep them small-ish, and try to fill your board with example
 1. $f$ so that $f'=0$ for all $x$.
 
 1. $f$ so that $f'=0$ and $f''>0$ at $x=-2$.
-1. $f$ is decreasing and concave down on the interval $ (-3,5) $.
+1. $f$ is decreasing and concave down on the interval $(-3,5)$.
 
 1. $f$ so that $f'$ has at least one change of sign and is always defined.
 1. $f$ so that $f'=0$ and $f''<0$ at $x=1$.

@@ -17,19 +17,19 @@ An **antiderivative** is a function that reverses what the derivative did, the r
 Drawing on your knowledge of derivatives, for each expression below, please "undo" the derivative. 
 In other words answer the question, "What function did we take the derivative of to get this function?"
 
-1. $ x^7 $
+1. $x^7$
 
-1. $ x^{-2} $
-1. $ x^{\frac{5}{4}} $
+1. $x^{-2}$
+1. $x^{\frac{5}{4}}$
 
-1. $ x^{-\frac{1}{2}} $
-1. $ \frac{1}{4} $
+1. $x^{-\frac{1}{2}}$
+1. $\frac{1}{4}$
 
-1. $ \frac{1}{3} x $
-1. $ e^x - 3 x $ 
+1. $\frac{1}{3} x$
+1. $e^x - 3 x$ 
 
-1. $ \frac{1}{x} $ given $x>0$
-1. $ \frac{1}{x} $ (*What's the domain in this case?*)
+1. $\frac{1}{x}$ given $x>0$
+1. $\frac{1}{x}$ (*What's the domain in this case?*)
 
 ### (2) CDFs and PDFs
 We've seen that the PDF of a random variable $X$ is the derivative of the CDF of that random variable, which we can write symbolically as $f(x) = F'(x)$. 
@@ -40,7 +40,7 @@ For each function below, do the following.
 (a) Verify that the function is a PDF. Write down the definite integral you will need to compute. Use Mathematica to calculate Definite Integral.  
 (b) Use what you know about derivatives to think backwards and identify a function whose derivative is $f(x)$. Can you identify another function whose derivative is also $f(x)$? 
 (c) Without using software, guess which of the derivatives of $f(x)$ is the CDF.
-(d) Check your guess by computing the CDF with Mathematica. Remember the CDF is $ F(x) = P(X \leq x) = \int_{-\infty}^x f(t) dt$.
+(d) Check your guess by computing the CDF with Mathematica. Remember the CDF is $F(x) = P(X \leq x) = \int_{-\infty}^x f(t) dt$.
 
 1. $f(x) = \frac{1}{5}$ for $0 \leq x \leq 5$ and 0 otherwise.
 
@@ -106,12 +106,12 @@ In other words answer the question, "What function did we take the derivative of
 1. $x^{-1}$
 
 ### Fundamental Theorem of Calculus
-- We have computed probabilities with the pdf, $ P(a \leq X \leq b) = \int_a^b f(x) dx $.
-- We have computed probabilities with the cdf, $ P(a \leq X \leq b) = F(b) - F(a) $.
-- Putting these together, we see $ \int_a^b f(x) dx = F(b) - F(a) $ when the $f(x)$ is the pdf of a random variable and $F(x)$ is the cdf of a random variable.
+- We have computed probabilities with the pdf, $P(a \leq X \leq b) = \int_a^b f(x) dx$.
+- We have computed probabilities with the cdf, $P(a \leq X \leq b) = F(b) - F(a)$.
+- Putting these together, we see $\int_a^b f(x) dx = F(b) - F(a)$ when the $f(x)$ is the pdf of a random variable and $F(x)$ is the cdf of a random variable.
 - We know the probability density function of a random variable is the derivative of the cumulative distribution function of that random variable.
 
-Combining the above facts, we see that $ \int_a^b f(x) dx = F(b) - F(a) $ provided $F'(x) = f(x)$ (so $F$ is an antiderivative of $f$). All our computations have assumed that $f(x)$ was a pdf for a random variable. What if $f$ is not a pdf? Let's verify this rule holds for a few functions. 
+Combining the above facts, we see that $\int_a^b f(x) dx = F(b) - F(a)$ provided $F'(x) = f(x)$ (so $F$ is an antiderivative of $f$). All our computations have assumed that $f(x)$ was a pdf for a random variable. What if $f$ is not a pdf? Let's verify this rule holds for a few functions. 
 
 Compute each definite integral in 2 ways, namely (1) use Mathematica and then (2) find an antiderivative $G$ of the integrand $g$ and then evaluate $G(b)-G(a)$. Show your work for the second part on the chalkboard. 
 

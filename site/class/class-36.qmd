@@ -35,7 +35,7 @@ Integrate[2 x, {x, 0, 4}]
 </details>
 
 ### (2) Simulation and Probability
-1.  Use the following code to plot the function $ f_1(x) = \frac{1}{\sqrt{0.02\pi}}e^{-\frac{1}{2}\left(\frac{x-4}{0.1}\right)^2} $. That is the Normal probability model (or distribution) with the parameters $ \mu = 4 $ and $ \sigma = 0.1 $.
+1.  Use the following code to plot the function $f_1(x) = \frac{1}{\sqrt{0.02\pi}}e^{-\frac{1}{2}\left(\frac{x-4}{0.1}\right)^2}$. That is the Normal probability model (or distribution) with the parameters $\mu = 4$ and $\sigma = 0.1$.
 
 ```r
 f1 <- function(x,mu=0,sigma=1){(1/sqrt(2*pi*sigma^2))*exp(-0.5*((x-mu)/sigma)^2)}
@@ -46,7 +46,7 @@ y <- f1(x,4,0.1)
 plot(x,y,type='l')
 ```
 
-1.  Use the following code to simulate a sample of 25000 random measurements from the Normal probability model with the parameters $ \mu = 4 $ and $ \sigma = 0.1 $ and plot the density histogram of this sample. This code uses the set.seed() command in R to set the seed so our simulated sample is reproducible (we will all have the exact same random sample of 25000 measurements. We will use the seed 123.
+1.  Use the following code to simulate a sample of 25000 random measurements from the Normal probability model with the parameters $\mu = 4$ and $\sigma = 0.1$ and plot the density histogram of this sample. This code uses the set.seed() command in R to set the seed so our simulated sample is reproducible (we will all have the exact same random sample of 25000 measurements. We will use the seed 123.
 
 ```r
 set.seed(123)
@@ -183,7 +183,7 @@ $f(x) =
 0 & \text{otherwise}.
 \end{cases}$
 
-- Use the following code to plot the function $ f_0(x) = \frac{1}{3} $ for $ -1 < x < 2 $ and 0 otherwise. This is the uniform probability model (or distribution) with parameters $ a = -1 $ and $ b = 2 $. 
+- Use the following code to plot the function $f_0(x) = \frac{1}{3}$ for $-1 < x < 2$ and 0 otherwise. This is the uniform probability model (or distribution) with parameters $a = -1$ and $b = 2$. 
 
 ```r
 f0 <- function(x,a=0,b=1){(1/(b-a))+0*x}
@@ -204,9 +204,9 @@ tmp <- runif(25000,a,b)
 <details>
 <summary>Answers</summary>
 
-- The function $f$ is nonnegative (or $ f(x) \geq 0 $) but the area under the function $ f $ is $ A = 2(6) = 12 $ which is not 1. So $ f $ is not a probability density function.
+- The function $f$ is nonnegative (or $f(x) \geq 0$) but the area under the function $f$ is $A = 2(6) = 12$ which is not 1. So $f$ is not a probability density function.
 
-- The function $f$ is nonnegative (or $ f(x) \geq 0 $) as long as $ k > 0 $ (and we get to pick $k$). If $ k = \frac{1}{12} $ then the area under the function $ f $ is $ A = (\frac{2}{12})(6) = 1 $. Since $ f $ satisfies the two properties of a pdf it is a pdf.
+- The function $f$ is nonnegative (or $f(x) \geq 0$) as long as $k > 0$ (and we get to pick $k$). If $k = \frac{1}{12}$ then the area under the function $f$ is $A = (\frac{2}{12})(6) = 1$. Since $f$ satisfies the two properties of a pdf it is a pdf.
 
 - The total number of measurements in our sample less than or equal to 1.2 is 18327. Comparing this to the number of measurements in our sample we find the probability is 18327/25000 = 0.73308.
 
@@ -254,7 +254,7 @@ The **probability density function**, $f(x)$ of a *continuous* random variable $
 <details>
 <summary>Riemann sum for $f$</summary>
 
-Let $f(x)$ be defined on $a \leq x \leq b$. Let $n$ be a positive integer, and divide the interval $ [ a, b ] $ into $n$ subintervals of equal width. From each subinterval choose a point $x_i$. We call
+Let $f(x)$ be defined on $a \leq x \leq b$. Let $n$ be a positive integer, and divide the interval $[ a, b ]$ into $n$ subintervals of equal width. From each subinterval choose a point $x_i$. We call
 
 $\sum_{i=1}^{n} f(x_i)\Delta x$
 
@@ -348,7 +348,7 @@ For a function $f(x)$ defined on $a \leq x \leq b$, **the definite integral of $
 
 $\int_a^b f(x) dx = \lim_{n\to \infty }\sum_{i=1}^nf(x_i)\Delta x$,
 
-provided the limit exists. If the limit exists, we say that $f$ is integrable on $ [ a, b ] $.
+provided the limit exists. If the limit exists, we say that $f$ is integrable on $[ a, b ]$.
 
 - $f(x)$ is the integrand
 - $x$ is the variable of integration
@@ -399,7 +399,7 @@ sum(xi*Ai)/sum(Ai)
 
 </details>
 
-- The limit of this Riemann Sum as $n$ goes to infinite is a definite integral. Write down the definite integral that is equal to $\ds \lim_{n \rightarrow \infty} \sum_{i=1}^{n} \frac{1}{2}(x-1)x \Delta x $.
+- The limit of this Riemann Sum as $n$ goes to infinite is a definite integral. Write down the definite integral that is equal to $\ds \lim_{n \rightarrow \infty} \sum_{i=1}^{n} \frac{1}{2}(x-1)x \Delta x$.
 
 - Approximate the definite integral above by increasing the value of $n$ from 25 to 50, then 100, etc., until you have a good estimate for limit. 
 
@@ -480,7 +480,7 @@ f <- function(x){5-x}
 draw_target(f,2,5)
 ```
 
-- Consider the target with top defined by $ f $ (given below). When a dart falls on the point $( x , y )$, we'll record just the $x$-coordinate and let $X$ represent this random variable.
+- Consider the target with top defined by $f$ (given below). When a dart falls on the point $( x , y )$, we'll record just the $x$-coordinate and let $X$ represent this random variable.
 $f(x) = 
 \begin{cases}
 kx - k & \quad 1 \leq x \leq 3 \\ \\

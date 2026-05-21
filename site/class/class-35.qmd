@@ -26,7 +26,7 @@ For this Unit, the reading as well as many practice exercises appear in the docu
 <details>
 <summary>Solutions for 3</summary>
 
-- The area under the function $g$ is $ A = \frac{1}{2}(4)(8) = 16 $, which means we should pick $ k = \frac{1}{\text{Area}} = \frac{1}{16} $ so that the area under the function $ f $ is 1. This means $ f(x) = kg(x) = \frac{1}{16}(2x) = \frac{1}{8}x $ for $ 0 \leq x \leq 4 $.
+- The area under the function $g$ is $A = \frac{1}{2}(4)(8) = 16$, which means we should pick $k = \frac{1}{\text{Area}} = \frac{1}{16}$ so that the area under the function $f$ is 1. This means $f(x) = kg(x) = \frac{1}{16}(2x) = \frac{1}{8}x$ for $0 \leq x \leq 4$.
 
 - The cdf of $X$ will be the following function.
 $F(x) = 
@@ -79,7 +79,7 @@ We're learning new vocabulary in this unit.  What we need is some repeated pract
 1. Give the normalized target function by finding the constant $k$ so that the area under $f(x) = kg(x)$ is 1. 
 1. Compute $P(X\leq 3)$. 
 
-1. Calculate the expected value of $X$, so compute $E[X] $. 
+1. Calculate the expected value of $X$, so compute $E[X]$. 
 1. Give a formula for $F(x)$, the cumulative distribution function.  
 
 1. Compute $F'(x)$. 
@@ -106,7 +106,7 @@ Regardless of which option we choose, we must decide how many rectangles to use 
 1. To give a formula for $F(x)$, we need to compute $P(X\leq x)$. We can do this by calculating ratios of areas using either $f$ or $g$. Using $g$, note that the area of a rectangle from 0 to $x$ (for $0\leq x\leq 2$) is $A=4x$.  Dividing by the total area of 11 gives $P(X\leq x) = \frac{4x}{11}$ for $0\leq x\leq 2$.  For $2<x\leq 5$, we have a total area of $A = 8+(x-2)*1 = x+6$, which means $P(X\leq x) = \frac{x+6}{11}$ for $2< x\leq 5$.  This gives $$F(x) = \begin{cases}\frac{4x}{11}&0\leq x\leq 2\\\frac{x+6}{11}&2\leq x\leq 5\\0&x<0\\1&x>5\end{cases}.$$ Notice that plugging in 5 does gives us a probability of 1, as it should. 
 
 1. The derivative of $F$, where it is nonzero and defined, is $$\ds F'(x) = \begin{cases}\frac{4}{11}&0< x< 2\\\frac{1}{11}&2< x< 5 \end{cases}$$ 
-Notice again $ F'(x) = f(x) $.
+Notice again $F'(x) = f(x)$.
 
 </details>
 
@@ -219,13 +219,13 @@ We're ready to apply what we're learning now to any function.
 
 - Find a constant $k$ so that the area under $f(x) = k g(x)$ is one (so find the normalized target function). 
 - Compute $P(X\leq 3)$ (you'll need to compute two areas, and then divide them). 
-- Calculate $E[X] $.
+- Calculate $E[X]$.
 
 4. Consider the target function $\ds g(x) = \begin{cases}5x e^{-x}&2\leq x\leq 8\\0 &\text{otherwise} \end{cases}$ and corresponding random variable $X$ obtained by throwing darts at the target and recording the $x$-coordinate. 
 
 - Find a constant $k$ so that the area under $f(x) = k g(x)$ is one (so find the normalized target function). 
 - Compute $P(X\leq 3)$ (you'll need to compute two areas, and then divide them). 
-- Calculate $E[X] $.
+- Calculate $E[X]$.
 
 ## Discussion
 We'll have a wrap up discussion.

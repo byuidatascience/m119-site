@@ -303,9 +303,9 @@ The probability mass function (pmf) describing the random variable $R$ is given 
 <details>
 <summary>Answers</summary>
 
-1. The domain of $f$ is the set $ \{ 1, 2, 3, 4, 5, 6 \} $, so the collection of possible outcomes of the random variable $R$. 
+1. The domain of $f$ is the set $\{ 1, 2, 3, 4, 5, 6 \}$, so the collection of possible outcomes of the random variable $R$. 
 
-1. The range of $f$ is the set $ \{ \frac{1}{6} \} $.
+1. The range of $f$ is the set $\{ \frac{1}{6} \}$.
     1.  $P(R=1) = \frac{1}{6}$
     1. $P(R=2) = \frac{1}{6}$
     1. $P(R=9) = 0$

@@ -25,7 +25,13 @@ For our next Unit, the reading as well as many practice exercises appear in the 
 
 The total mass is $m = 3+5+7=15$. 
 We compute 
-$$\bar x = (2)\frac{3}{15} + (-6)\frac{5}{15} + (4)\frac{7}{15} = \frac{(2)3+(-6)5+(4)7}{15} = \frac{4}{15}.$$
+$$
+\begin{aligned}
+\bar x &= (2)\frac{3}{15} + (-6)\frac{5}{15} + (4)\frac{7}{15} \\
+       &= \frac{(2)3 + (-6)5 + (4)7}{15} \\
+       &= \frac{4}{15}.
+\end{aligned}
+$$
 
 </details>
 
@@ -310,7 +316,7 @@ cumsum(p)
 ### Exercises 1.6 - Avoid Gambling
 - <https://chaz-clark.github.io/M119/Projects/probability.html#Exercises13>
 
-Here’s a simple gambling game we’ll explore. You pay 1 dollar to play. Your roll two dice and multiply the result together. If you roll a product of 20 or more, you get \$4 (your dollar back, plus 3 more). Otherwise, you get nothing (you lost a dollar). There are two outcomes, namely you lose a buck, or you gain 3 bucks. We’ll let $X$ be the random variable with outcomes of −1 and 3 resulting from this game.
+Here’s a simple gambling game we’ll explore. You pay 1 dollar to play. Your roll two dice and multiply the result together. If you roll a product of 20 or more, you get \$4 (your dollar back, plus 3 more). Otherwise, you get nothing (you lost a dollar). There are two outcomes, namely you lose a buck, or you gain 3 bucks. We’ll let$X$ be the random variable with outcomes of −1 and 3 resulting from this game.
 
 $$f(x) = 
 \begin{cases}

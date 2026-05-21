@@ -45,7 +45,7 @@ ContourPlot[y == Sqrt[16 - (x - 4)^2], {x, -1, 9}, {y, -5, 5}]
 ```
 
     - What curve is being plotted here?
-    - What do you notice about the function $f(x) = \sqrt{16-(x-4)^2}$ and the curve $ (x-4)^2 + y^2 = 16 $? 
+    - What do you notice about the function $f(x) = \sqrt{16-(x-4)^2}$ and the curve $(x-4)^2 + y^2 = 16$? 
 
 - Now let's use our observations. Consider the integral, $\displaystyle\int_0^{8} \sqrt{16-(x-4)^2} dx$. 
     - What is the shape of the integrand, $f(x) = \sqrt{16-(x-4)^2}$? 
@@ -222,7 +222,7 @@ For a function $f(x)$ defined on $a \leq x \leq b$, **the definite integral of $
 
 $\int_a^b f(x) dx = \lim_{n\to \infty }\sum_{i=1}^nf(x_i)\Delta x$,
 
-provided the limit exists. If the limit exists, we say that $f$ is integrable on $ [ a, b ] $.
+provided the limit exists. If the limit exists, we say that $f$ is integrable on $[ a, b ]$.
 
 - $f(x)$ is the integrand
 - $x$ is the variable of integration

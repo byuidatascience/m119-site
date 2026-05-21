@@ -37,7 +37,7 @@ Watch a video from mathispower4u about the [Chain Rule (video 2)](https://www.yo
 ## Brain Gains
 
 1. 
-Compute $ D_xQ $ for $ Q(x) = \sum_{k=1}^{21} kx^k $.
+Compute $D_xQ$ for $Q(x) = \sum_{k=1}^{21} kx^k$.
 
 <details>
 <summary>Solution</summary>
@@ -62,7 +62,13 @@ Compute the derivative of $f(x) = \sqrt{4e^x+7x^2}$.
 We use the chain rule.  
 
 We can write $f(x) = g(h(x))$ where $g(x) = \sqrt{x} = x^{1/2}$ and $h(x) = 4e^x+7x^2$.  We then have $g'(x) = \frac{1}{2}x^{-1/2}$ and $h'(x) = 4e^x+14x$.  The chain rule then gives
-$$f'(x) = g'(h(x))h'(x) = \frac{1}{2}(h(x))^{-1/2}(4e^x+14x) = \frac{1}{2}(4e^x+7x^2)^{-1/2}(4e^x+14x)$$.
+$$
+\begin{aligned}
+f'(x) &= g'(h(x))h'(x) \\
+      &= \frac{1}{2}(h(x))^{-1/2}(4e^x + 14x) \\
+      &= \frac{1}{2}(4e^x + 7x^2)^{-1/2}(4e^x + 14x)
+\end{aligned}
+$$.
 
 </details>
  
@@ -234,7 +240,7 @@ Assume the residuals (errors) are independent and normally distributed (with mea
 
 Note: This tells us the probability model we will be using and it tells us we can multiply the probabilities to get the likelihood function.
 
-- The probability model we are using is $ p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}} $.
+- The probability model we are using is $p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}$.
 - Write the likelihood function for the residuals in this situation.
 - Write the loglikelihood function for the residuals in this situation.
 
@@ -242,7 +248,13 @@ Note: This tells us the probability model we will be using and it tells us we ca
 <summary>Answers</summary>
 
 First we write a formula for the residuals (or errors) to obtain
-$$r_i(A, b, k; t_i, c_i) = c_i - f(t_i; A, b, k) = c_i - (Ae^{bt_i} + k) = c_i - Ae^{bt_i} - k.$$
+$$
+\begin{aligned}
+r_i(A, b, k; t_i, c_i) &= c_i - f(t_i; A, b, k) \\
+                       &= c_i - (Ae^{bt_i} + k) \\
+                       &= c_i - Ae^{bt_i} - k.
+\end{aligned}
+$$
 
 Because we are told the errors (or residuals) are normally distributed (with mean of 0 and standard deviation of 1), the probability model we will use is
 $$p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}.$$

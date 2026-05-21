@@ -32,16 +32,16 @@ An **antiderivative** is a function that reverses what the derivative did, the r
 Drawing on your knowledge of derivatives, for each expression below, please "undo" the derivative. 
 In other words answer the question, "What function did we take the derivative of to get this function?"
 
-1. $ 3x^2 $
+1. $3x^2$
 
-1. $ x^4 $
-1. $ 5 $
+1. $x^4$
+1. $5$
 
-1. $ \frac{1}{3} x $
-1. $ 3 - \frac{1}{4} x $ 
+1. $\frac{1}{3} x$
+1. $3 - \frac{1}{4} x$ 
 
 1. $e^x$
-1. $ x^{\frac{5}{4}} $
+1. $x^{\frac{5}{4}}$
 
 ### (3) Continue working on Project 3
 - Use your fitted models to calculate the required percentiles.
@@ -222,9 +222,9 @@ Use Mathematica to perform any definite integrals.
 
 ## Discussion
 ### Antiderivatives, Indefinite Integrals, Accumulation Functions
-Consider the pdf $f(x) = e^{-x} $ for $x \geq 0$ and zero otherwise.
+Consider the pdf $f(x) = e^{-x}$ for $x \geq 0$ and zero otherwise.
 
-- We can verify that $F_1(x) = -e^{-x}$, $F_2(x) = 5 - e^{-x} $, and $F_3(x) = -e^{-x} - 2$ are all antiderivatives of $f$. Are any of these function the CDF of the random variable $X$?
+- We can verify that $F_1(x) = -e^{-x}$, $F_2(x) = 5 - e^{-x}$, and $F_3(x) = -e^{-x} - 2$ are all antiderivatives of $f$. Are any of these function the CDF of the random variable $X$?
 - Find the cdf of $X$.
     - We know $F(x) = P(X \leq x) = \int_{-\infty}^x f(t)dt$.
 $$F(x) = \int_{-\infty}^x f(t)dt = 

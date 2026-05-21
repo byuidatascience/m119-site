@@ -135,7 +135,12 @@ $$S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i
 The deterministic function is $f_5(x; a) = ae^{-x}$.
 The objective function is $$S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2 = \sum_{i=1}^{n}(y_i - ae^{-x_i})^2 .$$
 We then have 
-$$\frac{dS}{da} = \sum_{i=1}^{n}2(y_i - ae^{-x_i})^1(-e^{-x_i}) = -2\sum_{i=1}^{n}(y_ie^{-x_i}) + 2a\sum_{i=1}^n (e^{-x_i})^2$$
+$$
+\begin{aligned}
+\frac{dS}{da} &= \sum_{i=1}^{n} 2(y_i - ae^{-x_i}) (-e^{-x_i}) \\
+              &= -2 \sum_{i=1}^{n} (y_i e^{-x_i}) + 2a \sum_{i=1}^{n} (e^{-x_i})^2
+\end{aligned}
+$$
 and
 $$\frac{d^2 S}{da^2} = 2\sum_{i=1}^n (e^{-x_i})^2.$$ 
 The critical points occur when $-2\sum_{i=1}^{n}(y_ie^{-x_i}) + 2a\sum_{i=1}^n (e^{-x_i})^2=0$, which means 

@@ -18,18 +18,18 @@ An **antiderivative** is a function that reverses what the derivative did, the r
 Drawing on your knowledge of derivatives, for each expression below, please "undo" the derivative. 
 In other words answer the question, "What function did we take the derivative of to get this function?"
 
-1. $ 6x^5 $
+1. $6x^5$
 
-1. $ x^3 $
-1. $ -2 $
+1. $x^3$
+1. $-2$
 
-1. $ \frac{1}{5} x $
-1. $ 1 - \frac{1}{2} x $ 
+1. $\frac{1}{5} x$
+1. $1 - \frac{1}{2} x$ 
 
 1. $e^x$
 1. $e^{2x}$
 
-1. $ x^{\frac{1}{4}} $
+1. $x^{\frac{1}{4}}$
 
 <a id="PP"></a>
 
@@ -71,9 +71,9 @@ Integrate[3x,x] in Mathematica to check your answer.
 1. Compute $\int x^2-4x dx$. Use Mathematica to check your answer.
 
 1. Compute $\int 5+\frac{1}{x^2} dx$. Use Mathematica to check your answer.
-1. Consider the pdf $f(x) = e^{-x} $ for $x \geq 0$ and zero otherwise.
+1. Consider the pdf $f(x) = e^{-x}$ for $x \geq 0$ and zero otherwise.
 
-- We can verify that $F_1(x) = -e^{-x}$, $F_2(x) = 5 - e^{-x} $, and $F_3(x) = -e^{-x} - 2$ are all antiderivatives of $f$. Are any of these function the CDF of the random variable $X$?
+- We can verify that $F_1(x) = -e^{-x}$, $F_2(x) = 5 - e^{-x}$, and $F_3(x) = -e^{-x} - 2$ are all antiderivatives of $f$. Are any of these function the CDF of the random variable $X$?
     - We know that $F(x)$ is from the family of functions $\int e^{-x}dx$. How do we pick which one?
       - We need to identify the constant. We know $F(0) = 0$.
 

@@ -461,7 +461,7 @@ What do you notice about the local linear approximation for these functions at t
     - Some notation people use for the derivative function, or the derivative of $f$, include: $f'(x)$, $\frac{df}{dx}$, $D_xf$, and $\frac{d}{dx}(f(x))$. We'll use each of these notations throughout the semester.
 
 ### An Algebra Approach
-We obtained the rule above by examining a graph, making a table, and then summarizing our work. Consider $ f(x) = x^2 $ and let's explore an algebraic way to obtain the same result.  We can compute the slope from $(x,f(x))$ to $(x+dx,f(x+dx))$ by computing
+We obtained the rule above by examining a graph, making a table, and then summarizing our work. Consider $f(x) = x^2$ and let's explore an algebraic way to obtain the same result.  We can compute the slope from $(x,f(x))$ to $(x+dx,f(x+dx))$ by computing
 $$\begin{align*}
 \frac{\text{change in y}}{\text{change in x}}
 &=\frac{f(x+dx)-f(x)}{(x+dx)-(x)}\\

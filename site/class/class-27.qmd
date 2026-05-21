@@ -351,8 +351,8 @@ The product of two numbers $n$ and $m$ is 100, and $n$ must be positive. What is
 - We see $\diff{S}{n} = 1 - \frac{100}{n^2} = \frac{n^2 - 100}{n^2}$ and $\frac{d^2S}{dn^2} = \frac{200}{n^3}$.
 - The critical values of $S(n)$ are $n = 0$, where $\diff{S}{n}(n)$ is undefined (and an endpoint), and $n = 10$ (and $n = -10$ ), where $\diff{S}{n}(n) = 0$ (of course $n = -10$ is not in the domain of $S(n)$ since the domain is $n > 0$).
 - Since $\frac{d^2S}{dn^2}(10) = \frac{200}{10^3} > 0$, we know that the function is concave upwards at $n = 10$ and this is the location of a local minimum of $S(n)$.
-- Since $\diff{S}{n}$ is continuous for $n > 0$ and $\diff{S}{n}(1) = 1 - \frac{100}{1^2} = -99 < 0$, we know that $S(n)$ is decreasing on the interval $( 0, 10) $. 
-- Since $\diff{S}{n}$ is continuous for $n > 0$ and $\diff{S}{n}(20) = 1 - \frac{100}{20^2} = \frac{3}{4} > 0$, we know that $S(n)$ is increasing on the interval $( 10, \infty) $.
+- Since $\diff{S}{n}$ is continuous for $n > 0$ and $\diff{S}{n}(1) = 1 - \frac{100}{1^2} = -99 < 0$, we know that $S(n)$ is decreasing on the interval $( 0, 10)$. 
+- Since $\diff{S}{n}$ is continuous for $n > 0$ and $\diff{S}{n}(20) = 1 - \frac{100}{20^2} = \frac{3}{4} > 0$, we know that $S(n)$ is increasing on the interval $( 10, \infty)$.
 - This tells us that $n = 10$ is the location of the absolute minimum of $S(n)$. The smallest sum is $S(10) = 20$.
 
 </details>
@@ -380,14 +380,14 @@ $$ \ell_1 = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (
 
 1. Compute the second derivative of $\ell_1$ with respect to $a_1$ and show that it can be written in the form $$\frac{d^2\ell_1}{da_1^2} = -\sum_{i=1}^{44} t_i^2.$$
 1. Use R (with seed=123) to actually compute the coefficients in your first and second derivatives above. (Use the sum function.) Check that you obtain the following:
-    - $ \frac{d\ell_1}{da_1} = 172746.8 - 328767530 a_1 $
-    - $ \frac{d^2\ell_1}{da_1^2} = -328767530 $
+    - $\frac{d\ell_1}{da_1} = 172746.8 - 328767530 a_1$
+    - $\frac{d^2\ell_1}{da_1^2} = -328767530$
 1. Find the critical points of $\ell_1$. This means you must set the first derivative equal to zero and solve for $a_1$. 
 
 1. Use the second derivative test to determine if the critical point is the location of maxima or minima.
 1. State the value of $a_1$ that gives the location of maximum loglikelihood.
 
-1. Use the code below to plot the lightbulb data (using the seed 123) along with the fitted model $ f_1(t) $ on the same axes, updating the value you obtained for $ a_1 $.
+1. Use the code below to plot the lightbulb data (using the seed 123) along with the fitted model $f_1(t)$ on the same axes, updating the value you obtained for $a_1$.
 
 ```r
 rm(list=ls())
@@ -447,7 +447,7 @@ How long do people wait in a line when they head to the bank?
 - We'll use the deterministic model $f(x) = 0$ to predict how long someone has to wait (where $x$ represents the time of day). What does this model really say in plain english? 
     - What are your thoughts about our choice of models?
 - We'll use the <https://openstax.org/books/introductory-business-statistics/pages/5-3-the-exponential-distribution> $p(r) = \lambda e^{-\lambda r}$ to model the residuals. 
-- Find the loglikelihood function given 100 data points $ (x_i,y_i) $ (where $x_i$ is the time of day the $i^{\text{th}}$ person comes into the bank and $y_i$ is the amount of time that person waits in line).
+- Find the loglikelihood function given 100 data points $(x_i,y_i)$ (where $x_i$ is the time of day the $i^{\text{th}}$ person comes into the bank and $y_i$ is the amount of time that person waits in line).
 - Find the location of the maximum of the loglikelihood function. 
 
 [This article](https://www.statlect.com/fundamentals-of-statistics/exponential-distribution-maximum-likelihood){target="_blank"} goes through all the computations above.

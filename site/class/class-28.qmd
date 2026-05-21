@@ -251,7 +251,7 @@ How long do people wait in a line when they head to the bank?
 - We'll use the deterministic model $f(x) = 0$ to predict how long someone has to wait (where $x$ represents the time of day). What does this model really say in plain english? 
     - What are your thoughts about our choice of models?
 - We'll use the <https://openstax.org/books/introductory-business-statistics/pages/5-3-the-exponential-distribution> $p(r) = \lambda e^{-\lambda r}$ to model the residuals. 
-- Find the loglikelihood function given 100 data points $ (x_i,y_i) $ (where $x_i$ is the time of day the $i^{\text{th}}$ person comes into the bank and $y_i$ is the amount of time that person waits in line).
+- Find the loglikelihood function given 100 data points $(x_i,y_i)$ (where $x_i$ is the time of day the $i^{\text{th}}$ person comes into the bank and $y_i$ is the amount of time that person waits in line).
 - Find the location of the maximum of the loglikelihood function. 
 
 [This article](https://www.statlect.com/fundamentals-of-statistics/exponential-distribution-maximum-likelihood){target="_blank"} goes through all the computations above.  

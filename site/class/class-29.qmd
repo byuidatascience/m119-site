@@ -70,7 +70,7 @@ Consider $D = f_{xx}(x_0,y_0)f_{yy}(x_0,y_0) - (f_{xy}(x_0,y_0))^2$.
 
 ### Applied Practice (Project Work)
 - Continue work on Project 2 Task 3
-    - Consider the critical point you found for $\ell_4$ in your previous Between Class Work. Is there a local maximum or local minimum at this point, $ (a_1, a_2) $ (what is the conclusion of the second derivative test in this case)?
+    - Consider the critical point you found for $\ell_4$ in your previous Between Class Work. Is there a local maximum or local minimum at this point, $(a_1, a_2)$ (what is the conclusion of the second derivative test in this case)?
 - Finish up Project 2 Task 3 by writing your cohesive analysis (an essay, a report) describing how to fit the models to our data using the Maximum Likelihood method.
 
 
@@ -107,7 +107,13 @@ Consider $D = f_{xx}(x_0,y_0)f_{yy}(x_0,y_0) - (f_{xy}(x_0,y_0))^2$.
 <summary>Solution</summary>
 
 We compute (letting $x=a_1$ and $y=a_2)$
-$$D = f_{xx}(3,-4)f_{yy}(3,-4) - (f_{xy}(3,-4))^2 = (-5)(-2)-(3)^2=1>0.$$
+$$
+\begin{aligned}
+D &= f_{xx}(3, -4)\, f_{yy}(3, -4) - (f_{xy}(3, -4))^2 \\
+  &= (-5)(-2) - (3)^2 \\
+  &= 1 > 0.
+\end{aligned}
+$$
 Because $D>0$, then the function is either concave up, or concave down, in all directions.  Because $\frac{\partial^2\ell}{\partial a_1^2}(3,-4) = -5$ is negative, we know that the point is a maximum.
 
 </details>
@@ -221,7 +227,12 @@ b2 <- sum((y-100)*t^2)
 <summary>Solution</summary>
 
 In this problem the variables are $a_1$ and $a_2$ instead of $x$ and $y$. We compute 
-$$D = \left(\frac{\partial^2\ell_2}{\partial a_1^2}\right)\left( \frac{\partial^2\ell_2}{\partial a_2^2}\right) - \left(\frac{\partial^2\ell_2}{\partial a_2 \partial a_1}\right)^2 = \left(- \sum_{i=1}^{44}t_i^2\right)\left(- \sum_{i=1}^{44}t_i^4\right) - \left(- \sum_{i=1}^{44}t_i^3\right)^2.$$
+$$
+\begin{aligned}
+D &= \left(\frac{\partial^2 \ell_2}{\partial a_1^2}\right) \left(\frac{\partial^2 \ell_2}{\partial a_2^2}\right) - \left(\frac{\partial^2 \ell_2}{\partial a_2\, \partial a_1}\right)^2 \\
+  &= \left(-\sum_{i=1}^{44} t_i^2\right) \left(-\sum_{i=1}^{44} t_i^4\right) - \left(-\sum_{i=1}^{44} t_i^3\right)^2.
+\end{aligned}
+$$
 This gives $D = 1.23003e+23$. The code computes $D$ using the common syntax $D = f_{xx}f_{yy}-f_{xy}^2$, and checks $fxx$. 
 
 ```r

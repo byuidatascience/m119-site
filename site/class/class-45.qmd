@@ -19,7 +19,7 @@ Let $g(x)$ be a function that defines the top of a target. Each time we throw a 
 Given a "target" function, $g(x)$, there are two ways to calculate the **probability density function**, $f$:<br>
 *Method 1*
 - *Calculate* $F(x) = P(X \leq x)$ for every real number $x$.
-    - Calculate probabilities as ratios of areas, $ P(X \leq x) = \frac{\int_{-\infty}^x g(t)dt}{\int_{-\infty}^\infty g(t)dt} $.
+    - Calculate probabilities as ratios of areas, $P(X \leq x) = \frac{\int_{-\infty}^x g(t)dt}{\int_{-\infty}^\infty g(t)dt}$.
 - **Take the derivative** of the CDF to find the PDF, $f(x) = F'(x)$.
 
 *Method 2*
@@ -32,11 +32,11 @@ Given a "target" function, $g(x)$, there are two ways to calculate the **cumulat
 - *Normalize* $g(x)$ to find the PDF, $f(x)$.
     - Multiple $g(x)$ by $k = \frac{1}{\int_{-\infty}^\infty g(x) dx}$. Pick $k$ so that $\int_{-\infty}^\infty f(x)dx = 1$.
 - **Find the Antiderivative ("undo the derivative")** to find the CDF.
-    - $ F(x) = \int_{-\infty}^x f(t)dt $
+    - $F(x) = \int_{-\infty}^x f(t)dt$
 
 *Method 2*
 - *Calculate* $F(x) = P(X \leq x)$ for every real number $x$.
-    - Calculate probabilities as ratios of areas, $ F(x) = P(X \leq x) = \frac{\int_{-\infty}^x g(t)dt}{\int_{-\infty}^\infty g(t)dt} $.
+    - Calculate probabilities as ratios of areas, $F(x) = P(X \leq x) = \frac{\int_{-\infty}^x g(t)dt}{\int_{-\infty}^\infty g(t)dt}$.
 
 ### (2) Practice
 Complete the following exercises, identifying which method from above you used. (Please use Mathematica as need to compute definite integrals.)
@@ -119,11 +119,11 @@ To calculate a probability with the CDF of a continuous random variable, we use 
 <summary>Fundamental Theorem of Calculus (FTC)</summary>
 
 (Part 1)
-If $f(x)$ is continuous over an interval $ [ a, b ] $, and the function $F(x)$ is defined by $F(x) = \int_a^x f(t)dt$, then $F'(x) = f(x)$ over $ [ a, b ]$.<br>
+If $f(x)$ is continuous over an interval $[ a, b ]$, and the function $F(x)$ is defined by $F(x) = \int_a^x f(t)dt$, then $F'(x) = f(x)$ over $[ a, b ]$.<br>
 *Note this is Theorem 5.4 in Open Stax Calculus Volume 1.*
 
 (Part 2)
-If $f$ is continuous over the interval $ [ a, b ] $ and $F(x)$ is any antiderivative of $f(x)$, then $\int_a^b f(x)dx = F(b) - F(a)$.<br>
+If $f$ is continuous over the interval $[ a, b ]$ and $F(x)$ is any antiderivative of $f(x)$, then $\int_a^b f(x)dx = F(b) - F(a)$.<br>
 *Note this is Theorem 5.5 in Open Stax Calculus Volume 1.*
 - When you read **antiderivative** think "undo a derivative".
 
@@ -140,7 +140,7 @@ If $f$ is continuous over the interval $ [ a, b ] $ and $F(x)$ is any antideriva
 1. Let $\ds f(x) = \begin{cases}\lambda e^{-\lambda x} & x \geq 0 \\ 0 & \text{otherwise}\end{cases}$ be a pdf for a continuous random variable $X$, for some $\lambda >0$.
     1. Calculate $F(x) = P(X \leq x)$ by writing down an appropriate integral (an accumulation function)and then computing that integral with Mathematica. You have found the CDF of $X$. 
     1. Compute the derivative of $F(x)$. 
-    1. Explain why $\ds \frac{d}{dx}\left(\int_0^x\lambda e^{-\lambda t} dt\right) = \lambda e^{-\lambda x}$ for $ x \geq 0 $. 
+    1. Explain why $\ds \frac{d}{dx}\left(\int_0^x\lambda e^{-\lambda t} dt\right) = \lambda e^{-\lambda x}$ for $x \geq 0$. 
     1. Compute $P(1 \leq X \leq 5)$ using the probability density function $f(x)$.
     1. Compute $P(1 \leq X \leq ​5)$ using the cumulative distribution function $F(x)$.
     1. Verify that $\int_1^5 f(x) dx = F(5)-F(1)$.
@@ -213,10 +213,10 @@ Since $f(x) = F'(x)$, we know $f(x) = F'(x) = \lim_{\Delta x \rightarrow 0}\frac
 <details>
 <summary>Fundamental Theorem of Calculus (FTC)</summary>
 
-(Part 1) If $f(x)$ is continuous over an interval $ [ a, b ] $, and the function $F(x)$ is defined by $F(x) = \int_a^x f(t)dt$, then $F'(x) = f(x)$ over $ [ a, b ]$.<br>
+(Part 1) If $f(x)$ is continuous over an interval $[ a, b ]$, and the function $F(x)$ is defined by $F(x) = \int_a^x f(t)dt$, then $F'(x) = f(x)$ over $[ a, b ]$.<br>
 *Note this is Theorem 5.4 in Open Stax Calculus Volume 1.*
 
-(Part 2) If $f$ is continuous over the interval $ [ a, b ] $ and $F(x)$ is any antiderivative of $f(x)$, then $\int_a^b f(x)dx = F(b) - F(a)$.<br>
+(Part 2) If $f$ is continuous over the interval $[ a, b ]$ and $F(x)$ is any antiderivative of $f(x)$, then $\int_a^b f(x)dx = F(b) - F(a)$.<br>
 *Note this is Theorem 5.5 in Open Stax Calculus Volume 1.*
 - When you read **antiderivative** think "undo a derivative".
 

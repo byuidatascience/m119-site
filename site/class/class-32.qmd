@@ -93,7 +93,7 @@ lines(x.val,y.val,col=3)
 1. Given a general form for a transformation of a function $T(x) = af(b(x-h))+k$ and the parent function $f$, identify $a$, $b$, $h$, and $k$ for the transformation below.
 
 - $g(x) = 4\sqrt{x-1} -2$ where $f(u) = \sqrt{u}$
-- $\ell(z) = 53\ln(\frac{1}{\sqrt{2\pi}}) + -\frac{1}{2}z^2 $ where $f(u) = u^2$
+- $\ell(z) = 53\ln(\frac{1}{\sqrt{2\pi}}) + -\frac{1}{2}z^2$ where $f(u) = u^2$
 
 <details>
 <summary>Answers</summary>
@@ -116,8 +116,8 @@ For $\ell(z)$
 
 2. Given $S(a) = \sum_{i=0}^n(y_i - ax_i)^2$, write out the following transformations of $S$.
 
-- $ T_1(a) = 132.74 - 0.5S(a) $
-- $ T_2(a) = 2 + S(a-4) $
+- $T_1(a) = 132.74 - 0.5S(a)$
+- $T_2(a) = 2 + S(a-4)$
 
 <details>
 <summary>Answers</summary>

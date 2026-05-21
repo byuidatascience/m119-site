@@ -68,8 +68,8 @@ Evaluate each indefinite integral. Write your solutions (and the thinking leadin
 
 1. Use the Fundamental Theorem of Calculus to calculate the value of $\int_{-1}^2t^2dt$. Use Mathematica to check your answer.
 
-1. Calculate $ \frac{d}{dx}( \int_{-1}^2t^2dt ) $.
-1. Use the Fundamental Theorem of Calculus to calculate $ \frac{d}{dx} ( \int_{1}^x\frac{2}{t^3}dt ) $.
+1. Calculate $\frac{d}{dx}( \int_{-1}^2t^2dt )$.
+1. Use the Fundamental Theorem of Calculus to calculate $\frac{d}{dx} ( \int_{1}^x\frac{2}{t^3}dt )$.
 
 1. Use the Fundamental Theorem of Calculus to calculate $\int_{1}^x\frac{2}{t^3}dt$. Use Mathematica to check your answer.
 1. Use your understanding of derivatives to find the indefinite integral $\int (2x+5)^{11} dx$. Use Mathematica to check your answer.
@@ -142,7 +142,7 @@ FullSimplify[D[MyAnswer - MathmaticaAnswer, x] == 0]
 - Consider $\int x(x-1)^3 dx$. Compute the integral by hand, and then with Mathematica. Compare the solutions, and verify that their difference is a constant. 
 - Consider $\int \frac{y}{(y+1)^4} dy$. Compute the integral by hand, and then with Mathematica. Compare the solutions, and verify that their difference is a constant. 
 
-- Consider $\int \frac{1}{x^2 + 8} dx$. Computing the integral in Mathematica, and then plot the result. The ArcTan function may be new to many of us. The function $f(x) = \tan^{-1}(x)$ is called the arctangent function or inverse tangent function. The domain of the inverse tangent function is all real numbers. The range of the inverse tangent is $ ( -\frac{\pi}{2}, \frac{\pi}{2} ) $.
+- Consider $\int \frac{1}{x^2 + 8} dx$. Computing the integral in Mathematica, and then plot the result. The ArcTan function may be new to many of us. The function $f(x) = \tan^{-1}(x)$ is called the arctangent function or inverse tangent function. The domain of the inverse tangent function is all real numbers. The range of the inverse tangent is $( -\frac{\pi}{2}, \frac{\pi}{2} )$.
 We could use the following code to plot $f(x) = \arctan(x)$ in R.
 
 ```r

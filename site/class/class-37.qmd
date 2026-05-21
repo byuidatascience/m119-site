@@ -67,7 +67,7 @@ f <- function(x){5-x}
 draw_target(f,2,5)
 ```
 
-- Consider the target with top defined by $ f $. When a dart hits the point $ (x , y ) $, we'll record the $x$-coordinate and let $X$ represent this random variable. A PDF for this random variable is $$f(x) = 
+- Consider the target with top defined by $f$. When a dart hits the point $(x , y )$, we'll record the $x$-coordinate and let $X$ represent this random variable. A PDF for this random variable is $$f(x) = 
 \begin{cases}
 kx - k & \quad 1 \leq x \leq 3 \\ \\
 0 & \quad \text{otherwise}.

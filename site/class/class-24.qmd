@@ -21,7 +21,12 @@ The goal of these exercises is to practice writing functions that model given si
 
 ### (2) Partial Derivatives of a loglikelihood function
 Watch the videos below that walk you through finding the first and second partials of 
-$$\ell_2 = \ell_2(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) + \sum_{i=1}^{44} \left(-\frac{1}{2}(y_i - 100 - a_1t_i - a_2t_i^2)^2\right).$$
+$$
+\begin{aligned}
+\ell_2 &= \ell_2(a_1, a_2;\, \mathbf{t}, \mathbf{y}) \\
+       &= 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) + \sum_{i=1}^{44} \left(-\frac{1}{2}(y_i - 100 - a_1 t_i - a_2 t_i^2)^2\right).
+\end{aligned}
+$$
 
 - [First Partials](https://www.loom.com/share/faf8677c97d3471e82ef932733754eec?sharedAppSource=personal_library){target="_blank"} (~11 min)
 - [Second Partials](https://www.loom.com/share/e40fd32ff0df48dfaeeee70cd2d8534b?sharedAppSource=personal_library){target="_blank"} (~10 min)

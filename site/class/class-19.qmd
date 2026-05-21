@@ -110,10 +110,10 @@ For the function $f(x) = x^4$, let $g(x)=f'(x)$.  Compute $g'(x)$.  Then compute
 <details>
 <summary>Answers</summary>
 
-- $ g(x) = f'(x) = 4x^3 $
-- $ g'(x) = 12x^2 $. We often write this as $f''(x)$ or $\frac{d^2f}{dx^2}$. 
-- $ D_x(g'(x)) = 24x $. We often write this as  $f'''(x)$ or $\frac{d^3f}{dx^3}$.  
-- $ \frac{d}{dx}(D_xg'(x)) = 24 $. We often write this as  $f^{ (4) }(x)$ or $\frac{d^4f}{dx^4}$.  Once we pass 3 derivatives, prime notation changes - who wants to count the number of primes.
+- $g(x) = f'(x) = 4x^3$
+- $g'(x) = 12x^2$. We often write this as $f''(x)$ or $\frac{d^2f}{dx^2}$. 
+- $D_x(g'(x)) = 24x$. We often write this as  $f'''(x)$ or $\frac{d^3f}{dx^3}$.  
+- $\frac{d}{dx}(D_xg'(x)) = 24$. We often write this as  $f^{ (4) }(x)$ or $\frac{d^4f}{dx^4}$.  Once we pass 3 derivatives, prime notation changes - who wants to count the number of primes.
 
 </details>
 
@@ -206,7 +206,13 @@ These are the final answers you should obtain after listing out each step.
 </details>
 
 ### Activity - Higher Order Derivatives
-Since the derivative of a function is a function, we can find the derivative of a derivative. In fact, we can continue to take derivatives to find the third derivative, fourth derivative, etc. When we take a derivative of a derivative we find a higher order derivative. The second derivative $f$ we can denote with $$f''(x) = \frac{d}{dx}\left(\frac{d}{dx}(f)\right) = \frac{d^2f}{dx^2} = D_x^2 f.$$
+Since the derivative of a function is a function, we can find the derivative of a derivative. In fact, we can continue to take derivatives to find the third derivative, fourth derivative, etc. When we take a derivative of a derivative we find a higher order derivative. The second derivative $f$ we can denote with $$
+\begin{aligned}
+f''(x) &= \frac{d}{dx}\left(\frac{d}{dx}(f)\right) \\
+       &= \frac{d^2f}{dx^2} \\
+       &= D_x^2 f.
+\end{aligned}
+$$
 We use similar notation for higher order derivatives, such at $f'''(x)$ for the third derivative and $\frac{d^4f}{dx^4}$ for a 4th derivative. We avoid prime notation and use notation such as $f^{ (7) }(x)$ when the number of derivatives is quite large. 
 
 Open this [Higher Order Derivatives worksheet](../assets/docs/Higher_Order_Derivatives.pdf) and take turns computing derivatives, passing the chalk after each problem.
