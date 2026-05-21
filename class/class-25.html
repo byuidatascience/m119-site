@@ -589,7 +589,13 @@ window.Quarto = {
 <summary>
 Solution
 </summary>
-<p>The base has area <span class="math inline">\(x^2\)</span>. Letting <span class="math inline">\(h\)</span> be the height of the box, the volume of the box is <span class="math inline">\(V(x,h) = x^2h\)</span>. Each the sides has area <span class="math inline">\(4xh\)</span>, which means the total area of 6 must satistify <span class="math inline">\(6 = x^2+4xh\)</span>. From here we can get <span class="math inline">\(h\)</span> by itself as $ h =$. This means the volume is <span class="math display">\[V(x) = x^2h = x^2 \frac{6-x^2}{4x} = \frac{1}{4}x(6-x^2).\]</span></p>
+<p>The base has area <span class="math inline">\(x^2\)</span>. Letting <span class="math inline">\(h\)</span> be the height of the box, the volume of the box is <span class="math inline">\(V(x,h) = x^2h\)</span>. Each the sides has area <span class="math inline">\(4xh\)</span>, which means the total area of 6 must satistify <span class="math inline">\(6 = x^2+4xh\)</span>. From here we can get <span class="math inline">\(h\)</span> by itself as <span class="math inline">\(h =\frac{6-x^2}{4x}\)</span>. This means the volume is <span class="math display">\[
+\begin{aligned}
+V(x) &amp;= x^2 h \\
+     &amp;= x^2 \, \frac{6 - x^2}{4x} \\
+     &amp;= \frac{1}{4} x (6 - x^2).
+\end{aligned}
+\]</span></p>
 </details>
 <ol type="1">
 <li><p>Use R to plot the function above, and then guess the maximum possible volume along with the dimensions that correspond to this volume.</p></li>
@@ -607,20 +613,20 @@ Solution
 <summary>
 Intermediate Value Theorem (IVT)
 </summary>
-<p>If <span class="math inline">\(f(x)\)</span> is a continuous function on a closed interval $ [a, b] $, where <span class="math inline">\(f(a) \neq f(b)\)</span>, and <span class="math inline">\(y_0\)</span> is any <span class="math inline">\(y\)</span>-value strictly between <span class="math inline">\(f(a)\)</span> and <span class="math inline">\(f(b)\)</span>, then <span class="math inline">\(y_0 = f(x_0)\)</span> for some <span class="math inline">\(x\)</span>-value, <span class="math inline">\(x_0\)</span>, in $ [a, b] $.</p>
+<p>If <span class="math inline">\(f(x)\)</span> is a continuous function on a closed interval <span class="math inline">\([a, b]\)</span>, where <span class="math inline">\(f(a) \neq f(b)\)</span>, and <span class="math inline">\(y_0\)</span> is any <span class="math inline">\(y\)</span>-value strictly between <span class="math inline">\(f(a)\)</span> and <span class="math inline">\(f(b)\)</span>, then <span class="math inline">\(y_0 = f(x_0)\)</span> for some <span class="math inline">\(x\)</span>-value, <span class="math inline">\(x_0\)</span>, in <span class="math inline">\([a, b]\)</span>.</p>
 <p>Note: While there is a rigorous mathematical definition for what it means to be a continuous function, for our purposes the following concept with suffice, a function is continuous on an interval if the graph of that function can be traced with a pencil without lifting the pencil from the page.</p>
 </details>
 <details>
 <summary>
 Rolle’s Theorem
 </summary>
-<p>Let <span class="math inline">\(f\)</span> be a continuous function over the closed interval $ [ a, b ] $ and differentiable over the open interval $ ( a, b ) $ such that <span class="math inline">\(f(a) = f(b)\)</span>. Then there exists at least one $ c ( a, b ) $ such that <span class="math inline">\(f'(c) = 0\)</span>.</p>
+<p>Let <span class="math inline">\(f\)</span> be a continuous function over the closed interval <span class="math inline">\([ a, b ]\)</span> and differentiable over the open interval <span class="math inline">\(( a, b )\)</span> such that <span class="math inline">\(f(a) = f(b)\)</span>. Then there exists at least one <span class="math inline">\(c \in ( a, b )\)</span> such that <span class="math inline">\(f'(c) = 0\)</span>.</p>
 </details>
 <details>
 <summary>
 Extreme Value Theorem
 </summary>
-<p>If <span class="math inline">\(f\)</span> is a continuous function over the closed, bounded interval $ [a, b] $, then there is a point in $ [a, b] $ at which <span class="math inline">\(f\)</span> has an absolute maximum over $ [a, b] $ and there is a point in $ [a, b] $ at which <span class="math inline">\(f\)</span> has an absolute minimum over $ [a, b] $.</p>
+<p>If <span class="math inline">\(f\)</span> is a continuous function over the closed, bounded interval <span class="math inline">\([a, b]\)</span>, then there is a point in <span class="math inline">\([a, b]\)</span> at which <span class="math inline">\(f\)</span> has an absolute maximum over <span class="math inline">\([a, b]\)</span> and there is a point in <span class="math inline">\([a, b]\)</span> at which <span class="math inline">\(f\)</span> has an absolute minimum over <span class="math inline">\([a, b]\)</span>.</p>
 </details>
 <details>
 <summary>
@@ -714,7 +720,7 @@ Definition: Inflection Point
 <li><p><span class="math inline">\(f\)</span> has a horizontal tangent line when <span class="math inline">\(x=3\)</span>.</p></li>
 <li><p><span class="math inline">\(f\)</span> so that <span class="math inline">\(f'=0\)</span> for all <span class="math inline">\(x\)</span>.</p></li>
 <li><p><span class="math inline">\(f\)</span> so that <span class="math inline">\(f'=0\)</span> and <span class="math inline">\(f''&gt;0\)</span> at <span class="math inline">\(x=-2\)</span>.</p></li>
-<li><p><span class="math inline">\(f\)</span> is decreasing and concave down on the interval $ (-3,5) $.</p></li>
+<li><p><span class="math inline">\(f\)</span> is decreasing and concave down on the interval <span class="math inline">\((-3,5)\)</span>.</p></li>
 <li><p><span class="math inline">\(f\)</span> so that <span class="math inline">\(f'\)</span> has at least one change of sign and is always defined.</p></li>
 <li><p><span class="math inline">\(f\)</span> so that <span class="math inline">\(f'=0\)</span> and <span class="math inline">\(f''&lt;0\)</span> at <span class="math inline">\(x=1\)</span>.</p></li>
 <li><p><span class="math inline">\(f\)</span> so that -<span class="math inline">\(f\)</span> is concave down everywhere.</p></li>

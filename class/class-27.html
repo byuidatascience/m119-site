@@ -822,8 +822,8 @@ Answers
 <li>We see <span class="math inline">\(\diff{S}{n} = 1 - \frac{100}{n^2} = \frac{n^2 - 100}{n^2}\)</span> and <span class="math inline">\(\frac{d^2S}{dn^2} = \frac{200}{n^3}\)</span>.</li>
 <li>The critical values of <span class="math inline">\(S(n)\)</span> are <span class="math inline">\(n = 0\)</span>, where <span class="math inline">\(\diff{S}{n}(n)\)</span> is undefined (and an endpoint), and <span class="math inline">\(n = 10\)</span> (and <span class="math inline">\(n = -10\)</span> ), where <span class="math inline">\(\diff{S}{n}(n) = 0\)</span> (of course <span class="math inline">\(n = -10\)</span> is not in the domain of <span class="math inline">\(S(n)\)</span> since the domain is <span class="math inline">\(n &gt; 0\)</span>).</li>
 <li>Since <span class="math inline">\(\frac{d^2S}{dn^2}(10) = \frac{200}{10^3} &gt; 0\)</span>, we know that the function is concave upwards at <span class="math inline">\(n = 10\)</span> and this is the location of a local minimum of <span class="math inline">\(S(n)\)</span>.</li>
-<li>Since <span class="math inline">\(\diff{S}{n}\)</span> is continuous for <span class="math inline">\(n &gt; 0\)</span> and <span class="math inline">\(\diff{S}{n}(1) = 1 - \frac{100}{1^2} = -99 &lt; 0\)</span>, we know that <span class="math inline">\(S(n)\)</span> is decreasing on the interval $( 0, 10) $.</li>
-<li>Since <span class="math inline">\(\diff{S}{n}\)</span> is continuous for <span class="math inline">\(n &gt; 0\)</span> and <span class="math inline">\(\diff{S}{n}(20) = 1 - \frac{100}{20^2} = \frac{3}{4} &gt; 0\)</span>, we know that <span class="math inline">\(S(n)\)</span> is increasing on the interval $( 10, ) $.</li>
+<li>Since <span class="math inline">\(\diff{S}{n}\)</span> is continuous for <span class="math inline">\(n &gt; 0\)</span> and <span class="math inline">\(\diff{S}{n}(1) = 1 - \frac{100}{1^2} = -99 &lt; 0\)</span>, we know that <span class="math inline">\(S(n)\)</span> is decreasing on the interval <span class="math inline">\(( 0, 10)\)</span>.</li>
+<li>Since <span class="math inline">\(\diff{S}{n}\)</span> is continuous for <span class="math inline">\(n &gt; 0\)</span> and <span class="math inline">\(\diff{S}{n}(20) = 1 - \frac{100}{20^2} = \frac{3}{4} &gt; 0\)</span>, we know that <span class="math inline">\(S(n)\)</span> is increasing on the interval <span class="math inline">\(( 10, \infty)\)</span>.</li>
 <li>This tells us that <span class="math inline">\(n = 10\)</span> is the location of the absolute minimum of <span class="math inline">\(S(n)\)</span>. The smallest sum is <span class="math inline">\(S(10) = 20\)</span>.</li>
 </ul>
 </details>
@@ -852,13 +852,13 @@ Answers
 <li><p>Compute the second derivative of <span class="math inline">\(\ell_1\)</span> with respect to <span class="math inline">\(a_1\)</span> and show that it can be written in the form <span class="math display">\[\frac{d^2\ell_1}{da_1^2} = -\sum_{i=1}^{44} t_i^2.\]</span></p></li>
 <li><p>Use R (with seed=123) to actually compute the coefficients in your first and second derivatives above. (Use the sum function.) Check that you obtain the following:</p>
 <ul>
-<li>$ = 172746.8 - 328767530 a_1 $</li>
-<li>$ = -328767530 $</li>
+<li><span class="math inline">\(\frac{d\ell_1}{da_1} = 172746.8 - 328767530 a_1\)</span></li>
+<li><span class="math inline">\(\frac{d^2\ell_1}{da_1^2} = -328767530\)</span></li>
 </ul></li>
 <li><p>Find the critical points of <span class="math inline">\(\ell_1\)</span>. This means you must set the first derivative equal to zero and solve for <span class="math inline">\(a_1\)</span>.</p></li>
 <li><p>Use the second derivative test to determine if the critical point is the location of maxima or minima.</p></li>
 <li><p>State the value of <span class="math inline">\(a_1\)</span> that gives the location of maximum loglikelihood.</p></li>
-<li><p>Use the code below to plot the lightbulb data (using the seed 123) along with the fitted model $ f_1(t) $ on the same axes, updating the value you obtained for $ a_1 $.</p></li>
+<li><p>Use the code below to plot the lightbulb data (using the seed 123) along with the fitted model <span class="math inline">\(f_1(t)\)</span> on the same axes, updating the value you obtained for <span class="math inline">\(a_1\)</span>.</p></li>
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data4led)</span>
@@ -929,7 +929,7 @@ Answers
 <li>What are your thoughts about our choice of models?</li>
 </ul></li>
 <li>We’ll use the <a href="https://openstax.org/books/introductory-business-statistics/pages/5-3-the-exponential-distribution" class="uri">https://openstax.org/books/introductory-business-statistics/pages/5-3-the-exponential-distribution</a> <span class="math inline">\(p(r) = \lambda e^{-\lambda r}\)</span> to model the residuals.</li>
-<li>Find the loglikelihood function given 100 data points $ (x_i,y_i) $ (where <span class="math inline">\(x_i\)</span> is the time of day the <span class="math inline">\(i^{\text{th}}\)</span> person comes into the bank and <span class="math inline">\(y_i\)</span> is the amount of time that person waits in line).</li>
+<li>Find the loglikelihood function given 100 data points <span class="math inline">\((x_i,y_i)\)</span> (where <span class="math inline">\(x_i\)</span> is the time of day the <span class="math inline">\(i^{\text{th}}\)</span> person comes into the bank and <span class="math inline">\(y_i\)</span> is the amount of time that person waits in line).</li>
 <li>Find the location of the maximum of the loglikelihood function.</li>
 </ul>
 <p><a href="https://www.statlect.com/fundamentals-of-statistics/exponential-distribution-maximum-likelihood" target="_blank">This article</a> goes through all the computations above.</p>

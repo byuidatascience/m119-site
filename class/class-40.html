@@ -458,12 +458,8 @@ window.Quarto = {
 <section id="solving-a-system-of-equations" class="level3">
 <h3 class="anchored" data-anchor-id="solving-a-system-of-equations">(1) Solving a System of Equations</h3>
 <ol type="1">
-<li><p>Solve the system $ {</p>
-<span class="math display">\[\begin{array}{ll}\frac{x}{y} = 2 \\ \frac{x}{y^2} = 3\end{array}\]</span>
-<p>.$ for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p></li>
-<li><p>Solve the system $ {</p>
-<span class="math display">\[\begin{array}{ll}\frac{\alpha}{\beta} = 2.7 \\ \frac{\alpha}{\beta^2} = 10.2\end{array}\]</span>
-<p>.$ for <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></p></li>
+<li><p>Solve the system <span class="math inline">\(\left\{\begin{array}{ll}\frac{x}{y} = 2 \\ \frac{x}{y^2} = 3\end{array} \right.\)</span> for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p></li>
+<li><p>Solve the system <span class="math inline">\(\left\{\begin{array}{ll}\frac{\alpha}{\beta} = 2.7 \\ \frac{\alpha}{\beta^2} = 10.2\end{array} \right.\)</span> for <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></p></li>
 </ol>
 </section>
 <section id="continue-working-on-project-3-task-2" class="level3">
@@ -474,7 +470,7 @@ window.Quarto = {
 <li>Use Mathematica to calculate <span class="math inline">\(Var[X]\)</span> in each case.</li>
 </ul></li>
 </ul>
-<p>Use the following code to get you started. Let’s calculate $_{-}^f(x) dx $, $ E[X] $, $ Var[X] $, and standard deviation of X for <span class="math inline">\(f_3\)</span> and <span class="math inline">\(f_1\)</span>.</p>
+<p>Use the following code to get you started. Let’s calculate <span class="math inline">\(\int_{-\infty}^\infty f(x) dx\)</span>, <span class="math inline">\(E[X]\)</span>, <span class="math inline">\(Var[X]\)</span>, and standard deviation of X for <span class="math inline">\(f_3\)</span> and <span class="math inline">\(f_1\)</span>.</p>
 <pre><code>$Assumptions = \[Lambda] &gt; 0;
 f = \[Lambda]*Exp[-\[Lambda]*x];
 bounds = {x, 0, Infinity};
@@ -516,7 +512,7 @@ StDev = Sqrt[Var]
 <section id="brain-gains" class="level2">
 <h2 class="anchored" data-anchor-id="brain-gains">Brain Gains</h2>
 <ol type="1">
-<li>For the exponential distribution <span class="math inline">\(f_3(x; \lambda) = \lambda e^{-\lambda x}\)</span> with $&gt;0 $ and <span class="math inline">\(x\geq 0\)</span> (and 0 otherwise), write down integrals that give the expected value and variance.</li>
+<li>For the exponential distribution <span class="math inline">\(f_3(x; \lambda) = \lambda e^{-\lambda x}\)</span> with <span class="math inline">\(\lambda &gt;0\)</span> and <span class="math inline">\(x\geq 0\)</span> (and 0 otherwise), write down integrals that give the expected value and variance.</li>
 </ol>
 <details>
 <summary>
@@ -577,12 +573,8 @@ $Assumptions = Null;</code></pre>
 <section id="solving-a-system-of-equations-1" class="level3">
 <h3 class="anchored" data-anchor-id="solving-a-system-of-equations-1">Solving a System of Equations</h3>
 <ol type="1">
-<li><p>Solve the system $ {</p>
-<span class="math display">\[\begin{array}{ll}\frac{1}{2}(x+y) = 2 \\ \frac{1}{12}(x-y)^2 = 3\end{array}\]</span>
-<p>.$ for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, assuming <span class="math inline">\(x&lt;y\)</span>.</p></li>
-<li><p>Solve the system $ {</p>
-<span class="math display">\[\begin{array}{ll}\frac{1}{2}(a+b) = 2.7 \\ \frac{1}{12}(a-b)^2 = 10.2\end{array}\]</span>
-<p>.$ for <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, assuming <span class="math inline">\(a&lt;b\)</span>.</p></li>
+<li><p>Solve the system <span class="math inline">\(\left\{\begin{array}{ll}\frac{1}{2}(x+y) = 2 \\ \frac{1}{12}(x-y)^2 = 3\end{array} \right.\)</span> for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, assuming <span class="math inline">\(x&lt;y\)</span>.</p></li>
+<li><p>Solve the system <span class="math inline">\(\left\{\begin{array}{ll}\frac{1}{2}(a+b) = 2.7 \\ \frac{1}{12}(a-b)^2 = 10.2\end{array} \right.\)</span> for <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, assuming <span class="math inline">\(a&lt;b\)</span>.</p></li>
 </ol>
 <p>Have you seen the quantities <span class="math inline">\(\frac{1}{2}(a+b)\)</span> and <span class="math inline">\(\frac{1}{12}(a-b)^2\)</span> somewhere before?</p>
 </section>

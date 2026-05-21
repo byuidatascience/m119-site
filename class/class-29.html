@@ -557,7 +557,7 @@ Answers
 <ul>
 <li>Continue work on Project 2 Task 3
 <ul>
-<li>Consider the critical point you found for <span class="math inline">\(\ell_4\)</span> in your previous Between Class Work. Is there a local maximum or local minimum at this point, $ (a_1, a_2) $ (what is the conclusion of the second derivative test in this case)?</li>
+<li>Consider the critical point you found for <span class="math inline">\(\ell_4\)</span> in your previous Between Class Work. Is there a local maximum or local minimum at this point, <span class="math inline">\((a_1, a_2)\)</span> (what is the conclusion of the second derivative test in this case)?</li>
 </ul></li>
 <li>Finish up Project 2 Task 3 by writing your cohesive analysis (an essay, a report) describing how to fit the models to our data using the Maximum Likelihood method.</li>
 </ul>
@@ -598,7 +598,13 @@ Second Derivative Test (2 dimensions)
 <summary>
 Solution
 </summary>
-<p>We compute (letting <span class="math inline">\(x=a_1\)</span> and <span class="math inline">\(y=a_2)\)</span> <span class="math display">\[D = f_{xx}(3,-4)f_{yy}(3,-4) - (f_{xy}(3,-4))^2 = (-5)(-2)-(3)^2=1&gt;0.\]</span> Because <span class="math inline">\(D&gt;0\)</span>, then the function is either concave up, or concave down, in all directions. Because <span class="math inline">\(\frac{\partial^2\ell}{\partial a_1^2}(3,-4) = -5\)</span> is negative, we know that the point is a maximum.</p>
+<p>We compute (letting <span class="math inline">\(x=a_1\)</span> and <span class="math inline">\(y=a_2)\)</span> <span class="math display">\[
+\begin{aligned}
+D &amp;= f_{xx}(3, -4)\, f_{yy}(3, -4) - (f_{xy}(3, -4))^2 \\
+  &amp;= (-5)(-2) - (3)^2 \\
+  &amp;= 1 &gt; 0.
+\end{aligned}
+\]</span> Because <span class="math inline">\(D&gt;0\)</span>, then the function is either concave up, or concave down, in all directions. Because <span class="math inline">\(\frac{\partial^2\ell}{\partial a_1^2}(3,-4) = -5\)</span> is negative, we know that the point is a maximum.</p>
 </details>
 <details>
 <summary>
@@ -706,7 +712,12 @@ Solution
 <summary>
 Solution
 </summary>
-<p>In this problem the variables are <span class="math inline">\(a_1\)</span> and <span class="math inline">\(a_2\)</span> instead of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. We compute <span class="math display">\[D = \left(\frac{\partial^2\ell_2}{\partial a_1^2}\right)\left( \frac{\partial^2\ell_2}{\partial a_2^2}\right) - \left(\frac{\partial^2\ell_2}{\partial a_2 \partial a_1}\right)^2 = \left(- \sum_{i=1}^{44}t_i^2\right)\left(- \sum_{i=1}^{44}t_i^4\right) - \left(- \sum_{i=1}^{44}t_i^3\right)^2.\]</span> This gives <span class="math inline">\(D = 1.23003e+23\)</span>. The code computes <span class="math inline">\(D\)</span> using the common syntax <span class="math inline">\(D = f_{xx}f_{yy}-f_{xy}^2\)</span>, and checks <span class="math inline">\(fxx\)</span>.</p>
+<p>In this problem the variables are <span class="math inline">\(a_1\)</span> and <span class="math inline">\(a_2\)</span> instead of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. We compute <span class="math display">\[
+\begin{aligned}
+D &amp;= \left(\frac{\partial^2 \ell_2}{\partial a_1^2}\right) \left(\frac{\partial^2 \ell_2}{\partial a_2^2}\right) - \left(\frac{\partial^2 \ell_2}{\partial a_2\, \partial a_1}\right)^2 \\
+  &amp;= \left(-\sum_{i=1}^{44} t_i^2\right) \left(-\sum_{i=1}^{44} t_i^4\right) - \left(-\sum_{i=1}^{44} t_i^3\right)^2.
+\end{aligned}
+\]</span> This gives <span class="math inline">\(D = 1.23003e+23\)</span>. The code computes <span class="math inline">\(D\)</span> using the common syntax <span class="math inline">\(D = f_{xx}f_{yy}-f_{xy}^2\)</span>, and checks <span class="math inline">\(fxx\)</span>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fxx <span class="ot">&lt;-</span> <span class="sc">-</span>c11</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fyy <span class="ot">&lt;-</span> <span class="sc">-</span>c22</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fxy <span class="ot">&lt;-</span> <span class="sc">-</span>c12</span>

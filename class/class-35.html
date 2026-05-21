@@ -503,7 +503,7 @@ window.Quarto = {
 Solutions for 3
 </summary>
 <ul>
-<li><p>The area under the function <span class="math inline">\(g\)</span> is $ A = (4)(8) = 16 $, which means we should pick $ k = = $ so that the area under the function $ f $ is 1. This means $ f(x) = kg(x) = (2x) = x $ for $ 0 x $.</p></li>
+<li><p>The area under the function <span class="math inline">\(g\)</span> is <span class="math inline">\(A = \frac{1}{2}(4)(8) = 16\)</span>, which means we should pick <span class="math inline">\(k = \frac{1}{\text{Area}} = \frac{1}{16}\)</span> so that the area under the function <span class="math inline">\(f\)</span> is 1. This means <span class="math inline">\(f(x) = kg(x) = \frac{1}{16}(2x) = \frac{1}{8}x\)</span> for <span class="math inline">\(0 \leq x \leq 4\)</span>.</p></li>
 <li><p>The cdf of <span class="math inline">\(X\)</span> will be the following function. <span class="math inline">\(F(x) =
 \begin{cases}
 0 &amp; \quad x \leq 0 \\ \\
@@ -559,7 +559,7 @@ Solutions for 3
 <li><p>Find the area under <span class="math inline">\(g\)</span>.</p></li>
 <li><p>Give the normalized target function by finding the constant <span class="math inline">\(k\)</span> so that the area under <span class="math inline">\(f(x) = kg(x)\)</span> is 1.</p></li>
 <li><p>Compute <span class="math inline">\(P(X\leq 3)\)</span>.</p></li>
-<li><p>Calculate the expected value of <span class="math inline">\(X\)</span>, so compute $E[X] $.</p></li>
+<li><p>Calculate the expected value of <span class="math inline">\(X\)</span>, so compute <span class="math inline">\(E[X]\)</span>.</p></li>
 <li><p>Give a formula for <span class="math inline">\(F(x)\)</span>, the cumulative distribution function.</p></li>
 <li><p>Compute <span class="math inline">\(F'(x)\)</span>.</p></li>
 </ol>
@@ -581,7 +581,7 @@ I’ll let you graph it.
 <p>Regardless of which option we choose, we must decide how many rectangles to use and then find the area and centroid of each. - We can use <span class="math inline">\(f\)</span> with two rectangles. The left rectangle has area <span class="math inline">\(A_1 = 8/11\)</span> and centroid at <span class="math inline">\(x_1=1\)</span>. The right rectangle has area <span class="math inline">\(A_2=3/11\)</span> and centroid <span class="math inline">\(x_2 = 3.5\)</span>. We then compute <span class="math display">\[E[X] = (1)\frac{8}{11} + (3.5)\frac{3}{11}.\]</span> - We can use <span class="math inline">\(f\)</span> with 5 rectangles. Using equal sized rectangles makes this quick. The areas are A = c(4,4,1,1,1) centered at x = c(0.5,1.5,2.5,3.5,4.5). In R we can type sum(x*A) to rapidly compute the numerator and sum(A) to compute the denominator. <span class="math inline">\(\frac{\sum x_i A_i}{\sum A_i}\)</span></p>
 <ol type="1">
 <li><p>To give a formula for <span class="math inline">\(F(x)\)</span>, we need to compute <span class="math inline">\(P(X\leq x)\)</span>. We can do this by calculating ratios of areas using either <span class="math inline">\(f\)</span> or <span class="math inline">\(g\)</span>. Using <span class="math inline">\(g\)</span>, note that the area of a rectangle from 0 to <span class="math inline">\(x\)</span> (for <span class="math inline">\(0\leq x\leq 2\)</span>) is <span class="math inline">\(A=4x\)</span>. Dividing by the total area of 11 gives <span class="math inline">\(P(X\leq x) = \frac{4x}{11}\)</span> for <span class="math inline">\(0\leq x\leq 2\)</span>. For <span class="math inline">\(2&lt;x\leq 5\)</span>, we have a total area of <span class="math inline">\(A = 8+(x-2)*1 = x+6\)</span>, which means <span class="math inline">\(P(X\leq x) = \frac{x+6}{11}\)</span> for <span class="math inline">\(2&lt; x\leq 5\)</span>. This gives <span class="math display">\[F(x) = \begin{cases}\frac{4x}{11}&amp;0\leq x\leq 2\\\frac{x+6}{11}&amp;2\leq x\leq 5\\0&amp;x&lt;0\\1&amp;x&gt;5\end{cases}.\]</span> Notice that plugging in 5 does gives us a probability of 1, as it should.</p></li>
-<li><p>The derivative of <span class="math inline">\(F\)</span>, where it is nonzero and defined, is <span class="math display">\[\ds F'(x) = \begin{cases}\frac{4}{11}&amp;0&lt; x&lt; 2\\\frac{1}{11}&amp;2&lt; x&lt; 5 \end{cases}\]</span> Notice again $ F’(x) = f(x) $.</p></li>
+<li><p>The derivative of <span class="math inline">\(F\)</span>, where it is nonzero and defined, is <span class="math display">\[\ds F'(x) = \begin{cases}\frac{4}{11}&amp;0&lt; x&lt; 2\\\frac{1}{11}&amp;2&lt; x&lt; 5 \end{cases}\]</span> Notice again <span class="math inline">\(F'(x) = f(x)\)</span>.</p></li>
 </ol>
 </details>
 </section>
@@ -688,7 +688,7 @@ draw_rect_approx() code
 <ul>
 <li>Find a constant <span class="math inline">\(k\)</span> so that the area under <span class="math inline">\(f(x) = k g(x)\)</span> is one (so find the normalized target function).</li>
 <li>Compute <span class="math inline">\(P(X\leq 3)\)</span> (you’ll need to compute two areas, and then divide them).</li>
-<li>Calculate $E[X] $.</li>
+<li>Calculate <span class="math inline">\(E[X]\)</span>.</li>
 </ul>
 <ol start="4" type="1">
 <li>Consider the target function <span class="math inline">\(\ds g(x) = \begin{cases}5x e^{-x}&amp;2\leq x\leq 8\\0 &amp;\text{otherwise} \end{cases}\)</span> and corresponding random variable <span class="math inline">\(X\)</span> obtained by throwing darts at the target and recording the <span class="math inline">\(x\)</span>-coordinate.</li>
@@ -696,7 +696,7 @@ draw_rect_approx() code
 <ul>
 <li>Find a constant <span class="math inline">\(k\)</span> so that the area under <span class="math inline">\(f(x) = k g(x)\)</span> is one (so find the normalized target function).</li>
 <li>Compute <span class="math inline">\(P(X\leq 3)\)</span> (you’ll need to compute two areas, and then divide them).</li>
-<li>Calculate $E[X] $.</li>
+<li>Calculate <span class="math inline">\(E[X]\)</span>.</li>
 </ul>
 </section>
 </section>

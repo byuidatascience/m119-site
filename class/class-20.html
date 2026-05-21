@@ -493,7 +493,7 @@ window.Quarto = {
 <section id="brain-gains" class="level2">
 <h2 class="anchored" data-anchor-id="brain-gains">Brain Gains</h2>
 <ol type="1">
-<li>Compute $ D_xQ $ for $ Q(x) = _{k=1}^{21} kx^k $.</li>
+<li>Compute <span class="math inline">\(D_xQ\)</span> for <span class="math inline">\(Q(x) = \sum_{k=1}^{21} kx^k\)</span>.</li>
 </ol>
 <details>
 <summary>
@@ -514,7 +514,13 @@ Solution
 Solution
 </summary>
 <p>We use the chain rule.</p>
-<p>We can write <span class="math inline">\(f(x) = g(h(x))\)</span> where <span class="math inline">\(g(x) = \sqrt{x} = x^{1/2}\)</span> and <span class="math inline">\(h(x) = 4e^x+7x^2\)</span>. We then have <span class="math inline">\(g'(x) = \frac{1}{2}x^{-1/2}\)</span> and <span class="math inline">\(h'(x) = 4e^x+14x\)</span>. The chain rule then gives <span class="math display">\[f'(x) = g'(h(x))h'(x) = \frac{1}{2}(h(x))^{-1/2}(4e^x+14x) = \frac{1}{2}(4e^x+7x^2)^{-1/2}(4e^x+14x)\]</span>.</p>
+<p>We can write <span class="math inline">\(f(x) = g(h(x))\)</span> where <span class="math inline">\(g(x) = \sqrt{x} = x^{1/2}\)</span> and <span class="math inline">\(h(x) = 4e^x+7x^2\)</span>. We then have <span class="math inline">\(g'(x) = \frac{1}{2}x^{-1/2}\)</span> and <span class="math inline">\(h'(x) = 4e^x+14x\)</span>. The chain rule then gives <span class="math display">\[
+\begin{aligned}
+f'(x) &amp;= g'(h(x))h'(x) \\
+      &amp;= \frac{1}{2}(h(x))^{-1/2}(4e^x + 14x) \\
+      &amp;= \frac{1}{2}(4e^x + 7x^2)^{-1/2}(4e^x + 14x)
+\end{aligned}
+\]</span>.</p>
 </details>
 </section>
 <section id="group-meeting" class="level2">
@@ -693,7 +699,7 @@ Answers
 <p>Assume the residuals (errors) are independent and normally distributed (with mean of 0 and standard deviation of 1).</p>
 <p>Note: This tells us the probability model we will be using and it tells us we can multiply the probabilities to get the likelihood function.</p>
 <ul>
-<li>The probability model we are using is $ p(r) = e<sup>{-\frac{r</sup>2}{2}} $.</li>
+<li>The probability model we are using is <span class="math inline">\(p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}\)</span>.</li>
 <li>Write the likelihood function for the residuals in this situation.</li>
 <li>Write the loglikelihood function for the residuals in this situation.</li>
 </ul>
@@ -701,7 +707,13 @@ Answers
 <summary>
 Answers
 </summary>
-<p>First we write a formula for the residuals (or errors) to obtain <span class="math display">\[r_i(A, b, k; t_i, c_i) = c_i - f(t_i; A, b, k) = c_i - (Ae^{bt_i} + k) = c_i - Ae^{bt_i} - k.\]</span></p>
+<p>First we write a formula for the residuals (or errors) to obtain <span class="math display">\[
+\begin{aligned}
+r_i(A, b, k; t_i, c_i) &amp;= c_i - f(t_i; A, b, k) \\
+                       &amp;= c_i - (Ae^{bt_i} + k) \\
+                       &amp;= c_i - Ae^{bt_i} - k.
+\end{aligned}
+\]</span></p>
 <p>Because we are told the errors (or residuals) are normally distributed (with mean of 0 and standard deviation of 1), the probability model we will use is <span class="math display">\[p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}.\]</span> Or we could write this <span class="math inline">\(p(A, b, k; t_i, c_i) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(c_i - Ae^{bt_i} - k)^2}.\)</span></p>
 <p>Because the errors are independent we can multiply the probability models to find the joint probability model as <span class="math display">\[J(t_i, c_i;A, b, k) = \prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(c_i - Ae^{bt_i} - k)^2}.\]</span></p>
 <p>The likelihood function (interchange the role of variables and parameters) is then <span class="math display">\[L(A, b, k; t_i, c_i) = \prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(c_i - Ae^{bt_i} - k)^2}.\]</span></p>

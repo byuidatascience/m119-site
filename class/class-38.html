@@ -495,8 +495,8 @@ kx - k &amp;  1 \leq x \leq 3 \\
 \end{cases}.\]</span></p>
 <ol type="1">
 <li><p>Select <span class="math inline">\(k\)</span> so <span class="math inline">\(f\)</span> is the PDF of a random variable <span class="math inline">\(X\)</span>.</p></li>
-<li><p>Use R and a Riemann sum to approximate $E[X] $.</p></li>
-<li><p>Use Mathematica to compute $E[X] $.</p></li>
+<li><p>Use R and a Riemann sum to approximate <span class="math inline">\(E[X]\)</span>.</p></li>
+<li><p>Use Mathematica to compute <span class="math inline">\(E[X]\)</span>.</p></li>
 <li><p>Use Mathematica to compute <span class="math inline">\(P(X\leq 2)\)</span>.</p></li>
 </ol>
 </section>
@@ -633,7 +633,7 @@ The cumulative distribution function (CDF) of a random variable
 <li>Sometimes we write this idea with the following notation, <span class="math inline">\(F(x) \rightarrow 1\)</span> as <span class="math inline">\(x \rightarrow \infty\)</span>.</li>
 <li>It is not required that 1 is in the range of <span class="math inline">\(F(x)\)</span>.</li>
 </ul></li>
-<li>We know the range of <span class="math inline">\(F(x)\)</span> will be a subset of $ [ 0, 1 ] $.
+<li>We know the range of <span class="math inline">\(F(x)\)</span> will be a subset of <span class="math inline">\([ 0, 1 ]\)</span>.
 <ul>
 <li>In other words, we know the outputs of a CDF will only include values between 0 and 1. Sometimes we write this idea with the following notation, <span class="math inline">\(0 \leq F(x) \leq 1\)</span>.</li>
 </ul></li>
@@ -642,22 +642,22 @@ The cumulative distribution function (CDF) of a random variable
 </details>
 <p>We can calculate probabilities (using the CDF). Below are three examples.</p>
 <ul>
-<li>$ P(X ) = F(2) $</li>
-<li>$ P(X &gt; 3) = 1 - P(X ) = 1 - F(3) $</li>
-<li>$ P(2 &lt; X ) = P(X ) - P(X ) = F(3) - F(2) $</li>
+<li><span class="math inline">\(P(X \leq 2) = F(2)\)</span></li>
+<li><span class="math inline">\(P(X &gt; 3) = 1 - P(X \leq 3) = 1 - F(3)\)</span></li>
+<li><span class="math inline">\(P(2 &lt; X \leq 3) = P(X \leq 3) - P(X \leq 2) = F(3) - F(2)\)</span></li>
 </ul>
 <p>Rectangular approximations for expected value (and area) give us Riemann sums and the definite integral.</p>
 <details>
 <summary>
 Riemann sum for <span class="math inline">\(f\)</span>
 </summary>
-<p>Let <span class="math inline">\(f(x)\)</span> be defined on <span class="math inline">\(a \leq x \leq b\)</span>. Let <span class="math inline">\(n\)</span> be a positive integer, and divide the interval $ [ a, b ] $ into <span class="math inline">\(n\)</span> subintervals of equal width. From each subinterval choose a point <span class="math inline">\(x_i\)</span>. We call <span class="math display">\[\sum_{i=1}^{n} f(x_i)\Delta x\]</span> a <strong>Riemann sum for <span class="math inline">\(f\)</span></strong>.</p>
+<p>Let <span class="math inline">\(f(x)\)</span> be defined on <span class="math inline">\(a \leq x \leq b\)</span>. Let <span class="math inline">\(n\)</span> be a positive integer, and divide the interval <span class="math inline">\([ a, b ]\)</span> into <span class="math inline">\(n\)</span> subintervals of equal width. From each subinterval choose a point <span class="math inline">\(x_i\)</span>. We call <span class="math display">\[\sum_{i=1}^{n} f(x_i)\Delta x\]</span> a <strong>Riemann sum for <span class="math inline">\(f\)</span></strong>.</p>
 </details>
 <details>
 <summary>
 Definite Integral (a number, the limit of a Riemann Sum)
 </summary>
-<p>For a function <span class="math inline">\(f(x)\)</span> defined on <span class="math inline">\(a \leq x \leq b\)</span>, <strong>the definite integral of <span class="math inline">\(f\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span></strong> is <span class="math display">\[\int_a^b f(x) dx = \lim_{n\to \infty }\sum_{i=1}^nf(x_i)\Delta x,\]</span> provided the limit exists. If the limit exists, we say that <span class="math inline">\(f\)</span> is integrable on $ [ a, b ] $.</p>
+<p>For a function <span class="math inline">\(f(x)\)</span> defined on <span class="math inline">\(a \leq x \leq b\)</span>, <strong>the definite integral of <span class="math inline">\(f\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span></strong> is <span class="math display">\[\int_a^b f(x) dx = \lim_{n\to \infty }\sum_{i=1}^nf(x_i)\Delta x,\]</span> provided the limit exists. If the limit exists, we say that <span class="math inline">\(f\)</span> is integrable on <span class="math inline">\([ a, b ]\)</span>.</p>
 <ul>
 <li><span class="math inline">\(f(x)\)</span> is the integrand</li>
 <li><span class="math inline">\(x\)</span> is the variable of integration</li>
@@ -686,18 +686,18 @@ Probability Density Function (PDF)
 <li>Important note: If a function is zero everywhere except on an interval <span class="math inline">\(a \leq x \leq b\)</span>, then <span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = \int_{a}^{b}f(x)dx = 1\)</span>.</li>
 </ul>
 </details>
-<p>Any nonnegative function with finite area can be normalized to make a pdf, $f(x) = kg(x) $ where $k = = $.</p>
+<p>Any nonnegative function with finite area can be normalized to make a pdf, <span class="math inline">\(f(x) = kg(x)\)</span> where <span class="math inline">\(k = \frac{1}{\text{Total Area of } g} = \frac{1}{\int_{-\infty}^{\infty} g(x) dx}\)</span>.</p>
 <p>We can calculating probabilities (using the PDF). Below are several examples.</p>
 <ul>
-<li><p>$ P(X ) = _{-}^2 f(x) dx $</p></li>
-<li><p>$ P(X &gt; 3) = _{3}^{} f(x) dx $</p></li>
-<li><p>$ P(2 &lt; X ) = _2^3 f(x) dx$ And notice that we can obtain the CDF from the PDF using</p></li>
+<li><p><span class="math inline">\(P(X \leq 2) = \int_{-\infty}^2 f(x) dx\)</span></p></li>
+<li><p><span class="math inline">\(P(X &gt; 3) = \int_{3}^{\infty} f(x) dx\)</span></p></li>
+<li><p><span class="math inline">\(P(2 &lt; X \leq 3) = \int_2^3 f(x) dx\)</span> And notice that we can obtain the CDF from the PDF using</p></li>
 <li><p><span class="math inline">\(F(x) = P(X \leq x) = \int_{-\infty}^x f(x) dx\)</span>.</p></li>
 </ul>
 <p>Look above at how we computed <span class="math inline">\(P(a &lt; X \leq b)\)</span>.</p>
 <ul>
-<li>We have $ P(a &lt; X b) = _a^b f(x) dx$ using the PDF.</li>
-<li>We have $ P(a &lt; X b) = F(b) - F(a) $ using the CDF. Combining these facts gives <span class="math display">\[\int_a^b f(x) dx = F(b) - F(a).\]</span> This fact, where <span class="math inline">\(F'=f\)</span>, is “The Fundamental Theorem of Calculus” (part 2). We’ll see part 1 later.</li>
+<li>We have <span class="math inline">\(P(a &lt; X \leq b) = \int_a^b f(x) dx\)</span> using the PDF.</li>
+<li>We have <span class="math inline">\(P(a &lt; X \leq b) = F(b) - F(a)\)</span> using the CDF. Combining these facts gives <span class="math display">\[\int_a^b f(x) dx = F(b) - F(a).\]</span> This fact, where <span class="math inline">\(F'=f\)</span>, is “The Fundamental Theorem of Calculus” (part 2). We’ll see part 1 later.</li>
 </ul>
 <p>Given a probability model for a continuous random variable, we’ll use the expected value and variance to help us fit data to the model.</p>
 <details>
@@ -712,9 +712,9 @@ Expected Value (continuous random variable)
 <li>If you roll a die many many many times and then average all the values, this is the expected value.</li>
 <li>If you throw a dart many times and record the <span class="math inline">\(x\)</span>-coordinate each time, the average all these values is the expected value.</li>
 <li>You can use the horizontal centroid of the graph of a PMF or PDF to visualize the expected value of a random variable.</li>
-<li>You can calculate an approximation for the expected value of a continuous random variable with a weighted average of the centroids of rectangles, namely $ E[X] $ where $ A_i = f(x_i)x.$
+<li>You can calculate an approximation for the expected value of a continuous random variable with a weighted average of the centroids of rectangles, namely <span class="math inline">\(E[X] \approx \frac{\sum x_i A_i}{\sum A_i}\)</span> where <span class="math inline">\(A_i = f(x_i)\Delta x.\)</span>
 <ul>
-<li>If the total area is 1, so <span class="math inline">\(\sum A_i = 1\)</span>, this becomes $ E[X] x_i A_i = x_i f(x_i) x .$</li>
+<li>If the total area is 1, so <span class="math inline">\(\sum A_i = 1\)</span>, this becomes <span class="math inline">\(E[X] \approx \sum x_i A_i = \sum x_i f(x_i) \Delta x .\)</span></li>
 <li>The limit of this Riemann sum is the definite integral <span class="math inline">\(E[X] = \lim_{n \rightarrow \infty} \sum x_i f(x_i) \Delta x = \int_a^b xf(x) dx .\)</span></li>
 </ul></li>
 </ul>
@@ -877,7 +877,7 @@ Var = Integrate[(x - EV)^2*f, {x, 0, Infinity}]</code></pre>
 <li>3 – Riemann Sums &amp; Definite Integrals</li>
 <li>3 – Calculate Parameters of Continuous Random Variables Identifying Expected Value and Variance</li>
 </ul></li>
-<li>Let’s calculate $_{-}^f(x) dx $, $ E[X] $, $ Var[X] $, and standard deviation of X for <span class="math inline">\(f_3\)</span> and <span class="math inline">\(f_1\)</span>.</li>
+<li>Let’s calculate <span class="math inline">\(\int_{-\infty}^\infty f(x) dx\)</span>, <span class="math inline">\(E[X]\)</span>, <span class="math inline">\(Var[X]\)</span>, and standard deviation of X for <span class="math inline">\(f_3\)</span> and <span class="math inline">\(f_1\)</span>.</li>
 </ul>
 <pre><code>$Assumptions = \[Lambda] &gt; 0;
 Integrate[\[Lambda]*Exp[-\[Lambda]*x],{x,0,Infinity}]

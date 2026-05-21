@@ -558,8 +558,8 @@ window.Quarto = {
 0 &amp;  \text{otherwise}
 \end{cases}.\]</span></p></li>
 <li><p>Use the Fundamental Theorem of Calculus to calculate the value of <span class="math inline">\(\int_{-1}^2t^2dt\)</span>. Use Mathematica to check your answer.</p></li>
-<li><p>Calculate $ ( _{-1}<sup>2t</sup>2dt ) $.</p></li>
-<li><p>Use the Fundamental Theorem of Calculus to calculate $ ( _{1}<sup>x\frac{2}{t</sup>3}dt ) $.</p></li>
+<li><p>Calculate <span class="math inline">\(\frac{d}{dx}( \int_{-1}^2t^2dt )\)</span>.</p></li>
+<li><p>Use the Fundamental Theorem of Calculus to calculate <span class="math inline">\(\frac{d}{dx} ( \int_{1}^x\frac{2}{t^3}dt )\)</span>.</p></li>
 <li><p>Use the Fundamental Theorem of Calculus to calculate <span class="math inline">\(\int_{1}^x\frac{2}{t^3}dt\)</span>. Use Mathematica to check your answer.</p></li>
 <li><p>Use your understanding of derivatives to find the indefinite integral <span class="math inline">\(\int (2x+5)^{11} dx\)</span>. Use Mathematica to check your answer.</p></li>
 <li><p>Use your understanding of derivatives to find the indefinite integral <span class="math inline">\(\int e^{3-4x} dx\)</span>. Use Mathematica to check your answer.</p></li>
@@ -663,7 +663,7 @@ FullSimplify[D[MyAnswer - MathmaticaAnswer, x] == 0]</code></pre>
 <ul>
 <li><p>Consider <span class="math inline">\(\int x(x-1)^3 dx\)</span>. Compute the integral by hand, and then with Mathematica. Compare the solutions, and verify that their difference is a constant.</p></li>
 <li><p>Consider <span class="math inline">\(\int \frac{y}{(y+1)^4} dy\)</span>. Compute the integral by hand, and then with Mathematica. Compare the solutions, and verify that their difference is a constant.</p></li>
-<li><p>Consider <span class="math inline">\(\int \frac{1}{x^2 + 8} dx\)</span>. Computing the integral in Mathematica, and then plot the result. The ArcTan function may be new to many of us. The function <span class="math inline">\(f(x) = \tan^{-1}(x)\)</span> is called the arctangent function or inverse tangent function. The domain of the inverse tangent function is all real numbers. The range of the inverse tangent is $ ( -, ) $. We could use the following code to plot <span class="math inline">\(f(x) = \arctan(x)\)</span> in R.</p></li>
+<li><p>Consider <span class="math inline">\(\int \frac{1}{x^2 + 8} dx\)</span>. Computing the integral in Mathematica, and then plot the result. The ArcTan function may be new to many of us. The function <span class="math inline">\(f(x) = \tan^{-1}(x)\)</span> is called the arctangent function or inverse tangent function. The domain of the inverse tangent function is all real numbers. The range of the inverse tangent is <span class="math inline">\(( -\frac{\pi}{2}, \frac{\pi}{2} )\)</span>. We could use the following code to plot <span class="math inline">\(f(x) = \arctan(x)\)</span> in R.</p></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>inpt <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">25</span>,<span class="dv">30</span>,<span class="fl">0.1</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="fl">0.25</span>,<span class="fl">0.25</span>))</span>

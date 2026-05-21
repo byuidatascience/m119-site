@@ -448,7 +448,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#find-any-extrema-of-gx-x1-x." id="toc-find-any-extrema-of-gx-x1-x." class="nav-link" data-scroll-target="#find-any-extrema-of-gx-x1-x.">Find any extrema of <span class="math inline">\(g(x) = x(1-x)\)</span>.</a></li>
   <li><a href="#find-any-extrema-of-hx-x3-x." id="toc-find-any-extrema-of-hx-x3-x." class="nav-link" data-scroll-target="#find-any-extrema-of-hx-x3-x.">Find any extrema of <span class="math inline">\(h(x) = x^3-x\)</span>.</a></li>
-  <li><a href="#find-any-extrema-of-hx-x3-x-on-the-interval--1-2-." id="toc-find-any-extrema-of-hx-x3-x-on-the-interval--1-2-." class="nav-link" data-scroll-target="#find-any-extrema-of-hx-x3-x-on-the-interval--1-2-.">Find any extrema of <span class="math inline">\(h(x) = x^3-x\)</span> on the interval $ [-1, 2] $.</a></li>
+  <li><a href="#find-any-extrema-of-hx-x3-x-on-the-interval--1-2." id="toc-find-any-extrema-of-hx-x3-x-on-the-interval--1-2." class="nav-link" data-scroll-target="#find-any-extrema-of-hx-x3-x-on-the-interval--1-2.">Find any extrema of <span class="math inline">\(h(x) = x^3-x\)</span> on the interval <span class="math inline">\([-1, 2]\)</span>.</a></li>
   </ul></li>
   <li><a href="#group-meeting" id="toc-group-meeting" class="nav-link" data-scroll-target="#group-meeting">Group Meeting</a></li>
   </ul></li>
@@ -489,31 +489,31 @@ window.Quarto = {
 <section id="making-connections" class="level3">
 <h3 class="anchored" data-anchor-id="making-connections">(1) Making Connections</h3>
 <ol type="1">
-<li>Consider the function $ f(a) = 100 - (3-4a)^2 $.</li>
+<li>Consider the function <span class="math inline">\(f(a) = 100 - \frac{1}{2}(3-4a)^2\)</span>.</li>
 </ol>
 <ul>
 <li>Find the critical points of <span class="math inline">\(f\)</span>.</li>
 <li>Use the second derivative test to determine if the critical points are locations of maxima or minima.</li>
 </ul>
 <ol start="2" type="1">
-<li>Consider the function $ f(a_1) $ that has the derivative $ f’(a_1) = 172746.8 - 328767530a_1 $.</li>
+<li>Consider the function <span class="math inline">\(f(a_1)\)</span> that has the derivative <span class="math inline">\(f'(a_1) = 172746.8 - 328767530a_1\)</span>.</li>
 </ol>
 <ul>
 <li>Find the critical points of <span class="math inline">\(f\)</span>.</li>
 <li>Use the second derivative test to determine if the critical points are locations of maxima or minima.</li>
 </ul>
 <ol start="3" type="1">
-<li>Consider the function $ <em>1 = 44() - </em>{i}^{44} (y_i - 100 - a_1t_i)^2 $.</li>
+<li>Consider the function <span class="math inline">\(\ell_1 = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i)^2\)</span>.</li>
 </ol>
 <ul>
-<li>Review your calculation of the first derivative and second derivative of $ _1 $.
+<li>Review your calculation of the first derivative and second derivative of <span class="math inline">\(\ell_1\)</span>.
 <ul>
 <li>Note: This is part of the required work for Project 2 Task 2.</li>
 </ul></li>
 <li>Use R (with seed=123) to actually compute the coefficients in your first and second derivatives above. (Try using the sum function.) Check that you obtain the following:
 <ul>
-<li>$ = 172746.8 - 328767530 a_1 $</li>
-<li>$ = -328767530 $</li>
+<li><span class="math inline">\(\frac{d\ell_1}{da_1} = 172746.8 - 328767530 a_1\)</span></li>
+<li><span class="math inline">\(\frac{d^2\ell_1}{da_1^2} = -328767530\)</span></li>
 </ul></li>
 <li>Find the critical points of <span class="math inline">\(\ell_1\)</span>.</li>
 <li>Use the second derivative test to determine if the critical points are locations of maxima or minima.</li>
@@ -521,7 +521,7 @@ window.Quarto = {
 <ul>
 <li>Note: This is the same value that give the location of the maximum of the likelihood (or maximum likelihood).</li>
 </ul></li>
-<li>Plot the lightbulb data (using the seed 123) along with the fitted model $ f_1(t) $ on the same axes, updating the value you obtained for $ a_1 $. The code below may help you get started.</li>
+<li>Plot the lightbulb data (using the seed 123) along with the fitted model <span class="math inline">\(f_1(t)\)</span> on the same axes, updating the value you obtained for <span class="math inline">\(a_1\)</span>. The code below may help you get started.</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data4led)</span>
@@ -535,31 +535,31 @@ window.Quarto = {
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(ti,<span class="fu">f1</span>(ti,a1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>- Note: This is part of the required work for Project 2 Task 3.</code></pre>
 <ol start="4" type="1">
-<li>Consider the function $ f(a) = 100 - (300e<sup>{-2}-400e</sup>{-2}a)^2 $.</li>
+<li>Consider the function <span class="math inline">\(f(a) = 100 - \frac{1}{2}(300e^{-2}-400e^{-2}a)^2\)</span>.</li>
 </ol>
 <ul>
 <li>Find the critical points of <span class="math inline">\(f\)</span>.</li>
 <li>Use the second derivative test to determine if the critical points are locations of maxima or minima.</li>
 </ul>
 <ol start="5" type="1">
-<li>Consider the function $ f(a_1) $ that has the derivative $ f’(a_1) = 1386372 - 225775231a_1 $.</li>
+<li>Consider the function <span class="math inline">\(f(a_1)\)</span> that has the derivative <span class="math inline">\(f'(a_1) = 1386372 - 225775231a_1\)</span>.</li>
 </ol>
 <ul>
 <li>Find the critical points of <span class="math inline">\(f\)</span>.</li>
 <li>Use the second derivative test to determine if the critical points are locations of maxima or minima.</li>
 </ul>
 <ol start="6" type="1">
-<li>Consider the function $ <em>5 = 44() - </em>{i}^{44} (y_i - 100e^{-0.00005t_i} - a_1t_ie<sup>{-0.00005t_i})</sup>2 $.</li>
+<li>Consider the function <span class="math inline">\(\ell_5 = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100e^{-0.00005t_i} - a_1t_ie^{-0.00005t_i})^2\)</span>.</li>
 </ol>
 <ul>
-<li>Review your calculation of the first derivative and second derivative of $ _5 $.
+<li>Review your calculation of the first derivative and second derivative of <span class="math inline">\(\ell_5\)</span>.
 <ul>
 <li>Note: This is part of the required work for Project 2 Task 2.</li>
 </ul></li>
 <li>Use R (with seed=123) to actually compute the coefficients in your first and second derivatives above. (Try using the sum function.) Check that you obtain the following:
 <ul>
-<li>$ = 1386372 - 225775231a_1 $</li>
-<li>$ = -225775231 $</li>
+<li><span class="math inline">\(\frac{d\ell_5}{da_1} = 1386372 - 225775231a_1\)</span></li>
+<li><span class="math inline">\(\frac{d^2\ell_5}{da_1^2} = -225775231\)</span></li>
 </ul></li>
 <li>Find the critical points of <span class="math inline">\(\ell_5\)</span>.</li>
 <li>Use the second derivative test to determine if the critical points are locations of maxima or minima.</li>
@@ -567,7 +567,7 @@ window.Quarto = {
 <ul>
 <li>Note: This is the same value that give the location of the maximum of the likelihood (or maximum likelihood).</li>
 </ul></li>
-<li>Plot the lightbulb data (using the seed 123) along with the fitted model $ f_5(t) $ on the same axes, updating the value you obtained for $ a_1 $. The code below may help you get started.</li>
+<li>Plot the lightbulb data (using the seed 123) along with the fitted model <span class="math inline">\(f_5(t)\)</span> on the same axes, updating the value you obtained for <span class="math inline">\(a_1\)</span>. The code below may help you get started.</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data4led)</span>
@@ -758,10 +758,10 @@ We can graph the first derivative, as well as <span class="math inline">\(y=0\)<
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">D2h</span>(<span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))</span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">D2h</span>(cv<span class="fl">.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="find-any-extrema-of-hx-x3-x-on-the-interval--1-2-." class="level3">
-<h3 class="anchored" data-anchor-id="find-any-extrema-of-hx-x3-x-on-the-interval--1-2-.">Find any extrema of <span class="math inline">\(h(x) = x^3-x\)</span> on the interval $ [-1, 2] $.</h3>
-<p>This is almost the same as the previous problem, except that now the function’s domain has been restricted to only include $ [-1, 2] $. As such, the function is no longer differentiable at the end points, which means <span class="math inline">\(x=-1\)</span> and <span class="math inline">\(x=2\)</span> become critical values as well.</p>
-<p>We can use R to graph <span class="math inline">\(h\)</span> on $ [-1, 2] $.</p>
+<section id="find-any-extrema-of-hx-x3-x-on-the-interval--1-2." class="level3">
+<h3 class="anchored" data-anchor-id="find-any-extrema-of-hx-x3-x-on-the-interval--1-2.">Find any extrema of <span class="math inline">\(h(x) = x^3-x\)</span> on the interval <span class="math inline">\([-1, 2]\)</span>.</h3>
+<p>This is almost the same as the previous problem, except that now the function’s domain has been restricted to only include <span class="math inline">\([-1, 2]\)</span>. As such, the function is no longer differentiable at the end points, which means <span class="math inline">\(x=-1\)</span> and <span class="math inline">\(x=2\)</span> become critical values as well.</p>
+<p>We can use R to graph <span class="math inline">\(h\)</span> on <span class="math inline">\([-1, 2]\)</span>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">my_plot</span>(h,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>There are 4 critical points. We found approximations to two of these in the previous code chunks. Let’s evaluate <span class="math inline">\(h\)</span> at each critical value to determine the absolute maximum, and absolute minimum.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">h</span>(<span class="sc">-</span><span class="dv">1</span>)</span>
@@ -790,8 +790,8 @@ We can graph the first derivative, as well as <span class="math inline">\(y=0\)<
 <li><p>Compute the second derivative of <span class="math inline">\(\ell_1\)</span> with respect to <span class="math inline">\(a_1\)</span> and show that it can be written in the form <span class="math display">\[\frac{d^2\ell_1}{da_1^2} = -\sum_{i=1}^{44} t_i^2.\]</span></p></li>
 <li><p>Use R (with seed=123) to actually compute the coefficients in your first and second derivatives above. (Use the sum function.) Check that you obtain the following:</p>
 <ul>
-<li>$ = 172746.8 - 328767530 a_1 $</li>
-<li>$ = -328767530 $</li>
+<li><span class="math inline">\(\frac{d\ell_1}{da_1} = 172746.8 - 328767530 a_1\)</span></li>
+<li><span class="math inline">\(\frac{d^2\ell_1}{da_1^2} = -328767530\)</span></li>
 </ul></li>
 <li><p>Find the critical points of <span class="math inline">\(\ell_1\)</span>, so set the first derivative equal to zero and solve.</p></li>
 <li><p>Use the second derivative test to determine if the critical points are locations of maxima or minima.</p></li>
@@ -799,7 +799,7 @@ We can graph the first derivative, as well as <span class="math inline">\(y=0\)<
 <ul>
 <li>Note: This is the same value that give the location maximum likelihood.</li>
 </ul></li>
-<li><p>Plot the lightbulb data (using the seed 123) along with the fitted model $ f_1(t) $ on the same axes, updating the value you obtained for $ a_1 $. The code below may help you get started.</p></li>
+<li><p>Plot the lightbulb data (using the seed 123) along with the fitted model <span class="math inline">\(f_1(t)\)</span> on the same axes, updating the value you obtained for <span class="math inline">\(a_1\)</span>. The code below may help you get started.</p></li>
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data4led)</span>
