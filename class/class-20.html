@@ -633,10 +633,28 @@ Answers
 <summary>
 Answers
 </summary>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{df}{dx}(x) &amp;= \left(\frac{d}{dx}(x^2 - 1)\right)(-x^3 - 5x + 2) + (x^2 - 1)\frac{d}{dx}(-x^3 - 5x + 2) \\
+&amp;= (2x)(-x^3 - 5x + 2) + (x^2 - 1)(-3x^2 - 5) \\
+&amp;= -5x^4 - 12x^2 + 4x + 5
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{dh}{dx}(x) &amp;= \frac{\left(\frac{d}{dx}(-2x^2 + x + 4)\right)(x^2 + 4x - 1) - (-2x^2 + x + 4)\frac{d}{dx}(x^2 + 4x - 1)}{(x^2 + 4x - 1)^2} \\
+&amp;= \frac{(-4x + 1)(x^2 + 4x - 1) - (-2x^2 + x + 4)(2x + 4)}{(x^2 + 4x - 1)^2} \\
+&amp;= \frac{-9x^2 - 4x - 17}{(x^2 + 4x - 1)^2}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{dg}{dx}(x) &amp;= \frac{\left(\frac{d}{dx}(1-2x)(x+4)\right)(x^2 + 3x - 1) - (1-2x)(x+4)\frac{d}{dx}(x^2 + 3x - 1)}{(x^2 + 3x - 1)^2} \\
+&amp;= \frac{\left((\diff{}{x}(1-2x))(x+4) + (1-2x)\diff{}{x}(x+4)\right)(x^2 + 3x - 1) - (1-2x)(x+4)(2x + 3)}{(x^2 + 3x - 1)^2} \\
+&amp;= \frac{x^2 - 4x - 5}{(x^2 + 3x - 1)^2}
+\end{aligned}
+\]</span></p>
 <ul>
-<li><span class="math inline">\(\frac{df}{dx}(x) = (\frac{d}{dx}(x^2 - 1))(-x^3 - 5x +2) + (x^2 - 1)\frac{d}{dx}(-x^3 - 5x +2) = (2x)(-x^3 - 5x +2) + (x^2 - 1)(-3x^2-5) = -5x^4 - 12x^2 + 4x + 5\)</span></li>
-<li><span class="math inline">\(\frac{dh}{dx}(x) = \frac{ (\frac{d}{dx}(-2x^2 + x + 4))(x^2 + 4x -1) - (-2x^2 + x + 4)\frac{d}{dx}(x^2 + 4x -1)}{ (x^2 + 4x -1)^2} = \frac{ (-4x + 1)(x^2 + 4x -1) - (-2x^2 + x + 4)(2x + 4) }{ (x^2 + 4x -1)^2} = \frac{-9x^2 -4x-17}{ (x^2 + 4x -1)^2}\)</span></li>
-<li><span class="math inline">\(\frac{dg}{dx}(x) = \frac{ (\frac{d}{dx}(1-2x)(x+4))(x^2 + 3x - 1) - (1-2x)(x+4)\frac{d}{dx}(x^2 + 3x - 1) }{ (x^2 + 3x - 1)^2 } = \frac{ ((\diff{}{x}(1-2x))(x+4) + (1-2x)\diff{}{x}(x+4))(x^2 + 3x - 1) - (1-2x)(x+4)(2x + 3) }{ (x^2 + 3x - 1)^2 } = \frac{ x^2 -4x -5 }{ (x^2 + 3x - 1)^2 }\)</span></li>
 <li><span class="math inline">\(\frac{dy}{dx}(x) = 0\)</span></li>
 <li><span class="math inline">\(\frac{ds}{dx}(x) = 12a^2x^{3a-1} - 2bcx^{2c-1}\)</span></li>
 <li><span class="math inline">\(\frac{dr}{dx}(x) = -\frac{3}{2}(1-3x)^{-\frac{1}{2}} = -\frac{3}{2\sqrt{1-3x}}\)</span></li>
@@ -672,17 +690,24 @@ This activity focuses on finding the linear approximation to a function at a poi
 <summary>
 Answers
 </summary>
-<pre><code>1.  $y + 3 = -3x$  
-1. $y = -3 - 3(x-0)$
-1. $y = -3 - 3x$
-1.  $y - 172 = -45(x+3)$
-1. $y = L(x) = 172 -45(x+3)$
-1. $y = L(x) = 37 - 45x$</code></pre>
 <ol type="1">
-<li><ol type="1">
-<li><span class="math inline">\(y - 1 = -2(x-1)\)</span></li>
-<li><span class="math inline">\(y = L(x) = 1 -2(x-1)\)</span></li>
-<li><span class="math inline">\(y = L(x) = 3 -2x\)</span></li>
+<li><span class="math inline">\(f(x) = -3e^{x}\)</span> at <span class="math inline">\(x = 0\)</span>:
+<ol type="a">
+<li><span class="math inline">\(y + 3 = -3x\)</span></li>
+<li><span class="math inline">\(y = -3 - 3(x - 0)\)</span></li>
+<li><span class="math inline">\(y = -3 - 3x\)</span></li>
+</ol></li>
+<li><span class="math inline">\(l(x) = 100 - 3x + 7x^2\)</span> at <span class="math inline">\(x = -3\)</span>:
+<ol type="a">
+<li><span class="math inline">\(y - 172 = -45(x + 3)\)</span></li>
+<li><span class="math inline">\(y = L(x) = 172 - 45(x + 3)\)</span></li>
+<li><span class="math inline">\(y = L(x) = 37 - 45x\)</span></li>
+</ol></li>
+<li><span class="math inline">\(g(x) = 1 - 2\ln(x)\)</span> at <span class="math inline">\(x = 1\)</span>:
+<ol type="a">
+<li><span class="math inline">\(y - 1 = -2(x - 1)\)</span></li>
+<li><span class="math inline">\(y = L(x) = 1 - 2(x - 1)\)</span></li>
+<li><span class="math inline">\(y = L(x) = 3 - 2x\)</span></li>
 </ol></li>
 </ol>
 </details>
