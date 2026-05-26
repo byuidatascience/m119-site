@@ -84,3 +84,14 @@ mjx-container[display="true"] {
   vertical-align: top;
   overflow-wrap: break-word;
 }
+
+/* Keep Quarto's prev/next page-navigation (footer buttons) but hide the
+   class-list sidebar it derives ordering from. The sidebar contents in
+   _quarto.yml still define the prev/next sequence; we just don't render
+   the list. Content reflows to the normal centered article width. */
+#quarto-sidebar {
+  display: none !important;
+}
+.quarto-sidebar-toggle {
+  display: none !important;
+}
