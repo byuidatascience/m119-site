@@ -36,8 +36,15 @@ R + renv + system-deps + freeze stack.** So the unified site must be built on
 the **M119/Projects foundation**, and the course content moves into it — not
 the other way around.
 
-End state: **M119/Projects becomes the single published site** (course content
-+ projects), m119-site retires, and Canvas/external URLs repoint next semester.
+End state: **M119/Projects becomes the new master (canonical published) site** —
+course content + projects in one place — and **m119-site retires**. This also
+fits the note in `publishing.md` that m119-site was always a *temporary* host;
+M119 becoming the master site supersedes it. Canvas/external URLs repoint next
+semester (m119_master's job — see Responsibility split).
+
+(There is no literal open GitHub PR to close — m119-site, m119_master, and M119
+all have zero open PRs as of 2026-05-26. "Closing the PR" here means winding
+down m119-site as a standalone site once M119 is the master.)
 
 ## Why this lives in the M119/Projects repo (the producer)
 
@@ -70,7 +77,9 @@ the open question (below) is simply where future edits live. The heavy
    workflow.
 5. **Link updates are m119_master's responsibility** (see split below) — both
    the in-page course cross-links and the external Canvas repointing.
-6. **Retire m119-site** (archive or redirect stub) once the unified site is live.
+6. **Retire m119-site** once the unified site is live — archive the repo or
+   leave a redirect stub to the M119 master site. m119-site stops being a
+   standalone published site.
 
 ## Responsibility split (who owns what)
 
