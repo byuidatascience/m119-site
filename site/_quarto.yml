@@ -51,7 +51,7 @@ website:
   page-navigation: true
   sidebar:
     - title: "Class Sessions"
-      style: docked
+      style: floating
       collapse-level: 1
       contents:
         - class/class-1.qmd
