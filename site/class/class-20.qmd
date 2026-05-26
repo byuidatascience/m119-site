@@ -165,9 +165,30 @@ Find the derivative of each of the functions below with respect to the independe
 <details>
 <summary>Answers</summary>
 
-- $\frac{df}{dx}(x) = (\frac{d}{dx}(x^2 - 1))(-x^3 - 5x +2) + (x^2 - 1)\frac{d}{dx}(-x^3 - 5x +2) = (2x)(-x^3 - 5x +2) + (x^2 - 1)(-3x^2-5) = -5x^4 - 12x^2 + 4x + 5$
-- $\frac{dh}{dx}(x) = \frac{ (\frac{d}{dx}(-2x^2 + x + 4))(x^2 + 4x -1) - (-2x^2 + x + 4)\frac{d}{dx}(x^2 + 4x -1)}{ (x^2 + 4x -1)^2} = \frac{ (-4x + 1)(x^2 + 4x -1) - (-2x^2 + x + 4)(2x + 4) }{ (x^2 + 4x -1)^2} = \frac{-9x^2 -4x-17}{ (x^2 + 4x -1)^2}$
-- $\frac{dg}{dx}(x) = \frac{ (\frac{d}{dx}(1-2x)(x+4))(x^2 + 3x - 1) - (1-2x)(x+4)\frac{d}{dx}(x^2 + 3x - 1) }{ (x^2 + 3x - 1)^2 } = \frac{ ((\diff{}{x}(1-2x))(x+4) + (1-2x)\diff{}{x}(x+4))(x^2 + 3x - 1) - (1-2x)(x+4)(2x + 3) }{ (x^2 + 3x - 1)^2 } = \frac{ x^2 -4x -5 }{ (x^2 + 3x - 1)^2 }$
+$$
+\begin{aligned}
+\frac{df}{dx}(x) &= \left(\frac{d}{dx}(x^2 - 1)\right)(-x^3 - 5x + 2) + (x^2 - 1)\frac{d}{dx}(-x^3 - 5x + 2) \\
+&= (2x)(-x^3 - 5x + 2) + (x^2 - 1)(-3x^2 - 5) \\
+&= -5x^4 - 12x^2 + 4x + 5
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\frac{dh}{dx}(x) &= \frac{\left(\frac{d}{dx}(-2x^2 + x + 4)\right)(x^2 + 4x - 1) - (-2x^2 + x + 4)\frac{d}{dx}(x^2 + 4x - 1)}{(x^2 + 4x - 1)^2} \\
+&= \frac{(-4x + 1)(x^2 + 4x - 1) - (-2x^2 + x + 4)(2x + 4)}{(x^2 + 4x - 1)^2} \\
+&= \frac{-9x^2 - 4x - 17}{(x^2 + 4x - 1)^2}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\frac{dg}{dx}(x) &= \frac{\left(\frac{d}{dx}(1-2x)(x+4)\right)(x^2 + 3x - 1) - (1-2x)(x+4)\frac{d}{dx}(x^2 + 3x - 1)}{(x^2 + 3x - 1)^2} \\
+&= \frac{\left((\diff{}{x}(1-2x))(x+4) + (1-2x)\diff{}{x}(x+4)\right)(x^2 + 3x - 1) - (1-2x)(x+4)(2x + 3)}{(x^2 + 3x - 1)^2} \\
+&= \frac{x^2 - 4x - 5}{(x^2 + 3x - 1)^2}
+\end{aligned}
+$$
+
 - $\frac{dy}{dx}(x) = 0$
 - $\frac{ds}{dx}(x) = 12a^2x^{3a-1} - 2bcx^{2c-1}$
 - $\frac{dr}{dx}(x) = -\frac{3}{2}(1-3x)^{-\frac{1}{2}} = -\frac{3}{2\sqrt{1-3x}}$
@@ -214,16 +235,18 @@ For each function below, give an equation of the linear approximation at the spe
 <details>
 <summary>Answers</summary>
 
-    1.  $y + 3 = -3x$  
-    1. $y = -3 - 3(x-0)$
-    1. $y = -3 - 3x$
-    1.  $y - 172 = -45(x+3)$
-    1. $y = L(x) = 172 -45(x+3)$
-    1. $y = L(x) = 37 - 45x$
-1. 
-    1. $y - 1 = -2(x-1)$
-    1. $y = L(x) = 1 -2(x-1)$
-    1. $y = L(x) = 3 -2x$
+1. $f(x) = -3e^{x}$ at $x = 0$:
+    a. $y + 3 = -3x$
+    b. $y = -3 - 3(x - 0)$
+    c. $y = -3 - 3x$
+1. $l(x) = 100 - 3x + 7x^2$ at $x = -3$:
+    a. $y - 172 = -45(x + 3)$
+    b. $y = L(x) = 172 - 45(x + 3)$
+    c. $y = L(x) = 37 - 45x$
+1. $g(x) = 1 - 2\ln(x)$ at $x = 1$:
+    a. $y - 1 = -2(x - 1)$
+    b. $y = L(x) = 1 - 2(x - 1)$
+    c. $y = L(x) = 3 - 2x$
 
 </details>
 
