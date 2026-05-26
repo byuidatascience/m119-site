@@ -1,129 +1,121 @@
 **Date:** 2026-05-26
 **Author:** Claude (agent) + m119-site
 **Direction:** request
-**Status:** draft
-**Origin:** Student-UX review — class pages link out to a separate Projects site (`chaz-clark.github.io/M119/Projects/`), forcing students to bounce between two sites. Both are Quarto, so consolidation is a project merge, not a rewrite.
+**Status:** draft — **DEFERRED**
+**Trigger:** after the SP26 semester ends (term end `2026-07-22` per `schedule_config.yml`). Revisit **August 2026**. Do not act mid-semester — URL changes would break live Canvas links during the term.
+**Origin:** Student-UX review — class pages link out to a separate Projects site (`chaz-clark.github.io/M119/Projects/`), forcing students to bounce between two sites.
 **Origin-Commit:** dbd07b4
 **Topic:** merge-projects-site
 **Sensitivity:** standard. Both repos are public; no secrets or PII.
+**Producer (target repo):** `chaz-clark/M119` (the Projects repo) — it becomes the unified site, so the merge work happens there.
 **Companions:**
 - `.claude/knowledge/quarto.md` (m119-site) — Quarto/Pandoc gotchas that apply to the merged build.
-- `tools/swap_pages_url.py` (m119_master) — the existing Canvas URL-swap tool to repoint external references.
-- The schedule-ownership rule in `AGENTS.md` / `.claude/knowledge/converter.md` — same principle: source-of-truth changes happen in m119_master, not m119-site.
+- `tools/swap_pages_url.py` — the existing Canvas URL-swap tool to repoint external references (lives in m119_master).
+- m119_master — upstream generator of the course `.qmd` (class/flex/definitions). It is *not* the producer of this handoff, but the course content originates there; see the open question about the future editing model.
 
 ---
 
-# Feature request: merge the M119/Projects Quarto site into the course site as a "Projects" tab
+# Feature request: unify the course site and the Projects site into one Quarto site
 
-## What feature
+## Decision: merge **course content → Projects foundation** (not the reverse)
 
-Consolidate the standalone Projects site (`chaz-clark/M119`, served at
-`chaz-clark.github.io/M119/Projects/`) into the main course site as a new
-**"Projects" navbar tab**, so students use one site instead of two. Execute in
-**m119_master** (the source of truth that feeds m119-site), targeting **next
-semester** — not mid-term.
+The earlier framing ("pull Projects into m119-site") was backwards. Analysis on
+2026-05-26 settled the direction:
 
-Both sites are Quarto, so this is a **project consolidation** (combine `.qmd`
-sources, navbar, assets, one `_quarto.yml`, one build/deploy), not a format
-conversion.
+- **m119-site** is **markdown-only** — class/flex/definition pages just display
+  ```r``` blocks; nothing executes. Its CI ([publish.yml]) has no R.
+- **M119/Projects** is an **R-rendering Quarto site**. Its pages run real R —
+  `probability.qmd` alone has 42 executable `{r}` chunks; unit1–3 +
+  project1_practice + RCommands add ~48 more. Its `publish.yml` already does the
+  full stack: `quarto setup` + `r-lib/actions/setup-r@v2` (R 4.5.2) +
+  `setup-pandoc` + apt system deps (libcurl/ssl/xml2/fontconfig/harfbuzz/…) +
+  `setup-renv@v2` (restores `renv.lock`) + render-and-publish to `gh-pages`.
 
-## Why this lives in the producer's repo (m119_master)
+The asymmetry is decisive: **an R-capable site hosts markdown pages for free;
+a markdown-only site cannot host R pages without recreating the entire
+R + renv + system-deps + freeze stack.** So the unified site must be built on
+the **M119/Projects foundation**, and the course content moves into it — not
+the other way around.
 
-Per the established pipeline rule, m119_master is the authoring source of truth;
-content flows m119_master → m119-site. Editing the merged structure directly in
-m119-site would be the same drift-creating workflow violation we've been
-flagging for schedule edits. The merge — new `projects/` sources, navbar config,
-asset moves, and the cross-site link rewrites — must be authored in m119_master
-and flow downstream.
+End state: **M119/Projects becomes the single published site** (course content
++ projects), m119-site retires, and Canvas/external URLs repoint next semester.
 
-## How the merged site would work
+## Why this lives in the M119/Projects repo (the producer)
 
-- A **Projects** entry in the navbar (likely a dropdown: Unit 1, Unit 2, …,
-  Reference Sheet, practice docs) alongside Home / Definitions / Schedule.
-- Project pages live under `site/projects/` as native `.qmd`.
-- Project assets (PDFs, reference sheet, images) move into `site/assets/`
-  (or `site/assets/projects/`).
-- Class/flex pages link to projects with **relative internal links**
-  (`projects/unit1.html`) instead of the absolute `https://chaz-clark.github.io/M119/Projects/…`
-  URLs they use today (seen in class-15, class-18, etc.).
-- One Quarto build, one deploy, one search index covering projects too.
+The unified site is built on the **M119/Projects foundation** (it has the R
+pipeline), so the merge work — adopting course sections, merging `_quarto.yml`,
+moving the schedule machinery, wiring the navbar — happens **in the M119 repo**.
+That makes `chaz-clark/M119` the producer; this handoff drops there.
 
-## Suggested shape (single Quarto project)
+The one upstream dependency: the class/flex/definition pages originate as
+**generated** content (m119_master → PMWiki converter). But the conversion is
+effectively **one-and-done** as of 2026-05-26 — the maintainer now edits the
+`.qmd` directly and pages don't get re-converted. So bringing course content
+into M119 is likely a **one-time copy** of the current `.qmd` set, after which
+the open question (below) is simply where future edits live. The heavy
+"retarget the converter pipeline" framing is probably unnecessary.
 
-1. **Bring in the sources.** Copy the M119/Projects `.qmd` files into
-   `m119_master` under `site/projects/`. Preserve their internal structure.
-2. **Reconcile `_quarto.yml`.** Merge the Projects site's config into the main
-   `site/_quarto.yml`:
-   - Add the **Projects** navbar item (dropdown of project pages).
-   - Confirm the **MathJax macros** (`\ds`, `\diff`) and `html-math-method`
-     cover the project pages (they rely on the project-level
-     `include-in-header` — see `.claude/knowledge/quarto.md`).
-   - Reconcile **theme** (main site uses `flatly`/`darkly`) — match or adopt.
-   - Watch **freeze** and any conflicting project-level settings.
-3. **Move assets.** Relocate `m119-docs` PDFs, the reference sheet, and images
-   into the main site's asset tree; update `resources:` globs in `_quarto.yml`
-   and fix any in-page asset paths.
-4. **Rewrite internal links.** Convert every `https://chaz-clark.github.io/M119/Projects/…`
-   reference inside `site/class/*.qmd` and `site/flex/*.qmd` to the new
-   relative path. (Grep the class/flex sources for `M119/Projects` to inventory.)
-5. **Rewrite external references — next semester only.** Use
-   `tools/swap_pages_url.py` (set `OLD`/`NEW`, run `--apply`) to repoint Canvas
-   and other external links from `/M119/Projects/…` to the new
-   `/m119-site/projects/…` location. The swap log lists every Canvas location.
-6. **Retire / stub the old Projects site.** Once references move, sunset
-   `chaz-clark/M119` Projects (archive, or leave a redirect stub) so old links
-   don't 404 during the transition.
+## Suggested shape (when revisited post-semester)
 
-## What I've ruled out
+1. **Adopt M119/Projects as the base** Quarto project (keep its R pipeline,
+   `renv.lock`, `_freeze/`, R-rendering `publish.yml`).
+2. **Bring the course content in** as new sections: `class/`, `flex/`,
+   `definitions/` (markdown — renders for free under the existing pipeline).
+3. **Merge the m119-site-only config pieces** into M119's `_quarto.yml`:
+   - MathJax macros `\ds` and `\diff` (in m119-site's `include-in-header`).
+   - The **Class Sessions** sidebar + `page-navigation: true` (bottom prev/next).
+   - Navbar: combine Home / Definitions / Schedule with the existing
+     Projects / Resources menus.
+4. **Move the schedule machinery**: `tools/generate_schedule.py`,
+   `schedule_config.yml`, `_today.qmd`, and the **Daily Schedule Update**
+   workflow.
+5. **Rewrite cross-links** from absolute `https://chaz-clark.github.io/M119/Projects/…`
+   to relative internal links (grep `site/class/*.qmd` + `site/flex/*.qmd`).
+6. **Repoint external references** (Canvas etc.) to the new base URL via
+   `tools/swap_pages_url.py` — **next semester only**.
+7. **Retire m119-site** (archive or redirect stub) once the unified site is live.
 
-- **Keeping two separate Quarto projects and just cross-linking** — doesn't
-  achieve "one site"; students still bounce. Rejected per the stated goal.
-- **Embedding the rendered Projects HTML as static files** — unnecessary since
-  the source is Quarto; native `.qmd` gives unified search, theme, and nav.
-- **Doing the merge in m119-site directly** — violates the source-of-truth
-  pipeline; would be overwritten / cause drift.
-- **Mid-semester cutover** — URL changes would break live Canvas links during
-  the term. Scoped to next-semester per maintainer.
+## What's been ruled out
 
-## Open questions to resolve at execution (need the M119 + m119_master repos open)
+- **Projects → m119-site** — would recreate the entire R/renv/system-deps/freeze
+  stack in the bare markdown site. Rejected: rebuilding what already exists.
+- **Two sites with cross-links** — doesn't achieve "one site"; students still
+  bounce. Rejected per the goal.
+- **Static-HTML snapshot of Projects** — loses the live `.qmd`/R source. Rejected.
+- **Doing any of this mid-semester** — URL changes break live Canvas links.
+  Deferred to post-term (see Trigger).
 
-These couldn't be verified from m119-site (the M119/Projects source isn't cloned
-here, and m119_master access was out of scope this session):
+## Open questions to resolve at execution
 
-- **M119/Projects structure** — exact location of its `.qmd`, `_quarto.yml`, and
-  assets; how many project pages; desired Projects-tab nav structure
-  (flat links vs dropdown vs sub-sections).
-- **Authoring model** — are the Projects pages hand-authored `.qmd`, or
-  generated by a pipeline (like class pages from PMWiki)? If generated, the
-  generation step has to move too, not just the output.
-- **`_quarto.yml` deltas** — theme, math method, freeze, filters, any Projects-
-  specific extensions that must merge cleanly.
-- **Full external-link inventory** — every Canvas/syllabus location pointing at
-  `/M119/Projects/…` (feed `swap_pages_url.py`).
-- **URL scheme** — confirm the new base (`chaz-clark.github.io/m119-site/projects/…`)
-  and whether the eventual org-level host migration (`byui-math-dept`, see
-  `publishing.md`) changes the target.
+- Confirm M119/Projects `_quarto.yml` render list + navbar structure and where
+  course sections slot in.
+- Decide the future editing model: does m119_master still generate course
+  `.qmd` into the unified repo, or does editing move into M119/Projects directly
+  (given conversion is one-and-done)?
+- Full external-link inventory for `swap_pages_url.py`.
+- Confirm the new base URL (`chaz-clark.github.io/M119/…`) and whether the
+  eventual `byui-math-dept` org host migration (see `publishing.md`) changes it.
 
 ## Acceptance check
 
-- The published course site has a working **Projects** navbar tab; every former
-  `/M119/Projects/` page is reachable from it.
-- No `https://chaz-clark.github.io/M119/Projects/` absolute links remain in
-  `site/class/*.qmd` or `site/flex/*.qmd` (grep returns nothing).
-- Project pages render with correct math (`\ds`/`\diff` macros resolve) and theme.
-- Canvas/external references point to the new location (swap log updated).
-- The old Projects site redirects or is archived; no live 404s.
-- One `quarto render` builds the whole site; one deploy.
+- One published Quarto site serves course content **and** projects; every former
+  `/M119/Projects/` and `/m119-site/` page is reachable.
+- Project pages still render their R output (cache or fresh execution) under the
+  R pipeline; course pages render with `\ds`/`\diff` macros + sidebar prev/next.
+- No `chaz-clark.github.io/M119/Projects/` or `/m119-site/` absolute links remain
+  in the course `.qmd` (grep returns nothing).
+- Canvas/external references repointed (swap log updated); old site redirects or
+  is archived; no live 404s.
 
 ---
 
 ## Lifecycle
 
-- **Authored:** 2026-05-26 in m119-site `handoffs/` (Status: draft).
-- **Next step (drop):** copy into m119_master's root as
-  `M119-SITE_HANDOFF_merge-projects-site.md` and set Status: delivered when
-  ready to act on it for next semester.
-- **Apply:** m119_master maintainer executes the merge there, commits, sets
-  Status: applying → applied.
-- **Archive:** producer deletes the dropped copy; this canonical copy stays in
-  m119-site `handoffs/` with Status: archived.
+- **Authored:** 2026-05-26 in m119-site `handoffs/` (Status: draft, **deferred**).
+- **Deferred until:** after term end `2026-07-22`; revisit August 2026.
+- **Next step (drop), post-semester:** copy into the **M119 (Projects) repo**
+  root as `M119-SITE_HANDOFF_merge-projects-site.md`, set Status: delivered.
+- **Apply:** M119/Projects maintainer executes the unify-on-Projects-foundation
+  plan in that repo, commits, sets Status: applying → applied.
+- **Archive:** producer (M119) deletes the dropped copy; this canonical copy
+  stays in m119-site `handoffs/` with Status: archived.
