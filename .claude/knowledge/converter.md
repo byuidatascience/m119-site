@@ -37,3 +37,5 @@ If you find raw PMWiki markup (`!Agenda`, `%height=200px%`, `[[x -> y]]`) in `si
 - `<a id="..."></a>` followed immediately by `## Heading` absorbs the heading into a paragraph → need blank line between anchor and heading.
 - `1. ` or `- ` list lines immediately after prose collapse into the paragraph → need blank line before the first list marker.
 - Adjacent markdown tables without a blank line between them merge into one table with shifted headers → one blank line between distinct tables, zero blank lines within a table.
+
+For the full rendering-gotcha list (inline math `$ X $` breaking, `----` ghost tables, 4-space-indented lists becoming code blocks, run-on `=` chains, page-navigation/sidebar layout), see `quarto.md`.

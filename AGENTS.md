@@ -116,6 +116,7 @@ Project-specific knowledge files live under `.claude/knowledge/`. Load on demand
 
 | Topic | File | When to load |
 |---|---|---|
+| Quarto authoring & layout gotchas (math `$`, tables, lists, page-navigation, sidebar) | `.claude/knowledge/quarto.md` | When editing `.qmd` math/lists/tables or `_quarto.yml`/`styles.css` for nav/layout |
 | RMarkdown→Quarto converter behavior | `.claude/knowledge/converter.md` | When touching upstream conversion scripts or diagnosing a class/flex page rendering bug |
 | Canvas URL handling | `.claude/knowledge/urls-canvas.md` | When editing Canvas project links or planning URL reversal |
 | Quarto page URLs | `.claude/knowledge/urls-qmds.md` | When editing links inside `site/class/*.qmd` or `site/flex/*.qmd` |
