@@ -48,6 +48,58 @@ website:
           href: definitions/rulesofprobabilty.qmd
       - text: "Schedule"
         href: schedule.qmd
+  page-navigation: true
+  sidebar:
+    - title: "Class Sessions"
+      style: docked
+      collapse-level: 1
+      contents:
+        - class/class-1.qmd
+        - class/class-2.qmd
+        - class/class-3.qmd
+        - class/class-4.qmd
+        - class/class-5.qmd
+        - class/class-6.qmd
+        - class/class-7.qmd
+        - class/class-8.qmd
+        - class/class-9.qmd
+        - class/class-10.qmd
+        - class/class-11.qmd
+        - class/class-12.qmd
+        - class/class-13.qmd
+        - class/class-14.qmd
+        - class/class-15.qmd
+        - class/class-16.qmd
+        - class/class-17.qmd
+        - class/class-18.qmd
+        - class/class-19.qmd
+        - class/class-20.qmd
+        - class/class-21.qmd
+        - class/class-22.qmd
+        - class/class-23.qmd
+        - class/class-24.qmd
+        - class/class-25.qmd
+        - class/class-26.qmd
+        - class/class-27.qmd
+        - class/class-28.qmd
+        - class/class-29.qmd
+        - class/class-30.qmd
+        - class/class-31.qmd
+        - class/class-32.qmd
+        - class/class-33.qmd
+        - class/class-34.qmd
+        - class/class-35.qmd
+        - class/class-36.qmd
+        - class/class-37.qmd
+        - class/class-38.qmd
+        - class/class-39.qmd
+        - class/class-40.qmd
+        - class/class-41.qmd
+        - class/class-42.qmd
+        - class/class-43.qmd
+        - class/class-44.qmd
+        - class/class-45.qmd
+        - class/class-46.qmd
   page-footer:
     center: "Math 119 — BYU-Idaho"
 
