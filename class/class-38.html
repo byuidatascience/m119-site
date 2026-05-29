@@ -1046,45 +1046,45 @@ Variance (continuous random variable)
 <summary>
 Answers
 </summary>
-<ol type="1">
+<ol start="12" type="1">
 <li>It’s a parabola open downwards starting at height 9. The following code plots <span class="math inline">\(g\)</span> with Mathematica.</li>
 </ol>
 <pre><code>Plot[9-x^2,{x,0,3}]</code></pre>
-<ol type="1">
+<ol start="13" type="1">
 <li><span class="math inline">\(\int_{-\infty}^{\infty} g(x) dx = \int_0^3 9-x^2 = 18 \neq 1\)</span>, so <span class="math inline">\(g\)</span> is not a probability density function.</li>
 </ol>
 <pre><code>Integrate[9-x^2,{x,0,3}]</code></pre>
-<ol type="1">
+<ol start="14" type="1">
 <li><p><span class="math inline">\(k = \frac{1}{18}\)</span>.</p></li>
 <li><p><span class="math inline">\(\int_{-\infty}^{1} f(x)dx = \int_0^1 \frac{1}{18}(9-x^2)dx = \frac{13}{27} \approx 0.481\)</span></p></li>
 </ol>
 <pre><code>Integrate[(1/18)*(9-x^2),{x,0,1}]</code></pre>
 <p>Note that <span class="math inline">\(\int_{-\infty}^{1} f(x)dx \neq \int_{-\infty}^1 \frac{1}{18}(9-x^2)dx\)</span>, as you MUST change the <span class="math inline">\(-\infty\)</span> to 0 to capture the domain of <span class="math inline">\(f\)</span>. Note also that we computed the CDF at 1 and have <span class="math inline">\(F(1) = P(X \leq 1) = \frac{13}{27}\)</span>.</p>
-<ol type="1">
+<ol start="16" type="1">
 <li><span class="math inline">\(\int_{-\infty}^{2} f(x)dx = \int_0^2 \frac{1}{18}(9-x^2)dx = \frac{23}{27} \approx 0.852\)</span> which means <span class="math inline">\(F(2) = \frac{23}{27}\)</span>.</li>
 </ol>
 <pre><code>Integrate[(1/18)*(9-x^2),{x,0,2}]</code></pre>
-<ol type="1">
+<ol start="17" type="1">
 <li><span class="math inline">\(\int_1^2 \frac{1}{18}(9-x^2)dx = \frac{10}{27} \approx 0.370\)</span></li>
 </ol>
 <pre><code>Integrate[(1/18)*(9-x^2),{x,1,2}]</code></pre>
 <p>Note that <span class="math inline">\(P(1\leq X\leq 2) = F(2) - F(1)\)</span></p>
-<ol type="1">
+<ol start="18" type="1">
 <li>There 3 regions to consider. First, when <span class="math inline">\(x&lt;0\)</span>. Second, when <span class="math inline">\(0\leq x \leq 3\)</span>. And third, when <span class="math inline">\(x&gt;3\)</span>.<br> When <span class="math inline">\(x&lt;0\)</span>, <span class="math inline">\(F(x) = 0\)</span> (since <span class="math inline">\(\int_{-\infty}^x f(x)dx = \int_{-\infty}^x 0 dx = 0\)</span>).<br> When <span class="math inline">\(x&gt;3\)</span>, <span class="math inline">\(F(x) = 1\)</span> (since <span class="math inline">\(\int_{-\infty}^x f(x)dx = \int_{-\infty}^0 0dx + \int_0^3 \frac{1}{18}(9-x^2)dx + \int_3^x 0 dx = 0+1+0=1\)</span>).<br> When <span class="math inline">\(0\leq x\leq 3\)</span>, <span class="math inline">\(F(x) = \int_{-\infty}^x f(x) dx = \int_0^x \frac{1}{18}(9-t^2)dt = \frac{1}{2}x - \frac{1}{54}x^3\)</span>.</li>
 </ol>
 <pre><code>Integrate[(1/18)*(9-t^2),{t,0,x}]</code></pre>
 <p>OR</p>
 <pre><code>Integrate[(1/18)*(9-x^2),{x,0,x}]</code></pre>
 <p>Note: <span class="math inline">\(F'(x) = f(x)\)</span></p>
-<ol type="1">
+<ol start="19" type="1">
 <li><span class="math inline">\(E[X] = \int_{-\infty}^{\infty} xf(x)dx = \int_0^3 x(\frac{1}{18}(9-x^2)) dx = \frac{9}{8} = 1.125\)</span></li>
 </ol>
 <pre><code>Integrate[x*(1/18)*(9-x^2),{x,0,3}]</code></pre>
-<ol type="1">
+<ol start="20" type="1">
 <li><span class="math inline">\(Var[X] = \int_{-\infty}^{\infty} (x - E[X])^2f(x)dx = \int_0^3 (x-\frac{9}{8})^2(\frac{1}{18}(9-x^2)) dx = \frac{171}{320} \approx 0.534\)</span></li>
 </ol>
 <pre><code>Integrate[(x-9/8)^2*(1/18)(9-x^2),{x,0,3}]</code></pre>
-<ol type="1">
+<ol start="21" type="1">
 <li><span class="math inline">\(\sigma_X = \sqrt{Var[X]} = \sqrt{\frac{171}{320}} \approx 0.731\)</span></li>
 </ol>
 <pre><code>N[Sqrt[171/320]]</code></pre>
