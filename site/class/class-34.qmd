@@ -76,8 +76,8 @@ draw_pmf(x,p)
 
 1. Estimate the $x$-coordinate of the geometric center of the target. In particular, is it above or below 2.5?
 
-1. Compute $E[X]$, the expected value of $X$. 
-1. Interpret the expected value by writing a sentence that explain what this value means. 
+2. Compute $E[X]$, the expected value of $X$. 
+3. Interpret the expected value by writing a sentence that explain what this value means. 
 
 ## Group Discussion
 Give each group member 1-2 minutes to share what they prepared from the between class work.

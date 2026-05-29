@@ -99,9 +99,9 @@ $$
 
 </details>
 
-1.  Use R to plot the function above, and then guess the maximum possible volume along with the dimensions that correspond to this volume.
+2.  Use R to plot the function above, and then guess the maximum possible volume along with the dimensions that correspond to this volume.
 
-1. Compute the derivative of the function above, and use it to find the maximum possible volume.
+3. Compute the derivative of the function above, and use it to find the maximum possible volume.
 
 ## Group Meeting 
 Start by giving each person a moment to share what they chose to prepare for class. Help each other address any questions.  When each person has had a chance to share, move on the other activities.

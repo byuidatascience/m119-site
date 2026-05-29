@@ -52,11 +52,11 @@ The goal of these exercises is to practice writing functions that model a given 
     - $f_2(x) = e^{3x^2+4}$
     - $f_3(x) = \ln(3x^2+4)$
 
-1. Find $\frac{\partial f}{\partial x}$ and $\frac{\partial f}{\partial y}$ and $\frac{\partial f}{\partial z}$, given $f(x,y,z) = x^2 - 2xy - 3y^2 - 4xz + 5yz^2 - 12x + 4y - 3z$.
+2. Find $\frac{\partial f}{\partial x}$ and $\frac{\partial f}{\partial y}$ and $\frac{\partial f}{\partial z}$, given $f(x,y,z) = x^2 - 2xy - 3y^2 - 4xz + 5yz^2 - 12x + 4y - 3z$.
 
-1. Find $\frac{\partial g}{\partial x}$ and $\frac{\partial g}{\partial y}$, given $g(x,y) = \sqrt{x^3 - 3x^2y^2 + 2y^4}$.
+3. Find $\frac{\partial g}{\partial x}$ and $\frac{\partial g}{\partial y}$, given $g(x,y) = \sqrt{x^3 - 3x^2y^2 + 2y^4}$.
 
-1. A farmer has a large barn, and wants to build a rectangular pen on one side of the barn.  They currently have enough lumber to build 300 ft of fencing to cover the missing 3 sides (one side will be the barn).  Write a function for the area of $A$ of the enclosed region using one of the sides as the input. 
+4. A farmer has a large barn, and wants to build a rectangular pen on one side of the barn.  They currently have enough lumber to build 300 ft of fencing to cover the missing 3 sides (one side will be the barn).  Write a function for the area of $A$ of the enclosed region using one of the sides as the input. 
     - Once you've written the function, open R and plot the function to visually locate the dimensions that result in maximum area. 
 
 ## Group Meeting 

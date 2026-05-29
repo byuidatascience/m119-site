@@ -102,7 +102,7 @@ The line is currently in point-slope form $y-y_1 = m(x-x_1)$. The slope is 8. A 
 
 </details>
 
-1.  Give an equation of a line with slope 4 that passes through the point (2,5).
+2.  Give an equation of a line with slope 4 that passes through the point (2,5).
 
 <details>
 <summary>Solution</summary>
@@ -111,7 +111,7 @@ We use point slope form to obtain $y-5=4(x-2)$.
 
 </details>
 
-1.  For the function $f(x) = x^2$, what is the slope of the line that passes through the function at $x=3$ and $x=4$.
+3.  For the function $f(x) = x^2$, what is the slope of the line that passes through the function at $x=3$ and $x=4$.
 
 <details>
 <summary>Solution</summary>
@@ -128,7 +128,7 @@ slope
 
 </details>
 
-1.  For the function $f(x) = x^2$, what is the slope of the line that passes through the function at $x=3$ and $x=3.1$. 
+4.  For the function $f(x) = x^2$, what is the slope of the line that passes through the function at $x=3$ and $x=3.1$. 
 
 <details>
 <summary>Solution</summary>
@@ -145,7 +145,7 @@ slope
 
 </details>
 
-1.  For the function $f(x) = x^2$, what is the slope of the line that passes through the function at $x=3$ and $x=3.01$. 
+5.  For the function $f(x) = x^2$, what is the slope of the line that passes through the function at $x=3$ and $x=3.01$. 
 
 <details>
 <summary>Solution</summary>
@@ -174,7 +174,7 @@ Why do we get NaN at $x=3$?
 
 </details>
 
-1.  For the function $f(x) = x^2$, guess a value for the slope of the line that is tangent to the function at $x=3$ (we don't have two points anymore). 
+6.  For the function $f(x) = x^2$, guess a value for the slope of the line that is tangent to the function at $x=3$ (we don't have two points anymore). 
 
 ## Introduction to Linearization
 We will plot each of the following functions and then zoom in at the specified location (or point).

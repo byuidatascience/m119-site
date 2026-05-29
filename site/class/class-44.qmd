@@ -66,7 +66,7 @@ For each function below, do the following.
     1. Use Mathematica to compute the cumulative distribution function $\int_0^x g(x)dx$. 
     1. Compute $P(1\leq X\leq 2)$ using the function $G(x)$. 
 
-1. Consider a random variable $X$ with probability density function $g(x) = \frac{3x^2}{64}$ for $0\leq x\leq 4$. 
+2. Consider a random variable $X$ with probability density function $g(x) = \frac{3x^2}{64}$ for $0\leq x\leq 4$. 
     1.  State a function $G(x)$ whose derivative is $g(x)$. Then state another. Then state another.  How many such functions are there?
     1. Compute $G(x)-G(0)$. 
     1. Use Mathematica to compute the cumulative distribution function $\int_0^x g(x)dx$. 

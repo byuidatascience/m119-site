@@ -47,7 +47,7 @@ Pick something from your prep today that you can share with your group in class.
 
 </details>
 
-1.  Let $f(x) = x^2-x$. Give an equation of the linearization of $f(x)$ at $x=-2$.
+2.  Let $f(x) = x^2-x$. Give an equation of the linearization of $f(x)$ at $x=-2$.
 
 <details>
 <summary>Solution</summary>
@@ -64,7 +64,7 @@ The above is sufficient, though we can also write this as
 
 </details>
 
-1.  Given the graph of a function $h(x)$ below, draw $h'(x)$.
+3.  Given the graph of a function $h(x)$ below, draw $h'(x)$.
 
 ![Draw the derivative](https://byuimath.com/bmw/all/119/uploads/Class/Draw-Derivative.png)
 

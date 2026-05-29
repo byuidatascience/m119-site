@@ -70,7 +70,7 @@ Consider the function $T(x) = \frac{1}{2}(3(x+2))^2 - 10$.
     - What is $b$?
     - What is $c$?
     - What is $d$?
-1. Let $h(x) = A f(B(x-C)) + D$ with $A$, $B$, $C$, and $D$ constants. If $T(x) = h(x)$, which means $f(u) = u^2$, answer the following questions.
+2. Let $h(x) = A f(B(x-C)) + D$ with $A$, $B$, $C$, and $D$ constants. If $T(x) = h(x)$, which means $f(u) = u^2$, answer the following questions.
     - What is $A$?
     - What is $B$?
     - What is $C$?

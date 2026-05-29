@@ -69,7 +69,7 @@ Begin Knewton Alta assignment 2 -- Derivative Rules (Power Function, Sum/Differe
     1.  $f(x) = 30 - 2x$
     1. $f(x) = 100 - 3\sqrt{x+4}$
     1. $f(x) = -0.0002x^2 + 100$
-1. The probability model for one normal random variable with mean 0 and standard deviation 1 is $p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}$. 
+2. The probability model for one normal random variable with mean 0 and standard deviation 1 is $p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}$. 
     1.  Write down the loglikelihood function for $n$ **independent** normal random variables, each with mean 0 and standard deviation 1 (so they all have the same probability model $p(r)$). What does the word **independent** allow us to do?
 
 ## Summary (What is a derivative?)

@@ -45,9 +45,9 @@ In other words answer the question, "What function did we take the derivative of
 1. Given $\int_{-3}^{10} f(x)dx=-7$, $\int_{4}^{10} f(x)dx=6$, $\int_{-3}^{10} g(x)dx=6$, and $\int_{4}^{10} g(x)dx=-2$.
     - What is the value of $\int_{4}^{10} f(x) - 3g(x) dx$?
     - What is the value of $\int_{-3}^{4} -2f(x) + 5g(x) dx$?
-1. Find a function $H_1(x)$ whose derivative is $h(x) = 4x^3$. Then find a second function $H_2(x)$ whose derivative is $h(x)=4x^3$.  We call $H_1$ and $H_2$ antiderivatives of $h(x)$, because they undo the differentiation process. 
+2. Find a function $H_1(x)$ whose derivative is $h(x) = 4x^3$. Then find a second function $H_2(x)$ whose derivative is $h(x)=4x^3$.  We call $H_1$ and $H_2$ antiderivatives of $h(x)$, because they undo the differentiation process. 
 
-1. Find two different functions whose derivatives are $e^{-x}$. 
+3. Find two different functions whose derivatives are $e^{-x}$. 
 
 ## Discussion
 If $F$ is an antiderivative of $f$, then both $G(x) = F(x) + 11$ and $H(x) = F(x) - 3$ are also antiderivatives of $f$.

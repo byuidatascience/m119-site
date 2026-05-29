@@ -250,39 +250,39 @@ Consider the function $g(x) = 9-x^2$ for $0\leq x\leq 3$ and 0 otherwise. As you
 
 1. Draw the function $g$. 
 
-1. Is $g(x)$ the PDF of a random variable $X$?  Explain.
-1. Find a constant $k$ so that $f(x) = k g(x)$ is the PDF of a random variable $X$.
+2. Is $g(x)$ the PDF of a random variable $X$?  Explain.
+3. Find a constant $k$ so that $f(x) = k g(x)$ is the PDF of a random variable $X$.
 
-1. Compute $P(X\leq 1)$. 
-1. Compute $P(X\leq 2)$. 
+4. Compute $P(X\leq 1)$. 
+5. Compute $P(X\leq 2)$. 
 
-1. Compute $P(1<X\leq 2)$. 
-1. Compute the cumulative distribution function (CDF), so find $F(x) = P(X\leq x)$. [You found $F(1)$ and $F(2)$ above.]
+6. Compute $P(1<X\leq 2)$. 
+7. Compute the cumulative distribution function (CDF), so find $F(x) = P(X\leq x)$. [You found $F(1)$ and $F(2)$ above.]
 
-1. Compute the expected value $E[X]$. 
-1. Compute the variance $Var[X]$. 
+8. Compute the expected value $E[X]$. 
+9. Compute the variance $Var[X]$. 
 
-1. Compute the standard deviation of $X$. 
-1. Pick another function $g(x)$ and bounds for $x$, and then repeat the above.
+10. Compute the standard deviation of $X$. 
+11. Pick another function $g(x)$ and bounds for $x$, and then repeat the above.
 
 <details>
 <summary>Answers</summary>
 
-1. It's a parabola open downwards starting at height 9. The following code plots $g$ with Mathematica. 
+12. It's a parabola open downwards starting at height 9. The following code plots $g$ with Mathematica. 
 
 ```
 Plot[9-x^2,{x,0,3}]
 ```
 
-1.  $\int_{-\infty}^{\infty} g(x) dx = \int_0^3 9-x^2 = 18 \neq 1$, so $g$ is not a probability density function.
+13.  $\int_{-\infty}^{\infty} g(x) dx = \int_0^3 9-x^2 = 18 \neq 1$, so $g$ is not a probability density function.
 
 ```
 Integrate[9-x^2,{x,0,3}]
 ```
 
-1.  $k = \frac{1}{18}$.
+14.  $k = \frac{1}{18}$.
 
-1.  $\int_{-\infty}^{1} f(x)dx = \int_0^1 \frac{1}{18}(9-x^2)dx = \frac{13}{27} \approx 0.481$
+15.  $\int_{-\infty}^{1} f(x)dx = \int_0^1 \frac{1}{18}(9-x^2)dx = \frac{13}{27} \approx 0.481$
 
 ```
 Integrate[(1/18)*(9-x^2),{x,0,1}]
@@ -291,13 +291,13 @@ Integrate[(1/18)*(9-x^2),{x,0,1}]
 Note that $\int_{-\infty}^{1} f(x)dx \neq \int_{-\infty}^1 \frac{1}{18}(9-x^2)dx$, as you MUST change the $-\infty$ to 0 to capture the domain of $f$. 
 Note also that we computed the CDF at 1 and have $F(1) = P(X \leq 1) = \frac{13}{27}$. 
 
-1.  $\int_{-\infty}^{2} f(x)dx = \int_0^2 \frac{1}{18}(9-x^2)dx = \frac{23}{27} \approx 0.852$ which means $F(2) = \frac{23}{27}$.
+16.  $\int_{-\infty}^{2} f(x)dx = \int_0^2 \frac{1}{18}(9-x^2)dx = \frac{23}{27} \approx 0.852$ which means $F(2) = \frac{23}{27}$.
 
 ```
 Integrate[(1/18)*(9-x^2),{x,0,2}]
 ```
 
-1.  $\int_1^2 \frac{1}{18}(9-x^2)dx = \frac{10}{27} \approx 0.370$
+17.  $\int_1^2 \frac{1}{18}(9-x^2)dx = \frac{10}{27} \approx 0.370$
 
 ```
 Integrate[(1/18)*(9-x^2),{x,1,2}]
@@ -305,7 +305,7 @@ Integrate[(1/18)*(9-x^2),{x,1,2}]
 
 Note that $P(1\leq X\leq 2) = F(2) - F(1)$
 
-1.  There 3 regions to consider. First, when $x<0$. Second, when $0\leq x \leq 3$. And third, when $x>3$.<br>
+18.  There 3 regions to consider. First, when $x<0$. Second, when $0\leq x \leq 3$. And third, when $x>3$.<br>
 When $x<0$, $F(x) = 0$ (since $\int_{-\infty}^x f(x)dx = \int_{-\infty}^x 0 dx = 0$).<br>
 When $x>3$, $F(x) = 1$ (since $\int_{-\infty}^x f(x)dx = \int_{-\infty}^0 0dx + \int_0^3 \frac{1}{18}(9-x^2)dx + \int_3^x 0 dx = 0+1+0=1$).<br>
 When $0\leq x\leq 3$, $F(x) = \int_{-\infty}^x f(x) dx = \int_0^x \frac{1}{18}(9-t^2)dt = \frac{1}{2}x - \frac{1}{54}x^3$.
@@ -322,19 +322,19 @@ Integrate[(1/18)*(9-x^2),{x,0,x}]
 
 Note: $F'(x) = f(x)$
 
-1.  $E[X] = \int_{-\infty}^{\infty} xf(x)dx = \int_0^3 x(\frac{1}{18}(9-x^2)) dx = \frac{9}{8} = 1.125$
+19.  $E[X] = \int_{-\infty}^{\infty} xf(x)dx = \int_0^3 x(\frac{1}{18}(9-x^2)) dx = \frac{9}{8} = 1.125$
 
 ```
 Integrate[x*(1/18)*(9-x^2),{x,0,3}]
 ```
 
-1.  $Var[X] = \int_{-\infty}^{\infty} (x - E[X])^2f(x)dx = \int_0^3 (x-\frac{9}{8})^2(\frac{1}{18}(9-x^2)) dx = \frac{171}{320} \approx 0.534$
+20.  $Var[X] = \int_{-\infty}^{\infty} (x - E[X])^2f(x)dx = \int_0^3 (x-\frac{9}{8})^2(\frac{1}{18}(9-x^2)) dx = \frac{171}{320} \approx 0.534$
 
 ```
 Integrate[(x-9/8)^2*(1/18)(9-x^2),{x,0,3}]
 ```
 
-1.  $\sigma_X = \sqrt{Var[X]} = \sqrt{\frac{171}{320}} \approx 0.731$
+21.  $\sigma_X = \sqrt{Var[X]} = \sqrt{\frac{171}{320}} \approx 0.731$
 
 ```
 N[Sqrt[171/320]]

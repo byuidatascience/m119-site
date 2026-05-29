@@ -142,7 +142,7 @@ y <- bulb$percent_intensity
 
  
 
-1. Consider the model $f_2(t; a_1, a_2) = 100 + a_1t + a_2t^2$. Assuming the residuals follow a standard normal distribution (so the probability model is given by $g(r) = \frac{1}{\sqrt{2\pi}}e^{-r^2/2}$, find the loglikelihood function for $f_2$. 
+2. Consider the model $f_2(t; a_1, a_2) = 100 + a_1t + a_2t^2$. Assuming the residuals follow a standard normal distribution (so the probability model is given by $g(r) = \frac{1}{\sqrt{2\pi}}e^{-r^2/2}$, find the loglikelihood function for $f_2$. 
 
 <details>
 <summary>Solution</summary>
@@ -151,7 +151,7 @@ $$\ell_2(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\righ
 
 </details>
 
-1.  Compute the partial derivatives of $\ell_2$. 
+3.  Compute the partial derivatives of $\ell_2$. 
 
 <details>
 <summary>Solution</summary>
@@ -161,7 +161,7 @@ $$\ell_2(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\righ
 
 </details>
 
-1.  Find the critical points of $\ell_2$ by solving the system $$
+4.  Find the critical points of $\ell_2$ by solving the system $$
 \left\{
 \begin{align*}
 \left(\sum_{i=1}^{44} (y_i - 100)t_i\right) - \left(\sum_{i=1}^{44}t_i^2\right)a_1 - \left(\sum_{i=1}^{44}t_i^3\right)a_2 &= 0 \\ 
@@ -210,7 +210,7 @@ b2 <- sum((y-100)*t^2)
 
 </details>
 
-1.  Compute the second partial derivatives of $\ell_2$.
+5.  Compute the second partial derivatives of $\ell_2$.
 
 <details>
 <summary>Solution</summary>
@@ -221,7 +221,7 @@ b2 <- sum((y-100)*t^2)
 
 </details>
 
-1.  Use the second derivative test to show that the critical point does indeed correspond to maximum likelihood. This requires we adapt and compute $D = f_{xx}f_{yy}-f_{xy}^2$ (is it positive) and then check $f_{xx}$. 
+6.  Use the second derivative test to show that the critical point does indeed correspond to maximum likelihood. This requires we adapt and compute $D = f_{xx}f_{yy}-f_{xy}^2$ (is it positive) and then check $f_{xx}$. 
 
 <details>
 <summary>Solution</summary>
@@ -250,7 +250,7 @@ Because $D>0$, and $\frac{\partial^2\ell_2}{\partial a_1^2} <0$, the second deri
 
 </details>
 
-1.  Use what we have done above to state the fitted model, with the maximum likelihood parameters. Then plot the data along with the model on the same viewing window to verify that we have indeed found a reasonable fit. 
+7.  Use what we have done above to state the fitted model, with the maximum likelihood parameters. Then plot the data along with the model on the same viewing window to verify that we have indeed found a reasonable fit. 
 
 <details>
 <summary>Solution</summary>
@@ -270,7 +270,7 @@ lines(x,f2(x),col=2)
 
 </details>
 
-1.  Using this model, how long until the bulb burns out (reaches 80% intensity). 
+8.  Using this model, how long until the bulb burns out (reaches 80% intensity). 
 
 <details>
 <summary>Solution</summary>

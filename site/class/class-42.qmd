@@ -40,14 +40,14 @@ Consider the random variable $X$ whose probability density function is $f(x) = k
 
 1. Find the value of $k$.
 
-1. Compute the expected value and variance of $X$ (write down the integral needed, and then compute it with Mathematica).
-1. Compute $P(X\leq 1)$, $P(X\leq 2)$ and then $F(x) = P(X\leq x)$. 
+2. Compute the expected value and variance of $X$ (write down the integral needed, and then compute it with Mathematica).
+3. Compute $P(X\leq 1)$, $P(X\leq 2)$ and then $F(x) = P(X\leq x)$. 
 
-1. The 60th percentile is the value $x$ so that $P(X\leq x)=0.60$, in other words the value $x$ so that $F(x) = 0.6$.  Find the 60th percentile of this random variable.
-1. Find the 95th percentile of $X$. 
+4. The 60th percentile is the value $x$ so that $P(X\leq x)=0.60$, in other words the value $x$ so that $F(x) = 0.6$.  Find the 60th percentile of this random variable.
+5. Find the 95th percentile of $X$. 
 
-1. What's the probability that $X$ takes on a value greater than 10? 
-1. What's the probability that $X$ takes on a value between -3 and 3?
+6. What's the probability that $X$ takes on a value greater than 10? 
+7. What's the probability that $X$ takes on a value between -3 and 3?
 
   
 ## Discussion

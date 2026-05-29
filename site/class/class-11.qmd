@@ -124,10 +124,10 @@ uniroot(f.new,c(a,b))$root
 ## Brain Gains
 1. Suppose $f(x;a,b) = a e^{b x}$. If $f(0)=7$, then what must $a$ equal?
 
-1. Suppose $f(x;a,b) = a+b e^{x}$. If $f(0)=7$, then what must $a$ equal?
-1. Use uniroot to solve for $x$ in $7 = 5+3 e^{2 x}$. Check your solution by finding the exact solution, if possible.
+2. Suppose $f(x;a,b) = a+b e^{x}$. If $f(0)=7$, then what must $a$ equal?
+3. Use uniroot to solve for $x$ in $7 = 5+3 e^{2 x}$. Check your solution by finding the exact solution, if possible.
 
-1. Use uniroot to solve for $x$ in $(-13 + 2x)e^{-0.05x} = 0$. Check your solution by finding the exact solution, if possible.
+4. Use uniroot to solve for $x$ in $(-13 + 2x)e^{-0.05x} = 0$. Check your solution by finding the exact solution, if possible.
     - Use uniroot to solve for $x$ in $(-13 + 2x)e^{-0.05x} = 5$. Check your solution by finding the exact solution, if possible.
 
 ## Discussion - Task 3

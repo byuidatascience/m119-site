@@ -44,7 +44,7 @@ Using the general transformation $T(x) = af(b(x+c))+d$, identify the parameters 
 
 1. $g(x) = 8(x+5)^3 - 2$ where $f(u) = u^3$
 
-1. $h(x) = 4\sqrt{2x-6} +7$ where $f(u) = \sqrt{u}$
+2. $h(x) = 4\sqrt{2x-6} +7$ where $f(u) = \sqrt{u}$
 
 <details>
 <summary>Possible Solutions</summary>

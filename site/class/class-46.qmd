@@ -66,17 +66,17 @@ Evaluate each indefinite integral. Write your solutions (and the thinking leadin
 0 &  \text{otherwise}
 \end{cases}.$$ 
 
-1. Use the Fundamental Theorem of Calculus to calculate the value of $\int_{-1}^2t^2dt$. Use Mathematica to check your answer.
+2. Use the Fundamental Theorem of Calculus to calculate the value of $\int_{-1}^2t^2dt$. Use Mathematica to check your answer.
 
-1. Calculate $\frac{d}{dx}( \int_{-1}^2t^2dt )$.
-1. Use the Fundamental Theorem of Calculus to calculate $\frac{d}{dx} ( \int_{1}^x\frac{2}{t^3}dt )$.
+3. Calculate $\frac{d}{dx}( \int_{-1}^2t^2dt )$.
+4. Use the Fundamental Theorem of Calculus to calculate $\frac{d}{dx} ( \int_{1}^x\frac{2}{t^3}dt )$.
 
-1. Use the Fundamental Theorem of Calculus to calculate $\int_{1}^x\frac{2}{t^3}dt$. Use Mathematica to check your answer.
-1. Use your understanding of derivatives to find the indefinite integral $\int (2x+5)^{11} dx$. Use Mathematica to check your answer.
+5. Use the Fundamental Theorem of Calculus to calculate $\int_{1}^x\frac{2}{t^3}dt$. Use Mathematica to check your answer.
+6. Use your understanding of derivatives to find the indefinite integral $\int (2x+5)^{11} dx$. Use Mathematica to check your answer.
 
-1. Use your understanding of derivatives to find the indefinite integral $\int e^{3-4x} dx$. Use Mathematica to check your answer.
+7. Use your understanding of derivatives to find the indefinite integral $\int e^{3-4x} dx$. Use Mathematica to check your answer.
 
-1. Match the expressions, equations, or functions in column 1 with descriptions in column 2.
+8. Match the expressions, equations, or functions in column 1 with descriptions in column 2.
 
 | Probability expressions/equations/functions | Descriptions |
 | --- | --- |
@@ -92,14 +92,14 @@ Evaluate each indefinite integral. Write your solutions (and the thinking leadin
 <details>
 <summary>Answers (for matching exercise)</summary>
 
-1. B<br>
-2. E<br>
-3. A<br>
-4. D<br>
-5. C<br>
-6. E<br>
-7. A<br>
-8. E
+9. B<br>
+10. E<br>
+11. A<br>
+12. D<br>
+13. C<br>
+14. E<br>
+15. A<br>
+16. E
 
 </details>
 
