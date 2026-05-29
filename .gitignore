@@ -38,3 +38,4 @@ site/.quarto/
 *.knit.md
 .Renviron
 rsconnect/
+handoffs/
