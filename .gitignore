@@ -15,8 +15,8 @@ CLAUDE.md
 .claude/scheduled_tasks.lock
 
 # Sibling repos cloned locally (not tracked here)
-canvas_toolbox/
-gh_issues_agent/
+canvas-toolbox/
+gh-issues-agent/
 handoff/
 
 # macOS

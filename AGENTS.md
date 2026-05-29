@@ -56,7 +56,7 @@ m119-site/
                                        #    and at this AGENTS.md for non-trivial work / agent context.
 ```
 
-Note: `gh_issues_agent/`, `handoff/`, `canvas_toolbox/`, and `course_ref/` may appear at the root as untracked sibling clones (the `.gitignore` lists them). They are NOT part of m119-site — they're separate repos cloned alongside for convenience. When in doubt about a top-level directory, check whether it's tracked by git before treating it as part of this repo. The previous canvas-toolbox-derived `tools/` (15 unused scripts: `canvas_sync.py`, `pmwiki_to_quarto.py`, `course_mirror.py`, `after_class_*.py`, etc.) and `agents/` (20 v3.1 agent files) directories were removed in the cleanup that landed alongside the AGENTS.md adoption — see git history if you need to recover one.
+Note: `gh-issues-agent/`, `handoff/`, `canvas-toolbox/`, and `course_ref/` may appear at the root as untracked sibling clones (the `.gitignore` lists them). They are NOT part of m119-site — they're separate repos cloned alongside for convenience. When in doubt about a top-level directory, check whether it's tracked by git before treating it as part of this repo. The previous canvas-toolbox-derived `tools/` (15 unused scripts: `canvas_sync.py`, `pmwiki_to_quarto.py`, `course_mirror.py`, `after_class_*.py`, etc.) and `agents/` (20 v3.1 agent files) directories were removed in the cleanup that landed alongside the AGENTS.md adoption — see git history if you need to recover one.
 
 ## Working Style
 
