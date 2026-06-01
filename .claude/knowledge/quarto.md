@@ -24,6 +24,16 @@ separator and **swallows everything below it into a table** until the next
 the Activity headers, and the entire second Discussion section. Use `***` (or
 3-dash `---`) for a thematic break.
 
+## ATX headers need a blank line before them
+
+A line of `#`/`##`/`###`/… immediately after a prose paragraph (no blank line
+between) gets absorbed into that paragraph as inline text — the header
+disappears and you see `#### Section title prose continues…` run together. Add
+a blank line before every `#`-style header. Seen on 6 class-page headers
+(class-23 ×2, class-25, class-33, class-43b, class-45) in the 2026-05-29 sweep.
+The same rule applies to lists (next section) and to anchors followed by
+headings (`<a id="…"></a>` immediately above `##` — converter.md gotcha #1).
+
 ## Lists need a blank line and a real parent
 
 - `- ` / `1. ` immediately after a prose paragraph collapses into the

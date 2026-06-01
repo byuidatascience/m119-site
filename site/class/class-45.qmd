@@ -96,6 +96,7 @@ $F(x) =
 Give each group member 1-2 minutes to share what they prepared from the between class work.
 
 Work on the chalkboard as you complete these activities and exercises, and pass the chalk as you finish each one. Leave up your work so that you can compare your answers with your neighbors. If you notice an answer differs from a neighboring group's, then have a discussion with them.
+
 ### Fundamental Theorem of Calculus
 
 <details>

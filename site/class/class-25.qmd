@@ -110,6 +110,7 @@ Start by giving each person a moment to share what they chose to prepare for cla
 Our goal today is to dig into the derivative relationships and associated vocabulary. Your assignment before class was to fill in as many of the blanks, as possible, from [DerivativeRelationship_FillBlank.pdf](../assets/docs/DerivativeRelationship_FillBlank.pdf). Compare your answers, discuss any questions, and have a scribe write your solutions on the board (so you can compare with other groups).
 
 You may need some of definitions, theorem, or tests below as you complete the next activity. Take a moment to open each item and review it.
+
 #### Theorems - Tests - Definitions
 
 <details>

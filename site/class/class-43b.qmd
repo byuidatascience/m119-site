@@ -117,6 +117,7 @@ General Instructions
 
 - Give each group member a several minutes to share.
 - When you finish discussing the prep, please start on the activity below.
+
 ### Activity - Accumulation Function
 1. Consider the function 
 $\ds g(x) = \begin{cases}\frac{3}{8}x^2 - \frac{3}{2}x + \frac{3}{2} & 0 < x < 2 \\ 0 & \text{otherwise}\end{cases}.$

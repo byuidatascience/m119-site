@@ -51,6 +51,7 @@ $$
 - The prep involved reading <https://chaz-clark.github.io/M119/Projects/probability.html> and completing some of the exercises there. 
 
 The following problem builds upon and use the ideas from the reading. 
+
 ### Activity - Balls in a Bag
 As you work through the problems below, please refer to <https://chaz-clark.github.io/M119/Projects/probability.html> as needed. 
 Work on the chalkboard as you complete these problems, and pass the chalk as you finish each one. 
