@@ -34,7 +34,7 @@ a blank line before every `#`-style header. Seen on 6 class-page headers
 The same rule applies to lists (next section) and to anchors followed by
 headings (`<a id="…"></a>` immediately above `##` — converter.md gotcha #1).
 
-## Lists need a blank line and a real parent
+## Lists need a blank line, a real parent, and content on the marker line
 
 - `- ` / `1. ` immediately after a prose paragraph collapses into the
   paragraph → put a blank line before the first marker.
@@ -45,6 +45,34 @@ headings (`<a id="…"></a>` immediately above `##` — converter.md gotcha #1).
   Linearization answer key (rendered as a literal code block).
 - For lettered sub-answers use a real nested list (`a.`/`b.`/`c.` under a
   numbered parent), not 4-space-indented `1.` with no parent.
+- **Empty marker** — `2.` (or `1.`) on its own line with content on the
+  *next* line is parsed as an empty list item, and the content becomes a
+  separate paragraph (not list-item content). Put the content on the marker
+  line: `2. Use the information about …`. Seen in class-22 chain-rule
+  exercise (questions 2 and 3 had empty `2.` / `3.` markers).
+
+## Numbered items separated by `<details>` blocks ("all 1." bug)
+
+Pandoc's auto-numbering with repeated `1.` works **only within a contiguous
+list**. If items are separated by `<details>…</details>` blocks (very common for
+answer/solution dropdowns), each `1.` starts a fresh single-item ordered list
+— and in many themes the marker chrome on a one-item list is dropped, so the
+items appear numberless or all as "1.".
+
+**Always write Brain Gains / question sections with explicit numbering**
+(`1.`, `2.`, `3.`, …), not repeated `1.`. With explicit numbers Pandoc emits
+`<ol start="N">` on each fragment, so the browser renders the correct sequence
+across the `<details>` interruptions.
+
+Audit pattern (top-level `1.` markers per section):
+```bash
+# rough heuristic; manually verify it's the broken pattern, not separate lists
+grep -nE '^1\.' site/class/*.qmd
+```
+Swept 19 class-pages' Brain Gains sections on 2026-05-29; ~120 items
+renumbered. The same bug class also affects Group Meeting / Discussion /
+Preparation sections across many class files — those weren't part of that
+sweep.
 
 ## Run-on equation chains → align on `=`
 
