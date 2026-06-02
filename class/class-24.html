@@ -947,12 +947,8 @@ Solution
 <p>You will be working together to revisit Task 1 and complete part of Task 2 for <a href="https://chaz-clark.github.io/M119/Projects/unit2.html">Project 2</a>. The prep for today asked you to watch some videos related to <span class="math inline">\(f_2\)</span>.</p>
 <p>Consider the model <span class="math inline">\(f_1(t; a_1) = 100 + a_1t\)</span>.</p>
 <ol type="1">
-<li>On the chalk board, as a group, go through the computations needed to obtain the loglikelihood function. Your job is to perform the needed computations and include enough explanations to show that $$<em>1(a_1; ,) = 44() - </em>{i}^{44} (y_i</li>
-</ol>
-<ul>
-<li>100 - a_1t_i)^2.$$</li>
-</ul>
-<ol type="1">
+<li><p>On the chalk board, as a group, go through the computations needed to obtain the loglikelihood function. Your job is to perform the needed computations and include enough explanations to show that</p>
+<p><span class="math display">\[\ell_1(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i)^2.\]</span></p></li>
 <li><p>Compute the first derivative of the loglikelihood function, so compute <span class="math inline">\(\frac{d\ell_1}{da_1}\)</span>. The solution is provided in Task 2.</p></li>
 <li><p>Now compute the second derivative <span class="math inline">\(\frac{d^2\ell_1}{da_1^2}\)</span>. Again, the solution is provided in Task 2.</p></li>
 <li><p>Use the following code to plot the loglikelihood function.</p></li>
@@ -974,7 +970,7 @@ Solution
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#plot the loglikelihood function</span></span>
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(a1,Y,<span class="at">type=</span><span class="st">'l'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol type="1">
+<ol start="5" type="1">
 <li>Adapt the inputs vector above to make a guess for what you think is the best value for <span class="math inline">\(a_1\)</span>. How did you decide on that value?
 <ul>
 <li><em>Remember, the likelihood function (and the loglikelihood function) can be used to answer the questions, “What is the most likely value for the parameter(s) given our data?” Look at your plot of the loglikelihood function. Remember the loglikelihood function is a function of <span class="math inline">\(a_1\)</span>.</em></li>
