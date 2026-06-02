@@ -40,7 +40,8 @@ Now try repeating these computations yourself for $$\ell_6(a_1,a_2; \mathbf{t},\
 <details>
 <summary>Click to expand the material used in the videos above.</summary>
 
-### Applying Partial Derivatives to Loglikelihood
+**Applying Partial Derivatives to Loglikelihood**
+
 Consider the model $f_2(t; a_1, a_2) = 100 + a_1t + a_2t^2$. The function $f_2$ models the brightness of a lightbulb, measured as a percent of the original intensity of the lightbulb, given the number of hours the lightbulb as been on, $t$. We will fit $f_2$ to a list of 44 measurements, $(t_i, y_i)$. Assuming the residuals (or errors) are independent and normally distributed (with mean 0 and standard deviation 1), the loglikelihood function for these errors is $\ell_2(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) + \sum_{i=1}^{44} \left(-\frac{1}{2}(y_i - 100 - a_1t_i - a_2t_i^2)^2\right)$.
 
 1. Find the first partials of $\ell_2$.

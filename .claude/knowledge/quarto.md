@@ -24,6 +24,29 @@ separator and **swallows everything below it into a table** until the next
 the Activity headers, and the entire second Discussion section. Use `***` (or
 3-dash `---`) for a thematic break.
 
+## ATX headers don't survive inside raw HTML blocks
+
+A Markdown `#`/`##`/`###` header inside a raw HTML block (most commonly
+`<details>…</details>`) breaks the block — Pandoc closes the HTML wrapper
+immediately and renders the heading + everything after it as a *new* section
+outside the block. Symptom: a `<details>` dropdown shows up **empty** (just the
+`<summary>` chrome), and the content lands as standalone sections below it.
+
+Seen in class-24:43 — `### Applying Partial Derivatives to Loglikelihood`
+inside the "Click to expand the material used in the videos above" dropdown.
+The whole body of the dropdown rendered outside, leaving the dropdown empty.
+
+Fix: don't use ATX headers inside a `<details>`. Use bold paragraphs
+(`**Section title**`) or an inline HTML heading (`<h4>Section title</h4>`).
+Or replace the whole `<details>` with a Quarto callout
+(`::: {.callout-note collapse="true"}` … `:::`) which IS markdown-native and
+handles nested headings cleanly.
+
+R/Python `#` comments inside fenced ```r``` / ```{r}``` code blocks are fine —
+Pandoc doesn't parse code-block contents as Markdown, so the `#` stays as a
+comment character. (An audit pass on 2026-06-02 flagged 46 candidates; 45 were
+this false-positive class.)
+
 ## ATX headers need a blank line before them
 
 A line of `#`/`##`/`###`/… immediately after a prose paragraph (no blank line
