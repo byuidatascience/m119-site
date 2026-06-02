@@ -730,7 +730,6 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#writing-equations-more-practice" id="toc-writing-equations-more-practice" class="nav-link" data-scroll-target="#writing-equations-more-practice">(1) Writing Equations (more practice)</a></li>
   <li><a href="#partial-derivatives-of-a-loglikelihood-function" id="toc-partial-derivatives-of-a-loglikelihood-function" class="nav-link" data-scroll-target="#partial-derivatives-of-a-loglikelihood-function">(2) Partial Derivatives of a loglikelihood function</a></li>
-  <li><a href="#applying-partial-derivatives-to-loglikelihood" id="toc-applying-partial-derivatives-to-loglikelihood" class="nav-link" data-scroll-target="#applying-partial-derivatives-to-loglikelihood">Applying Partial Derivatives to Loglikelihood</a></li>
   </ul></li>
   <li><a href="#regular-reminders" id="toc-regular-reminders" class="nav-link" data-scroll-target="#regular-reminders">Regular Reminders</a>
   <ul class="collapse">
@@ -812,9 +811,7 @@ window.Quarto = {
 <summary>
 Click to expand the material used in the videos above.
 </summary>
-</details></section>
-<section id="applying-partial-derivatives-to-loglikelihood" class="level3">
-<h3 class="anchored" data-anchor-id="applying-partial-derivatives-to-loglikelihood">Applying Partial Derivatives to Loglikelihood</h3>
+<p><strong>Applying Partial Derivatives to Loglikelihood</strong></p>
 <p>Consider the model <span class="math inline">\(f_2(t; a_1, a_2) = 100 + a_1t + a_2t^2\)</span>. The function <span class="math inline">\(f_2\)</span> models the brightness of a lightbulb, measured as a percent of the original intensity of the lightbulb, given the number of hours the lightbulb as been on, <span class="math inline">\(t\)</span>. We will fit <span class="math inline">\(f_2\)</span> to a list of 44 measurements, <span class="math inline">\((t_i, y_i)\)</span>. Assuming the residuals (or errors) are independent and normally distributed (with mean 0 and standard deviation 1), the loglikelihood function for these errors is <span class="math inline">\(\ell_2(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) + \sum_{i=1}^{44} \left(-\frac{1}{2}(y_i - 100 - a_1t_i - a_2t_i^2)^2\right)\)</span>.</p>
 <ol type="1">
 <li><p>Find the first partials of <span class="math inline">\(\ell_2\)</span>.</p></li>
@@ -842,7 +839,7 @@ Click to expand the material used in the videos above.
 <p>The number <span class="math inline">\(\sum t_i^4\)</span> is a constant that depends on our data.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>E <span class="ot">&lt;-</span> <span class="fu">sum</span>(t<span class="sc">^</span><span class="dv">4</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>E</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-
+</details>
 <p><a id="PP"></a></p>
 </section>
 </section>
