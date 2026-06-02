@@ -198,14 +198,15 @@ You will be working together to revisit Task 1 and complete part of Task 2 for [
 
 Consider the model $f_1(t; a_1) = 100 + a_1t$. 
 
-1. On the chalk board, as a group, go through the computations needed to obtain the loglikelihood function. Your job is to perform the needed computations and include enough explanations to show that $$\ell_1(a_1; \mathbf{t},\mathbf{y}) =
-44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i
+1. On the chalk board, as a group, go through the computations needed to obtain the loglikelihood function. Your job is to perform the needed computations and include enough explanations to show that
 
-- 100 - a_1t_i)^2.$$ 
-1. Compute the first derivative of the loglikelihood function, so compute $\frac{d\ell_1}{da_1}$. The solution is provided in Task 2.
+    $$\ell_1(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i)^2.$$
 
-1. Now compute the second derivative $\frac{d^2\ell_1}{da_1^2}$. Again, the solution is provided in Task 2. 
-1. Use the following code to plot the loglikelihood function.
+2. Compute the first derivative of the loglikelihood function, so compute $\frac{d\ell_1}{da_1}$. The solution is provided in Task 2.
+
+3. Now compute the second derivative $\frac{d^2\ell_1}{da_1^2}$. Again, the solution is provided in Task 2.
+
+4. Use the following code to plot the loglikelihood function.
 
 ```r
 rm(list=ls())  #clear the environment
@@ -227,10 +228,10 @@ Y <- as.vector(lapply(a1,FUN=l,t=t,y=y))
 plot(a1,Y,type='l')
 ```
 
-1.  Adapt the inputs vector above to make a guess for what you think is the best value for $a_1$. How did you decide on that value?
-    - *Remember, the likelihood function (and the loglikelihood function) can be used to answer the questions, "What is the most likely value for the parameter(s) given our data?" Look at your plot of the loglikelihood function. Remember the loglikelihood function is a function of $a_1$.* 
+5.  Adapt the inputs vector above to make a guess for what you think is the best value for $a_1$. How did you decide on that value?
+    - *Remember, the likelihood function (and the loglikelihood function) can be used to answer the questions, "What is the most likely value for the parameter(s) given our data?" Look at your plot of the loglikelihood function. Remember the loglikelihood function is a function of $a_1$.*
 
-1. Use uniroot to find where the derivative of the loglikelihood function is equal to zero. 
+6. Use uniroot to find where the derivative of the loglikelihood function is equal to zero.
 
 As a group, you have complete parts of Project 2 Tasks 1, 2 and 3 for the function $f_1$. 
 
