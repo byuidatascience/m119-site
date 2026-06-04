@@ -237,13 +237,101 @@ plot_derivs(x, f, fp = fp, fpp = fpp,
             main        = "f, f', f''")
 ```
 
+# Example F — $f(x) = x^3 - 3x$
+
+Now the zeros of $f$, $f'$, and $f''$ don't line up at all. This is closer to what you'll see on the [Graphing Using Signs worksheet](https://chaz-clark.github.io/m119-site/assets/docs/GraphingUsingSigns.pdf) — a function with **one local max**, **one local min**, and **one inflection point**, all at different $x$ values.
+
+**Step 1 — zeros of $f$.** $f(x) = x(x^2 - 3) = 0$ at $x = 0, \pm\sqrt{3} \approx \pm 1.732$.
+
+```{r ex-f-step1}
+f <- function(x){ x^3 - 3*x }
+x <- seq(-2.5, 2.5, 0.01)
+plot_derivs(x, f,
+            zeros = c(-sqrt(3), 0, sqrt(3)),
+            ylim  = c(-4, 4),
+            main  = "f(x) = x^3 - 3x")
+```
+
+**Step 2 — inflection at $x = 0$ + overlay $f'$.** $f'(x) = 3x^2 - 3 = 3(x^2 - 1)$, so $f'$ has zeros at $x = \pm 1$ — that's a **local max at $x = -1$** and a **local min at $x = +1$**. $f''(x) = 6x$ has a sign change at $x = 0$ (inflection).
+
+```{r ex-f-step2}
+fp <- function(x){ 3*x^2 - 3 }
+plot_derivs(x, f, fp = fp,
+            zeros       = c(-sqrt(3), 0, sqrt(3)),
+            inflections = c(0),
+            ylim        = c(-6, 8),
+            main        = "f and f'")
+```
+
+Notice how the **red** $f'$ crosses zero exactly at $\pm 1$ — the peak and valley of $f$. The open dot at $x = 0$ sits at the bottom of $f'$'s own valley (the minimum of $f'$).
+
+**Step 3 — overlay $f''$.**
+
+```{r ex-f-step3}
+fpp <- function(x){ 6*x }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros       = c(-sqrt(3), 0, sqrt(3)),
+            inflections = c(0),
+            ylim        = c(-15, 15),
+            main        = "f, f', f''")
+```
+
+The **blue** $f''$ crosses zero at the open dot ($x = 0$), confirming it's the inflection point.
+
+# Example G — $f(x) = x^4 - 4x^2$
+
+A "W-shaped" quartic with **two local mins**, **one local max**, and **two inflection points**. This is the polynomial with the richest critical-point structure in the worksheet.
+
+**Step 1 — zeros of $f$.** $f(x) = x^2(x^2 - 4) = 0$ at $x = 0$ (double zero) and $\pm 2$.
+
+```{r ex-g-step1}
+f <- function(x){ x^4 - 4*x^2 }
+x <- seq(-2.5, 2.5, 0.01)
+plot_derivs(x, f,
+            zeros = c(-2, 0, 2),
+            ylim  = c(-5, 8),
+            main  = "f(x) = x^4 - 4x^2")
+```
+
+**Step 2 — two inflection points + overlay $f'$.** $f'(x) = 4x^3 - 8x = 4x(x^2 - 2)$, with zeros at $x = 0, \pm\sqrt{2}$:
+
+- $x = -\sqrt{2}$ is a **local min** of $f$
+- $x = 0$ is a **local max** of $f$
+- $x = +\sqrt{2}$ is another **local min** of $f$
+
+$f''(x) = 12x^2 - 8$ has zeros at $x = \pm\sqrt{2/3} \approx \pm 0.816$ — **two** inflection points.
+
+```{r ex-g-step2}
+fp <- function(x){ 4*x^3 - 8*x }
+plot_derivs(x, f, fp = fp,
+            zeros       = c(-2, 0, 2),
+            inflections = c(-sqrt(2/3), sqrt(2/3)),
+            ylim        = c(-10, 10),
+            main        = "f and f'")
+```
+
+There are **two** open dots now (the two inflection points of $f$). The red $f'$ crosses zero three times — at the two valleys and the central peak of $f$.
+
+**Step 3 — overlay $f''$.**
+
+```{r ex-g-step3}
+fpp <- function(x){ 12*x^2 - 8 }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros       = c(-2, 0, 2),
+            inflections = c(-sqrt(2/3), sqrt(2/3)),
+            ylim        = c(-12, 12),
+            main        = "f, f', f''")
+```
+
+The **blue** $f''$ is the parabola $12x^2 - 8$. It crosses zero at both open-dot $x$-values — confirming both inflection points.
+
 # Going further
 
 Once the pattern feels natural:
 
-- Try a function whose zeros of $f$, $f'$, and $f''$ don't line up — e.g. $f(x) = x^3 - 3x$. Three real zeros of $f$, an inflection point at $x = 0$, and local extrema at $x = \pm 1$.
-- Try a quartic with two inflection points — e.g. $f(x) = x^4 - 4x^2$. Compare against Example C and see how the extra $-4x^2$ creates two inflection points where $x^4$ had none.
+- Compare Examples F and G to the [Graphing Using Signs worksheet](https://chaz-clark.github.io/m119-site/assets/docs/GraphingUsingSigns.pdf). Pick a graph from that PDF and apply the same workflow — sketch first, then verify with `plot_derivs()` if you can write down a formula.
 - Sketch $f'''$ as well — for $x^n$ each derivative drops a power; for $e^x$ everything stays the same; for $\ln(x)$ the signs alternate.
+- Try a **quintic** like $f(x) = x^5 - 5x^3 + 4x$ — multiple zeros, multiple extrema, multiple inflections. Predict the shape of $f'$ before plotting.
 - Combine your examples: $f(x) = x^2 \ln(x)$ or $f(x) = e^x - x$ — much richer behavior.
 
 The goal: **read the shape of $f'$ from the shape of $f$**, and the shape of $f''$ from the shape of $f'$, without computing anything algebraically.
