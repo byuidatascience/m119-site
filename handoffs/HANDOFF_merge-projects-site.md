@@ -107,6 +107,31 @@ m119_master link updates are sequenced: build first, then links.
 - **Doing any of this mid-semester** — URL changes break live Canvas links.
   Deferred to post-term (see Trigger).
 
+## Enhancement opportunity unlocked by the merge
+
+Once the unified site is built on the R-capable M119/Projects foundation, a
+**downloadable + executable .qmd worksheet pattern** becomes feasible across
+the course. Tried in m119-site on 2026-06-04 (`site/assets/docs/visualizing_derivatives.qmd`,
+linked from the class-25 "Visualizing $f, f', f''$" activity) — reverted because
+the m119-site CI has no R, so Quarto either renders the worksheet and fails
+(or worse, ships the rendered output instead of the source). The current
+in-page activity (5 examples × 3 step-check dropdowns, all R as display-only
+\`\`\`r\`\`\` blocks for copy-paste) is the markdown-only workaround.
+
+On the merged site this becomes natural:
+
+- Author the worksheet as a normal `.qmd` with `{r}` executable chunks.
+- Add it to `assets/docs/` (or a new `worksheets/` section).
+- Either include it as a rendered page (CI executes R) OR provide it as a
+  downloadable source so students render locally in RStudio.
+- Same pattern applies to any class page where R execution is currently a
+  copy-paste step — e.g. the Brain Gains plotting boxes, the loglikelihood
+  partial-derivative material in class-24/26, and most of class-25.
+
+This unlocks a meaningful UX improvement (immediate-feedback R cells inline)
+without requiring m119-site to grow its own R stack. Out of scope for the
+core merge work, but worth a follow-up sprint once the merged site is live.
+
 ## Open questions to resolve at execution
 
 - Confirm M119/Projects `_quarto.yml` render list + navbar structure and where
