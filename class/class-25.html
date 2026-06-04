@@ -893,8 +893,25 @@ V(x) &amp;= x^2 h \\
 \]</span></p>
 </details>
 <ol start="2" type="1">
-<li><p>Use R to plot the function above, and then guess the maximum possible volume along with the dimensions that correspond to this volume.</p></li>
-<li><p>Compute the derivative of the function above, and use it to find the maximum possible volume.</p></li>
+<li>Use R to plot the function above, and then guess the maximum possible volume along with the dimensions that correspond to this volume.</li>
+</ol>
+<details>
+<summary>
+Solution
+</summary>
+<p>We graph <span class="math inline">\(V(x) = \frac{1}{4}x(6 - x^2)\)</span>. The domain is <span class="math inline">\(0 &lt; x &lt; \sqrt{6}\)</span> (the side length must be positive, and we also need <span class="math inline">\(h = (6-x^2)/(4x) &gt; 0\)</span>).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>V <span class="ot">&lt;-</span> <span class="cf">function</span>(x){(<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>) <span class="sc">*</span> x <span class="sc">*</span> (<span class="dv">6</span> <span class="sc">-</span> x<span class="sc">^</span><span class="dv">2</span>)}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot V across its domain.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.01</span>, <span class="fu">sqrt</span>(<span class="dv">6</span>), <span class="fl">0.01</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">V</span>(x), <span class="at">type =</span> <span class="st">"l"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#The peak looks to be a bit less than x = 1.5.</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>From the plot, the maximum volume is somewhere around <span class="math inline">\(1.4\)</span> cubic feet, at a side length a bit less than <span class="math inline">\(x = 1.5\)</span> feet. We’ll pin down the exact value with derivatives in Question 3.</p>
+</details>
+<ol start="3" type="1">
+<li>Compute the derivative of the function above, and use it to find the maximum possible volume.</li>
 </ol>
 </section>
 <section id="group-meeting" class="level2">
