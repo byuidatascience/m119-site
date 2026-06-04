@@ -310,79 +310,22 @@ plot_derivs <- function(x, f, fp = NULL, fpp = NULL,
 
 ---
 
-**Example A — $f(x) = x^3 - 3x$**
+**Example A — $f(x) = x^2$**
 
-Sketch $f$ on paper. Then work through the steps:
+Start simple. Sketch the parabola first, then check.
 
 <details>
 <summary>Check Step 1 — zeros of $f$ (filled black dots)</summary>
 
-The zeros of $f$ are where $x^3 - 3x = x(x^2 - 3) = 0$, so $x = 0,\, \pm\sqrt{3}$.
+$f(x) = x^2 = 0$ only at $x = 0$ (the vertex of the parabola touches the $x$-axis).
 
 ```r
-f <- function(x){ x^3 - 3*x }
+f <- function(x){ x^2 }
 x <- seq(-3, 3, 0.01)
 plot_derivs(x, f,
-            zeros = c(-sqrt(3), 0, sqrt(3)),
-            main = "f(x) = x^3 - 3x")
-```
-
-Compare the filled dots to where you marked your zeros.
-
-</details>
-
-<details>
-<summary>Check Step 2 — inflection points of $f$ (open dots) + overlay $f'$</summary>
-
-$f''(x) = 6x$, so the only inflection point of $f$ is at $x = 0$ (open dot). The derivative is $f'(x) = 3x^2 - 3$, which is **positive** where $f$ is increasing and **negative** where $f$ is decreasing.
-
-```r
-fp <- function(x){ 3*x^2 - 3 }
-plot_derivs(x, f, fp = fp,
-            zeros       = c(-sqrt(3), 0, sqrt(3)),
-            inflections = c(0),
-            main = "f and f'")
-```
-
-The red curve ($f'$) should cross zero exactly where $f$ has a peak or valley (at $x = \pm 1$).
-
-</details>
-
-<details>
-<summary>Check Step 3 — overlay $f''$</summary>
-
-$f''(x) = 6x$. It crosses zero at $x = 0$ — the same open dot from Step 2 (the inflection point of $f$ is where $f''$ changes sign).
-
-```r
-fpp <- function(x){ 6*x }
-plot_derivs(x, f, fp = fp, fpp = fpp,
-            zeros       = c(-sqrt(3), 0, sqrt(3)),
-            inflections = c(0),
-            main = "f, f', f''")
-```
-
-Notice: $f''$ (blue) is positive where $f'$ (red) is increasing, and negative where $f'$ is decreasing.
-
-</details>
-
----
-
-**Example B — $f(x) = x^4 - 4x^2$**
-
-A quartic with three zeros and *two* inflection points. Sketch first, then check.
-
-<details>
-<summary>Check Step 1 — zeros of $f$</summary>
-
-$f(x) = x^2(x^2 - 4) = 0$ gives zeros at $x = 0,\, \pm 2$ (and $x = 0$ is a double zero — the curve touches the $x$-axis without crossing).
-
-```r
-f <- function(x){ x^4 - 4*x^2 }
-x <- seq(-2.5, 2.5, 0.01)
-plot_derivs(x, f,
-            zeros = c(-2, 0, 2),
-            ylim = c(-5, 8),
-            main = "f(x) = x^4 - 4x^2")
+            zeros = c(0),
+            ylim = c(-2, 9),
+            main = "f(x) = x^2")
 ```
 
 </details>
@@ -390,70 +333,265 @@ plot_derivs(x, f,
 <details>
 <summary>Check Step 2 — inflection points + overlay $f'$</summary>
 
-$f'(x) = 4x^3 - 8x = 4x(x^2 - 2)$, with zeros at $x = 0,\, \pm\sqrt{2}$.
-$f''(x) = 12x^2 - 8$, with zeros at $x = \pm\sqrt{2/3} \approx \pm 0.816$ — these are the inflection points of $f$.
+$f'(x) = 2x$ — a straight line through the origin.
+$f''(x) = 2$ — a constant. **$f''$ is never zero**, so $f$ has **no inflection points** (no open dots).
 
 ```r
-fp <- function(x){ 4*x^3 - 8*x }
+fp <- function(x){ 2*x }
 plot_derivs(x, f, fp = fp,
-            zeros       = c(-2, 0, 2),
-            inflections = c(-sqrt(2/3), sqrt(2/3)),
-            ylim = c(-10, 10),
+            zeros = c(0),
+            inflections = NULL,
+            ylim = c(-7, 9),
             main = "f and f'")
 ```
 
-There are now *two* open dots. The red $f'$ should cross zero at $\pm\sqrt{2}$ (the valleys of $f$) and at $0$ (the local max of $f$ at the origin).
+Notice: $f'$ (red) is **negative** where $f$ slopes down, **positive** where $f$ slopes up, and **zero** at the vertex (the minimum of $f$).
 
 </details>
 
 <details>
 <summary>Check Step 3 — overlay $f''$</summary>
 
+$f''(x) = 2$. A flat horizontal line — $f$ is **concave up everywhere**, which is exactly why there are no inflection points.
+
 ```r
-fpp <- function(x){ 12*x^2 - 8 }
+fpp <- function(x){ rep(2, length(x)) }
 plot_derivs(x, f, fp = fp, fpp = fpp,
-            zeros       = c(-2, 0, 2),
-            inflections = c(-sqrt(2/3), sqrt(2/3)),
-            ylim = c(-10, 10),
+            zeros = c(0),
+            inflections = NULL,
+            ylim = c(-7, 9),
             main = "f, f', f''")
 ```
 
-$f''$ (blue) is the parabola $12x^2 - 8$. It crosses zero at the open-dot $x$-values — confirming those are the inflection points of $f$.
+Takeaway: $f'' > 0$ everywhere $\Longleftrightarrow$ $f$ is concave up everywhere.
 
 </details>
 
 ---
 
-**Example C — Your turn: $f(x) = \tfrac{1}{3}x^3 - x^2 - 3x + 5$**
+**Example B — $f(x) = x^3$**
 
-Same workflow: sketch first, then check.
+Same triple zero at the origin, but now watch how $f$, $f'$, $f''$ interact differently.
 
 <details>
-<summary>Check — the three plots</summary>
+<summary>Check Step 1 — zeros of $f$</summary>
 
-$f'(x) = x^2 - 2x - 3 = (x-3)(x+1)$, with zeros at $x = -1$ and $x = 3$.
-$f''(x) = 2x - 2$, with zero at $x = 1$ (the inflection point of $f$).
-The zeros of $f$ itself need numerical solving — use `uniroot()`.
+$f(x) = x^3 = 0$ only at $x = 0$ (a triple zero — the curve passes through the axis and momentarily flattens against it).
 
 ```r
-f   <- function(x){ (1/3)*x^3 - x^2 - 3*x + 5 }
-fp  <- function(x){ x^2 - 2*x - 3 }
-fpp <- function(x){ 2*x - 2 }
+f <- function(x){ x^3 }
+x <- seq(-2, 2, 0.01)
+plot_derivs(x, f,
+            zeros = c(0),
+            ylim = c(-8, 8),
+            main = "f(x) = x^3")
+```
 
-# Find the zeros of f numerically (one real root in this range).
-zeros_f <- uniroot(f, c(-3, -1))$root
-# (Inspecting the graph suggests this cubic has one real zero in [-3, -1]
-# and two more on either side of x = 5; widen the search if you want all three.)
+</details>
 
-x <- seq(-4, 6, 0.01)
+<details>
+<summary>Check Step 2 — inflection points + overlay $f'$</summary>
+
+$f'(x) = 3x^2$ — always **non-negative**. So $f$ is **never decreasing**: it slopes upward everywhere except for the single flat instant at $x = 0$.
+$f''(x) = 6x$ has a sign change at $x = 0$, so $x = 0$ **is** an inflection point (open dot).
+
+```r
+fp <- function(x){ 3*x^2 }
+plot_derivs(x, f, fp = fp,
+            zeros = c(0),
+            inflections = c(0),
+            ylim = c(-8, 12),
+            main = "f and f'")
+```
+
+**Important teaching moment:** $f'(0) = 0$ but $x = 0$ is **not** a max or min — it's a *horizontal inflection*. A zero of $f'$ only gives a max or min when $f'$ also **changes sign** there.
+
+</details>
+
+<details>
+<summary>Check Step 3 — overlay $f''$</summary>
+
+$f''(x) = 6x$. Negative for $x < 0$ (concave down), positive for $x > 0$ (concave up). It crosses zero at the open dot, confirming $x = 0$ is the inflection point.
+
+```r
+fpp <- function(x){ 6*x }
 plot_derivs(x, f, fp = fp, fpp = fpp,
-            zeros       = c(zeros_f),
-            inflections = c(1),
-            ylim = c(-10, 15),
+            zeros = c(0),
+            inflections = c(0),
+            ylim = c(-8, 12),
             main = "f, f', f''")
 ```
 
-Try modifying: add more zeros of $f$ found with `uniroot` over different intervals, or sketch $f'''(x) = 2$ (a constant) as a fourth overlay.
+</details>
+
+---
+
+**Example C — $f(x) = x^4$**
+
+Looks similar to $x^2$ — but hides a subtle trap about $f''$.
+
+<details>
+<summary>Check Step 1 — zeros of $f$</summary>
+
+$f(x) = x^4 = 0$ only at $x = 0$ (a quadruple zero — the curve sits tangent to the axis).
+
+```r
+f <- function(x){ x^4 }
+x <- seq(-2, 2, 0.01)
+plot_derivs(x, f,
+            zeros = c(0),
+            ylim = c(-2, 16),
+            main = "f(x) = x^4")
+```
+
+</details>
+
+<details>
+<summary>Check Step 2 — inflection points + overlay $f'$</summary>
+
+$f'(x) = 4x^3$ — negative for $x < 0$, positive for $x > 0$, zero at $x = 0$ (the **minimum** of $f$).
+$f''(x) = 12x^2$ — equals zero at $x = 0$, **but $f'' \ge 0$ everywhere**. No sign change → **not** an inflection point.
+
+```r
+fp <- function(x){ 4*x^3 }
+plot_derivs(x, f, fp = fp,
+            zeros = c(0),
+            inflections = NULL,
+            ylim = c(-20, 20),
+            main = "f and f'")
+```
+
+**Important teaching moment:** $f''(c) = 0$ does *not* automatically mean $c$ is an inflection point. You also need $f''$ to **change sign** there. Compare with Example B where it did.
+
+</details>
+
+<details>
+<summary>Check Step 3 — overlay $f''$</summary>
+
+$f''(x) = 12x^2$. It's a parabola that *touches* zero at $x = 0$ but never goes negative — confirming why $x = 0$ isn't an inflection point.
+
+```r
+fpp <- function(x){ 12*x^2 }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros = c(0),
+            inflections = NULL,
+            ylim = c(-20, 20),
+            main = "f, f', f''")
+```
+
+</details>
+
+---
+
+**Example D — $f(x) = e^x$**
+
+The function that is its own derivative. Predict the plot before running.
+
+<details>
+<summary>Check Step 1 — zeros of $f$</summary>
+
+$e^x > 0$ for every real $x$, so $f$ has **no zeros** — no filled dots.
+
+```r
+f <- function(x){ exp(x) }
+x <- seq(-2, 3, 0.01)
+plot_derivs(x, f,
+            zeros = NULL,
+            ylim = c(0, 20),
+            main = "f(x) = e^x")
+```
+
+</details>
+
+<details>
+<summary>Check Step 2 — inflection points + overlay $f'$</summary>
+
+$f'(x) = e^x$ — **identical to $f$**. So the red curve lands exactly on the black curve.
+$f''(x) = e^x$ too — never zero, no inflection points.
+
+```r
+fp <- function(x){ exp(x) }
+plot_derivs(x, f, fp = fp,
+            zeros = NULL,
+            inflections = NULL,
+            ylim = c(0, 20),
+            main = "f and f' (they're identical)")
+```
+
+</details>
+
+<details>
+<summary>Check Step 3 — overlay $f''$</summary>
+
+$f''(x) = e^x$ again — the third curve also coincides with the first two. All three plots stack perfectly on top of each other.
+
+```r
+fpp <- function(x){ exp(x) }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros = NULL,
+            inflections = NULL,
+            ylim = c(0, 20),
+            main = "f, f', f'' (all three coincide)")
+```
+
+Takeaway: $e^x$ is the unique function (up to a constant multiple) whose derivative equals itself — always positive, always increasing, always concave up.
+
+</details>
+
+---
+
+**Example E — $f(x) = \ln(x)$**
+
+Different territory: the domain is restricted to $x > 0$, and $f$ is monotonic and concave down.
+
+<details>
+<summary>Check Step 1 — zeros of $f$</summary>
+
+$\ln(x) = 0$ exactly at $x = 1$. (Don't forget: $\ln$ is undefined for $x \le 0$.)
+
+```r
+f <- function(x){ log(x) }   # log() in R is the natural log
+x <- seq(0.1, 5, 0.01)        # start past 0 to avoid -Inf
+plot_derivs(x, f,
+            zeros = c(1),
+            ylim = c(-3, 2),
+            main = "f(x) = ln(x)")
+```
+
+</details>
+
+<details>
+<summary>Check Step 2 — inflection points + overlay $f'$</summary>
+
+$f'(x) = 1/x$ — always **positive** on the domain, so $f$ is always increasing. No zeros of $f'$.
+$f''(x) = -1/x^2$ — always **negative**. Never zero, so **no inflection points**.
+
+```r
+fp <- function(x){ 1/x }
+plot_derivs(x, f, fp = fp,
+            zeros = c(1),
+            inflections = NULL,
+            ylim = c(-3, 5),
+            main = "f and f'")
+```
+
+Notice: as $x$ grows, $f'$ shrinks toward zero — that's why $\ln(x)$ keeps increasing but more and more slowly.
+
+</details>
+
+<details>
+<summary>Check Step 3 — overlay $f''$</summary>
+
+$f''(x) = -1/x^2$. Negative everywhere on the domain → $f$ is **concave down everywhere**, which matches the visible curvature of $\ln(x)$.
+
+```r
+fpp <- function(x){ -1/x^2 }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros = c(1),
+            inflections = NULL,
+            ylim = c(-3, 5),
+            main = "f, f', f''")
+```
 
 </details>
 
@@ -461,10 +599,10 @@ Try modifying: add more zeros of $f$ found with `uniroot` over different interva
 
 **Going further.** Once the pattern feels natural:
 
-- Pick any polynomial you can take three derivatives of and apply the same workflow.
-- Try functions where the zeros of $f$, $f'$, and $f''$ don't line up at all (e.g. $f(x) = x^3 + x + 1$ — only one real zero of $f$, but $f'$ and $f''$ behave normally).
-- Try a function with a **horizontal inflection** (e.g. $f(x) = x^3$ — $f''$ changes sign at $x = 0$, but $f'(0) = 0$ too, so there's no max/min there).
-- Sketch $f'''$ as well — for cubics it's a constant, for quartics it's linear, etc.
+- Try a function whose zeros of $f$, $f'$, and $f''$ don't line up at all — e.g. $f(x) = x^3 - 3x$. Three real zeros of $f$, an inflection point at $x = 0$, and local extrema at $x = \pm 1$.
+- Try a quartic with two inflection points — e.g. $f(x) = x^4 - 4x^2$. Compare against Example C and see how the extra $-4x^2$ creates two inflection points where $x^4$ had none.
+- Sketch $f'''$ as well — for $x^n$ each derivative drops a power; for $e^x$ everything stays the same; for $\ln(x)$ the signs alternate.
+- Combine your examples: $f(x) = x^2 \ln(x)$ or $f(x) = e^x - x$ — much richer behavior.
 
 The goal: **read the shape of $f'$ from the shape of $f$**, and the shape of $f''$ from the shape of $f'$, without computing anything algebraically.
 
