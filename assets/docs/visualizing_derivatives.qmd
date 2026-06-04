@@ -1,0 +1,249 @@
+---
+title: "Visualizing $f$, $f'$, $f''$"
+subtitle: "Math 119 — Applied Calculus for Data Analysis (BYU-Idaho)"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# How to use this worksheet
+
+**Draw first, then run the code.** The goal is to predict the shape of $f'$ and $f''$ from the shape of $f$ — running the cells before sketching defeats the point.
+
+For each example below:
+
+1. **Sketch $f(x)$** on paper using the formula given.
+2. Mark the **zeros of $f$** with **filled (black) dots** on the $x$-axis.
+3. On each interval, decide whether the slope of $f$ is **positive (+)** or **negative (−)** and write the sign above it. Then mark each **inflection point** of $f$ with an **open dot** on the $x$-axis.
+4. **Hand-sketch $f'$** on the same axes in a different color (e.g. red). Use your $+/-$ signs to predict where $f'$ is above/below the axis, and your open dots to predict where $f'$ has a peak or valley.
+5. Repeat the slope/inflection analysis on **$f'$**, then hand-sketch **$f''$** (a third color, e.g. blue).
+
+After each step, **run the matching code cell** to check your work. Colors stay consistent across examples: $f$ in black, $f'$ in red, $f''$ in blue.
+
+## Setup — run once
+
+```{r setup}
+plot_derivs <- function(x, f, fp = NULL, fpp = NULL,
+                        zeros = NULL, inflections = NULL,
+                        ylim = NULL, main = "") {
+  ys <- f(x)
+  if (!is.null(fp))  ys <- c(ys, fp(x))
+  if (!is.null(fpp)) ys <- c(ys, fpp(x))
+  if (is.null(ylim)) ylim <- range(ys, finite = TRUE)
+  plot(x, f(x), type = "l", lwd = 2, col = "black",
+       ylim = ylim, ylab = "y", main = main)
+  abline(h = 0, col = "gray80")
+  if (!is.null(fp))  lines(x, fp(x),  col = "red",  lwd = 2)
+  if (!is.null(fpp)) lines(x, fpp(x), col = "blue", lwd = 2)
+  if (!is.null(zeros))       points(zeros, rep(0, length(zeros)), pch = 16, cex = 1.3)
+  if (!is.null(inflections)) points(inflections, rep(0, length(inflections)), pch = 1, cex = 1.6, lwd = 2)
+  legend_lab <- "f"; legend_col <- "black"
+  if (!is.null(fp))  { legend_lab <- c(legend_lab, "f'");  legend_col <- c(legend_col, "red") }
+  if (!is.null(fpp)) { legend_lab <- c(legend_lab, "f''"); legend_col <- c(legend_col, "blue") }
+  legend("topright", legend = legend_lab, col = legend_col, lty = 1, lwd = 2, bg = "white")
+}
+```
+
+# Example A — $f(x) = x^2$
+
+Start simple. Sketch the parabola first, then check each step.
+
+**Step 1 — zeros of $f$ (filled black dots).** $f(x) = x^2 = 0$ only at $x = 0$.
+
+```{r ex-a-step1}
+f <- function(x){ x^2 }
+x <- seq(-3, 3, 0.01)
+plot_derivs(x, f,
+            zeros = c(0),
+            ylim  = c(-2, 9),
+            main  = "f(x) = x^2")
+```
+
+**Step 2 — inflection points + overlay $f'$.** $f'(x) = 2x$. $f''(x) = 2$ — never zero, so $f$ has **no inflection points** (no open dots).
+
+```{r ex-a-step2}
+fp <- function(x){ 2*x }
+plot_derivs(x, f, fp = fp,
+            zeros       = c(0),
+            inflections = NULL,
+            ylim        = c(-7, 9),
+            main        = "f and f'")
+```
+
+**Step 3 — overlay $f''$.** $f''(x) = 2$ is a flat horizontal line, always positive → $f$ is concave up everywhere.
+
+```{r ex-a-step3}
+fpp <- function(x){ rep(2, length(x)) }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros       = c(0),
+            inflections = NULL,
+            ylim        = c(-7, 9),
+            main        = "f, f', f''")
+```
+
+# Example B — $f(x) = x^3$
+
+Same single zero at the origin, but $f$, $f'$, $f''$ interact differently.
+
+**Step 1 — zero at $x = 0$ (triple zero — the curve flattens against the axis).**
+
+```{r ex-b-step1}
+f <- function(x){ x^3 }
+x <- seq(-2, 2, 0.01)
+plot_derivs(x, f,
+            zeros = c(0),
+            ylim  = c(-8, 8),
+            main  = "f(x) = x^3")
+```
+
+**Step 2 — inflection at $x = 0$ (open dot) + overlay $f'$.** $f'(x) = 3x^2 \ge 0$ always. $f''(x) = 6x$ changes sign at $x = 0$, so $x = 0$ IS an inflection point.
+
+**Important:** $f'(0) = 0$ but it's NOT a max or min — it's a *horizontal inflection*. A zero of $f'$ only gives a max or min when $f'$ also changes sign there.
+
+```{r ex-b-step2}
+fp <- function(x){ 3*x^2 }
+plot_derivs(x, f, fp = fp,
+            zeros       = c(0),
+            inflections = c(0),
+            ylim        = c(-8, 12),
+            main        = "f and f'")
+```
+
+**Step 3 — overlay $f''$.** $f''(x) = 6x$.
+
+```{r ex-b-step3}
+fpp <- function(x){ 6*x }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros       = c(0),
+            inflections = c(0),
+            ylim        = c(-8, 12),
+            main        = "f, f', f''")
+```
+
+# Example C — $f(x) = x^4$
+
+Looks similar to $x^2$ — but hides a subtle trap about $f''$.
+
+**Step 1.**
+
+```{r ex-c-step1}
+f <- function(x){ x^4 }
+x <- seq(-2, 2, 0.01)
+plot_derivs(x, f,
+            zeros = c(0),
+            ylim  = c(-2, 16),
+            main  = "f(x) = x^4")
+```
+
+**Step 2.** $f'(x) = 4x^3$. $f''(x) = 12x^2 \ge 0$ always — $f''(0) = 0$ but no sign change → **NOT** an inflection point.
+
+```{r ex-c-step2}
+fp <- function(x){ 4*x^3 }
+plot_derivs(x, f, fp = fp,
+            zeros       = c(0),
+            inflections = NULL,
+            ylim        = c(-20, 20),
+            main        = "f and f'")
+```
+
+**Step 3 — overlay $f''$.**
+
+```{r ex-c-step3}
+fpp <- function(x){ 12*x^2 }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros       = c(0),
+            inflections = NULL,
+            ylim        = c(-20, 20),
+            main        = "f, f', f''")
+```
+
+# Example D — $f(x) = e^x$
+
+The function that is its own derivative. Predict the plot before running.
+
+**Step 1 — no zeros** ($e^x > 0$ for every real $x$).
+
+```{r ex-d-step1}
+f <- function(x){ exp(x) }
+x <- seq(-2, 3, 0.01)
+plot_derivs(x, f,
+            zeros = NULL,
+            ylim  = c(0, 20),
+            main  = "f(x) = e^x")
+```
+
+**Step 2 — $f'(x) = e^x = f$.** The red curve overlays exactly on the black curve.
+
+```{r ex-d-step2}
+fp <- function(x){ exp(x) }
+plot_derivs(x, f, fp = fp,
+            zeros       = NULL,
+            inflections = NULL,
+            ylim        = c(0, 20),
+            main        = "f and f' (identical)")
+```
+
+**Step 3 — $f''(x) = e^x$ again.** All three curves coincide.
+
+```{r ex-d-step3}
+fpp <- function(x){ exp(x) }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros       = NULL,
+            inflections = NULL,
+            ylim        = c(0, 20),
+            main        = "f, f', f'' (all three coincide)")
+```
+
+# Example E — $f(x) = \ln(x)$
+
+Restricted domain ($x > 0$), monotonic increasing, concave down.
+
+**Step 1 — zero of $f$ at $x = 1$.**
+
+```{r ex-e-step1}
+f <- function(x){ log(x) }       # log() in R is the natural log
+x <- seq(0.1, 5, 0.01)            # start past 0 to avoid -Inf
+plot_derivs(x, f,
+            zeros = c(1),
+            ylim  = c(-3, 2),
+            main  = "f(x) = ln(x)")
+```
+
+**Step 2.** $f'(x) = 1/x$ (always positive on the domain). $f''(x) = -1/x^2$ (always negative). No inflection points.
+
+```{r ex-e-step2}
+fp <- function(x){ 1/x }
+plot_derivs(x, f, fp = fp,
+            zeros       = c(1),
+            inflections = NULL,
+            ylim        = c(-3, 5),
+            main        = "f and f'")
+```
+
+**Step 3 — $f''$ negative everywhere on the domain → $f$ concave down everywhere.**
+
+```{r ex-e-step3}
+fpp <- function(x){ -1/x^2 }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros       = c(1),
+            inflections = NULL,
+            ylim        = c(-3, 5),
+            main        = "f, f', f''")
+```
+
+# Going further
+
+Once the pattern feels natural:
+
+- Try a function whose zeros of $f$, $f'$, and $f''$ don't line up — e.g. $f(x) = x^3 - 3x$. Three real zeros of $f$, an inflection point at $x = 0$, and local extrema at $x = \pm 1$.
+- Try a quartic with two inflection points — e.g. $f(x) = x^4 - 4x^2$. Compare against Example C and see how the extra $-4x^2$ creates two inflection points where $x^4$ had none.
+- Sketch $f'''$ as well — for $x^n$ each derivative drops a power; for $e^x$ everything stays the same; for $\ln(x)$ the signs alternate.
+- Combine your examples: $f(x) = x^2 \ln(x)$ or $f(x) = e^x - x$ — much richer behavior.
+
+The goal: **read the shape of $f'$ from the shape of $f$**, and the shape of $f''$ from the shape of $f'$, without computing anything algebraically.
