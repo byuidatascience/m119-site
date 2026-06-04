@@ -104,20 +104,20 @@ $$
 <details>
 <summary>Solution</summary>
 
-We graph $V(x) = \frac{1}{4}x(6 - x^2)$. The domain is $0 < x < \sqrt{6}$ (the side length must be positive, and we also need $h = (6-x^2)/(4x) > 0$).
+We graph $V(x) = x^2 h = x^2 \cdot \frac{6 - x^2}{4x}$ (using $h$ from Question 1). The peak lies inside the domain $0 < x < \sqrt{6}$ (so the side length is positive and the height stays positive).
 
 ```r
-V <- function(x){(1/4) * x * (6 - x^2)}
+V <- function(x){x^2*((6-x^2)/(4*x))}
 
 #Plot V across its domain.
-x <- seq(0.01, sqrt(6), 0.01)
+x <- seq(0, 4, 0.01)
 plot(x, V(x), type = "l")
 
 #The peak looks to be a bit less than x = 1.5.
-abline(v = 1.5)
+abline(v = sqrt(2))
 ```
 
-From the plot, the maximum volume is somewhere around $1.4$ cubic feet, at a side length a bit less than $x = 1.5$ feet. We'll pin down the exact value with derivatives in Question 3.
+From the plot, the maximum volume is around $1.4$ cubic feet at a side length near $x = \sqrt{2} \approx 1.414$ feet. We'll pin down that value exactly with the derivative in Question 3.
 
 </details>
 
@@ -270,6 +270,203 @@ Number your graphs, keep them small-ish, and try to fill your board with example
 1. $f$ so that -$f$ is concave down everywhere.
 
 When you finish, work on [this worksheet](../assets/docs/GraphingUsingSigns.pdf){target="_blank"} together (remember to take turns).
+
+### Activity - Visualizing $f$, $f'$, $f''$ (with R feedback)
+
+This worksheet walks you from $f$ to $f'$ to $f''$ on the same axes, one step at a time. For each example below:
+
+1. **Sketch $f(x)$** on paper using the formula given.
+2. Mark the **zeros of $f$** on your sketch with **filled (black) dots** on the $x$-axis.
+3. On each interval, decide whether the slope of $f$ is **positive (+)** or **negative (−)** and write the sign above it. Then mark each **inflection point** of $f$ with an **open dot** on the $x$-axis.
+4. **Hand-sketch $f'$** on the same axes (in a different color, e.g. red). Use your $+/-$ signs to predict where $f'$ is above/below the axis, and your open dots to predict where $f'$ has a peak or valley.
+5. Repeat the slope/inflection analysis on **$f'$**, then hand-sketch **$f''$** (a third color, e.g. blue).
+
+After each step, run the matching code block to **check your work**. Colors stay consistent across examples: $f$ in black, $f'$ in red, $f''$ in blue.
+
+Reusable plotting helper — run this once at the top of your R session:
+
+```r
+# Plot up to three of {f, f', f''} on shared axes, with optional dots.
+plot_derivs <- function(x, f, fp = NULL, fpp = NULL,
+                        zeros = NULL, inflections = NULL,
+                        ylim = NULL, main = "") {
+  ys <- f(x)
+  if (!is.null(fp))  ys <- c(ys, fp(x))
+  if (!is.null(fpp)) ys <- c(ys, fpp(x))
+  if (is.null(ylim)) ylim <- range(ys, finite = TRUE)
+  plot(x, f(x), type = "l", lwd = 2, col = "black",
+       ylim = ylim, ylab = "y", main = main)
+  abline(h = 0, col = "gray80")
+  if (!is.null(fp))  lines(x, fp(x),  col = "red",  lwd = 2)
+  if (!is.null(fpp)) lines(x, fpp(x), col = "blue", lwd = 2)
+  if (!is.null(zeros))       points(zeros, rep(0, length(zeros)), pch = 16, cex = 1.3)
+  if (!is.null(inflections)) points(inflections, rep(0, length(inflections)), pch = 1, cex = 1.6, lwd = 2)
+  legend_lab <- "f"; legend_col <- "black"
+  if (!is.null(fp))  { legend_lab <- c(legend_lab, "f'"); legend_col <- c(legend_col, "red") }
+  if (!is.null(fpp)) { legend_lab <- c(legend_lab, "f''"); legend_col <- c(legend_col, "blue") }
+  legend("topright", legend = legend_lab, col = legend_col, lty = 1, lwd = 2, bg = "white")
+}
+```
+
+---
+
+**Example A — $f(x) = x^3 - 3x$**
+
+Sketch $f$ on paper. Then work through the steps:
+
+<details>
+<summary>Check Step 1 — zeros of $f$ (filled black dots)</summary>
+
+The zeros of $f$ are where $x^3 - 3x = x(x^2 - 3) = 0$, so $x = 0,\, \pm\sqrt{3}$.
+
+```r
+f <- function(x){ x^3 - 3*x }
+x <- seq(-3, 3, 0.01)
+plot_derivs(x, f,
+            zeros = c(-sqrt(3), 0, sqrt(3)),
+            main = "f(x) = x^3 - 3x")
+```
+
+Compare the filled dots to where you marked your zeros.
+
+</details>
+
+<details>
+<summary>Check Step 2 — inflection points of $f$ (open dots) + overlay $f'$</summary>
+
+$f''(x) = 6x$, so the only inflection point of $f$ is at $x = 0$ (open dot). The derivative is $f'(x) = 3x^2 - 3$, which is **positive** where $f$ is increasing and **negative** where $f$ is decreasing.
+
+```r
+fp <- function(x){ 3*x^2 - 3 }
+plot_derivs(x, f, fp = fp,
+            zeros       = c(-sqrt(3), 0, sqrt(3)),
+            inflections = c(0),
+            main = "f and f'")
+```
+
+The red curve ($f'$) should cross zero exactly where $f$ has a peak or valley (at $x = \pm 1$).
+
+</details>
+
+<details>
+<summary>Check Step 3 — overlay $f''$</summary>
+
+$f''(x) = 6x$. It crosses zero at $x = 0$ — the same open dot from Step 2 (the inflection point of $f$ is where $f''$ changes sign).
+
+```r
+fpp <- function(x){ 6*x }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros       = c(-sqrt(3), 0, sqrt(3)),
+            inflections = c(0),
+            main = "f, f', f''")
+```
+
+Notice: $f''$ (blue) is positive where $f'$ (red) is increasing, and negative where $f'$ is decreasing.
+
+</details>
+
+---
+
+**Example B — $f(x) = x^4 - 4x^2$**
+
+A quartic with three zeros and *two* inflection points. Sketch first, then check.
+
+<details>
+<summary>Check Step 1 — zeros of $f$</summary>
+
+$f(x) = x^2(x^2 - 4) = 0$ gives zeros at $x = 0,\, \pm 2$ (and $x = 0$ is a double zero — the curve touches the $x$-axis without crossing).
+
+```r
+f <- function(x){ x^4 - 4*x^2 }
+x <- seq(-2.5, 2.5, 0.01)
+plot_derivs(x, f,
+            zeros = c(-2, 0, 2),
+            ylim = c(-5, 8),
+            main = "f(x) = x^4 - 4x^2")
+```
+
+</details>
+
+<details>
+<summary>Check Step 2 — inflection points + overlay $f'$</summary>
+
+$f'(x) = 4x^3 - 8x = 4x(x^2 - 2)$, with zeros at $x = 0,\, \pm\sqrt{2}$.
+$f''(x) = 12x^2 - 8$, with zeros at $x = \pm\sqrt{2/3} \approx \pm 0.816$ — these are the inflection points of $f$.
+
+```r
+fp <- function(x){ 4*x^3 - 8*x }
+plot_derivs(x, f, fp = fp,
+            zeros       = c(-2, 0, 2),
+            inflections = c(-sqrt(2/3), sqrt(2/3)),
+            ylim = c(-10, 10),
+            main = "f and f'")
+```
+
+There are now *two* open dots. The red $f'$ should cross zero at $\pm\sqrt{2}$ (the valleys of $f$) and at $0$ (the local max of $f$ at the origin).
+
+</details>
+
+<details>
+<summary>Check Step 3 — overlay $f''$</summary>
+
+```r
+fpp <- function(x){ 12*x^2 - 8 }
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros       = c(-2, 0, 2),
+            inflections = c(-sqrt(2/3), sqrt(2/3)),
+            ylim = c(-10, 10),
+            main = "f, f', f''")
+```
+
+$f''$ (blue) is the parabola $12x^2 - 8$. It crosses zero at the open-dot $x$-values — confirming those are the inflection points of $f$.
+
+</details>
+
+---
+
+**Example C — Your turn: $f(x) = \tfrac{1}{3}x^3 - x^2 - 3x + 5$**
+
+Same workflow: sketch first, then check.
+
+<details>
+<summary>Check — the three plots</summary>
+
+$f'(x) = x^2 - 2x - 3 = (x-3)(x+1)$, with zeros at $x = -1$ and $x = 3$.
+$f''(x) = 2x - 2$, with zero at $x = 1$ (the inflection point of $f$).
+The zeros of $f$ itself need numerical solving — use `uniroot()`.
+
+```r
+f   <- function(x){ (1/3)*x^3 - x^2 - 3*x + 5 }
+fp  <- function(x){ x^2 - 2*x - 3 }
+fpp <- function(x){ 2*x - 2 }
+
+# Find the zeros of f numerically (one real root in this range).
+zeros_f <- uniroot(f, c(-3, -1))$root
+# (Inspecting the graph suggests this cubic has one real zero in [-3, -1]
+# and two more on either side of x = 5; widen the search if you want all three.)
+
+x <- seq(-4, 6, 0.01)
+plot_derivs(x, f, fp = fp, fpp = fpp,
+            zeros       = c(zeros_f),
+            inflections = c(1),
+            ylim = c(-10, 15),
+            main = "f, f', f''")
+```
+
+Try modifying: add more zeros of $f$ found with `uniroot` over different intervals, or sketch $f'''(x) = 2$ (a constant) as a fourth overlay.
+
+</details>
+
+---
+
+**Going further.** Once the pattern feels natural:
+
+- Pick any polynomial you can take three derivatives of and apply the same workflow.
+- Try functions where the zeros of $f$, $f'$, and $f''$ don't line up at all (e.g. $f(x) = x^3 + x + 1$ — only one real zero of $f$, but $f'$ and $f''$ behave normally).
+- Try a function with a **horizontal inflection** (e.g. $f(x) = x^3$ — $f''$ changes sign at $x = 0$, but $f'(0) = 0$ too, so there's no max/min there).
+- Sketch $f'''$ as well — for cubics it's a constant, for quartics it's linear, etc.
+
+The goal: **read the shape of $f'$ from the shape of $f$**, and the shape of $f''$ from the shape of $f'$, without computing anything algebraically.
 
 ## Class Discussion
 ### ElvesRUs Extended
