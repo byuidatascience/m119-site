@@ -745,6 +745,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#activity---comparing-solutions" id="toc-activity---comparing-solutions" class="nav-link" data-scroll-target="#activity---comparing-solutions">Activity - Comparing Solutions</a></li>
   <li><a href="#activity---constructing-examples" id="toc-activity---constructing-examples" class="nav-link" data-scroll-target="#activity---constructing-examples">Activity - Constructing Examples</a></li>
+  <li><a href="#activity---visualizing-f-f-f-with-r-feedback" id="toc-activity---visualizing-f-f-f-with-r-feedback" class="nav-link" data-scroll-target="#activity---visualizing-f-f-f-with-r-feedback">Activity - Visualizing <span class="math inline">\(f\)</span>, <span class="math inline">\(f'\)</span>, <span class="math inline">\(f''\)</span> (with R feedback)</a></li>
   </ul></li>
   <li><a href="#class-discussion" id="toc-class-discussion" class="nav-link" data-scroll-target="#class-discussion">Class Discussion</a>
   <ul class="collapse">
@@ -899,16 +900,16 @@ V(x) &amp;= x^2 h \\
 <summary>
 Solution
 </summary>
-<p>We graph <span class="math inline">\(V(x) = \frac{1}{4}x(6 - x^2)\)</span>. The domain is <span class="math inline">\(0 &lt; x &lt; \sqrt{6}\)</span> (the side length must be positive, and we also need <span class="math inline">\(h = (6-x^2)/(4x) &gt; 0\)</span>).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>V <span class="ot">&lt;-</span> <span class="cf">function</span>(x){(<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>) <span class="sc">*</span> x <span class="sc">*</span> (<span class="dv">6</span> <span class="sc">-</span> x<span class="sc">^</span><span class="dv">2</span>)}</span>
+<p>We graph <span class="math inline">\(V(x) = x^2 h = x^2 \cdot \frac{6 - x^2}{4x}\)</span> (using <span class="math inline">\(h\)</span> from Question 1). The peak lies inside the domain <span class="math inline">\(0 &lt; x &lt; \sqrt{6}\)</span> (so the side length is positive and the height stays positive).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>V <span class="ot">&lt;-</span> <span class="cf">function</span>(x){x<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>((<span class="dv">6</span><span class="sc">-</span>x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">4</span><span class="sc">*</span>x))}</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot V across its domain.</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.01</span>, <span class="fu">sqrt</span>(<span class="dv">6</span>), <span class="fl">0.01</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">4</span>, <span class="fl">0.01</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">V</span>(x), <span class="at">type =</span> <span class="st">"l"</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#The peak looks to be a bit less than x = 1.5.</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>From the plot, the maximum volume is somewhere around <span class="math inline">\(1.4\)</span> cubic feet, at a side length a bit less than <span class="math inline">\(x = 1.5\)</span> feet. We’ll pin down the exact value with derivatives in Question 3.</p>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fu">sqrt</span>(<span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>From the plot, the maximum volume is around <span class="math inline">\(1.4\)</span> cubic feet at a side length near <span class="math inline">\(x = \sqrt{2} \approx 1.414\)</span> feet. We’ll pin down that value exactly with the derivative in Question 3.</p>
 </details>
 <ol start="3" type="1">
 <li>Compute the derivative of the function above, and use it to find the maximum possible volume.</li>
@@ -1041,6 +1042,152 @@ Definition: Inflection Point
 <li><p><span class="math inline">\(f\)</span> so that -<span class="math inline">\(f\)</span> is concave down everywhere.</p></li>
 </ol>
 <p>When you finish, work on <a href="../assets/docs/GraphingUsingSigns.pdf" target="_blank">this worksheet</a> together (remember to take turns).</p>
+</section>
+<section id="activity---visualizing-f-f-f-with-r-feedback" class="level3">
+<h3 class="anchored" data-anchor-id="activity---visualizing-f-f-f-with-r-feedback">Activity - Visualizing <span class="math inline">\(f\)</span>, <span class="math inline">\(f'\)</span>, <span class="math inline">\(f''\)</span> (with R feedback)</h3>
+<p>This worksheet walks you from <span class="math inline">\(f\)</span> to <span class="math inline">\(f'\)</span> to <span class="math inline">\(f''\)</span> on the same axes, one step at a time. For each example below:</p>
+<ol type="1">
+<li><strong>Sketch <span class="math inline">\(f(x)\)</span></strong> on paper using the formula given.</li>
+<li>Mark the <strong>zeros of <span class="math inline">\(f\)</span></strong> on your sketch with <strong>filled (black) dots</strong> on the <span class="math inline">\(x\)</span>-axis.</li>
+<li>On each interval, decide whether the slope of <span class="math inline">\(f\)</span> is <strong>positive (+)</strong> or <strong>negative (−)</strong> and write the sign above it. Then mark each <strong>inflection point</strong> of <span class="math inline">\(f\)</span> with an <strong>open dot</strong> on the <span class="math inline">\(x\)</span>-axis.</li>
+<li><strong>Hand-sketch <span class="math inline">\(f'\)</span></strong> on the same axes (in a different color, e.g.&nbsp;red). Use your <span class="math inline">\(+/-\)</span> signs to predict where <span class="math inline">\(f'\)</span> is above/below the axis, and your open dots to predict where <span class="math inline">\(f'\)</span> has a peak or valley.</li>
+<li>Repeat the slope/inflection analysis on <strong><span class="math inline">\(f'\)</span></strong>, then hand-sketch <strong><span class="math inline">\(f''\)</span></strong> (a third color, e.g.&nbsp;blue).</li>
+</ol>
+<p>After each step, run the matching code block to <strong>check your work</strong>. Colors stay consistent across examples: <span class="math inline">\(f\)</span> in black, <span class="math inline">\(f'\)</span> in red, <span class="math inline">\(f''\)</span> in blue.</p>
+<p>Reusable plotting helper — run this once at the top of your R session:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot up to three of {f, f', f''} on shared axes, with optional dots.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plot_derivs <span class="ot">&lt;-</span> <span class="cf">function</span>(x, f, <span class="at">fp =</span> <span class="cn">NULL</span>, <span class="at">fpp =</span> <span class="cn">NULL</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">zeros =</span> <span class="cn">NULL</span>, <span class="at">inflections =</span> <span class="cn">NULL</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">ylim =</span> <span class="cn">NULL</span>, <span class="at">main =</span> <span class="st">""</span>) {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  ys <span class="ot">&lt;-</span> <span class="fu">f</span>(x)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(fp))  ys <span class="ot">&lt;-</span> <span class="fu">c</span>(ys, <span class="fu">fp</span>(x))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(fpp)) ys <span class="ot">&lt;-</span> <span class="fu">c</span>(ys, <span class="fu">fpp</span>(x))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(ylim)) ylim <span class="ot">&lt;-</span> <span class="fu">range</span>(ys, <span class="at">finite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x, <span class="fu">f</span>(x), <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"black"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">ylim =</span> ylim, <span class="at">ylab =</span> <span class="st">"y"</span>, <span class="at">main =</span> main)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"gray80"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(fp))  <span class="fu">lines</span>(x, <span class="fu">fp</span>(x),  <span class="at">col =</span> <span class="st">"red"</span>,  <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(fpp)) <span class="fu">lines</span>(x, <span class="fu">fpp</span>(x), <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(zeros))       <span class="fu">points</span>(zeros, <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(zeros)), <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">1.3</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(inflections)) <span class="fu">points</span>(inflections, <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(inflections)), <span class="at">pch =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">1.6</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  legend_lab <span class="ot">&lt;-</span> <span class="st">"f"</span>; legend_col <span class="ot">&lt;-</span> <span class="st">"black"</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(fp))  { legend_lab <span class="ot">&lt;-</span> <span class="fu">c</span>(legend_lab, <span class="st">"f'"</span>); legend_col <span class="ot">&lt;-</span> <span class="fu">c</span>(legend_col, <span class="st">"red"</span>) }</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(fpp)) { legend_lab <span class="ot">&lt;-</span> <span class="fu">c</span>(legend_lab, <span class="st">"f''"</span>); legend_col <span class="ot">&lt;-</span> <span class="fu">c</span>(legend_col, <span class="st">"blue"</span>) }</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend =</span> legend_lab, <span class="at">col =</span> legend_col, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">bg =</span> <span class="st">"white"</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+<p><strong>Example A — <span class="math inline">\(f(x) = x^3 - 3x\)</span></strong></p>
+<p>Sketch <span class="math inline">\(f\)</span> on paper. Then work through the steps:</p>
+<details>
+<summary>
+Check Step 1 — zeros of <span class="math inline">\(f\)</span> (filled black dots)
+</summary>
+<p>The zeros of <span class="math inline">\(f\)</span> are where <span class="math inline">\(x^3 - 3x = x(x^2 - 3) = 0\)</span>, so <span class="math inline">\(x = 0,\, \pm\sqrt{3}\)</span>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ x<span class="sc">^</span><span class="dv">3</span> <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>x }</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="fl">0.01</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_derivs</span>(x, f,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">zeros =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">3</span>), <span class="dv">0</span>, <span class="fu">sqrt</span>(<span class="dv">3</span>)),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">main =</span> <span class="st">"f(x) = x^3 - 3x"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Compare the filled dots to where you marked your zeros.</p>
+</details>
+<details>
+<summary>
+Check Step 2 — inflection points of <span class="math inline">\(f\)</span> (open dots) + overlay <span class="math inline">\(f'\)</span>
+</summary>
+<p><span class="math inline">\(f''(x) = 6x\)</span>, so the only inflection point of <span class="math inline">\(f\)</span> is at <span class="math inline">\(x = 0\)</span> (open dot). The derivative is <span class="math inline">\(f'(x) = 3x^2 - 3\)</span>, which is <strong>positive</strong> where <span class="math inline">\(f\)</span> is increasing and <strong>negative</strong> where <span class="math inline">\(f\)</span> is decreasing.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fp <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ <span class="dv">3</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">3</span> }</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_derivs</span>(x, f, <span class="at">fp =</span> fp,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">zeros       =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">3</span>), <span class="dv">0</span>, <span class="fu">sqrt</span>(<span class="dv">3</span>)),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">inflections =</span> <span class="fu">c</span>(<span class="dv">0</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">main =</span> <span class="st">"f and f'"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The red curve (<span class="math inline">\(f'\)</span>) should cross zero exactly where <span class="math inline">\(f\)</span> has a peak or valley (at <span class="math inline">\(x = \pm 1\)</span>).</p>
+</details>
+<details>
+<summary>
+Check Step 3 — overlay <span class="math inline">\(f''\)</span>
+</summary>
+<p><span class="math inline">\(f''(x) = 6x\)</span>. It crosses zero at <span class="math inline">\(x = 0\)</span> — the same open dot from Step 2 (the inflection point of <span class="math inline">\(f\)</span> is where <span class="math inline">\(f''\)</span> changes sign).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fpp <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ <span class="dv">6</span><span class="sc">*</span>x }</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_derivs</span>(x, f, <span class="at">fp =</span> fp, <span class="at">fpp =</span> fpp,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">zeros       =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">3</span>), <span class="dv">0</span>, <span class="fu">sqrt</span>(<span class="dv">3</span>)),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">inflections =</span> <span class="fu">c</span>(<span class="dv">0</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">main =</span> <span class="st">"f, f', f''"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Notice: <span class="math inline">\(f''\)</span> (blue) is positive where <span class="math inline">\(f'\)</span> (red) is increasing, and negative where <span class="math inline">\(f'\)</span> is decreasing.</p>
+</details>
+<hr>
+<p><strong>Example B — <span class="math inline">\(f(x) = x^4 - 4x^2\)</span></strong></p>
+<p>A quartic with three zeros and <em>two</em> inflection points. Sketch first, then check.</p>
+<details>
+<summary>
+Check Step 1 — zeros of <span class="math inline">\(f\)</span>
+</summary>
+<p><span class="math inline">\(f(x) = x^2(x^2 - 4) = 0\)</span> gives zeros at <span class="math inline">\(x = 0,\, \pm 2\)</span> (and <span class="math inline">\(x = 0\)</span> is a double zero — the curve touches the <span class="math inline">\(x\)</span>-axis without crossing).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ x<span class="sc">^</span><span class="dv">4</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span> }</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">2.5</span>, <span class="fl">2.5</span>, <span class="fl">0.01</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_derivs</span>(x, f,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">zeros =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">8</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">main =</span> <span class="st">"f(x) = x^4 - 4x^2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<details>
+<summary>
+Check Step 2 — inflection points + overlay <span class="math inline">\(f'\)</span>
+</summary>
+<p><span class="math inline">\(f'(x) = 4x^3 - 8x = 4x(x^2 - 2)\)</span>, with zeros at <span class="math inline">\(x = 0,\, \pm\sqrt{2}\)</span>. <span class="math inline">\(f''(x) = 12x^2 - 8\)</span>, with zeros at <span class="math inline">\(x = \pm\sqrt{2/3} \approx \pm 0.816\)</span> — these are the inflection points of <span class="math inline">\(f\)</span>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fp <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ <span class="dv">4</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">3</span> <span class="sc">-</span> <span class="dv">8</span><span class="sc">*</span>x }</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_derivs</span>(x, f, <span class="at">fp =</span> fp,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">zeros       =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">inflections =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>), <span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>)),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">main =</span> <span class="st">"f and f'"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>There are now <em>two</em> open dots. The red <span class="math inline">\(f'\)</span> should cross zero at <span class="math inline">\(\pm\sqrt{2}\)</span> (the valleys of <span class="math inline">\(f\)</span>) and at <span class="math inline">\(0\)</span> (the local max of <span class="math inline">\(f\)</span> at the origin).</p>
+</details>
+<details>
+<summary>
+Check Step 3 — overlay <span class="math inline">\(f''\)</span>
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fpp <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ <span class="dv">12</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">8</span> }</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_derivs</span>(x, f, <span class="at">fp =</span> fp, <span class="at">fpp =</span> fpp,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">zeros       =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">inflections =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>), <span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>)),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">main =</span> <span class="st">"f, f', f''"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="math inline">\(f''\)</span> (blue) is the parabola <span class="math inline">\(12x^2 - 8\)</span>. It crosses zero at the open-dot <span class="math inline">\(x\)</span>-values — confirming those are the inflection points of <span class="math inline">\(f\)</span>.</p>
+</details>
+<hr>
+<p><strong>Example C — Your turn: <span class="math inline">\(f(x) = \tfrac{1}{3}x^3 - x^2 - 3x + 5\)</span></strong></p>
+<p>Same workflow: sketch first, then check.</p>
+<details>
+<summary>
+Check — the three plots
+</summary>
+<p><span class="math inline">\(f'(x) = x^2 - 2x - 3 = (x-3)(x+1)\)</span>, with zeros at <span class="math inline">\(x = -1\)</span> and <span class="math inline">\(x = 3\)</span>. <span class="math inline">\(f''(x) = 2x - 2\)</span>, with zero at <span class="math inline">\(x = 1\)</span> (the inflection point of <span class="math inline">\(f\)</span>). The zeros of <span class="math inline">\(f\)</span> itself need numerical solving — use <code>uniroot()</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>f   <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ (<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>)<span class="sc">*</span>x<span class="sc">^</span><span class="dv">3</span> <span class="sc">-</span> x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>x <span class="sc">+</span> <span class="dv">5</span> }</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fp  <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">2</span><span class="sc">*</span>x <span class="sc">-</span> <span class="dv">3</span> }</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>fpp <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ <span class="dv">2</span><span class="sc">*</span>x <span class="sc">-</span> <span class="dv">2</span> }</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the zeros of f numerically (one real root in this range).</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>zeros_f <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(f, <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>))<span class="sc">$</span>root</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># (Inspecting the graph suggests this cubic has one real zero in [-3, -1]</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># and two more on either side of x = 5; widen the search if you want all three.)</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">6</span>, <span class="fl">0.01</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_derivs</span>(x, f, <span class="at">fp =</span> fp, <span class="at">fpp =</span> fpp,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">zeros       =</span> <span class="fu">c</span>(zeros_f),</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">inflections =</span> <span class="fu">c</span>(<span class="dv">1</span>),</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">15</span>),</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">main =</span> <span class="st">"f, f', f''"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Try modifying: add more zeros of <span class="math inline">\(f\)</span> found with <code>uniroot</code> over different intervals, or sketch <span class="math inline">\(f'''(x) = 2\)</span> (a constant) as a fourth overlay.</p>
+</details>
+<hr>
+<p><strong>Going further.</strong> Once the pattern feels natural:</p>
+<ul>
+<li>Pick any polynomial you can take three derivatives of and apply the same workflow.</li>
+<li>Try functions where the zeros of <span class="math inline">\(f\)</span>, <span class="math inline">\(f'\)</span>, and <span class="math inline">\(f''\)</span> don’t line up at all (e.g.&nbsp;<span class="math inline">\(f(x) = x^3 + x + 1\)</span> — only one real zero of <span class="math inline">\(f\)</span>, but <span class="math inline">\(f'\)</span> and <span class="math inline">\(f''\)</span> behave normally).</li>
+<li>Try a function with a <strong>horizontal inflection</strong> (e.g.&nbsp;<span class="math inline">\(f(x) = x^3\)</span> — <span class="math inline">\(f''\)</span> changes sign at <span class="math inline">\(x = 0\)</span>, but <span class="math inline">\(f'(0) = 0\)</span> too, so there’s no max/min there).</li>
+<li>Sketch <span class="math inline">\(f'''\)</span> as well — for cubics it’s a constant, for quartics it’s linear, etc.</li>
+</ul>
+<p>The goal: <strong>read the shape of <span class="math inline">\(f'\)</span> from the shape of <span class="math inline">\(f\)</span></strong>, and the shape of <span class="math inline">\(f''\)</span> from the shape of <span class="math inline">\(f'\)</span>, without computing anything algebraically.</p>
 </section>
 </section>
 <section id="class-discussion" class="level2">
