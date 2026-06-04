@@ -101,6 +101,26 @@ $$
 
 2.  Use R to plot the function above, and then guess the maximum possible volume along with the dimensions that correspond to this volume.
 
+<details>
+<summary>Solution</summary>
+
+We graph $V(x) = \frac{1}{4}x(6 - x^2)$. The domain is $0 < x < \sqrt{6}$ (the side length must be positive, and we also need $h = (6-x^2)/(4x) > 0$).
+
+```r
+V <- function(x){(1/4) * x * (6 - x^2)}
+
+#Plot V across its domain.
+x <- seq(0.01, sqrt(6), 0.01)
+plot(x, V(x), type = "l")
+
+#The peak looks to be a bit less than x = 1.5.
+abline(v = 1.5)
+```
+
+From the plot, the maximum volume is somewhere around $1.4$ cubic feet, at a side length a bit less than $x = 1.5$ feet. We'll pin down the exact value with derivatives in Question 3.
+
+</details>
+
 3. Compute the derivative of the function above, and use it to find the maximum possible volume.
 
 ## Group Meeting 
