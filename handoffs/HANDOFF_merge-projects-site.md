@@ -109,28 +109,31 @@ m119_master link updates are sequenced: build first, then links.
 
 ## Enhancement opportunity unlocked by the merge
 
-Once the unified site is built on the R-capable M119/Projects foundation, a
-**downloadable + executable .qmd worksheet pattern** becomes feasible across
-the course. Tried in m119-site on 2026-06-04 (`site/assets/docs/visualizing_derivatives.qmd`,
-linked from the class-25 "Visualizing $f, f', f''$" activity) — reverted because
-the m119-site CI has no R, so Quarto either renders the worksheet and fails
-(or worse, ships the rendered output instead of the source). The current
-in-page activity (5 examples × 3 step-check dropdowns, all R as display-only
-\`\`\`r\`\`\` blocks for copy-paste) is the markdown-only workaround.
+Once the unified site is built on the R-capable M119/Projects foundation,
+**executable R worksheets inline on the page** become feasible across the
+course. m119-site can already ship *downloadable* `.qmd` worksheets — the
+class-25 "Visualizing $f, f', f''$" activity at `site/assets/docs/visualizing_derivatives.qmd`
+is the proof-of-concept, served as a static resource via a `!assets/**/*.qmd`
+negation in `_quarto.yml`'s `render:` list (Quarto copies but doesn't render
+it; students download and run in their own RStudio). That's the markdown-only
+workaround for "no R in CI."
 
-On the merged site this becomes natural:
+On the merged site this becomes **inline-executable** instead of
+download-then-run:
 
-- Author the worksheet as a normal `.qmd` with `{r}` executable chunks.
-- Add it to `assets/docs/` (or a new `worksheets/` section).
-- Either include it as a rendered page (CI executes R) OR provide it as a
-  downloadable source so students render locally in RStudio.
-- Same pattern applies to any class page where R execution is currently a
-  copy-paste step — e.g. the Brain Gains plotting boxes, the loglikelihood
-  partial-derivative material in class-24/26, and most of class-25.
+- Author the worksheet as a normal page with `{r}` executable chunks — no
+  separate downloadable file needed. CI executes R during render and ships the
+  resulting plots/tables inline.
+- Drop the `!assets/**/*.qmd` exclusion in `_quarto.yml` (it exists only to
+  protect markdown-only m119-site CI from R-bearing files).
+- Same pattern applies broadly to any class page where R is currently
+  copy-paste — Brain Gains plotting boxes, the loglikelihood partial-derivative
+  material in class-24 and class-26, the optimization plots in class-25, etc.
 
-This unlocks a meaningful UX improvement (immediate-feedback R cells inline)
-without requiring m119-site to grow its own R stack. Out of scope for the
-core merge work, but worth a follow-up sprint once the merged site is live.
+UX improvement: students see the immediate-feedback plots without leaving the
+page or running anything locally. The current downloadable pattern stays valid
+for "I want to mess with the code myself" — both modes coexist on the merged
+site. Out of scope for the core merge work but a natural follow-up sprint.
 
 ## Open questions to resolve at execution
 

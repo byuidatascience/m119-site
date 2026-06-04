@@ -1,6 +1,12 @@
 project:
   type: website
   output-dir: _site
+  render:
+    # Render every .qmd in the project EXCEPT downloadable worksheets in
+    # assets/. Those have executable {r} chunks that m119-site's CI cannot
+    # run (no R toolchain). They're copied as static resources below.
+    - "**/*.qmd"
+    - "!assets/**/*.qmd"
   resources:
     - assets/docs/**
     - assets/data/**
