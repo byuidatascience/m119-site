@@ -49,7 +49,7 @@ Watch the following videos from mathispower4u about the product, quotient, and c
 ## Brain Gains 
 
 1.
-Compute $k'(x)$ for $k(x) = (4x^3-7x)^5$. 
+Compute $k'(x)$ for $k(x) = (4x^3-7x)^5$ 
 
 <details>
 <summary>Solution</summary>
@@ -67,7 +67,7 @@ $$
 </details>
 
 2. 
-Compute $g'(x)$ for $g(x) = (e^x+3x^2)(x^3-2\ln x)$. 
+Compute $g'(x)$ for $g(x) = (e^x+3x^2)(x^3-2\ln x)$ 
 
 <details>
 <summary>Solution</summary>
@@ -86,7 +86,7 @@ We won't simplify it any past this. Our goal is to just practice using the rules
 </details>
 
 3. 
-Compute $h'(x)$ for $h(x) = \dfrac{e^x+3x^2}{x^3-2\ln x}$. 
+Compute $h'(x)$ for $h(x) = \dfrac{e^x+3x^2}{x^3-2\ln x}$ 
 
 <details>
 <summary>Solution</summary>

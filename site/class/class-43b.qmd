@@ -88,7 +88,7 @@ The function $A(x) = \int_{-\infty}^x f(t)dt$ is called an **accumulation functi
 
 </details>
 
-- Find the cdf of $X$.
+- Find the cdf of $X$
     - We know $F(x) = P(X \leq x) = \int_{-\infty}^x f(t)dt$.
 $$F(x) = \int_{-\infty}^x f(t)dt = 
 \begin{cases}

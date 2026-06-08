@@ -124,12 +124,12 @@ $$g(x) =
 
 1. Compute the probability that a dart will land with an $x$ coordinate at most 4, so compute $P(X\leq 4)$. 
 1. Recall that the cumulative distribution function of $X$ is the function $F(x)= P(X\leq x)$.  Above we computed $F(4)$. 
-    - Compute $F(1)$, so compute $P(X\leq 1)$.
-    - Compute $F(2)$.  
-    - Compute $F(3)$.  
-    - Compute $F(3.5)$.  
-    - Compute $F(10)$.  
-    - Compute $F(-3)$.  
+    - Compute $F(1)$, so compute $P(X\leq 1)$
+    - Compute $F(2)$  
+    - Compute $F(3)$  
+    - Compute $F(3.5)$  
+    - Compute $F(10)$  
+    - Compute $F(-3)$  
 1. Obtain a formula that gives $F(x)$ for any real number $x$. You can check work work in the solution box below. 
 
 1. Find a constant $k$ so that the area under $f(x) = k g(x)$ is 1, in other words find the normalized target function. 
@@ -187,8 +187,8 @@ When a dart falls on the point $(x,y)$, we'll record just the $x$-coordinate and
 
 1. Remember $F(x) = P(X \leq x)$.
     - What is $F(2.5)$?
-    - Calculate $F(1)$, $F(4)$, and $F(5)$.
-    - Calculate $F(10)$ and $F(-1)$.
+    - Calculate $F(1)$, $F(4)$, and $F(5)$
+    - Calculate $F(10)$ and $F(-1)$
 1. For $0 \leq x \leq 6$, explain why $F(x) = \frac{x^2}{36}$. Then explain why $$F(x) = 
 \begin{cases}
 0 & \quad x < 0 \\ \\

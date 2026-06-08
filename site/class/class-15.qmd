@@ -120,9 +120,9 @@ $$
 
 Consider the 6 functions you have been fitting in Project 1.
 
-- Write down a formula for the residual given model $f_1$.
-- Write down a formula for the residual given model $f_2$.
-- Write down a formula for the residual given model $f_3$.
+- Write down a formula for the residual given model $f_1$
+- Write down a formula for the residual given model $f_2$
+- Write down a formula for the residual given model $f_3$
 
 <a id="PP"></a>
 
@@ -137,8 +137,8 @@ Consider the 6 functions you have been fitting in Project 1.
     - ![Visual fit 1 for f5](https://byuimath.com/bmw/all/119/uploads/Class/f5-fit1.png)
     - ![Visual fit 2 for f5](https://byuimath.com/bmw/all/119/uploads/Class/f5-fit2.png)
 
-- Write down a formula for the residual, $y - \hat{y}$, given the model $f(x) = b + mx$ and data point $(x,y) = (4,7)$.
-- Write down a formula for the residual, $y - \hat{y}$, given the model $g(x) = c + bx + a\ln(4x)$ and data point $(x,y) = (x_3,y_3)$. 
+- Write down a formula for the residual, $y - \hat{y}$, given the model $f(x) = b + mx$ and data point $(x,y) = (4,7)$
+- Write down a formula for the residual, $y - \hat{y}$, given the model $g(x) = c + bx + a\ln(4x)$ and data point $(x,y) = (x_3,y_3)$ 
 
 <details>
 <summary>Answers</summary>

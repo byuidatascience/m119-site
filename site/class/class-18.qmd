@@ -41,7 +41,7 @@ Complete as much of this [Composing and Decomposing Practice](https://chaz-clark
 # During Class
 ## Brain Gains
 1. 
-Compute $\frac{df}{dx}$ for $f(x) = 5x^8+3e^x-7\ln x-4\sqrt{x}+\frac{5}{x^3}$. 
+Compute $\frac{df}{dx}$ for $f(x) = 5x^8+3e^x-7\ln x-4\sqrt{x}+\frac{5}{x^3}$ 
 
 <details>
 <summary>Answer</summary>
@@ -51,7 +51,7 @@ $$f'(x) = 40x^7 + 3e^x - \frac{7}{x} - \frac{2}{\sqrt{x}} - \frac{15}{x^4}$$
 </details>
 
 2. 
-Compute $g'(x)$ for $g(x) = (e^x)(x^3)$. 
+Compute $g'(x)$ for $g(x) = (e^x)(x^3)$ 
 
 <details>
 <summary>Answer</summary>
@@ -61,7 +61,7 @@ $$\frac{dg}{dx} = 3x^2 e^x + x^3 e^x$$
 </details>
 
 3. 
-Compute $h'(x)$ for $h(x) = \dfrac{3x^2}{2\ln x}$. 
+Compute $h'(x)$ for $h(x) = \dfrac{3x^2}{2\ln x}$ 
 
 <details>
 <summary>Answer</summary>

@@ -104,9 +104,9 @@ E
 
 ### Applied Practice (Project Work)
 - Start Project 2 Task 2
-    - Calculate the first derivative of $\ell_1$ with respect to $a_1$.
+    - Calculate the first derivative of $\ell_1$ with respect to $a_1$
     - Calculate the first partial derivatives of $\ell_4$. Remember there are two first partial derivatives when a function has two independent variables.
-    - Calculate the first derivative of $\ell_5$.
+    - Calculate the first derivative of $\ell_5$
 
 
 # During Class

@@ -37,7 +37,7 @@ Watch a video from mathispower4u about the [Chain Rule (video 2)](https://www.yo
 ## Brain Gains
 
 1. 
-Compute $D_xQ$ for $Q(x) = \sum_{k=1}^{21} kx^k$.
+Compute $D_xQ$ for $Q(x) = \sum_{k=1}^{21} kx^k$
 
 <details>
 <summary>Solution</summary>
@@ -54,7 +54,7 @@ $$\begin{align*}
  
 
 2.
-Compute the derivative of $f(x) = \sqrt{4e^x+7x^2}$.
+Compute the derivative of $f(x) = \sqrt{4e^x+7x^2}$
 
 <details>
 <summary>Solution</summary>

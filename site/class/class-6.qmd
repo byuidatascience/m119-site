@@ -17,20 +17,20 @@ Let $f(x) = \sqrt{x}$ and complete the exercise 1-4.<br>
 
 1. Find the exact values.
 
-- Evaluate $f(1)$.
-- Evaluate $f(0)$.
-- Evaluate $f(36)$.
-- Evaluate $f(\frac{1}{4})$.
-- Evaluate $f(15)$.
-- Evaluate $f(-1)$.
+- Evaluate $f(1)$
+- Evaluate $f(0)$
+- Evaluate $f(36)$
+- Evaluate $f(\frac{1}{4})$
+- Evaluate $f(15)$
+- Evaluate $f(-1)$
 - Are there any real numbers that would cause us a problem when trying to evaluate $f$ at that number?
 
 2. A different kind of question. Find the exact values. Assume that $x$ is a real number.
 
-- Solve $f(x) = 16$.
-- Solve $f(x) = \frac{1}{25}$.
-- Solve $f(x) = -1$.
-- Solve $f(x) = x-2$.
+- Solve $f(x) = 16$
+- Solve $f(x) = \frac{1}{25}$
+- Solve $f(x) = -1$
+- Solve $f(x) = x-2$
 
 3. Evaluate $f(x+7)$. Then identify the parameters in the transformation $T(x;A,B,C,D) = Af(B(x-C))+D$ needed to obtain $f(x+7)$. What is the relationship between the graphs of $f(x)$ and $f(x+7)$?
 

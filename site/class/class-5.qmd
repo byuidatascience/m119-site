@@ -96,7 +96,7 @@ Let $f(x;a,b) = ax^b$, a generic power function. Consider the transformation $T(
 For each parameter set below, do the following:
 
 - Identify the parent function $f(x;a,b)$. For example, if $a=2$ and $b=5$, then the parent function is $f(x;2,5) = f(x) = 2x^5$.
-- Write down the specific function $T(x;A,B,C,D)$ produced from the given values for the parameters $A,B,C,D$.
+- Write down the specific function $T(x;A,B,C,D)$ produced from the given values for the parameters $A,B,C,D$
 - Adapt this [Desmos calculator](https://www.desmos.com/calculator/v4yeg616jq) to plot and compare the two functions.
 
 ##### Set 1

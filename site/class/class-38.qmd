@@ -33,7 +33,7 @@ kx - k &  1 \leq x \leq 3 \\
 \frac{x}{3} &  0 \leq x \leq 3 \\
 1 &  x > 3
 \end{cases}$$
-    - Find $F'(x)$ to find the PDF of $X$, $f(x)$.
+    - Find $F'(x)$ to find the PDF of $X$, $f(x)$
     - Draw the target diagram for this PDF.
 
 <details>
@@ -54,7 +54,7 @@ draw_target(f,0,3)
 \frac{x^2}{16} &  0 \leq x \leq 4 \\
 1 & x > 4
 \end{cases}$$
-    - Find $F'(x)$ to find the PDF of $X$, $f(x)$.
+    - Find $F'(x)$ to find the PDF of $X$, $f(x)$
     - Draw the target diagram for this PDF.
 
 <details>

@@ -86,7 +86,7 @@ a. $m=3,b=-60$
     - $\prod_{k=1}^{4}(100-k^2)$
 - Use log properties to write $\ln\left(\prod_{k=1}^{4}(100-k^2)\right)$ as a sum of logarithms. 
 - Solve $2^x = 37$
-- Solve $\log(x)+\log(x-1) = \log(6)$. 
+- Solve $\log(x)+\log(x-1) = \log(6)$ 
 
 ## Group Meeting 
 Start by giving each person a moment to share what they chose to prepare for class. Help each other address any questions.  When each person has had a chance to share, move on the other activities.
@@ -176,7 +176,7 @@ What does uniroot do?
 
 The key to using uniroot is to pick two $x$-values where you know the values of the function differ in sign. If needed, construct a plot to help you pick them. Let's look at a few code examples. 
 
-- Solve $h(x) = 0$ given $h(x) = 3x - 15$.
+- Solve $h(x) = 0$ given $h(x) = 3x - 15$
 
 ```r
 rm(list=ls()) #Clears the environment
@@ -198,7 +198,7 @@ plot(x,h(x), type="l")
 abline(h=0, col = "lightgray")
 ```
 
-- Solve $h(x) = 4$ given $h(x) = 3x - 15$.
+- Solve $h(x) = 4$ given $h(x) = 3x - 15$
 
 ```r
 h.shift <- function(x){

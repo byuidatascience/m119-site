@@ -66,8 +66,8 @@ All algebraic functions can be built using only **power functions** and **the 4 
 ## Brain Gains
 - For the function $f(x) = -2\sqrt[3]{x+6}$, identify some power functions and then use appropriate operations to show how to construct $f$ from these power functions. (There are many correct ways to do this.) 
 - Let $f(t) = \log_2(3t-2)$.
-    - Compute $f(2)$.
-    - Solve $f(t) = 2$ for $t$.
+    - Compute $f(2)$
+    - Solve $f(t) = 2$ for $t$
       - Check your answer using uniroot() in R.
       - Construct a plot in R that shows where $f(t)$ and $y=2$ intersect.  
 - Rewrite the following expressions using the properties of logarithms.

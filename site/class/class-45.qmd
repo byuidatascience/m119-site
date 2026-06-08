@@ -19,7 +19,7 @@ Let $g(x)$ be a function that defines the top of a target. Each time we throw a 
 Given a "target" function, $g(x)$, there are two ways to calculate the **probability density function**, $f$:<br>
 *Method 1*
 - *Calculate* $F(x) = P(X \leq x)$ for every real number $x$.
-    - Calculate probabilities as ratios of areas, $P(X \leq x) = \frac{\int_{-\infty}^x g(t)dt}{\int_{-\infty}^\infty g(t)dt}$.
+    - Calculate probabilities as ratios of areas, $P(X \leq x) = \frac{\int_{-\infty}^x g(t)dt}{\int_{-\infty}^\infty g(t)dt}$
 - **Take the derivative** of the CDF to find the PDF, $f(x) = F'(x)$.
 
 *Method 2*
@@ -36,7 +36,7 @@ Given a "target" function, $g(x)$, there are two ways to calculate the **cumulat
 
 *Method 2*
 - *Calculate* $F(x) = P(X \leq x)$ for every real number $x$.
-    - Calculate probabilities as ratios of areas, $F(x) = P(X \leq x) = \frac{\int_{-\infty}^x g(t)dt}{\int_{-\infty}^\infty g(t)dt}$.
+    - Calculate probabilities as ratios of areas, $F(x) = P(X \leq x) = \frac{\int_{-\infty}^x g(t)dt}{\int_{-\infty}^\infty g(t)dt}$
 
 ### (2) Practice
 Complete the following exercises, identifying which method from above you used. (Please use Mathematica as need to compute definite integrals.)

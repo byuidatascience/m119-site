@@ -252,7 +252,7 @@ This time use the model $f(x;b,m) = b+mx$.
 
 - Fit this model to the data using either the Least Squares or Maximum Likelihood method.
 - What is $f(4)$, the value predicted by the model at $x=4$. 
-- Find $x$ so that $f(x) = 5$.
+- Find $x$ so that $f(x) = 5$
 
 <details>
 <summary>Solution</summary>

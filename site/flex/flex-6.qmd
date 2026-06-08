@@ -8,7 +8,7 @@ title: "Flex Day 6"
 **Experiment 1:** Roll your die 7 times. Count the number of 2's.
 
 - Let $X$ be the random variable that counts the number of 2's in 7 rolls of a fair six-sided die. 
-    - Compute $P(X = 12)$.
+    - Compute $P(X = 12)$
       - What are the values that will have nonzero probability?
 
 Note: $X$ is a Bionomial Random Variable
@@ -87,7 +87,7 @@ sqrt(var(tmp))
 **Experiement 2:** Roll your die until you roll a 4. Count the total number of rolls required to get the 4, including the last roll in which the 4 appeared.
 
 - Let $X$ be the random variable that counts the number of rolls until you roll a 4 using a fair six-sided die.
-    - Compute $P(X = -3)$.
+    - Compute $P(X = -3)$
       - What are the values that will have nonzero probability?
  
 Note: $X$ is a Geometric Random Variable

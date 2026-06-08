@@ -70,7 +70,7 @@ Today in class we fitted $f_2$ and $f_6$ to the seed 123. Let's now adapt what w
 <details>
 <summary>Steps for writing down the loglikelihood function</summary>
 
-- Calculate the residuals (or errors), $r_i = y_i - f(x_i)$, where $f$ is the model you are trying to fit to your data and $(x_i, y_i)$ is the given data where $i = 1, 2, 3, ... , m$.
+- Calculate the residuals (or errors), $r_i = y_i - f(x_i)$, where $f$ is the model you are trying to fit to your data and $(x_i, y_i)$ is the given data where $i = 1, 2, 3, ... , m$
 - If we assume the residuals are observations from normal random variables each with mean zero and standard deviation one, we are assuming the probability model $p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}r^2}$ describes each of residuals. This probability model is the same model for each of the $m$ random variables and each $r_i$ is an observation from one of these random variables.
 - If we assume the residuals are independent (these $m$ random variables are independent) we can calculate the combined probability model (or joint probability model) for all the residuals together by multiplying their individual probability models to get
 

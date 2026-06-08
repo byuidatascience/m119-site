@@ -18,15 +18,15 @@ Watch this video from mathispower4u, [Graphing Exponential Functions](https://ww
 Now complete the following:
 
 1. Let $f(x) = 4^x$ and complete the following exercises. Find the exact values.
-    - Evaluate $f(1)$.
-    - Evaluate $f(0)$.
-    - Evaluate $f(-1)$.
-    - Evaluate $f(-2)$.
-    - Evaluate $f(\frac{1}{2})$.
-    - Evaluate $f(3)$.
+    - Evaluate $f(1)$
+    - Evaluate $f(0)$
+    - Evaluate $f(-1)$
+    - Evaluate $f(-2)$
+    - Evaluate $f(\frac{1}{2})$
+    - Evaluate $f(3)$
     - Are there any real numbers that would cause us a problem when trying to evaluate $f$ at that number?
     - What do you notice about all the outputs of $f$?
-    - Graph the function $f(x) = 4^x$.
+    - Graph the function $f(x) = 4^x$
     - Is this function increasing or decreasing on the interval $(-\infty,\infty)$?
 1. Graph the function $g(x) = (1/2)^x$. Is this function increasing or decreasing on the interval $(-\infty,\infty)$?
 

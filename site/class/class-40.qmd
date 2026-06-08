@@ -18,7 +18,7 @@ Pick something from your prep today that you can share with your group in class.
 1. Solve the system $\left\{\begin{array}{ll}\frac{\alpha}{\beta} = 2.7 \\ \frac{\alpha}{\beta^2} = 10.2\end{array} \right.$ for $\alpha$ and $\beta$
 
 ### (2) Continue working on Project 3 Task 2
-- Write down the definite integrals to compute $Var[X]$ for $f_0$, $f_1$, $f_2$, and $f_3$.
+- Write down the definite integrals to compute $Var[X]$ for $f_0$, $f_1$, $f_2$, and $f_3$
     - Use Mathematica to calculate $Var[X]$ in each case.
 
 Use the following code to get you started. Let's calculate $\int_{-\infty}^\infty f(x) dx$, $E[X]$, $Var[X]$, and standard deviation of X for $f_3$ and $f_1$.

@@ -21,7 +21,7 @@ For this Unit, the reading as well as many practice exercises appear in the docu
 1. Let $g(x) = 2x$ for $0\leq x\leq 4$ be a target function. 
     - Find a value $k$ so that the area under $f(x) = k g(x)$ is one (so provide a normalized target function). 
     - Let $X$ be the random variable which records the $x$-coordinate of dropping a dart on the target defined by $g$. Find the cumulative distribution function $F(x)$. 
-    - Compute the derivative $F'(x)$. 
+    - Compute the derivative $F'(x)$ 
 
 <details>
 <summary>Solutions for 3</summary>
@@ -223,13 +223,13 @@ We're ready to apply what we're learning now to any function.
 
 - Find a constant $k$ so that the area under $f(x) = k g(x)$ is one (so find the normalized target function). 
 - Compute $P(X\leq 3)$ (you'll need to compute two areas, and then divide them). 
-- Calculate $E[X]$.
+- Calculate $E[X]$
 
 4. Consider the target function $\ds g(x) = \begin{cases}5x e^{-x}&2\leq x\leq 8\\0 &\text{otherwise} \end{cases}$ and corresponding random variable $X$ obtained by throwing darts at the target and recording the $x$-coordinate. 
 
 - Find a constant $k$ so that the area under $f(x) = k g(x)$ is one (so find the normalized target function). 
 - Compute $P(X\leq 3)$ (you'll need to compute two areas, and then divide them). 
-- Calculate $E[X]$.
+- Calculate $E[X]$
 
 ## Discussion
 We'll have a wrap up discussion.

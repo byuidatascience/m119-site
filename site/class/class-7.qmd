@@ -62,11 +62,11 @@ We say a function $f$ is negative on the interval $I$ if for all $x_1$ in the in
 </details>
 
 - What is the difference between a function being positive and a function being nonnegative?
-- Give an example of a function that is constant and nonnegative on the interval $(1,5)$. 
+- Give an example of a function that is constant and nonnegative on the interval $(1,5)$ 
 - Give an example of a function that is negative and strictly increasing on the interval $(0,2)$
 - Can a function be both positive and nonnegative on an interval? If so, give an example. 
 - Can a function be both increasing and decreasing on an interval? If so, give an example. 
-- Give an example of a positive function that is increasing on $(-2,0)$ and then decreasing on $(0,2)$.
+- Give an example of a positive function that is increasing on $(-2,0)$ and then decreasing on $(0,2)$
 
 ### (2) Sum and Product Notation
 

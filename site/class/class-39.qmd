@@ -18,10 +18,10 @@ Many of the exercises below come from section 4.3 of [Rectangles, Targets, and S
 For each function $g(x)$ below, suppose $X$ is a random variable with probability density function $f(x)=kg(x)$.
 
 - Find the value $k$ that makes $f$ a probability density function. 
-- Compute the expected value of $X$. 
+- Compute the expected value of $X$ 
     - Write down the definite integral required to calculate the expected value.
     - Use Mathematica to compute the value.
-- Compute the variance of $X$ and the standard deviation $\sigma$.
+- Compute the variance of $X$ and the standard deviation $\sigma$
     - Write down the definite integral required to calculate the variance.
     - Use Mathematica to compute the value.
 
@@ -195,7 +195,7 @@ sqrt(10.6735)
 
 ### (2) Start Project 3 Task 2
 - Read the instructions. Familiarize yourself with the task.
-- Write down the definite integrals to compute $E[X]$ for $f_0$, $f_1$, $f_2$, and $f_3$.
+- Write down the definite integrals to compute $E[X]$ for $f_0$, $f_1$, $f_2$, and $f_3$
     - Use Mathematica to calculate $E[X]$ in each case.
 
 <a id="PP"></a>
@@ -243,17 +243,17 @@ When a dart hits the point $(x,y)$, we'll record just the $x$-coordinate and let
 1. Now let $g(x) = \begin{cases}x^2 & 0\leq x\leq 7\\ 0 & \text{otherwise}\end{cases}$
     - Find the value $k$ that makes $f = k g(x)$ a probability density function for a random variable $X$. Write the function $f(x)$ on the board.
     - Compute the expected value of $X$, so compute $\text{E}[X]$ (use Mathematica).
-    - Compute the variance of $X$, written $\text{Var}[X]$, and the standard deviation $\sigma = \sqrt{\text{Var}[X]}$.
+    - Compute the variance of $X$, written $\text{Var}[X]$, and the standard deviation $\sigma = \sqrt{\text{Var}[X]}$
     - Use Mathematica to show that $P(2\leq X\leq 4) = 8/49$. 
     - Use Mathematica to show that the cumulative distribution function is $\ds F(x) = P(X\leq x) = \frac{x^3}{343}$. 
-    - Compute $F'(x)$ and compare it to $f(x)$. 
+    - Compute $F'(x)$ and compare it to $f(x)$ 
 1. Now let $g(x) = \begin{cases}e^{-4x} & 0\leq x\leq \infty\\ 0 & \text{otherwise}\end{cases}$.
     - Find the value $k$ that makes $f = k g(x)$ a probability density function for a random variable $X$. Write the function $f(x)$ on the board.
     - Compute the expected value of $X$, written $\text{E}[X]$ (use Mathematica).
-    - Compute the variance of $X$, written $\text{Var}[X]$, and the standard deviation $\sigma = \sqrt{\text{Var}[X]}$.
+    - Compute the variance of $X$, written $\text{Var}[X]$, and the standard deviation $\sigma = \sqrt{\text{Var}[X]}$
     - Use Mathematica to show that $P(2\leq X\leq 4) \approx 0.00033535$. 
     - Use Mathematica to show that the cumulative distribution function is $\ds F(x) = P(X\leq x) = 1-e^{-4x}$. 
-    - Compute $F'(x)$ and compare it to $f(x)$. 
+    - Compute $F'(x)$ and compare it to $f(x)$ 
 
 ## Definition Reminder
 

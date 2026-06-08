@@ -59,7 +59,7 @@ The point of this preparation assignment is not to understand everything, but to
 Any questions from [Second Derivative Test (Brian Sittinger, PDF)](../assets/docs/SecondDerTest_BrianSittinger.pdf)?  Any new terms you weren't sure what they meant?
 Complete as much of the following as you can.
 
-- Compute all the first and second partial derivatives of $f(x,y,z) = x^2+4xy+y^2+z^2+2yz$. 
+- Compute all the first and second partial derivatives of $f(x,y,z) = x^2+4xy+y^2+z^2+2yz$ 
 - Show that $(0,0,0)$ is a critical point of this function. 
 - Then use the second derivative test to classify this point as a local maximum, local minimum, or saddle point. 
 
@@ -113,7 +113,7 @@ x <- data$x
 y <- data$y
 ```
 
-Find the coefficient $a$ that minimizes the sum of the squared residuals, and verify that this coefficient does indeed minimize $S$. 
+Find the coefficient $a$ that minimizes the sum of the squared residuals, and verify that this coefficient does indeed minimize $S$ 
 
 <details>
 <summary>Solution</summary>

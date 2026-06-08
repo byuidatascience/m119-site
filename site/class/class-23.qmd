@@ -16,7 +16,7 @@ Pick something from your prep today that you can share with your group in class.
 The goal of these exercises is to practice writing functions that model a given situation. Each of the functions you create should depend on only one variable. We'll need this skill to solve applied optimization problems.
 
 1. The product of two numbers $n$ and $m$ is 100, and $n$ must be positive. (For example, $n = 20$ and $m = 5$ or $n = \frac{2}{3}$ and $m = 150$).
-    - Write a function that gives the sum of the two numbers in terms of $n$. 
+    - Write a function that gives the sum of the two numbers in terms of $n$ 
       - What is the domain of this function?
     - Graph the function using R. 
       - What is the minimum value of the function?

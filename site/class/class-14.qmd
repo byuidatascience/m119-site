@@ -130,21 +130,21 @@ Now answer the following and come with answers to compare with your group in cla
 ## Brain Gains
 Let $h(t) = \sqrt{3t+1}$.
 
-  - Compute $h(2)$.
-  - Solve $h(t) = 2$ for $t$.
+  - Compute $h(2)$
+  - Solve $h(t) = 2$ for $t$
 
 Let $X_1$, $X_2$, and $X_3$ be independent random variables which each return the value of a single toss of one fair six-sided die. 
 
-  - Compute $P(X_1 = 1, X_2 = 4, \text{ and } X_3 = 5)$. 
-  - Compute $P(X_1 \leq 3, X_2\leq 3,\text{ and }X_3\leq 3)$.  
+  - Compute $P(X_1 = 1, X_2 = 4, \text{ and } X_3 = 5)$ 
+  - Compute $P(X_1 \leq 3, X_2\leq 3,\text{ and }X_3\leq 3)$  
   
 Recall that the probability mass function (pmf) for a Poisson distribution is
 $$p(x; \lambda) = \frac{\lambda^x}{x!}e^{-\lambda}\text{ with }x = 0, 1, 2, 3, ...\text{ where }\lambda > 0$$
 Suppose that $Y$ is a random variable with a Poisson distribution with $\lambda = 1$.
 
-  - Compute $P(Y=1)$.
-  - Compute $P(Y=0)$.
-  - Compute $P(Y>1)$.
+  - Compute $P(Y=1)$
+  - Compute $P(Y=0)$
+  - Compute $P(Y>1)$
 
 You may use the code below to help you code in the Poisson distribution. 
 
@@ -240,8 +240,8 @@ p(0:10,1)
 ```
 
 #### Additional Calculations and Questions
-- Compute the probability of 7 Florida tropical storms in a year assuming $\lambda  = 8$.
-- Compute the probability of 7 Florida tropical storms in a year assuming $\lambda  = 4$.
+- Compute the probability of 7 Florida tropical storms in a year assuming $\lambda  = 8$
+- Compute the probability of 7 Florida tropical storms in a year assuming $\lambda  = 4$
 - If we actually observed of 7 Florida tropical storms in a year, would you be more likely to say that $\lambda =8$ or $\lambda = 4$?  Why?
 - Compute the probability of 7 Florida tropical storms in a year assuming $\lambda  = 6.3$. (Wait, can we use decimals for $\lambda$?)
 - Compute the probability of 7 Florida tropical storms in a year using various values for $\lambda$.  Then as a group decide what value you think is the best value to assume for $\lambda$ if we actually did see 7 tropical storms in a year.

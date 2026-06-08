@@ -76,12 +76,12 @@ $$
 1. Let $F(x)$ be the cumulative distribution function for $X$.  This means $F(x) = P(X\leq x)$.  
     - Compute $F(0)$. So compute the probability $P(X\leq 0)$ that the score will be zero or less.
     - Compute $F(1)$.  So compute the probability $P(X\leq 1)$ that the score will be one or less.
-    - Compute $F(1.5)$.
-    - Compute $F(2)$.
-    - Compute $F(100)$.
-    - Compute $F(-15)$.
-    - Compute $F(-10)$.
-    - Compute $F(-8.3)$.
+    - Compute $F(1.5)$
+    - Compute $F(2)$
+    - Compute $F(100)$
+    - Compute $F(-15)$
+    - Compute $F(-10)$
+    - Compute $F(-8.3)$
 1. Notice above that we can compute the cumulative distribution function for every real number $x$.  Construct a graph of $F(x)$ (it will look like a bunch of steps with jumps at a few points). As a challenge, write a formula for $F$ using piecewise function notation.
     - What's the minimum value for $F(x)$. 
     - What's the maximum value for $F(x)$?
@@ -421,7 +421,7 @@ sum(x*p)
 1.  Compute $P(X=7)$, the probability that their will be 7 tropical storms in Florida in a year.
     - Compute $F(7)$, the probability that the number of tropical storms in Florida will be less than or equal to 7 in a year. 
     - What is the difference between $P(X=7)$ and $F(7)$?
-    - Compute $P(X > 7)$.
+    - Compute $P(X > 7)$
 
 ```r
 lambda <- 5.904762
