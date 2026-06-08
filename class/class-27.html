@@ -1014,6 +1014,34 @@ Solution
 </summary>
 <p>We’ll use the solution <span class="math inline">\(x = \dfrac{c_1b_{2,2} - b_{1,2}c_2}{b_{1,1}b_{2,2} - b_{1,2}b_{2,1}}\)</span> and <span class="math inline">\(y = \dfrac{b_{1,1}c_2 - c_1b_{2,1}}{b_{1,1}b_{2,2} - b_{1,2}b_{2,1}}.\)</span> This gives <span class="math display">\[x = \dfrac{ (4)(6) - (3)(7) }{ (2)(6) - (3)(5)}\quad\text{and}\quad y = \dfrac{ (2)(7) - (4)(5)}{(2)(6) - (3)(5) }\]</span></p>
 </details>
+<details>
+<summary>
+Solution (R)
+</summary>
+<p>Plug the coefficients into the closed-form solution, then wrap it in a reusable function so we can reuse it for the next two problems.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>b11 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>b12 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>b21 <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>b22 <span class="ot">&lt;-</span> <span class="dv">6</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> (c1<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>c2)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> (b11<span class="sc">*</span>c2<span class="sc">-</span>c1<span class="sc">*</span>b21)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>y</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>solve_system <span class="ot">&lt;-</span> <span class="cf">function</span>(b11,b12,c1,b21,b22,c2){</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    (c1<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>c2)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21),</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    (b11<span class="sc">*</span>c2<span class="sc">-</span>c1<span class="sc">*</span>b21)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">solve_system</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">solve_system</span>(b11,b12,c1,b21,b22,c2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Source: <a href="https://github.com/bmwoodruff/m119-w26/blob/main/02-27.R">02-27.R</a></p>
+</details>
 <ol start="2" type="1">
 <li>Solve <span class="math inline">\(\pi a_1+a_2\ln 2 =7,(\sum_{i=1}^3i^2)a_1+(\sum_{i=1}^3(i-1))a_2=\sum_{i=1}^3 (i-i^2)\)</span>.</li>
 </ol>
@@ -1050,28 +1078,28 @@ x = \dfrac{ (\sum_{n=1}^{44}7)(\sum_{n=1}^{44}n) - (\sum_{n=1}^{44}3)(\sum_{n=1}
 y = \dfrac{ (\sum_{n=1}^{44}n)(\sum_{n=1}^{44}n^2) - (\sum_{n=1}^{44}7)(\sum_{n=1}^{44}5) }{ (\sum_{n=1}^{44}n)(\sum_{n=1}^{44}n) - (\sum_{n=1}^{44}3)(\sum_{n=1}^{44}5) }
 \]</span> We can use R to compute the solution, using</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">44</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>b11 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>b12 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">3</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n) <span class="co">#Why have 0*n?</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">7</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>b21 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">5</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>b22 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> (c1<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>c2)<span class="sc">/</span>(b11<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>b21)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> (b11<span class="sc">*</span>c2 <span class="sc">-</span> c1<span class="sc">*</span>b21)<span class="sc">/</span>(b11<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>b21)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Check</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y <span class="sc">==</span> c1</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y <span class="sc">==</span> c2</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Remember floating point arithmetic can cause a problem with the logic checks above. </span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y <span class="sc">-</span> c1</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y <span class="sc">-</span> c2</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">#R has a function to help with this, called all.equal()</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y,c1)</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y,c2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">44</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>b11 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>b12 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">3</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n) <span class="co">#Why have 0*n?</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">7</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>b21 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">5</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>b22 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> (c1<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>c2)<span class="sc">/</span>(b11<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>b21)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> (b11<span class="sc">*</span>c2 <span class="sc">-</span> c1<span class="sc">*</span>b21)<span class="sc">/</span>(b11<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>b21)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Check</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y <span class="sc">==</span> c1</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y <span class="sc">==</span> c2</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Remember floating point arithmetic can cause a problem with the logic checks above. </span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y <span class="sc">-</span> c1</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y <span class="sc">-</span> c2</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">#R has a function to help with this, called all.equal()</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y,c1)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y,c2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
 <section id="group-meeting" class="level2">
@@ -1155,17 +1183,17 @@ Answers
 <li><p>State the value of <span class="math inline">\(a_1\)</span> that gives the location of maximum loglikelihood.</p></li>
 <li><p>Use the code below to plot the lightbulb data (using the seed 123) along with the fitted model <span class="math inline">\(f_1(t)\)</span> on the same axes, updating the value you obtained for <span class="math inline">\(a_1\)</span>.</p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data4led)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>bulb <span class="ot">&lt;-</span> <span class="fu">led_bulb</span>(<span class="dv">1</span>,<span class="at">seed=</span><span class="dv">123</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>ti <span class="ot">&lt;-</span> bulb<span class="sc">$</span>hours</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>yi <span class="ot">&lt;-</span> bulb<span class="sc">$</span>percent_intensity</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ti,yi)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>my_a1 <span class="ot">&lt;-</span> <span class="fl">0.0002</span> <span class="co">#Will need to be updated</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(t,<span class="at">a1=</span>my_a1){<span class="dv">100</span><span class="sc">+</span>a1<span class="sc">*</span>t}</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5000</span>,<span class="dv">10</span>) </span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,<span class="fu">f1</span>(x,a1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data4led)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>bulb <span class="ot">&lt;-</span> <span class="fu">led_bulb</span>(<span class="dv">1</span>,<span class="at">seed=</span><span class="dv">123</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>ti <span class="ot">&lt;-</span> bulb<span class="sc">$</span>hours</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>yi <span class="ot">&lt;-</span> bulb<span class="sc">$</span>percent_intensity</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ti,yi)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>my_a1 <span class="ot">&lt;-</span> <span class="fl">0.0002</span> <span class="co">#Will need to be updated</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(t,<span class="at">a1=</span>my_a1){<span class="dv">100</span><span class="sc">+</span>a1<span class="sc">*</span>t}</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5000</span>,<span class="dv">10</span>) </span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,<span class="fu">f1</span>(x,a1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="activity---project-2-practice-with-f_2" class="level3">
 <h3 class="anchored" data-anchor-id="activity---project-2-practice-with-f_2">Activity - Project 2 Practice with <span class="math inline">\(f_2\)</span></h3>
