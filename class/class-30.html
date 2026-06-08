@@ -873,16 +873,21 @@ Steps of Optimization
 Steps for writing down the loglikelihood function
 </summary>
 <ul>
-<li>Calculate the residuals (or errors), <span class="math inline">\(r_i = y_i - f(x_i)\)</span>, where <span class="math inline">\(f\)</span> is the model you are trying to fit to your data and <span class="math inline">\((x_i, y_i)\)</span> is the given data where <span class="math inline">\(i = 1, 2, 3, ... , m\)</span>.</li>
-<li>If we assume the residuals are observations from normal random variables each with mean zero and standard deviation one, we are assuming the probability model <span class="math inline">\(p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}r^2}\)</span> describes each of residuals. This probability model is the same model for each of the <span class="math inline">\(m\)</span> random variables and each <span class="math inline">\(r_i\)</span> is an observation from one of these random variables.</li>
-<li>If we assume the residuals are independent (these <span class="math inline">\(m\)</span> random variables are independent) we can calculate the combined probability model (or joint probability model) for all the residuals together by multiplying their individual probability models to get <span class="math display">\[J(\mathbf{x}, \mathbf{y}; \text{parameters of } f) = \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}r_i^2}.\]</span> This function can be used to calculate probability information about various combined lists of data <span class="math inline">\(\mathbf{x}\)</span> and <span class="math inline">\(\mathbf{y}\)</span> provided specific values of the parameters for <span class="math inline">\(f\)</span> have already been selected (this function assumes the parameters of <span class="math inline">\(f\)</span> are known and the data is unknown).</li>
-<li>The likelihood function assumes the data is known but the parameters of the model <span class="math inline">\(f\)</span> have not been determined. The roles of the parameters of <span class="math inline">\(f\)</span> and the data have switched. The likelihood function is <span class="math display">\[
+<li><p>Calculate the residuals (or errors), <span class="math inline">\(r_i = y_i - f(x_i)\)</span>, where <span class="math inline">\(f\)</span> is the model you are trying to fit to your data and <span class="math inline">\((x_i, y_i)\)</span> is the given data where <span class="math inline">\(i = 1, 2, 3, ... , m\)</span>.</p></li>
+<li><p>If we assume the residuals are observations from normal random variables each with mean zero and standard deviation one, we are assuming the probability model <span class="math inline">\(p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}r^2}\)</span> describes each of residuals. This probability model is the same model for each of the <span class="math inline">\(m\)</span> random variables and each <span class="math inline">\(r_i\)</span> is an observation from one of these random variables.</p></li>
+<li><p>If we assume the residuals are independent (these <span class="math inline">\(m\)</span> random variables are independent) we can calculate the combined probability model (or joint probability model) for all the residuals together by multiplying their individual probability models to get</p>
+<p><span class="math display">\[J(\mathbf{x}, \mathbf{y}; \text{parameters of } f) = \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}r_i^2}\]</span></p>
+<p>This function can be used to calculate probability information about various combined lists of data <span class="math inline">\(\mathbf{x}\)</span> and <span class="math inline">\(\mathbf{y}\)</span> provided specific values of the parameters for <span class="math inline">\(f\)</span> have already been selected (this function assumes the parameters of <span class="math inline">\(f\)</span> are known and the data is unknown).</p></li>
+<li><p>The likelihood function assumes the data is known but the parameters of the model <span class="math inline">\(f\)</span> have not been determined. The roles of the parameters of <span class="math inline">\(f\)</span> and the data have switched. The likelihood function is <span class="math display">\[
 \begin{aligned}
 L(\text{parameters of } f;\, \mathbf{x}, \mathbf{y}) &amp;= \prod_{i=1}^m \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} r_i^2} \\
                                                    &amp;= \prod_{i=1}^m \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} (y_i - f(x_i))^2}.
 \end{aligned}
-\]</span> Notice the only difference between <span class="math inline">\(J\)</span> and <span class="math inline">\(L\)</span> is whether we know the data or the parameters of <span class="math inline">\(f\)</span>.</li>
-<li>The loglikelihood function is the natural log of the likelihood function which gives <span class="math display">\[\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = \ln \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(y_i - f(x_i))^2}.\]</span> We can simplify the loglikelihood function by writing it in a more convenient form using the properties of logarithms and properties of sums. We find <span class="math display">\[\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = m\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2} \sum_{i=1}^m (y_i - f(x_i))^2\]</span></li>
+\]</span> Notice the only difference between <span class="math inline">\(J\)</span> and <span class="math inline">\(L\)</span> is whether we know the data or the parameters of <span class="math inline">\(f\)</span>.</p></li>
+<li><p>The loglikelihood function is the natural log of the likelihood function which gives</p>
+<p><span class="math display">\[\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = \ln \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(y_i - f(x_i))^2}\]</span></p>
+<p>We can simplify the loglikelihood function by writing it in a more convenient form using the properties of logarithms and properties of sums. We find</p>
+<p><span class="math display">\[\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = m\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2} \sum_{i=1}^m (y_i - f(x_i))^2\]</span></p></li>
 </ul>
 </details>
 <details>
@@ -963,18 +968,18 @@ Check Your Answer
 \frac{\partial \ell}{\partial b} &amp;= 0 \\
 \frac{\partial \ell}{\partial m} &amp;= 0.
 \end{align*}
-\right\]</span> This means we need to solve the system <span class="math display">\[\left\{
+\right.\]</span> This means we need to solve the system <span class="math display">\[\left\{
 \begin{array}{ll}
 \left(\sum_{i=1}^{50} y_i\right) - 50b - \left(\sum_{i=1}^{50} x_i\right)m &amp;= 0 \\
 \left(\sum_{i=1}^{50} x_iy_i\right) - \left(\sum_{i=1}^{50} x_i\right)b - \left(\sum_{i=1}^{50} x_i^2\right)m &amp;= 0.
 \end{array}
-\right\]</span></p>
+\right.\]</span></p>
 <p>We notice that this system is of the form <span class="math display">\[\left\{
 \begin{array}{ll}
 b_1 - c_{11}b - c_{12}m &amp;= 0 \\
 b_2 - c_{21}b - c_{22}m &amp;= 0,
 \end{array}
-\right\]</span> with</p>
+\right.\]</span> with</p>
 <ul>
 <li><span class="math inline">\(b_1 = \sum_{i=1}^{50} y_i\)</span>,</li>
 <li><span class="math inline">\(c_{11} = 50\)</span>,</li>
