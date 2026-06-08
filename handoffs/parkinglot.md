@@ -8,6 +8,55 @@
 
 ---
 
+### Site-wide sweep: drop trailing `.` from command-prompt lines ending in inline math
+
+**Trigger:** when a maintainer can afford the visual review (the rule needs human eyes — see below) OR batched with the post-semester content review.
+**Routes-to:** sprint (single PR, content review).
+**Added:** 2026-06-08
+**Origin-Commit:** eb87333
+
+Site-wide audit on 2026-06-08 found **225 lines** with the pattern `<verb> $X$.`
+where `<verb>` is one of {`Solve`, `Find`, `Compute`, `Show`, `Write`, `Give`,
+`Sketch`, `Determine`, `Identify`, `Calculate`, `State`, `Evaluate`,
+`Simplify`, `Differentiate`, `Integrate`, `Estimate`, `Plot`, `Graph`,
+`List`, `Assume`, `Verify`} — short imperative prompts where the trailing
+period feels awkward (e.g. `- Find any extrema of $A(x) = 1200x - x^2$.`).
+These weren't in scope for the earlier display-math sweep (`.$$`) or the
+Brain Gains numbering sweep.
+
+The class-27 instances are fixed (commits `9bbd3d2`, `98eae19`, `eb87333`).
+The other ~218 span basically every class — sample heads in the audit output:
+class-10, 12, 14, 16, 17, 18, 19, 20, 21, 22, … through class-46.
+
+Why not bulk-fix mechanically: the rule needs a human eyeball to skip
+multi-sentence cases like class-27:417 (`Find the critical points of
+$\ell_1$. This means you must set the first derivative equal to zero and
+solve for $a_1$.`) — the trailing period there is grammatically correct
+because the line is two sentences. Bulk-stripping would damage those.
+
+Suggested approach for the sweep:
+
+```bash
+# rerun the audit to get the current list:
+python3 -c "
+import re, glob
+verbs = r'(Solve|Find|Compute|Show|Write|Give|Sketch|Determine|Identify|Calculate|State|Evaluate|Simplify|Differentiate|Integrate|Estimate|Plot|Graph|List|Assume|Verify)'
+for fp in sorted(glob.glob('site/class/*.qmd')):
+    in_code = False
+    for i, ln in enumerate(open(fp), 1):
+        if re.match(r'^\`\`\`', ln): in_code = not in_code; continue
+        if in_code: continue
+        if re.search(r'\$\.\s*\$', ln):
+            s = ln.lstrip(' \t*-1234567890.').lstrip()
+            if re.match(verbs + r'\s', s):
+                print(f'{fp}:{i}  {ln.rstrip()[:90]}')
+"
+```
+
+Then review each line — accept the bare-prompt cases (e.g. `- Find any
+extrema of $X$.`), reject the multi-sentence ones (e.g. lines where there's
+an embedded period mid-line followed by `This means…`).
+
 ### Pull R Solution dropdowns from bmwoodruff/m119-w26 for every class day
 
 **Trigger:** post-semester (after 2026-07-22) OR next time content-review work is scheduled — likely batched with the M119/Projects merge work parked in `HANDOFF_merge-projects-site.md`.
