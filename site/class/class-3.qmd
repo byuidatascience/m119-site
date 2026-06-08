@@ -291,7 +291,9 @@ Compute $f(1)$
 \begin{cases}
 x^2 - 6 & \quad x < 0 \\ \\
 10 - x & \quad x \geq 0.
-\end{cases}.$$ Find the following values.
+\end{cases}$$
+
+Find the following values.
     - $g(7)$
     - $g(-7)$
     - $g(-33)$

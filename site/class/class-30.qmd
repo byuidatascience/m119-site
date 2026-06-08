@@ -72,14 +72,24 @@ Today in class we fitted $f_2$ and $f_6$ to the seed 123. Let's now adapt what w
 
 - Calculate the residuals (or errors), $r_i = y_i - f(x_i)$, where $f$ is the model you are trying to fit to your data and $(x_i, y_i)$ is the given data where $i = 1, 2, 3, ... , m$.
 - If we assume the residuals are observations from normal random variables each with mean zero and standard deviation one, we are assuming the probability model $p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}r^2}$ describes each of residuals. This probability model is the same model for each of the $m$ random variables and each $r_i$ is an observation from one of these random variables.
-- If we assume the residuals are independent (these $m$ random variables are independent) we can calculate the combined probability model (or joint probability model) for all the residuals together by multiplying their individual probability models to get $$J(\mathbf{x}, \mathbf{y}; \text{parameters of } f) = \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}r_i^2}.$$ This function can be used to calculate probability information about various combined lists of data $\mathbf{x}$ and $\mathbf{y}$ provided specific values of the parameters for $f$ have already been selected (this function assumes the parameters of $f$ are known and the data is unknown).
+- If we assume the residuals are independent (these $m$ random variables are independent) we can calculate the combined probability model (or joint probability model) for all the residuals together by multiplying their individual probability models to get
+
+    $$J(\mathbf{x}, \mathbf{y}; \text{parameters of } f) = \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}r_i^2}$$
+
+    This function can be used to calculate probability information about various combined lists of data $\mathbf{x}$ and $\mathbf{y}$ provided specific values of the parameters for $f$ have already been selected (this function assumes the parameters of $f$ are known and the data is unknown).
 - The likelihood function assumes the data is known but the parameters of the model $f$ have not been determined. The roles of the parameters of $f$ and the data have switched. The likelihood function is $$
 \begin{aligned}
 L(\text{parameters of } f;\, \mathbf{x}, \mathbf{y}) &= \prod_{i=1}^m \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} r_i^2} \\
                                                      &= \prod_{i=1}^m \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} (y_i - f(x_i))^2}.
 \end{aligned}
 $$ Notice the only difference between $J$ and $L$ is whether we know the data or the parameters of $f$.
-- The loglikelihood function is the natural log of the likelihood function which gives $$\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = \ln \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(y_i - f(x_i))^2}.$$ We can simplify the loglikelihood function by writing it in a more convenient form using the properties of logarithms and properties of sums. We find $$\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = m\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2} \sum_{i=1}^m (y_i - f(x_i))^2$$
+- The loglikelihood function is the natural log of the likelihood function which gives
+
+    $$\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = \ln \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(y_i - f(x_i))^2}$$
+
+    We can simplify the loglikelihood function by writing it in a more convenient form using the properties of logarithms and properties of sums. We find
+
+    $$\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = m\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2} \sum_{i=1}^m (y_i - f(x_i))^2$$
 
 </details>
 
@@ -159,14 +169,14 @@ $$\left\{
 \frac{\partial \ell}{\partial b} &= 0 \\
 \frac{\partial \ell}{\partial m} &= 0.
 \end{align*} 
-\right$$
+\right.$$
 This means we need to solve the system
 $$\left\{
 \begin{array}{ll}
 \left(\sum_{i=1}^{50} y_i\right) - 50b - \left(\sum_{i=1}^{50} x_i\right)m &= 0 \\ 
 \left(\sum_{i=1}^{50} x_iy_i\right) - \left(\sum_{i=1}^{50} x_i\right)b - \left(\sum_{i=1}^{50} x_i^2\right)m &= 0.
 \end{array} 
-\right$$
+\right.$$
 
 We notice that this system is of the form
 $$\left\{
@@ -174,7 +184,7 @@ $$\left\{
 b_1 - c_{11}b - c_{12}m &= 0 \\ 
 b_2 - c_{21}b - c_{22}m &= 0,
 \end{array} 
-\right$$
+\right.$$
 with
 
 - $b_1 = \sum_{i=1}^{50} y_i$,

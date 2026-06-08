@@ -19,7 +19,7 @@ $$\left\{
 c_{1,1}x + c_{1,2}y =b_1 \\ 
 c_{2,1}x + c_{2,2}y = b_2 
 \end{align*} 
-\right$$
+\right.$$
 Note that the variables above are different than the ones from last class period, so your answer may look a bit different. 
 Solve the system, obtaining values for $x$ and $y$, and come to class with any questions you have about how to obtain the solution.
 
@@ -130,8 +130,11 @@ lines(x,f1(x),type = "l")
 
 </details>
 
-3. 
-For the model $f_2(t; a_1, a_2) = 100 + a_1t + a_2t^2$, the loglikelihood function for these errors is $$\ell_2(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) + \sum_{i=1}^{44} \left(-\frac{1}{2}(y_i - 100 - a_1t_i - a_2t_i^2)^2\right).$$ The first partials of $\ell_2$ are
+3. For the model $f_2(t; a_1, a_2) = 100 + a_1t + a_2t^2$, the loglikelihood function for these errors is
+
+    $$\ell_2(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) + \sum_{i=1}^{44} \left(-\frac{1}{2}(y_i - 100 - a_1t_i - a_2t_i^2)^2\right)$$
+
+    The first partials of $\ell_2$ are
     - $\pd{\ell_2}{a_1}{} = \left(\sum_{i=1}^{44} (y_i - 100)t_i\right) - \left(\sum_{i=1}^{44}t_i^2\right)a_1 - \left(\sum_{i=1}^{44}t_i^3\right)a_2$ and
     - $\pd{\ell_2}{a_2}{} = \left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right) - \left(\sum_{i=1}^{44}t_i^3\right)a_1 - \left(\sum_{i=1}^{44}t_i^4\right)a_2$.
 We find the location of maximum likelihood by locating the values $a_1$ and $a_2$ where the two partial derivatives are both equal to zero, we means we must solve the system of equations that results from $\frac{d\ell_2}{da_1} = 0$ and $\frac{d\ell_2}{da_2} = 0$. We must solve the linear system of equations 
@@ -140,7 +143,7 @@ $$\left\{
 \left(\sum_{i=1}^{44} (y_i - 100)t_i\right) - \left(\sum_{i=1}^{44}t_i^2\right)a_1 - \left(\sum_{i=1}^{44}t_i^3\right)a_2 &= 0 \\ 
 \left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right) - \left(\sum_{i=1}^{44}t_i^3\right)a_1 - \left(\sum_{i=1}^{44}t_i^4\right)a_2 &= 0.
 \end{align*}
-\right$$
+\right.$$
 We can write the system above in the form
 $$\left\{
 \begin{align*}
@@ -155,7 +158,7 @@ $$
 c_{1,1}x + c_{1,2}y = b_1 \\ 
 c_{2,1}x + c_{2,2}y = b_2
 \end{align*} 
-\right$$
+\right.$$
 whose solution we can quickly find using the results of our previous work. Solve this system.
 
 <details>

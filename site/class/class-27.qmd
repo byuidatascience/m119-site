@@ -26,7 +26,7 @@ c_2-b_{2,1}x -b_{2,2}y &= 0
 b_{1,1}x +b_{1,2}y &= c_1 \\ 
 b_{2,1}x +b_{2,2}y &= c_2
 \end{array} 
-\right$$
+\right.$$
 If you feel comfortable solving the system above for $x$ and $y$, without any extra directions, then feel free to just start right in.  If that tasks seems a little daunting, then instead use the help below. 
 
 Because there are so many variables involved, solving this system can be difficult. 
@@ -41,7 +41,7 @@ $$\left\{
 3x + 2y &= 7 \\ 
 2x + 5y &= 12
 \end{array} 
-\right$$
+\right.$$
 
 - Now we will step up the difficulty (level 1 problems): 
     - Solve the system
@@ -50,7 +50,7 @@ $$\left\{
 3x + 2y &= c_1 \\ 
 2x + 5y &= 12
 \end{array} 
-\right$$
+\right.$$
       - Note your answer is no longer a pair of numbers but a pair of formulas that depend on $c_1$. Check your work by plugging in $c_1 = 7$ your answer should be the same as the previous problem (the level 0 problem).
 
     - Solve the system
@@ -59,7 +59,7 @@ $$\left\{
 3x + 2y &= c_1 \\ 
 2x + 5y &= c_2
 \end{array} 
-\right$$
+\right.$$
       - Note your answer is not a pair of numbers but a pair of formulas that depend on $c_1$ and $c_2$. Check your work by plugging in $c_1 = 7$ and $c_2 = 12$ to the formulas you found, your answer should be the same as the level 0 problem. But note that when you change the values of $c_1$ and $c_2$ and you have the solution to **a different** level 0 problem.
 
 - Now we will step up the difficulty (level 2 problems): 
@@ -69,7 +69,7 @@ $$\left\{
 b_{1,1}x + 2y &= c_1 \\ 
 2x + 5y &= c_2
 \end{array} 
-\right$$
+\right.$$
       - Note your answer is not a pair of numbers but a pair of formulas that depend on $c_1$, $c_2$,  and $b_{1,1}$. Check your work by plugging in $c_1 = 7$, $c_2 = 12$, and $b_{1,1} = 3$ to the formulas you found, your answer should be the same as the level 0 problem. But note that when you change the values of $c_1$, $c_2$, and $b_{1,1}$ you have the solution to **a different** level 0 problem.
 
     - Solve the system
@@ -78,7 +78,7 @@ $$\left\{
 b_{1,1}x + 2y &= c_1 \\ 
 2x + b_{2,2}y &= c_2
 \end{array} 
-\right$$
+\right.$$
       - Note your answer is not a pair of numbers but a pair of formulas that depend on $c_1$, $c_2$, $b_{1,1}$, and $b_{2,2}$. Check your work by plugging in the values from our level 0 problem to the formulas you found.
 
 - Let's step up the difficulty again (level 3 problems): 
@@ -88,14 +88,14 @@ $$\left\{
 b_{1,1}x + b_{1,2}y &= c_1 \\ 
 2x + b_{2,2}y &= c_2
 \end{array} 
-\right$$
+\right.$$
 and then
 $$\left\{
 \begin{array}{ll}
 b_{1,1}x + b_{1,2}y &= c_1 \\ 
 b_{2,1}x + b_{2,2}y &= c_2
 \end{array} 
-\right$$
+\right.$$
       - Check your work by plugging in the values from our level 0 problem to the formulas you found.
 
 <details>
@@ -223,7 +223,7 @@ $$\left\{
 b_{1,1}x + b_{1,2}y &= c_1 \\ 
 b_{2,1}x + b_{2,2}y &= c_2
 \end{array} 
-\right$$ 
+\right.$$ 
 has the solution
 $$x = \frac{c_1b_{2,2} - b_{1,2}c_2}{b_{1,1}b_{2,2} - b_{1,2}b_{2,1}},\quad y = \frac{b_{1,1}c_2 - c_1b_{2,1}}{b_{1,1}b_{2,2} - b_{1,2}b_{2,1}}$$
 
