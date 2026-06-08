@@ -872,7 +872,7 @@ window.Quarto = {
 </ul></li>
 <li>Use log properties to write <span class="math inline">\(\ln\left(\prod_{k=1}^{4}(100-k^2)\right)\)</span> as a sum of logarithms.</li>
 <li>Solve <span class="math inline">\(2^x = 37\)</span></li>
-<li>Solve <span class="math inline">\(\log(x)+\log(x-1) = \log(6)\)</span>.</li>
+<li>Solve <span class="math inline">\(\log(x)+\log(x-1) = \log(6)\)</span></li>
 </ul>
 </section>
 <section id="group-meeting" class="level2">
@@ -937,7 +937,7 @@ Solutions
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>?uniroot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The key to using uniroot is to pick two <span class="math inline">\(x\)</span>-values where you know the values of the function differ in sign. If needed, construct a plot to help you pick them. Let’s look at a few code examples.</p>
 <ul>
-<li>Solve <span class="math inline">\(h(x) = 0\)</span> given <span class="math inline">\(h(x) = 3x - 15\)</span>.</li>
+<li>Solve <span class="math inline">\(h(x) = 0\)</span> given <span class="math inline">\(h(x) = 3x - 15\)</span></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>()) <span class="co">#Clears the environment</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -953,7 +953,7 @@ Solutions
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,<span class="fu">h</span>(x), <span class="at">type=</span><span class="st">"l"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">col =</span> <span class="st">"lightgray"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li>Solve <span class="math inline">\(h(x) = 4\)</span> given <span class="math inline">\(h(x) = 3x - 15\)</span>.</li>
+<li>Solve <span class="math inline">\(h(x) = 4\)</span> given <span class="math inline">\(h(x) = 3x - 15\)</span></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>h.shift <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h</span>(x) <span class="sc">-</span> <span class="dv">4</span></span>

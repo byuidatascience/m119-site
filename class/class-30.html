@@ -873,7 +873,7 @@ Steps of Optimization
 Steps for writing down the loglikelihood function
 </summary>
 <ul>
-<li><p>Calculate the residuals (or errors), <span class="math inline">\(r_i = y_i - f(x_i)\)</span>, where <span class="math inline">\(f\)</span> is the model you are trying to fit to your data and <span class="math inline">\((x_i, y_i)\)</span> is the given data where <span class="math inline">\(i = 1, 2, 3, ... , m\)</span>.</p></li>
+<li><p>Calculate the residuals (or errors), <span class="math inline">\(r_i = y_i - f(x_i)\)</span>, where <span class="math inline">\(f\)</span> is the model you are trying to fit to your data and <span class="math inline">\((x_i, y_i)\)</span> is the given data where <span class="math inline">\(i = 1, 2, 3, ... , m\)</span></p></li>
 <li><p>If we assume the residuals are observations from normal random variables each with mean zero and standard deviation one, we are assuming the probability model <span class="math inline">\(p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}r^2}\)</span> describes each of residuals. This probability model is the same model for each of the <span class="math inline">\(m\)</span> random variables and each <span class="math inline">\(r_i\)</span> is an observation from one of these random variables.</p></li>
 <li><p>If we assume the residuals are independent (these <span class="math inline">\(m\)</span> random variables are independent) we can calculate the combined probability model (or joint probability model) for all the residuals together by multiplying their individual probability models to get</p>
 <p><span class="math display">\[J(\mathbf{x}, \mathbf{y}; \text{parameters of } f) = \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}r_i^2}\]</span></p>
