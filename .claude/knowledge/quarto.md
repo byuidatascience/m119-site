@@ -97,6 +97,40 @@ renumbered. The same bug class also affects Group Meeting / Discussion /
 Preparation sections across many class files — those weren't part of that
 sweep.
 
+## Trailing-period sweeps in LaTeX: exclude `\left.` and `\right.`
+
+Stripping a trailing `.` from inside display math (`$$X.$$` → `$$X$$`) is a
+common stylistic cleanup, but **the period that appears after `\left` or
+`\right` is LaTeX syntax, not punctuation.** `\left.` and `\right.` mean
+"no left/right delimiter on this end" — used inside `\left ... \right`
+pairs when one side is open or non-symmetric. Removing those periods
+produces broken LaTeX that may silently fail or render incorrectly.
+
+Concretely, on a class page with a one-sided `cases`:
+
+```latex
+$$\left\{
+\begin{array}{ll}
+... \\
+...
+\end{array}
+\right.$$        <-- the `.` after `\right` is REQUIRED
+```
+
+A naive sweep targeting `\.\$\$` at line-end will strip the period from
+`\right.` and break the math. Guard the sweep:
+
+```python
+# Skip the line if it ends with '\left.$$' or '\right.$$'
+if re.search(r'\\(?:left|right)\.\$\$\s*$', line):
+    continue
+```
+
+Incident: a 2026-06-08 trailing-period sweep stripped `\right.` periods in
+15 spots across class-27/28/30, requiring a follow-up commit to restore
+them. The audit script (`grep -rn 'right\$\$'`) makes the damage easy to
+spot retroactively.
+
 ## Run-on equation chains → align on `=`
 
 Inline or single-line display math with 3+ `=` (`$$X = Y = Z = W$$`) reads as a

@@ -233,8 +233,41 @@ Solve $2x+3y=4,5x+6y=7$.
 <details>
 <summary>Solution</summary>
 
-We'll use the solution $x = \dfrac{c_1b_{2,2} - b_{1,2}c_2}{b_{1,1}b_{2,2} - b_{1,2}b_{2,1}}$ and $y = \dfrac{b_{1,1}c_2 - c_1b_{2,1}}{b_{1,1}b_{2,2} - b_{1,2}b_{2,1}}.$ 
+We'll use the solution $x = \dfrac{c_1b_{2,2} - b_{1,2}c_2}{b_{1,1}b_{2,2} - b_{1,2}b_{2,1}}$ and $y = \dfrac{b_{1,1}c_2 - c_1b_{2,1}}{b_{1,1}b_{2,2} - b_{1,2}b_{2,1}}.$
 This gives $$x = \dfrac{ (4)(6) - (3)(7) }{ (2)(6) - (3)(5)}\quad\text{and}\quad y = \dfrac{ (2)(7) - (4)(5)}{(2)(6) - (3)(5) }$$
+
+</details>
+
+<details>
+<summary>Solution (R)</summary>
+
+Plug the coefficients into the closed-form solution, then wrap it in a reusable function so we can reuse it for the next two problems.
+
+```r
+b11 <- 2
+b12 <- 3
+c1 <- 4
+b21 <- 5
+b22 <- 6
+c2 <- 7
+
+x <- (c1*b22-b12*c2)/(b11*b22-b12*b21)
+y <- (b11*c2-c1*b21)/(b11*b22-b12*b21)
+x
+y
+
+solve_system <- function(b11,b12,c1,b21,b22,c2){
+  c(
+    (c1*b22-b12*c2)/(b11*b22-b12*b21),
+    (b11*c2-c1*b21)/(b11*b22-b12*b21)
+  )
+}
+
+solve_system(2,3,4,5,6,7)
+solve_system(b11,b12,c1,b21,b22,c2)
+```
+
+Source: [02-27.R](https://github.com/bmwoodruff/m119-w26/blob/main/02-27.R)
 
 </details>
 
