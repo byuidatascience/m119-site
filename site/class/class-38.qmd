@@ -17,7 +17,7 @@ Consider the function $$\ds f(x) =
 \begin{cases}
 kx - k &  1 \leq x \leq 3 \\
 0 &  \text{otherwise}
-\end{cases}.$$
+\end{cases}$$
 
 1. Select $k$ so $f$ is the PDF of a random variable $X$. 
 
@@ -32,7 +32,7 @@ kx - k &  1 \leq x \leq 3 \\
 0 &  x < 0 \\
 \frac{x}{3} &  0 \leq x \leq 3 \\
 1 &  x > 3
-\end{cases}.$$
+\end{cases}$$
     - Find $F'(x)$ to find the PDF of $X$, $f(x)$.
     - Draw the target diagram for this PDF.
 
@@ -53,7 +53,7 @@ draw_target(f,0,3)
 0 & x < 0 \\
 \frac{x^2}{16} &  0 \leq x \leq 4 \\
 1 & x > 4
-\end{cases}.$$
+\end{cases}$$
     - Find $F'(x)$ to find the PDF of $X$, $f(x)$.
     - Draw the target diagram for this PDF.
 
@@ -208,7 +208,7 @@ Look above at how we computed $P(a < X \leq b)$.
 
 - We have $P(a < X \leq b) = \int_a^b f(x) dx$ using the PDF. 
 - We have $P(a < X \leq b) = F(b) - F(a)$ using the CDF. 
-Combining these facts gives $$\int_a^b f(x) dx = F(b) - F(a).$$
+Combining these facts gives $$\int_a^b f(x) dx = F(b) - F(a)$$
 This fact, where $F'=f$, is "The Fundamental Theorem of Calculus" (part 2). We'll see part 1 later. 
 
 Given a probability model for a continuous random variable, we'll use the expected value and variance to help us fit data to the model. 
@@ -217,7 +217,7 @@ Given a probability model for a continuous random variable, we'll use the expect
 <summary>Expected Value (continuous random variable)</summary>
 
 The **expected value** (or mean) of a *continuous* random variable $X$ with probability density function $f(x)$ is
-$$E[X] = \int_{-\infty}^{\infty} x f(x) dx.$$
+$$E[X] = \int_{-\infty}^{\infty} x f(x) dx$$
 
 - The expected value is a characteristic of a random variable.
 - The expected value is the average value of a random variable.
@@ -235,7 +235,7 @@ $$E[X] = \int_{-\infty}^{\infty} x f(x) dx.$$
 <summary>Variance (continuous random variable)</summary>
 
 The **variance** of a *continuous* random variable $X$ with probability density function $f(x)$ is
-$$Var[X] = \int_{-\infty}^{\infty} (x - E[X])^2 f(x) dx.$$
+$$Var[X] = \int_{-\infty}^{\infty} (x - E[X])^2 f(x) dx$$
 The standard deviation is equal to the square root of the variance, which we write as $\sigma_X = \sqrt{Var[X]}$.
 
 - The variance is characteristic of a random variable.
@@ -348,7 +348,7 @@ Consider the random variable $X$ with the PDF $$f(x) =
 \begin{cases}
 5e^{-5x} &  x \geq 0 \\
 0 &  \text{otherwise}
-\end{cases}.$$
+\end{cases}$$
 
 - Why do we know the area under the "infinite" target is 1?
 

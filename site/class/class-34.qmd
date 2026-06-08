@@ -51,7 +51,7 @@ $$f(x) = \begin{cases}
 0.3& x=2\\
 0.3& x=3\\
 0.3& x=4\\
-\end{cases}.$$
+\end{cases}$$
 The code below constructs a graphical representation of this pmf. 
 
 ```r
@@ -118,7 +118,7 @@ $$g(x) =
 \begin{cases}
 5 & \quad 0 \leq x \leq 6 \\ \\
 0 & \quad \text{otherwise}.
-\end{cases}.$$
+\end{cases}$$
 
 1. Find the total area of the target. 
 
@@ -144,21 +144,21 @@ $$F(x) =
 0 & \quad x < 0 \\ \\
 \frac{x}{6} & \quad 0 \leq x \leq 6 \\ \\
 1 & \quad x > 6.
-\end{cases}.$$
+\end{cases}$$
 The constant $k$ is $k = \frac{1}{30}$, namely 1 divided by the area of the original target.
 This gives the normalized target function as
 $$f(x) = kg(x) = 
 \begin{cases}
 \frac{1}{6} & \quad 0 \leq x \leq 6 \\ \\
 0 & \quad \text{otherwise}
-\end{cases}.$$
+\end{cases}$$
 The derivative of $F$ is 
 $$\frac{dF}{dx}(x) = 
 \begin{cases}
 0 & \quad x < 0 \\ \\
 \frac{1}{6} & \quad 0 < x < 6 \\ \\
 0 & \quad x > 6
-\end{cases}.$$
+\end{cases}$$
 Notice that $f(x) = F'(x)$ at the points where $F(x)$ is differentiable.
 
 </details>
@@ -169,7 +169,7 @@ $$g(x) =
 \begin{cases}
 2x & \quad 0 \leq x \leq 6 \\ \\
 0 & \quad \text{otherwise}
-\end{cases}.$$
+\end{cases}$$
 We can graph this target using the code below. 
 
 ```r
@@ -194,7 +194,7 @@ When a dart falls on the point $(x,y)$, we'll record just the $x$-coordinate and
 0 & \quad x < 0 \\ \\
 \frac{x^2}{36} & \quad 0 \leq x \leq 6 \\ \\
 1 & \quad x > 6
-\end{cases}.$$
+\end{cases}$$
 
 1. Calculate the derivative of $F(x)$ with respect to $x$.
     - How does $F'(x)$ compare to the normalized target function $f(x)$ where $k$ is $\frac{1}{\text{area of the target}}$?

@@ -64,7 +64,7 @@ Evaluate each indefinite integral. Write your solutions (and the thinking leadin
 \begin{cases}
 \frac{1}{6} &  1 \leq x \leq 7\\
 0 &  \text{otherwise}
-\end{cases}.$$ 
+\end{cases}$$ 
 
 2. Use the Fundamental Theorem of Calculus to calculate the value of $\int_{-1}^2t^2dt$. Use Mathematica to check your answer.
 

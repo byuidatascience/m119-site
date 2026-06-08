@@ -79,7 +79,7 @@ L(\text{parameters of } f;\, \mathbf{x}, \mathbf{y}) &= \prod_{i=1}^m \frac{1}{\
                                                      &= \prod_{i=1}^m \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} (y_i - f(x_i))^2}.
 \end{aligned}
 $$ Notice the only difference between $J$ and $L$ is whether we know the data or the parameters of $f$.
-- The loglikelihood function is the natural log of the likelihood function which gives $$\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = \ln \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(y_i - f(x_i))^2}.$$ We can simplify the loglikelihood function by writing it in a more convenient form using the properties of logarithms and properties of sums. We find $$\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = m\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2} \sum_{i=1}^m (y_i - f(x_i))^2.$$
+- The loglikelihood function is the natural log of the likelihood function which gives $$\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = \ln \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(y_i - f(x_i))^2}.$$ We can simplify the loglikelihood function by writing it in a more convenient form using the properties of logarithms and properties of sums. We find $$\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = m\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2} \sum_{i=1}^m (y_i - f(x_i))^2$$
 
 </details>
 
@@ -159,14 +159,14 @@ $$\left\{
 \frac{\partial \ell}{\partial b} &= 0 \\
 \frac{\partial \ell}{\partial m} &= 0.
 \end{align*} 
-\right.$$
+\right$$
 This means we need to solve the system
 $$\left\{
 \begin{array}{ll}
 \left(\sum_{i=1}^{50} y_i\right) - 50b - \left(\sum_{i=1}^{50} x_i\right)m &= 0 \\ 
 \left(\sum_{i=1}^{50} x_iy_i\right) - \left(\sum_{i=1}^{50} x_i\right)b - \left(\sum_{i=1}^{50} x_i^2\right)m &= 0.
 \end{array} 
-\right.$$
+\right$$
 
 We notice that this system is of the form
 $$\left\{
@@ -174,7 +174,7 @@ $$\left\{
 b_1 - c_{11}b - c_{12}m &= 0 \\ 
 b_2 - c_{21}b - c_{22}m &= 0,
 \end{array} 
-\right.$$
+\right$$
 with
 
 - $b_1 = \sum_{i=1}^{50} y_i$,

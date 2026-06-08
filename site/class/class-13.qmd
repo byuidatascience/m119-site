@@ -330,7 +330,7 @@ $$f(x) =
 0.19 & \quad x = 6 \\ \\
 0.03 & \quad x = 9 \\ \\
 0.2 & \quad x=12
-\end{cases}.$$
+\end{cases}$$
 Compute the probabilities requested below:
 
 1. $P(x \leq 6)$

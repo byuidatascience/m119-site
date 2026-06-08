@@ -221,7 +221,7 @@ $$g(x) =
 \begin{cases}
 x - 1 & 1 \leq x \leq 3 \\
 0 & \text{otherwise}
-\end{cases}.$$
+\end{cases}$$
 When a dart hits the point $(x,y)$, we'll record just the $x$-coordinate and let $X$ represent this random variable. As you complete the exercises below, write any integrals you need to compute on the board, and then compute them with Mathematica. 
 
 1. Draw the function $g(x)$. 
@@ -271,7 +271,7 @@ A **probability density function** $f(x)$ is a nonnegative function that satisfi
 <summary>Expected Value (continuous random variable)</summary>
 
 The **expected value** (or mean) of a *continuous* random variable $X$ with probability density function $f(x)$ is
-$$\text{E}[X] = \int_{-\infty}^{\infty} x f(x) dx.$$
+$$\text{E}[X] = \int_{-\infty}^{\infty} x f(x) dx$$
 
 </details>
 
@@ -279,7 +279,7 @@ $$\text{E}[X] = \int_{-\infty}^{\infty} x f(x) dx.$$
 <summary>Variance (continuous random variable)</summary>
 
 The **variance** of a *continuous* random variable $X$ with probability density function $f(x)$ is
-$$\text{Var}[X] = \int_{-\infty}^{\infty} (x - \text{E}[X])^2 f(x) dx.$$
+$$\text{Var}[X] = \int_{-\infty}^{\infty} (x - \text{E}[X])^2 f(x) dx$$
 Note: The standard deviation is equal to the square root of the variance, $\sigma_X = \sqrt{\text{Var}[X]}$.
 
 </details>
@@ -370,7 +370,7 @@ This is the same as solving the system $\alpha = m\beta$ and $\alpha = v\beta ^2
 In particular, this means that $m\beta = v\beta^2$, which solving for $\beta$ yields $\beta = \frac{m}{v}$. 
 Plugging this value for $\beta$ into $\alpha = m\beta$, gives $\alpha = \frac{m^2}{v}$. 
 Our solution to this system is 
-$$\alpha = \frac{m^2}{v} \text{ and }\beta = \frac{m}{v}.$$
+$$\alpha = \frac{m^2}{v} \text{ and }\beta = \frac{m}{v}$$
 
 ```r
 alpha <- mean(Ng)^2/var(Ng)
@@ -472,7 +472,7 @@ p
 <summary>Solution</summary>
 
 We compute 
-$$P(X > 10) = \int_{10}^{\infty}\frac{1}{\sqrt{2\pi 10.979}}e^{-\frac{1}{2}\left(\frac{x-2.792}{3.313}\right)^2}dx= 0.0147976.$$
+$$P(X > 10) = \int_{10}^{\infty}\frac{1}{\sqrt{2\pi 10.979}}e^{-\frac{1}{2}\left(\frac{x-2.792}{3.313}\right)^2}dx= 0.0147976$$
 The Mathematica code chunk below gives the solution above. 
 
 ```
@@ -510,7 +510,7 @@ p
 <details>
 <summary>Solution</summary>
 
-To compute the probability that a the concentration of explosives in a soil sample will be more than 10mg/kg, we compute $$P(X > 10)=\int_{10}^\infty \frac{0.254^{0.710}}{\Gamma(0.710)}x^{0.710-1}e^{-0.254 x}dx.$$
+To compute the probability that a the concentration of explosives in a soil sample will be more than 10mg/kg, we compute $$P(X > 10)=\int_{10}^\infty \frac{0.254^{0.710}}{\Gamma(0.710)}x^{0.710-1}e^{-0.254 x}dx$$
 Mathematica code for computing this definite integral is given below. 
 
 ```

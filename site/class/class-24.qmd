@@ -33,7 +33,7 @@ $$
 - [Calculating Constants](https://www.loom.com/share/1033f69c42e843db94624993e73c5764?sharedAppSource=personal_library){target="_blank"} (~7 min)
 After watching the videos, try to repeat the computations on your own so that you can discover where you have questions. 
 
-Now try repeating these computations yourself for $$\ell_6(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i - a_2(1-e^{-0.0003t}))^2.$$ 
+Now try repeating these computations yourself for $$\ell_6(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i - a_2(1-e^{-0.0003t}))^2$$ 
 
 - [Partial derivatives of loglikelihood for f6](https://chaz-clark.github.io/M119/Projects/m119-docs/PDloglikelihoodFn6.html).
 
@@ -182,7 +182,7 @@ uniroot(f_x,c(2,3))$root
 ## Discussion  
 You have been given a list of data for 50 ElvesRUs employees, $(t_i, c_i)$, were $t_i$ is the number of years working at ElvesRUs and $c_i$ is the salary for the $i^{\text{th}}$ employee.
 The salary (platinum coins per year) for an employee at ElvesRUs can be modeled by $f(t;A,b,k)=Ae^{bt}+k,$ where $t$ is the number of years an elf has been working at ElvesRUs. 
-Assume the residuals (errors) are independent and normally distributed (with mean of 0 and standard deviation of 1), which means we're assuming the probability model for the residuals is $$p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}.$$
+Assume the residuals (errors) are independent and normally distributed (with mean of 0 and standard deviation of 1), which means we're assuming the probability model for the residuals is $$p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}$$
 
 1. Write the loglikelihood function for the errors in this situation.
 
@@ -200,7 +200,7 @@ Consider the model $f_1(t; a_1) = 100 + a_1t$.
 
 1. On the chalk board, as a group, go through the computations needed to obtain the loglikelihood function. Your job is to perform the needed computations and include enough explanations to show that
 
-    $$\ell_1(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i)^2.$$
+    $$\ell_1(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i)^2$$
 
 2. Compute the first derivative of the loglikelihood function, so compute $\frac{d\ell_1}{da_1}$. The solution is provided in Task 2.
 

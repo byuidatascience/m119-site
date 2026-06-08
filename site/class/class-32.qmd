@@ -199,13 +199,13 @@ Fit $f$ to the data by maximizing the loglikelihood of the errors assuming the e
 Note the likelihood function for the errors of $f$ is 
 $L(a; \mathbf{x},\mathbf{y}) = \prod_{i=1}^n\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(y_i - ae^{x_i})^2}$. 
 And the loglikelihood for the errors of $f$ is 
-$$\ell(a; \mathbf{x},\mathbf{y}) = n\ln(\frac{1}{\sqrt{2\pi}}) + \left( -\frac{1}{2} \right)\sum_{i=1}^{n}(y_i - ae^{x_i})^2.$$
+$$\ell(a; \mathbf{x},\mathbf{y}) = n\ln(\frac{1}{\sqrt{2\pi}}) + \left( -\frac{1}{2} \right)\sum_{i=1}^{n}(y_i - ae^{x_i})^2$$
 
 Once you obtain your value for $a$, remember to plot the data along with your fitted model to visually verify your fit. 
 
 #### Using Least Squares
 Fit $f$ to the data by minimizing the sum of squared errors. *This assumes the errors are independent and normally distributed.*
-Note the sum of squared errors of $f$ is $$S(a; \mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - ae^{x_i})^2.$$
+Note the sum of squared errors of $f$ is $$S(a; \mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - ae^{x_i})^2$$
 
 #### Answer questions with the Model
 Once you have your model, you can use it to answer questions.  

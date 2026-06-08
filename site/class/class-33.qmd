@@ -65,7 +65,7 @@ $$f(x) =
 0.1 & x=-10 \\
 0.6   & x=1 \\
 ???   & x=2 \\
-\end{cases}.
+\end{cases}
 $$
 
 1. Fill in the $???$ above so that $f(x)$ is a probability mass function. (Hint: what must the sum of the probabilities equal?)

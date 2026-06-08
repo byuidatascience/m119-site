@@ -38,7 +38,7 @@ $$f(x) =
 \begin{cases}
 x & \quad x\geq 0 \\ \\
 -x & \quad x<0
-\end{cases}.$$
+\end{cases}$$
 Find the following values.
 <ol type="a">
   <li>$f(-2)$</li>

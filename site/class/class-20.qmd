@@ -88,7 +88,7 @@ Compute the derivative of each function below, by first identifying $y(u)$ and $
 1. $m(x) = e^{x^2+3}$
 
 ### Activity - Higher Order Derivatives
-Since the derivative of a function is a function, we can find the derivative of a derivative. In fact, we can continue to take derivatives to find the third derivative, fourth derivative, etc. When we take a derivative of a derivative we find a higher order derivative. The second derivative $f$ we can denote with $$f''(x) = \frac{d}{dx}\left(\frac{d}{dx}(f)\right) = \frac{d^2f}{dx^2}.$$
+Since the derivative of a function is a function, we can find the derivative of a derivative. In fact, we can continue to take derivatives to find the third derivative, fourth derivative, etc. When we take a derivative of a derivative we find a higher order derivative. The second derivative $f$ we can denote with $$f''(x) = \frac{d}{dx}\left(\frac{d}{dx}(f)\right) = \frac{d^2f}{dx^2}$$
 We use similar notation for higher order derivatives, such at $f'''(x)$ for the third derivative and $\frac{d^4f}{dx^4}$ for a 4th derivative. We avoid prime notation and use notation such as $f^{ (7) }(x)$ when the number of derivatives is quite large. 
 
 Open this [Higher Order Derivatives worksheet](../assets/docs/Higher_Order_Derivatives.pdf) and take turns computing derivatives, passing the chalk after each problem.
@@ -280,20 +280,20 @@ r_i(A, b, k; t_i, c_i) &= c_i - f(t_i; A, b, k) \\
 $$
 
 Because we are told the errors (or residuals) are normally distributed (with mean of 0 and standard deviation of 1), the probability model we will use is
-$$p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}.$$
+$$p(r) = \frac{1}{\sqrt{2\pi}}e^{-\frac{r^2}{2}}$$
 Or we could write this $p(A, b, k; t_i, c_i) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(c_i - Ae^{bt_i} - k)^2}.$
 
 Because the errors are independent we can multiply the probability models to find the joint probability model as 
-$$J(t_i, c_i;A, b, k) = \prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(c_i - Ae^{bt_i} - k)^2}.$$
+$$J(t_i, c_i;A, b, k) = \prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(c_i - Ae^{bt_i} - k)^2}$$
 
 The likelihood function  (interchange the role of variables and parameters) is then 
-$$L(A, b, k; t_i, c_i) = \prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(c_i - Ae^{bt_i} - k)^2}.$$
+$$L(A, b, k; t_i, c_i) = \prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(c_i - Ae^{bt_i} - k)^2}$$
 
 We take the natural log of the likelihood function to find the loglikelihood function as
-$$\ell(A, b, k; t_i, c_i) = \ln\left(\prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(c_i - Ae^{bt_i} - k)^2}\right).$$
+$$\ell(A, b, k; t_i, c_i) = \ln\left(\prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(c_i - Ae^{bt_i} - k)^2}\right)$$
 
 We rewrite $\ell$, using the properties of logarithms and sums, to obtain
-$$\ell(A, b, k; t_i, c_i) = 50\ln\left(\frac{1}{\sqrt{2\pi}}\right) -\frac{1}{2}\sum_{i=1}^{50} (c_i - Ae^{bt_i} - k)^2.$$
+$$\ell(A, b, k; t_i, c_i) = 50\ln\left(\frac{1}{\sqrt{2\pi}}\right) -\frac{1}{2}\sum_{i=1}^{50} (c_i - Ae^{bt_i} - k)^2$$
 
 </details>
 

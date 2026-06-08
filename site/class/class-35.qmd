@@ -93,14 +93,14 @@ We're learning new vocabulary in this unit.  What we need is some repeated pract
 
 9. The area is $A = 11$. 
 
-10. The value $k$ is always $k =\frac{1}{A}$, which gives $k = \frac{1}{11}$ and so $$\ds f(x) = \begin{cases}\frac{4}{11}&0\leq x\leq 2\\\frac{1}{11}&2 < x\leq 5 \\ 0 &\text{otherwise} \end{cases}.$$ 
+10. The value $k$ is always $k =\frac{1}{A}$, which gives $k = \frac{1}{11}$ and so $$\ds f(x) = \begin{cases}\frac{4}{11}&0\leq x\leq 2\\\frac{1}{11}&2 < x\leq 5 \\ 0 &\text{otherwise} \end{cases}$$ 
 
 11. There are two ways to finish this.  One is to use the original graph and from it we obtain $P(X\leq 3) = \frac{8+1}{11} = \frac{9}{11}$ where the numerator is the area to the left of 3.  The second option is to use the graph of $f$, and then compute areas using it.  Using the formula for $f$, the area to the left of 3 is $(2)\frac{4}{11} + (1)\frac{1}{11}=\frac{9}{11}$.
 
 12. Calculate the expected value of $X$. We have lots of options, either using $g$ with the formula $\frac{\sum x_i A_i}{\sum A_i}$, or use $f$ with the formula $\sum x_i A_i$. The normalized function $f$ removes the need to divide by the total area.   
 
 Regardless of which option we choose, we must decide how many rectangles to use and then find the area and centroid of each. 
-    - We can use $f$ with two rectangles. The left rectangle has area $A_1 = 8/11$ and centroid at $x_1=1$. The right rectangle has area $A_2=3/11$ and centroid $x_2 = 3.5$.  We then compute $$E[X] = (1)\frac{8}{11} + (3.5)\frac{3}{11}.$$
+    - We can use $f$ with two rectangles. The left rectangle has area $A_1 = 8/11$ and centroid at $x_1=1$. The right rectangle has area $A_2=3/11$ and centroid $x_2 = 3.5$.  We then compute $$E[X] = (1)\frac{8}{11} + (3.5)\frac{3}{11}$$
     - We can use $f$ with 5 rectangles. Using equal sized rectangles makes this quick. The areas are A = c(4,4,1,1,1) centered at x = c(0.5,1.5,2.5,3.5,4.5). In R we can type sum(x*A) to rapidly compute the numerator and sum(A) to compute the denominator. $\frac{\sum x_i A_i}{\sum A_i}$
 
 13. To give a formula for $F(x)$, we need to compute $P(X\leq x)$. We can do this by calculating ratios of areas using either $f$ or $g$. Using $g$, note that the area of a rectangle from 0 to $x$ (for $0\leq x\leq 2$) is $A=4x$.  Dividing by the total area of 11 gives $P(X\leq x) = \frac{4x}{11}$ for $0\leq x\leq 2$.  For $2<x\leq 5$, we have a total area of $A = 8+(x-2)*1 = x+6$, which means $P(X\leq x) = \frac{x+6}{11}$ for $2< x\leq 5$.  This gives $$F(x) = \begin{cases}\frac{4x}{11}&0\leq x\leq 2\\\frac{x+6}{11}&2\leq x\leq 5\\0&x<0\\1&x>5\end{cases}.$$ Notice that plugging in 5 does gives us a probability of 1, as it should. 

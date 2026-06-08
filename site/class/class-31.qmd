@@ -103,7 +103,7 @@ We then consult the reading for the day, and notice that $D_2<0$ means we are at
 Have you heard the term least squares regression?
 The goal in linear regression is to to *minimize* the sum of the squared errors (the squared residuals), so it's another optimization problem. 
 To minimize the sum of the squared errors we must minimize
-$$S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2.$$
+$$S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2$$
 Consider the model $f_5(x; a) = ae^{-x}$ and data set given below. 
 
 ```r
@@ -123,7 +123,7 @@ What are the key steps ?
 - Determine the equation for the objective function (so the function of interest).
     - Do we want to maximize or minimize something?
     - In this case, we seek to minimize the sum of the squared errors. This means we must minimize
-$$S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2.$$
+$$S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2$$
 
 - Optimize
     - Find the first and second derivative(s)
@@ -133,7 +133,7 @@ $$S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i
 - Use the fitted model to answer question(s) of interest.
 
 The deterministic function is $f_5(x; a) = ae^{-x}$.
-The objective function is $$S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2 = \sum_{i=1}^{n}(y_i - ae^{-x_i})^2 .$$
+The objective function is $$S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2 = \sum_{i=1}^{n}(y_i - ae^{-x_i})^2 $$
 We then have 
 $$
 \begin{aligned}
@@ -142,9 +142,9 @@ $$
 \end{aligned}
 $$
 and
-$$\frac{d^2 S}{da^2} = 2\sum_{i=1}^n (e^{-x_i})^2.$$ 
+$$\frac{d^2 S}{da^2} = 2\sum_{i=1}^n (e^{-x_i})^2$$ 
 The critical points occur when $-2\sum_{i=1}^{n}(y_ie^{-x_i}) + 2a\sum_{i=1}^n (e^{-x_i})^2=0$, which means 
-$$a = \frac{2\sum_{i=1}^{n}(y_ie^{-x_i})}{ 2\sum_{i=1}^n (e^{-x_i})^2} = \frac{\sum_{i=1}^{n}(y_ie^{-x_i})}{ \sum_{i=1}^n (e^{-x_i})^2}.$$
+$$a = \frac{2\sum_{i=1}^{n}(y_ie^{-x_i})}{ 2\sum_{i=1}^n (e^{-x_i})^2} = \frac{\sum_{i=1}^{n}(y_ie^{-x_i})}{ \sum_{i=1}^n (e^{-x_i})^2}$$
 Because we're summing only nonnegative numbers in $\frac{d^2 S}{da^2} = 2\sum_{i=1}^n (e^{-x_i})^2$, it's clear that $\frac{d^2 S}{da^2}>0$, which means we have found a local minimum (we wanted to minimize the sum of the squared residuals).  
 
 Using R, we can compute $a$ (as well as plot the original data) as given below. 
@@ -247,7 +247,7 @@ plot(x,y,pch=16)
     - $f_4(x; a) = ae^{x}$
     - $f_5(x; a) = a\ln(x)$
 
-1.  Fit the model you selected to the data you selected by minimizing the sum of the squared errors, so $$S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2.$$
+1.  Fit the model you selected to the data you selected by minimizing the sum of the squared errors, so $$S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2$$
     - This is an optimization problem. Follow the optimization steps. Show your work on your chalkboard, and discuss any questions as you complete each step. 
     - Did you verify that you found a local minimum?
     - Note that $f_2$ is the only model with two parameters, which means it will be the only model that requires working with partial derivatives. 

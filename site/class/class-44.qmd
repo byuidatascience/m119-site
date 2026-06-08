@@ -149,7 +149,7 @@ Consider the random variable $X$ with the probability density function $$f(x) =
 \begin{cases}
 \frac{1}{6} &  1 \leq x \leq 7\\
 0 &  \text{otherwise}
-\end{cases}.$$
+\end{cases}$$
 We can think of this as a target function
 
 - Explain why $P(3 \leq X \leq 5) = \frac{2}{6}$. 

@@ -110,15 +110,15 @@ Explain why $\ds\sum_{i=1}^{44}\ln(2x_i^3) = 44\ln 2+3\sum_{i=1}^{44}\ln(x_i)$.
 <summary>Solution</summary>
 
 Because the logarithm of a product is a sum of the logarithms, we have
-$$\ds\sum_{i=1}^{44}\ln(2x_i^3) =\sum_{i=1}^{44}(\ln 2+\ln(x_i^3)).$$
+$$\ds\sum_{i=1}^{44}\ln(2x_i^3) =\sum_{i=1}^{44}(\ln 2+\ln(x_i^3))$$
 Addition can happen in any order, so we can add the $\ln 2$ terms up separately from the logarithm terms, which gives 
-$$\ds\sum_{i=1}^{44}\ln(2x_i^3) =\sum_{i=1}^{44}\ln 2+\sum_{i=1}^{44}\ln(x_i^3).$$
+$$\ds\sum_{i=1}^{44}\ln(2x_i^3) =\sum_{i=1}^{44}\ln 2+\sum_{i=1}^{44}\ln(x_i^3)$$
 Because of the rule $\log_a(M^p) = p\log_a(M)$, we can move the 3 to obtain
-$$\ds\sum_{i=1}^{44}\ln(2x_i^3) =\sum_{i=1}^{44}\ln 2+\sum_{i=1}^{44}3\ln(x_i).$$
+$$\ds\sum_{i=1}^{44}\ln(2x_i^3) =\sum_{i=1}^{44}\ln 2+\sum_{i=1}^{44}3\ln(x_i)$$
 Each term in latter sum is multiplied by 3, so we can factor out the 3 to obtain
-$$\ds\sum_{i=1}^{44}\ln(2x_i^3) =\sum_{i=1}^{44}\ln 2+3\sum_{i=1}^{44}\ln(x_i).$$
+$$\ds\sum_{i=1}^{44}\ln(2x_i^3) =\sum_{i=1}^{44}\ln 2+3\sum_{i=1}^{44}\ln(x_i)$$
 The last thing to note is that we are adding $\ln 2$ up 44 times, which allows us to remove the sum and obtain 
-$$\ds\sum_{i=1}^{44}\ln(2x_i^3) = 44\ln 2+3\sum_{i=1}^{44}\ln(x_i).$$
+$$\ds\sum_{i=1}^{44}\ln(2x_i^3) = 44\ln 2+3\sum_{i=1}^{44}\ln(x_i)$$
 
 </details>
 
@@ -392,8 +392,8 @@ We'll spend the day working through various parts of Project 2. The work below w
 
 1. Assume the errors are independent and normally distributed (with mean of 0 and standard deviation of 1). Assume $(t_i,y_i)$ is a list of 44 data points to be provided. Show that the loglikelihood function for the errors when fitting $f_1$ to the 44 data points is $$ \ell_1 = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i)^2.$$  This was part of Task 1, so please revisit the computation together. 
 
-1. Compute the first derivative of $\ell_1$ with respect to $a_1$ and show that it can be written in the form $$\frac{d\ell_1}{da_1} = \left(\sum_{i=1}^{44} t_i(y_i-100)\right) - \left(\sum_{i=1}^{44} t_i^2\right) a_1.$$
-1. Compute the second derivative of $\ell_1$ with respect to $a_1$ and show that it can be written in the form $$\frac{d^2\ell_1}{da_1^2} = -\sum_{i=1}^{44} t_i^2.$$
+1. Compute the first derivative of $\ell_1$ with respect to $a_1$ and show that it can be written in the form $$\frac{d\ell_1}{da_1} = \left(\sum_{i=1}^{44} t_i(y_i-100)\right) - \left(\sum_{i=1}^{44} t_i^2\right) a_1$$
+1. Compute the second derivative of $\ell_1$ with respect to $a_1$ and show that it can be written in the form $$\frac{d^2\ell_1}{da_1^2} = -\sum_{i=1}^{44} t_i^2$$
 
 1. Use R (with seed=123) to actually compute the coefficients in your first and second derivatives above. (Use the sum function.) Check that you obtain the following:
     - $\frac{d\ell_1}{da_1} = 172746.8 - 328767530 a_1$

@@ -118,16 +118,16 @@ r_i(m, b; x_i, t_i) &= t_i - f(x_i; m, b) \\
 $$
 
 Because the errors are independent we can multiply the probability models to find the joint probability model as 
-$$J(x_i,t_i;m,b) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}.$$ 
+$$J(x_i,t_i;m,b) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}$$ 
  
 The likelihood function (interchange the role of variables and parameters) is then 
-$$L(m,b; x_i,t_i) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}.$$
+$$L(m,b; x_i,t_i) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}$$
 
 The natural log of the likelihood function gives the loglikelihood function as 
-$$\ell(m,b; x_i,t_i) = \ln\left(\prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}\right).$$
+$$\ell(m,b; x_i,t_i) = \ln\left(\prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}\right)$$
 
 Using the properties of logarithms and sums we find 
-$$\ell(m,b; x_i,t_i) = 400\ln\left(\frac{1}{\sqrt{2\pi}}\right) -\frac{1}{2}\sum_{i=1}^{400} (t_i - mx_i -b)^2.$$
+$$\ell(m,b; x_i,t_i) = 400\ln\left(\frac{1}{\sqrt{2\pi}}\right) -\frac{1}{2}\sum_{i=1}^{400} (t_i - mx_i -b)^2$$
 
 </details>
 

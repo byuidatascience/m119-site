@@ -217,7 +217,7 @@ all.equal(P(2,3),F(3)-F(2))
 
 Now let's swap to Mathematica and use definite integral notation $\int_a^b f(x) dx$ to do the same computations.
 Remember, a definite integral is just the symbol for letting the number of rectangles approach infinity, written symbolically as
-$$\int_a^b f(x) dx =\lim_{n\to \infty} \sum_{i=1}^nf(x_i)\Delta x_i.$$
+$$\int_a^b f(x) dx =\lim_{n\to \infty} \sum_{i=1}^nf(x_i)\Delta x_i$$
 
 We first find the area under $g$. 
 (Remember to use shift + enter to run the command in Mathematica.)

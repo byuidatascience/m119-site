@@ -16,4 +16,4 @@ For $x>0$, $b>0$, and $b \neq 1$, $y = \log_b(x)$ is equivalent to $b^y = x$
 </details>
 
 The key idea is that we can rewrite any logarithm in exponential form, as
-$$\huge{y = \log_b(x) \Leftrightarrow b^y = x}.$$
+$$\huge{y = \log_b(x) \Leftrightarrow b^y = x}$$

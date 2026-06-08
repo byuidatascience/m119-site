@@ -19,7 +19,7 @@ $$\left\{
 c_{1,1}x + c_{1,2}y =b_1 \\ 
 c_{2,1}x + c_{2,2}y = b_2 
 \end{align*} 
-\right.$$
+\right$$
 Note that the variables above are different than the ones from last class period, so your answer may look a bit different. 
 Solve the system, obtaining values for $x$ and $y$, and come to class with any questions you have about how to obtain the solution.
 
@@ -86,7 +86,7 @@ y <- bulb$percent_intensity
 
 2. 
 For the function $f_1(t; a_1) = 100 + a_1t$, we found the loglikelihood function to be 
-$$\ell_1(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i)^2.$$
+$$\ell_1(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i)^2$$
 Find the value for $a_1$ that maximizes the loglikelihood. 
 
 <details>
@@ -101,7 +101,7 @@ $$\begin{align*}
 &= \left(\sum_{i}^{44} (y_i - 100)t_i\right) - a_1\left(\sum_{i}^{44}t_i^2\right)
 \end{align*}$$
 We need to find where the derivative equals zero, which means we must solve 
-$$\left(\sum_{i}^{44} (y_i - 100)t_i\right) - a_1\left(\sum_{i}^{44}t_i^2\right)=0.$$
+$$\left(\sum_{i}^{44} (y_i - 100)t_i\right) - a_1\left(\sum_{i}^{44}t_i^2\right)=0$$
 Note that this is of the form $b-a_1 d=0$ (I'm avoiding the letter $c$ because $c()$ is a command in R).
 The solution is simply $b/d$ where $b = \left(\sum_{i}^{44} (y_i - 100)t_i\right)$ and $d =  \left(\sum_{i}^{44}t_i^2\right)$.
 The code below computes this value, obtaining $a_1 = 0.0005254377$. 
@@ -140,7 +140,7 @@ $$\left\{
 \left(\sum_{i=1}^{44} (y_i - 100)t_i\right) - \left(\sum_{i=1}^{44}t_i^2\right)a_1 - \left(\sum_{i=1}^{44}t_i^3\right)a_2 &= 0 \\ 
 \left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right) - \left(\sum_{i=1}^{44}t_i^3\right)a_1 - \left(\sum_{i=1}^{44}t_i^4\right)a_2 &= 0.
 \end{align*}
-\right.$$
+\right$$
 We can write the system above in the form
 $$\left\{
 \begin{align*}
@@ -155,7 +155,7 @@ $$
 c_{1,1}x + c_{1,2}y = b_1 \\ 
 c_{2,1}x + c_{2,2}y = b_2
 \end{align*} 
-\right.$$
+\right$$
 whose solution we can quickly find using the results of our previous work. Solve this system.
 
 <details>
@@ -297,12 +297,12 @@ What we did today in class can be repeated in general to locate the parameters w
 
 #### Maximizing $\ell_5$
 For the function $f_5(t; a_1) = 100e^{-0.00005t} + a_1te^{-0.00005t}$, we found the loglikelihood function to be 
-$$\ell_5(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i=1}^{44} (y_i - 100e^{-0.00005t_i} - a_1t_ie^{-0.00005t_i})^2.$$
+$$\ell_5(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i=1}^{44} (y_i - 100e^{-0.00005t_i} - a_1t_ie^{-0.00005t_i})^2$$
 Find the value for $a_1$ that maximizes the loglikelihood. 
 
 #### Locating Critical Values of $\ell_6$
 In project 2 Task 1 we obtained 
-$$\ell_6(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i - a_2(1-e^{-0.0003t_i}))^2.$$
+$$\ell_6(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i - a_2(1-e^{-0.0003t_i}))^2$$
 
 1. Compute $\frac{\partial\ell_6}{\partial a_1}$ and $\frac{\partial\ell_6}{\partial a_2}$.
 

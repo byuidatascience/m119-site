@@ -94,7 +94,7 @@ $$F(x) = \int_{-\infty}^x f(t)dt =
 \begin{cases}
 \int_{-\infty}^x 0dt = 0 & x < 0 \\ \\ 
 \int_{0}^x e^{-t}dt = 1-e^{-x} & x \geq 0
-\end{cases}.$$
+\end{cases}$$
 
 ```
 $Assumptions = x > 0;
@@ -150,7 +150,7 @@ $$F(x) =
 0 & x \leq 0 \\ \\ 
 \frac{1}{8}x^3 - \frac{3}{4}x^2 + \frac{3}{2}x & 0 < x < 2 \\ \\
 1 & x \geq2
-\end{cases}.$$
+\end{cases}$$
 For $x$ values between 0 and 2, the following Mathematica code gives $F(x)$. 
 
 ```

@@ -21,7 +21,7 @@ For Unit 3, the reading as well as many practice exercises appear in the documen
 1. Using Mathematica, compute each of the following.
     - The area under $g(x) = 2x$ for $0\leq x\leq 4$, so compute $\int_0^4 2x dx$. 
     - The area under $g(x) = \sqrt{9-x^2}$ for $-3\leq x\leq 3$, so compute $\int_{-3}^{3} \sqrt{9-x^2} dx$.
-    - The centroid of the region under $g(x) = \sqrt{9-x^2}$ for $-3\leq x\leq 3$, so compute $$\dfrac{\int_{-3}^{3} x\sqrt{9-x^2} dx}{\int_{-3}^{3} \sqrt{9-x^2} dx}.$$
+    - The centroid of the region under $g(x) = \sqrt{9-x^2}$ for $-3\leq x\leq 3$, so compute $$\dfrac{\int_{-3}^{3} x\sqrt{9-x^2} dx}{\int_{-3}^{3} \sqrt{9-x^2} dx}$$
 
 <details>
 <summary>Solutions</summary>

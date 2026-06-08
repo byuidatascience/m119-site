@@ -123,9 +123,9 @@ For the function $f(x) = x^4$, let $g(x)=f'(x)$.  Compute $g'(x)$.  Then compute
 <summary>Solution</summary>
 
 We know $f'(x) = 3x^2$, and so the slope of this line is $f'(2) = 12$.  The linearization (tangent line) passes through the point $(2,f(2))=(2,8)$.  This gives an equation of the linearlization as
-$$y-8=12(x-2).$$
+$$y-8=12(x-2)$$
 We can solve for $y$ to obtain 
-$$y=8+12(x-2) \quad\text{or}\quad y=12x-16.$$
+$$y=8+12(x-2) \quad\text{or}\quad y=12x-16$$
 All three of the forms above are correct. 
 We can plot the function along with it's linearization in [Desmos](https://www.desmos.com/calculator/3bifvksxqy).
 

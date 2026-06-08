@@ -476,7 +476,7 @@ Our goal was to look locally at the function (or make the change in $x$ really s
 
 We computed and simplified the quantity $\frac{f(x+dx)-f(x)}{dx}$ above. 
 This quantity is called the difference quotient of a function. By letting $dx$ approach zero (a formal process we have not yet fully defined), we obtain the derivative of $f$ at $x$.  It's common to write this process using the notation
-$$f'(x) = \lim_{dx\to 0}\frac{f(x+dx)-f(x)}{dx}.$$ 
+$$f'(x) = \lim_{dx\to 0}\frac{f(x+dx)-f(x)}{dx}$$ 
 
 In our class, we’ll learn rules to compute the derivatives exactly for power functions, exponential functions, and logarithmic functions. In addition we’ll learn how to compute derivatives of functions obtained from others through multiplication by a constant (or scalar multiplication), sums/differences, products, quotients, and function composition. The prep for tomorrow has you learn a few of these rules.
 

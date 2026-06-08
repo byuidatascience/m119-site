@@ -24,7 +24,7 @@ Write an equation in one variable for the described quantity in each story below
 1. A farmer has 2400 feet of fencing to build a fence creating a rectangular corral (or pen) for some of the animals. Write an equation in one variable for the area of the rectangular corral. (Our goal will be to build the corral with maximum area.)
 
 1. A different farmer also has 2400 feet of fencing to build a fence creating a rectangular corral, but she plans to use the wall of a long group of buildings as one of the sides of the rectangular corral. Write an equation in one variable for the area of the rectangular corral. (Our goal will be to build the corral with maximum area.)
-1. A company is building square-bottomed boxes with no tops. The material for the bottom costs \$2 per cm'^2^' and the material for the sides costs \$1 per cm'^2^'. The company plans to charge \$96 for one box. Write an equation in one variable for the volume of the box. (Our goal will be to build a box with maximum volume.)
+1. A company is building square-bottomed boxes with no tops. The material for the bottom costs \$2 per cm$^2$ and the material for the sides costs \$1 per cm$^2$. The company plans to charge \$96 for one box. Write an equation in one variable for the volume of the box. (Our goal will be to build a box with maximum volume.)
 
 After you have written down each function, open R and plot each function to visually identify where the maximum of each function occurs. 
 
