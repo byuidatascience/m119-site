@@ -10,6 +10,8 @@
 
 ### Site-wide sweep: drop trailing `.` from command-prompt lines ending in inline math
 
+**Status:** **superseded — applied 2026-06-08 in commit `dc79a80`** (97 lines across 30 files, with the multi-sentence safety guard catching the edge cases automatically).
+
 **Trigger:** when a maintainer can afford the visual review (the rule needs human eyes — see below) OR batched with the post-semester content review.
 **Routes-to:** sprint (single PR, content review).
 **Added:** 2026-06-08
