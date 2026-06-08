@@ -898,11 +898,9 @@ Answer (level 3 problem)
 </section>
 <section id="practice-identifying-extrema" class="level3">
 <h3 class="anchored" data-anchor-id="practice-identifying-extrema">(2) Practice – Identifying Extrema</h3>
-<ul>
-<li>Work through the following exercises identifying extrema.
+<p>Work through the following exercises identifying extrema.</p>
 <ul>
 <li>Find any extrema of <span class="math inline">\(A(x) = 1200x - x^2\)</span>.</li>
-</ul></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Approximate the zeros of the first derivative.</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>DA <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="dv">1200-2</span><span class="sc">*</span>x}</span>
@@ -922,44 +920,50 @@ Answer (level 3 problem)
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">A</span>(cv)</span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">A</span>(<span class="dv">600</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>- Find any extrema of $A(x) = 2400x - 2x^2$.</code></pre>
+<ul>
+<li>Find any extrema of <span class="math inline">\(A(x) = 2400x - 2x^2\)</span>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Approximate the zeros of the first derivative.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>DA <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="dv">2400-4</span><span class="sc">*</span>x}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(DA,<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1200</span>))<span class="sc">$</span>root</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>cv</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Use R as a calculator to compute the second derivative at critical values. </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>D2A <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="sc">-</span><span class="dv">4</span> <span class="sc">+</span> <span class="dv">0</span><span class="sc">*</span>x}</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">D2A</span>(cv)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">D2A</span>(<span class="dv">600</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Use R to graph the function. You can use the code below, or use the new my_plot() function that we defined in class. </span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="dv">2400</span><span class="sc">*</span>x <span class="sc">-</span> <span class="dv">2</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span>}</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">1500</span>,<span class="fl">0.1</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="fl">0.25</span>,<span class="fl">0.25</span>))</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,<span class="fu">A</span>(x),<span class="at">type =</span> <span class="st">"l"</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">A</span>(cv)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">A</span>(<span class="dv">600</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Find any extrema of <span class="math inline">\(V(x) = 24x - \frac{1}{2}x^3\)</span>.</li>
+</ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Approximate the zeros of the first derivative.</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>DA <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="dv">2400-4</span><span class="sc">*</span>x}</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(DA,<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1200</span>))<span class="sc">$</span>root</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>cv</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>DV <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="dv">24</span> <span class="sc">-</span> (<span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span>}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>cv<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(DV,<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))<span class="sc">$</span>root</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>cv<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(DV,<span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">0</span>))<span class="sc">$</span>root</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Use R as a calculator to compute the second derivative at critical values. </span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>D2A <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="sc">-</span><span class="dv">4</span> <span class="sc">+</span> <span class="dv">0</span><span class="sc">*</span>x}</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">D2A</span>(cv)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">D2A</span>(<span class="dv">600</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Use R to graph the function. You can use the code below, or use the new my_plot() function that we defined in class. </span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="dv">2400</span><span class="sc">*</span>x <span class="sc">-</span> <span class="dv">2</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span>}</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">1500</span>,<span class="fl">0.1</span>)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="fl">0.25</span>,<span class="fl">0.25</span>))</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,<span class="fu">A</span>(x),<span class="at">type =</span> <span class="st">"l"</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">A</span>(cv)</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">A</span>(<span class="dv">600</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>- Find any extrema of $V(x) = 24x - \frac{1}{2}x^3$.</code></pre>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Approximate the zeros of the first derivative.</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>DV <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="dv">24</span> <span class="sc">-</span> (<span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span>}</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>cv<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(DV,<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))<span class="sc">$</span>root</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>cv<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(DV,<span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">0</span>))<span class="sc">$</span>root</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Use R as a calculator to compute the second derivative at critical values. </span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>D2V <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="sc">-</span><span class="dv">3</span><span class="sc">*</span>x}</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">D2V</span>(cv<span class="fl">.1</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">D2V</span>(<span class="sc">-</span><span class="dv">4</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">D2V</span>(cv<span class="fl">.2</span>)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">D2V</span>(<span class="dv">4</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Use R to graph the function. You can use the code below, or use the new my_plot() function that we defined in class. </span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>V <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="dv">24</span><span class="sc">*</span>x <span class="sc">-</span> (<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span>x<span class="sc">^</span><span class="dv">3</span>}</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">7</span>,<span class="fl">0.01</span>)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="fl">0.25</span>,<span class="fl">0.25</span>))</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,<span class="fu">V</span>(x),<span class="at">type =</span> <span class="st">"l"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>- Give your own function (or grab one from KnewtonAlta), and modify the code above to help you locate an extrema of your chosen function. Repeat this as many times as you need, to feel comfortable using R to locate extreme values.</code></pre>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>D2V <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="sc">-</span><span class="dv">3</span><span class="sc">*</span>x}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">D2V</span>(cv<span class="fl">.1</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">D2V</span>(<span class="sc">-</span><span class="dv">4</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">D2V</span>(cv<span class="fl">.2</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">D2V</span>(<span class="dv">4</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Use R to graph the function. You can use the code below, or use the new my_plot() function that we defined in class. </span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>V <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="dv">24</span><span class="sc">*</span>x <span class="sc">-</span> (<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span>x<span class="sc">^</span><span class="dv">3</span>}</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">7</span>,<span class="fl">0.01</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="fl">0.25</span>,<span class="fl">0.25</span>))</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,<span class="fu">V</span>(x),<span class="at">type =</span> <span class="st">"l"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Give your own function (or grab one from KnewtonAlta), and modify the code above to help you locate an extrema of your chosen function. Repeat this as many times as you need, to feel comfortable using R to locate extreme values.</li>
+</ul>
 </section>
 <section id="reflection-writing-objectives-functions" class="level3">
 <h3 class="anchored" data-anchor-id="reflection-writing-objectives-functions">(3) Reflection – Writing Objectives Functions</h3>
@@ -1006,7 +1010,7 @@ b_{2,1}x + b_{2,2}y &amp;= c_2
 \end{array}
 \right.\]</span> has the solution <span class="math display">\[x = \frac{c_1b_{2,2} - b_{1,2}c_2}{b_{1,1}b_{2,2} - b_{1,2}b_{2,1}},\quad y = \frac{b_{1,1}c_2 - c_1b_{2,1}}{b_{1,1}b_{2,2} - b_{1,2}b_{2,1}}\]</span></p>
 <ol type="1">
-<li>Solve <span class="math inline">\(2x+3y=4,5x+6y=7\)</span>.</li>
+<li>Solve <span class="math inline">\(2x+3y=4,5x+6y=7\)</span></li>
 </ol>
 <details>
 <summary>
@@ -1019,31 +1023,31 @@ Solution
 Solution (R)
 </summary>
 <p>Plug the coefficients into the closed-form solution, then wrap it in a reusable function so we can reuse it for the next two problems.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>b11 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>b12 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>b21 <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>b22 <span class="ot">&lt;-</span> <span class="dv">6</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">&lt;-</span> <span class="dv">7</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> (c1<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>c2)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> (b11<span class="sc">*</span>c2<span class="sc">-</span>c1<span class="sc">*</span>b21)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>x</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>y</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>solve_system <span class="ot">&lt;-</span> <span class="cf">function</span>(b11,b12,c1,b21,b22,c2){</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    (c1<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>c2)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21),</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    (b11<span class="sc">*</span>c2<span class="sc">-</span>c1<span class="sc">*</span>b21)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21)</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">solve_system</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">solve_system</span>(b11,b12,c1,b21,b22,c2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>b11 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>b12 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>b21 <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>b22 <span class="ot">&lt;-</span> <span class="dv">6</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> (c1<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>c2)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> (b11<span class="sc">*</span>c2<span class="sc">-</span>c1<span class="sc">*</span>b21)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>y</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>solve_system <span class="ot">&lt;-</span> <span class="cf">function</span>(b11,b12,c1,b21,b22,c2){</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    (c1<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>c2)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    (b11<span class="sc">*</span>c2<span class="sc">-</span>c1<span class="sc">*</span>b21)<span class="sc">/</span>(b11<span class="sc">*</span>b22<span class="sc">-</span>b12<span class="sc">*</span>b21)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="fu">solve_system</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">solve_system</span>(b11,b12,c1,b21,b22,c2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Source: <a href="https://github.com/bmwoodruff/m119-w26/blob/main/02-27.R">02-27.R</a></p>
 </details>
 <ol start="2" type="1">
-<li>Solve <span class="math inline">\(\pi a_1+a_2\ln 2 =7,(\sum_{i=1}^3i^2)a_1+(\sum_{i=1}^3(i-1))a_2=\sum_{i=1}^3 (i-i^2)\)</span>.</li>
+<li>Solve <span class="math inline">\(\pi a_1+a_2\ln 2 =7,(\sum_{i=1}^3i^2)a_1+(\sum_{i=1}^3(i-1))a_2=\sum_{i=1}^3 (i-i^2)\)</span></li>
 </ol>
 <details>
 <summary>
@@ -1054,7 +1058,7 @@ Solution
 y = \dfrac{ (\pi)(\sum_{i=1}^3 (i-i^2)) - (7)(\sum_{i=1}^3i^2) }{ (\pi)(\sum_{i=1}^3(i-1)) - (\ln 2)(\sum_{i=1}^3i^2) }\]</span></p>
 </details>
 <ol start="3" type="1">
-<li>Solve <span class="math inline">\(\sum_{n=1}^{44}(nx+3y-7)=0,\sum_{n=1}^{44}(n^2-5x-ny)=0\)</span>.</li>
+<li>Solve <span class="math inline">\(\sum_{n=1}^{44}(nx+3y-7)=0,\sum_{n=1}^{44}(n^2-5x-ny)=0\)</span></li>
 </ol>
 <details>
 <summary>
@@ -1078,28 +1082,28 @@ x = \dfrac{ (\sum_{n=1}^{44}7)(\sum_{n=1}^{44}n) - (\sum_{n=1}^{44}3)(\sum_{n=1}
 y = \dfrac{ (\sum_{n=1}^{44}n)(\sum_{n=1}^{44}n^2) - (\sum_{n=1}^{44}7)(\sum_{n=1}^{44}5) }{ (\sum_{n=1}^{44}n)(\sum_{n=1}^{44}n) - (\sum_{n=1}^{44}3)(\sum_{n=1}^{44}5) }
 \]</span> We can use R to compute the solution, using</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">44</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>b11 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>b12 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">3</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n) <span class="co">#Why have 0*n?</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">7</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>b21 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">5</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>b22 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> (c1<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>c2)<span class="sc">/</span>(b11<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>b21)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> (b11<span class="sc">*</span>c2 <span class="sc">-</span> c1<span class="sc">*</span>b21)<span class="sc">/</span>(b11<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>b21)</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Check</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y <span class="sc">==</span> c1</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y <span class="sc">==</span> c2</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Remember floating point arithmetic can cause a problem with the logic checks above. </span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y <span class="sc">-</span> c1</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y <span class="sc">-</span> c2</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">#R has a function to help with this, called all.equal()</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y,c1)</span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y,c2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">44</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>b11 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>b12 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">3</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n) <span class="co">#Why have 0*n?</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">7</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>b21 <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">5</span><span class="sc">+</span><span class="dv">0</span><span class="sc">*</span>n)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>b22 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(n<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> (c1<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>c2)<span class="sc">/</span>(b11<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>b21)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> (b11<span class="sc">*</span>c2 <span class="sc">-</span> c1<span class="sc">*</span>b21)<span class="sc">/</span>(b11<span class="sc">*</span>b22 <span class="sc">-</span> b12<span class="sc">*</span>b21)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Check</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y <span class="sc">==</span> c1</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y <span class="sc">==</span> c2</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Remember floating point arithmetic can cause a problem with the logic checks above. </span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y <span class="sc">-</span> c1</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y <span class="sc">-</span> c2</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#R has a function to help with this, called all.equal()</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(b11<span class="sc">*</span>x<span class="sc">+</span>b12<span class="sc">*</span>y,c1)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(b21<span class="sc">*</span>x<span class="sc">+</span>b22<span class="sc">*</span>y,c2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
 <section id="group-meeting" class="level2">
@@ -1183,17 +1187,17 @@ Answers
 <li><p>State the value of <span class="math inline">\(a_1\)</span> that gives the location of maximum loglikelihood.</p></li>
 <li><p>Use the code below to plot the lightbulb data (using the seed 123) along with the fitted model <span class="math inline">\(f_1(t)\)</span> on the same axes, updating the value you obtained for <span class="math inline">\(a_1\)</span>.</p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data4led)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>bulb <span class="ot">&lt;-</span> <span class="fu">led_bulb</span>(<span class="dv">1</span>,<span class="at">seed=</span><span class="dv">123</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>ti <span class="ot">&lt;-</span> bulb<span class="sc">$</span>hours</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>yi <span class="ot">&lt;-</span> bulb<span class="sc">$</span>percent_intensity</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ti,yi)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>my_a1 <span class="ot">&lt;-</span> <span class="fl">0.0002</span> <span class="co">#Will need to be updated</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(t,<span class="at">a1=</span>my_a1){<span class="dv">100</span><span class="sc">+</span>a1<span class="sc">*</span>t}</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5000</span>,<span class="dv">10</span>) </span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,<span class="fu">f1</span>(x,a1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data4led)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>bulb <span class="ot">&lt;-</span> <span class="fu">led_bulb</span>(<span class="dv">1</span>,<span class="at">seed=</span><span class="dv">123</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ti <span class="ot">&lt;-</span> bulb<span class="sc">$</span>hours</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>yi <span class="ot">&lt;-</span> bulb<span class="sc">$</span>percent_intensity</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ti,yi)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>my_a1 <span class="ot">&lt;-</span> <span class="fl">0.0002</span> <span class="co">#Will need to be updated</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(t,<span class="at">a1=</span>my_a1){<span class="dv">100</span><span class="sc">+</span>a1<span class="sc">*</span>t}</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5000</span>,<span class="dv">10</span>) </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,<span class="fu">f1</span>(x,a1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="activity---project-2-practice-with-f_2" class="level3">
 <h3 class="anchored" data-anchor-id="activity---project-2-practice-with-f_2">Activity - Project 2 Practice with <span class="math inline">\(f_2\)</span></h3>
