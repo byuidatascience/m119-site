@@ -964,7 +964,7 @@ Integrate[4.5, {x, 3, 5}]</code></pre>
 \begin{cases}
 x - 1 &amp; 1 \leq x \leq 3 \\
 0 &amp; \text{otherwise}
-\end{cases}.\]</span> When a dart hits the point <span class="math inline">\((x,y)\)</span>, we’ll record just the <span class="math inline">\(x\)</span>-coordinate and let <span class="math inline">\(X\)</span> represent this random variable. As you complete the exercises below, write any integrals you need to compute on the board, and then compute them with Mathematica.</p>
+\end{cases}\]</span> When a dart hits the point <span class="math inline">\((x,y)\)</span>, we’ll record just the <span class="math inline">\(x\)</span>-coordinate and let <span class="math inline">\(X\)</span> represent this random variable. As you complete the exercises below, write any integrals you need to compute on the board, and then compute them with Mathematica.</p>
 <ol type="1">
 <li><p>Draw the function <span class="math inline">\(g(x)\)</span>.</p></li>
 <li><p>Find the area below <span class="math inline">\(g(x)\)</span> and above the <span class="math inline">\(x\)</span>-axis.</p>
@@ -1019,13 +1019,13 @@ Probability Density Function (PDF)
 <summary>
 Expected Value (continuous random variable)
 </summary>
-<p>The <strong>expected value</strong> (or mean) of a <em>continuous</em> random variable <span class="math inline">\(X\)</span> with probability density function <span class="math inline">\(f(x)\)</span> is <span class="math display">\[\text{E}[X] = \int_{-\infty}^{\infty} x f(x) dx.\]</span></p>
+<p>The <strong>expected value</strong> (or mean) of a <em>continuous</em> random variable <span class="math inline">\(X\)</span> with probability density function <span class="math inline">\(f(x)\)</span> is <span class="math display">\[\text{E}[X] = \int_{-\infty}^{\infty} x f(x) dx\]</span></p>
 </details>
 <details>
 <summary>
 Variance (continuous random variable)
 </summary>
-<p>The <strong>variance</strong> of a <em>continuous</em> random variable <span class="math inline">\(X\)</span> with probability density function <span class="math inline">\(f(x)\)</span> is <span class="math display">\[\text{Var}[X] = \int_{-\infty}^{\infty} (x - \text{E}[X])^2 f(x) dx.\]</span> Note: The standard deviation is equal to the square root of the variance, <span class="math inline">\(\sigma_X = \sqrt{\text{Var}[X]}\)</span>.</p>
+<p>The <strong>variance</strong> of a <em>continuous</em> random variable <span class="math inline">\(X\)</span> with probability density function <span class="math inline">\(f(x)\)</span> is <span class="math display">\[\text{Var}[X] = \int_{-\infty}^{\infty} (x - \text{E}[X])^2 f(x) dx\]</span> Note: The standard deviation is equal to the square root of the variance, <span class="math inline">\(\sigma_X = \sqrt{\text{Var}[X]}\)</span>.</p>
 </details>
 <p>You may encounter the expected value, variance, and standard deviation of random variables in future courses. Our present goal is to practice using definite integrals to compute these values. The Method of Moments compares these values from a distribution to the corresponding values from a distribution, and uses that comparison to fit data to a model.</p>
 </section>
@@ -1093,7 +1093,7 @@ $Assumptions = Null</code></pre>
 Solution
 </summary>
 <p>We now solve the system obtained by letting (1) the mean of the data equal the expected value of the probability model and (2) and the variance of the data equal the variance of the probability model. This means we will solve the system <span class="math display">\[\text{mean(Ng)}=\frac{\alpha}{\beta}\text{ and } \text{var(Ng)} = \frac{\alpha}{\beta^2}\]</span> for the parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>.</p>
-<p>To simplify notation, let <span class="math inline">\(m = \text{mean(Ng)}\)</span> and <span class="math inline">\(v = \text{var(Ng)}\)</span>. We then must solve <span class="math inline">\(m=\frac{\alpha}{\beta}\)</span> and <span class="math inline">\(v = \frac{\alpha}{\beta^2}\)</span> for <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. This is the same as solving the system <span class="math inline">\(\alpha = m\beta\)</span> and <span class="math inline">\(\alpha = v\beta ^2\)</span>. In particular, this means that <span class="math inline">\(m\beta = v\beta^2\)</span>, which solving for <span class="math inline">\(\beta\)</span> yields <span class="math inline">\(\beta = \frac{m}{v}\)</span>. Plugging this value for <span class="math inline">\(\beta\)</span> into <span class="math inline">\(\alpha = m\beta\)</span>, gives <span class="math inline">\(\alpha = \frac{m^2}{v}\)</span>. Our solution to this system is <span class="math display">\[\alpha = \frac{m^2}{v} \text{ and }\beta = \frac{m}{v}.\]</span></p>
+<p>To simplify notation, let <span class="math inline">\(m = \text{mean(Ng)}\)</span> and <span class="math inline">\(v = \text{var(Ng)}\)</span>. We then must solve <span class="math inline">\(m=\frac{\alpha}{\beta}\)</span> and <span class="math inline">\(v = \frac{\alpha}{\beta^2}\)</span> for <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. This is the same as solving the system <span class="math inline">\(\alpha = m\beta\)</span> and <span class="math inline">\(\alpha = v\beta ^2\)</span>. In particular, this means that <span class="math inline">\(m\beta = v\beta^2\)</span>, which solving for <span class="math inline">\(\beta\)</span> yields <span class="math inline">\(\beta = \frac{m}{v}\)</span>. Plugging this value for <span class="math inline">\(\beta\)</span> into <span class="math inline">\(\alpha = m\beta\)</span>, gives <span class="math inline">\(\alpha = \frac{m^2}{v}\)</span>. Our solution to this system is <span class="math display">\[\alpha = \frac{m^2}{v} \text{ and }\beta = \frac{m}{v}\]</span></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">var</span>(Ng)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>alpha</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">/</span><span class="fu">var</span>(Ng)</span>
@@ -1173,7 +1173,7 @@ Solution
 <summary>
 Solution
 </summary>
-<p>We compute <span class="math display">\[P(X &gt; 10) = \int_{10}^{\infty}\frac{1}{\sqrt{2\pi 10.979}}e^{-\frac{1}{2}\left(\frac{x-2.792}{3.313}\right)^2}dx= 0.0147976.\]</span> The Mathematica code chunk below gives the solution above.</p>
+<p>We compute <span class="math display">\[P(X &gt; 10) = \int_{10}^{\infty}\frac{1}{\sqrt{2\pi 10.979}}e^{-\frac{1}{2}\left(\frac{x-2.792}{3.313}\right)^2}dx= 0.0147976\]</span> The Mathematica code chunk below gives the solution above.</p>
 <pre><code>f1Fitted = 1/Sqrt[2*\[Pi]*10.97915]*Exp[-1/2*((x - 2.79164)/Sqrt[10.97915])^2];
 Integrate[f1Fitted, {x, 10, Infinity}]
 Re[Integrate[f1Fitted, {x, 10, Infinity}]]
@@ -1204,7 +1204,7 @@ Solution
 <summary>
 Solution
 </summary>
-<p>To compute the probability that a the concentration of explosives in a soil sample will be more than 10mg/kg, we compute <span class="math display">\[P(X &gt; 10)=\int_{10}^\infty \frac{0.254^{0.710}}{\Gamma(0.710)}x^{0.710-1}e^{-0.254 x}dx.\]</span> Mathematica code for computing this definite integral is given below.</p>
+<p>To compute the probability that a the concentration of explosives in a soil sample will be more than 10mg/kg, we compute <span class="math display">\[P(X &gt; 10)=\int_{10}^\infty \frac{0.254^{0.710}}{\Gamma(0.710)}x^{0.710-1}e^{-0.254 x}dx\]</span> Mathematica code for computing this definite integral is given below.</p>
 <pre><code>Integrate[(0.2542674^0.709823/Gamma[0.709823])*x^(0.709823 - 1)*Exp[-0.2542674*x], {x, 10, Infinity}]</code></pre>
 </details>
 </section>

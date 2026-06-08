@@ -952,12 +952,12 @@ Answer
 </ol>
 <section id="using-the-maximum-likelihood-method" class="level4">
 <h4 class="anchored" data-anchor-id="using-the-maximum-likelihood-method">Using the Maximum Likelihood Method</h4>
-<p>Fit <span class="math inline">\(f\)</span> to the data by maximizing the loglikelihood of the errors assuming the errors are independent and normally distributed. Note the likelihood function for the errors of <span class="math inline">\(f\)</span> is <span class="math inline">\(L(a; \mathbf{x},\mathbf{y}) = \prod_{i=1}^n\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(y_i - ae^{x_i})^2}\)</span>. And the loglikelihood for the errors of <span class="math inline">\(f\)</span> is <span class="math display">\[\ell(a; \mathbf{x},\mathbf{y}) = n\ln(\frac{1}{\sqrt{2\pi}}) + \left( -\frac{1}{2} \right)\sum_{i=1}^{n}(y_i - ae^{x_i})^2.\]</span></p>
+<p>Fit <span class="math inline">\(f\)</span> to the data by maximizing the loglikelihood of the errors assuming the errors are independent and normally distributed. Note the likelihood function for the errors of <span class="math inline">\(f\)</span> is <span class="math inline">\(L(a; \mathbf{x},\mathbf{y}) = \prod_{i=1}^n\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(y_i - ae^{x_i})^2}\)</span>. And the loglikelihood for the errors of <span class="math inline">\(f\)</span> is <span class="math display">\[\ell(a; \mathbf{x},\mathbf{y}) = n\ln(\frac{1}{\sqrt{2\pi}}) + \left( -\frac{1}{2} \right)\sum_{i=1}^{n}(y_i - ae^{x_i})^2\]</span></p>
 <p>Once you obtain your value for <span class="math inline">\(a\)</span>, remember to plot the data along with your fitted model to visually verify your fit.</p>
 </section>
 <section id="using-least-squares" class="level4">
 <h4 class="anchored" data-anchor-id="using-least-squares">Using Least Squares</h4>
-<p>Fit <span class="math inline">\(f\)</span> to the data by minimizing the sum of squared errors. <em>This assumes the errors are independent and normally distributed.</em> Note the sum of squared errors of <span class="math inline">\(f\)</span> is <span class="math display">\[S(a; \mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - ae^{x_i})^2.\]</span></p>
+<p>Fit <span class="math inline">\(f\)</span> to the data by minimizing the sum of squared errors. <em>This assumes the errors are independent and normally distributed.</em> Note the sum of squared errors of <span class="math inline">\(f\)</span> is <span class="math display">\[S(a; \mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - ae^{x_i})^2\]</span></p>
 </section>
 <section id="answer-questions-with-the-model" class="level4">
 <h4 class="anchored" data-anchor-id="answer-questions-with-the-model">Answer questions with the Model</h4>

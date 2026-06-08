@@ -875,7 +875,7 @@ Solution
 <p>We then consult the reading for the day, and notice that <span class="math inline">\(D_2&lt;0\)</span> means we are at a saddle point.</p>
 </details>
 <ol start="2" type="1">
-<li>Have you heard the term least squares regression? The goal in linear regression is to to <em>minimize</em> the sum of the squared errors (the squared residuals), so it’s another optimization problem. To minimize the sum of the squared errors we must minimize <span class="math display">\[S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2.\]</span> Consider the model <span class="math inline">\(f_5(x; a) = ae^{-x}\)</span> and data set given below.</li>
+<li>Have you heard the term least squares regression? The goal in linear regression is to to <em>minimize</em> the sum of the squared errors (the squared residuals), so it’s another optimization problem. To minimize the sum of the squared errors we must minimize <span class="math display">\[S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2\]</span> Consider the model <span class="math inline">\(f_5(x; a) = ae^{-x}\)</span> and data set given below.</li>
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://chaz-clark.github.io/M119/data3_ls.csv"</span>))</span>
@@ -891,7 +891,7 @@ Solution
 <li>Determine the equation for the objective function (so the function of interest).
 <ul>
 <li>Do we want to maximize or minimize something?</li>
-<li>In this case, we seek to minimize the sum of the squared errors. This means we must minimize <span class="math display">\[S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2.\]</span></li>
+<li>In this case, we seek to minimize the sum of the squared errors. This means we must minimize <span class="math display">\[S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2\]</span></li>
 </ul></li>
 <li>Optimize
 <ul>
@@ -901,12 +901,12 @@ Solution
 </ul></li>
 <li>Use the fitted model to answer question(s) of interest.</li>
 </ul>
-<p>The deterministic function is <span class="math inline">\(f_5(x; a) = ae^{-x}\)</span>. The objective function is <span class="math display">\[S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2 = \sum_{i=1}^{n}(y_i - ae^{-x_i})^2 .\]</span> We then have <span class="math display">\[
+<p>The deterministic function is <span class="math inline">\(f_5(x; a) = ae^{-x}\)</span>. The objective function is <span class="math display">\[S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2 = \sum_{i=1}^{n}(y_i - ae^{-x_i})^2 \]</span> We then have <span class="math display">\[
 \begin{aligned}
 \frac{dS}{da} &amp;= \sum_{i=1}^{n} 2(y_i - ae^{-x_i}) (-e^{-x_i}) \\
               &amp;= -2 \sum_{i=1}^{n} (y_i e^{-x_i}) + 2a \sum_{i=1}^{n} (e^{-x_i})^2
 \end{aligned}
-\]</span> and <span class="math display">\[\frac{d^2 S}{da^2} = 2\sum_{i=1}^n (e^{-x_i})^2.\]</span> The critical points occur when <span class="math inline">\(-2\sum_{i=1}^{n}(y_ie^{-x_i}) + 2a\sum_{i=1}^n (e^{-x_i})^2=0\)</span>, which means <span class="math display">\[a = \frac{2\sum_{i=1}^{n}(y_ie^{-x_i})}{ 2\sum_{i=1}^n (e^{-x_i})^2} = \frac{\sum_{i=1}^{n}(y_ie^{-x_i})}{ \sum_{i=1}^n (e^{-x_i})^2}.\]</span> Because we’re summing only nonnegative numbers in <span class="math inline">\(\frac{d^2 S}{da^2} = 2\sum_{i=1}^n (e^{-x_i})^2\)</span>, it’s clear that <span class="math inline">\(\frac{d^2 S}{da^2}&gt;0\)</span>, which means we have found a local minimum (we wanted to minimize the sum of the squared residuals).</p>
+\]</span> and <span class="math display">\[\frac{d^2 S}{da^2} = 2\sum_{i=1}^n (e^{-x_i})^2\]</span> The critical points occur when <span class="math inline">\(-2\sum_{i=1}^{n}(y_ie^{-x_i}) + 2a\sum_{i=1}^n (e^{-x_i})^2=0\)</span>, which means <span class="math display">\[a = \frac{2\sum_{i=1}^{n}(y_ie^{-x_i})}{ 2\sum_{i=1}^n (e^{-x_i})^2} = \frac{\sum_{i=1}^{n}(y_ie^{-x_i})}{ \sum_{i=1}^n (e^{-x_i})^2}\]</span> Because we’re summing only nonnegative numbers in <span class="math inline">\(\frac{d^2 S}{da^2} = 2\sum_{i=1}^n (e^{-x_i})^2\)</span>, it’s clear that <span class="math inline">\(\frac{d^2 S}{da^2}&gt;0\)</span>, which means we have found a local minimum (we wanted to minimize the sum of the squared residuals).</p>
 <p>Using R, we can compute <span class="math inline">\(a\)</span> (as well as plot the original data) as given below.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://chaz-clark.github.io/M119/data3_ls.csv"</span>))</span>
@@ -977,7 +977,7 @@ Code for reading in the data sets.
 <li><span class="math inline">\(f_4(x; a) = ae^{x}\)</span></li>
 <li><span class="math inline">\(f_5(x; a) = a\ln(x)\)</span></li>
 </ul></li>
-<li><p>Fit the model you selected to the data you selected by minimizing the sum of the squared errors, so <span class="math display">\[S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2.\]</span></p>
+<li><p>Fit the model you selected to the data you selected by minimizing the sum of the squared errors, so <span class="math display">\[S(\text{parameters of $f$};\mathbf{x},\mathbf{y}) = \sum_{i=1}^{n}(y_i - f(x_i))^2\]</span></p>
 <ul>
 <li>This is an optimization problem. Follow the optimization steps. Show your work on your chalkboard, and discuss any questions as you complete each step.</li>
 <li>Did you verify that you found a local minimum?</li>

@@ -830,7 +830,7 @@ Solutions for 4 and 5
 0.3&amp; x=2\\
 0.3&amp; x=3\\
 0.3&amp; x=4\\
-\end{cases}.\]</span> The code below constructs a graphical representation of this pmf.</p>
+\end{cases}\]</span> The code below constructs a graphical representation of this pmf.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Shades a target diagram for a probability mass function. </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Inputs: </span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  x - a vector of data points</span></span>
@@ -891,7 +891,7 @@ Solutions for 4 and 5
 \begin{cases}
 5 &amp; \quad 0 \leq x \leq 6 \\ \\
 0 &amp; \quad \text{otherwise}.
-\end{cases}.\]</span></p>
+\end{cases}\]</span></p>
 <ol type="1">
 <li><p>Find the total area of the target.</p></li>
 <li><p>Compute the probability that a dart will land with an <span class="math inline">\(x\)</span> coordinate at most 4, so compute <span class="math inline">\(P(X\leq 4)\)</span>.</p></li>
@@ -922,16 +922,16 @@ Solutions for 4 - 6
 0 &amp; \quad x &lt; 0 \\ \\
 \frac{x}{6} &amp; \quad 0 \leq x \leq 6 \\ \\
 1 &amp; \quad x &gt; 6.
-\end{cases}.\]</span> The constant <span class="math inline">\(k\)</span> is <span class="math inline">\(k = \frac{1}{30}\)</span>, namely 1 divided by the area of the original target. This gives the normalized target function as <span class="math display">\[f(x) = kg(x) =
+\end{cases}\]</span> The constant <span class="math inline">\(k\)</span> is <span class="math inline">\(k = \frac{1}{30}\)</span>, namely 1 divided by the area of the original target. This gives the normalized target function as <span class="math display">\[f(x) = kg(x) =
 \begin{cases}
 \frac{1}{6} &amp; \quad 0 \leq x \leq 6 \\ \\
 0 &amp; \quad \text{otherwise}
-\end{cases}.\]</span> The derivative of <span class="math inline">\(F\)</span> is <span class="math display">\[\frac{dF}{dx}(x) =
+\end{cases}\]</span> The derivative of <span class="math inline">\(F\)</span> is <span class="math display">\[\frac{dF}{dx}(x) =
 \begin{cases}
 0 &amp; \quad x &lt; 0 \\ \\
 \frac{1}{6} &amp; \quad 0 &lt; x &lt; 6 \\ \\
 0 &amp; \quad x &gt; 6
-\end{cases}.\]</span> Notice that <span class="math inline">\(f(x) = F'(x)\)</span> at the points where <span class="math inline">\(F(x)\)</span> is differentiable.</p>
+\end{cases}\]</span> Notice that <span class="math inline">\(f(x) = F'(x)\)</span> at the points where <span class="math inline">\(F(x)\)</span> is differentiable.</p>
 </details>
 </section>
 <section id="a-triangular-target" class="level4">
@@ -940,7 +940,7 @@ Solutions for 4 - 6
 \begin{cases}
 2x &amp; \quad 0 \leq x \leq 6 \\ \\
 0 &amp; \quad \text{otherwise}
-\end{cases}.\]</span> We can graph this target using the code below.</p>
+\end{cases}\]</span> We can graph this target using the code below.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x){<span class="dv">2</span><span class="sc">*</span>x}</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_target</span>(g,<span class="dv">0</span>,<span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When a dart falls on the point <span class="math inline">\((x,y)\)</span>, we’ll record just the <span class="math inline">\(x\)</span>-coordinate and let <span class="math inline">\(X\)</span> represent this random variable.</p>
@@ -962,7 +962,7 @@ Solutions for 4 - 6
 0 &amp; \quad x &lt; 0 \\ \\
 \frac{x^2}{36} &amp; \quad 0 \leq x \leq 6 \\ \\
 1 &amp; \quad x &gt; 6
-\end{cases}.\]</span></p></li>
+\end{cases}\]</span></p></li>
 <li><p>Calculate the derivative of <span class="math inline">\(F(x)\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
 <ul>
 <li>How does <span class="math inline">\(F'(x)\)</span> compare to the normalized target function <span class="math inline">\(f(x)\)</span> where <span class="math inline">\(k\)</span> is <span class="math inline">\(\frac{1}{\text{area of the target}}\)</span>?</li>

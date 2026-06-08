@@ -787,7 +787,7 @@ window.Quarto = {
 \begin{cases}
 kx - k &amp;  1 \leq x \leq 3 \\
 0 &amp;  \text{otherwise}
-\end{cases}.\]</span></p>
+\end{cases}\]</span></p>
 <ol type="1">
 <li><p>Select <span class="math inline">\(k\)</span> so <span class="math inline">\(f\)</span> is the PDF of a random variable <span class="math inline">\(X\)</span>.</p></li>
 <li><p>Use R and a Riemann sum to approximate <span class="math inline">\(E[X]\)</span>.</p></li>
@@ -803,7 +803,7 @@ kx - k &amp;  1 \leq x \leq 3 \\
 0 &amp;  x &lt; 0 \\
 \frac{x}{3} &amp;  0 \leq x \leq 3 \\
 1 &amp;  x &gt; 3
-\end{cases}.\]</span>
+\end{cases}\]</span>
 <ul>
 <li>Find <span class="math inline">\(F'(x)\)</span> to find the PDF of <span class="math inline">\(X\)</span>, <span class="math inline">\(f(x)\)</span>.</li>
 <li>Draw the target diagram for this PDF.</li>
@@ -823,7 +823,7 @@ Answer
 0 &amp; x &lt; 0 \\
 \frac{x^2}{16} &amp;  0 \leq x \leq 4 \\
 1 &amp; x &gt; 4
-\end{cases}.\]</span>
+\end{cases}\]</span>
 <ul>
 <li>Find <span class="math inline">\(F'(x)\)</span> to find the PDF of <span class="math inline">\(X\)</span>, <span class="math inline">\(f(x)\)</span>.</li>
 <li>Draw the target diagram for this PDF.</li>
@@ -992,14 +992,14 @@ Probability Density Function (PDF)
 <p>Look above at how we computed <span class="math inline">\(P(a &lt; X \leq b)\)</span>.</p>
 <ul>
 <li>We have <span class="math inline">\(P(a &lt; X \leq b) = \int_a^b f(x) dx\)</span> using the PDF.</li>
-<li>We have <span class="math inline">\(P(a &lt; X \leq b) = F(b) - F(a)\)</span> using the CDF. Combining these facts gives <span class="math display">\[\int_a^b f(x) dx = F(b) - F(a).\]</span> This fact, where <span class="math inline">\(F'=f\)</span>, is “The Fundamental Theorem of Calculus” (part 2). We’ll see part 1 later.</li>
+<li>We have <span class="math inline">\(P(a &lt; X \leq b) = F(b) - F(a)\)</span> using the CDF. Combining these facts gives <span class="math display">\[\int_a^b f(x) dx = F(b) - F(a)\]</span> This fact, where <span class="math inline">\(F'=f\)</span>, is “The Fundamental Theorem of Calculus” (part 2). We’ll see part 1 later.</li>
 </ul>
 <p>Given a probability model for a continuous random variable, we’ll use the expected value and variance to help us fit data to the model.</p>
 <details>
 <summary>
 Expected Value (continuous random variable)
 </summary>
-<p>The <strong>expected value</strong> (or mean) of a <em>continuous</em> random variable <span class="math inline">\(X\)</span> with probability density function <span class="math inline">\(f(x)\)</span> is <span class="math display">\[E[X] = \int_{-\infty}^{\infty} x f(x) dx.\]</span></p>
+<p>The <strong>expected value</strong> (or mean) of a <em>continuous</em> random variable <span class="math inline">\(X\)</span> with probability density function <span class="math inline">\(f(x)\)</span> is <span class="math display">\[E[X] = \int_{-\infty}^{\infty} x f(x) dx\]</span></p>
 <ul>
 <li>The expected value is a characteristic of a random variable.</li>
 <li>The expected value is the average value of a random variable.</li>
@@ -1018,7 +1018,7 @@ Expected Value (continuous random variable)
 <summary>
 Variance (continuous random variable)
 </summary>
-<p>The <strong>variance</strong> of a <em>continuous</em> random variable <span class="math inline">\(X\)</span> with probability density function <span class="math inline">\(f(x)\)</span> is <span class="math display">\[Var[X] = \int_{-\infty}^{\infty} (x - E[X])^2 f(x) dx.\]</span> The standard deviation is equal to the square root of the variance, which we write as <span class="math inline">\(\sigma_X = \sqrt{Var[X]}\)</span>.</p>
+<p>The <strong>variance</strong> of a <em>continuous</em> random variable <span class="math inline">\(X\)</span> with probability density function <span class="math inline">\(f(x)\)</span> is <span class="math display">\[Var[X] = \int_{-\infty}^{\infty} (x - E[X])^2 f(x) dx\]</span> The standard deviation is equal to the square root of the variance, which we write as <span class="math inline">\(\sigma_X = \sqrt{Var[X]}\)</span>.</p>
 <ul>
 <li>The variance is characteristic of a random variable.</li>
 <li>The variance is a measure of how spread out the data is. The more spread out the data is, the larger the variance.</li>
@@ -1098,7 +1098,7 @@ Answers
 \begin{cases}
 5e^{-5x} &amp;  x \geq 0 \\
 0 &amp;  \text{otherwise}
-\end{cases}.\]</span></p>
+\end{cases}\]</span></p>
 <ul>
 <li>Why do we know the area under the “infinite” target is 1?</li>
 </ul>

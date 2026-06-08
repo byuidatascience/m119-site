@@ -957,7 +957,7 @@ Some answers
 0 &amp; x \leq 0 \\ \\
 \frac{1}{8}x^3 - \frac{3}{4}x^2 + \frac{3}{2}x &amp; 0 &lt; x &lt; 2 \\ \\
 1 &amp; x \geq2
-\end{cases}.\]</span> For <span class="math inline">\(x\)</span> values between 0 and 2, the following Mathematica code gives <span class="math inline">\(F(x)\)</span>.</p>
+\end{cases}\]</span> For <span class="math inline">\(x\)</span> values between 0 and 2, the following Mathematica code gives <span class="math inline">\(F(x)\)</span>.</p>
 <pre><code>Integrate[(3/8)*x^2 - (3/2)*x + (3/2), {x, 0, x}]</code></pre>
 <p>We can plot the function in R. Below is one example of how to construct such a plot for a piecewise defined function. There are lots of other ways.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
@@ -1009,7 +1009,7 @@ Graph <span class="math inline">\(F(x)\)</span>.
 \begin{cases}
 \int_{-\infty}^x 0dt = 0 &amp; x &lt; 0 \\ \\
 \int_{0}^x e^{-t}dt = 1-e^{-x} &amp; x \geq 0
-\end{cases}.\]</span></li>
+\end{cases}\]</span></li>
 </ul></li>
 </ul>
 <pre><code>$Assumptions = x &gt; 0;

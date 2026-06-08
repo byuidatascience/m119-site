@@ -882,7 +882,7 @@ L(\text{parameters of } f;\, \mathbf{x}, \mathbf{y}) &amp;= \prod_{i=1}^m \frac{
                                                    &amp;= \prod_{i=1}^m \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} (y_i - f(x_i))^2}.
 \end{aligned}
 \]</span> Notice the only difference between <span class="math inline">\(J\)</span> and <span class="math inline">\(L\)</span> is whether we know the data or the parameters of <span class="math inline">\(f\)</span>.</li>
-<li>The loglikelihood function is the natural log of the likelihood function which gives <span class="math display">\[\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = \ln \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(y_i - f(x_i))^2}.\]</span> We can simplify the loglikelihood function by writing it in a more convenient form using the properties of logarithms and properties of sums. We find <span class="math display">\[\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = m\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2} \sum_{i=1}^m (y_i - f(x_i))^2.\]</span></li>
+<li>The loglikelihood function is the natural log of the likelihood function which gives <span class="math display">\[\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = \ln \prod_{i=1}^m \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(y_i - f(x_i))^2}.\]</span> We can simplify the loglikelihood function by writing it in a more convenient form using the properties of logarithms and properties of sums. We find <span class="math display">\[\ell(\text{parameters of } f; \mathbf{x}, \mathbf{y}) = m\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2} \sum_{i=1}^m (y_i - f(x_i))^2\]</span></li>
 </ul>
 </details>
 <details>
@@ -963,18 +963,18 @@ Check Your Answer
 \frac{\partial \ell}{\partial b} &amp;= 0 \\
 \frac{\partial \ell}{\partial m} &amp;= 0.
 \end{align*}
-\right.\]</span> This means we need to solve the system <span class="math display">\[\left\{
+\right\]</span> This means we need to solve the system <span class="math display">\[\left\{
 \begin{array}{ll}
 \left(\sum_{i=1}^{50} y_i\right) - 50b - \left(\sum_{i=1}^{50} x_i\right)m &amp;= 0 \\
 \left(\sum_{i=1}^{50} x_iy_i\right) - \left(\sum_{i=1}^{50} x_i\right)b - \left(\sum_{i=1}^{50} x_i^2\right)m &amp;= 0.
 \end{array}
-\right.\]</span></p>
+\right\]</span></p>
 <p>We notice that this system is of the form <span class="math display">\[\left\{
 \begin{array}{ll}
 b_1 - c_{11}b - c_{12}m &amp;= 0 \\
 b_2 - c_{21}b - c_{22}m &amp;= 0,
 \end{array}
-\right.\]</span> with</p>
+\right\]</span> with</p>
 <ul>
 <li><span class="math inline">\(b_1 = \sum_{i=1}^{50} y_i\)</span>,</li>
 <li><span class="math inline">\(c_{11} = 50\)</span>,</li>

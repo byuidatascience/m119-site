@@ -795,7 +795,7 @@ window.Quarto = {
 c_{1,1}x + c_{1,2}y =b_1 \\
 c_{2,1}x + c_{2,2}y = b_2
 \end{align*}
-\right.\]</span> Note that the variables above are different than the ones from last class period, so your answer may look a bit different. Solve the system, obtaining values for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and come to class with any questions you have about how to obtain the solution.</p>
+\right\]</span> Note that the variables above are different than the ones from last class period, so your answer may look a bit different. Solve the system, obtaining values for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and come to class with any questions you have about how to obtain the solution.</p>
 <details>
 <summary>
 Answer
@@ -867,7 +867,7 @@ Answer
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> bulb<span class="sc">$</span>hours</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> bulb<span class="sc">$</span>percent_intensity</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="2" type="1">
-<li>For the function <span class="math inline">\(f_1(t; a_1) = 100 + a_1t\)</span>, we found the loglikelihood function to be <span class="math display">\[\ell_1(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i)^2.\]</span> Find the value for <span class="math inline">\(a_1\)</span> that maximizes the loglikelihood.</li>
+<li>For the function <span class="math inline">\(f_1(t; a_1) = 100 + a_1t\)</span>, we found the loglikelihood function to be <span class="math display">\[\ell_1(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i)^2\]</span> Find the value for <span class="math inline">\(a_1\)</span> that maximizes the loglikelihood.</li>
 </ol>
 <details>
 <summary>
@@ -879,7 +879,7 @@ Solution
 &amp;= \sum_{i}^{44} (y_i - 100 - a_1t_i)(t_i)\\
 &amp;= \sum_{i}^{44} [(y_i - 100)t_i - a_1t_i^2]\\
 &amp;= \left(\sum_{i}^{44} (y_i - 100)t_i\right) - a_1\left(\sum_{i}^{44}t_i^2\right)
-\end{align*}\]</span> We need to find where the derivative equals zero, which means we must solve <span class="math display">\[\left(\sum_{i}^{44} (y_i - 100)t_i\right) - a_1\left(\sum_{i}^{44}t_i^2\right)=0.\]</span> Note that this is of the form <span class="math inline">\(b-a_1 d=0\)</span> (I’m avoiding the letter <span class="math inline">\(c\)</span> because <span class="math inline">\(c()\)</span> is a command in R). The solution is simply <span class="math inline">\(b/d\)</span> where <span class="math inline">\(b = \left(\sum_{i}^{44} (y_i - 100)t_i\right)\)</span> and <span class="math inline">\(d =  \left(\sum_{i}^{44}t_i^2\right)\)</span>. The code below computes this value, obtaining <span class="math inline">\(a_1 = 0.0005254377\)</span>.</p>
+\end{align*}\]</span> We need to find where the derivative equals zero, which means we must solve <span class="math display">\[\left(\sum_{i}^{44} (y_i - 100)t_i\right) - a_1\left(\sum_{i}^{44}t_i^2\right)=0\]</span> Note that this is of the form <span class="math inline">\(b-a_1 d=0\)</span> (I’m avoiding the letter <span class="math inline">\(c\)</span> because <span class="math inline">\(c()\)</span> is a command in R). The solution is simply <span class="math inline">\(b/d\)</span> where <span class="math inline">\(b = \left(\sum_{i}^{44} (y_i - 100)t_i\right)\)</span> and <span class="math inline">\(d =  \left(\sum_{i}^{44}t_i^2\right)\)</span>. The code below computes this value, obtaining <span class="math inline">\(a_1 = 0.0005254377\)</span>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## If not done already, load the data. </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data4led)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>bulb <span class="ot">&lt;-</span> <span class="fu">led_bulb</span>(<span class="dv">1</span>,<span class="at">seed=</span><span class="dv">123</span>)</span>
@@ -905,7 +905,7 @@ Solution
 \left(\sum_{i=1}^{44} (y_i - 100)t_i\right) - \left(\sum_{i=1}^{44}t_i^2\right)a_1 - \left(\sum_{i=1}^{44}t_i^3\right)a_2 &amp;= 0 \\
 \left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right) - \left(\sum_{i=1}^{44}t_i^3\right)a_1 - \left(\sum_{i=1}^{44}t_i^4\right)a_2 &amp;= 0.
 \end{align*}
-\right.\]</span> We can write the system above in the form <span class="math display">\[\left\{
+\right\]</span> We can write the system above in the form <span class="math display">\[\left\{
 \begin{align*}
 \left(\sum_{i=1}^{44}t_i^2\right)a_1 + \left(\sum_{i=1}^{44}t_i^3\right)a_2 &amp;= \left(\sum_{i=1}^{44} (y_i - 100)t_i\right)  \\
 \left(\sum_{i=1}^{44}t_i^3\right)a_1 + \left(\sum_{i=1}^{44}t_i^4\right)a_2 &amp;= \left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right).
@@ -916,7 +916,7 @@ Solution
 c_{1,1}x + c_{1,2}y = b_1 \\
 c_{2,1}x + c_{2,2}y = b_2
 \end{align*}
-\right.\]</span> whose solution we can quickly find using the results of our previous work. Solve this system.</li>
+\right\]</span> whose solution we can quickly find using the results of our previous work. Solve this system.</li>
 </ul></li>
 </ol>
 <details>
@@ -1059,11 +1059,11 @@ Solution
 <p>What we did today in class can be repeated in general to locate the parameters which yield maximum likelihood (by maximizing loglikelihood).</p>
 <section id="maximizing-ell_5" class="level4">
 <h4 class="anchored" data-anchor-id="maximizing-ell_5">Maximizing <span class="math inline">\(\ell_5\)</span></h4>
-<p>For the function <span class="math inline">\(f_5(t; a_1) = 100e^{-0.00005t} + a_1te^{-0.00005t}\)</span>, we found the loglikelihood function to be <span class="math display">\[\ell_5(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i=1}^{44} (y_i - 100e^{-0.00005t_i} - a_1t_ie^{-0.00005t_i})^2.\]</span> Find the value for <span class="math inline">\(a_1\)</span> that maximizes the loglikelihood.</p>
+<p>For the function <span class="math inline">\(f_5(t; a_1) = 100e^{-0.00005t} + a_1te^{-0.00005t}\)</span>, we found the loglikelihood function to be <span class="math display">\[\ell_5(a_1; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i=1}^{44} (y_i - 100e^{-0.00005t_i} - a_1t_ie^{-0.00005t_i})^2\]</span> Find the value for <span class="math inline">\(a_1\)</span> that maximizes the loglikelihood.</p>
 </section>
 <section id="locating-critical-values-of-ell_6" class="level4">
 <h4 class="anchored" data-anchor-id="locating-critical-values-of-ell_6">Locating Critical Values of <span class="math inline">\(\ell_6\)</span></h4>
-<p>In project 2 Task 1 we obtained <span class="math display">\[\ell_6(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i - a_2(1-e^{-0.0003t_i}))^2.\]</span></p>
+<p>In project 2 Task 1 we obtained <span class="math display">\[\ell_6(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i - a_2(1-e^{-0.0003t_i}))^2\]</span></p>
 <ol type="1">
 <li><p>Compute <span class="math inline">\(\frac{\partial\ell_6}{\partial a_1}\)</span> and <span class="math inline">\(\frac{\partial\ell_6}{\partial a_2}\)</span>.</p></li>
 <li><p>Use seed 123 to solve the system of equations <span class="math inline">\(\frac{\partial\ell_6}{\partial a_1} = 0\)</span> and <span class="math inline">\(\frac{\partial\ell_6}{\partial a_2} = 0\)</span>. You should obtain <span class="math inline">\(a_1=-0.0008219878\)</span> and <span class="math inline">\(a_2=7.442637\)</span>.</p></li>

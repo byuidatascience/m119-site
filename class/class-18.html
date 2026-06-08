@@ -850,10 +850,10 @@ r_i(m, b; x_i, t_i) &amp;= t_i - f(x_i; m, b) \\
                     &amp;= t_i - mx_i - b
 \end{aligned}
 \]</span></p>
-<p>Because the errors are independent we can multiply the probability models to find the joint probability model as <span class="math display">\[J(x_i,t_i;m,b) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}.\]</span></p>
-<p>The likelihood function (interchange the role of variables and parameters) is then <span class="math display">\[L(m,b; x_i,t_i) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}.\]</span></p>
-<p>The natural log of the likelihood function gives the loglikelihood function as <span class="math display">\[\ell(m,b; x_i,t_i) = \ln\left(\prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}\right).\]</span></p>
-<p>Using the properties of logarithms and sums we find <span class="math display">\[\ell(m,b; x_i,t_i) = 400\ln\left(\frac{1}{\sqrt{2\pi}}\right) -\frac{1}{2}\sum_{i=1}^{400} (t_i - mx_i -b)^2.\]</span></p>
+<p>Because the errors are independent we can multiply the probability models to find the joint probability model as <span class="math display">\[J(x_i,t_i;m,b) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}\]</span></p>
+<p>The likelihood function (interchange the role of variables and parameters) is then <span class="math display">\[L(m,b; x_i,t_i) = \prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}\]</span></p>
+<p>The natural log of the likelihood function gives the loglikelihood function as <span class="math display">\[\ell(m,b; x_i,t_i) = \ln\left(\prod_{i=1}^{400} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}(t_i - mx_i -b)^2}\right)\]</span></p>
+<p>Using the properties of logarithms and sums we find <span class="math display">\[\ell(m,b; x_i,t_i) = 400\ln\left(\frac{1}{\sqrt{2\pi}}\right) -\frac{1}{2}\sum_{i=1}^{400} (t_i - mx_i -b)^2\]</span></p>
 </details>
 </section>
 <section id="group-meeting" class="level2">
