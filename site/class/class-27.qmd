@@ -128,7 +128,7 @@ b21*x+b22*y == c2
 
 Work through the following exercises identifying extrema.
 
-- Find any extrema of $A(x) = 1200x - x^2$.
+- Find any extrema of $A(x) = 1200x - x^2$
 
 ```r
 #Approximate the zeros of the first derivative.
@@ -151,7 +151,7 @@ A(cv)
 A(600)
 ```
 
-- Find any extrema of $A(x) = 2400x - 2x^2$.
+- Find any extrema of $A(x) = 2400x - 2x^2$
 
 ```r
 #Approximate the zeros of the first derivative.
@@ -174,7 +174,7 @@ A(cv)
 A(600)
 ```
 
-- Find any extrema of $V(x) = 24x - \frac{1}{2}x^3$.
+- Find any extrema of $V(x) = 24x - \frac{1}{2}x^3$
 
 ```r
 #Approximate the zeros of the first derivative.
@@ -459,9 +459,9 @@ We have not yet discussed a second derivative test when there is more than one v
 
 ## Discussion 
 ### Summary: Steps to obtain loglikelihood.
-1. Identify the deterministic model $f$ and stochasitic model $p$. 
+1. Identify the deterministic model $f$ and stochasitic model $p$
 
-1. Assume the residuals (errors) are independent so that the joint probability function, and likelihood function, are obtain as $L = \prod_i p(r_i)$. 
+1. Assume the residuals (errors) are independent so that the joint probability function, and likelihood function, are obtain as $L = \prod_i p(r_i)$ 
 1. The loglikelihood function is $\ell = \ln(\prod_i p(r_i))$. 
 
 ### Summary: Steps of Optimization
