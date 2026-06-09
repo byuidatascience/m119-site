@@ -178,7 +178,15 @@ Parameter lists like `$a=1, b=2, c=3$` are not chains — leave them inline.
   project-level `_quarto.yml` layout changes (e.g. sidebar `style`). Run a full
   `quarto render` after editing `_quarto.yml`.
 - Always render via the project (`cd site && quarto render`), not standalone —
-  the custom MathJax macros (`\ds`, `\diff`) come from `_quarto.yml`'s
-  `include-in-header` and won't resolve otherwise.
+  the custom MathJax macros come from `_quarto.yml`'s `include-in-header` and
+  won't resolve otherwise. Current macros:
+  - `\ds` → `\displaystyle`
+  - `\diff{f}{x}` → `\frac{df}{dx}`
+  - `\pd{f}{x}{n}` → `\frac{\partial^{n} f}{\partial x^{n}}` (empty `n` =
+    first-order partial; `2` = second-order; etc.)
+  If a class page uses a backslash-command that renders as literal text and
+  breaks the surrounding math (everything switches to a serif/text font),
+  the macro is undefined — add it to the macro list rather than expanding
+  every usage by hand.
 - `freeze: auto` caches code execution; if a referenced asset changed but the
   render looks stale, clear the relevant `_freeze/` entry.

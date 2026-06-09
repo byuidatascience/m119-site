@@ -127,7 +127,8 @@ format:
           tex: {
             macros: {
               ds: "\\displaystyle",
-              diff: ["\\frac{d#1}{d#2}", 2]
+              diff: ["\\frac{d#1}{d#2}", 2],
+              pd: ["\\frac{\\partial^{#3} #1}{\\partial #2^{#3}}", 3]
             }
           }
         };
