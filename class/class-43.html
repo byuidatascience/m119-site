@@ -82,9 +82,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5a7edf553ce6f37e40c66d907d0f4061.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-bf3f322ac8d240d639fe1d97eccc3f5a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-5a7edf553ce6f37e40c66d907d0f4061.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d42e3a450557161d5337326f150af9d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-ef329cdfec84d61f1b09d4029da25417.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-d42e3a450557161d5337326f150af9d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -1006,13 +1006,14 @@ Graph <span class="math inline">\(F(x)\)</span>.
 <li>We can verify that <span class="math inline">\(F_1(x) = -e^{-x}\)</span>, <span class="math inline">\(F_2(x) = 5 - e^{-x}\)</span>, and <span class="math inline">\(F_3(x) = -e^{-x} - 2\)</span> are all antiderivatives of <span class="math inline">\(f\)</span>. Are any of these function the CDF of the random variable <span class="math inline">\(X\)</span>?</li>
 <li>Find the cdf of <span class="math inline">\(X\)</span>
 <ul>
-<li>We know <span class="math inline">\(F(x) = P(X \leq x) = \int_{-\infty}^x f(t)dt\)</span>. <span class="math display">\[F(x) = \int_{-\infty}^x f(t)dt =
+<li>We know <span class="math inline">\(F(x) = P(X \leq x) = \int_{-\infty}^x f(t)dt\)</span></li>
+</ul></li>
+</ul>
+<p><span class="math display">\[F(x) = \int_{-\infty}^x f(t)dt =
 \begin{cases}
 \int_{-\infty}^x 0dt = 0 &amp; x &lt; 0 \\ \\
 \int_{0}^x e^{-t}dt = 1-e^{-x} &amp; x \geq 0
-\end{cases}\]</span></li>
-</ul></li>
-</ul>
+\end{cases}\]</span></p>
 <pre><code>$Assumptions = x &gt; 0;
 Integrate[Exp[-t],{t,0,x}]
 
