@@ -903,7 +903,9 @@ Solution
 <p>The first partials of <span class="math inline">\(\ell_2\)</span> are</p>
 <ul>
 <li><span class="math inline">\(\pd{\ell_2}{a_1}{} = \left(\sum_{i=1}^{44} (y_i - 100)t_i\right) - \left(\sum_{i=1}^{44}t_i^2\right)a_1 - \left(\sum_{i=1}^{44}t_i^3\right)a_2\)</span> and</li>
-<li><span class="math inline">\(\pd{\ell_2}{a_2}{} = \left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right) - \left(\sum_{i=1}^{44}t_i^3\right)a_1 - \left(\sum_{i=1}^{44}t_i^4\right)a_2\)</span>. We find the location of maximum likelihood by locating the values <span class="math inline">\(a_1\)</span> and <span class="math inline">\(a_2\)</span> where the two partial derivatives are both equal to zero, we means we must solve the system of equations that results from <span class="math inline">\(\frac{d\ell_2}{da_1} = 0\)</span> and <span class="math inline">\(\frac{d\ell_2}{da_2} = 0\)</span>. We must solve the linear system of equations <span class="math display">\[\left\{
+<li><span class="math inline">\(\pd{\ell_2}{a_2}{} = \left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right) - \left(\sum_{i=1}^{44}t_i^3\right)a_1 - \left(\sum_{i=1}^{44}t_i^4\right)a_2\)</span></li>
+</ul>
+<p>We find the location of maximum likelihood by locating the values <span class="math inline">\(a_1\)</span> and <span class="math inline">\(a_2\)</span> where the two partial derivatives are both equal to zero, we means we must solve the system of equations that results from <span class="math inline">\(\frac{d\ell_2}{da_1} = 0\)</span> and <span class="math inline">\(\frac{d\ell_2}{da_2} = 0\)</span>. We must solve the linear system of equations <span class="math display">\[\left\{
 \begin{align*}
 \left(\sum_{i=1}^{44} (y_i - 100)t_i\right) - \left(\sum_{i=1}^{44}t_i^2\right)a_1 - \left(\sum_{i=1}^{44}t_i^3\right)a_2 &amp;= 0 \\
 \left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right) - \left(\sum_{i=1}^{44}t_i^3\right)a_1 - \left(\sum_{i=1}^{44}t_i^4\right)a_2 &amp;= 0.
@@ -919,8 +921,7 @@ Solution
 c_{1,1}x + c_{1,2}y = b_1 \\
 c_{2,1}x + c_{2,2}y = b_2
 \end{align*}
-\right.\]</span> whose solution we can quickly find using the results of our previous work. Solve this system.</li>
-</ul></li>
+\right.\]</span> whose solution we can quickly find using the results of our previous work. Solve this system.</p></li>
 </ol>
 <details>
 <summary>
