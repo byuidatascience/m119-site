@@ -136,8 +136,9 @@ lines(x,f1(x),type = "l")
 
     The first partials of $\ell_2$ are
     - $\pd{\ell_2}{a_1}{} = \left(\sum_{i=1}^{44} (y_i - 100)t_i\right) - \left(\sum_{i=1}^{44}t_i^2\right)a_1 - \left(\sum_{i=1}^{44}t_i^3\right)a_2$ and
-    - $\pd{\ell_2}{a_2}{} = \left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right) - \left(\sum_{i=1}^{44}t_i^3\right)a_1 - \left(\sum_{i=1}^{44}t_i^4\right)a_2$.
-We find the location of maximum likelihood by locating the values $a_1$ and $a_2$ where the two partial derivatives are both equal to zero, we means we must solve the system of equations that results from $\frac{d\ell_2}{da_1} = 0$ and $\frac{d\ell_2}{da_2} = 0$. We must solve the linear system of equations 
+    - $\pd{\ell_2}{a_2}{} = \left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right) - \left(\sum_{i=1}^{44}t_i^3\right)a_1 - \left(\sum_{i=1}^{44}t_i^4\right)a_2$
+
+    We find the location of maximum likelihood by locating the values $a_1$ and $a_2$ where the two partial derivatives are both equal to zero, we means we must solve the system of equations that results from $\frac{d\ell_2}{da_1} = 0$ and $\frac{d\ell_2}{da_2} = 0$. We must solve the linear system of equations
 $$\left\{
 \begin{align*}
 \left(\sum_{i=1}^{44} (y_i - 100)t_i\right) - \left(\sum_{i=1}^{44}t_i^2\right)a_1 - \left(\sum_{i=1}^{44}t_i^3\right)a_2 &= 0 \\ 
