@@ -134,7 +134,12 @@ y <- data$y2
 <details>
 <summary>Check Your Answer</summary>
 
-$\ell(m, b; \mathbf{x}, \mathbf{y}) = \ln\left(\prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-(y_i - mx_i - b)^2/2}\right) = 50\ln(\frac{1}{\sqrt{2\pi}}) + \sum_{i=1}^{50} -\frac{1}{2}(y_i - mx_i - b)^2$
+$$
+\begin{aligned}
+\ell(m, b; \mathbf{x}, \mathbf{y}) &= \ln\left(\prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-(y_i - mx_i - b)^2/2}\right) \\
+&= 50\ln\left(\frac{1}{\sqrt{2\pi}}\right) + \sum_{i=1}^{50} -\frac{1}{2}(y_i - mx_i - b)^2
+\end{aligned}
+$$
 
 </details>
 
@@ -195,9 +200,24 @@ with
 
 From previous work we know the solution to this system of equations is $m = \frac{c_{11}b_2 - c_{12}b_1}{c_{11}c_{22} - c_{12}^2}$ and $b = \frac{b_1 - c_{12}m}{c_{11}}$.
 
-When we substitute in the formulas for the constants $c_{11}$, $c_{12}$, $c_{22}$, $b_1$, and $b_2$ we see 
-$m = \frac{50\sum_{i=1}^{50} x_iy_i - \sum_{i=1}^{50} x_i\sum_{i=1}^{50} y_i}{50\sum_{i=1}^{50} x_i^2 - \left(\sum_{i=1}^{50} x_i\right)^2} = \frac{\left(\sum_{i=1}^{50} x_iy_i\right) - 50\overline{x}\overline{y}}{\sum_{i=1}^{50} x_i^2 - 50\overline{x}^2}$ and 
-$b = \frac{b_1 - c_2m}{c_1} = \frac{\sum_{i=1}^{50} y_i - \left(\sum_{i=1}^{50} x_i\right)m}{50} = \overline{y} -  m\overline{x}$.
+When we substitute in the formulas for the constants $c_{11}$, $c_{12}$, $c_{22}$, $b_1$, and $b_2$ we see
+
+$$
+\begin{aligned}
+m &= \frac{50\sum_{i=1}^{50} x_iy_i - \sum_{i=1}^{50} x_i\sum_{i=1}^{50} y_i}{50\sum_{i=1}^{50} x_i^2 - \left(\sum_{i=1}^{50} x_i\right)^2} \\
+  &= \frac{\left(\sum_{i=1}^{50} x_iy_i\right) - 50\overline{x}\overline{y}}{\sum_{i=1}^{50} x_i^2 - 50\overline{x}^2}
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+b &= \frac{b_1 - c_2m}{c_1} \\
+  &= \frac{\sum_{i=1}^{50} y_i - \left(\sum_{i=1}^{50} x_i\right)m}{50} \\
+  &= \overline{y} - m\overline{x}
+\end{aligned}
+$$
 
 We can use the following code to calculate $m$ and $b$.
 
@@ -225,7 +245,7 @@ best_m
 
 </details>
 
-    - How do we know we have found the location of a maximum?
+- How do we know we have found the location of a maximum?
 
 <details>
 <summary>Check Your Answer</summary>
@@ -270,7 +290,8 @@ abline(v=0,lty=3,col='gray')
 Our goal is to practice fitting deterministic models to data using the maximum likelihood method (an optimization method).
 We will assume the errors are independent and normally distributed with mean 0 and standard deviation 1.
 
-#### Consider the model $f(x) = mx$. 
+#### Consider the model $f(x) = mx$
+
 We would like to fit this model to the following data $(x_i,y_i)$ using the maximum likelihood method.
 
 - Read in the data with the following code.
@@ -283,8 +304,9 @@ x <- data$x
 y1 <- data$y1
 ```
 
-- [Identify the Function of Interest] (Project 2 Task 1)
-Write down and simplify the loglikelihood function. Explain your steps. Be explicit.
+[Identify the Function of Interest] (Project 2 Task 1)
+
+- Write down and simplify the loglikelihood function. Explain your steps. Be explicit.
     - Where did you use the assumption that the errors are normal with mean 0 and standard deviation 1?
     - Where did you use the assumption that the errors are independent?
     - What properties of logarithms did you use to simplify?
@@ -293,20 +315,26 @@ Write down and simplify the loglikelihood function. Explain your steps. Be expli
 <details>
 <summary>Check Your Answer</summary>
 
-$\ell(m; \mathbf{x}, \mathbf{y}) = \ln\left(\prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-(y_i - mx_i)^2/2}\right) = 50\ln(\frac{1}{\sqrt{2\pi}}) + \sum_{i=1}^{50} -\frac{1}{2}(y_i - mx_i)^2$
+$$
+\begin{aligned}
+\ell(m; \mathbf{x}, \mathbf{y}) &= \ln\left(\prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-(y_i - mx_i)^2/2}\right) \\
+&= 50\ln\left(\frac{1}{\sqrt{2\pi}}\right) + \sum_{i=1}^{50} -\frac{1}{2}(y_i - mx_i)^2
+\end{aligned}
+$$
 
 </details>
 
-- [Optimize] -- Find the first and second derivatives of $\ell$. (Project 2 Task 2)
-Write down and simplify the first and second derivatives of $\ell$. The first derivative should be of the form $c_1 - c_2m$. The second derivative should be a constant.
+[Optimize] -- Find the first and second derivatives of $\ell$. (Project 2 Task 2)
+
+- Write down and simplify the first and second derivatives of $\ell$. The first derivative should be of the form $c_1 - c_2m$. The second derivative should be a constant.
     - What derivative rules did you use?
     - What sum rules did you use?
 
 <details>
 <summary>Check Your Answer</summary>
 
-      - $\frac{d\ell}{dm} = \left(\sum_{i=1}^{50} x_iy_i\right) - \left(\sum_{i=1}^{50} x_i^2\right) m$
-      - $\frac{d^2\ell}{dm^2} = -\sum_{i=1}^{50} x_i^2$
+- $\frac{d\ell}{dm} = \left(\sum_{i=1}^{50} x_iy_i\right) - \left(\sum_{i=1}^{50} x_i^2\right) m$
+- $\frac{d^2\ell}{dm^2} = -\sum_{i=1}^{50} x_i^2$
 
 </details>
 
@@ -325,11 +353,12 @@ m_best <- sum(x*y1)/sum(x^2)
 
 </details>
 
-    - How do we know $m = \frac{\sum_{i=1}^{50} x_iy_i}{\sum_{i=1}^{50} x_i^2}$ is the location of a maximum?
+- How do we know $m = \frac{\sum_{i=1}^{50} x_iy_i}{\sum_{i=1}^{50} x_i^2}$ is the location of a maximum?
 
-- [Answer the Question] (Project 2 Task 3 & Project 2)
-    - Write down your fitted model.
-    - Graph your fitted model with the data.
+[Answer the Question] (Project 2 Task 3 & Project 2)
+
+- Write down your fitted model.
+- Graph your fitted model with the data.
 
 ```r
 f <- function(x,b=0,m=m_best){b + m*x}
@@ -362,13 +391,13 @@ plot(x_val,y_logL,type='l')
 abline(v=m_best,col=4)
 ```
 
-    - Is the location of the maximum the same for the likelihood function and loglikelihood function?
-    - Is the value of the maximum the same for the likelihood function and the loglikelihood function?
+- Is the location of the maximum the same for the likelihood function and loglikelihood function?
+- Is the value of the maximum the same for the likelihood function and the loglikelihood function?
 
 ## Group Meeting 
 
 ### Activity - More Practice with Maximum Likelihood Method
-#### Consider the model $f(x) = be^{-x}$. 
+#### Consider the model $f(x) = be^{-x}$
 We would like to fit this model to the following data $(x_i,y_i)$ using the maximum likelihood method. Work together at the boards, as appropriate, to complete the following.
 
 - Read in the data with the following code.
@@ -387,7 +416,7 @@ y1 <- data$y1
 - Verify you have found a maximum using the second derivative.
 - Write down the fitted model.
 
-#### Consider the model $h(x) = a + be^{-x}$. 
+#### Consider the model $h(x) = a + be^{-x}$
 We would like to fit this model to the following data $(x_i,y_i)$ using the maximum likelihood method.
 
 As you work on examples in pairs or groups as assigned. Write down your work and be prepared to share with the class ideas, questions, and solutions from your discussion.
@@ -408,7 +437,7 @@ y1 <- data$y1
 - Verify you have found a maximum using the second derivative.
 - Write down the fitted model.
 
-#### Consider the model $h(x) = 100 + be^{-x}$. 
+#### Consider the model $h(x) = 100 + be^{-x}$
 We would like to fit this model to the following data $(x_i,y_i)$ using the maximum likelihood method.
 
 As you work on examples in pairs or groups as assigned. Write down your work and be prepared to share with the class ideas, questions, and solutions from your discussion.
@@ -431,8 +460,6 @@ y1 <- data$y1
 
 ### Project 2 Task 3 WrapUp
 Check-in with your group. Take a little time to help wrap up any lingering questions related to Project 2 Task 1-3.
-
-## Discussion
 
 ---
 
