@@ -914,7 +914,8 @@ Properties of Sum
 </details>
 <section id="brain-gains" class="level2">
 <h2 class="anchored" data-anchor-id="brain-gains">Brain Gains</h2>
-<p>We would like to fit the model <span class="math inline">\(h(x) = mx + b\)</span> (or <span class="math inline">\(h(x) = b + mx\)</span>) to the following data <span class="math inline">\((x_i,y_i)\)</span> using the maximum likelihood method, where we will assume the errors are independent and follow a standard normal distribution (this means a normal distribution with mean 0 and standard deviation 1, hence <span class="math inline">\(p(r) = \frac{1}{\sqrt{2\pi}}e^{-r^2/2}\)</span>).</p>
+<p>We would like to fit the model <span class="math inline">\(h(x) = mx + b\)</span> (or <span class="math inline">\(h(x) = b + mx\)</span>) to the following data <span class="math inline">\((x_i, y_i)\)</span> using the maximum likelihood method. We will assume the errors are independent and follow a standard normal distribution — that is, a normal distribution with mean 0 and standard deviation 1, so the probability density is</p>
+<p><span class="math display">\[p(r) = \frac{1}{\sqrt{2\pi}}e^{-r^2/2}\]</span></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://chaz-clark.github.io/M119/logLikelihood_practice.csv"</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> data<span class="sc">$</span>x</span>
