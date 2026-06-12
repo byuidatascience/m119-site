@@ -114,7 +114,9 @@ $$ Notice the only difference between $J$ and $L$ is whether we know the data or
 </details>
 
 ## Brain Gains
-We would like to fit the model  $h(x) = mx + b$ (or $h(x) = b + mx$) to the following data $(x_i,y_i)$ using the maximum likelihood method, where we will assume the errors are independent and follow a standard normal distribution (this means a normal distribution with mean 0 and standard deviation 1, hence $p(r) = \frac{1}{\sqrt{2\pi}}e^{-r^2/2}$).
+We would like to fit the model $h(x) = mx + b$ (or $h(x) = b + mx$) to the following data $(x_i, y_i)$ using the maximum likelihood method. We will assume the errors are independent and follow a standard normal distribution — that is, a normal distribution with mean 0 and standard deviation 1, so the probability density is
+
+$$p(r) = \frac{1}{\sqrt{2\pi}}e^{-r^2/2}$$
 
 ```r
 data <- read.csv(url("https://chaz-clark.github.io/M119/logLikelihood_practice.csv"))
