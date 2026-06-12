@@ -749,7 +749,6 @@ window.Quarto = {
   <li><a href="#activity---more-practice-with-maximum-likelihood-method-1" id="toc-activity---more-practice-with-maximum-likelihood-method-1" class="nav-link" data-scroll-target="#activity---more-practice-with-maximum-likelihood-method-1">Activity - More Practice with Maximum Likelihood Method</a></li>
   <li><a href="#project-2-task-3-wrapup" id="toc-project-2-task-3-wrapup" class="nav-link" data-scroll-target="#project-2-task-3-wrapup">Project 2 Task 3 WrapUp</a></li>
   </ul></li>
-  <li><a href="#discussion-1" id="toc-discussion-1" class="nav-link" data-scroll-target="#discussion-1">Discussion</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -934,7 +933,12 @@ Properties of Sum
 <summary>
 Check Your Answer
 </summary>
-<p><span class="math inline">\(\ell(m, b; \mathbf{x}, \mathbf{y}) = \ln\left(\prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-(y_i - mx_i - b)^2/2}\right) = 50\ln(\frac{1}{\sqrt{2\pi}}) + \sum_{i=1}^{50} -\frac{1}{2}(y_i - mx_i - b)^2\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\ell(m, b; \mathbf{x}, \mathbf{y}) &amp;= \ln\left(\prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-(y_i - mx_i - b)^2/2}\right) \\
+&amp;= 50\ln\left(\frac{1}{\sqrt{2\pi}}\right) + \sum_{i=1}^{50} -\frac{1}{2}(y_i - mx_i - b)^2
+\end{aligned}
+\]</span></p>
 </details>
 <p>[Optimize] – Find the first and second derivatives of <span class="math inline">\(\ell\)</span>. (Project 2 Task 2)</p>
 <ul>
@@ -989,7 +993,21 @@ b_2 - c_{21}b - c_{22}m &amp;= 0,
 <li><span class="math inline">\(c_{22} = \sum_{i=1}^{50} x_i^2\)</span>.</li>
 </ul>
 <p>From previous work we know the solution to this system of equations is <span class="math inline">\(m = \frac{c_{11}b_2 - c_{12}b_1}{c_{11}c_{22} - c_{12}^2}\)</span> and <span class="math inline">\(b = \frac{b_1 - c_{12}m}{c_{11}}\)</span>.</p>
-<p>When we substitute in the formulas for the constants <span class="math inline">\(c_{11}\)</span>, <span class="math inline">\(c_{12}\)</span>, <span class="math inline">\(c_{22}\)</span>, <span class="math inline">\(b_1\)</span>, and <span class="math inline">\(b_2\)</span> we see <span class="math inline">\(m = \frac{50\sum_{i=1}^{50} x_iy_i - \sum_{i=1}^{50} x_i\sum_{i=1}^{50} y_i}{50\sum_{i=1}^{50} x_i^2 - \left(\sum_{i=1}^{50} x_i\right)^2} = \frac{\left(\sum_{i=1}^{50} x_iy_i\right) - 50\overline{x}\overline{y}}{\sum_{i=1}^{50} x_i^2 - 50\overline{x}^2}\)</span> and <span class="math inline">\(b = \frac{b_1 - c_2m}{c_1} = \frac{\sum_{i=1}^{50} y_i - \left(\sum_{i=1}^{50} x_i\right)m}{50} = \overline{y} -  m\overline{x}\)</span>.</p>
+<p>When we substitute in the formulas for the constants <span class="math inline">\(c_{11}\)</span>, <span class="math inline">\(c_{12}\)</span>, <span class="math inline">\(c_{22}\)</span>, <span class="math inline">\(b_1\)</span>, and <span class="math inline">\(b_2\)</span> we see</p>
+<p><span class="math display">\[
+\begin{aligned}
+m &amp;= \frac{50\sum_{i=1}^{50} x_iy_i - \sum_{i=1}^{50} x_i\sum_{i=1}^{50} y_i}{50\sum_{i=1}^{50} x_i^2 - \left(\sum_{i=1}^{50} x_i\right)^2} \\
+  &amp;= \frac{\left(\sum_{i=1}^{50} x_iy_i\right) - 50\overline{x}\overline{y}}{\sum_{i=1}^{50} x_i^2 - 50\overline{x}^2}
+\end{aligned}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\begin{aligned}
+b &amp;= \frac{b_1 - c_2m}{c_1} \\
+  &amp;= \frac{\sum_{i=1}^{50} y_i - \left(\sum_{i=1}^{50} x_i\right)m}{50} \\
+  &amp;= \overline{y} - m\overline{x}
+\end{aligned}
+\]</span></p>
 <p>We can use the following code to calculate <span class="math inline">\(m\)</span> and <span class="math inline">\(b\)</span>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>c11 <span class="ot">&lt;-</span> <span class="dv">50</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>c12 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
@@ -1011,19 +1029,21 @@ b_2 - c_{21}b - c_{22}m &amp;= 0,
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>best_b</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>best_m</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<pre><code>- How do we know we have found the location of a maximum?</code></pre>
+<ul>
+<li>How do we know we have found the location of a maximum?</li>
+</ul>
 <details>
 <summary>
 Check Your Answer
 </summary>
 <p>We use the second derivative test.</p>
 <p>We need to calculate <span class="math inline">\(D\)</span>, as well as <span class="math inline">\(\frac{\partial^2 \ell}{\partial b^2}\)</span>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fxx <span class="ot">&lt;-</span> <span class="sc">-</span>c11 </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fxy <span class="ot">&lt;-</span> <span class="sc">-</span>c12 </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fyy <span class="ot">&lt;-</span> <span class="sc">-</span>c22</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> fxx<span class="sc">*</span>fyy <span class="sc">-</span> fxy<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>D</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>fxx</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fxx <span class="ot">&lt;-</span> <span class="sc">-</span>c11 </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>fxy <span class="ot">&lt;-</span> <span class="sc">-</span>c12 </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fyy <span class="ot">&lt;-</span> <span class="sc">-</span>c22</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> fxx<span class="sc">*</span>fyy <span class="sc">-</span> fxy<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>D</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>fxx</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Since <span class="math inline">\(D &gt; 0\)</span> and <span class="math inline">\(\frac{\partial^2 \ell}{\partial b^2} &lt; 0\)</span>, we know we have found the the location of a local maximum.</p>
 </details>
 <p>[Answer the Question] (Project 2 Task 3 &amp; Project 2)</p>
@@ -1035,33 +1055,34 @@ Check Your Answer
 </ul></li>
 <li>Use R to graph your fitted model with the data.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">b =</span> best_b, <span class="at">m =</span> best_m){b <span class="sc">+</span> m<span class="sc">*</span>x}</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>x_in <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x),<span class="fu">max</span>(x),<span class="fl">0.01</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="fl">0.25</span>,<span class="fl">0.25</span>))</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">'p'</span>,<span class="at">pch=</span><span class="dv">16</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x_in,<span class="fu">h</span>(x_in),<span class="at">col=</span><span class="dv">3</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">3</span>,<span class="at">col=</span><span class="st">'gray'</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">3</span>,<span class="at">col=</span><span class="st">'gray'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">b =</span> best_b, <span class="at">m =</span> best_m){b <span class="sc">+</span> m<span class="sc">*</span>x}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>x_in <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x),<span class="fu">max</span>(x),<span class="fl">0.01</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="fl">0.25</span>,<span class="fl">0.25</span>))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">'p'</span>,<span class="at">pch=</span><span class="dv">16</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x_in,<span class="fu">h</span>(x_in),<span class="at">col=</span><span class="dv">3</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">3</span>,<span class="at">col=</span><span class="st">'gray'</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">3</span>,<span class="at">col=</span><span class="st">'gray'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
 <section id="activity---more-practice-with-maximum-likelihood-method" class="level3">
 <h3 class="anchored" data-anchor-id="activity---more-practice-with-maximum-likelihood-method">Activity - More Practice with Maximum Likelihood Method</h3>
 <p>Our goal is to practice fitting deterministic models to data using the maximum likelihood method (an optimization method). We will assume the errors are independent and normally distributed with mean 0 and standard deviation 1.</p>
-<section id="consider-the-model-fx-mx." class="level4">
-<h4 class="anchored" data-anchor-id="consider-the-model-fx-mx.">Consider the model <span class="math inline">\(f(x) = mx\)</span>.</h4>
+<section id="consider-the-model-fx-mx" class="level4">
+<h4 class="anchored" data-anchor-id="consider-the-model-fx-mx">Consider the model <span class="math inline">\(f(x) = mx\)</span></h4>
 <p>We would like to fit this model to the following data <span class="math inline">\((x_i,y_i)\)</span> using the maximum likelihood method.</p>
 <ul>
 <li>Read in the data with the following code.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://chaz-clark.github.io/M119/logLikelihood_practice.csv"</span>))</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> data<span class="sc">$</span>x</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> data<span class="sc">$</span>y1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://chaz-clark.github.io/M119/logLikelihood_practice.csv"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> data<span class="sc">$</span>x</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> data<span class="sc">$</span>y1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>[Identify the Function of Interest] (Project 2 Task 1)</p>
 <ul>
-<li>[Identify the Function of Interest] (Project 2 Task 1) Write down and simplify the loglikelihood function. Explain your steps. Be explicit.
+<li>Write down and simplify the loglikelihood function. Explain your steps. Be explicit.
 <ul>
 <li>Where did you use the assumption that the errors are normal with mean 0 and standard deviation 1?</li>
 <li>Where did you use the assumption that the errors are independent?</li>
@@ -1073,10 +1094,16 @@ Check Your Answer
 <summary>
 Check Your Answer
 </summary>
-<p><span class="math inline">\(\ell(m; \mathbf{x}, \mathbf{y}) = \ln\left(\prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-(y_i - mx_i)^2/2}\right) = 50\ln(\frac{1}{\sqrt{2\pi}}) + \sum_{i=1}^{50} -\frac{1}{2}(y_i - mx_i)^2\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\ell(m; \mathbf{x}, \mathbf{y}) &amp;= \ln\left(\prod_{i=1}^{50} \frac{1}{\sqrt{2\pi}}e^{-(y_i - mx_i)^2/2}\right) \\
+&amp;= 50\ln\left(\frac{1}{\sqrt{2\pi}}\right) + \sum_{i=1}^{50} -\frac{1}{2}(y_i - mx_i)^2
+\end{aligned}
+\]</span></p>
 </details>
+<p>[Optimize] – Find the first and second derivatives of <span class="math inline">\(\ell\)</span>. (Project 2 Task 2)</p>
 <ul>
-<li>[Optimize] – Find the first and second derivatives of <span class="math inline">\(\ell\)</span>. (Project 2 Task 2) Write down and simplify the first and second derivatives of <span class="math inline">\(\ell\)</span>. The first derivative should be of the form <span class="math inline">\(c_1 - c_2m\)</span>. The second derivative should be a constant.
+<li>Write down and simplify the first and second derivatives of <span class="math inline">\(\ell\)</span>. The first derivative should be of the form <span class="math inline">\(c_1 - c_2m\)</span>. The second derivative should be a constant.
 <ul>
 <li>What derivative rules did you use?</li>
 <li>What sum rules did you use?</li>
@@ -1086,8 +1113,10 @@ Check Your Answer
 <summary>
 Check Your Answer
 </summary>
-<pre><code>  - $\frac{d\ell}{dm} = \left(\sum_{i=1}^{50} x_iy_i\right) - \left(\sum_{i=1}^{50} x_i^2\right) m$
-  - $\frac{d^2\ell}{dm^2} = -\sum_{i=1}^{50} x_i^2$</code></pre>
+<ul>
+<li><span class="math inline">\(\frac{d\ell}{dm} = \left(\sum_{i=1}^{50} x_iy_i\right) - \left(\sum_{i=1}^{50} x_i^2\right) m\)</span></li>
+<li><span class="math inline">\(\frac{d^2\ell}{dm^2} = -\sum_{i=1}^{50} x_i^2\)</span></li>
+</ul>
 </details>
 <ul>
 <li>[Optimize] – Find any critical value(s) of <span class="math inline">\(\ell\)</span>. (Project 2 Task 3)</li>
@@ -1098,43 +1127,45 @@ Check Your Answer
 </summary>
 <p><span class="math inline">\(m = \frac{\sum_{i=1}^{50} x_iy_i}{\sum_{i=1}^{50} x_i^2}\)</span></p>
 <p><strong>CAUTION:</strong> <span class="math inline">\(\frac{\sum_{i=1}^{50} x_iy_i}{\sum_{i=1}^{50} x_i^2}\)</span> is <strong>NOT equal</strong> to <span class="math inline">\(\frac{\sum_{i=1}^{50} y_i}{\sum_{i=1}^{50} x_i}\)</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>m_best <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">*</span>y1)<span class="sc">/</span><span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>m_best <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">*</span>y1)<span class="sc">/</span><span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<pre><code>- How do we know $m = \frac{\sum_{i=1}^{50} x_iy_i}{\sum_{i=1}^{50} x_i^2}$ is the location of a maximum?</code></pre>
 <ul>
-<li>[Answer the Question] (Project 2 Task 3 &amp; Project 2)
+<li>How do we know <span class="math inline">\(m = \frac{\sum_{i=1}^{50} x_iy_i}{\sum_{i=1}^{50} x_i^2}\)</span> is the location of a maximum?</li>
+</ul>
+<p>[Answer the Question] (Project 2 Task 3 &amp; Project 2)</p>
 <ul>
 <li>Write down your fitted model.</li>
 <li>Graph your fitted model with the data.</li>
-</ul></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">b=</span><span class="dv">0</span>,<span class="at">m=</span>m_best){b <span class="sc">+</span> m<span class="sc">*</span>x}</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>x_in <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="fl">0.01</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="fl">0.25</span>,<span class="fl">0.25</span>))</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">'p'</span>,<span class="at">pch=</span><span class="dv">16</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x_in,<span class="fu">f</span>(x_in),<span class="at">col=</span><span class="dv">3</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">3</span>,<span class="at">col=</span><span class="st">'gray'</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">3</span>,<span class="at">col=</span><span class="st">'gray'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">b=</span><span class="dv">0</span>,<span class="at">m=</span>m_best){b <span class="sc">+</span> m<span class="sc">*</span>x}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>x_in <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">10</span>,<span class="fl">0.01</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="fl">0.25</span>,<span class="fl">0.25</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">'p'</span>,<span class="at">pch=</span><span class="dv">16</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x_in,<span class="fu">f</span>(x_in),<span class="at">col=</span><span class="dv">3</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">3</span>,<span class="at">col=</span><span class="st">'gray'</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">3</span>,<span class="at">col=</span><span class="st">'gray'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We could now use this function to answer a question or make a prediction based on the data and the assumption that the process we are studying can be described by the general model <span class="math inline">\(f(x) = mx\)</span>.</p>
 <ul>
 <li>Use R to graph the likelihood function and the loglikelihood function.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>L <span class="ot">&lt;-</span> <span class="cf">function</span>(m,x,y){ <span class="fu">prod</span>((<span class="dv">1</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>(y<span class="sc">-</span>m<span class="sc">*</span>x)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span>)) }</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>logL <span class="ot">&lt;-</span> <span class="cf">function</span>(m,x,y){ <span class="fu">log</span>(<span class="fu">prod</span>((<span class="dv">1</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>(y<span class="sc">-</span>m<span class="sc">*</span>x)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span>)))}</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>x_val <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="fl">0.01</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>y_L <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x_val,<span class="at">FUN=</span>L,<span class="at">x=</span>x,<span class="at">y=</span>y1)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>y_logL <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x_val,<span class="at">FUN=</span>logL,<span class="at">x=</span>x,<span class="at">y=</span>y1)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="fl">0.25</span>,<span class="fl">0.25</span>))</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x_val,y_L,<span class="at">type=</span><span class="st">'l'</span>)</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>m_best,<span class="at">col=</span><span class="dv">4</span>)</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x_val,y_logL,<span class="at">type=</span><span class="st">'l'</span>)</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>m_best,<span class="at">col=</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>- Is the location of the maximum the same for the likelihood function and loglikelihood function?
-- Is the value of the maximum the same for the likelihood function and the loglikelihood function?</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>L <span class="ot">&lt;-</span> <span class="cf">function</span>(m,x,y){ <span class="fu">prod</span>((<span class="dv">1</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>(y<span class="sc">-</span>m<span class="sc">*</span>x)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span>)) }</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>logL <span class="ot">&lt;-</span> <span class="cf">function</span>(m,x,y){ <span class="fu">log</span>(<span class="fu">prod</span>((<span class="dv">1</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>(y<span class="sc">-</span>m<span class="sc">*</span>x)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span>)))}</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>x_val <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="fl">0.01</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>y_L <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x_val,<span class="at">FUN=</span>L,<span class="at">x=</span>x,<span class="at">y=</span>y1)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>y_logL <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x_val,<span class="at">FUN=</span>logL,<span class="at">x=</span>x,<span class="at">y=</span>y1)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="fl">0.25</span>,<span class="fl">0.25</span>))</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x_val,y_L,<span class="at">type=</span><span class="st">'l'</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>m_best,<span class="at">col=</span><span class="dv">4</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x_val,y_logL,<span class="at">type=</span><span class="st">'l'</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>m_best,<span class="at">col=</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Is the location of the maximum the same for the likelihood function and loglikelihood function?</li>
+<li>Is the value of the maximum the same for the likelihood function and the loglikelihood function?</li>
+</ul>
 </section>
 </section>
 </section>
@@ -1142,17 +1173,17 @@ Check Your Answer
 <h2 class="anchored" data-anchor-id="group-meeting">Group Meeting</h2>
 <section id="activity---more-practice-with-maximum-likelihood-method-1" class="level3">
 <h3 class="anchored" data-anchor-id="activity---more-practice-with-maximum-likelihood-method-1">Activity - More Practice with Maximum Likelihood Method</h3>
-<section id="consider-the-model-fx-be-x." class="level4">
-<h4 class="anchored" data-anchor-id="consider-the-model-fx-be-x.">Consider the model <span class="math inline">\(f(x) = be^{-x}\)</span>.</h4>
+<section id="consider-the-model-fx-be-x" class="level4">
+<h4 class="anchored" data-anchor-id="consider-the-model-fx-be-x">Consider the model <span class="math inline">\(f(x) = be^{-x}\)</span></h4>
 <p>We would like to fit this model to the following data <span class="math inline">\((x_i,y_i)\)</span> using the maximum likelihood method. Work together at the boards, as appropriate, to complete the following.</p>
 <ul>
 <li>Read in the data with the following code.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://chaz-clark.github.io/M119/logLikelihood_practice2.csv"</span>))</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> data<span class="sc">$</span>x</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> data<span class="sc">$</span>y1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://chaz-clark.github.io/M119/logLikelihood_practice2.csv"</span>))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> data<span class="sc">$</span>x</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> data<span class="sc">$</span>y1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Write down and simplify the loglikelihood function.</li>
 <li>Write down and simplify the first and derivatives of the loglikelihood function.</li>
@@ -1161,18 +1192,18 @@ Check Your Answer
 <li>Write down the fitted model.</li>
 </ul>
 </section>
-<section id="consider-the-model-hx-a-be-x." class="level4">
-<h4 class="anchored" data-anchor-id="consider-the-model-hx-a-be-x.">Consider the model <span class="math inline">\(h(x) = a + be^{-x}\)</span>.</h4>
+<section id="consider-the-model-hx-a-be-x" class="level4">
+<h4 class="anchored" data-anchor-id="consider-the-model-hx-a-be-x">Consider the model <span class="math inline">\(h(x) = a + be^{-x}\)</span></h4>
 <p>We would like to fit this model to the following data <span class="math inline">\((x_i,y_i)\)</span> using the maximum likelihood method.</p>
 <p>As you work on examples in pairs or groups as assigned. Write down your work and be prepared to share with the class ideas, questions, and solutions from your discussion.</p>
 <ul>
 <li>Read in the data with the following code.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://chaz-clark.github.io/M119/logLikelihood_practice2.csv"</span>))</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> data<span class="sc">$</span>x</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> data<span class="sc">$</span>y1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://chaz-clark.github.io/M119/logLikelihood_practice2.csv"</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> data<span class="sc">$</span>x</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> data<span class="sc">$</span>y1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Write down and simplify the loglikelihood function.</li>
 <li>Write down and simplify the first and derivatives of the loglikelihood function.</li>
@@ -1181,18 +1212,18 @@ Check Your Answer
 <li>Write down the fitted model.</li>
 </ul>
 </section>
-<section id="consider-the-model-hx-100-be-x." class="level4">
-<h4 class="anchored" data-anchor-id="consider-the-model-hx-100-be-x.">Consider the model <span class="math inline">\(h(x) = 100 + be^{-x}\)</span>.</h4>
+<section id="consider-the-model-hx-100-be-x" class="level4">
+<h4 class="anchored" data-anchor-id="consider-the-model-hx-100-be-x">Consider the model <span class="math inline">\(h(x) = 100 + be^{-x}\)</span></h4>
 <p>We would like to fit this model to the following data <span class="math inline">\((x_i,y_i)\)</span> using the maximum likelihood method.</p>
 <p>As you work on examples in pairs or groups as assigned. Write down your work and be prepared to share with the class ideas, questions, and solutions from your discussion.</p>
 <ul>
 <li>Read in the data with the following code.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://chaz-clark.github.io/M119/logLikelihood_practice2.csv"</span>))</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> data<span class="sc">$</span>x</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> data<span class="sc">$</span>y1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">url</span>(<span class="st">"https://chaz-clark.github.io/M119/logLikelihood_practice2.csv"</span>))</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> data<span class="sc">$</span>x</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> data<span class="sc">$</span>y1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Write down and simplify the loglikelihood function.</li>
 <li>Write down and simplify the first and derivatives of the loglikelihood function.</li>
@@ -1205,14 +1236,11 @@ Check Your Answer
 <section id="project-2-task-3-wrapup" class="level3">
 <h3 class="anchored" data-anchor-id="project-2-task-3-wrapup">Project 2 Task 3 WrapUp</h3>
 <p>Check-in with your group. Take a little time to help wrap up any lingering questions related to Project 2 Task 1-3.</p>
-</section>
-</section>
-<section id="discussion-1" class="level2">
-<h2 class="anchored" data-anchor-id="discussion-1">Discussion</h2>
 <hr>
 <p><em>Source: <a href="https://byuimath.com/clarkc/all/119/index.php?n=Class.30">Class.30 on byuimath.com</a></em></p>
 
 
+</section>
 </section>
 </section>
 
