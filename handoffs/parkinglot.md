@@ -59,22 +59,25 @@ Then review each line — accept the bare-prompt cases (e.g. `- Find any
 extrema of $X$.`), reject the multi-sentence ones (e.g. lines where there's
 an embedded period mid-line followed by `This means…`).
 
-### Pull R Solution dropdowns from bmwoodruff/m119-w26 for every class day
+### Audit bmwoodruff/m119-w26 against every class day, add Solution (R) dropdowns where helpful
 
 **Trigger:** post-semester (after 2026-07-22) OR next time content-review work is scheduled — likely batched with the M119/Projects merge work parked in `HANDOFF_merge-projects-site.md`.
 **Routes-to:** sprint
 **Added:** 2026-06-08
-**Origin-Commit:** 9bbd3d2
+**Last-refined:** 2026-06-16
+**Origin-Commit:** 9bbd3d2 (proof of concept) / `<current>` (audit refinement)
 
-[bmwoodruff/m119-w26](https://github.com/bmwoodruff/m119-w26) has per-day `.R` files (18 as of survey on 2026-06-08: `01-09.R`, `01-12.R`, `01-16.R`, `01-20.R`, `01-22.R`, `01-26.R`, `01-29.R`, `01-30.R`, `02-02.R`, `02-03.R`, …, `02-27.R`, …, `03-02.R`, `03-05.R`, `03-09.R`, `03-13.R`, `03-20.R`). On 2026-06-08 we pulled the Q1 portion of `02-27.R` into class-27 Brain Gains Q1 as a new "Solution (R)" dropdown alongside the math Solution (commit `9bbd3d2`). Pattern is reusable: each problem that has a closed-form solution gets a parallel R cell that students can copy-paste.
+[bmwoodruff/m119-w26](https://github.com/bmwoodruff/m119-w26) has 18 per-day `.R` files (survey on 2026-06-08): `01-09.R`, `01-12.R`, `01-16.R`, `01-20.R`, `01-22.R`, `01-26.R`, `01-29.R`, `01-30.R`, `02-02.R`, `02-03.R`, `02-04.R`, `02-26.R`, `02-27.R`, `03-02.R`, `03-05.R`, `03-09.R`, `03-13.R`, `03-20.R`. Two proofs of concept so far — `02-27.R` → class-27 Brain Gains Q1 (commit `9bbd3d2`), `03-05.R` + `03-09.R` → class-32 Group Meeting "Compare loglikelihood and least squares" + "Another model" (current commit).
 
-The work:
+**The work — audit-first, then add:**
 
-1. Map bmwoodruff's WI26 date labels (`MM-DD.R`) to our SP26 class day numbers. The date labels are off — they're WI26 (Winter 2026) semester dates, not SP26 (Spring 2026). The mapping is by *sequential class meeting*, not calendar date: bmwoodruff's `01-09.R` ↔ our Class 1, `01-12.R` ↔ Class 2, etc. Watch for any gaps — WI26 and SP26 may have skipped different holidays.
-2. For each bmwoodruff `.R` file, identify which problems on the corresponding class page it covers (sometimes one file spans all Brain Gains + activities for that day, sometimes only one section).
-3. Add a `Solution (R)` dropdown next to each existing math `Solution` dropdown, containing the relevant code with attribution: `Source: [<file>.R](https://github.com/bmwoodruff/m119-w26/blob/main/<file>.R)`.
-4. Skip days where the code wouldn't add anything (e.g. pure-derivation days, no computation step).
+1. **Walk every class page's existing Solution dropdowns** (Brain Gains, Group Meeting, Discussion, Activities). For each, decide: would adding a parallel `Solution (R)` dropdown using bmwoodruff's matching `.R` content add value? Sometimes yes (computation-heavy answer), sometimes no (pure derivation, no code).
+2. **Match by content, not calendar date.** The `MM-DD.R` labels are WI26 dates, not SP26. There's no strict sequential index — `02-27.R` matched our class-27 by *topic* (solving 2×2 systems), and `03-09.R` matched our class-32 by data (`data2_ls.csv` linear-fit problem). Map by what's *taught*, not by file number.
+3. **Update data URLs.** bmwoodruff's files reference `byuistats.github.io/M119/...`; our site uses `chaz-clark.github.io/M119/...`. Update on import so students can run the code without 404s.
+4. **Attribution format:** standard footer line in each new dropdown — `Source: [<file>.R](https://github.com/bmwoodruff/m119-w26/blob/main/<file>.R)`. If the code is adapted (e.g. swapped a model), note "Adapted from".
+5. **Note for students:** when a class has classroom-permitted reuse for homework (like class-32 today), add a single short sentence in the dropdown — "OK to use this pattern on the related homework." Verbatim from maintainer guidance.
+6. **Skip days where it wouldn't help** — pure-derivation pages, definition pages, or pages whose Solution is already a one-line algebraic answer.
 
-This is **purely additive** — the existing math Solutions stay; the R dropdowns sit alongside them. UX win: students who want to see the computational answer get it without context-switching to a separate file. Aligns with the broader "executable cells inline" direction noted in `HANDOFF_merge-projects-site.md`'s Enhancement section — though THAT one needs CI-side R support, while these R cells stay as copy-paste blocks until the M119/Projects merge unlocks inline execution.
+**Pattern is purely additive** — existing math Solutions stay, R dropdowns sit alongside them. UX win: students who want the computational answer get it without context-switching to GitHub. Aligns with the broader "executable cells inline" direction noted in `HANDOFF_merge-projects-site.md`'s Enhancement section — though THAT one needs CI-side R support, while these R cells stay as copy-paste blocks until the M119/Projects merge unlocks inline execution.
 
-Deferred because: (a) mid-semester URL/content changes risk breaking student bookmarks and live Canvas links; (b) 18 files × ~3 dropdowns each is a sustained effort that wants dedicated focus, not piecemeal additions. Best done as a contiguous sprint after the term wraps.
+**Deferred because:** (a) mid-semester URL/content changes risk breaking student bookmarks and live Canvas links; (b) ~18 files × multiple dropdowns each is a sustained effort that wants dedicated focus, not piecemeal additions. Best done as a contiguous sprint after the term wraps.

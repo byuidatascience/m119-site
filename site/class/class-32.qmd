@@ -225,7 +225,7 @@ Using $f(x) = 3.187972 e^x$, we have
 
 ```r
 my_a <- sum(y*exp(x))/sum(exp(x)^2)
-my_a  
+my_a
 
 f(4)
 uniroot(function(x){f(x)-5},c(-2,2))$root
@@ -235,6 +235,35 @@ plot(x,y)
 t <- seq(min(x),max(x),0.1)
 lines(t,f(t))
 ```
+
+</details>
+
+<details>
+<summary>Solution (R)</summary>
+
+The same fit using the systematic `c11`/`b1` framework from the maximum-likelihood / least-squares system — handy because the same skeleton works for any model of the form $f(x) = a \cdot g(x)$ (just swap $g(x)$).
+
+```r
+data <- read.csv(url("https://chaz-clark.github.io/M119/data4_ls.csv"))
+x <- data$x
+y <- data$y
+
+c11 <- sum(exp(x)^2)
+b1  <- sum(y * exp(x))
+
+my_a <- b1 / c11
+my_a
+
+f <- function(x, a = my_a){ a * exp(x) }
+plot(x, y)
+t <- seq(min(x), max(x), 0.1)
+lines(t, f(t), type = "l")
+
+f(4)
+uniroot(function(x){f(x) - 5}, c(-2, 2))$root
+```
+
+Adapted from [03-05.R](https://github.com/bmwoodruff/m119-w26/blob/main/03-05.R) (which has an analogous example fitting $b \cdot e^{-x}$). It's OK to use this pattern on the related homework.
 
 </details>
 
@@ -257,7 +286,7 @@ This time use the model $f(x;b,m) = b+mx$.
 <details>
 <summary>Solution</summary>
 
-The code below gives $y = 2.79 + 6.48x$ (rounded to 3 sig figures) as the model, with $f(4) = 28.72758$ and $f(0.3402777)=5$. 
+The code below gives $y = 2.79 + 6.48x$ (rounded to 3 sig figures) as the model, with $f(4) = 28.72758$ and $f(0.3402777)=5$.
 
 ```r
 rm(list=ls())
@@ -272,7 +301,7 @@ c21 <- sum(x)
 c22 <- sum(x^2)
 b2 <- sum(y*x)
 
-solvesystem <- function(c11, c12,b1,c21,c22,b2){ 
+solvesystem <- function(c11, c12,b1,c21,c22,b2){
   c((b1*c22 - c12*b2)/(c11*c22 - c21*c12),
     (c11*b2 - b1*c21)/(c11*c22 - c21*c12))
 }
@@ -285,10 +314,49 @@ my_m <- sol[2]
 f <- function(x, b = my_b, m = my_m){b + m*x}
 t <- seq(-6,6,0.1)
 plot(x,y)
-lines(t,f(t),type = "l") 
+lines(t,f(t),type = "l")
 
 f(4) # 28.72758
 uniroot(function(x){f(x)-5},c(-2,2))$root # 0.3402777
+```
+
+</details>
+
+<details>
+<summary>Solution (R)</summary>
+
+The same fit, verbatim from [03-09.R](https://github.com/bmwoodruff/m119-w26/blob/main/03-09.R) (URL updated to the current `chaz-clark.github.io/M119` data host). Yields the same $f(4) \approx 28.728$ and root $\approx 0.340$. OK to use this on the related homework.
+
+```r
+rm(list=ls())
+data <- read.csv(url("https://chaz-clark.github.io/M119/data2_ls.csv"))
+x <- data$x
+y <- data$y
+
+c11 <- sum(1+0*x)
+c12 <- sum(x)
+b1  <- sum(y)
+c21 <- sum(x)
+c22 <- sum(x^2)
+b2  <- sum(y*x)
+
+solvesystem <- function(c11, c12, b1, c21, c22, b2){
+  c((b1*c22 - c12*b2)/(c11*c22 - c21*c12),
+    (c11*b2 - b1*c21)/(c11*c22 - c21*c12))
+}
+
+sol  <- solvesystem(c11, c12, b1, c21, c22, b2)
+sol
+my_b <- sol[1]
+my_m <- sol[2]
+
+f <- function(x, b = my_b, m = my_m){ b + m*x }
+t <- seq(-6, 6, 0.1)
+plot(x, y)
+lines(t, f(t), type = "l")
+
+f(4)                                                  # 28.72758
+uniroot(function(x){ f(x) - 5 }, c(-2, 2))$root       # 0.3402777
 ```
 
 </details>
