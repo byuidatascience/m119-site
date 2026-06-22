@@ -157,8 +157,7 @@ The **cumulative distribution function** of a random variable $X$ is the functio
 ### Exercises 1.1 - Averaging Test Scores
 - <https://chaz-clark.github.io/M119/Projects/probability.html#exercises>
 
-1.  Consider the vector of integers c(2,2,2,3,3,5,5,5,5,7,8,8,9,9,9).
-    - Find the mean of the values by summing the values and then dividing by the number of values.
+1. Consider the vector of integers c(2,2,2,3,3,5,5,5,5,7,8,8,9,9,9). Find the mean of the values by summing the values and then dividing by the number of values.
 
 <details>
 <summary>Answers</summary>
@@ -173,7 +172,7 @@ mean(x)
 
 </details>
 
-    - Use the values vector c(2,3,5,7,8,9) and frequencies vector c(3,2,4,1,2,3) to compute the mean of integers.
+2. Use the values vector c(2,3,5,7,8,9) and frequencies vector c(3,2,4,1,2,3) to compute the mean of integers.
 
 <details>
 <summary>Answers</summary>
@@ -187,7 +186,7 @@ sum(val*freq)/sum(freq)
 
 </details>
 
-    - Use the values vector c(2,3,5,7,8,9) and proportions vector c(3/15,2/15,4/15,1/15,2/15,3/15) to compute the mean of integers.
+3. Use the values vector c(2,3,5,7,8,9) and proportions vector c(3/15,2/15,4/15,1/15,2/15,3/15) to compute the mean of integers.
 
 <details>
 <summary>Answers</summary>
@@ -201,7 +200,7 @@ sum(val*prop)
 
 </details>
 
-1.  Construct your own vector, and write code that computes the mean of the values in the vector using each of the 3 methods in this section.
+4. Construct your own vector, and write code that computes the mean of the values in the vector using each of the 3 methods in this section.
 
 <details>
 <summary>Sample Answers</summary>
@@ -339,7 +338,7 @@ tbl <- data.frame(outcome=y, prob = py)
 tbl
 ```
 
-    - This isn’t needed to answer the gambling question, but we want to recognize $Y$ as its own random variable.
+- This isn’t needed to answer the gambling question, but we want to recognize $Y$ as its own random variable.
 
 <details>
 <summary>Answers</summary>
@@ -405,7 +404,7 @@ p <- lambda^x *exp(-lambda)/factorial(x)
 sum(x*p)
 ```
 
-    - Adjust the code to use the x-vales from 0 to 50 to estimate E[X].
+- Adjust the code to use the x-vales from 0 to 50 to estimate E[X].
 
 ```r
 lambda <- 5.904762
@@ -416,7 +415,7 @@ p <- lambda^x *exp(-lambda)/factorial(x)
 sum(x*p)
 ```
 
-    - What do you notice?
+- What do you notice?
 
 1.  Compute $P(X=7)$, the probability that their will be 7 tropical storms in Florida in a year.
     - Compute $F(7)$, the probability that the number of tropical storms in Florida will be less than or equal to 7 in a year. 
