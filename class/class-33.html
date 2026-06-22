@@ -951,10 +951,7 @@ The cumulative distribution function (CDF) of a random variable
 <li><a href="https://chaz-clark.github.io/M119/Projects/probability.html#exercises" class="uri">https://chaz-clark.github.io/M119/Projects/probability.html#exercises</a></li>
 </ul>
 <ol type="1">
-<li>Consider the vector of integers c(2,2,2,3,3,5,5,5,5,7,8,8,9,9,9).
-<ul>
-<li>Find the mean of the values by summing the values and then dividing by the number of values.</li>
-</ul></li>
+<li>Consider the vector of integers c(2,2,2,3,3,5,5,5,5,7,8,8,9,9,9). Find the mean of the values by summing the values and then dividing by the number of values.</li>
 </ol>
 <details>
 <summary>
@@ -966,42 +963,46 @@ Answers
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x)<span class="sc">/</span><span class="fu">length</span>(x)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<pre><code>- Use the values vector c(2,3,5,7,8,9) and frequencies vector c(3,2,4,1,2,3) to compute the mean of integers.</code></pre>
+<ol start="2" type="1">
+<li>Use the values vector c(2,3,5,7,8,9) and frequencies vector c(3,2,4,1,2,3) to compute the mean of integers.</li>
+</ol>
+<details>
+<summary>
+Answers
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>val <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(val<span class="sc">*</span>freq)<span class="sc">/</span><span class="fu">sum</span>(freq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<ol start="3" type="1">
+<li>Use the values vector c(2,3,5,7,8,9) and proportions vector c(3/15,2/15,4/15,1/15,2/15,3/15) to compute the mean of integers.</li>
+</ol>
 <details>
 <summary>
 Answers
 </summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>val <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>freq <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>prop <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">15</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(val<span class="sc">*</span>freq)<span class="sc">/</span><span class="fu">sum</span>(freq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(val<span class="sc">*</span>prop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<pre><code>- Use the values vector c(2,3,5,7,8,9) and proportions vector c(3/15,2/15,4/15,1/15,2/15,3/15) to compute the mean of integers.</code></pre>
-<details>
-<summary>
-Answers
-</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>val <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>prop <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">15</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(val<span class="sc">*</span>prop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<ol type="1">
+<ol start="4" type="1">
 <li>Construct your own vector, and write code that computes the mean of the values in the vector using each of the 3 methods in this section.</li>
 </ol>
 <details>
 <summary>
 Sample Answers
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>val.y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>freq.y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>prop.y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(y)<span class="sc">/</span><span class="fu">length</span>(y)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(val.y<span class="sc">*</span>freq.y)<span class="sc">/</span><span class="fu">sum</span>(freq.y)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(val.y<span class="sc">*</span>prop.y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>val.y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>freq.y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>prop.y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(y)<span class="sc">/</span><span class="fu">length</span>(y)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(val.y<span class="sc">*</span>freq.y)<span class="sc">/</span><span class="fu">sum</span>(freq.y)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(val.y<span class="sc">*</span>prop.y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
 <section id="exercises-1.4---tossing-a-coin-three-times-and-counting-heads" class="level3">
@@ -1074,16 +1075,16 @@ Answers
 <ol type="1">
 <li>Looks like the figure could balance at 7.</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2</span>,<span class="dv">12</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">6</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2</span>,<span class="dv">12</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">6</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="1">
 <li><span class="math inline">\(F(2) = \frac{1}{36} = 0.02777778\)</span>, <span class="math inline">\(F(3) = \frac{3}{36} = 0.08333333\)</span>, <span class="math inline">\(F(4) = \frac{6}{36} = 0.1666667\)</span>, <span class="math inline">\(F(5) = \frac{10}{36} = 0.2777778\)</span>, <span class="math inline">\(F(6) = \frac{15}{36} = 0.4166667\)</span>, <span class="math inline">\(F(7) = \frac{21}{36} = 0.58333333\)</span>, <span class="math inline">\(F(8) = \frac{26}{36} = 0.72222222\)</span>, <span class="math inline">\(F(9) = \frac{30}{36} = 0.83333333\)</span>, <span class="math inline">\(F(10) = \frac{33}{36} = 0.91666667\)</span>, <span class="math inline">\(F(11) = \frac{35}{36} = 0.97222222\)</span>, and <span class="math inline">\(F(12) = \frac{36}{36} = 1\)</span>.</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">6</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cumsum</span>(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">6</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cumsum</span>(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="1">
 <li><p><span class="math inline">\(F(12) = 1\)</span></p>
 <ul>
@@ -1118,33 +1119,35 @@ Answers
 </ul></li>
 <li><p>Let <span class="math inline">\(Y\)</span> be the random variable which is the product of rolling two dice. Use the following code to show the probability mass function for <span class="math inline">\(Y\)</span>. Compute <span class="math inline">\(E[Y]\)</span>.</p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">12</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">18</span>,<span class="dv">20</span>,<span class="dv">24</span>,<span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">36</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>py <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">outcome=</span>y, <span class="at">prob =</span> py)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>tbl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>- This isn’t needed to answer the gambling question, but we want to recognize $Y$ as its own random variable.</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">12</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">18</span>,<span class="dv">20</span>,<span class="dv">24</span>,<span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">36</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>py <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">36</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">36</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">outcome=</span>y, <span class="at">prob =</span> py)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>tbl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>This isn’t needed to answer the gambling question, but we want to recognize <span class="math inline">\(Y\)</span> as its own random variable.</li>
+</ul>
 <details>
 <summary>
 Answers
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">3</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span><span class="sc">/</span><span class="dv">9</span>, <span class="dv">2</span><span class="sc">/</span><span class="dv">9</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">outcome =</span> x, <span class="at">prob =</span> p)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_pmf</span>(x,p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">3</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span><span class="sc">/</span><span class="dv">9</span>, <span class="dv">2</span><span class="sc">/</span><span class="dv">9</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">outcome =</span> x, <span class="at">prob =</span> p)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_pmf</span>(x,p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To use the function draw_pmf(x,p), you’ll have to copy the code <a href="https://chaz-clark.github.io/M119/Projects/probability.html" class="uri">https://chaz-clark.github.io/M119/Projects/probability.html</a>.</p>
 <ul>
 <li>We expected <span class="math inline">\(E[X]\)</span> to be closer to -1 than to 3 when we look at the target diagram.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>E.Y <span class="ot">&lt;-</span> <span class="fu">sum</span>(y<span class="sc">*</span>py)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>E.Y</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_pmf</span>(y,py)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>E.Y, <span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>E.Y <span class="ot">&lt;-</span> <span class="fu">sum</span>(y<span class="sc">*</span>py)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>E.Y</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_pmf</span>(y,py)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>E.Y, <span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
 <section id="exercises-1.7---how-many-tropical-storms---poisson" class="level3">
@@ -1153,14 +1156,14 @@ Answers
 <li><a href="https://chaz-clark.github.io/M119/Projects/probability.html#Exercises15" class="uri">https://chaz-clark.github.io/M119/Projects/probability.html#Exercises15</a></li>
 </ul>
 <p>We’ll look at another example related to the tropical storms example we did earlier this semester. Let <span class="math inline">\(X\)</span> represent the number of hurricane’s in a year that make landfall in Florida. We already saw that this discrete random variable follows a Poison distribution <span class="math inline">\(f(x;\lambda)=\frac{\lambda^xe^{-\lambda}}{x!}\)</span> where <span class="math inline">\(x = 0, 1, 2, 3, ...\)</span>, and we estimated the parameter to be <span class="math inline">\(\lambda \approx 5.904762\)</span>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">5.904762</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> lambda<span class="sc">^</span>x <span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)<span class="sc">/</span><span class="fu">factorial</span>(x)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,p,<span class="at">pch=</span><span class="dv">16</span>)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_pmf</span>(x,p)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">5.904762</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> lambda<span class="sc">^</span>x <span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)<span class="sc">/</span><span class="fu">factorial</span>(x)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,p,<span class="at">pch=</span><span class="dv">16</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_pmf</span>(x,p)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="1">
 <li>Use the <span class="math inline">\(x\)</span>-vales from 0 to 20 to estimate <span class="math inline">\(E[X]\)</span>.
 <ul>
@@ -1168,20 +1171,24 @@ Answers
 <li><p>Adjust the code to use the x-vales from 0 to 30 to estimate E[X].</p></li>
 </ul></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">5.904762</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,n)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> lambda<span class="sc">^</span>x <span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)<span class="sc">/</span><span class="fu">factorial</span>(x)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>- Adjust the code to use the x-vales from 0 to 50 to estimate E[X].</code></pre>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">5.904762</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,n)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> lambda<span class="sc">^</span>x <span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)<span class="sc">/</span><span class="fu">factorial</span>(x)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>- What do you notice?</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">5.904762</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,n)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> lambda<span class="sc">^</span>x <span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)<span class="sc">/</span><span class="fu">factorial</span>(x)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Adjust the code to use the x-vales from 0 to 50 to estimate E[X].</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">5.904762</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,n)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> lambda<span class="sc">^</span>x <span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)<span class="sc">/</span><span class="fu">factorial</span>(x)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>What do you notice?</li>
+</ul>
 <ol type="1">
 <li>Compute <span class="math inline">\(P(X=7)\)</span>, the probability that their will be 7 tropical storms in Florida in a year.
 <ul>
@@ -1190,29 +1197,29 @@ Answers
 <li>Compute <span class="math inline">\(P(X &gt; 7)\)</span></li>
 </ul></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">5.904762</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,n)</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> lambda<span class="sc">^</span>x <span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)<span class="sc">/</span><span class="fu">factorial</span>(x)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="dv">7</span>)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">outcome =</span> x, <span class="at">prob =</span> p, <span class="at">cdf =</span> <span class="fu">cumsum</span>(p))</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>])</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">sum</span>(p[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>])</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="do">### Compare to </span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p[<span class="dv">9</span><span class="sc">:</span><span class="dv">21</span>])</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p[<span class="sc">-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">5.904762</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,n)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> lambda<span class="sc">^</span>x <span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)<span class="sc">/</span><span class="fu">factorial</span>(x)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">p</span>(<span class="dv">7</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">outcome =</span> x, <span class="at">prob =</span> p, <span class="at">cdf =</span> <span class="fu">cumsum</span>(p))</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>])</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">sum</span>(p[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>])</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="do">### Compare to </span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p[<span class="dv">9</span><span class="sc">:</span><span class="dv">21</span>])</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p[<span class="sc">-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="1">
 <li>Compute the probability that there will be 10 or more tropical storms in Florida in a given year.</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">5.904762</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,n)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> lambda<span class="sc">^</span>x <span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)<span class="sc">/</span><span class="fu">factorial</span>(x)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">sum</span>(p[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">5.904762</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,n)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> lambda<span class="sc">^</span>x <span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>lambda)<span class="sc">/</span><span class="fu">factorial</span>(x)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">sum</span>(p[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="1">
 <li>Make up your own probability questions about how many tropical storms there might be, and answer them.</li>
 </ol>
