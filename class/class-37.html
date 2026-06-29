@@ -951,36 +951,36 @@ draw_rect_approx() code
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(<span class="dv">1</span>,<span class="dv">3</span>)  </span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">F</span>(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Why must we have <span class="math inline">\(P(2\leq X\leq 3) = F(3)-F(2)\)</span>?</p>
-<pre><code>P(2,3)
-F(3)-F(2)
-all.equal(P(2,3),F(3)-F(2))</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">F</span>(<span class="dv">3</span>)<span class="sc">-</span><span class="fu">F</span>(<span class="dv">2</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(<span class="fu">P</span>(<span class="dv">2</span>,<span class="dv">3</span>),<span class="fu">F</span>(<span class="dv">3</span>)<span class="sc">-</span><span class="fu">F</span>(<span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Now let’s swap to Mathematica and use definite integral notation <span class="math inline">\(\int_a^b f(x) dx\)</span> to do the same computations. Remember, a definite integral is just the symbol for letting the number of rectangles approach infinity, written symbolically as <span class="math display">\[\int_a^b f(x) dx =\lim_{n\to \infty} \sum_{i=1}^nf(x_i)\Delta x_i\]</span></p>
 <p>We first find the area under <span class="math inline">\(g\)</span>. (Remember to use shift + enter to run the command in Mathematica.)</p>
-<pre><code>g = x^2 Exp[-x];
-a = 1
-b = 4
-A = Integrate[g, {x, a, b}]
-N[A, 7] (*This provides 7 significant figures*)
-Plot[g, {x, a, b}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">g</span> <span class="ex">=</span> <span class="fu">x</span><span class="sc">^</span><span class="dv">2</span> <span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="fu">x</span><span class="op">]</span>;</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">a</span> <span class="ex">=</span> <span class="dv">1</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">b</span> <span class="ex">=</span> <span class="dv">4</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">A</span> <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">g</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">a</span><span class="op">,</span> <span class="fu">b</span><span class="op">}]</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">N</span><span class="op">[</span><span class="fu">A</span><span class="op">,</span> <span class="dv">7</span><span class="op">]</span> <span class="co">(*This provides 7 significant figures*)</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Plot</span><span class="op">[</span><span class="fu">g</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">a</span><span class="op">,</span> <span class="fu">b</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>With the area under <span class="math inline">\(g\)</span>, we obtain a probability density function <span class="math inline">\(f = kg\)</span> and check that the area under f is actually 1.</p>
-<pre><code>k = 1/A;
-f = k*g;
-Integrate[f, {x, a, b}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">k</span> <span class="ex">=</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">A</span>;</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span> <span class="ex">=</span> <span class="fu">k</span><span class="sc">*</span><span class="fu">g</span>;</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">a</span><span class="op">,</span> <span class="fu">b</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We now compute the expected value and variance of a random variable with pdf of <span class="math inline">\(f(x)\)</span>. We’ll give both exact and approximate answers to compare with R.</p>
-<pre><code>EV = Integrate[x*f, {x, a, b}]
-EV // N (*This is another example of code to obtain a numerical approximation. Typing N[EV] gives the same result.*)
-Var = Integrate[(x - EV)^2*f, {x, a, b}]
-Var // N</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>EV <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">x</span><span class="sc">*</span><span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">a</span><span class="op">,</span> <span class="fu">b</span><span class="op">}]</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>EV <span class="sc">//</span> <span class="fu">N</span> <span class="co">(*This is another example of code to obtain a numerical approximation. Typing N[EV] gives the same result.*)</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>Var <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span>(<span class="fu">x</span> <span class="sc">-</span> EV)<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">a</span><span class="op">,</span> <span class="fu">b</span><span class="op">}]</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>Var <span class="sc">//</span> <span class="fu">N</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We can quickly compute various probabilities by adjusting the bounds of the definite integral. The probabilities <span class="math inline">\(P(X\leq 3)\)</span> and <span class="math inline">\(P(2\leq X\leq 3)\)</span> are given below.</p>
-<pre><code>Integrate[f, {x, a, 3}]
-% // N
-Integrate[f, {x, 2, 3}]
-% // N</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">a</span><span class="op">,</span> <span class="dv">3</span><span class="op">}]</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="sc">%</span> <span class="sc">//</span> <span class="fu">N</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">}]</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="sc">%</span> <span class="sc">//</span> <span class="fu">N</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Mathematica has no problems working with symbols, something R is not designed to do. We can compute the cumulative distribution function <span class="math inline">\(F(x)\)</span> using Mathematica, as well as verify that <span class="math inline">\(F'(x) = f(x)\)</span>.</p>
-<pre><code>F = Integrate[f, {x, a, x}] (*Make the right bound x, rather than a number*)
-D[F, x] (*Computes F'(x)*)
-f (*Compare to the previous*)
-f - D[F, x] // FullSimplify (*See if the difference is zero*)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">F</span> <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">a</span><span class="op">,</span> <span class="fu">x</span><span class="op">}]</span> <span class="co">(*Make the right bound x, rather than a number*)</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">D</span><span class="op">[</span><span class="fu">F</span><span class="op">,</span> <span class="fu">x</span><span class="op">]</span> <span class="co">(*Computes F'(x)*)</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span> <span class="co">(*Compare to the previous*)</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span> <span class="sc">-</span> <span class="fu">D</span><span class="op">[</span><span class="fu">F</span><span class="op">,</span> <span class="fu">x</span><span class="op">]</span> <span class="sc">//</span> <span class="fu">FullSimplify</span> <span class="co">(*See if the difference is zero*)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="group-meeting" class="level2">
