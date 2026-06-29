@@ -241,7 +241,7 @@ Integrate[Exp[-t],{t,0,x}]
 Integrate[Exp[-x],x]
 ```
 
-    - We know that $F(x)$ is from the family of functions $\int e^{-x}dx$. How do we pick which one?
+- We know that $F(x)$ is from the family of functions $\int e^{-x}dx$. How do we pick which one?
       - We need to identify the constant. We know $F(0) = 0$.
 - The cdf $F(x) = \int_{-\infty}^x f(t)dt$ is an **accumulation function** (calculating the *accumulation of probability*).
     - More generally an accumulation function is of the form $F(x) = \int_{a}^x f(t)dt$ where $a$ is a constant.

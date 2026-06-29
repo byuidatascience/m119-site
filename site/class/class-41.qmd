@@ -44,7 +44,7 @@ What is the shape of this curve?
 ContourPlot[y == Sqrt[16 - (x - 4)^2], {x, -1, 9}, {y, -5, 5}]
 ```
 
-    - What curve is being plotted here?
+- What curve is being plotted here?
     - What do you notice about the function $f(x) = \sqrt{16-(x-4)^2}$ and the curve $(x-4)^2 + y^2 = 16$? 
 
 - Now let's use our observations. Consider the integral, $\displaystyle\int_0^{8} \sqrt{16-(x-4)^2} dx$. 

@@ -41,7 +41,7 @@ Let's take a look this data
 hist(tmp,probability=TRUE)
 ```
 
-    - Use your simulated data to compute $P(X=4)$.
+- Use your simulated data to compute $P(X=4)$.
 
 ```r
 #count the number of 4's in the simulated data
@@ -52,7 +52,7 @@ tot <- length(tmp)
 prob <- obs/tot
 ```
 
-    - Use your simulated data to compute $P(X > 5.3)$.
+- Use your simulated data to compute $P(X > 5.3)$.
 
 ```r
 #count the number of 6's and 7's in the simulated data
@@ -121,7 +121,7 @@ Let's take a look this data
 hist(tmp,probability=TRUE)
 ```
 
-    - Use your simulated data to compute $P(X=3)$.
+- Use your simulated data to compute $P(X=3)$.
 
 ```r
 #count the number of 4's in the simulated data
@@ -132,7 +132,7 @@ tot <- length(tmp)
 prob <- obs/tot
 ```
 
-    - Use your simulated data to compute the probability you have to roll the die at least 10 times before you get a 4.
+- Use your simulated data to compute the probability you have to roll the die at least 10 times before you get a 4.
 
 ```r
 #P(X > 10) = 1 - P(X <= 10)

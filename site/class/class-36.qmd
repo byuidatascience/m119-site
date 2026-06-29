@@ -218,7 +218,7 @@ p <- x/length(tmp)
 p
 ```
 
-    - Note if we let $X$ be the random variable which records the $x$-coordinate of dropping a dart on the target defined by $f_0$ we could calculate this same probability $P(X \leq 1.2)$ from the model.
+- Note if we let $X$ be the random variable which records the $x$-coordinate of dropping a dart on the target defined by $f_0$ we could calculate this same probability $P(X \leq 1.2)$ from the model.
 $$ P(X \leq 1.2) = \frac{(1/3)*(1.2+1)}{1} = \frac{11}{15} \approx 0.733333 $$
 
 </details>
