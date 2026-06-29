@@ -209,7 +209,7 @@ F(3)
 
 Why must we have $P(2\leq X\leq 3) = F(3)-F(2)$?
 
-```
+```r
 P(2,3)
 F(3)-F(2)
 all.equal(P(2,3),F(3)-F(2))
@@ -222,7 +222,7 @@ $$\int_a^b f(x) dx =\lim_{n\to \infty} \sum_{i=1}^nf(x_i)\Delta x_i$$
 We first find the area under $g$. 
 (Remember to use shift + enter to run the command in Mathematica.)
 
-```
+```mathematica
 g = x^2 Exp[-x];
 a = 1
 b = 4
@@ -233,7 +233,7 @@ Plot[g, {x, a, b}]
 
 With the area under $g$, we obtain a probability density function $f = kg$ and check that the area under f is actually 1.
 
-```
+```mathematica
 k = 1/A;
 f = k*g;
 Integrate[f, {x, a, b}]
@@ -241,7 +241,7 @@ Integrate[f, {x, a, b}]
 
 We now compute the expected value and variance of a random variable with pdf of $f(x)$. We'll give both exact and approximate answers to compare with R. 
 
-```
+```mathematica
 EV = Integrate[x*f, {x, a, b}]
 EV // N (*This is another example of code to obtain a numerical approximation. Typing N[EV] gives the same result.*)
 Var = Integrate[(x - EV)^2*f, {x, a, b}]
@@ -250,7 +250,7 @@ Var // N
 
 We can quickly compute various probabilities by adjusting the bounds of the definite integral.  The probabilities $P(X\leq 3)$ and $P(2\leq X\leq 3)$ are given below. 
 
-```
+```mathematica
 Integrate[f, {x, a, 3}]
 % // N
 Integrate[f, {x, 2, 3}]
@@ -259,7 +259,7 @@ Integrate[f, {x, 2, 3}]
 
 Mathematica has no problems working with symbols, something R is not designed to do.  We can compute the cumulative distribution function $F(x)$ using Mathematica, as well as verify that $F'(x) = f(x)$. 
 
-```
+```mathematica
 F = Integrate[f, {x, a, x}] (*Make the right bound x, rather than a number*)
 D[F, x] (*Computes F'(x)*)
 f (*Compare to the previous*)
