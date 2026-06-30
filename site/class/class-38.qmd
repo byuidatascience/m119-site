@@ -382,9 +382,9 @@ Var
 
 The "target" seems to have more weight on the left, so $E[X]\approx 0.2003749$ seems like a reasonable approximation for $E[X]$. This shape is not on any of our list of centroids so we don't have a formula find the exact value for our expected value of $E[X]$. But the exact expected value can be computed using a definite integral with Mathematica. 
 
-We now compute $A=\int_0^{\infty}f(x) dx$, $E[X]=\int_0^{\infty}xf(x) dx$, and $\text{Var}[X]=\int_0^{\infty}(x-E[X])^2f(x) dx$ with Mathematica.  
+We now compute $A=\int_0^{\infty}f(x) dx$, $E[X]=\int_0^{\infty}xf(x) dx$, and $\text{Var}[X]=\int_0^{\infty}(x-E[X])^2f(x) dx$ with Mathematica.
 
-```
+```mathematica
 f = 5 Exp[-5 x]
 A = Integrate[f, {x, 0, Infinity}]
 EV = Integrate[x*f, {x, 0, Infinity}]
@@ -448,7 +448,7 @@ lines(x1,y,col=4)
 
 - Let's calculate $\int_{-\infty}^\infty f(x) dx$, $E[X]$, $Var[X]$, and standard deviation of X for $f_3$ and $f_1$.
 
-```
+```mathematica
 $Assumptions = \[Lambda] > 0;
 Integrate[\[Lambda]*Exp[-\[Lambda]*x],{x,0,Infinity}]
 Integrate[x*\[Lambda]*Exp[-\[Lambda]*x],{x,0,Infinity}]
@@ -459,7 +459,7 @@ Integrate[(x-m)^2*\[Lambda]*Exp[-\[Lambda]*x],{x,0,Infinity}]
 Sqrt[Integrate[(x-m)^2*\[Lambda]*Exp[-\[Lambda]*x],{x,0,Infinity}]]
 ```
 
-```
+```mathematica
 $Assumptions = \[Sigma] > 0;
 Integrate[1/Sqrt[2*\[Pi]*\[Sigma]^2]*Exp[-1/2*((x - \[Mu])/\[Sigma])^2],{x,-Infinity,Infinity}]
 Integrate[x*1/Sqrt[2*\[Pi]*\[Sigma]^2]*Exp[-1/2*((x - \[Mu])/\[Sigma])^2],{x,-Infinity,Infinity}]
