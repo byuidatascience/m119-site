@@ -322,8 +322,8 @@ If you finish early, swap to the function $g(x) = 7-x$ for $0\leq x\leq 4$ and 0
 1. Compute $P(2\leq X\leq 3)$ using a geometric argument. Then use Mathematica to verify your result. 
 1. Verify that $\int_2^3 f(x) dx = P(X\leq 3) - P(X\leq 2)$ by computing each side with Mathematica. 
 
-1. Use Mathematica to compute $F(x) = P(X\leq x)$.  [Hint, compute $\int_0^x f(x) dx$.
-1. Use Mathematica to compute $P(a\leq X\leq b)$.  [Hint, compute $\int_a^b f(x) dx$.
+1. Use Mathematica to compute $F(x) = P(X\leq x)$.  [Hint, compute $\int_0^x f(x) dx$.]
+1. Use Mathematica to compute $P(a\leq X\leq b)$.  [Hint, compute $\int_a^b f(x) dx$.]
 
 1. Explain why $\int_a^b f(x) dx = F(b)-F(a)$. 
 
