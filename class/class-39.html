@@ -813,7 +813,7 @@ Some Answers
 <ul>
 <li><span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = \int_{-\infty}^{\infty} k g(x)dx = \int_{0}^{\infty} ke^{-3x}dx = k \int_{0}^{\infty} e^{-3x}dx\)</span></li>
 </ul>
-<pre><code>Integrate[Exp[-3*x], {x, 0, Infinity}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="dv">3</span><span class="sc">*</span><span class="fu">x</span><span class="op">],</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Since <span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = 1\)</span> we know <span class="math inline">\(\frac{1}{3}k = 1\)</span>.
 <ul>
@@ -821,11 +821,11 @@ Some Answers
 </ul></li>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} xf(x)dx = \int_{0}^{\infty} x(3e^{-3x})dx\)</span></li>
 </ul>
-<pre><code>Integrate[3*x*Exp[-3*x], {x, 0, Infinity}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="dv">3</span><span class="sc">*</span><span class="fu">x</span><span class="sc">*</span><span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="dv">3</span><span class="sc">*</span><span class="fu">x</span><span class="op">],</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} (x - \mu)^2f(x)dx = \int_{0}^{\infty} (x - \frac{1}{3})^2(3e^{-3x})dx\)</span></li>
 </ul>
-<pre><code>Integrate[3*(x-(1/3))^2*Exp[-3*x], {x, 0, Infinity}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="dv">3</span><span class="sc">*</span>(<span class="fu">x</span><span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="dv">3</span><span class="sc">*</span><span class="fu">x</span><span class="op">],</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="math inline">\(\sigma = \sqrt{\text{Var}[X]}\)</span></li>
 </ul>
@@ -841,7 +841,7 @@ Some Answers
 <ul>
 <li><span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = \int_{-\infty}^{\infty} k g(x)dx = \int_{0}^{\infty} ke^{-\lambda x}dx = k \int_{0}^{\infty} e^{-3x}dx\)</span></li>
 </ul>
-<pre><code>Assuming[L &gt; 0, Integrate[Exp[-L*x], {x, 0, Infinity}]]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Assuming</span><span class="op">[</span><span class="fu">L</span> &gt; <span class="dv">0</span><span class="op">,</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="fu">L</span><span class="sc">*</span><span class="fu">x</span><span class="op">],</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Since <span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = 1\)</span> we know <span class="math inline">\(\frac{1}{\lambda}k = 1\)</span>.
 <ul>
@@ -849,11 +849,11 @@ Some Answers
 </ul></li>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} xf(x)dx = \int_{0}^{\infty} x(\lambda e^{-\lambda x})dx\)</span></li>
 </ul>
-<pre><code>Assuming[L &gt; 0, Integrate[L*x*Exp[-L*x], {x, 0, Infinity}]]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Assuming</span><span class="op">[</span><span class="fu">L</span> &gt; <span class="dv">0</span><span class="op">,</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">L</span><span class="sc">*</span><span class="fu">x</span><span class="sc">*</span><span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="fu">L</span><span class="sc">*</span><span class="fu">x</span><span class="op">],</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} (x - \mu)^2f(x)dx = \int_{0}^{\infty} (x - \frac{1}{\lambda})^2(\lambda e^{-\lambda x})dx\)</span></li>
 </ul>
-<pre><code>Integrate[L*(x-(1/L))^2*Exp[-L*x], {x, 0, Infinity}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="fu">L</span><span class="sc">*</span>(<span class="fu">x</span><span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">L</span>))<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="fu">L</span><span class="sc">*</span><span class="fu">x</span><span class="op">],</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="math inline">\(\sigma = \sqrt{\text{Var}[X]} = \frac{1}{\lambda}\)</span></li>
 </ul>
@@ -868,7 +868,7 @@ Some Answers
 <ul>
 <li><span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = \int_{-\infty}^{\infty} k g(x)dx = \int_{2}^{7} k(1) dx = k\int_{2}^{7} 1 dx\)</span></li>
 </ul>
-<pre><code>Integrate[1, {x, 2, 7}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="dv">1</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">7</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Since <span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = 1\)</span> we know <span class="math inline">\(5k = 1\)</span>.
 <ul>
@@ -876,11 +876,11 @@ Some Answers
 </ul></li>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} xf(x)dx = \int_{2}^{7} x(\frac{1}{5}) dx\)</span></li>
 </ul>
-<pre><code>Integrate[x/5, {x, 2, 7}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="fu">x</span><span class="sc">/</span><span class="dv">5</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">7</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} (x - \mu)^2f(x)dx = \int_{0}^{\infty} (x - \frac{9}{2})^2(\frac{1}{5})dx\)</span></li>
 </ul>
-<pre><code>Integrate[(1/5)*(x-(9/2))^2, {x, 2, 7}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span>(<span class="fu">x</span><span class="sc">-</span>(<span class="dv">9</span><span class="sc">/</span><span class="dv">2</span>))<span class="sc">^</span><span class="dv">2</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">7</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="math inline">\(\sigma = \sqrt{\text{Var}[X]}\)</span></li>
 </ul>
@@ -896,7 +896,7 @@ Some Answers
 <ul>
 <li><span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = \int_{-\infty}^{\infty} k g(x)dx = \int_{a}^{b} k(1) dx = k\int_{a}^{b} 1 dx\)</span></li>
 </ul>
-<pre><code>Integrate[1, {x, a, b}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="dv">1</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">a</span><span class="op">,</span> <span class="fu">b</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Since <span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = 1\)</span> we know <span class="math inline">\((b-a)k = 1\)</span>.
 <ul>
@@ -904,11 +904,11 @@ Some Answers
 </ul></li>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} xf(x)dx = \int_{a}^{b} x(\frac{1}{b-a}) dx\)</span></li>
 </ul>
-<pre><code>Simplify[Integrate[x/(b-a), {x, a, b}]]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Simplify</span><span class="op">[</span><span class="fu">Integrate</span><span class="op">[</span><span class="fu">x</span><span class="sc">/</span>(<span class="fu">b</span><span class="sc">-</span><span class="fu">a</span>)<span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">a</span><span class="op">,</span> <span class="fu">b</span><span class="op">}]]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} (x - \mu)^2f(x)dx = \int_{a}^{b} (x - \frac{a+b}{2})^2(\frac{1}{b-a})dx\)</span></li>
 </ul>
-<pre><code>Integrate[(1/(b-a))*(x-((a+b)/2))^2, {x, a, b}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="fu">b</span><span class="sc">-</span><span class="fu">a</span>))<span class="sc">*</span>(<span class="fu">x</span><span class="sc">-</span>((<span class="fu">a</span><span class="sc">+</span><span class="fu">b</span>)<span class="sc">/</span><span class="dv">2</span>))<span class="sc">^</span><span class="dv">2</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">a</span><span class="op">,</span> <span class="fu">b</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="math inline">\(\sigma = \sqrt{\text{Var}[X]} = \frac{a-b}{\sqrt{12}}\)</span></li>
 </ul>
@@ -923,9 +923,9 @@ Some Answers
 <ul>
 <li><span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = \int_{-\infty}^{\infty} k g(x)dx = \int_{-5}^{1} 2k dx + \int_{3}^{5} 4.5k dx = k\int_{-5}^{1} 2 dx + k\int_{3}^{5} 4.5 dx = k (\int_{-5}^{1} 2 dx + \int_{3}^{5} 4.5 dx)\)</span></li>
 </ul>
-<pre><code>Integrate[2, {x, -5, 1}]
-
-Integrate[4.5, {x, 3, 5}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="dv">2</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">1</span><span class="op">}]</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="fl">4.5</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Since <span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx = 1\)</span> we know <span class="math inline">\(21k = 1\)</span>.
 <ul>
@@ -933,11 +933,11 @@ Integrate[4.5, {x, 3, 5}]</code></pre>
 </ul></li>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} xf(x)dx = \int_{-5}^{1} \frac{2x}{21} dx + \int_{3}^{5} \frac{4.5x}{21} dx\)</span></li>
 </ul>
-<pre><code>Integrate[2*x/21, {x, -5, 1}] + Integrate[4.5*x/21, {x, 3, 5}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="dv">2</span><span class="sc">*</span><span class="fu">x</span><span class="sc">/</span><span class="dv">21</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">1</span><span class="op">}]</span> <span class="sc">+</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fl">4.5</span><span class="sc">*</span><span class="fu">x</span><span class="sc">/</span><span class="dv">21</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} (x - \mu)^2f(x)dx = \int_{-5}^{1} (x - 0.571429)^2(\frac{2}{21}) dx + \int_{3}^{5} (x - 0.571429)^2(\frac{4.5}{21}) dx\)</span></li>
 </ul>
-<pre><code>Integrate[(2/21)*(x-0.571429)^2, {x, -5, 1}] + Integrate[(4.5/21)*(x-0.571429)^2, {x, 3, 5}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span>(<span class="dv">2</span><span class="sc">/</span><span class="dv">21</span>)<span class="sc">*</span>(<span class="fu">x</span><span class="fl">-0.571429</span>)<span class="sc">^</span><span class="dv">2</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">1</span><span class="op">}]</span> <span class="sc">+</span> <span class="fu">Integrate</span><span class="op">[</span>(<span class="fl">4.5</span><span class="sc">/</span><span class="dv">21</span>)<span class="sc">*</span>(<span class="fu">x</span><span class="fl">-0.571429</span>)<span class="sc">^</span><span class="dv">2</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="math inline">\(\sigma = \sqrt{\text{Var}[X]}\)</span></li>
 </ul>
@@ -986,6 +986,29 @@ Integrate[4.5, {x, 3, 5}]</code></pre>
 x - 1 &amp; 1 \leq x \leq 3 \\
 0 &amp; \text{otherwise}
 \end{cases}\]</span> When a dart hits the point <span class="math inline">\((x,y)\)</span>, we’ll record just the <span class="math inline">\(x\)</span>-coordinate and let <span class="math inline">\(X\)</span> represent this random variable. As you complete the exercises below, write any integrals you need to compute on the board, and then compute them with Mathematica.</p>
+<details>
+<summary>
+Mathematica Code Templates (Click to expand)
+</summary>
+<p>Here are Mathematica templates you can adapt for the exercises below:</p>
+<p><strong>Finding area under g(x):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">g</span> <span class="ex">=</span> (<span class="fu">x</span> <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="fu">g</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Finding k so f = kg is a PDF:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">A</span> <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">g</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">}]</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">k</span> <span class="ex">=</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">A</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span> <span class="ex">=</span> <span class="fu">k</span><span class="sc">*</span><span class="fu">g</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Computing expected value:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>EV <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">x</span><span class="sc">*</span><span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Computing variance:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Var <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span>(<span class="fu">x</span> <span class="sc">-</span> EV)<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Computing probabilities:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fl">1.5</span><span class="op">,</span> <span class="fl">2.6</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Finding CDF:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">F</span> <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">x</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Computing derivative:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">D</span><span class="op">[</span><span class="fu">F</span><span class="op">,</span> <span class="fu">x</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <ol type="1">
 <li><p>Draw the function <span class="math inline">\(g(x)\)</span>.</p></li>
 <li><p>Find the area below <span class="math inline">\(g(x)\)</span> and above the <span class="math inline">\(x\)</span>-axis.</p>
@@ -1064,12 +1087,12 @@ Variance (continuous random variable)
 Solution
 </summary>
 <p>We have already performed this computation in a previous class using Mathematica to obtain <span class="math inline">\(E[X] = \mu\)</span> and <span class="math inline">\(\text{Var}[X] = \sigma^2\)</span>. The Mathematica code below gives the solution.</p>
-<pre><code>$Assumptions = \[Sigma] &gt; 0;
-f = 1/Sqrt[2*\[Pi]*\[Sigma]^2] Exp[-1/2*((x - \[Mu])/\[Sigma])^2];
-bounds = {x, -Infinity, Infinity};
-EV = Integrate[x f, bounds]
-Var = Integrate[(x - EV)^2 f, bounds]
-$Assumptions = Null</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="va">$Assumptions</span> <span class="ex">=</span> <span class="sc">\</span><span class="op">[</span>Sigma<span class="op">]</span> &gt; <span class="dv">0</span>;</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span> <span class="ex">=</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">Sqrt</span><span class="op">[</span><span class="dv">2</span><span class="sc">*\</span><span class="op">[</span><span class="fu">Pi</span><span class="op">]</span><span class="sc">*\</span><span class="op">[</span>Sigma<span class="op">]</span><span class="sc">^</span><span class="dv">2</span><span class="op">]</span> <span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">*</span>((<span class="fu">x</span> <span class="sc">-</span> <span class="sc">\</span><span class="op">[</span>Mu<span class="op">]</span>)<span class="sc">/\</span><span class="op">[</span>Sigma<span class="op">]</span>)<span class="sc">^</span><span class="dv">2</span><span class="op">]</span>;</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>bounds <span class="ex">=</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="fu">Infinity</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}</span>;</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>EV <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">x</span> <span class="fu">f</span><span class="op">,</span> bounds<span class="op">]</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>Var <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span>(<span class="fu">x</span> <span class="sc">-</span> EV)<span class="sc">^</span><span class="dv">2</span> <span class="fu">f</span><span class="op">,</span> bounds<span class="op">]</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="va">$Assumptions</span> <span class="ex">=</span> <span class="cn">Null</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <ul>
 <li>Use the method of moments to obtain the best fit parameters for <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>.</li>
@@ -1078,12 +1101,12 @@ $Assumptions = Null</code></pre>
 <summary>
 Solution
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data4soils)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>Ng <span class="ot">&lt;-</span> cfbp_fpjuliet<span class="sc">$</span>ng</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Ng)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Ng)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data4soils)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>Ng <span class="ot">&lt;-</span> cfbp_fpjuliet<span class="sc">$</span>ng</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Ng)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Ng)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We must solve <span class="math inline">\(\mu = 2.79164\)</span> and <span class="math inline">\(\sigma^2 = 10.97915\)</span>. This gives <span class="math inline">\(\mu = 2.79\)</span> and <span class="math inline">\(\sigma = \sqrt{10.97915} = 3.31348\)</span>.</p>
 </details>
 </section>
@@ -1099,12 +1122,12 @@ Solution
 Click to expand
 </summary>
 <p>Now we can compute the expected value and variance from the distribution using Mathematica. The code below gives <span class="math inline">\(\text{E}[X]=\frac{\alpha}{\beta}\)</span> and <span class="math inline">\(\text{Var}[X] = \frac{\alpha}{\beta^2}\)</span>.</p>
-<pre><code>$Assumptions = \[Alpha] &gt; 0 &amp;&amp; \[Beta] &gt; 0;
-f = (\[Beta]^\[Alpha]/Gamma[\[Alpha]]) x^(\[Alpha] - 1) Exp[-\[Beta]*x];
-bounds = {x, 0, Infinity};
-EV = Integrate[x f, bounds]
-Var = Integrate[(x - EV)^2 f, bounds]
-$Assumptions = Null</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="va">$Assumptions</span> <span class="ex">=</span> <span class="sc">\</span><span class="op">[</span>Alpha<span class="op">]</span> &gt; <span class="dv">0</span> &amp;&amp; <span class="sc">\</span><span class="op">[</span><span class="fu">Beta</span><span class="op">]</span> &gt; <span class="dv">0</span>;</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span> <span class="ex">=</span> (<span class="sc">\</span><span class="op">[</span><span class="fu">Beta</span><span class="op">]</span><span class="sc">^\</span><span class="op">[</span>Alpha<span class="op">]</span><span class="sc">/</span><span class="fu">Gamma</span><span class="op">[</span><span class="sc">\</span><span class="op">[</span>Alpha<span class="op">]]</span>) <span class="fu">x</span><span class="sc">^</span>(<span class="sc">\</span><span class="op">[</span>Alpha<span class="op">]</span> <span class="sc">-</span> <span class="dv">1</span>) <span class="fu">Exp</span><span class="op">[</span><span class="sc">-\</span><span class="op">[</span><span class="fu">Beta</span><span class="op">]</span><span class="sc">*</span><span class="fu">x</span><span class="op">]</span>;</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>bounds <span class="ex">=</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}</span>;</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>EV <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">x</span> <span class="fu">f</span><span class="op">,</span> bounds<span class="op">]</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>Var <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span>(<span class="fu">x</span> <span class="sc">-</span> EV)<span class="sc">^</span><span class="dv">2</span> <span class="fu">f</span><span class="op">,</span> bounds<span class="op">]</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="va">$Assumptions</span> <span class="ex">=</span> <span class="cn">Null</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <ul>
 <li>Use the method of moments to obtain the best fit parameters for <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>.</li>
@@ -1115,13 +1138,13 @@ Solution
 </summary>
 <p>We now solve the system obtained by letting (1) the mean of the data equal the expected value of the probability model and (2) and the variance of the data equal the variance of the probability model. This means we will solve the system <span class="math display">\[\text{mean(Ng)}=\frac{\alpha}{\beta}\text{ and } \text{var(Ng)} = \frac{\alpha}{\beta^2}\]</span> for the parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>.</p>
 <p>To simplify notation, let <span class="math inline">\(m = \text{mean(Ng)}\)</span> and <span class="math inline">\(v = \text{var(Ng)}\)</span>. We then must solve <span class="math inline">\(m=\frac{\alpha}{\beta}\)</span> and <span class="math inline">\(v = \frac{\alpha}{\beta^2}\)</span> for <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. This is the same as solving the system <span class="math inline">\(\alpha = m\beta\)</span> and <span class="math inline">\(\alpha = v\beta ^2\)</span>. In particular, this means that <span class="math inline">\(m\beta = v\beta^2\)</span>, which solving for <span class="math inline">\(\beta\)</span> yields <span class="math inline">\(\beta = \frac{m}{v}\)</span>. Plugging this value for <span class="math inline">\(\beta\)</span> into <span class="math inline">\(\alpha = m\beta\)</span>, gives <span class="math inline">\(\alpha = \frac{m^2}{v}\)</span>. Our solution to this system is <span class="math display">\[\alpha = \frac{m^2}{v} \text{ and }\beta = \frac{m}{v}\]</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">var</span>(Ng)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>alpha</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">/</span><span class="fu">var</span>(Ng)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>beta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">var</span>(Ng)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>alpha</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">/</span><span class="fu">var</span>(Ng)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>beta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We have obtained parameters for our distribution using the method of moments.</p>
 <p>The Mathematica code below solves the system as well.</p>
-<pre><code>Solve[{EV == meanNg, Var == varNg}, {\[Alpha], \[Beta]}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Solve</span><span class="op">[{</span>EV <span class="ex">==</span> meanNg<span class="op">,</span> Var <span class="ex">==</span> varNg<span class="op">},</span> <span class="op">{</span><span class="sc">\</span><span class="op">[</span>Alpha<span class="op">],</span> <span class="sc">\</span><span class="op">[</span><span class="fu">Beta</span><span class="op">]}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <section id="plotting-our-fitted-models." class="level4">
 <h4 class="anchored" data-anchor-id="plotting-our-fitted-models.">Plotting our fitted models.</h4>
@@ -1132,18 +1155,18 @@ Solution
 <summary>
 Fitted <span class="math inline">\(f_1\)</span>. (Click to expand)
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">m=</span><span class="dv">0</span>,<span class="at">s=</span><span class="dv">1</span>){<span class="dv">1</span><span class="sc">/</span>(<span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>s<span class="sc">^</span><span class="dv">2</span>))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span><span class="fl">0.5</span><span class="sc">*</span>((x<span class="sc">-</span>m)<span class="sc">/</span>s)<span class="sc">^</span><span class="dv">2</span>)}</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(Ng))</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">#sigma &lt;- sd(Ng)</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">20</span>,<span class="dv">20</span>,<span class="fl">0.1</span>)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">f1</span>(x1,<span class="at">m=</span>mu,<span class="at">s=</span>sigma)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="dv">1</span>,<span class="fl">0.25</span>))</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Ng, <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">main=</span><span class="st">"Fitted Normal"</span>,<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">12</span>))</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x1,y1,<span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">m=</span><span class="dv">0</span>,<span class="at">s=</span><span class="dv">1</span>){<span class="dv">1</span><span class="sc">/</span>(<span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>s<span class="sc">^</span><span class="dv">2</span>))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span><span class="fl">0.5</span><span class="sc">*</span>((x<span class="sc">-</span>m)<span class="sc">/</span>s)<span class="sc">^</span><span class="dv">2</span>)}</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(Ng))</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co">#sigma &lt;- sd(Ng)</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">20</span>,<span class="dv">20</span>,<span class="fl">0.1</span>)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">f1</span>(x1,<span class="at">m=</span>mu,<span class="at">s=</span>sigma)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="dv">1</span>,<span class="fl">0.25</span>))</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Ng, <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">main=</span><span class="st">"Fitted Normal"</span>,<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">12</span>))</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x1,y1,<span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <p>The best fit model is <span class="math inline">\(f_2(x) = \frac{0.254^{0.710}}{\Gamma(0.710)}x^{0.710-1}e^{-0.254 x}\)</span> where <span class="math inline">\(x \geq 0\)</span>.</p>
 <p>We now plot this model, along with the data, using the code below.</p>
@@ -1151,19 +1174,19 @@ Fitted <span class="math inline">\(f_1\)</span>. (Click to expand)
 <summary>
 Fitted <span class="math inline">\(f_2\)</span>. (Click to expand)
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">a=</span><span class="dv">1</span>,<span class="at">b=</span><span class="dv">1</span>){b<span class="sc">^</span>a<span class="sc">/</span><span class="fu">gamma</span>(a)<span class="sc">*</span>(x)<span class="sc">^</span>(a<span class="dv">-1</span>)<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>b<span class="sc">*</span>x)}</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">var</span>(Ng)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>alpha</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">/</span><span class="fu">var</span>(Ng)</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>beta</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>,<span class="fl">0.1</span>)</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">f2</span>(x2,<span class="at">a=</span>alpha,<span class="at">b=</span>beta)</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="dv">1</span>,<span class="fl">0.25</span>))</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Ng, <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">main=</span><span class="st">"Fitted Gamma"</span>)</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x2,y2,<span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x,<span class="at">a=</span><span class="dv">1</span>,<span class="at">b=</span><span class="dv">1</span>){b<span class="sc">^</span>a<span class="sc">/</span><span class="fu">gamma</span>(a)<span class="sc">*</span>(x)<span class="sc">^</span>(a<span class="dv">-1</span>)<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>b<span class="sc">*</span>x)}</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">var</span>(Ng)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>alpha</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">/</span><span class="fu">var</span>(Ng)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>beta</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>,<span class="fl">0.1</span>)</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">f2</span>(x2,<span class="at">a=</span>alpha,<span class="at">b=</span>beta)</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">mar=</span><span class="fu">c</span>(<span class="fl">2.5</span>,<span class="fl">2.5</span>,<span class="dv">1</span>,<span class="fl">0.25</span>))</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Ng, <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">main=</span><span class="st">"Fitted Gamma"</span>)</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x2,y2,<span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
 <section id="using-our-fitted-models." class="level4">
@@ -1177,15 +1200,15 @@ Fitted <span class="math inline">\(f_2\)</span>. (Click to expand)
 <summary>
 Solution
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">=</span> <span class="fu">mean</span>(Ng)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>s <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(Ng))</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25000</span>, <span class="at">mean=</span>m, <span class="at">sd=</span>s)</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">which</span>(tmp <span class="sc">&gt;</span> <span class="dv">10</span>))</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> x<span class="sc">/</span><span class="fu">length</span>(tmp)</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">=</span> <span class="fu">mean</span>(Ng)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>s <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(Ng))</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25000</span>, <span class="at">mean=</span>m, <span class="at">sd=</span>s)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">which</span>(tmp <span class="sc">&gt;</span> <span class="dv">10</span>))</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> x<span class="sc">/</span><span class="fu">length</span>(tmp)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <ul>
 <li>Assuming our data follows fitted <span class="math inline">\(f_1\)</span> distribution, compute the probability of observing a nitroglycerin concentration above 10 mg/kg.</li>
@@ -1195,10 +1218,10 @@ Solution
 Solution
 </summary>
 <p>We compute <span class="math display">\[P(X &gt; 10) = \int_{10}^{\infty}\frac{1}{\sqrt{2\pi 10.979}}e^{-\frac{1}{2}\left(\frac{x-2.792}{3.313}\right)^2}dx= 0.0147976\]</span> The Mathematica code chunk below gives the solution above.</p>
-<pre><code>f1Fitted = 1/Sqrt[2*\[Pi]*10.97915]*Exp[-1/2*((x - 2.79164)/Sqrt[10.97915])^2];
-Integrate[f1Fitted, {x, 10, Infinity}]
-Re[Integrate[f1Fitted, {x, 10, Infinity}]]
-Integrate[f1Fitted, {x, 10, 1000}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>f1Fitted <span class="ex">=</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">Sqrt</span><span class="op">[</span><span class="dv">2</span><span class="sc">*\</span><span class="op">[</span><span class="fu">Pi</span><span class="op">]</span><span class="sc">*</span><span class="fl">10.97915</span><span class="op">]</span><span class="sc">*</span><span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span><span class="sc">*</span>((<span class="fu">x</span> <span class="sc">-</span> <span class="fl">2.79164</span>)<span class="sc">/</span><span class="fu">Sqrt</span><span class="op">[</span><span class="fl">10.97915</span><span class="op">]</span>)<span class="sc">^</span><span class="dv">2</span><span class="op">]</span>;</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span>f1Fitted<span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Re</span><span class="op">[</span><span class="fu">Integrate</span><span class="op">[</span>f1Fitted<span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]]</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span>f1Fitted<span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">1000</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The last line of code above shows that by replacing <span class="math inline">\(\infty\)</span> with large number, we can obtain a similar answer without needing to use the Re[] command. Sometimes when the output of software appears off, using approximations is a viable alternative.</p>
 </details>
 <ul>
@@ -1208,15 +1231,15 @@ Integrate[f1Fitted, {x, 10, 1000}]</code></pre>
 <summary>
 Solution
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">var</span>(Ng)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">/</span><span class="fu">var</span>(Ng)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">25000</span>, <span class="at">shape =</span> alpha, <span class="at">rate =</span> beta)</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">which</span>(tmp <span class="sc">&gt;</span> <span class="dv">10</span>))</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> x<span class="sc">/</span><span class="fu">length</span>(tmp)</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">var</span>(Ng)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">mean</span>(Ng)<span class="sc">/</span><span class="fu">var</span>(Ng)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">25000</span>, <span class="at">shape =</span> alpha, <span class="at">rate =</span> beta)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">which</span>(tmp <span class="sc">&gt;</span> <span class="dv">10</span>))</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> x<span class="sc">/</span><span class="fu">length</span>(tmp)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <ul>
 <li>Assuming our data follows fitted <span class="math inline">\(f_2\)</span> distribution, compute the probability of observing a nitroglycerin concentration above 10 mg/kg.</li>
@@ -1226,7 +1249,7 @@ Solution
 Solution
 </summary>
 <p>To compute the probability that a the concentration of explosives in a soil sample will be more than 10mg/kg, we compute <span class="math display">\[P(X &gt; 10)=\int_{10}^\infty \frac{0.254^{0.710}}{\Gamma(0.710)}x^{0.710-1}e^{-0.254 x}dx\]</span> Mathematica code for computing this definite integral is given below.</p>
-<pre><code>Integrate[(0.2542674^0.709823/Gamma[0.709823])*x^(0.709823 - 1)*Exp[-0.2542674*x], {x, 10, Infinity}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span>(<span class="fl">0.2542674</span><span class="sc">^</span><span class="fl">0.709823</span><span class="sc">/</span><span class="fu">Gamma</span><span class="op">[</span><span class="fl">0.709823</span><span class="op">]</span>)<span class="sc">*</span><span class="fu">x</span><span class="sc">^</span>(<span class="fl">0.709823</span> <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">*</span><span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="fl">0.2542674</span><span class="sc">*</span><span class="fu">x</span><span class="op">],</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
 </section>
