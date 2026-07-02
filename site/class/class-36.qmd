@@ -28,7 +28,7 @@ For Unit 3, the reading as well as many practice exercises appear in the documen
 
 Come with your attempts, ready to share with each other. The code below will get you the first bullet point.
 
-```
+```mathematica
 Integrate[2 x, {x, 0, 4}]
 ```
 
@@ -360,7 +360,7 @@ provided the limit exists. If the limit exists, we say that $f$ is integrable on
 - Compute $\int_{-1}^{2} 4 - x^2 dx$ using Mathematica.
 *(Remember to use shift + enter to run the command in Mathematica.)*
 
-```
+```mathematica
 Integrate[4-x^2,{x,-1,2}]
 ```
 
@@ -406,7 +406,7 @@ sum(xi*Ai)/sum(Ai)
 - Compute exactly the limit of this Riemann sum (the definite integral) using Mathematica.
 *(Remember to use shift + enter to run the command in Mathematica.)*
 
-```
+```mathematica
 Integrate[(1/2)*(x-1)*x,{x,1,3}]
 ```
 
