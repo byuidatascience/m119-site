@@ -170,6 +170,45 @@ Parameter lists like `$a=1, b=2, c=3$` are not chains — leave them inline.
   This is how class pages get bottom "Class N−1 / Class N+1" buttons with no
   visible class index (see `_quarto.yml` sidebar `Class Sessions`).
 
+## Code block syntax for copy buttons
+
+**Use simple language identifiers, not Pandoc attributes, to enable copy buttons.**
+
+For code blocks that should have copy-to-clipboard buttons (like R and Mathematica), use the simple syntax:
+
+```
+```r
+# R code here
+```
+```
+
+```
+```mathematica
+(* Mathematica code here *)
+```
+```
+
+**DO NOT use** Pandoc attribute syntax like ````{.mathematica}` or ````{.r}`. While this is valid Pandoc/Quarto syntax, it **does not enable the copy button icon** that students need.
+
+### History of this gotcha
+
+On 2026-07-02, commit `251caa8` added `mathematica` language identifiers to 13 unlabeled code blocks in class-39, specifically to enable copy buttons. The commit message explicitly stated: "Add 'mathematica' language identifier to 13 unlabeled code blocks... enabling copy buttons."
+
+On 2026-07-06, an incorrect fix changed all Mathematica blocks from ````mathematica` to ````{.mathematica}` across classes 36-40 (47 blocks total). This broke the copy buttons. The error was caught and reverted in the same session after user feedback.
+
+### Verification
+
+To check for blocks with wrong syntax:
+```bash
+# Find Pandoc attribute syntax (wrong)
+grep -r '```{\.mathematica}' site/class/
+
+# Find simple syntax (correct)
+grep -r '```mathematica' site/class/
+```
+
+Both syntaxes are valid Pandoc/Quarto, but only the simple syntax enables the copy button UI feature.
+
 ## Build / render caveats
 
 - **`site/_site/` is build output** — gitignored. CI re-renders from source and

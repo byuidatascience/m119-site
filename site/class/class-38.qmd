@@ -268,15 +268,15 @@ Consider the function $g(x) = 9-x^2$ for $0\leq x\leq 3$ and 0 otherwise. As you
 <details>
 <summary>Answers</summary>
 
-12. It's a parabola open downwards starting at height 9. The following code plots $g$ with Mathematica. 
+12. It's a parabola open downwards starting at height 9. The following code plots $g$ with Mathematica.
 
-```
+```mathematica
 Plot[9-x^2,{x,0,3}]
 ```
 
 13.  $\int_{-\infty}^{\infty} g(x) dx = \int_0^3 9-x^2 = 18 \neq 1$, so $g$ is not a probability density function.
 
-```
+```mathematica
 Integrate[9-x^2,{x,0,3}]
 ```
 

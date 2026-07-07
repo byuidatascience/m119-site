@@ -23,7 +23,7 @@ Pick something from your prep today that you can share with your group in class.
 
 Use the following code to get you started. Let's calculate $\int_{-\infty}^\infty f(x) dx$, $E[X]$, $Var[X]$, and standard deviation of X for $f_3$ and $f_1$.
 
-```
+```mathematica
 $Assumptions = \[Lambda] > 0;
 f = \[Lambda]*Exp[-\[Lambda]*x];
 bounds = {x, 0, Infinity};
@@ -34,7 +34,7 @@ StDev = Sqrt[Var]
 % // Simplify
 ```
 
-```
+```mathematica
 $Assumptions = \[Sigma] > 0;
 f = 1/Sqrt[2*\[Pi]*\[Sigma]^2]*Exp[-1/2*((x - \[Mu])/\[Sigma])^2];
 bounds = {x, -Infinity, Infinity};
@@ -83,9 +83,9 @@ $f(x) =  \lambda e^{-\lambda x}$ to obtain
 <details>
 <summary>Solution</summary>
 
-From the prep, we have the following code. The Assumptions command allows us to inform Mathematica about the fact that $\lambda>0$. 
+From the prep, we have the following code. The Assumptions command allows us to inform Mathematica about the fact that $\lambda>0$.
 
-```
+```mathematica
 $Assumptions = \[Lambda] > 0;
 f = \[Lambda]*Exp[-\[Lambda]*x];
 bounds = {x, 0, Infinity};
@@ -112,9 +112,9 @@ $f(x) = \frac{1}{b-a}$ to obtain
 - $\ds E[X] = \int_a^b x (\frac{1}{b-a}) dx$ 
 - $\ds Var[X] = \int_a^b (x-E[X]])^2 (\frac{1}{b-a}) dx$. 
 
-The code chunk below computes these values, with some "%//Simplify" commands after the results to make them easier to work with later. 
+The code chunk below computes these values, with some "%//Simplify" commands after the results to make them easier to work with later.
 
-```
+```mathematica
 $Assumptions = a <= b;
 f = 1/(b - a);
 bounds = {x, a, b};
@@ -136,9 +136,70 @@ $Assumptions = Null;
 
 1. Solve the system $\left\{\begin{array}{ll}\frac{1}{2}(x+y) = 2 \\ \frac{1}{12}(x-y)^2 = 3\end{array} \right.$ for $x$ and $y$, assuming $x<y$.
 
-1. Solve the system $\left\{\begin{array}{ll}\frac{1}{2}(a+b) = 2.7 \\ \frac{1}{12}(a-b)^2 = 10.2\end{array} \right.$ for $a$ and $b$, assuming $a<b$. 
+<details>
+<summary>Solution</summary>
+
+From the first equation: $x+y = 4$
+
+From the second equation: $(x-y)^2 = 36$, so $x-y = \pm 6$
+
+Since $x<y$, we need $x-y = -6$ (negative value)
+
+Solving the system $x+y=4$ and $x-y=-6$:
+- Adding: $2x = -2$, so $x = -1$
+- Substituting: $-1+y=4$, so $y = 5$
+
+Therefore $x=-1$ and $y=5$.
+
+Using Mathematica to solve:
+
+```mathematica
+Solve[{(1/2)*(x + y) == 2, (1/12)*(x - y)^2 == 3, x < y}, {x, y}]
+```
+
+</details>
+
+1. Solve the system $\left\{\begin{array}{ll}\frac{1}{2}(a+b) = 2.7 \\ \frac{1}{12}(a-b)^2 = 10.2\end{array} \right.$ for $a$ and $b$, assuming $a<b$.
+
+<details>
+<summary>Solution</summary>
+
+From the first equation: $a+b = 5.4$
+
+From the second equation: $(a-b)^2 = 122.4$, so $a-b = \pm\sqrt{122.4} \approx \pm 11.0635$
+
+Since $a<b$, we need $a-b = -\sqrt{122.4}$ (negative value)
+
+Solving the system $a+b=5.4$ and $a-b=-\sqrt{122.4}$:
+- Adding: $2a = 5.4 - \sqrt{122.4}$, so $a = 2.7 - \frac{\sqrt{122.4}}{2} \approx -2.8318$
+- Substituting: $b = 5.4 - a = 2.7 + \frac{\sqrt{122.4}}{2} \approx 8.2318$
+
+Using Mathematica to solve:
+
+```mathematica
+Solve[{(1/2)*(a + b) == 2.7, (1/12)*(a - b)^2 == 10.2, a < b}, {a, b}]
+```
+
+Or with numerical output:
+
+```mathematica
+NSolve[{(1/2)*(a + b) == 2.7, (1/12)*(a - b)^2 == 10.2, a < b}, {a, b}]
+```
+
+</details>
 
 Have you seen the quantities $\frac{1}{2}(a+b)$ and $\frac{1}{12}(a-b)^2$ somewhere before?
+
+<details>
+<summary>Hint</summary>
+
+These are the expected value and variance formulas for a uniform distribution!
+
+For a uniform distribution on $[a,b]$:
+- Expected value: $E[X] = \frac{a+b}{2}$
+- Variance: $\text{Var}[X] = \frac{(b-a)^2}{12}$
+
+</details>
 
 ### Activity - More Practice with finding PDFs, Expected Value, Variance, and CDF
 1. 
@@ -168,7 +229,7 @@ Let $g(x) = \begin{cases}e^{-4x} & x \geq 0 \\ 0 & \text{otherwise}\end{cases}$.
 1. The derivative is $F'(x) = 0-e^{-4x}(-4) = 4e^{-4x}=f(x)$ for $x\geq 0$ (and zero otherwise). 
 The Mathematica code computes all of the above.  Feel free to adapt this code as you tackle other problems.
 
-```
+```mathematica
 g = Exp[-4*x];
 a = 0;
 b = Infinity;
@@ -188,9 +249,9 @@ D[F, x](*Computes derivative of F with respect to x. Should match f*)
 </details>
 
 2. 
-Let $g(x) = \begin{cases}e^{-\lambda x} & x \geq 0\\ 0 & \text{otherwise}\end{cases}$ with $\lambda >0$. In Mathematica, the following code tells the computer that $\lambda$ is positive, which will simplifies the output quite a bit. 
+Let $g(x) = \begin{cases}e^{-\lambda x} & x \geq 0\\ 0 & \text{otherwise}\end{cases}$ with $\lambda >0$. In Mathematica, the following code tells the computer that $\lambda$ is positive, which will simplifies the output quite a bit.
 
-```
+```mathematica
 g = Exp[-\[Lambda] x]
 $Assumptions = \[Lambda] > 0
 ```
@@ -234,9 +295,9 @@ Let $g(x) = \begin{cases}3 & -2 \leq x < 1\\ 5 & 1 \leq x \leq 5\\ 0 & \text{oth
 <details>
 <summary>Solution</summary>
 
-We can use piecewise function notation in Mathematica. Here is an example. We need the assumptions command that $x$ is a real number to compute the CDF $F$ and actually have Mathematica do the integral. 
+We can use piecewise function notation in Mathematica. Here is an example. We need the assumptions command that $x$ is a real number to compute the CDF $F$ and actually have Mathematica do the integral.
 
-```
+```mathematica
 $Assumptions = x \[Element] Reals
 g = Piecewise[{{3, -2 <= x && x < 1}, {5, 1 <= x <= 5}, {0, True}}]
 Plot[g, {x, -5, 10}]

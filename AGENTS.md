@@ -151,13 +151,14 @@ Session insight → durable knowledge.
 
 ## Active Context
 
-_Last updated: 2026-05-14_
+_Last updated: 2026-07-07_
 
-- **AGENTS.md adopted 2026-05-14** (proposed 2026-05-13 via the cross-repo AGENTS.md audit sprint; see [handoffs/2026-05-13_AGENTS_md_v3.6_create.md](handoffs/2026-05-13_AGENTS_md_v3.6_create.md)). No prior `CLAUDE.md` or `AGENTS.md` existed; this is a create, not a migration. The discipline files `knowledge/behavioral_discipline.{md,json}` were dropped alongside as snapshots (commit `8ed376d` from Make-AI-Agents).
-- **Term in progress.** Per `site/_today.qmd` as of 2026-05-14: Class 15 is the active class today. Tomorrow (Friday 5/15) is **Open Lab** — students finish Project 1 in class. Class 16 resumes Monday 5/18. A second Open Lab is scheduled 6/18 (day before Juneteenth). These open-lab insertions are marked OPTIONAL teacher-choice in `schedule_config.yml` for SP26.
-- **Recent schedule edits happened in m119-site directly.** The Open Lab insertions, the `open-lab` session token added to `tools/generate_schedule.py`, and the shift of Days 16–46 forward by two slots were authored here in m119-site rather than upstream in m119-master. Per the schedule-ownership rule (above), this is a workflow violation — propagate these changes back to m119-master when convenient so the upstream `tools/generate_schedule.py` and `schedule_config.yml` match.
-- **Sibling repo: `m119-master`.** That repo is the source/authoring side — PMWiki sync (`pull_wiki.py`), RMarkdown→Quarto conversion (`tools/pmwiki_to_quarto.py`), schedule generation (`tools/generate_schedule.py`). Content flows m119-master → m119-site. See `m119-master/CLAUDE.md` for the upstream side.
-- **Maintainer should refresh** the bullets above after each sprint or major content drop.
+- **Term nearing completion.** Per `site/_today.qmd` as of 2026-07-07: Class 40 is today. Six class sessions remain (Classes 41-46), with final session on July 16. Students are working on Project 3 (continuous random variables, probability distributions).
+- **Recent content fixes (2026-07-07):** Fixed Mathematica code block syntax across classes 36-40 (47 blocks total). Changed from `{.mathematica}` Pandoc attribute syntax to simple `mathematica` language identifier to enable copy-to-clipboard buttons. Documented the syntax gotcha in `.claude/knowledge/quarto.md` to prevent future regressions. Added solution dropdowns with Mathematica code examples to Class 40 group activity questions.
+- **Schedule regeneration (2026-07-06):** Regenerated `site/_today.qmd` for current date after noticing home page showed "no class today" — the pointer hadn't shifted from Sunday to Monday. Daily update workflow in `.github/workflows/daily_update.yml` handles this automatically, but manual regeneration was needed for immediate fix.
+- **Sibling repo: `m119-master`.** That repo is the source/authoring side — PMWiki sync, RMarkdown→Quarto conversion, schedule generation. Content flows m119-master → m119-site. Per the schedule-ownership rule above, any schedule config or generation script edits made directly in m119-site should be back-propagated to m119-master to prevent drift.
+- **Behavioral discipline refreshed (2026-07-07):** Updated `knowledge/behavioral_discipline.{md,json}` snapshots from commit `8ed376d` (2026-05-13) to `33b6322` (2026-06-17). Substantive changes include: new "Communication register" section, P-008 "trunk-always-works" Standard Work extension (commit + push as one operation), "Structural non-default applicability" mechanisms (applies_to, _qc_checks_na, override_decisions), and new BD-QC-008 (Learning loop), BD-QC-009 (agentskills.io frontmatter) checks.
+- **AGENTS.md adopted 2026-05-14** (see [handoffs/2026-05-13_AGENTS_md_v3.6_create.md](handoffs/2026-05-13_AGENTS_md_v3.6_create.md)).
 
 ## Existing Tooling
 
@@ -192,7 +193,7 @@ Project-specific knowledge files live under `.claude/knowledge/`. Load on demand
 
 | Topic | File | When to load |
 |---|---|---|
-| Quarto authoring & layout gotchas (math `$`, tables, lists, page-navigation, sidebar) | `.claude/knowledge/quarto.md` | When editing `.qmd` math/lists/tables or `_quarto.yml`/`styles.css` for nav/layout |
+| Quarto authoring & layout gotchas (math `$`, tables, lists, code blocks, page-navigation, sidebar) | `.claude/knowledge/quarto.md` | When editing `.qmd` math/lists/tables/code or `_quarto.yml`/`styles.css` for nav/layout |
 | RMarkdown→Quarto converter behavior | `.claude/knowledge/converter.md` | When touching upstream conversion scripts or diagnosing a class/flex page rendering bug |
 | Canvas URL handling | `.claude/knowledge/urls-canvas.md` | When editing Canvas project links or planning URL reversal |
 | Quarto page URLs | `.claude/knowledge/urls-qmds.md` | When editing links inside `site/class/*.qmd` or `site/flex/*.qmd` |

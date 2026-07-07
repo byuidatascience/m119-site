@@ -1,11 +1,11 @@
 {
   "_snapshot_from": "chaz-clark/Make-AI-Agents",
-  "_snapshot_commit": "8ed376d",
-  "_snapshot_date": "2026-05-13",
+  "_snapshot_commit": "33b6322",
+  "_snapshot_date": "2026-06-17",
   "_snapshot_refresh": "copy the upstream file again to pick up changes",
   "_metadata": {
-    "version": "1.1",
-    "last_updated": "2026-04-10",
+    "version": "1.4",
+    "last_updated": "2026-06-17",
     "description": "Structured behavioral discipline rules for AI agents. Paired with behavioral_discipline.md (narrative).",
     "instructions": "Read by make_agent and make_agent_qc. MD = the why; JSON = the rules. Update both files together.",
     "companion_files": {
@@ -133,7 +133,17 @@
         "skip_when": [
           "Conversational / advisory agents whose output is naturally varied prose"
         ]
-      }
+      },
+      "standard_work_extensions": [
+        {
+          "name": "trunk-always-works (commit + push as one operation)",
+          "added": "2026-06-17",
+          "rule": "When operating in a repo that has an origin remote and is actively pushed to, every commit gets pushed in the same step as the commit itself. No local-only commit debt.",
+          "rationale": "Local-only commits are an Andon condition — not visible to the fleet, not backed up, accumulate silently. Evidence: a consumer repo carried 23 commits ahead of origin/main over weeks before the gap surfaced 2026-06-17 (Make-AI-Agents#16).",
+          "exception": "A repo that is genuinely local-only by deliberate choice — record the choice with WHY in that repo's AGENTS.md per-repo push-policy table.",
+          "rejection": "Do not adopt 'I'll push at the end of the session' as a fallback. Standard Work, not judgment-per-commit."
+        }
+      ]
     },
     {
       "id": "P-009",
@@ -196,6 +206,40 @@
         "always_include": ["P-001", "P-002", "P-003", "P-004", "P-007", "P-009", "P-010"],
         "skip_unless_applicable": ["P-005", "P-006", "P-008"]
       }
+    }
+  },
+
+  "agent_applicability_vocabulary": {
+    "_description": "Three structural mechanisms for agents whose shape diverges from the LLM-at-runtime / per-interaction_pattern defaults. Added 1.2 (2026-05-14, issue #11). See behavioral_discipline.md → 'Structural non-default applicability — three mechanisms' for the prose. Each mechanism is declared on the agent's own `behavioral_discipline` object and verified by the relevant QC checks.",
+    "_relationship_to_other_blocks": "Composes with `agent_type_applicability` (which picks principles per interaction_pattern) and `override_rules` (which governs situational/per-task skips). The three mechanisms here are STRUCTURAL — declared once on the agent spec, not per-task.",
+    "applies_to": {
+      "_description": "Whole-agent classification. Declared on the agent's `behavioral_discipline.applies_to`. Determines WHERE the discipline lives — in a system_prompt (LLM at runtime) vs. in the operator's reasoning (no LLM at runtime).",
+      "values": {
+        "llm_runtime": "Default. The agent has an LLM at runtime; discipline applies via `implementation.llm_agent.system_prompt` and is enforced per call.",
+        "operator": "No LLM at runtime. The agent is a deterministic script (Python, shell, etc.) run by a human OPERATOR; the discipline applies to the operator's reasoning when designing, invoking, and reviewing the script. BD-QC-002 (system_prompt check) becomes structurally N/A — declare via `_qc_checks_na` below."
+      },
+      "default_when_absent": "llm_runtime",
+      "working_example": "canvas-toolbox/lib/agents/canvas_blueprint_sync.json — deterministic_script with applies_to: 'operator'."
+    },
+    "qc_checks_na": {
+      "_description": "Per-check exemption. Declared as a dict on the agent's `behavioral_discipline._qc_checks_na: {<check_id>: <reason>}`. The specified check is skipped during make_agent_qc; the discipline still applies via BD-QC-001's MD section (which is itself never exempt). Each entry MUST have a reason — silent exemptions fail BD-QC-001's discipline-presence check.",
+      "format": "{<check_id>: <reason_string>}",
+      "valid_check_ids": ["BD-QC-002", "BD-QC-004"],
+      "_valid_check_ids_rationale": "BD-QC-001 and BD-QC-006 are never exempt (discipline presence + no-override invariant). BD-QC-003, BD-QC-005, BD-QC-007 are universally applicable. BD-QC-002 (system_prompt) and BD-QC-004 (test-case trust markers) have documented `_applicability` notes naming the exemption conditions.",
+      "example": {
+        "BD-QC-002": "No system_prompt to validate — deterministic script has no LLM at runtime.",
+        "BD-QC-004": "No LLM tools to enumerate — the script's behavior is defined by the Python source; verification surface is pytest under tests/."
+      },
+      "working_example": "canvas-toolbox/lib/agents/canvas_blueprint_sync.json declares BD-QC-002 and BD-QC-004 N/A."
+    },
+    "override_decisions_decision_values": {
+      "_description": "Optional `decision` field on each `override_decisions[]` entry. Distinguishes situational skip (agent or user decided not to apply) from structural inapplicability (the principle never applied because of interaction_pattern shape). When absent, semantics default to `override` (the v3.6 default).",
+      "values": {
+        "override": "Principle was applicable; the agent or user decided to skip for this task. Reason articulates why this task warrants the skip. Existing v3.6 default.",
+        "out_of_scope": "Principle never applied because the agent's interaction_pattern structurally precludes it. Not a skip — a declaration that the principle is irrelevant by design. Reason articulates the structural mismatch (e.g., P-005 'Small Steps' for a conversational agent whose phase structure IS the decomposition)."
+      },
+      "default_when_absent": "override",
+      "working_example": "canvas-toolbox/lib/agents/ira_program_alignment.json declares P-005 out_of_scope with reason citing its conversational phase structure."
     }
   },
 
@@ -310,12 +354,13 @@
         "check_id": "BD-QC-004",
         "name": "Trust markers in test cases",
         "rule": "validation.test_cases include at least one trust marker from the trust_markers array, demonstrating the agent's expected output reflects the discipline.",
-        "severity": "medium"
+        "severity": "medium",
+        "_applicability": "Applies when the agent has a `validation.test_cases` block (most LLM agents do). For non-llm_agent retrofits where the agent's behavior is verified differently (e.g., Python unit tests under `tests/`, deterministic input/output pairs, or an external CI suite), declare BD-QC-004 N/A via `behavioral_discipline._qc_checks_na: {\"BD-QC-004\": \"<reason>\"}` and point at the actual verification surface in `validation` or `tests`. The discipline still applies (via BD-QC-001's `## Behavioral Discipline (core)` MD section); only the test-case-shape check is skipped."
       },
       {
         "check_id": "BD-QC-005",
         "name": "Override documentation",
-        "rule": "Any principle marked as skipped/optional in the agent's discipline section has an override reason documented per the hard_rule.",
+        "rule": "Any principle marked as skipped/optional in the agent's discipline section has an override reason documented per the hard_rule. Each `override_decisions[]` entry MAY carry an optional `decision` field — see `agent_applicability_vocabulary.override_decisions_decision_values` for the vocabulary (`override` default, or `out_of_scope` for principles structurally precluded by interaction_pattern). The reason is required regardless of the decision value; silent skips fail.",
         "severity": "medium"
       },
       {
@@ -329,6 +374,22 @@
         "name": "Non-interactive mode requires alert channel",
         "rule": "Any agent with io_contract.non_interactive_mode: true MUST declare an alert_channel in its spec. Without an alert channel, P-003 (Stop on Defect) has nowhere to surface to in non-interactive mode.",
         "severity": "critical"
+      },
+      {
+        "check_id": "BD-QC-008",
+        "name": "Learning loop structural artifact (P-009 as compile-time slot)",
+        "rule": "Agent's MD has a `## Learning loop` section describing the closed-loop distillation pattern (P-009 Hansei + Yokoten formalized as a structural artifact, not just prose discipline). The agent's knowledge folder includes a `knowledge/learned/` subdirectory (gitkept if empty). PASS: section heading `## Learning loop` is present; directory `knowledge/learned/` exists at the agent's knowledge path. FAIL: either missing. Without this structural slot, P-009 stays prose discipline rather than a self-improving artifact — every invocation re-discovers lessons previous sessions surfaced. Inspired by Hermes Agent's closed-loop skill distillation; rebuilt in the Make-AI-Agents idiom (no DSPy/GEPA, no server — just structured markdown the agent reads next time). Severity medium: agents still work without it, but they don't compound experience across sessions. Added 2026-05-28 (Sprint B).",
+        "severity": "medium",
+        "_propagation": "Enforced by make_AGENTS at AGENTS.md generation time via the `learning_loop` required section in make_AGENTS.json. Generated AGENTS.md files bake compact_boilerplate.learning_loop_template verbatim and create knowledge/learned/ (with .gitkeep) in the target repo. make_agent will adopt the same pattern in a follow-up sprint so per-agent specs also inherit the slot."
+      },
+      {
+        "check_id": "BD-QC-009",
+        "name": "agentskills.io frontmatter (Standard Work / Poka-yoke)",
+        "rule": "Agent .md spec files (and AGENTS.md files generated by make_AGENTS, and standalone knowledge files that function as skills) have agentskills.io-compatible YAML frontmatter at the top. REQUIRED fields: `name`, `description`, `version`. RECOMMENDED fields: `author`, `license`. OPTIONAL: `metadata` block with tool-specific or domain-specific extensions (e.g. `metadata.make-ai-agents.spec_json` pointing to the sidecar .json; `metadata.hermes.tags` for Hermes-runtime classification; `metadata.<domain>.role` for domain-specific knowledge). PASS: file starts with `---` line, contains valid YAML with at least name + description + version, terminated by closing `---` line. FAIL: missing frontmatter; invalid YAML; required fields missing. This is the Make-AI-Agents idiom adoption of the agentskills.io open standard — make_agent / make_AGENTS / make_*_qc specs become drop-in agentskills.io skills loadable into Hermes / OpenClaw / any compliant runtime, LAYERED ATOP the richer .json sidecar (not a replacement). Internal knowledge/*.md files inside an agent are NOT in scope (they are inputs to a skill, not standalone skills). Severity medium — agents work without it, but they lose cross-runtime portability and consistent identity. Added 2026-05-28 (Sprint A, Hermes-research synthesis).",
+        "severity": "medium",
+        "_required_fields": ["name", "description", "version"],
+        "_recommended_fields": ["author", "license"],
+        "_scope": "Skill .md files (make_*), generated AGENTS.md files, standalone knowledge .md files that function as skills. NOT internal knowledge/*.md files inside an agent's knowledge dir."
       }
     ]
   },
@@ -352,6 +413,33 @@
 
   "changelog": {
     "versions": [
+      {
+        "version": "1.4",
+        "date": "2026-06-17",
+        "changes": [
+          "Added P-008 standard_work_extensions[trunk-always-works] — when operating in a repo with an active origin remote, commit and push as one operation. No 'I'll push at the end of the session' fallback. Standard Work, not judgment-per-commit.",
+          "Rationale: local-only commits are an Andon condition (not visible to the fleet, not backed up, accumulate silently). Evidence: a consumer repo carried 23 commits ahead of origin/main over weeks before the gap surfaced 2026-06-17.",
+          "Exception: a repo that is genuinely local-only by deliberate choice — record the choice with WHY in that repo's AGENTS.md per-repo push-policy table.",
+          "Closes Make-AI-Agents#16."
+        ]
+      },
+      {
+        "version": "1.3",
+        "date": "2026-05-28",
+        "changes": [
+          "Added BD-QC-008 — Learning loop structural artifact (P-009 as compile-time slot). Generated AGENTS.md files (via make_AGENTS) and future per-agent specs (via make_agent) must contain a `## Learning loop` section + a `knowledge/learned/` directory. Closed-loop distillation pattern in the Make-AI-Agents idiom; inspired by Hermes Agent's auto-distillation but rebuilt as structured markdown (no DSPy/GEPA, no server). Part of Sprint B from the 2026-05-28 Hermes-research synthesis."
+        ]
+      },
+      {
+        "version": "1.2",
+        "date": "2026-05-14",
+        "changes": [
+          "Added `agent_applicability_vocabulary` block documenting three structural mechanisms for non-default applicability: `applies_to: operator` (non-LLM agents), `_qc_checks_na` (per-check exemption), and `override_decisions[].decision: out_of_scope` (principle structurally precluded by interaction_pattern). Closes issue #11.",
+          "Added `_applicability` note to BD-QC-004 documenting when it can be declared N/A via `_qc_checks_na` (BD-QC-002's `_applicability` was already added in 1.1).",
+          "Updated BD-QC-005's rule to reference the optional `decision` field vocabulary.",
+          "Working examples (in sibling repo canvas-toolbox): `canvas_blueprint_sync.json` (operator + _qc_checks_na), `ira_program_alignment.json` (override_decisions[].decision: out_of_scope)."
+        ]
+      },
       {
         "version": "1.1",
         "date": "2026-04-10",
