@@ -127,7 +127,7 @@ When computing indefininte integrals, remember that answers computed by hand may
     - Compute in Mathematica to obtain $\int (7-x)^2 dx = \frac{1}{3}x^3 - 7x^2 + 49x +C$. Does Mathematica remember the $+C$?
 Here are some code examples that can help you make comparisons in Mathematica.
 
-```
+```mathematica
 MyAnswer = -1/3*(7 - x)^3
 MathmaticaAnswer = Integrate[(7 - x)^2, x]
 Expand[MyAnswer]

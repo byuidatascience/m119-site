@@ -17,17 +17,17 @@ Use the following link to access instructions for [installing Mathematica](https
 We will be using Mathematica frequently during the last several weeks of the semester. You will need Mathematica to complete Project 3.
 If you encounter any issues, address them with your group.
 
-Once you get Mathematica up and running, try computing determinants in Mathematica (so check your solution from the previous part) using code similar to what you see below. To evaluate code in Mathematica, you type Shift+Enter when your cursor is in a code block (whereas you type Cntrl+Enter in R). 
+Once you get Mathematica up and running, try computing determinants in Mathematica (so check your solution from the previous part) using code similar to what you see below. To evaluate code in Mathematica, you type Shift+Enter when your cursor is in a code block (whereas you type Cntrl+Enter in R).
 
-```
+```mathematica
 m = {{1, 2}, {3, 4}}
 m//MatrixForm
 Det[m]
 ```
 
-Mathematica can handle symbolic arithmetic, so the following code works just fine in Mathematica (but won't in R without first defining a). 
+Mathematica can handle symbolic arithmetic, so the following code works just fine in Mathematica (but won't in R without first defining a).
 
-```
+```mathematica
 m = {{a, Pi}, {Sqrt[2], Log[7]}}
 m // MatrixForm
 Det[m]
@@ -130,11 +130,11 @@ $T_2(a) = 2 + \sum_{i=0}^n(y_i - (a-4)x_i)^2$
 
 3. Enter the following code into Mathematica and click Shift+Enter to solve the following system of equations, and then compare it with the solution we already obtained. (Note that spaces are treated as multiplication in Mathematica.)
 \begin{align*}
-c_{1,1}x + c_{1,2}y - b_1 &= 0 \\ 
+c_{1,1}x + c_{1,2}y - b_1 &= 0 \\
 c_{2,1}x + c_{2,2}y - b_2 &= 0
-\end{align*} 
+\end{align*}
 
-```
+```mathematica
 Solve[{c11 x + c12 y - b1 == 0, c21 x + c22 y - b2 == 0}, {x, y}]
 ```
 
@@ -167,9 +167,9 @@ sol <- solvesystem(c11, c12, b1, c21, c22, b2)
 sol
 ```
 
-In Mathematica, sometimes we will have to make assumptions before we compute something (like assuming a parameter is positive). Here's an example that assumes the denominator is not zero. 
+In Mathematica, sometimes we will have to make assumptions before we compute something (like assuming a parameter is positive). Here's an example that assumes the denominator is not zero.
 
-```
+```mathematica
 Assuming[c11 c22 - c21 c12 != 0, Solve[{c11 x + c12 y - b1 == 0, c21 x + c22 y - b2 == 0}, {x, y}]]
 ```
 

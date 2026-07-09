@@ -32,7 +32,7 @@ What is the shape of this function?
 
 - Consider the curve $(x-4)^2 + y^2 = 16$. Use the following Mathematica code to plot this curve. Notice, it is not a function.
 
-```
+```mathematica
 ContourPlot[(x - 4)^2 + y^2 == 16, {x, -1, 9}, {y, -5, 5}]
 ```
 
@@ -40,7 +40,7 @@ What is the shape of this curve?
 
 - Consider the following Mathematica code.
 
-```
+```mathematica
 ContourPlot[y == Sqrt[16 - (x - 4)^2], {x, -1, 9}, {y, -5, 5}]
 ```
 
@@ -100,9 +100,9 @@ Let $g(x) = \begin{cases}e^{-x/2} & x \geq 0\\ 0 & \text{otherwise}\end{cases}$.
 These problems are a continuation from what we did last time in groups. 
 
 2. 
-Let $g(x) = \begin{cases}e^{-\lambda x} & x \geq 0\\ 0 & \text{otherwise}\end{cases}$ with $\lambda >0$. In Mathematica, the following code tells the computer that $\lambda$ is positive, which will simplifies the output quite a bit. 
+Let $g(x) = \begin{cases}e^{-\lambda x} & x \geq 0\\ 0 & \text{otherwise}\end{cases}$ with $\lambda >0$. In Mathematica, the following code tells the computer that $\lambda$ is positive, which will simplifies the output quite a bit.
 
-```
+```mathematica
 g = Exp[-\[Lambda] x]
 $Assumptions = \[Lambda] > 0
 ```
@@ -146,9 +146,9 @@ Let $g(x) = \begin{cases}3 & -2 \leq x < 1\\ 5 & 1 \leq x \leq 5\\ 0 & \text{oth
 <details>
 <summary>Solution</summary>
 
-We can use piecewise function notation in Mathematica. Here is an example. We need the assumptions command that $x$ is a real number to compute the CDF $F$ and actually have Mathematica do the integral. 
+We can use piecewise function notation in Mathematica. Here is an example. We need the assumptions command that $x$ is a real number to compute the CDF $F$ and actually have Mathematica do the integral.
 
-```
+```mathematica
 $Assumptions = x \[Element] Reals
 g = Piecewise[{{3, -2 <= x && x < 1}, {5, 1 <= x <= 5}, {0, True}}]
 Plot[g, {x, -5, 10}]
