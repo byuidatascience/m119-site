@@ -86,7 +86,7 @@ If we are given a probability density function, then we can compute the percenti
 <details>
 <summary>Solutions</summary>
 
-```
+```mathematica
 Solve[Integrate[64/(s + 2)^5, {s, 0, x}] == 0.6, x, Reals]
 Solve[Integrate[64/(s + 2)^5, {s, 0, x}] == 0.07, x, Reals]
 Solve[Integrate[64/(s + 2)^5, {s, 0, x}] == 0.99, x, Reals]
@@ -100,7 +100,7 @@ When the PDF is complicated, sometimes we'll need to employ alternate tools in M
     - 60th percentile
     - 99th percentile
 
-```
+```mathematica
 Solve[Integrate[1/Sqrt[37.5352*\[Pi]]*Exp[-(1/37.5352)*(x-3.2)^2], {x, -Infinity, xp}] == 0.6, xp, Reals]
 
 NSolve[Integrate[1/Sqrt[37.5352*\[Pi]]*Exp[-(1/37.5352)*(x-3.2)^2], {x, -Infinity, xp}] == 0.6, xp, Reals]
@@ -127,7 +127,7 @@ The ACT is a standardized exam offered to US residents at the end of high school
 
 The PDF is given by the following.
 
-```
+```mathematica
 f = 1/Sqrt[2 Pi \[Sigma]^2] Exp[-1/2 ((x - \[Mu])/ \[Sigma])^2]
 ```
 
