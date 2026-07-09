@@ -811,12 +811,12 @@ window.Quarto = {
 <ul>
 <li>Consider the curve <span class="math inline">\((x-4)^2 + y^2 = 16\)</span>. Use the following Mathematica code to plot this curve. Notice, it is not a function.</li>
 </ul>
-<pre><code>ContourPlot[(x - 4)^2 + y^2 == 16, {x, -1, 9}, {y, -5, 5}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ContourPlot</span><span class="op">[</span>(<span class="fu">x</span> <span class="sc">-</span> <span class="dv">4</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">y</span><span class="sc">^</span><span class="dv">2</span> <span class="ex">==</span> <span class="dv">16</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">9</span><span class="op">},</span> <span class="op">{</span><span class="fu">y</span><span class="op">,</span> <span class="sc">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>What is the shape of this curve?</p>
 <ul>
 <li>Consider the following Mathematica code.</li>
 </ul>
-<pre><code>ContourPlot[y == Sqrt[16 - (x - 4)^2], {x, -1, 9}, {y, -5, 5}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ContourPlot</span><span class="op">[</span><span class="fu">y</span> <span class="ex">==</span> <span class="fu">Sqrt</span><span class="op">[</span><span class="dv">16</span> <span class="sc">-</span> (<span class="fu">x</span> <span class="sc">-</span> <span class="dv">4</span>)<span class="sc">^</span><span class="dv">2</span><span class="op">],</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">9</span><span class="op">},</span> <span class="op">{</span><span class="fu">y</span><span class="op">,</span> <span class="sc">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>What curve is being plotted here?
 <ul>
@@ -904,8 +904,8 @@ Solve <span class="math inline">\(F(p_{95}) = 0.95\)</span> for <span class="mat
 <ol start="2" type="1">
 <li>Let <span class="math inline">\(g(x) = \begin{cases}e^{-\lambda x} &amp; x \geq 0\\ 0 &amp; \text{otherwise}\end{cases}\)</span> with <span class="math inline">\(\lambda &gt;0\)</span>. In Mathematica, the following code tells the computer that <span class="math inline">\(\lambda\)</span> is positive, which will simplifies the output quite a bit.</li>
 </ol>
-<pre><code>g = Exp[-\[Lambda] x]
-$Assumptions = \[Lambda] &gt; 0</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">g</span> <span class="ex">=</span> <span class="fu">Exp</span><span class="op">[</span><span class="sc">-\</span><span class="op">[</span>Lambda<span class="op">]</span> <span class="fu">x</span><span class="op">]</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">$Assumptions</span> <span class="ex">=</span> <span class="sc">\</span><span class="op">[</span>Lambda<span class="op">]</span> &gt; <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="a">
 <li>
 Find <span class="math inline">\(k\)</span> so that <span class="math inline">\(f(x) = k g(x)\)</span> is a PDF for a random variable <span class="math inline">\(X\)</span>. We call this an exponential random variable.
@@ -966,17 +966,17 @@ Find <span class="math inline">\(k\)</span> so that <span class="math inline">\(
 Solution
 </summary>
 <p>We can use piecewise function notation in Mathematica. Here is an example. We need the assumptions command that <span class="math inline">\(x\)</span> is a real number to compute the CDF <span class="math inline">\(F\)</span> and actually have Mathematica do the integral.</p>
-<pre><code>$Assumptions = x \[Element] Reals
-g = Piecewise[{{3, -2 &lt;= x &amp;&amp; x &lt; 1}, {5, 1 &lt;= x &lt;= 5}, {0, True}}]
-Plot[g, {x, -5, 10}]
-A = Integrate[g, {x, -Infinity, Infinity}]
-k = 1/A
-f = k g
-1 == Integrate[ f, {x, -Infinity, Infinity}]
-EV = Integrate[x f, {x, -Infinity, Infinity}]
-Var = Integrate[(x - EV)^2 f, {x, -Infinity, Infinity}]
-F = Integrate[ f, {x, -Infinity, x}]
-D[F, x]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">$Assumptions</span> <span class="ex">=</span> <span class="fu">x</span> <span class="sc">\</span><span class="op">[</span><span class="fu">Element</span><span class="op">]</span> <span class="bu">Reals</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">g</span> <span class="ex">=</span> <span class="fu">Piecewise</span><span class="op">[{{</span><span class="dv">3</span><span class="op">,</span> <span class="sc">-</span><span class="dv">2</span> &lt;<span class="ex">=</span> <span class="fu">x</span> &amp;&amp; <span class="fu">x</span> &lt; <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">5</span><span class="op">,</span> <span class="dv">1</span> &lt;<span class="ex">=</span> <span class="fu">x</span> &lt;<span class="ex">=</span> <span class="dv">5</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="cn">True</span><span class="op">}}]</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Plot</span><span class="op">[</span><span class="fu">g</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">10</span><span class="op">}]</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">A</span> <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">g</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="fu">Infinity</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">k</span> <span class="ex">=</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">A</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span> <span class="ex">=</span> <span class="fu">k</span> <span class="fu">g</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="ex">==</span> <span class="fu">Integrate</span><span class="op">[</span> <span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="fu">Infinity</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>EV <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span><span class="fu">x</span> <span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="fu">Infinity</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Var <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span>(<span class="fu">x</span> <span class="sc">-</span> EV)<span class="sc">^</span><span class="dv">2</span> <span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="fu">Infinity</span><span class="op">,</span> <span class="fu">Infinity</span><span class="op">}]</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">F</span> <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span> <span class="fu">f</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="fu">Infinity</span><span class="op">,</span> <span class="fu">x</span><span class="op">}]</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">D</span><span class="op">[</span><span class="fu">F</span><span class="op">,</span> <span class="fu">x</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
 <section id="practice-definite-integrals-and-geometric-arguments" class="level3">

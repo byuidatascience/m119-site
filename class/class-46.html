@@ -946,15 +946,15 @@ Answers (for matching exercise)
 <li>Compute in Mathematica to obtain <span class="math inline">\(\int (7-x)^2 dx = \frac{1}{3}x^3 - 7x^2 + 49x +C\)</span>. Does Mathematica remember the <span class="math inline">\(+C\)</span>? Here are some code examples that can help you make comparisons in Mathematica.</li>
 </ul></li>
 </ul>
-<pre><code>MyAnswer = -1/3*(7 - x)^3
-MathmaticaAnswer = Integrate[(7 - x)^2, x]
-Expand[MyAnswer]
-MyAnswer - MathmaticaAnswer
-Simplify[MyAnswer - MathmaticaAnswer]
-FullSimplify[MyAnswer - MathmaticaAnswer]
-Plot[{MyAnswer, MathmaticaAnswer}, {x, -10, 10}]
-Plot[MyAnswer - MathmaticaAnswer, {x, -10, 10}]
-FullSimplify[D[MyAnswer - MathmaticaAnswer, x] == 0]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>MyAnswer <span class="ex">=</span> <span class="sc">-</span><span class="dv">1</span><span class="sc">/</span><span class="dv">3</span><span class="sc">*</span>(<span class="dv">7</span> <span class="sc">-</span> <span class="fu">x</span>)<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>MathmaticaAnswer <span class="ex">=</span> <span class="fu">Integrate</span><span class="op">[</span>(<span class="dv">7</span> <span class="sc">-</span> <span class="fu">x</span>)<span class="sc">^</span><span class="dv">2</span><span class="op">,</span> <span class="fu">x</span><span class="op">]</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Expand</span><span class="op">[</span>MyAnswer<span class="op">]</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>MyAnswer <span class="sc">-</span> MathmaticaAnswer</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Simplify</span><span class="op">[</span>MyAnswer <span class="sc">-</span> MathmaticaAnswer<span class="op">]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">FullSimplify</span><span class="op">[</span>MyAnswer <span class="sc">-</span> MathmaticaAnswer<span class="op">]</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">Plot</span><span class="op">[{</span>MyAnswer<span class="op">,</span> MathmaticaAnswer<span class="op">},</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">}]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Plot</span><span class="op">[</span>MyAnswer <span class="sc">-</span> MathmaticaAnswer<span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">}]</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">FullSimplify</span><span class="op">[</span><span class="fu">D</span><span class="op">[</span>MyAnswer <span class="sc">-</span> MathmaticaAnswer<span class="op">,</span> <span class="fu">x</span><span class="op">]</span> <span class="ex">==</span> <span class="dv">0</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><p>Consider <span class="math inline">\(\int x(x-1)^3 dx\)</span>. Compute the integral by hand, and then with Mathematica. Compare the solutions, and verify that their difference is a constant.</p></li>
 <li><p>Consider <span class="math inline">\(\int \frac{y}{(y+1)^4} dy\)</span>. Compute the integral by hand, and then with Mathematica. Compare the solutions, and verify that their difference is a constant.</p></li>

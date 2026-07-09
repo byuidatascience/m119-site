@@ -544,7 +544,7 @@ Indefinite Integral
 <ol type="1">
 <li>Compute <span class="math inline">\(\int 3x dx\)</span>. Use the Mathematica code below to check your answer.</li>
 </ol>
-<pre><code>Integrate[3x,x] in Mathematica to check your answer.</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="dv">3</span>x<span class="op">,</span><span class="fu">x</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="1">
 <li><p>Compute <span class="math inline">\(\int x^2-4x dx\)</span>. Use Mathematica to check your answer.</p></li>
 <li><p>Compute <span class="math inline">\(\int 5+\frac{1}{x^2} dx\)</span>. Use Mathematica to check your answer.</p></li>
@@ -581,10 +581,10 @@ Accumulation Function
 \int_{-\infty}^x 0dt = 0 &amp; x &lt; 0 \\ \\
 \int_{0}^x e^{-t}dt = 1-e^{-x} &amp; x \geq 0
 \end{cases}\]</span></p>
-<pre><code>$Assumptions = x &gt; 0;
-Integrate[Exp[-t],{t,0,x}]
-
-Integrate[Exp[-x],x]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">$Assumptions</span> <span class="ex">=</span> <span class="fu">x</span> &gt; <span class="dv">0</span>;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="fu">t</span><span class="op">],{</span><span class="fu">t</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="fu">x</span><span class="op">}]</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span><span class="fu">Exp</span><span class="op">[</span><span class="sc">-</span><span class="fu">x</span><span class="op">],</span><span class="fu">x</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="summary" class="level4">
 <h4 class="anchored" data-anchor-id="summary">Summary</h4>
 <ul>
@@ -637,7 +637,7 @@ Some answers
 </summary>
 <p>The area is Area<span class="math inline">\(_{\text{target}} = \int_{-\infty}^{\infty} g(x) dx = \int_{-\infty}^0 g(x) dx + \int_0^2 g(x) dx + \int_2^{\infty} g(x) dx\)</span>.</p>
 <p>So we see Area<span class="math inline">\(_{\text{target}} = \int_{-\infty}^0 0 dx + \int_0^2 \frac{3}{8}x^2 - \frac{3}{2}x + \frac{3}{2} dx + \int_2^{\infty} 0 dx = \int_0^2 \frac{3}{8}x^2 - \frac{3}{2}x + \frac{3}{2} dx\)</span>. Mathematica can compute this for us.</p>
-<pre><code>Integrate[(3/8)*x^2 - (3/2)*x + (3/2), {x, 0, 2}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">8</span>)<span class="sc">*</span><span class="fu">x</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> (<span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">x</span> <span class="sc">+</span> (<span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The area is 1 for this problem, so <span class="math inline">\(f(x) = g(x)\)</span> as <span class="math inline">\(k = 1\)</span>.</p>
 <p>The cdf is <span class="math display">\[F(x) =
 \begin{cases}
@@ -645,7 +645,7 @@ Some answers
 \frac{1}{8}x^3 - \frac{3}{4}x^2 + \frac{3}{2}x &amp; 0 &lt; x &lt; 2 \\ \\
 1 &amp; x \geq2
 \end{cases}\]</span> For <span class="math inline">\(x\)</span> values between 0 and 2, the following Mathematica code gives <span class="math inline">\(F(x)\)</span>.</p>
-<pre><code>Integrate[(3/8)*x^2 - (3/2)*x + (3/2), {x, 0, x}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Integrate</span><span class="op">[</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">8</span>)<span class="sc">*</span><span class="fu">x</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> (<span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">x</span> <span class="sc">+</span> (<span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)<span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="fu">x</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We can plot the function in R. Below is one example of how to construct such a plot for a piecewise defined function. There are lots of other ways.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="fu">length</span>(x))</span>

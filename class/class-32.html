@@ -791,13 +791,13 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="install-mathematica">(1) Install Mathematica</h3>
 <p>Use the following link to access instructions for <a href="https://www.byui.edu/mathematics/student-resources/mathematica" target="_blank">installing Mathematica</a>. We will be using Mathematica frequently during the last several weeks of the semester. You will need Mathematica to complete Project 3. If you encounter any issues, address them with your group.</p>
 <p>Once you get Mathematica up and running, try computing determinants in Mathematica (so check your solution from the previous part) using code similar to what you see below. To evaluate code in Mathematica, you type Shift+Enter when your cursor is in a code block (whereas you type Cntrl+Enter in R).</p>
-<pre><code>m = {{1, 2}, {3, 4}}
-m//MatrixForm
-Det[m]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">m</span> <span class="ex">=</span> <span class="op">{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">},</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">}}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">m</span><span class="sc">//</span><span class="fu">MatrixForm</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Det</span><span class="op">[</span><span class="fu">m</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Mathematica can handle symbolic arithmetic, so the following code works just fine in Mathematica (but won’t in R without first defining a).</p>
-<pre><code>m = {{a, Pi}, {Sqrt[2], Log[7]}}
-m // MatrixForm
-Det[m]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">m</span> <span class="ex">=</span> <span class="op">{{</span><span class="fu">a</span><span class="op">,</span> <span class="fu">Pi</span><span class="op">},</span> <span class="op">{</span><span class="fu">Sqrt</span><span class="op">[</span><span class="dv">2</span><span class="op">],</span> <span class="fu">Log</span><span class="op">[</span><span class="dv">7</span><span class="op">]}}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">m</span> <span class="sc">//</span> <span class="fu">MatrixForm</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Det</span><span class="op">[</span><span class="fu">m</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Wolfram created a “FAST INTRODUCTION FOR MATH STUDENTS”. Read the first page on “Entering Input”, and then head to the “Derivatives” section to learn how to compute derivatives with Mathematica.</p>
 <ul>
 <li><a href="https://www.wolfram.com/language/fast-introduction-for-math-students/en/" class="uri">https://www.wolfram.com/language/fast-introduction-for-math-students/en/</a></li>
@@ -907,7 +907,7 @@ c_{1,1}x + c_{1,2}y - b_1 &amp;= 0 \\
 c_{2,1}x + c_{2,2}y - b_2 &amp;= 0
 \end{align*}\]</span></li>
 </ol>
-<pre><code>Solve[{c11 x + c12 y - b1 == 0, c21 x + c22 y - b2 == 0}, {x, y}]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Solve</span><span class="op">[{</span>c11 <span class="fu">x</span> <span class="sc">+</span> c12 <span class="fu">y</span> <span class="sc">-</span> b1 <span class="ex">==</span> <span class="dv">0</span><span class="op">,</span> c21 <span class="fu">x</span> <span class="sc">+</span> c22 <span class="fu">y</span> <span class="sc">-</span> b2 <span class="ex">==</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">y</span><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When solving this by hand, here’s what we obtained.</p>
 <ul>
 <li><span class="math inline">\(y = \frac{c_{1,1}b_2 - c_{2,1}b_1}{c_{1,1}c_{2,2} - c_{2,1}c_{1,2}}\)</span></li>
@@ -934,7 +934,7 @@ Answer
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>sol <span class="ot">&lt;-</span> <span class="fu">solvesystem</span>(c11, c12, b1, c21, c22, b2)</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>sol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In Mathematica, sometimes we will have to make assumptions before we compute something (like assuming a parameter is positive). Here’s an example that assumes the denominator is not zero.</p>
-<pre><code>Assuming[c11 c22 - c21 c12 != 0, Solve[{c11 x + c12 y - b1 == 0, c21 x + c22 y - b2 == 0}, {x, y}]]</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Assuming</span><span class="op">[</span>c11 c22 <span class="sc">-</span> c21 c12 !<span class="ex">=</span> <span class="dv">0</span><span class="op">,</span> <span class="fu">Solve</span><span class="op">[{</span>c11 <span class="fu">x</span> <span class="sc">+</span> c12 <span class="fu">y</span> <span class="sc">-</span> b1 <span class="ex">==</span> <span class="dv">0</span><span class="op">,</span> c21 <span class="fu">x</span> <span class="sc">+</span> c22 <span class="fu">y</span> <span class="sc">-</span> b2 <span class="ex">==</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">y</span><span class="op">}]]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </section>
 <section id="group-meeting" class="level2">
