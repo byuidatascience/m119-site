@@ -136,8 +136,8 @@ If $F$ is an antiderivative of $f$, then $\int f(x) dx = F(x) + C$ where $C$ is 
 
 1. Compute $\int 3x dx$. Use the Mathematica code below to check your answer.
 
-```
-Integrate[3x,x] in Mathematica to check your answer.
+```mathematica
+Integrate[3x,x]
 ```
 
 1. Compute $\int x^2-4x dx$. Use Mathematica to check your answer.
@@ -162,9 +162,9 @@ Use Mathematica to perform any definite integrals.
 
 The area is Area$_{\text{target}} = \int_{-\infty}^{\infty} g(x) dx = \int_{-\infty}^0 g(x) dx + \int_0^2 g(x) dx + \int_2^{\infty} g(x) dx$. 
 
-So we see Area$_{\text{target}} = \int_{-\infty}^0 0 dx + \int_0^2 \frac{3}{8}x^2 - \frac{3}{2}x + \frac{3}{2} dx + \int_2^{\infty} 0 dx = \int_0^2 \frac{3}{8}x^2 - \frac{3}{2}x + \frac{3}{2} dx$. Mathematica can compute this for us. 
+So we see Area$_{\text{target}} = \int_{-\infty}^0 0 dx + \int_0^2 \frac{3}{8}x^2 - \frac{3}{2}x + \frac{3}{2} dx + \int_2^{\infty} 0 dx = \int_0^2 \frac{3}{8}x^2 - \frac{3}{2}x + \frac{3}{2} dx$. Mathematica can compute this for us.
 
-```
+```mathematica
 Integrate[(3/8)*x^2 - (3/2)*x + (3/2), {x, 0, 2}]
 ```
 
@@ -177,9 +177,9 @@ $$F(x) =
 \frac{1}{8}x^3 - \frac{3}{4}x^2 + \frac{3}{2}x & 0 < x < 2 \\ \\
 1 & x \geq2
 \end{cases}$$
-For $x$ values between 0 and 2, the following Mathematica code gives $F(x)$. 
+For $x$ values between 0 and 2, the following Mathematica code gives $F(x)$.
 
-```
+```mathematica
 Integrate[(3/8)*x^2 - (3/2)*x + (3/2), {x, 0, x}]
 ```
 
@@ -198,7 +198,7 @@ plot(x,F(x),type='l')
 
 We could also plot this function in Mathematica. Below is an example of how to define a piecewise function and construct a plot.
 
-```
+```mathematica
 F = Piecewise[{
    {0, x <= 0},
    {1/8*x^3 - 3/4*x^2 + 3/2*x, x < 2},
@@ -234,7 +234,7 @@ $$F(x) = \int_{-\infty}^x f(t)dt =
 \int_{0}^x e^{-t}dt = 1-e^{-x} & x \geq 0
 \end{cases}$$
 
-```
+```mathematica
 $Assumptions = x > 0;
 Integrate[Exp[-t],{t,0,x}]
 
