@@ -196,9 +196,10 @@ Session insight → durable knowledge.
 
 ## Active Context
 
-_Last updated: 2026-07-07_
+_Last updated: 2026-07-12_
 
-- **Term nearing completion.** Per `site/_today.qmd` as of 2026-07-07: Class 40 is today. Six class sessions remain (Classes 41-46), with final session on July 16. Students are working on Project 3 (continuous random variables, probability distributions).
+- **Term nearing completion.** Per `site/_today.qmd` as of 2026-07-12: Class 42 is today. Four class sessions remain (Classes 43-46), with final session on July 16. Students are working on Project 3 (continuous random variables, probability distributions).
+- **Comprehensive Mathematica fix (2026-07-12):** After fixing classes 42-43 reactively, did comprehensive scan and fixed 21 MORE unlabeled Mathematica blocks across classes 32, 38, 41, 43b, 46. **Key lesson learned:** When you find a PATTERN of errors (second occurrence of same issue type), STOP reactive mode and do comprehensive scan immediately. One systematic fix beats multiple reactive commits. Documented in `knowledge/learned/comprehensive-scan-first.md`.
 - **Recent content fixes (2026-07-07):** Fixed Mathematica code block syntax across classes 36-40 (47 blocks total). Changed from `{.mathematica}` Pandoc attribute syntax to simple `mathematica` language identifier to enable copy-to-clipboard buttons. Documented the syntax gotcha in `.claude/knowledge/quarto.md` to prevent future regressions. Added solution dropdowns with Mathematica code examples to Class 40 group activity questions.
 - **Schedule regeneration (2026-07-06):** Regenerated `site/_today.qmd` for current date after noticing home page showed "no class today" — the pointer hadn't shifted from Sunday to Monday. Daily update workflow in `.github/workflows/daily_update.yml` handles this automatically, but manual regeneration was needed for immediate fix.
 - **Sibling repo: `m119-master`.** That repo is the source/authoring side — PMWiki sync, RMarkdown→Quarto conversion, schedule generation. Content flows m119-master → m119-site. Per the schedule-ownership rule above, any schedule config or generation script edits made directly in m119-site should be back-propagated to m119-master to prevent drift.
