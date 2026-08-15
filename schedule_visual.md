@@ -3,25 +3,25 @@
 Generated from `schedule_config.yml`. Edit that file to adjust pacing, then run:
 `uv run python tools/generate_schedule.py`
 
-**Semester:** Apr 20 – Jul 22, 2026  
+**Semester:** Sep 14 – Dec 16, 2026  
 **Class days:** Mon, Tue, Thu, Fri
 
 | Week | Mon | Tue | Thu | Fri |
 |------|--- | --- | --- | ---|
-| W1  | Day 1 (4/20) | Day 2 (4/21) | Day 3 (4/23) | Day 4 (4/24) |
-| W2  | Day 5 (4/27) | Day 6 (4/28) | Day 7 (4/30) | Day 8 (5/1) |
-| W3  | Day 9 (5/4) | Day 10 (5/5) | Day 11 (5/7) | Day 12 (5/8) |
-| W4  | Day 13 (5/11) | Day 14 (5/12) | Day 15 (5/14) | Open Lab (5/15) |
-| W5  | Day 16 (5/18) | Day 17 (5/19) | Day 18 (5/21) | Day 19 (5/22) |
-| W6  | 🚫 Memorial Day | Day 20 (5/26) | Day 21 (5/28) | Day 22 (5/29) |
-| W7  | Day 23 (6/1) | Day 24 (6/2) | Day 25 (6/4) | Day 26 (6/5) |
-| W8  | Day 27 (6/8) | Day 28 (6/9) | Day 29 (6/11) | Day 30 (6/12) |
-| W9  | Day 31 (6/15) | Day 32 (6/16) | Open Lab (6/18) | 🚫 Juneteenth |
-| W10 | Day 33 (6/22) | Day 34 (6/23) | Day 35 (6/25) | Day 36 (6/26) |
-| W11 | Day 37 (6/29) | Day 38 (6/30) | Day 39 (7/2) | 🚫 Independence Day |
-| W12 | Day 40 (7/6) | Day 41 (7/7) | Day 42 (7/9) | Day 43 (7/10) |
-| W13 | Day 44 (7/13) | Day 45 (7/14) | Day 46 (7/16) | Flex 1 (7/17) |
-| W14 | Project Work Day (7/20) | Project Work Day (7/21) | — | — |
+| W1  | Day 1 (9/14) | Day 2 (9/15) | Day 3 (9/17) | Day 4 (9/18) |
+| W2  | Day 5 (9/21) | Day 6 (9/22) | Day 7 (9/24) | Day 8 (9/25) |
+| W3  | Day 9 (9/28) | Day 10 (9/29) | Day 11 (10/1) | Day 12 (10/2) |
+| W4  | Day 13 (10/5) | Day 14 (10/6) | Day 15 (10/8) | Open Lab (10/9) |
+| W5  | 🚫 Instructor Travel (TA covers Tue 10/13) | Day 16 (10/13) | Day 17 (10/15) | Day 18 (10/16) |
+| W6  | Day 19 (10/19) | Day 20 (10/20) | Day 21 (10/22) | Day 22 (10/23) |
+| W7  | Day 23 (10/26) | Day 24 (10/27) | Day 25 (10/29) | Day 26 (10/30) |
+| W8  | Day 27 (11/2) | Day 28 (11/3) | Day 29 (11/5) | Day 30 (11/6) |
+| W9  | Day 31 (11/9) | Day 32 (11/10) | Open Lab (11/12) | Day 33 (11/13) |
+| W10 | Day 34 (11/16) | Day 35 (11/17) | Day 36 (11/19) | Day 37 (11/20) |
+| W11 | Day 38 (11/23) | Day 39 (11/24) | 🚫 Thanksgiving | 🚫 Thanksgiving Break |
+| W12 | Day 40 (11/30) | Day 41 (12/1) | Day 42 (12/3) | Day 43 (12/4) |
+| W13 | Day 44 (12/7) | Day 45 (12/8) | Day 46 (12/10) | Flex 1 (12/11) |
+| W14 | Project Work Day (12/14) | Project Work Day (12/15) | — | — |
 
 ---
 

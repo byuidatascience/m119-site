@@ -120,37 +120,6 @@ wheels = [
 ]
 
 [[package]]
-name = "canvas-toolbox"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "anthropic" },
-    { name = "beautifulsoup4" },
-    { name = "canvasapi" },
-    { name = "lxml" },
-    { name = "markdown" },
-    { name = "markdownify" },
-    { name = "paramiko" },
-    { name = "python-dotenv" },
-    { name = "pyyaml" },
-    { name = "requests" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "anthropic", specifier = ">=0.93.0" },
-    { name = "beautifulsoup4", specifier = ">=4.14.3" },
-    { name = "canvasapi", specifier = ">=3.5.0" },
-    { name = "lxml", specifier = ">=6.0.3" },
-    { name = "markdown", specifier = ">=3.10.2" },
-    { name = "markdownify", specifier = ">=1.2.2" },
-    { name = "paramiko", specifier = ">=3.5.0" },
-    { name = "python-dotenv", specifier = ">=1.2.2" },
-    { name = "pyyaml", specifier = ">=6.0" },
-    { name = "requests", specifier = ">=2.33.1" },
-]
-
-[[package]]
 name = "canvasapi"
 version = "3.5.0"
 source = { registry = "https://pypi.org/simple" }
@@ -448,6 +417,37 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/66/68/fcdbb78c8cda81a86e17b31abf103b7e474e474a09fb291a99e7a9b43eb8/lxml-6.0.3-cp314-cp314t-win32.whl", hash = "sha256:bf98f5f87f6484302e7cce4e2ca5af43562902852063d916c3e2f1c115fdce60", size = 3896249, upload-time = "2026-04-09T14:37:41.068Z" },
     { url = "https://files.pythonhosted.org/packages/88/fb/6292681ac4a4223b700569ce98f71662cb07c5a3ade4f346f5f0d5c574cf/lxml-6.0.3-cp314-cp314t-win_amd64.whl", hash = "sha256:d3d65e511e4e656ec67b472110f7a72cbf8547ca15f76fe74cffa4e97412a064", size = 4391091, upload-time = "2026-04-09T14:37:43.357Z" },
     { url = "https://files.pythonhosted.org/packages/99/39/a0f486360a6f1b36fd2f5eb62d037652bef503d82b6f853aee6664cdfcac/lxml-6.0.3-cp314-cp314t-win_arm64.whl", hash = "sha256:cbc7ce67f85b92db97c92219985432be84dc1ba9a028e68c6933e89551234df2", size = 3816374, upload-time = "2026-04-09T14:37:45.532Z" },
+]
+
+[[package]]
+name = "m119-site"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "anthropic" },
+    { name = "beautifulsoup4" },
+    { name = "canvasapi" },
+    { name = "lxml" },
+    { name = "markdown" },
+    { name = "markdownify" },
+    { name = "paramiko" },
+    { name = "python-dotenv" },
+    { name = "pyyaml" },
+    { name = "requests" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "anthropic", specifier = ">=0.93.0" },
+    { name = "beautifulsoup4", specifier = ">=4.14.3" },
+    { name = "canvasapi", specifier = ">=3.5.0" },
+    { name = "lxml", specifier = ">=6.0.3" },
+    { name = "markdown", specifier = ">=3.10.2" },
+    { name = "markdownify", specifier = ">=1.2.2" },
+    { name = "paramiko", specifier = ">=3.5.0" },
+    { name = "python-dotenv", specifier = ">=1.2.2" },
+    { name = "pyyaml", specifier = ">=6.0" },
+    { name = "requests", specifier = ">=2.33.1" },
 ]
 
 [[package]]

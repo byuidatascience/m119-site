@@ -10,6 +10,7 @@ project:
   resources:
     - assets/docs/**
     - assets/data/**
+    - projects/**/*.pdf
 
 website:
   title: "Math 119 — Applied Calculus for Data Analysis"
@@ -18,6 +19,8 @@ website:
     right:
       - text: "Home"
         href: index.qmd
+      - text: "Projects"
+        href: projects/index.qmd
       - text: "Definitions"
         menu:
         - text: "ConditionalProbability"

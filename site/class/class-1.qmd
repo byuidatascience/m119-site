@@ -195,9 +195,9 @@ Important take away:
 1. What is [mastery learning](https://youtu.be/-MTRxRO5SRA?t=137){target="_blank"}?
 
 1. What is [specifications grading](https://www.insidehighered.com/views/2016/01/19/new-ways-grade-more-effectively-essay){target="_blank"}?
-1. Course Introduction and [Syllabus](https://byui.instructure.com/courses/398938/assignments/syllabus){target="_blank"}.
+1. Course Introduction and [Syllabus](https://byui.instructure.com/courses/425166/assignments/syllabus){target="_blank"}.
     - Are you in the right class?
-    - [Weekly rhythm](https://byui.instructure.com/courses/398938/pages/math-119-weekly-rhythm?module_item_id=33584172){target="_blank"}, what should I be doing between class? 
+    - [Weekly rhythm](https://byui.instructure.com/courses/425166/pages/math-119-weekly-rhythm){target="_blank"}, what should I be doing between class? 
         1. Attendance & Preparation - #tasklist
         1. Knewton-Alta
         1. Projects

@@ -1,4 +1,4 @@
-# Math 119 — Spring 2026 Schedule Configuration
+# Math 119 — Fall 2026 Schedule Configuration
 #
 # HOW TO EDIT:
 #   - To slow down: insert a session twice, or insert "flex-N" / "review" / "project" / "open-lab"
@@ -7,17 +7,17 @@
 #   - Run: uv run python tools/generate_schedule.py  to regenerate site/_today.qmd
 
 semester:
-  start: "2026-04-20"
-  end:   "2026-07-22"
+  start: "2026-09-14"
+  end:   "2026-12-16"
   class_days: [Mon, Tue, Thu, Fri]  # MTRF
 
 holidays:
-  - date: "2026-05-25"
-    name: "Memorial Day"
-  - date: "2026-06-19"
-    name: "Juneteenth"
-  - date: "2026-07-03"
-    name: "Independence Day"
+  - date: "2026-10-12"
+    name: "Instructor Travel (TA covers Tue 10/13)"
+  - date: "2026-11-26"
+    name: "Thanksgiving"
+  - date: "2026-11-27"
+    name: "Thanksgiving Break"
 
 # Sessions in order — one entry per class meeting.
 # Each entry is either:
@@ -47,8 +47,8 @@ sessions:
   - class-13
   - class-14
   - class-15
-  # OPTIONAL (SP26 teacher choice — remove if you don't want open lab days):
-  - open-lab     # 5/15 — students finish Project 1 tasks in class
+  # OPTIONAL (FA26 teacher choice — remove if you don't want open lab days):
+  - open-lab     # Week 6 — students finish Project 1 tasks in class
   - class-16
   - class-17
   - class-18
@@ -66,8 +66,8 @@ sessions:
   - class-30
   - class-31
   - class-32
-  # OPTIONAL (SP26 teacher choice — remove if you don't want open lab days):
-  - open-lab     # 6/18 — day before Juneteenth, students finish project tasks
+  # OPTIONAL (FA26 teacher choice — remove if you don't want open lab days):
+  - open-lab     # Week 10 — students finish Project 2 tasks in class
   - class-33
   - class-34
   - class-35

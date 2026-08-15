@@ -1,0 +1,53 @@
+---
+title: "Projects Overview"
+---
+
+## Course Projects
+
+This course includes three major projects that integrate the mathematical concepts you'll learn throughout the semester. Each project involves real-world data analysis using R and the mathematical modeling techniques covered in class.
+
+### Project Schedule (Fall 2026)
+
+::: {.callout-note}
+## Canvas Assignments
+All project tasks are submitted through Canvas. Use the links below to access assignment details and due dates.
+:::
+
+#### Project 1: LED Bulb Lifetime Modeling
+**Weeks 2-6** (Sept 21 - Oct 22)
+
+- **Background**: Analyze LED light bulb lifetime data from the Department of Energy's L Prize competition
+- **Skills**: Function modeling, solving equations, parameter estimation, visual fitting
+- **Tasks**:
+  - Tell a story with functions
+  - Solve equations with software
+  - Model measurements with distributions
+  - Select parameter values for visual fits
+
+[Download Project 1 Instructions (PDF)](Project1_Instructions.pdf)
+
+#### Project 2: TBD
+**Weeks 7-10** (Oct 29 - Nov 19)
+
+[Download Project 2 Instructions (PDF)](Project2_Instructions.pdf)
+
+#### Project 3: TBD
+**Weeks 11-13** (Nov 24 - Dec 10)
+
+[Download Project 3 Instructions (PDF)](Project3_Instructions.pdf)
+
+---
+
+## Project Workflow
+
+1. **Read the instructions** - Download the PDF for your current project
+2. **Complete tasks in R** - Use R Markdown or Quarto to document your work
+3. **Submit to Canvas** - Follow the submission guidelines for each task
+4. **Receive feedback** - Revise based on specifications feedback
+5. **Resubmit if needed** - Projects can be revised until all specifications are met
+
+## Support
+
+- **Office hours**: See course schedule
+- **Open lab days**: Built into the schedule for in-class project work
+- **TA support**: Available during scheduled lab times

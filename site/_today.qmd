@@ -3,3 +3,5 @@
 ---
 
 ## No class today.
+
+**Next class:** [Class 1](class/class-1.html) — Monday, Sep 14
