@@ -20,9 +20,11 @@ priority: medium
 
 ## Production URL Decision
 
-**Confirmed**: GitHub Pages default
+**Confirmed**: GitHub Pages under byuidatascience organization
 
-**Production URL**: `https://chaz-clark.github.io/m119-site/`
+**Production URL**: `https://byuidatascience.github.io/m119-site/`
+
+**Rationale**: Institutional ownership allows future instructors to copy Canvas course 425166 without broken links. Site ownership stays with BYU-I Data Science department, not personal account.
 
 ---
 
@@ -42,7 +44,7 @@ priority: medium
 **Action items for verification**:
 - [ ] Verify GitHub Pages is enabled in repo settings
 - [ ] Confirm build/deploy workflow triggered
-- [ ] Test site at `https://chaz-clark.github.io/m119-site/`
+- [ ] Test site at `https://byuidatascience.github.io/m119-site/`
 - [ ] Verify all project resources load correctly
 
 ---
@@ -52,20 +54,20 @@ priority: medium
 Once deployed, Canvas can reference:
 
 ### Primary Pages
-- **Homepage**: `https://chaz-clark.github.io/m119-site/`
-- **Schedule**: `https://chaz-clark.github.io/m119-site/schedule.html`
-- **Projects Overview**: `https://chaz-clark.github.io/m119-site/projects/`
+- **Homepage**: `https://byuidatascience.github.io/m119-site/`
+- **Schedule**: `https://byuidatascience.github.io/m119-site/schedule.html`
+- **Projects Overview**: `https://byuidatascience.github.io/m119-site/projects/`
 
 ### Project Resources
-- **Project 1 Instructions**: `https://chaz-clark.github.io/m119-site/projects/unit1.html`
-- **Project 2 Instructions**: `https://chaz-clark.github.io/m119-site/projects/unit2.html`
-- **Project 3 Instructions**: `https://chaz-clark.github.io/m119-site/projects/unit3.html`
-- **Probability Reading**: `https://chaz-clark.github.io/m119-site/projects/probability.html`
-- **Derivative Rules**: `https://chaz-clark.github.io/m119-site/projects/m119-docs/119ReferenceSheet.html`
-- **Project PDFs**: `https://chaz-clark.github.io/m119-site/projects/Project1_Instructions.pdf` (etc.)
+- **Project 1 Instructions**: `https://byuidatascience.github.io/m119-site/projects/unit1.html`
+- **Project 2 Instructions**: `https://byuidatascience.github.io/m119-site/projects/unit2.html`
+- **Project 3 Instructions**: `https://byuidatascience.github.io/m119-site/projects/unit3.html`
+- **Probability Reading**: `https://byuidatascience.github.io/m119-site/projects/probability.html`
+- **Derivative Rules**: `https://byuidatascience.github.io/m119-site/projects/m119-docs/119ReferenceSheet.html`
+- **Project PDFs**: `https://byuidatascience.github.io/m119-site/projects/Project1_Instructions.pdf` (etc.)
 
 ### Class Session Pages
-- **Class N**: `https://chaz-clark.github.io/m119-site/class/class-N.html` (where N = 1-46)
+- **Class N**: `https://byuidatascience.github.io/m119-site/class/class-N.html` (where N = 1-46)
 
 ---
 
@@ -75,23 +77,23 @@ Once deployed, Canvas can reference:
 
 **1. Add to Canvas Homepage/Syllabus**:
 ```
-Course Website: https://chaz-clark.github.io/m119-site/
+Course Website: https://byuidatascience.github.io/m119-site/
 ```
 
 **2. Add to Week 01 Module** (alongside Weekly Rhythm):
 ```
-Course Schedule: https://chaz-clark.github.io/m119-site/schedule.html
-Projects Overview: https://chaz-clark.github.io/m119-site/projects/
+Course Schedule: https://byuidatascience.github.io/m119-site/schedule.html
+Projects Overview: https://byuidatascience.github.io/m119-site/projects/
 ```
 
 **3. Optional - Link in Project Assignment Descriptions**:
-- Project 1 assignment → link to `https://chaz-clark.github.io/m119-site/projects/unit1.html`
-- Project 2 assignment → link to `https://chaz-clark.github.io/m119-site/projects/unit2.html`
-- Project 3 assignment → link to `https://chaz-clark.github.io/m119-site/projects/unit3.html`
+- Project 1 assignment → link to `https://byuidatascience.github.io/m119-site/projects/unit1.html`
+- Project 2 assignment → link to `https://byuidatascience.github.io/m119-site/projects/unit2.html`
+- Project 3 assignment → link to `https://byuidatascience.github.io/m119-site/projects/unit3.html`
 
 ### Canvas External Tool (Optional)
 If you want to embed the site in Canvas:
-- Add External Tool pointing to `https://chaz-clark.github.io/m119-site/`
+- Add External Tool pointing to `https://byuidatascience.github.io/m119-site/`
 - Configure as new tab or iframe in Canvas
 
 ---
@@ -135,7 +137,7 @@ You can proceed with adding the site URL to Canvas before we verify deployment:
 ### For m119-site (Next)
 - [ ] Verify GitHub Pages deployment settings
 - [ ] Confirm site builds and deploys from `main`
-- [ ] Test production site at `https://chaz-clark.github.io/m119-site/`
+- [ ] Test production site at `https://byuidatascience.github.io/m119-site/`
 - [ ] Verify all 163 project resources load
 - [ ] Send deployment confirmation to m119-master
 
@@ -170,5 +172,5 @@ Once deployment is verified, we'll send:
 
 **End of Handoff Reply**
 
-Production URL: `https://chaz-clark.github.io/m119-site/`
+Production URL: `https://byuidatascience.github.io/m119-site/`
 Status: Changes pushed, awaiting deployment verification
