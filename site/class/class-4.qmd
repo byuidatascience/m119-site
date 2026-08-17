@@ -118,9 +118,9 @@ If you prefer reading you can carefully read and review [Section 1.5 Precalculus
 
 - Begin Project 1 Task 1
     - Read each of the following.
-        - [Specs](https://chaz-clark.github.io/M119/Projects/index.html){target="_blank"}
-        - [Spec Details](https://chaz-clark.github.io/M119/Projects/specs_detail.html){target="_blank"}
-        - [Project 1 Task 1 Instructions](https://chaz-clark.github.io/M119/Projects/unit1.html){target="_blank"}
+        - [Specs](../projects/index.html){target="_blank"}
+        - [Spec Details](../projects/specs_detail.html){target="_blank"}
+        - [Project 1 Task 1 Instructions](../projects/unit1.html){target="_blank"}
 - Create the required scatterplot for Project 1 Task 1.
 
 <a id="PP"></a>
@@ -357,7 +357,7 @@ f(x)
 
 ## Discussion
 ### Prepare for our Project work
-[Project 1](https://chaz-clark.github.io/M119/Projects/index.html){target="_blank"}
+[Project 1](../projects/index.html){target="_blank"}
 
 We'll have a brief discussion about the project work, and start looking at the example project.
 

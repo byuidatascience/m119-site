@@ -11,6 +11,8 @@ project:
     - assets/docs/**
     - assets/data/**
     - projects/**/*.pdf
+    - projects/**/*.html
+    - projects/**/*_files/**
 
 website:
   title: "Math 119 — Applied Calculus for Data Analysis"

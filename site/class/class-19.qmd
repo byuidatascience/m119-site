@@ -44,7 +44,7 @@ Watch the following videos from mathispower4u about the product, quotient, and c
 
 # During Class
 
-[Derivative Rules](https://chaz-clark.github.io/M119/Projects/m119-docs/119ReferenceSheet.html){target="_blank"}
+[Derivative Rules](../projects/m119-docs/119ReferenceSheet.html){target="_blank"}
 
 ## Brain Gains 
 
@@ -160,7 +160,7 @@ Start by giving each person a moment to share what they chose to prepare for cla
 
 ### Activity - Compute derivatives
 
-[Derivative Rules](https://chaz-clark.github.io/M119/Projects/m119-docs/119ReferenceSheet.html){target="_blank"}
+[Derivative Rules](../projects/m119-docs/119ReferenceSheet.html){target="_blank"}
 
 Take turns at the chalkboard computing the derivative of each function below. Show your work, step-by-step, listing the rules you use at each stage. Remember to pass the chalk after each problem. 
 

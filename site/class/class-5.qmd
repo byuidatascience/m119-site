@@ -13,13 +13,13 @@ Pick something from your prep today that you can share with your group in class.
 ## Preparation
 
 ### (1) Review the Cohesive Analysis
-Take a look at this [html file](https://chaz-clark.github.io/M119/Projects/m119-docs/Practice_QMD.html){target="_blank"}. This is an example of a cohesive analysis.
+Take a look at this [html file](../projects/m119-docs/Practice_QMD.html){target="_blank"}. This is an example of a cohesive analysis.
 
 - Notice there are complete sentences (and paragraphs) introducing the calculations.
 - Notice the calculations are explained.
 - Notice the work is reproducible because the steps of the calculations are included in the explanations, the functions we are working with are stated in the narrative (the text), and the R code is included.
 - Notice the written work stands independent of our work in class, you do not need to see the Wiki or problem statement to understand what is going on in the narrative.
-- You can download the Quarto source file used to create this html [here](https://chaz-clark.github.io/M119/Projects/m119-docs/Practice_QMD.qmd).
+- You can download the Quarto source file used to create this html [here](../projects/m119-docs/Practice_QMD.qmd).
 
 ### (2) Create your own Cohesive Analysis
 - Complete Project 1 Task 1 by creating your own Quarto document (feel free to download and modify the one above), and in that file give a short cohesive analysis with the required scatterplot. In other words, take the work you already did and convert it into a short cohesive analysis.
@@ -215,7 +215,7 @@ Replace $f(x;a,b) = ax^b$ above with $f(x;a,b) = a(b^x)$ and then repeat Exercis
 ### Example Project (Cohesive Analysis)
 We will complete Example Project Task 1 together and then put together a cohesive analysis to complete task 1 of the example project.  We'll be building a histogram as we complete the example project.  You built a scatter plot when you complete Project 1 Task 1. 
 
-- We'll open the [Example Project Instructions](https://chaz-clark.github.io/M119/Projects/project1_practice.html){target="_blank"}
+- We'll open the [Example Project Instructions](../projects/project1_practice.html){target="_blank"}
 - Use our work on this Example Project and the feedback you receive from your peer feedback to guide in your revisions on Project 1 Task 1. Remember, you can revise and resubmit your Project 1 Task 1 today if you have found something you need to change in order to meet the specs (or if there is something you would like to update).
 - Are there any questions about the expectations for the project tasks? 
 

@@ -35,7 +35,7 @@ After watching the videos, try to repeat the computations on your own so that yo
 
 Now try repeating these computations yourself for $$\ell_6(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i}^{44} (y_i - 100 - a_1t_i - a_2(1-e^{-0.0003t}))^2$$ 
 
-- [Partial derivatives of loglikelihood for f6](https://chaz-clark.github.io/M119/Projects/m119-docs/PDloglikelihoodFn6.html).
+- [Partial derivatives of loglikelihood for f6](../projects/m119-docs/PDloglikelihoodFn6.html).
 
 <details>
 <summary>Click to expand the material used in the videos above.</summary>
@@ -194,7 +194,7 @@ Assume the residuals (errors) are independent and normally distributed (with mea
 Start by giving each person a moment to share what they chose to prepare for class. Help each other address any questions.  When each person has had a chance to share, move on the other activities.
 
 ### Activity - Loglikelihood Practice, Derivatives, Optimization, and Project 2
-You will be working together to revisit Task 1 and complete part of Task 2 for [Project 2](https://chaz-clark.github.io/M119/Projects/unit2.html).  The prep for today asked you to watch some videos related to $f_2$.
+You will be working together to revisit Task 1 and complete part of Task 2 for [Project 2](../projects/unit2.html).  The prep for today asked you to watch some videos related to $f_2$.
 
 Consider the model $f_1(t; a_1) = 100 + a_1t$. 
 
