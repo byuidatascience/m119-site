@@ -1,0 +1,203 @@
+---
+title: "Quarto Hints"
+---
+
+Think of a **Quarto file** (`.qmd`) as a command center. You write commands and prose, then render the file, and an HTML (or PDF, Word, etc.) output file is created according to your commands.[^thanks]
+
+## Rendering a Quarto File
+
+In RStudio, click the **Render** button at the top of the editor (or use `Cmd+Shift+K` / `Ctrl+Shift+K`). From the terminal:
+
+```bash
+quarto render my-file.qmd
+```
+
+## YAML Front Matter
+
+Every `.qmd` starts with a YAML header between `---` markers:
+
+```yaml
+---
+title: "My Document"
+author: "Your Name"
+format:
+  html:
+    toc: true
+    code-fold: true
+    embed-resources: true
+---
+```
+
+Common format options for HTML output:
+
+| Option | Purpose |
+|---|---|
+| `toc: true` | Show table of contents |
+| `toc-depth: 3` | How many heading levels in the TOC |
+| `number-sections: true` | Auto-number sections |
+| `code-fold: true` | Collapse code chunks by default |
+| `embed-resources: true` | Inline plots/images so the `.html` is self-contained — **required for Canvas submissions** |
+| `theme: flatly` | Bootstrap theme |
+
+::: {.callout-important}
+## Submitting to Canvas
+
+Always include `embed-resources: true` in your YAML. Without it, Quarto saves your plots into a sibling `_files/` folder and the rendered `.html` references them externally. If you upload just the `.html` to Canvas, **the plots will not appear** — your reader sees broken images. With `embed-resources: true`, every chart, image, and asset is base64-inlined into the single `.html` file, making it self-contained.
+:::
+
+## Creating Links
+
+Use `[Link text](url)`:
+
+- `[R Commands](RCommands.qmd)` → [R Commands](RCommands.qmd)
+- `[R Colors](https://r-charts.com/colors/)` → [R Colors](https://r-charts.com/colors/)
+
+## Creating Headers
+
+Use `#` for headings — one `#` per heading level:
+
+```markdown
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+```
+
+## Emphasizing Words
+
+- `*italic*` → *italic*
+- `**bold**` → **bold**
+- `` `code` `` → `code`
+
+## Bullet Points
+
+### Simple Lists
+
+```markdown
+- First item
+- Second item
+- Third item
+```
+
+### Numbered Lists
+
+```markdown
+1. First item
+2. Second item
+3. Third item
+```
+
+### Nested Lists
+
+```markdown
+1. What is $2+2$?
+    a. **4**
+    b. 8
+2. What is $3 \times 5$?
+    a. 14
+    b. **15**
+```
+
+## Math Equations
+
+Use `$x = 5$` inline to write $x = 5$. Use `$$ ... $$` on their own lines for display math:
+
+```markdown
+$$
+z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}}
+$$
+```
+
+Renders as:
+
+$$
+z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}}
+$$
+
+Common LaTeX symbols:
+
+| Symbol | LaTeX |
+|---|---|
+| $\alpha$, $\beta$, $\sigma$, $\mu$, $\epsilon$ | `$\alpha$`, `$\beta$`, `$\sigma$`, `$\mu$`, `$\epsilon$` |
+| $\bar{x}$ | `$\bar{x}$` |
+| $\hat{Y}$ | `$\hat{Y}$` |
+| $\neq$ | `$\neq$` |
+| $\leq$, $\geq$ | `$\leq$`, `$\geq$` |
+| $\text{plain text}$ | `$\text{plain text}$` |
+
+## Code Chunks
+
+R code runs inside fenced blocks:
+
+````markdown
+```{{r}}
+x <- 1:10
+mean(x)
+```
+````
+
+Useful chunk options (set with `#|` at the top of the chunk):
+
+```{{r}}
+#| echo: false        # hide the code
+#| eval: false        # show code but don't run it
+#| warning: false     # suppress warnings
+#| fig-cap: "My plot" # add a caption
+```
+
+## Tabsets
+
+Quarto uses fenced divs instead of R Markdown's `.tabset`:
+
+```markdown
+::: {.panel-tabset}
+
+## Tab A
+
+Content for tab A
+
+## Tab B
+
+Content for tab B
+
+:::
+```
+
+## Callout Blocks
+
+Highlight information with callouts:
+
+```markdown
+::: {.callout-note}
+This is a note.
+:::
+
+::: {.callout-warning}
+This is a warning.
+:::
+```
+
+## Tables
+
+Pipe tables work like this:
+
+```markdown
+| Name  | Age | Gender |
+|-------|-----|--------|
+| Jill  | 8   | Female |
+| Jack  | 9   | Male   |
+```
+
+## Inserting Images
+
+```markdown
+![Caption](path/to/image.png){width=300px}
+```
+
+## More Information
+
+- [Quarto documentation](https://quarto.org/docs/guide/)
+- [Quarto cheatsheet](cheatsheets/quarto.pdf)
+- [Markdown basics](https://quarto.org/docs/authoring/markdown-basics.html)
+
+[^thanks]: Adapted from the original R Markdown Hints page for the Quarto-based M119 site.

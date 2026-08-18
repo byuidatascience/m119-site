@@ -3,16 +3,20 @@ project:
   output-dir: _site
   render:
     # Render every .qmd in the project EXCEPT downloadable worksheets in
-    # assets/. Those have executable {r} chunks that m119-site's CI cannot
-    # run (no R toolchain). They're copied as static resources below.
+    # assets/ and projects/m119-docs/. Those have executable {r} chunks
+    # that m119-site's CI cannot run (no R toolchain).
+    # They're copied as static resources below.
     - "**/*.qmd"
     - "!assets/**/*.qmd"
+    - "!projects/m119-docs/**/*.Rmd"
   resources:
     - assets/docs/**
     - assets/data/**
     - projects/**/*.pdf
-    - projects/**/*.html
     - projects/**/*_files/**
+    - projects/m119-docs/**/*.Rmd
+    - projects/Images/**
+    - projects/refs/**
 
 website:
   title: "Math 119 — Applied Calculus for Data Analysis"

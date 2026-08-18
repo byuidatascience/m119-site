@@ -1,71 +1,26 @@
 ---
-title: "Projects Overview"
+title: "Projects"
 ---
 
-## Course Projects
+&nbsp;
 
-This course includes three major projects that integrate the mathematical concepts you'll learn throughout the semester. Each project involves real-world data analysis using R and the mathematical modeling techniques covered in class.
+## Specs List
 
-### Project Schedule (Fall 2026)
+- Project is ready for review.
+- Cohesive analysis provided.
+- Work is reproducible.
+- Calculations and plots are correct, or have only minor errors.
+- Mathematical notation and terminology is used correctly, or with only minor errors.
 
-::: {.callout-note}
-## Canvas Assignments
-All project tasks are submitted through Canvas. Use the links below to access assignment details and due dates.
-:::
+*Please refer to the [Specs Details](specs_detail.qmd) to help you evaluate your own work with these specs before submitting.*
 
-#### Project 1: LED Bulb Lifetime Modeling
-**Weeks 2-6** (Sept 21 - Oct 22)
+The list of specifications (or specs) above describe how your assignment will be evaluated. Your work must satisfy **all** the specs. If your work meets all the specs your Project (or Project Task) will be marked as "Complete". If your work does not meet one or more of the specs your Project (or Project Task) will be marked as "Revision Needed" and you can revise and resubmit your work as well as continue to work future tasks. If your work is not ready for review, it will marked "Not Ready for Review" which means you will need to resubmit work that is ready for review before you can submit future tasks.
 
-- **Background**: Analyze LED light bulb lifetime data from the Department of Energy's L Prize competition
-- **Skills**: Function modeling, solving equations, parameter estimation, visual fitting
-- **Tasks**:
-  - Tell a story with functions
-  - Solve equations with software
-  - Model measurements with distributions
-  - Select parameter values for visual fits
+&nbsp;
 
-[Download Project 1 Instructions (PDF)](Project1_Instructions.pdf)
+## Instructions
 
-#### Project 2: Maximum Likelihood Fitting
-**Weeks 7-10** (Oct 29 - Nov 19)
-
-- **Background**: Continue LED bulb lifetime analysis using advanced fitting methods
-- **Skills**: Derivatives, optimization, loglikelihood, partial derivatives, maximum likelihood estimation
-- **Tasks**:
-  - Calculate statistics and expanded sums
-  - Derive loglikelihood functions for multiple models
-  - Compute first and second derivatives
-  - Find maximum likelihood estimates
-  - Compare fitted models using optimization
-
-[Download Project 2 Instructions (PDF)](Project2_Instructions.pdf)
-
-#### Project 3: Probability Distributions and Parameter Estimation
-**Weeks 11-13** (Nov 24 - Dec 10)
-
-- **Background**: Fit probability distributions to real-world data
-- **Skills**: Integration, probability density functions, expected value, variance, method of moments
-- **Tasks**:
-  - Analyze data with histograms and sample statistics
-  - Verify and explore gamma distribution properties
-  - Estimate parameters using method of moments
-  - Simulate data from fitted distribution
-  - Calculate probabilities and percentiles
-
-[Download Project 3 Instructions (PDF)](Project3_Instructions.pdf)
-
----
-
-## Project Workflow
-
-1. **Read the instructions** - Download the PDF for your current project
-2. **Complete tasks in R** - Use R Markdown or Quarto to document your work
-3. **Submit to Canvas** - Follow the submission guidelines for each task
-4. **Receive feedback** - Revise based on specifications feedback
-5. **Resubmit if needed** - Projects can be revised until all specifications are met
-
-## Support
-
-- **Office hours**: See course schedule
-- **Open lab days**: Built into the schedule for in-class project work
-- **TA support**: Available during scheduled lab times
+- [Example Project](project1_practice.qmd)
+- [Project 1](unit1.qmd)
+- [Project 2](unit2.qmd)
+- [Project 3](unit3.qmd)

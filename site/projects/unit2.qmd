@@ -1,0 +1,258 @@
+---
+title: "Project 2 Instructions"
+author: ""
+date: "Updated Feb 27"
+format:
+  html:
+    code-fold: true
+---
+
+
+```{r}
+#| include: false
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+# Project Outline
+This project outline and background information have been provided to assist you as you complete your project. You should assume the reader of your work has no knowledge or access to this information.
+
+![Phillips LED Bulbs - [source](https://en.wikipedia.org/wiki/File:Philips_LED_bulbs.jpg)](https://upload.wikimedia.org/wikipedia/commons/4/4e/Philips_LED_bulbs.jpg){width=150px}
+
+How long does an LED light bulb last? The US Department of Energy launched the Bright Tomorrow Lighting Prize (or L Prize) in 2008 to "spur lighting manufacturers to develop high-quality, high-efficiency solid-state lighting products to replace the common incandescent light bulb." In addition to requiring less than 10 watts, the winning bulb needed to have a lifetime longer than 25,000 hours.  For this project, we will use 80% of the initial intensity[^note] as the threshold for determining the lifetime of a light bulb.
+
+Phillips won the prize in 2011, after undergoing 18 months of rigorous testing.  Note however that there are only 8760 hours in a year (24 hours a day for 365 days), which means 18 months of testing is only 13,140 hours much less than the 25,000 hours required to win the prize. And the data we are using, not the Phillips data, only has measurement for 5010 hours. How do we know the bulb met the requirements to win with only 18 months (or in our case only about 208 days) of testing? We use mathematical models. 
+
+When you first turn on an LED bulb, the lumen output slightly increases for a while, going above 100% of the initial brightness. After peaking above 100%,the lumen output stays relatively constant before it starts a slow decent downwards.  
+
+In this project, we'll be fitting the data to deterministic models by maximizing the loglikelihood of the errors. Each of the deterministic models are functions $f(t)$ that describe the average behavior of lumen output of LED bulbs (as a percent of the initial lumens) after $t$ hours.
+
+## Task 1: Determine the Objective Function
+- Create a Quarto file. In the YAML header, include `embed-resources: true` so your rendered `.html` inlines all plots — required so the file you upload to Canvas displays your charts. See [Quarto Hints](QuartoHints.qmd) for a working YAML template.
+- Consider the following general models.
+    - $f_1(t; a_1) = 100 + a_1t$
+    - $f_2(t; a_1,a_2) = 100 + a_1t + a_2t^2$
+    - $f_4(t; a_1,a_2) = 100 + a_1t + a_2\ln(0.005t+1)$
+    - $f_5(t; a_1) = 100e^{-0.00005t} + a_1te^{-0.00005t}$
+    - $f_6(t; a_1,a_2) = 100 + a_1t - a_2(1-e^{-0.0003t})$
+- Write down the loglikelihood function for the errors. Assume the errors are independent and normally distributed (with mean of 0 and standard deviation of 1).
+- Organize your work into a **cohesive analysis** and submit it to Canvas.
+
+## Task 2: Derivatives
+- Create a new Quarto file.
+- Find the first and second derivatives of $\ell_1(a_1; \mathbf{t}, \mathbf{y})$, the loglikelihood function for errors from the general model $f_1$, with respect to $a_1$.
+- Find all the first partials and second partials of $\ell_4(a_1, a_2; \mathbf{t}, \mathbf{y})$, the loglikelihood function for errors from the general model $f_4$.
+- Find the first and second derivatives of $\ell_5(a_1; \mathbf{t}, \mathbf{y})$, the loglikelihood function for errors from the general model $f_5$, with respect to $a_1$.
+- Organize your work into a **cohesive analysis** and submit it to Canvas.
+
+## Task 3: Fit the Model ("Maximum Likelihood" Method)
+- Create a new Quarto file.
+- Use the `seed=` argument in the `led_bulb()` function to set the seed and use the following code to read in the light bulb data.
+
+```{r}
+#| label: load_libraries
+# Use this R-Chunk to load all your libraries!
+
+# run this line once in the console to get package
+# if (!requireNamespace("data4led", quietly = TRUE)) remotes::install_github("byuidatascience/data4led")
+library(data4led)
+```
+
+```{r}
+#| label: load_data
+#| error: true
+# Use this R-Chunk to import all your datasets!
+
+# Enter the seed as your birthday MMDD.
+# bulb <- led_bulb(1, seed = MMDD)
+```
+
+This code creates a data frame called "bulb". The bulb data frame contains measurements for one randomly selected bulb at many time points. You will need to set the seed so that you will have your own random, but reproducible, data with which to work. Please set the seed as the four digit number corresponding to your birthday month and date, MMDD.
+
+- Use `head(bulb)` to view the first 6 lines of the `bulb` data frame. Verify that it includes the columns
+    1. "id", the identification number for your randomly selected bulb,
+    2. "hours", the number of hours since the bulb has turned on,
+    3. "intensity", the lumen output of the bulb,
+    4. "normalized_intensity", the lumen at that time divided by the lumen of your bulb at time 0, and
+    5. "percent_intensity", the bulb intensity as a percent of the original lumen (notice the first row in this column is 100).
+
+- Set the first derivative of $\ell_1(a_1; \mathbf{t}, \mathbf{y})$ with respect to $a_1$ equal to zero and solve for $a_1$.
+  - Use the second derivative test to confirm you have actually found a maximum of the associated loglikelihood function.
+- Set the partial derivatives of $\ell_4(a_1, a_2; \mathbf{t}, \mathbf{y})$ to zero and solve the resulting system of equations for $a_1$ and $a_2$. 
+  - Use the second derivative test to confirm you have actually found a maximum of the associated loglikelihood function.
+- Set the first derivative of $\ell_5(a_1; \mathbf{t}, \mathbf{y})$ with respect to $a_1$ equal to zero and solve for $a_1$.
+  - Use the second derivative test to confirm you have actually found a maximum of the associated loglikelihood function.
+- Write down each of the fitted models, $f_i(t)$ where $i = 1, 2, 4, 5, 6$, with the parameters values rounded to 3 decimal places as needed.
+  - The computation for fitting $f_2$ and $f_6$ were completed in class (or provided to you). Use code provide in class to find the fitted models $f_2$ and $f_6$.
+  - Note when using fitted models it is best practice not to round in any preliminary calculations so make sure you use all known decimal places for the parameter values, NOT the rounded values, when you use the fitted model.
+- **CHECK YOUR WORK:** Use this [Shiny App](https://posit.byui.edu/content/27bbcd33-a129-45fa-9de1-9355ea44a7b7) to verify that your parameters are correct. Include an image from the Shiny App showing you have found all the correct parameter values.
+- Organize your work into a **cohesive analysis** and submit it to Canvas.
+
+Beneath the instructions for this task, two sections titled "Maximum Likelihood Method for $f_2$" and "Maximum Likelihood Method for $f_6$" each apply the maximum likelihood method to the functions $f_2$ and $f_6$, using the random seed 123. Read each section, then adapt the code to work with your assigned random seed.
+
+### Maximum Likelihood Method for $f_2$
+
+Consider the model $f_2(t; a_1, a_2) = 100 + a_1t + a_2t^2$. The function $f_2$ models the brightness of a lightbulb, measured as a percent of the original intensity of the lightbulb, given the number of hours the lightbulb has been on, $t$. We will fit $f_2$ to the list of 44 measurements, $(t_i, y_i)$, obtained from the data4led package using the seed 123.
+
+Assuming the residuals (or errors) are independent and normally distributed (with mean 0 and standard deviation 1), the loglikelihood function for these errors is
+$$\ell_2(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) + \sum_{i=1}^{44} \left(-\frac{1}{2}(y_i - 100 - a_1t_i - a_2t_i^2)^2\right).$$
+We want to find the maximum of $\ell_2$. The first partials of $\ell_2$ are
+
+- $\frac{\partial\ell_2}{\partial a_1} = \left(\sum_{i=1}^{44} (y_i - 100)t_i\right) - \left(\sum_{i=1}^{44}t_i^2\right)a_1 - \left(\sum_{i=1}^{44}t_i^3\right)a_2$ and
+- $\frac{\partial\ell_2}{\partial a_2} = \left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right) - \left(\sum_{i=1}^{44}t_i^3\right)a_1 - \left(\sum_{i=1}^{44}t_i^4\right)a_2$.
+
+To find the critical points of $\ell_2$, we set each partial derivative above equal to zero and then solve
+$$\left\{
+\begin{array}{ll}
+\left(\sum_{i=1}^{44} (y_i - 100)t_i\right) - \left(\sum_{i=1}^{44}t_i^2\right)a_1 - \left(\sum_{i=1}^{44}t_i^3\right)a_2 &= 0 \\
+\left(\sum_{i=1}^{44} (y_i - 100)t_i^2\right) - \left(\sum_{i=1}^{44}t_i^3\right)a_1 - \left(\sum_{i=1}^{44}t_i^4\right)a_2 &= 0.
+\end{array}
+\right.$$
+This system is of the form
+$$\left\{
+\begin{aligned}
+b_1 - c_{11}a_1 - c_{12}a_2 &= 0 \\
+b_2 - c_{21}a_1 - c_{22}a_2 &= 0,
+\end{aligned}
+\right.$$
+with $c_{11} = \sum t_i^2$, $c_{12} = c_{21} = \sum t_i^3$, $c_{22} = \sum t_i^4$, $b_1 = \sum (y_i - 100)t_i$, and $b_2 = \sum (y_i - 100)t_i^2$. Each is just a constant that depends on the given data; we calculate (and store) their values using the R code below.
+
+```{r}
+library(data4led)
+bulb <- led_bulb(1, seed = 123)  # Remember to use your assigned seed!
+
+t <- bulb$hours
+y <- bulb$percent_intensity
+
+c11 <- sum(t^2)
+c12 <- sum(t^3)
+c22 <- sum(t^4)
+b1  <- sum((y - 100) * t)
+b2  <- sum((y - 100) * t^2)
+```
+
+The solution to this system is $a_2 = \frac{c_{11}b_2 - c_{12}b_1}{c_{11}c_{22} - c_{12}^2}$ and $a_1 = \frac{b_1 - c_{12}a_2}{c_{11}}$.
+
+```{r}
+best_a2 <- (c11 * b2 - c12 * b1) / (c11 * c22 - c12^2)
+best_a1 <- (b1 - c12 * best_a2) / c11
+best_a1
+best_a2
+```
+
+The critical point for $\ell_2$ is $(a_1, a_2) = (`r best_a1`, `r best_a2`)$. The second partials are $\frac{\partial^2\ell_2}{\partial a_1^2} = -\sum t_i^2$, $\frac{\partial^2\ell_2}{\partial a_2^2} = -\sum t_i^4$, and $\frac{\partial^2\ell_2}{\partial a_2 \partial a_1} = -\sum t_i^3$. The second derivative test uses $D = \left(\frac{\partial^2\ell_2}{\partial a_1^2}\right)\left(\frac{\partial^2\ell_2}{\partial a_2^2}\right) - \left(\frac{\partial^2\ell_2}{\partial a_2 \partial a_1}\right)^2$.
+
+```{r}
+D <- (-c11) * (-c22) - (-c12)^2
+D
+-c11
+```
+
+Since $D > 0$ and $\frac{\partial^2\ell_2}{\partial a_1^2} < 0$, the critical point is a local maximum. Our best fit model is $f_2(t) = 100 + (`r best_a1`)t + (`r best_a2`)t^2$ where $t \geq 0$.
+
+```{r}
+f2 <- function(x, a1 = best_a1, a2 = best_a2) {
+  100 + a1 * x + a2 * x^2
+}
+
+x <- seq(-10, 80001, 2)
+par(mfrow = c(1, 2), mar = c(2.5, 2.5, 1, 0.25))
+plot(t, y, xlab = "Hour", ylab = "Intensity(%)", pch = 16, main = "f2")
+lines(x, f2(x), col = 2)
+plot(t, y, xlab = "Hour", ylab = "Intensity(%)", pch = 16,
+     xlim = c(-10, 80000), ylim = c(-10, 120))
+lines(x, f2(x), col = 2)
+```
+
+The fitted function provides a good visual fit. The story told by this model suggests that the light bulb will burn out (hit 80% intensity) somewhere between 10 and 20 thousand hours.
+
+### Maximum Likelihood Method for $f_6$
+
+Consider $f_6(t; a_1, a_2) = 100 + a_1t + a_2(1 - e^{-0.0003t})$. The loglikelihood function is
+$$\ell_6(a_1,a_2; \mathbf{t},\mathbf{y}) = 44\ln\left(\frac{1}{\sqrt{2\pi}}\right) - \frac{1}{2}\sum_{i=1}^{44} (y_i - 100 - a_1t_i - a_2(1 - e^{-0.0003t_i}))^2.$$
+We apply the maximum likelihood method using the data from our seed.
+
+```{r}
+bulb <- led_bulb(1, seed = 123)  # Remember to use your assigned seed!
+
+t <- bulb$hours
+y <- bulb$percent_intensity
+```
+
+Setting each partial derivative to zero gives a system of the form $b_1 - c_{11}a_1 - c_{12}a_2 = 0$ and $b_2 - c_{21}a_1 - c_{22}a_2 = 0$, where $c_{11} = \sum t_i^2$, $c_{12} = \sum t_i(1 - e^{-0.0003t_i})$, $c_{22} = \sum (1 - e^{-0.0003t_i})^2$, $b_1 = \sum (y_i - 100)t_i$, and $b_2 = \sum (y_i - 100)(1 - e^{-0.0003t_i})$.
+
+```{r}
+c11 <- sum(t^2)
+c12 <- sum(t * (1 - exp(-0.0003 * t)))
+c22 <- sum((1 - exp(-0.0003 * t))^2)
+b1  <- sum((y - 100) * t)
+b2  <- sum((y - 100) * (1 - exp(-0.0003 * t)))
+
+best_a2 <- (c11 * b2 - c12 * b1) / (c11 * c22 - c12^2)
+best_a1 <- (b1 - c12 * best_a2) / c11
+best_a1
+best_a2
+```
+
+The second partials are $\frac{\partial^2 \ell_6}{\partial a_1^2} = -\sum t_i^2$, $\frac{\partial^2 \ell_6}{\partial a_2^2} = -\sum (1 - e^{-0.0003t_i})^2$, and $\frac{\partial^2\ell_6}{\partial a_2 \partial a_1} = -\sum t_i(1 - e^{-0.0003t_i})$.
+
+```{r}
+D <- (-c11) * (-c22) - (-c12)^2
+D
+-c11
+```
+
+Since $D > 0$ and $\frac{\partial^2\ell_6}{\partial a_1^2} < 0$, the critical point is a local maximum. Our best fit model is $f_6(t) = 100 + (`r best_a1`)t + (`r best_a2`)(1 - e^{-0.0003t})$ where $t \geq 0$.
+
+```{r}
+f6 <- function(x, a1 = best_a1, a2 = best_a2) {
+  100 + a1 * x + a2 * (1 - exp(-0.0003 * x))
+}
+
+x <- seq(-10, 80001, 2)
+par(mfrow = c(1, 2), mar = c(2.5, 2.5, 1, 0.25))
+plot(t, y, xlab = "Hour", ylab = "Intensity(%)", pch = 16, main = "f6")
+lines(x, f6(x), col = 2)
+plot(t, y, xlab = "Hour", ylab = "Intensity(%)", pch = 16,
+     xlim = c(-10, 80000), ylim = c(-10, 120))
+lines(x, f6(x), col = 2)
+```
+
+The fitted function provides a good visual fit. The light bulb will burn out (hit 80% intensity) somewhere around 30,000 hours.
+
+## Project 2: Bringing it All Together (and answer a question)
+- Create a new Quarto file.
+- Answer the question, "How long does an LED light bulb last?" 
+    - Begin with background and an introduction to the question(s) you will be answering with the light bulb data.
+    - Introduce the given data.
+    - Introduce the five general models.
+        - Restrict the domain for all models to be nonnegative.
+    - Describe how you will fit the models (maybe what it means to fit those models).
+    - Provide the fitted models.
+        - The work to fit $f_2(t)$ and $f_6(t)$ was completed in class and the code only needs to be adapted to find the fits to your specific data.
+    - Use each of the five fitted models to predict the intensity of a light bulb as a percent of the original intensity after 25,000 hours. 
+    - Use the `uniroot()` function in R to find the approximate solution for where each of your five fitted models is at 80% of the initial intensity, solve the equation $f_i(t) = 80$ for each of the five fitted models.
+        - **CHECK YOUR WORK:** Use this [Shiny App](https://posit.byui.edu/content/8cba223a-161c-4303-8733-189791271bad) to check your answers. Include an image from the Shiny App to show that the solutions identified are correct.
+    - Describe in 4-6 sentences how the information you get from the data depends on the general model you assume. Why is this an important concept to understand when working with models and data?
+    - If a fitted model is inconsistent with known truth about a situation, it should not be used as a model in that situation. Are any of your fitted models inconsistent with the information we know about the behavior of LED bulbs (provided in the introductory information of this project)?
+- Organize your work into a **cohesive analysis** and submit it to Canvas. Your narrative should stand alone apart from the "project instructions" (meaning your reader should not need the instructions for the project to understand what you are doing or explaining) and separate from the individual Tasks (meaning you should not assume your reader has read any of your previous narratives). It is your job in the narrative to lead your reader from the background and question to given data and 5 general models, fitting those models, and answering a question about the data using those fitted models.
+
+- Reflect on your work for this project. At the bottom of your report include the following in a brief (1-2 paragraph) reflection.
+    - Identify/explain 2-3 key mathematical  ideas you learned (and would like to remember).
+    - Identify/explain 1-3 soft skills you needed/improved/learned while working on the project.
+        - List of some Soft Skills
+            - Dedication
+            - Following Directions
+            - Motivation
+            - Self-directed
+            - Organization
+            - Planning
+            - Time Management
+            - Willing to Accept Feedback
+            - Perseverance
+            - Good attitude
+            - Meets deadlines
+            - Willingness to learn
+
+
+
+[^note]: This number is a simplified story for illustrative purposes only.

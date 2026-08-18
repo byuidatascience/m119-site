@@ -1,0 +1,174 @@
+---
+title: "Project 1 Instructions"
+author: ""
+date: "Updated Feb 11"
+format:
+  html:
+    code-fold: true
+---
+
+```{r}
+#| include: false
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+
+# Project Outline
+This project outline and background information have been provided to assist you as you complete your project. You should assume the reader of your work has no knowledge or access to this information.
+
+![Phillips LED Bulbs - [source](https://en.wikipedia.org/wiki/File:Philips_LED_bulbs.jpg)](https://upload.wikimedia.org/wikipedia/commons/4/4e/Philips_LED_bulbs.jpg){width=150px}
+
+How long does an LED light bulb last? The US Department of Energy launched the Bright Tomorrow Lighting Prize (or L Prize) in 2008 to "spur lighting manufacturers to develop high-quality, high-efficiency solid-state lighting products to replace the common incandescent light bulb." In addition to requiring less than 10 watts, the winning bulb needed to have a lifetime longer than 25,000 hours.  For this project, we will use 80% of the initial intensity[^note] as the threshold for determining the lifetime of a light bulb.
+
+Phillips won the prize in 2011, after undergoing 18 months of rigorous testing.  Note however that there are only 8760 hours in a year (24 hours a day for 365 days), which means 18 months of testing is only 13,140 hours much less than the 25,000 hours required to win the prize. And the data we are using, not the Phillips data, only has measurement for 5010 hours. How do we know the bulb met the requirements to win with only 18 months (or in our case only about 208 days) of testing? We use mathematical models. 
+
+When you first turn on an LED bulb, the lumen output slightly increases for a while, going above 100% of the initial brightness. After peaking above 100%,the lumen output stays relatively constant before it starts a slow decent downwards.  
+
+In this project, we'll be fitting the data to deterministic models, functions $f(t)$ that gives the lumen output of LED bulbs (as a percent of the initial lumens) after $t$ hours. 
+
+
+
+## Task 1: Background and Data
+- Create a Quarto file. In the YAML header, include `embed-resources: true` so your rendered `.html` inlines all plots — required so the file you upload to Canvas displays your charts. See [Quarto Hints](QuartoHints.qmd) for a working YAML template.
+- Use the `seed=` argument in the `led_bulb()` function to set the seed and use the following code to read in the light bulb data.
+
+```{r}
+#| label: load_libraries
+# Use this R-Chunk to load all your libraries!
+
+# run this line once in the console to get package
+# if (!requireNamespace("data4led", quietly = TRUE)) remotes::install_github("byuidatascience/data4led")
+library(data4led)
+```
+
+```{r}
+#| label: load_data
+#| error: true
+# Use this R-Chunk to import all your datasets!
+
+# Enter the seed as your birthday MMDD.
+# bulb <- led_bulb(1, seed = MMDD)
+```
+
+This code creates a data frame called "bulb". The bulb data frame contains measurements for one randomly selected bulb at many time points. You will need to set the seed so that you will have your own random, but reproducible, data with which to work. Please set the seed as the four digit number corresponding to your birthday month and date, MMDD.
+
+- Use `head(bulb)` to view the first 6 lines of the `bulb` data frame. Verify that it includes the columns
+    1. "id", the identification number for your randomly selected bulb,
+    2. "hours", the number of hours since the bulb has turned on,
+    3. "intensity", the lumen output of the bulb,
+    4. "normalized_intensity", the lumen at that time divided by the lumen of your bulb at time 0, and
+    5. "percent_intensity", the bulb intensity as a percent of the original lumen (notice the first row in this column is 100).
+
+- Use the `plot()` command in R, along with the `bulb` data frame, to create a time vs. bulb intensity (as a percent of the original lumens) scatter plot for one light bulb. Make sure `hours` is on the horizontal axis ($x$-axis) and `percent_intensity` is on the vertical axis ($y$-axis).
+    - **CHECK YOUR WORK:** Do you get a plot with 44 points? Is the horizontal axis from 0 to about 5000? Is the point $(0,100)$ on your plot?
+    - **CHECK YOUR WORK:** Use this [Shiny App](https://posit.byui.edu/content/a0defa16-90cc-41c9-b0ce-63b94a08f848) to check your work.
+- Organize your work into a [**cohesive analysis**](specs_detail.qmd) and submit it to Canvas.
+    - All calculations are introduced with complete sentences (and paragraphs). Remember introductions come **BEFORE** (the calculation) and tell your reader what is coming.
+    - All plots are introduced with complete sentences (and paragraphs). Remember introductions come **BEFORE** (the plot) and tell your reader what is coming.
+    - All calculations are explained, interpreted, and described using complete sentences (and paragraphs). Explanations can come before or after a calculation, tell your reader what is important and what they should notice. Make connections and transitions.
+    - All plots are explained, interpreted, and described using complete sentences (and paragraphs). Explanations can come before or after a plot, tell your reader what is important and what they should notice. Make connections and transitions.
+
+You'll see the instructions "Organize your work into a **cohesive analysis**" at the end of every task. Imagine that you are submitting a report to a boss. Your work needs to be readable. Your job is to analyze the task at hand for your boss.
+
+## Task 2: Models and Parameter Exploration
+- Create a new Quarto file.
+- Consider the following general models.
+    - $f_0(x; a_0) = a_0$
+    - $f_1(x; a_0,a_1) = a_0 + a_1x$
+    - $f_2(x; a_0,a_1,a_2) = a_0 + a_1x + a_2x^2$
+    - $f_3(x; a_0,a_1,a_2 ) = a_0 + a_1e^{-a_2x}$
+    - $f_4(x; a_0,a_1,a_2) = a_0 + a_1x + a_2\ln(0.005x+1)$
+    - $f_5(x; a_0,a_1,a_2) = (a_0+a_1x)e^{-a_2x}$
+
+- What is the implied domain for each of these functions?
+- For each function, use the sliders in the Desmos files below to dynamically explore how changing the parameter changes the behavior of the function.
+    - [Desmos file for function 0](https://www.desmos.com/calculator/zild585kv2)
+    - [Desmos file for function 1](https://www.desmos.com/calculator/xwpdd6tfwa)
+    - [Desmos file for function 2](https://www.desmos.com/calculator/sfm0h6cq1f)
+    - [Desmos file for function 3](https://www.desmos.com/calculator/oazbfglkp2)
+    - [Desmos file for function 4](https://www.desmos.com/calculator/fbdvpb9hdi)
+    - [Desmos file for function 5](https://www.desmos.com/calculator/xx4kjeclv5)
+- For each function, summarize your observations about the parameters in terms of transformations of functions (shifts, reflections, stretch) and the mathematical behavior of the function (increasing, decreasing, constant, positive, negative, nonnegative).
+    - Identify interesting parameter values (or ranges of values) where the behavior of function is different.
+    - For each function, use the `plot()` commands in R to plot several representative curves illustrating what you learned in your parameter exploration. Use the `par(mfrow())` command to organize your plots into one figure.
+- Organize your work into a **cohesive analysis** and submit it to Canvas.
+     
+## Task 3: Fit the Models ("Visual" Method)
+- Create a new Quarto file.
+- Consider the following general models.
+    - $f_0(x; a_0) = a_0$
+    - $f_1(x; a_0,a_1) = a_0 + a_1x$
+    - $f_2(x; a_0,a_1,a_2) = a_0 + a_1x + a_2x^2$.
+    - $f_3(x; a_0,a_1,a_2 ) = a_0 + a_1e^{-a_2x}$
+    - $f_4(x; a_0,a_1,a_2) = a_0 + a_1x + a_2\ln(0.005x+1)$
+    - $f_5(x; a_0,a_1,a_2) = (a_0+a_1x)e^{-a_2x}$
+Use the fact that the percent of original lumens at $t=0$ is 100%, $f_i(0) = 100$, to determine $a_0$ for each function. Examples showing how to do this for $f_0$, $f_2$, and $f_5$ have been done for you.
+
+- Since $f_0(0)$ must be 100, we know $a_0 = 100$. The fitted model $f_0$ is $f_0(t) = 100$ where $t \geq 0$.
+- Since $f_2(0) = 100$, we know $f_2(0) = a_0 + a_1(0) + a_2(0^2) = a_0 + 0 + 0 = a_0$ so $a_0 = 100$.
+- Since $f_5(0) = 100$, we know $f_5(0) = (a_0 + a_1(0))e^{-a_2(0)} = (a_0 + 0)(1) = a_0$ so $a_0 = 100$.
+
+**CAUTION:** The parameter $a_0$ is not always equal to 100.
+
+- Given $f_1(0) = 100$, find $a_0$.
+- Given $f_3(0) = 100$, find $a_0$. Note: $a_0 \neq 100$.
+- Given $f_4(0) = 100$, find $a_0$.
+
+- For all six models, $f_i(t)$, select parameter values to give a visual fit of the model to the data. Make sure to pick parameters so that $f_i(0) = 100$.
+    - In your cohesive analysis, clearly state your six fitted models with the chosen parameters (not just in the code chunks). This helps make your work reproducible.
+    - See the following links for help getting started finding the visual fits. There is a video showing an example of fitting $f_2$ when the seed is 2021, and a few accompanying html files.
+        - [Video: Visually Fitting $f_2$ Example](https://www.loom.com/share/e719841d54624db9b22ada1e85b7f85d?sharedAppSource=personal_library)
+        - [Project 1 Task 1 html file referenced in video](m119-docs/Project1_Task1_example.qmd)
+        - [Project 1 Task 2 html file referenced in video](m119-docs/Project1_Task2_f2_example.qmd)
+        - [Project 1 Task 3 html file using the information from the video](m119-docs/Project1_Task3_f2_example.qmd)
+- Use the `plot()` and `lines()` commands in R (or the `plot()` and `points()` commands in R) to plot each fitted function and the scatter plot of the data. You should have **6 plots**, each with one fitted function and the data. Make sure the viewing window for each plot is `xlim = c(-10,80000)` and `ylim = c(-10,120)`.
+    - **CHECK YOUR WORK:** When you evaluate your fitted function at 0, do you get 100? When you plot your function is it a good fit to the data?
+    - **CHECK YOUR WORK:** Use this [Shiny App](https://posit.byui.edu/content/3a8973e5-fdc3-479e-8f0c-30d7fa7d2f19) to check your work.
+- Describe in 1-3 sentences the story told by each of the fitted functions in the context of the light bulbs.
+- Organize your work into a **cohesive analysis** and submit it to Canvas.
+
+## Task 4: Use the Fitted Models to Answer Questions
+- Create a new Quarto file.
+- Find the exact solution, or state why this cannot be done by hand, for where each of your six fitted models is at 80% of the initial intensity, $f_i(t) = 80$.
+*Write out your solutions and include a picture of each of your calculations (or you can use the Latex Cheat Sheet if you would like to try to type out your calculations).*
+- Use the `uniroot()` function in R to find the approximate solution for where each of your six fitted models is at 0% of the initial intensity, $f_i(t) = 0$.
+- Use the `uniroot()` function in R to find the approximate solution for where each of your six fitted models is at 80% of the initial intensity, $f_i(t) = 80$.
+    - **CHECK YOUR WORK:** Use this [Shiny App](https://posit.byui.edu/content/0443a523-1446-4b6c-930d-f2411a3b8ffe) to check your work.
+        - In your analysis include an image for each function from the Shiny App to show that the solutions found (or not found) are correct.
+- Answer the question, "How long does an LED light bulb last?"
+- Describe in 4-6 sentences how the information you get from the data depends on the general model you assume. Why is this an important concept to understand when working with models and data?
+- Are any of your fitted models inconsistent with the information we know about the behavior of LED bulbs (provided in the introductory information above)?
+    - If a fitted model is inconsistent with known truth about a situation, it should not be used as a model in that situation.
+- Organize your work into a **cohesive analysis** and submit it to Canvas.
+
+## Project 1: Bringing it All Together
+- Create a new Quarto file.
+- Answer the question, "How long does an LED light bulb last?" Organize your work from Tasks 1-4 into a **cohesive analysis** and submit it to Canvas. Your narrative should stand alone apart from the "instructions" (meaning your reader should not need the instructions for the project to understand what you are doing or explaining) and separate from the individual Tasks (meaning you should not assume your reader has read any of your previous narratives). You do not need to include everything from every task rather use only the important and relevant plots, calculations, and information to lead your reader from the background and question, to being given data and 6 general models, fitting those models, and answering a question about the data using those fitted models.
+    - Begin with background and an introduction to the question(s) you will be answering with the light bulb data.
+    - Introduce the given data.
+    - Introduce the general models.
+    - Restrict the domain for all models to be nonnegative.
+    - Describe how you will fit the models (maybe what it means to fit those models).
+    - Provide the fitted models.
+    - Describe interesting stories the fitted models tell, how the stories are different, if any of the stories inconsistent with known models, which models should be ignored moving forward and why, what information you find from the fitted models, how that information depends on assumptions, etc.
+    
+- Reflect on your work for this project. At the bottom of your report include the following in a brief (1-2 paragraph) reflection.
+    - Identify/explain 2-3 key mathematical  ideas you learned (and would like to remember).
+    - Identify/explain 1-3 soft skills you needed/improved/learned while working on the project.
+        - List of some Soft Skills
+            - Dedication
+            - Following Directions
+            - Motivation
+            - Self-directed
+            - Organization
+            - Planning
+            - Time Management
+            - Willing to Accept Feedback
+            - Perseverance
+            - Good attitude
+            - Meets deadlines
+            - Willingness to learn
+
+
+
+[^note]: This number is a simplified story for illustrative purposes only.
