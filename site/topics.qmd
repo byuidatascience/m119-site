@@ -1,0 +1,275 @@
+---
+title: "Topic Index"
+---
+
+<!-- Enhancement #4: Topic Index - 2026-08-17 -->
+<!-- To remove: delete this file and remove Topics from navbar in _quarto.yml -->
+
+Find which class sessions cover specific topics. Use Ctrl+F to search for your topic.
+
+::: {.callout-tip}
+## Quick Navigation
+Click on class numbers to jump directly to that day's content.
+:::
+
+---
+
+## A-D
+
+### Chain Rule
+Differentiating composite functions: $\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)$
+
+**Classes**: [12](class/class-12.html), [18](class/class-18.html), [19](class/class-19.html), [20](class/class-20.html), [21](class/class-21.html), [22](class/class-22.html), [23](class/class-23.html)
+
+### Conditional Probability
+$P(A|B) = \frac{P(A \cap B)}{P(B)}$
+
+**Classes**: [35](class/class-35.html), [37](class/class-37.html)
+
+### Critical Points
+Finding where $f'(x) = 0$ or $f'(x)$ is undefined
+
+**Classes**: [24](class/class-24.html), [26](class/class-26.html), [27](class/class-27.html), [31](class/class-31.html)
+
+### Cumulative Distribution Function (CDF)
+$F(x) = P(X \leq x)$
+
+**Classes**: [40](class/class-40.html), [41](class/class-41.html), [42](class/class-42.html), [44](class/class-44.html)
+
+### Derivatives (Basic Rules)
+Power rule, sum rule, constant multiple
+
+**Classes**: [11](class/class-11.html), [16](class/class-16.html), [17](class/class-17.html), [18](class/class-18.html), [19](class/class-19.html)
+
+---
+
+## E-L
+
+### Expected Value
+- Discrete: $E[X] = \sum x_i p(x_i)$
+- Continuous: $E[X] = \int x \cdot f(x) \, dx$
+
+**Classes**: [35](class/class-35.html), [38](class/class-38.html), [39](class/class-39.html), [40](class/class-40.html), [41](class/class-41.html)
+
+### Exponential Functions
+$f(x) = ae^{bx}$ and properties
+
+**Classes**: [3](class/class-3.html), [9](class/class-9.html), [11](class/class-11.html), [13](class/class-13.html)
+
+### Functions
+Evaluation, composition, domain, range
+
+**Classes**: [1](class/class-1.html), [2](class/class-2.html), [6](class/class-6.html), [7](class/class-7.html), [12](class/class-12.html)
+
+### Integration
+Definite and indefinite integrals, Riemann sums
+
+**Classes**: [36](class/class-36.html), [37](class/class-37.html), [38](class/class-38.html), [43](class/class-43.html), [44](class/class-44.html)
+
+### Intermediate Value Theorem (IVT)
+Existence of zeros for continuous functions
+
+**Classes**: [11](class/class-11.html)
+
+### Least Squares Regression
+Minimizing squared residuals
+
+**Classes**: [31](class/class-31.html), [32](class/class-32.html)
+
+### Linearization
+$L(x) = f(a) + f'(a)(x-a)$
+
+**Classes**: [16](class/class-16.html)
+
+### Logarithms
+Properties and solving logarithmic equations
+
+**Classes**: [9](class/class-9.html), [10](class/class-10.html), [12](class/class-12.html), [26](class/class-26.html)
+
+---
+
+## M-P
+
+### Maximum Likelihood
+Finding parameters that maximize likelihood/loglikelihood
+
+**Classes**: [14](class/class-14.html), [15](class/class-15.html), [24](class/class-24.html), [25](class/class-25.html), [26](class/class-26.html), [27](class/class-27.html), [28](class/class-28.html), [29](class/class-29.html), [30](class/class-30.html)
+
+### Optimization
+Finding maximum/minimum values using derivatives
+
+**Classes**: [24](class/class-24.html), [26](class/class-26.html), [27](class/class-27.html), [31](class/class-31.html)
+
+### Partial Derivatives
+$\frac{\partial f}{\partial x}$ for multivariable functions
+
+**Classes**: [23](class/class-23.html), [28](class/class-28.html), [31](class/class-31.html)
+
+### Percentiles
+Finding $x_p$ such that $P(X \leq x_p) = p/100$
+
+**Classes**: [40](class/class-40.html), [41](class/class-41.html), [42](class/class-42.html)
+
+### Plotting (in R)
+Using `plot()`, `lines()`, `abline()`
+
+**Classes**: [3](class/class-3.html), [4](class/class-4.html), [11](class/class-11.html), [26](class/class-26.html)
+
+### Probability
+Basic rules, sample spaces, events
+
+**Classes**: [7](class/class-7.html), [8](class/class-8.html), [13](class/class-13.html), [14](class/class-14.html), [34](class/class-34.html), [37](class/class-37.html), [39](class/class-39.html)
+
+### Probability Density Function (PDF)
+$f(x)$ such that $\int f(x) \, dx = 1$
+
+**Classes**: [38](class/class-38.html), [39](class/class-39.html), [40](class/class-40.html), [41](class/class-41.html), [42](class/class-42.html)
+
+### Product Rule
+$\frac{d}{dx}[f(x) \cdot g(x)] = f'(x) \cdot g(x) + f(x) \cdot g'(x)$
+
+**Classes**: [17](class/class-17.html), [18](class/class-18.html)
+
+---
+
+## Q-Z
+
+### Quotient Rule
+$\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}$
+
+**Classes**: [17](class/class-17.html), [18](class/class-18.html)
+
+### Random Variables
+Discrete and continuous random variables
+
+**Classes**: [34](class/class-34.html), [38](class/class-38.html), [39](class/class-39.html), [42](class/class-42.html)
+
+### Second Derivative Test
+Classifying critical points as maxima or minima using $f''(x)$
+
+**Classes**: [23](class/class-23.html), [26](class/class-26.html), [27](class/class-27.html)
+
+### Solving Equations (uniroot)
+Using `uniroot()` in R to solve equations numerically
+
+**Classes**: [10](class/class-10.html), [11](class/class-11.html), [12](class/class-12.html), [17](class/class-17.html)
+
+### Variance
+- Discrete: $\text{Var}(X) = E[X^2] - (E[X])^2$
+- Continuous: Same formula with integrals
+
+**Classes**: [39](class/class-39.html), [40](class/class-40.html), [41](class/class-41.html), [42](class/class-42.html)
+
+### Visual Model Fitting
+Selecting parameters to match data visually
+
+**Classes**: [6](class/class-6.html), [11](class/class-11.html), [12](class/class-12.html)
+
+---
+
+## By Project
+
+### Project 1: LED Bulb Lifetime Modeling
+**Relevant Classes**: [5](class/class-5.html), [6](class/class-6.html), [8](class/class-8.html), [11](class/class-11.html), [12](class/class-12.html), [13](class/class-13.html)
+
+**Key Topics**:
+- Function modeling and evaluation
+- Solving equations with uniroot()
+- Visual parameter fitting
+- Plotting in R
+
+### Project 2: Maximum Likelihood
+**Relevant Classes**: [14-15](class/class-14.html), [24-30](class/class-24.html)
+
+**Key Topics**:
+- Likelihood and loglikelihood
+- Derivatives (chain rule, product rule)
+- Partial derivatives
+- Optimization (finding maxima)
+- Second derivative test
+
+### Project 3: Probability Distributions
+**Relevant Classes**: [34-45](class/class-34.html)
+
+**Key Topics**:
+- PDF and CDF
+- Expected value and variance
+- Percentiles
+- Integration (definite integrals)
+- Probability calculations
+
+---
+
+## By Week
+
+### Weeks 1-2: Functions and Modeling
+**Classes**: 1-8
+**Topics**: Function evaluation, plotting, visual fitting, probability basics
+
+### Weeks 3-4: Solving Equations
+**Classes**: 9-15
+**Topics**: Logarithms, uniroot(), IVT, likelihood, exponential functions
+
+### Weeks 5-6: Derivatives
+**Classes**: 16-22
+**Topics**: Linearization, power rule, product rule, quotient rule, chain rule
+
+### Weeks 7-8: Optimization
+**Classes**: 23-30
+**Topics**: Partial derivatives, critical points, second derivative test, maximum likelihood, least squares
+
+### Weeks 9-10: Integration Intro
+**Classes**: 31-37
+**Topics**: Riemann sums, definite integrals, probability rules, conditional probability
+
+### Weeks 11-12: Continuous Distributions
+**Classes**: 38-43
+**Topics**: PDF, CDF, expected value, variance, percentiles, integration with Mathematica
+
+### Week 13: Synthesis
+**Classes**: 44-46
+**Topics**: Connecting CDFs and PDFs, change of variables, review
+
+---
+
+## R Functions Reference
+
+### By First Use
+
+| R Function | First Used | Purpose |
+|------------|------------|---------|
+| `plot()` | [Class 3](class/class-3.html) | Basic plotting |
+| `lines()` | [Class 3](class/class-3.html) | Add curves to plots |
+| `uniroot()` | [Class 10](class/class-10.html) | Solve equations numerically |
+| `exp()` | [Class 11](class/class-11.html) | Exponential function |
+| `log()`, `log2()` | [Class 9](class/class-9.html) | Logarithm functions |
+| `abline()` | [Class 11](class/class-11.html) | Add reference lines |
+| `sum()` | [Class 26](class/class-26.html) | Sum vectors |
+
+---
+
+## Mathematica Functions Reference
+
+### By First Use
+
+| Mathematica Function | First Used | Purpose |
+|---------------------|------------|---------|
+| `Integrate[]` | [Class 36](class/class-36.html) | Symbolic integration |
+| `NIntegrate[]` | [Class 37](class/class-37.html) | Numerical integration |
+| `Solve[]` | [Class 40](class/class-40.html) | Solve equations symbolically |
+| `NSolve[]` | [Class 42](class/class-42.html) | Solve equations numerically |
+
+---
+
+## Related Resources
+
+- [Quick Reference](resources.html) - R, Mathematica, and math formula syntax
+- [Common Errors FAQ](common-errors.html) - Debugging help for frequent issues
+- [Class Sessions](class/class-1.html) - Browse all daily class content
+- [Projects](projects/) - Project instructions and resources
+- [Schedule](schedule.html) - Full semester calendar
+
+---
+
+**Last updated**: August 17, 2026
+**Can't find a topic?** Search this page with Ctrl+F or ask on Canvas discussion board.

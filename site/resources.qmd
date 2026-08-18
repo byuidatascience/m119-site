@@ -1,0 +1,327 @@
+---
+title: "Quick Reference"
+---
+
+<!-- Enhancement #1: Quick Reference Hub - 2026-08-17 -->
+<!-- To remove: delete this file and remove Resources from navbar in _quarto.yml -->
+
+This page provides quick syntax lookups for R, Mathematica, and common math formulas used throughout Math 119.
+
+::: {.callout-tip}
+## Bookmark This Page
+You'll reference these syntax patterns frequently during projects and assignments. Bookmark or print for quick access.
+:::
+
+---
+
+::: {.callout-note}
+## Stuck on an Error?
+See the [Common Errors FAQ](common-errors.html) for copy-paste fixes to frequent issues.
+:::
+
+---
+
+## R Syntax Quick Reference
+
+### Solving Equations with uniroot()
+
+**Basic pattern**:
+```r
+# Define function (what you want to equal zero)
+f <- function(x){ ... - ... }
+
+# Solve: find where f(x) = 0
+uniroot(f, c(a, b))$root
+```
+
+**Example**: Solve $3x - 5 = e^{-x}$
+```r
+# Rewrite as: (3x - 5) - e^(-x) = 0
+f <- function(x){ 3*x - 5 - exp(-x) }
+
+# Plot to find interval containing zero
+x <- seq(-5, 10, 0.1)
+plot(x, f(x), type="l")
+abline(h=0, col="red")
+
+# Solve
+uniroot(f, c(0, 5))$root
+```
+
+**Common error**: *"f() values at end points not of opposite sign"*
+- Your interval [a,b] doesn't contain a zero
+- Plot the function first to find the right interval
+
+### Mathematical Functions
+
+| Math Notation | R Function | Example |
+|---------------|------------|---------|
+| $e^x$ | `exp(x)` | `exp(2)` → 7.389 |
+| $\ln(x)$ | `log(x)` | `log(10)` → 2.303 |
+| $\log_2(x)$ | `log2(x)` | `log2(8)` → 3 |
+| $\log_{10}(x)$ | `log10(x)` | `log10(100)` → 2 |
+| $\sqrt{x}$ | `sqrt(x)` | `sqrt(16)` → 4 |
+| $\|x\|$ | `abs(x)` | `abs(-5)` → 5 |
+
+### Defining Functions
+
+**Single variable**:
+```r
+f <- function(x){ x^2 + 3*x - 5 }
+f(2)  # Evaluate at x=2
+```
+
+**Multiple variables**:
+```r
+f <- function(x, a, b){ a*x^2 + b*x }
+f(2, a=3, b=-1)  # Evaluate at x=2, a=3, b=-1
+```
+
+**Piecewise functions** (using `ifelse`):
+```r
+f <- function(x){
+  ifelse(x >= 0, x^2, -x)
+}
+```
+
+### Plotting
+
+**Basic plot**:
+```r
+# Plot function f(x) from x=a to x=b
+x <- seq(a, b, 0.1)
+plot(x, f(x), type="l")
+```
+
+**Add elements**:
+```r
+# Add horizontal line at y=0
+abline(h=0, col="red")
+
+# Add vertical line at x=5
+abline(v=5, col="blue")
+
+# Add another function to same plot
+lines(x, g(x), col="green")
+
+# Add points
+points(2, f(2), pch=16, col="red")
+```
+
+**Multiple plots side-by-side**:
+```r
+par(mfrow=c(1,2))  # 1 row, 2 columns
+plot(x, f(x), type="l")
+plot(x, g(x), type="l")
+```
+
+### Common R Errors
+
+::: {.callout-warning}
+## "Error: object 'f' not found"
+You forgot to define the function before using it. Add:
+```r
+f <- function(x){ ... }
+```
+:::
+
+::: {.callout-warning}
+## "Error in f(x): could not find function 'f'"
+Same as above - define the function first.
+:::
+
+::: {.callout-warning}
+## "Error: unexpected '}'"
+Missing opening brace `{` or mismatched braces. Check your function definition.
+:::
+
+---
+
+## Mathematica Syntax Quick Reference
+
+### Integration
+
+**Definite integral** (exact symbolic):
+```mathematica
+Integrate[f, {x, a, b}]
+```
+
+**Example**: $\int_0^{15} k(15-x) \, dx$
+```mathematica
+Integrate[k*(15-x), {x, 0, 15}]
+```
+
+**Numerical integration** (when symbolic fails):
+```mathematica
+NIntegrate[f, {x, a, b}]
+```
+
+**Example**: Normal distribution probability
+```mathematica
+NIntegrate[1/Sqrt[50*Pi]*Exp[-(1/50)*(x-21)^2], {x, -Infinity, 22}]
+```
+
+### Solving Equations
+
+**Solve symbolically**:
+```mathematica
+Solve[equation, variable]
+```
+
+**Example**: Solve $\frac{30x - x^2}{225} = 0.6$
+```mathematica
+Solve[30*x - x^2 == 135, x, Reals]
+```
+
+**Solve numerically**:
+```mathematica
+NSolve[equation, variable]
+```
+
+**Example**: Find 80th percentile
+```mathematica
+NSolve[NIntegrate[1/Sqrt[50*Pi]*Exp[-(1/50)*(x-21)^2],
+                  {x, -Infinity, xp}] == 0.80, xp]
+```
+
+### Expected Value and Variance
+
+**Expected value**: $E[X] = \int x \cdot f(x) \, dx$
+```mathematica
+Integrate[x * f[x], {x, a, b}]
+```
+
+**Second moment**: $E[X^2] = \int x^2 \cdot f(x) \, dx$
+```mathematica
+Integrate[x^2 * f[x], {x, a, b}]
+```
+
+**Variance**: $\text{Var}(X) = E[X^2] - (E[X])^2$
+```mathematica
+ex2 = Integrate[x^2 * f[x], {x, a, b}]
+ex = Integrate[x * f[x], {x, a, b}]
+variance = ex2 - ex^2
+```
+
+### Common Mathematica Errors
+
+::: {.callout-warning}
+## Wrong brackets
+- Use `[]` for functions: `Integrate[...]`, not `Integrate(...)`
+- Use `{}` for lists: `{x, 0, 15}`
+:::
+
+::: {.callout-warning}
+## Multiplication
+Use `*` explicitly: `3*x` not `3x`
+:::
+
+::: {.callout-warning}
+## Comparison
+Use `==` for equations: `x^2 == 4`, not `x^2 = 4`
+:::
+
+---
+
+## Math Formulas Reference
+
+### Derivative Rules
+
+**Power Rule**:
+$$\frac{d}{dx}[x^n] = nx^{n-1}$$
+
+**Constant Multiple**:
+$$\frac{d}{dx}[cf(x)] = c \cdot f'(x)$$
+
+**Sum Rule**:
+$$\frac{d}{dx}[f(x) + g(x)] = f'(x) + g'(x)$$
+
+**Product Rule**:
+$$\frac{d}{dx}[f(x) \cdot g(x)] = f'(x) \cdot g(x) + f(x) \cdot g'(x)$$
+
+**Quotient Rule**:
+$$\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}$$
+
+**Chain Rule**:
+$$\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)$$
+
+**Example**: $\frac{d}{dx}[(3x^2 + 1)^5]$
+
+- Outer function: $f(u) = u^5$ → $f'(u) = 5u^4$
+- Inner function: $g(x) = 3x^2 + 1$ → $g'(x) = 6x$
+- Chain rule: $f'(g(x)) \cdot g'(x) = 5(3x^2 + 1)^4 \cdot 6x$
+
+### Common Derivatives
+
+| Function | Derivative |
+|----------|------------|
+| $x^n$ | $nx^{n-1}$ |
+| $e^x$ | $e^x$ |
+| $e^{kx}$ | $ke^{kx}$ |
+| $\ln(x)$ | $\frac{1}{x}$ |
+| $\log_a(x)$ | $\frac{1}{x \ln(a)}$ |
+
+### Logarithm Properties
+
+**Product**:
+$$\ln(ab) = \ln(a) + \ln(b)$$
+
+**Quotient**:
+$$\ln\left(\frac{a}{b}\right) = \ln(a) - \ln(b)$$
+
+**Power**:
+$$\ln(a^b) = b \ln(a)$$
+
+**Sum of logs** (used in maximum likelihood):
+$$\ln\left(\prod_{i=1}^{n} x_i\right) = \sum_{i=1}^{n} \ln(x_i)$$
+
+**Example**: $\ln\left(\prod_{i=1}^{44} (y_i + ax_i)^2\right) = 2\sum_{i=1}^{44} \ln(y_i + ax_i)$
+
+### Second Derivative Test
+
+At a critical point where $f'(c) = 0$:
+
+- If $f''(c) > 0$ → **local minimum** (concave up)
+- If $f''(c) < 0$ → **local maximum** (concave down)
+- If $f''(c) = 0$ → test inconclusive
+
+### Probability Rules
+
+**Complement**:
+$$P(A^c) = 1 - P(A)$$
+
+**Addition Rule** (mutually exclusive):
+$$P(A \cup B) = P(A) + P(B)$$
+
+**Multiplication Rule** (independent):
+$$P(A \cap B) = P(A) \cdot P(B)$$
+
+**Conditional Probability**:
+$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+
+**Bayes' Theorem**:
+$$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$$
+
+### Expected Value and Variance
+
+**Discrete random variable**:
+$$E[X] = \sum_{i} x_i \cdot p(x_i)$$
+$$\text{Var}(X) = E[X^2] - (E[X])^2$$
+
+**Continuous random variable**:
+$$E[X] = \int x \cdot f(x) \, dx$$
+$$\text{Var}(X) = \int x^2 \cdot f(x) \, dx - \left(\int x \cdot f(x) \, dx\right)^2$$
+
+---
+
+## Related Resources
+
+- [Common Errors FAQ](common-errors.html) - Debugging help for frequent issues
+- [Topic Index](topics.html) - Find which class sessions cover specific topics
+- [Class Sessions](class/class-1.html) - Browse all daily class content
+- [Projects](projects/) - Project instructions and resources
+
+---
+
+**Last updated**: August 17, 2026
+**Questions?** See Canvas discussion board or office hours

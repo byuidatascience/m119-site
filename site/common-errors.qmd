@@ -1,0 +1,475 @@
+---
+title: "Common Errors & Fixes"
+---
+
+<!-- Enhancement #3: Common Errors FAQ - 2026-08-17 -->
+<!-- To remove: delete this file and remove link from resources.qmd -->
+
+This page covers the most common errors students encounter in Math 119, with copy-paste solutions.
+
+::: {.callout-tip}
+## Use Ctrl+F to Search
+Press Ctrl+F (or Cmd+F on Mac) and paste your error message to jump directly to the fix.
+:::
+
+---
+
+## R Errors
+
+### "Error: object 'f' not found"
+
+**What it means**: You're trying to use a function that hasn't been defined yet.
+
+**Fix**: Define the function before using it.
+
+<details>
+<summary>Show Fix</summary>
+
+```r
+# BAD: Using f before defining it
+uniroot(f, c(0, 5))$root
+
+# GOOD: Define f first
+f <- function(x){ 3*x - 5 - exp(-x) }
+uniroot(f, c(0, 5))$root
+```
+
+</details>
+
+---
+
+### "Error: f() values at end points not of opposite sign"
+
+**What it means**: Your interval [a,b] for `uniroot()` doesn't contain a zero. The function has the same sign at both endpoints.
+
+**Fix**: Plot the function first to find an interval where it crosses zero.
+
+<details>
+<summary>Show Fix</summary>
+
+```r
+# Define your function
+f <- function(x){ 3*x - 5 - exp(-x) }
+
+# Plot to see where f(x) crosses zero
+x <- seq(-5, 10, 0.1)
+plot(x, f(x), type="l")
+abline(h=0, col="red")  # Red line at y=0
+
+# Now pick an interval where the curve crosses the red line
+# From the plot, looks like it crosses between 0 and 5
+uniroot(f, c(0, 5))$root
+```
+
+**Common mistake**: Picking the interval before looking at the plot.
+
+</details>
+
+---
+
+### "Error: unexpected '}' in ..."
+
+**What it means**: Mismatched curly braces - you have a closing `}` without a matching opening `{`, or vice versa.
+
+**Fix**: Count your braces. Every `{` needs a matching `}`.
+
+<details>
+<summary>Show Fix</summary>
+
+```r
+# BAD: Missing opening brace
+f <- function(x) 3*x - 5 }
+
+# GOOD: Matching braces
+f <- function(x){ 3*x - 5 }
+
+# BAD: Extra closing brace
+f <- function(x){ 3*x - 5 }}
+
+# GOOD: One opening, one closing
+f <- function(x){ 3*x - 5 }
+```
+
+</details>
+
+---
+
+### "Error in exp(x) : non-numeric argument"
+
+**What it means**: You're passing something that's not a number to a math function.
+
+**Fix**: Check that `x` is actually a number or numeric vector.
+
+<details>
+<summary>Show Fix</summary>
+
+```r
+# BAD: x is undefined
+f <- function(x){ exp(x) }
+f()  # Error: missing argument
+
+# GOOD: Pass a number
+f(2)
+
+# BAD: Passing text
+f("hello")  # Error
+
+# GOOD: Pass numbers
+f(2)
+f(seq(0, 5, 0.1))  # Vector of numbers
+```
+
+</details>
+
+---
+
+### "Warning: NaNs produced"
+
+**What it means**: You're computing something undefined, like $\sqrt{-1}$ or $\log(-5)$.
+
+**Fix**: Check domain restrictions. Often happens with square roots of negative numbers or logs of non-positive numbers.
+
+<details>
+<summary>Show Fix</summary>
+
+```r
+# Example: log() requires positive numbers
+f <- function(x){ log(3*x - 2) }
+
+# This will produce NaN for x < 2/3
+f(0)  # log(3*0 - 2) = log(-2) → NaN
+
+# Check domain: Need 3*x - 2 > 0, so x > 2/3
+f(1)  # log(3*1 - 2) = log(1) = 0 ✓
+```
+
+**Common mistake**: Forgetting that $\ln(x)$ requires $x > 0$.
+
+</details>
+
+---
+
+### "Error: could not find function 'uniroot'"
+
+**What it means**: You're using a function from a package that isn't loaded.
+
+**Fix**: Actually, `uniroot()` is built-in - this error means you misspelled it.
+
+<details>
+<summary>Show Fix</summary>
+
+```r
+# BAD: Misspelled
+uniRoot(f, c(0, 5))  # Error
+
+# GOOD: Correct spelling (lowercase 'r')
+uniroot(f, c(0, 5))
+```
+
+</details>
+
+---
+
+## Mathematica Errors
+
+### "Syntax: ... cannot be followed by ..."
+
+**What it means**: Wrong bracket type or missing operator.
+
+**Fix**: Use `[]` for functions, `{}` for lists, `()` for grouping.
+
+<details>
+<summary>Show Fix</summary>
+
+```mathematica
+(* BAD: Using () instead of [] for function *)
+Integrate(x^2, {x, 0, 5})  (* Error *)
+
+(* GOOD: Use [] for functions *)
+Integrate[x^2, {x, 0, 5}]
+
+(* BAD: Missing * for multiplication *)
+Integrate[2x, {x, 0, 5}]  (* Error *)
+
+(* GOOD: Use * explicitly *)
+Integrate[2*x, {x, 0, 5}]
+```
+
+</details>
+
+---
+
+### "Part specification is longer than depth of object"
+
+**What it means**: You're trying to access a part of the result that doesn't exist.
+
+**Fix**: Check what your function returned. Use `//FullForm` to see the structure.
+
+<details>
+<summary>Show Fix</summary>
+
+```mathematica
+(* If Solve returns an empty set *)
+result = Solve[x^2 == -1, x, Reals]
+(* Returns {} because no real solution *)
+
+(* Accessing result[[1]] will error *)
+
+(* Check first if result is non-empty *)
+If[Length[result] > 0, result[[1]], "No solution"]
+```
+
+</details>
+
+---
+
+### "NIntegrate failed to converge"
+
+**What it means**: The numerical integration is having trouble. Often happens with infinite limits or poorly behaved functions.
+
+**Fix**: Increase precision or check your integrand.
+
+<details>
+<summary>Show Fix</summary>
+
+```mathematica
+(* If standard NIntegrate fails *)
+NIntegrate[1/Sqrt[50*Pi]*Exp[-(1/50)*(x-21)^2], {x, -Infinity, 22}]
+
+(* Try increasing WorkingPrecision *)
+NIntegrate[1/Sqrt[50*Pi]*Exp[-(1/50)*(x-21)^2],
+           {x, -Infinity, 22},
+           WorkingPrecision -> 20]
+```
+
+</details>
+
+---
+
+### "Set::setraw: Cannot assign to raw object"
+
+**What it means**: You used `=` instead of `==` in an equation.
+
+**Fix**: Use `==` for equations, `=` for assignment.
+
+<details>
+<summary>Show Fix</summary>
+
+```mathematica
+(* BAD: Using = in equation *)
+Solve[x^2 = 4, x]  (* Error *)
+
+(* GOOD: Use == for equations *)
+Solve[x^2 == 4, x]
+
+(* Note: = is for assignment *)
+myVar = 5  (* This assigns 5 to myVar *)
+```
+
+</details>
+
+---
+
+## Math/Algebra Errors
+
+### Forgetting Chain Rule
+
+**Symptom**: Derivative is wrong by a factor.
+
+**Fix**: Check if you have a composition of functions. If so, multiply by the inner derivative.
+
+<details>
+<summary>Show Fix</summary>
+
+**Problem**: Find $\frac{d}{dx}[(3x^2 + 1)^5]$
+
+```
+BAD: Just using power rule
+= 5(3x^2 + 1)^4  ❌ Missing inner derivative!
+
+GOOD: Chain rule
+Outer: f(u) = u^5 → f'(u) = 5u^4
+Inner: u = 3x^2 + 1 → u' = 6x
+Result: 5(3x^2 + 1)^4 · 6x = 30x(3x^2 + 1)^4 ✓
+```
+
+**Common mistake**: Forgetting to multiply by the derivative of what's inside the parentheses.
+
+</details>
+
+---
+
+### Sign Errors in Derivatives
+
+**Symptom**: Answer is correct except for a negative sign.
+
+**Fix**: Carefully track negative signs through each rule.
+
+<details>
+<summary>Show Fix</summary>
+
+**Problem**: Find $\frac{d}{dx}[e^{-2x}]$
+
+```
+Chain rule:
+Outer: f(u) = e^u → f'(u) = e^u
+Inner: u = -2x → u' = -2  ← Don't forget this negative!
+Result: e^{-2x} · (-2) = -2e^{-2x} ✓
+```
+
+**Common mistake**: Forgetting that the derivative of $-2x$ is $-2$, not $2$.
+
+</details>
+
+---
+
+### Domain Restrictions
+
+**Symptom**: Getting undefined or NaN results.
+
+**Fix**: Check domain restrictions before solving.
+
+<details>
+<summary>Show Fix</summary>
+
+**Problem**: Solve $\ln(3x - 2) = 5$
+
+```
+BEFORE solving, check domain:
+ln(3x - 2) requires 3x - 2 > 0
+So x > 2/3
+
+Then solve:
+3x - 2 = e^5
+3x = e^5 + 2
+x = (e^5 + 2)/3 ≈ 50.06 ✓ (This is > 2/3, so valid)
+```
+
+**Common mistake**: Solving first, then checking domain. Check domain BEFORE solving to avoid invalid solutions.
+
+</details>
+
+---
+
+### Wrong k in PDF Normalization
+
+**Symptom**: All subsequent probability calculations are wrong.
+
+**Fix**: Always verify $\int f(x) \, dx = 1$ after finding $k$.
+
+<details>
+<summary>Show Fix</summary>
+
+**Problem**: Find $k$ for $f(x) = k(15-x)$ on $[0, 15]$
+
+```
+Set up: ∫₀¹⁵ k(15-x) dx = 1
+
+Compute: k[15x - x²/2]₀¹⁵ = k(225 - 112.5) = 112.5k = 1
+
+Solve: k = 1/112.5 = 2/225
+
+VERIFY: ∫₀¹⁵ (2/225)(15-x) dx
+       = (2/225)[15x - x²/2]₀¹⁵
+       = (2/225)(112.5)
+       = 1 ✓
+```
+
+**Common mistake**: Finding $k$ but not verifying it. Wrong $k$ makes E[X], Var(X), and all probabilities wrong.
+
+</details>
+
+---
+
+## Conceptual Errors
+
+### Confusing Maximum vs Minimum
+
+**Symptom**: Getting a minimum when you expected a maximum (or vice versa).
+
+**Fix**: Use the second derivative test to classify critical points.
+
+<details>
+<summary>Show Fix</summary>
+
+**At a critical point where $f'(c) = 0$:**
+
+- If $f''(c) > 0$ → concave **up** → **local minimum** (like a valley ∪)
+- If $f''(c) < 0$ → concave **down** → **local maximum** (like a hill ∩)
+
+**Example**: Optimization problem gives $a_1 = 0.0005253$
+
+```r
+# Find second derivative
+f_second <- function(a1){ -328767530 }
+f_second(0.0005253)
+# Returns: -328767530 (negative!)
+
+# Negative → concave down → MAXIMUM ✓
+```
+
+**Memory trick**:
+- Positive 2nd derivative → smiley face ∪ → minimum
+- Negative 2nd derivative → frowny face ∩ → maximum
+
+</details>
+
+---
+
+### Percentile Direction Confusion
+
+**Symptom**: Trying to find score from percentile, but using percentile-from-score formula (or vice versa).
+
+**Fix**: Identify what you know and what you're finding.
+
+<details>
+<summary>Show Fix</summary>
+
+**Two types of problems:**
+
+**Type 1**: Score → Percentile (you KNOW the score, FIND the percentile)
+```mathematica
+(* Given: Student scored 22 on ACT *)
+(* Find: What percentile? *)
+NIntegrate[f[x], {x, -Infinity, 22}]  (* Integrate UP TO the score *)
+(* Returns: 0.54 = 54th percentile *)
+```
+
+**Type 2**: Percentile → Score (you KNOW the percentile, FIND the score)
+```mathematica
+(* Given: Student is at 80th percentile *)
+(* Find: What score? *)
+NSolve[NIntegrate[f[x], {x, -Infinity, xp}] == 0.80, xp]
+(* Returns: xp ≈ 25.2 *)
+```
+
+**Common mistake**: Using the wrong direction - check whether you're given the score or the percentile!
+
+</details>
+
+---
+
+## Getting Help
+
+If your error isn't listed here:
+
+1. **Copy the exact error message** and search it online
+2. **Check your syntax** against the [Quick Reference](resources.html)
+3. **Ask on Canvas discussion board** with:
+   - The error message
+   - Your code (copy-paste, not screenshot)
+   - What you expected to happen
+4. **Office hours** - bring your code and error
+
+---
+
+## Related Resources
+
+- [Quick Reference](resources.html) - R, Mathematica, and math formula syntax
+- [Topic Index](topics.html) - Find which class sessions cover specific topics
+- [Class Sessions](class/class-1.html) - Browse all daily class content
+
+---
+
+**Last updated**: August 17, 2026
+**Found another common error?** Let the instructor know so we can add it!

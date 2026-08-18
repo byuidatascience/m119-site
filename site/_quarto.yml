@@ -23,6 +23,10 @@ website:
         href: index.qmd
       - text: "Projects"
         href: projects/index.qmd
+      - text: "Resources"
+        href: resources.qmd
+      - text: "Topics"
+        href: topics.qmd
       - text: "Definitions"
         menu:
         - text: "ConditionalProbability"
