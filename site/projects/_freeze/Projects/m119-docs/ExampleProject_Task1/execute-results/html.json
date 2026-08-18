@@ -1,0 +1,17 @@
+{
+  "hash": "c18d5f7fce71f97cf83d29b1ec5cf2d5",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Example Project\"\nauthor: \"Sister Johnson\"\ndate: \"4/27/2021\"\nformat:\n  html:\n    code-fold: show\nsearch: false\n---\n\n\n\n\n\n::: {.cell}\n\n```{.r .fold-hide .cell-code}\n#This code was run previously to install the data4led package.\n  #devtools::install_github('byuidatascience/data4led')\n# We only need to install the package once. After that we just call the package using the library() function in R.\n\nlibrary(data4led)\ndist <- led_time(2100)\n```\n:::\n\n\nWe have measurements for 202 light bulbs measured 2104 hours after these light bulbs were turned on. It may be interesting to note that 2104 hours is almost 3 months. The intensity of the bulb as a percent of its original brightness is recorded.\n\nWe know that there is variation and uncertainty in measurements. We visualize the variation in the measurements of these 202 light bulbs using a density histogram shown below.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhist(dist$percent_intensity,probability = TRUE)\n```\n\n::: {.cell-output-display}\n![](ExampleProject_Task1_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\nWe see the light bulbs have intensities ranging from 99.5% to 103% of their original intensities with most of the light bulbs having intensity between 101% and 102%. And there are very few light bulbs with intensities less than 100% or more than 103%. This means most of the light bulbs are a light bulbs are a little brighter after 2014 hours of use compared to when they were first turned on.\n",
+    "supporting": [
+      "ExampleProject_Task1_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
