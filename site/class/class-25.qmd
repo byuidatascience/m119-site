@@ -273,11 +273,11 @@ When you finish, work on [this worksheet](../assets/docs/GraphingUsingSigns.pdf)
 
 ### Activity - Visualizing $f$, $f'$, $f''$ (with R feedback)
 
-Download the worksheet and run it in RStudio: **[visualizing_derivatives.qmd](../assets/docs/visualizing_derivatives.qmd)**
+Download the worksheet and run it in Positron: **[visualizing_derivatives.qmd](../assets/docs/visualizing_derivatives.qmd)**
 
 The worksheet walks you through five functions ($x^2$, $x^3$, $x^4$, $e^x$, $\ln x$) with ready-to-run R cells that overlay $f$, $f'$, and $f''$ on shared axes after you've sketched each one.
 
-**Draw first, then run the code.** The whole point is to *predict* the shape of $f'$ and $f''$ from the shape of $f$ — running the cells before sketching defeats the exercise. Open the file in RStudio, follow the instructions in the document, and run each step's cell only after you've put pencil to paper.
+**Draw first, then run the code.** The whole point is to *predict* the shape of $f'$ and $f''$ from the shape of $f$ — running the cells before sketching defeats the exercise. Open the file in Positron, follow the instructions in the document, and run each step's cell only after you've put pencil to paper.
 
 
 ## Class Discussion

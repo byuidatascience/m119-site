@@ -55,7 +55,7 @@ This page follows a simple learning model: Hover. Click. Try.
 
 <br/>
 
-Hover over <span class="tooltipr">`code`<span class="tooltipRtext">Yes, just like that. By hovering over "Codes" you will get instructions on what that code does.</span></span> to read about it. Click on a <span class="tooltipr"><a href="javascript:showhide('smileyface')">`line of code`</a><span class="tooltipRtext">Hovering is a good start, try clicking on this one.</span></span> to see what it does. Try typing the code into RStudio yourself to actually start learning R.
+Hover over <span class="tooltipr">`code`<span class="tooltipRtext">Yes, just like that. By hovering over "Codes" you will get instructions on what that code does.</span></span> to read about it. Click on a <span class="tooltipr"><a href="javascript:showhide('smileyface')">`line of code`</a><span class="tooltipRtext">Hovering is a good start, try clicking on this one.</span></span> to see what it does. Try typing the code into Positron yourself to actually start learning R.
 
 <div id="smileyface" style="display:none;padding-left:20px;">
 <img src="./Images/smileyfacecongratulations.jpg">
@@ -65,7 +65,7 @@ Hover over <span class="tooltipr">`code`<span class="tooltipRtext">Yes, just lik
 
 For each of the following examples: (1) hover, (2) click, and (3) try.
 
-Before you begin, ensure you have RStudio open. It should look like this:
+Before you begin, ensure you have Positron open. It should look like this:
 
 
 
@@ -73,7 +73,7 @@ Before you begin, ensure you have RStudio open. It should look like this:
 <div class="hoverchunk">
 <span class="tooltipr">
 View(
-  <span class="tooltipRtext">The "View" R function (with a CAPTIAL 'V' in View) allows us to view a data set. When run, this function will open up a new tab in RStudio showing the data set.  </span>
+  <span class="tooltipRtext">The "View" R function (with a CAPTIAL 'V' in View) allows us to view a data set. When run, this function will open up a new tab in Positron showing the data set.  </span>
 </span><span class="tooltipr">
 cars
   <span class="tooltipRtext">`cars` is a data set that is in R. R has datasets that are available for anyone to use. You can see them using the `data()` command. It would be good to explore `View()` for a few different datasets. </span>
@@ -93,7 +93,7 @@ cars
 
 R allows you to work with data. So, the first step to understanding R is to open a dataset and begin exploring some data. 
 
-If you type the `data()` command into your Console of RStudio you will see a list of "built in" data sets that come with R.
+If you type the `data()` command into your Console of Positron you will see a list of "built in" data sets that come with R.
 
 ![](./Images/DataOutput.png)
 
@@ -101,13 +101,13 @@ If you type the `data()` command into your Console of RStudio you will see a lis
 
 The `cars` data set is one of the options that is available. This is a fun "historic" data set from the 1920's. It shows the `speed` and stopping `dist`ance of cars from the 1920's.
 
-To see the `cars` data set in RStudio, use the `View` command as follows.
+To see the `cars` data set in Positron, use the `View` command as follows.
 
-**Step 1.** Open RStudio.
+**Step 1.** Open Positron.
 
 **Step 2.** Type the command `View(cars)` into your **Console**.
 
-**Step 3.** Press `Enter` or `Return` and the following output should appear within RStudio.
+**Step 3.** Press `Enter` or `Return` and the following output should appear within Positron.
 
 ![](./Images/ViewCars.png)
 

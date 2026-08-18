@@ -6,7 +6,7 @@ Think of a **Quarto file** (`.qmd`) as a command center. You write commands and 
 
 ## Rendering a Quarto File
 
-In RStudio, click the **Render** button at the top of the editor (or use `Cmd+Shift+K` / `Ctrl+Shift+K`). From the terminal:
+In Positron, click the **Render** button at the top of the editor (or use `Cmd+Shift+K` / `Ctrl+Shift+K`). From the terminal:
 
 ```bash
 quarto render my-file.qmd

@@ -4,10 +4,10 @@ title: "R Cheat Sheets"
 
 Printable one- or two-page references hosted alongside this site.
 
-## Core R & RStudio
+## Core R & Positron
 
 - [Base R cheat sheet](cheatsheets/base-r.pdf)
-- [RStudio keyboard shortcuts](https://docs.posit.co/ide/user/ide/reference/shortcuts.html)
+- [Positron keyboard shortcuts](https://docs.posit.co/ide/user/ide/reference/shortcuts.html)
 - [R colors reference (r-charts.com)](https://r-charts.com/colors/)
 
 ## Data import, manipulation & plotting
