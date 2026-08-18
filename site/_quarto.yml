@@ -35,10 +35,23 @@ website:
         href: index.qmd
       - text: "Projects"
         href: projects/index.qmd
-      - text: "Resources"
-        href: resources.qmd
-      - text: "Topics"
-        href: topics.qmd
+      - text: "Help"
+        menu:
+        - text: "Quick Reference"
+          href: resources.qmd
+        - text: "Common Errors FAQ"
+          href: common-errors.qmd
+        - text: "Topic Index"
+          href: topics.qmd
+        - text: "---"
+        - text: "Install Positron"
+          href: projects/positron_install.qmd
+        - text: "R Commands"
+          href: projects/RCommands.qmd
+        - text: "R Cheat Sheets"
+          href: projects/RCheatSheets.qmd
+        - text: "Quarto Hints"
+          href: projects/QuartoHints.qmd
       - text: "Definitions"
         menu:
         - text: "ConditionalProbability"

@@ -2,25 +2,68 @@
 title: "Projects"
 ---
 
-&nbsp;
+Three major projects guide your learning throughout the semester. Each project builds on the previous one, connecting mathematical concepts to real-world data analysis.
 
-## Specs List
+---
 
-- Project is ready for review.
-- Cohesive analysis provided.
-- Work is reproducible.
-- Calculations and plots are correct, or have only minor errors.
-- Mathematical notation and terminology is used correctly, or with only minor errors.
+## Project Instructions
 
-*Please refer to the [Specs Details](specs_detail.qmd) to help you evaluate your own work with these specs before submitting.*
+::: {.grid}
 
-The list of specifications (or specs) above describe how your assignment will be evaluated. Your work must satisfy **all** the specs. If your work meets all the specs your Project (or Project Task) will be marked as "Complete". If your work does not meet one or more of the specs your Project (or Project Task) will be marked as "Revision Needed" and you can revise and resubmit your work as well as continue to work future tasks. If your work is not ready for review, it will marked "Not Ready for Review" which means you will need to resubmit work that is ready for review before you can submit future tasks.
+::: {.g-col-12 .g-col-md-6}
+### [Example Project](project1_practice.qmd)
+Practice project to familiarize yourself with the workflow, tools, and specs before starting Project 1.
+:::
 
-&nbsp;
+::: {.g-col-12 .g-col-md-6}
+### [Project 1: LED Bulb Lifetime](unit1.qmd)
+**Weeks 1-6** • Model LED bulb degradation using exponential and polynomial functions. Visual fitting, uniroot, and function evaluation.
+:::
 
-## Instructions
+::: {.g-col-12 .g-col-md-6}
+### [Project 2: Maximum Likelihood](unit2.qmd)
+**Weeks 7-10** • Fit models using calculus-based optimization. Derivatives, partial derivatives, and maximum likelihood estimation.
+:::
 
-- [Example Project](project1_practice.qmd)
-- [Project 1](unit1.qmd)
-- [Project 2](unit2.qmd)
-- [Project 3](unit3.qmd)
+::: {.g-col-12 .g-col-md-6}
+### [Project 3: Probability Distributions](unit3.qmd)
+**Weeks 11-13** • Analyze continuous probability distributions. Integration, expected value, variance, and percentiles.
+:::
+
+:::
+
+---
+
+## Grading: Specifications (Specs)
+
+Your work must meet **all five specs** to earn "Complete":
+
+1. **Project is ready for review** — follows submission guidelines, files render correctly
+2. **Cohesive analysis provided** — narrative connects ideas, proper introductions to code/plots
+3. **Work is reproducible** — code runs without errors, seed set correctly
+4. **Calculations and plots are correct** — or have only minor errors
+5. **Mathematical notation and terminology used correctly** — or with only minor errors
+
+If your work doesn't meet one or more specs, it will be marked **"Revision Needed"** and you can revise and resubmit. See [Specs Details](specs_detail.qmd) for examples and clarifications.
+
+---
+
+## Getting Help
+
+::: {.callout-tip}
+## Resources for Success
+
+- **Setup**: [Install Positron](positron_install.qmd) (recommended IDE)
+- **R Help**: [R Commands Guide](RCommands.qmd) • [R Cheat Sheets](RCheatSheets.qmd)
+- **Quarto**: [Quarto Hints](QuartoHints.qmd) for formatting your reports
+- **Troubleshooting**: [Common Errors FAQ](../common-errors.qmd)
+- **Topics**: [Topic Index](../topics.qmd) to find which classes cover specific concepts
+:::
+
+---
+
+## Probability Reference
+
+For Project 3, you may find this helpful:
+
+- [Probability Quick Reference](probability.qmd) — formulas, distributions, and R examples
