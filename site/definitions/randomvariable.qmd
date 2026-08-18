@@ -2,7 +2,7 @@
 title: "Definition: RandomVariable"
 ---
 
-<details>
+<details open>
 <summary>Definition: Random (or Stochastic) Variable</summary>
 
 1. A **random variable** is a function that associates a number with each outcome of the sample space of a chance experiment.

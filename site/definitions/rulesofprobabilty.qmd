@@ -2,7 +2,7 @@
 title: "Definition: RulesOfProbabilty"
 ---
 
-<details>
+<details open>
 <summary>Definition: Rules (or Axioms) of Probability</summary>
 
 - If $S$ is the samples space, $P(S) = 1$.

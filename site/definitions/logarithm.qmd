@@ -2,7 +2,7 @@
 title: "Definition: Logarithm"
 ---
 
-<details>
+<details open>
 <summary>Definition: Logarithm (OpenStax Textbook)</summary>
 
 A **logarithm** base $b$ of a positive number satisfies the following definition.

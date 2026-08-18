@@ -2,7 +2,7 @@
 title: "Definition: Probability"
 ---
 
-<details>
+<details open>
 <summary>Definition: Probability</summary>
 
 - An **experiment** is a process that produces an observation.

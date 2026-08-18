@@ -2,7 +2,7 @@
 title: "Definition: IncreasingOnTheIntervalI"
 ---
 
-<details>
+<details open>
 <summary>Definition: **Increasing** on the Interval $I$ (from OpenStax textbook)</summary>
 
 We say a function $f$ is increasing on the interval $I$ if for all $x_1$ and $x_2$ in the interval, $f(x_1) \leq f(x_2)$ when $x_1 < x_2$.

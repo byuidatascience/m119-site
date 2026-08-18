@@ -2,7 +2,7 @@
 title: "Definition: PartialDerivative"
 ---
 
-<details>
+<details open>
 <summary>Definition: Partial Derivative</summary>
 
 Consider a function of several variables $f(x,y)$. 

@@ -2,7 +2,7 @@
 title: "Definition: LogarithmicFunction"
 ---
 
-<details>
+<details open>
 <summary>Definition: Logarithmic Function</summary>
 
 A **logarithmic function** is of the form $\log_b(x)$ where $b>0$ and $b \neq 1$.
@@ -12,7 +12,7 @@ Note: A logarithmic function is not an algebraic function.
 </details>
 
 <!-- from Page.KeyCharacteristicsOfLogarithmicFunction -->
-<details>
+<details open>
 <summary>Key Characteristics of Logarithmic Function</summary>
 
 - Domain is positive real numbers
@@ -29,7 +29,7 @@ Note: A logarithmic function is not an algebraic function.
 </details>
 
 <!-- from Page.PropertiesOfLogarithms -->
-<details>
+<details open>
 <summary>Properties of Logarithms</summary>
 
 If $a>0$, $b > 0$, $c > 0$, $b \neq 1$, and $n$ is any real number, then

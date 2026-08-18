@@ -2,7 +2,7 @@
 title: "Definition: ExponentialFunction"
 ---
 
-<details>
+<details open>
 <summary>Definition: Exponential Function (OpenStax Textbook)</summary>
 
 An **exponential function** is of the form $b^x$ where $b>0$ and $b \neq 1$.
@@ -12,7 +12,7 @@ Note: An exponential function is not an algebraic function.
 </details>
 
 <!-- from Page.KeyCharacteristicsOfExponentialFunction -->
-<details>
+<details open>
 <summary>Key Characteristics of Exponential Function</summary>
 
 - Domain is all real numbers
@@ -29,7 +29,7 @@ Note: An exponential function is not an algebraic function.
 </details>
 
 <!-- from Page.PropertiesOfExponents -->
-<details>
+<details open>
 <summary>Properties of Exponents</summary>
 
 If $a > 0$, $b >0$, and $m$ and $n$ are any real number, then 
