@@ -1,0 +1,33 @@
+---
+title: "Install Positron Instructions"
+---
+
+Positron is Posit's data-science IDE (made by the same company that makes RStudio). It has R and Python support built in, a familiar RStudio-style layout (console, environment, plots, viewer), and works for Quarto documents.
+
+If you already have RStudio working, you don't need Positron — they do the same job. Pick one.
+
+## Step 1: Install R
+
+Positron uses R that's installed on your machine, so install R first.
+
+- Go to [https://cran.rstudio.com/](https://cran.rstudio.com/).
+- At the top of the page, select the download for your operating system:
+    - **macOS** — click the latest `R-x.y.z.pkg` installer. Download and run it.
+    - **Windows** — click **base**, then **Download R for Windows**. Download and run the installer.
+
+## Step 2: Install Positron
+
+- Go to [https://positron.posit.co/](https://positron.posit.co/){target="_blank"} and click the download for your operating system.
+- Download and run the installer.
+
+When you open Positron, it should detect your R installation automatically. If it doesn't, open **Preferences** → search for "R" → set the interpreter path.
+
+## Step 3: Try it
+
+- **File → New File → R File.** Type `plot(1:10)` and press **Cmd/Ctrl + Enter**. A plot should appear in the Plots pane on the right.
+- **File → New File → Quarto Document.** Use the **Render** button (top toolbar) to produce an HTML file.
+
+## Notes
+
+- Course examples and screenshots were written for RStudio. Positron's layout is close but not identical — pane names and menu items match about 90% of the time. If a step in a tutorial says "Plots pane," Positron has one too; if it says "Files pane," that's the Explorer on the left.
+- Positron handles Quarto rendering without extra setup. You don't need to install the Quarto CLI separately.

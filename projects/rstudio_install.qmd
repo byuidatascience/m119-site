@@ -1,0 +1,22 @@
+---
+title: "Install RStudio Instructions"
+---
+
+## Step 1: Install R
+
+RStudio runs on top of R, so install R first.
+
+- Go to [https://cran.rstudio.com/](https://cran.rstudio.com/).
+- At the top of the page, select the download for your operating system:
+    - **macOS** — click the latest `R-x.y.z.pkg` installer. Download and run it.
+    - **Windows** — click **base**, then **Download R for Windows**. Download and run the installer.
+
+## Step 2: Install RStudio
+
+Once R is installed, install RStudio.
+
+- Go to [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/).
+- Scroll to **All Installers and Tarballs** and pick the version for your operating system. The site will usually recommend the right one at the top.
+- Download and run the installer.
+
+RStudio is a set of integrated tools for working in R: a console, a syntax-highlighting editor that supports direct code execution, and tools for plotting, debugging, and managing your workspace.
