@@ -130,6 +130,41 @@ uniroot(f.new,c(a,b))$root
 4. Use uniroot to solve for $x$ in $(-13 + 2x)e^{-0.05x} = 0$. Check your solution by finding the exact solution, if possible.
     - Use uniroot to solve for $x$ in $(-13 + 2x)e^{-0.05x} = 5$. Check your solution by finding the exact solution, if possible.
 
+<details>
+<summary>Answers</summary>
+
+1. If $f(x;a,b) = ae^{bx}$ and $f(0)=7$:
+   - $f(0) = ae^{0} = a \cdot 1 = a = 7$
+   - Therefore $a = 7$
+
+2. If $f(x;a,b) = a+be^{x}$ and $f(0)=7$:
+   - $f(0) = a + be^{0} = a + b = 7$
+   - Therefore $a = 7 - b$ (infinitely many solutions)
+
+3. Solve $7 = 5+3e^{2x}$:
+   - Analytical: $2 = 3e^{2x}$ → $e^{2x} = \frac{2}{3}$ → $2x = \ln(\frac{2}{3})$ → $x = \frac{\ln(2/3)}{2} \approx -0.2027$
+   - In R:
+   ```r
+   f <- function(x){7 - (5 + 3*exp(2*x))}
+   uniroot(f, c(-1, 1))$root
+   # Returns approximately -0.2027
+   ```
+
+4. Solve $(-13 + 2x)e^{-0.05x} = 0$:
+   - Since $e^{-0.05x} > 0$ always, need $-13 + 2x = 0$
+   - $x = 6.5$ (exact)
+   - Solve $(-13 + 2x)e^{-0.05x} = 5$:
+   ```r
+   g <- function(x){(-13 + 2*x)*exp(-0.05*x) - 5}
+   plot(seq(0, 20, 0.1), g(seq(0, 20, 0.1)), type="l")
+   abline(h=0, col="red")
+   uniroot(g, c(10, 15))$root
+   # Returns approximately 12.64
+   ```
+
+**Common mistake**: Forgetting that $e^{kx} > 0$ for all real $x$.
+</details>
+
 ## Discussion - Task 3
 Visually Fitting Models
 

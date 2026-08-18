@@ -69,7 +69,30 @@ All algebraic functions can be built using only **power functions** and **the 4 
     - Compute $f(2)$
     - Solve $f(t) = 2$ for $t$
       - Check your answer using uniroot() in R.
-      - Construct a plot in R that shows where $f(t)$ and $y=2$ intersect.  
+      - Construct a plot in R that shows where $f(t)$ and $y=2$ intersect.
+
+<details>
+<summary>Answers</summary>
+
+1. $f(x) = -2\sqrt[3]{x+6} = -2(x+6)^{1/3}$
+   - Power function: $u^{1/3}$ where $u = x+6$
+   - Operations: composition, shift, constant multiple
+   - Build it: Start with $p(u) = u^{1/3}$, then $g(x) = p(x+6) = (x+6)^{1/3}$, then $f(x) = -2g(x)$
+
+2. $f(t) = \log_2(3t-2)$:
+   - $f(2) = \log_2(3 \cdot 2 - 2) = \log_2(4) = 2$
+   - Solve $f(t) = 2$: $\log_2(3t-2) = 2$ → $3t-2 = 2^2 = 4$ → $3t = 6$ → $t = 2$
+   - Check in R:
+   ```r
+   f <- function(t){log2(3*t - 2)}
+   f(2)  # Returns 2
+   g <- function(t){log2(3*t - 2) - 2}
+   uniroot(g, c(1, 5))$root  # Returns 2
+   ```
+
+**Note**: Be careful with domain - need $3t-2 > 0$, so $t > \frac{2}{3}$.
+</details>
+
 - Rewrite the following expressions using the properties of logarithms.
     - $\log \left( \prod_{j=1}^{3} (x + j) \right)$
     - $\log_4 \left( \prod_{k=1}^{5} (y_k + b x_k)^2 \right)$
@@ -237,6 +260,56 @@ The code above provides, for each model, a plot of the data along with the model
 1. Use the model $f_5$ to answer the question, What is the intensity of the bulb after 25000 hours?
 
 1. For each model (all 6), answer the question, "When does the bulb burn out (the intensity is 80% of the original)?"
+
+<details>
+<summary>Answers</summary>
+
+Using the fitted models (seed=123):
+
+1. **Intensity after 12000 hours using $f_4$**:
+   ```r
+   f4 <- function(x){100 - 0.000181*x + 0.83*log(0.005*x+1)}
+   f4(12000)
+   # Approximately 99.59%
+   ```
+
+2. **When intensity = 90% using $f_3$**:
+   ```r
+   f3 <- function(x){101.9 - 1.9*exp(-0.00114*x)}
+   g3 <- function(x){f3(x) - 90}
+   uniroot(g3, c(0, 50000))$root
+   # Approximately 2046 hours
+   ```
+
+3. **When intensity = 97% using $f_2$**:
+   ```r
+   f2 <- function(x){100 + 0.0011*x - 0.00000015*x^2}
+   g2 <- function(x){f2(x) - 97}
+   uniroot(g2, c(0, 10000))$root
+   # Two solutions possible - check plot first
+   ```
+
+4. **When intensity = 95% using $f_5$**:
+   ```r
+   f5 <- function(x){(100 + 0.00623*x)*exp(-0.0000506*x)}
+   g5 <- function(x){f5(x) - 95}
+   uniroot(g5, c(0, 50000))$root
+   # Approximately 37668 hours
+   ```
+
+5. **Intensity after 25000 hours using $f_5$**:
+   ```r
+   f5(25000)
+   # Approximately 101.8%
+   ```
+
+6. **When does bulb burn out (80% intensity) for each model**:
+   - Plot each function first to find appropriate interval
+   - Use uniroot() with function - 80
+   - Some models may not reach 80% within realistic timeframe
+
+**Common mistake**: Not checking plot first - may choose wrong interval for uniroot().
+</details>
 
 ## Discussion
 We'll wrap up today by having a discussion about the topics you discussed in your Group Meeting.

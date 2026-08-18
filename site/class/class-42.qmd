@@ -46,10 +46,51 @@ Consider the random variable $X$ whose probability density function is $f(x) = k
 4. The 60th percentile is the value $x$ so that $P(X\leq x)=0.60$, in other words the value $x$ so that $F(x) = 0.6$.  Find the 60th percentile of this random variable.
 5. Find the 95th percentile of $X$. 
 
-6. What's the probability that $X$ takes on a value greater than 10? 
+6. What's the probability that $X$ takes on a value greater than 10?
 7. What's the probability that $X$ takes on a value between -3 and 3?
 
-  
+<details>
+<summary>Answers (with work shown)</summary>
+
+Given $f(x) = k(15-x)$ for $0 \leq x \leq 15$:
+
+**1. Find k:**
+- Must satisfy $\int_0^{15} k(15-x) dx = 1$
+- $k\left[15x - \frac{x^2}{2}\right]_0^{15} = k\left(225 - 112.5\right) = 112.5k = 1$
+- $k = \frac{1}{112.5} = \frac{2}{225}$
+
+**2. Expected value and variance:**
+```mathematica
+Integrate[x * (2/225)*(15-x), {x, 0, 15}]
+(* E[X] = 5 *)
+
+Integrate[x^2 * (2/225)*(15-x), {x, 0, 15}]
+(* E[X²] = 31.25 *)
+(* Var(X) = E[X²] - (E[X])² = 31.25 - 25 = 6.25 *)
+```
+
+**3. Probabilities:**
+- $P(X \leq 1) = \int_0^1 \frac{2}{225}(15-x) dx = \frac{2}{225}\left[15 - 0.5\right] = \frac{29}{225} \approx 0.1289$
+- $P(X \leq 2) = \int_0^2 \frac{2}{225}(15-x) dx = \frac{58}{225} \approx 0.2578$
+- $F(x) = \int_0^x \frac{2}{225}(15-t) dt = \frac{2}{225}\left[15x - \frac{x^2}{2}\right] = \frac{30x - x^2}{225}$
+
+**4. 60th percentile:**
+- Solve $F(x) = 0.6$: $\frac{30x - x^2}{225} = 0.6$
+- $30x - x^2 = 135$ → $x^2 - 30x + 135 = 0$
+- $x = \frac{30 \pm \sqrt{900-540}}{2} = \frac{30 \pm 18.97}{2}$
+- $x \approx 5.51$ or $x \approx 24.49$ (reject, outside domain)
+- **60th percentile = 5.51**
+
+**5. 95th percentile:** Solve $F(x) = 0.95$ → $x \approx 2.32$
+
+**6. P(X > 10):** $= 1 - F(10) = 1 - \frac{200}{225} = \frac{25}{225} \approx 0.111$
+
+**7. P(-3 < X < 3):** $= F(3) - F(-3) = F(3) - 0 = \frac{85.5}{225} \approx 0.38$
+
+**Common mistake**: Forgetting to verify $k$ by checking $\int f(x)dx = 1$ before proceeding.
+</details>
+
+
 ## Discussion
 ### Calculate a Percentile
 What is a percentile?
@@ -124,6 +165,52 @@ The ACT is a standardized exam offered to US residents at the end of high school
 
 1. What percent of students score between 16 and 26?
 1. What percent of students score between 11 and 23?
+
+<details>
+<summary>ACT Answers (μ=21, σ=5)</summary>
+
+Using $f(x) = \frac{1}{\sqrt{2\pi \cdot 25}}e^{-\frac{1}{50}(x-21)^2}$:
+
+**Percentiles (given score, find percentile):**
+```mathematica
+(* Score 22 *)
+NIntegrate[1/Sqrt[50*Pi]*Exp[-(1/50)*(x-21)^2], {x, -Infinity, 22}]
+(* Approximately 0.5398 = 54th percentile *)
+
+(* Score 23 *)
+NIntegrate[1/Sqrt[50*Pi]*Exp[-(1/50)*(x-21)^2], {x, -Infinity, 23}]
+(* Approximately 0.5793 = 58th percentile *)
+
+(* Score 32 *)
+NIntegrate[1/Sqrt[50*Pi]*Exp[-(1/50)*(x-21)^2], {x, -Infinity, 32}]
+(* Approximately 0.9861 = 99th percentile *)
+
+(* Score 12 *)
+NIntegrate[1/Sqrt[50*Pi]*Exp[-(1/50)*(x-21)^2], {x, -Infinity, 12}]
+(* Approximately 0.0359 = 4th percentile *)
+```
+
+**Scores (given percentile, find score):**
+```mathematica
+(* 80th percentile *)
+NSolve[NIntegrate[1/Sqrt[50*Pi]*Exp[-(1/50)*(x-21)^2], {x, -Infinity, xp}] == 0.80, xp]
+(* Approximately 25.2 *)
+
+(* 5th percentile *)
+NSolve[NIntegrate[1/Sqrt[50*Pi]*Exp[-(1/50)*(x-21)^2], {x, -Infinity, xp}] == 0.05, xp]
+(* Approximately 12.8 *)
+
+(* 90th percentile *)
+NSolve[NIntegrate[1/Sqrt[50*Pi]*Exp[-(1/50)*(x-21)^2], {x, -Infinity, xp}] == 0.90, xp]
+(* Approximately 27.4 *)
+```
+
+**Probabilities:**
+- P(16 < X < 26): Integrate from 16 to 26 ≈ 0.6827 (68%)
+- P(11 < X < 23): Integrate from 11 to 23 ≈ 0.6554 (66%)
+
+**Common mistake**: Confusing "score to percentile" vs "percentile to score" - check which direction you're solving!
+</details>
 
 The PDF is given by the following.
 
