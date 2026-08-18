@@ -26,13 +26,31 @@ All project tasks are submitted through Canvas. Use the links below to access as
 
 [Download Project 1 Instructions (PDF)](Project1_Instructions.pdf)
 
-#### Project 2: TBD
+#### Project 2: Maximum Likelihood Fitting
 **Weeks 7-10** (Oct 29 - Nov 19)
+
+- **Background**: Continue LED bulb lifetime analysis using advanced fitting methods
+- **Skills**: Derivatives, optimization, loglikelihood, partial derivatives, maximum likelihood estimation
+- **Tasks**:
+  - Calculate statistics and expanded sums
+  - Derive loglikelihood functions for multiple models
+  - Compute first and second derivatives
+  - Find maximum likelihood estimates
+  - Compare fitted models using optimization
 
 [Download Project 2 Instructions (PDF)](Project2_Instructions.pdf)
 
-#### Project 3: TBD
+#### Project 3: Probability Distributions and Parameter Estimation
 **Weeks 11-13** (Nov 24 - Dec 10)
+
+- **Background**: Fit probability distributions to real-world data
+- **Skills**: Integration, probability density functions, expected value, variance, method of moments
+- **Tasks**:
+  - Analyze data with histograms and sample statistics
+  - Verify and explore gamma distribution properties
+  - Estimate parameters using method of moments
+  - Simulate data from fitted distribution
+  - Calculate probabilities and percentiles
 
 [Download Project 3 Instructions (PDF)](Project3_Instructions.pdf)
 
