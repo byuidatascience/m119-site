@@ -32,9 +32,11 @@ jobs:
       - name: Install R packages
         run: |
           install.packages(c('remotes', 'knitr', 'rmarkdown', 'tidyverse', 'ggplot2', 'pander', 'mosaicData', 'lubridate'))
-          remotes::install_github("byuidatascience/data4led")
-          remotes::install_github("byuidatascience/data4soils")
+          remotes::install_github("byuidatascience/data4led", auth_token = Sys.getenv("GITHUB_PAT"))
+          remotes::install_github("byuidatascience/data4soils", auth_token = Sys.getenv("GITHUB_PAT"))
         shell: Rscript {0}
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
