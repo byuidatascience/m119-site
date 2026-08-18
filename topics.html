@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Math 119 — Applied Calculus for Data Analysis</title>
+<title>Topic Index – Math 119 — Applied Calculus for Data Analysis</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -90,6 +90,35 @@ window.MathJax = {
 };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -274,7 +303,7 @@ window.MathJax = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -286,7 +315,7 @@ window.MathJax = {
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./topics.html"> 
+    <a class="nav-link active" href="./topics.html" aria-current="page"> 
 <span class="menu-text">Topics</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -381,7 +410,70 @@ window.MathJax = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#no-class-today." id="toc-no-class-today." class="nav-link active" data-scroll-target="#no-class-today.">No class today.</a></li>
+  <li><a href="#a-d" id="toc-a-d" class="nav-link active" data-scroll-target="#a-d">A-D</a>
+  <ul class="collapse">
+  <li><a href="#chain-rule" id="toc-chain-rule" class="nav-link" data-scroll-target="#chain-rule">Chain Rule</a></li>
+  <li><a href="#conditional-probability" id="toc-conditional-probability" class="nav-link" data-scroll-target="#conditional-probability">Conditional Probability</a></li>
+  <li><a href="#critical-points" id="toc-critical-points" class="nav-link" data-scroll-target="#critical-points">Critical Points</a></li>
+  <li><a href="#cumulative-distribution-function-cdf" id="toc-cumulative-distribution-function-cdf" class="nav-link" data-scroll-target="#cumulative-distribution-function-cdf">Cumulative Distribution Function (CDF)</a></li>
+  <li><a href="#derivatives-basic-rules" id="toc-derivatives-basic-rules" class="nav-link" data-scroll-target="#derivatives-basic-rules">Derivatives (Basic Rules)</a></li>
+  </ul></li>
+  <li><a href="#e-l" id="toc-e-l" class="nav-link" data-scroll-target="#e-l">E-L</a>
+  <ul class="collapse">
+  <li><a href="#expected-value" id="toc-expected-value" class="nav-link" data-scroll-target="#expected-value">Expected Value</a></li>
+  <li><a href="#exponential-functions" id="toc-exponential-functions" class="nav-link" data-scroll-target="#exponential-functions">Exponential Functions</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  <li><a href="#integration" id="toc-integration" class="nav-link" data-scroll-target="#integration">Integration</a></li>
+  <li><a href="#intermediate-value-theorem-ivt" id="toc-intermediate-value-theorem-ivt" class="nav-link" data-scroll-target="#intermediate-value-theorem-ivt">Intermediate Value Theorem (IVT)</a></li>
+  <li><a href="#least-squares-regression" id="toc-least-squares-regression" class="nav-link" data-scroll-target="#least-squares-regression">Least Squares Regression</a></li>
+  <li><a href="#linearization" id="toc-linearization" class="nav-link" data-scroll-target="#linearization">Linearization</a></li>
+  <li><a href="#logarithms" id="toc-logarithms" class="nav-link" data-scroll-target="#logarithms">Logarithms</a></li>
+  </ul></li>
+  <li><a href="#m-p" id="toc-m-p" class="nav-link" data-scroll-target="#m-p">M-P</a>
+  <ul class="collapse">
+  <li><a href="#maximum-likelihood" id="toc-maximum-likelihood" class="nav-link" data-scroll-target="#maximum-likelihood">Maximum Likelihood</a></li>
+  <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">Optimization</a></li>
+  <li><a href="#partial-derivatives" id="toc-partial-derivatives" class="nav-link" data-scroll-target="#partial-derivatives">Partial Derivatives</a></li>
+  <li><a href="#percentiles" id="toc-percentiles" class="nav-link" data-scroll-target="#percentiles">Percentiles</a></li>
+  <li><a href="#plotting-in-r" id="toc-plotting-in-r" class="nav-link" data-scroll-target="#plotting-in-r">Plotting (in R)</a></li>
+  <li><a href="#probability" id="toc-probability" class="nav-link" data-scroll-target="#probability">Probability</a></li>
+  <li><a href="#probability-density-function-pdf" id="toc-probability-density-function-pdf" class="nav-link" data-scroll-target="#probability-density-function-pdf">Probability Density Function (PDF)</a></li>
+  <li><a href="#product-rule" id="toc-product-rule" class="nav-link" data-scroll-target="#product-rule">Product Rule</a></li>
+  </ul></li>
+  <li><a href="#q-z" id="toc-q-z" class="nav-link" data-scroll-target="#q-z">Q-Z</a>
+  <ul class="collapse">
+  <li><a href="#quotient-rule" id="toc-quotient-rule" class="nav-link" data-scroll-target="#quotient-rule">Quotient Rule</a></li>
+  <li><a href="#random-variables" id="toc-random-variables" class="nav-link" data-scroll-target="#random-variables">Random Variables</a></li>
+  <li><a href="#second-derivative-test" id="toc-second-derivative-test" class="nav-link" data-scroll-target="#second-derivative-test">Second Derivative Test</a></li>
+  <li><a href="#solving-equations-uniroot" id="toc-solving-equations-uniroot" class="nav-link" data-scroll-target="#solving-equations-uniroot">Solving Equations (uniroot)</a></li>
+  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance">Variance</a></li>
+  <li><a href="#visual-model-fitting" id="toc-visual-model-fitting" class="nav-link" data-scroll-target="#visual-model-fitting">Visual Model Fitting</a></li>
+  </ul></li>
+  <li><a href="#by-project" id="toc-by-project" class="nav-link" data-scroll-target="#by-project">By Project</a>
+  <ul class="collapse">
+  <li><a href="#project-1-led-bulb-lifetime-modeling" id="toc-project-1-led-bulb-lifetime-modeling" class="nav-link" data-scroll-target="#project-1-led-bulb-lifetime-modeling">Project 1: LED Bulb Lifetime Modeling</a></li>
+  <li><a href="#project-2-maximum-likelihood" id="toc-project-2-maximum-likelihood" class="nav-link" data-scroll-target="#project-2-maximum-likelihood">Project 2: Maximum Likelihood</a></li>
+  <li><a href="#project-3-probability-distributions" id="toc-project-3-probability-distributions" class="nav-link" data-scroll-target="#project-3-probability-distributions">Project 3: Probability Distributions</a></li>
+  </ul></li>
+  <li><a href="#by-week" id="toc-by-week" class="nav-link" data-scroll-target="#by-week">By Week</a>
+  <ul class="collapse">
+  <li><a href="#weeks-1-2-functions-and-modeling" id="toc-weeks-1-2-functions-and-modeling" class="nav-link" data-scroll-target="#weeks-1-2-functions-and-modeling">Weeks 1-2: Functions and Modeling</a></li>
+  <li><a href="#weeks-3-4-solving-equations" id="toc-weeks-3-4-solving-equations" class="nav-link" data-scroll-target="#weeks-3-4-solving-equations">Weeks 3-4: Solving Equations</a></li>
+  <li><a href="#weeks-5-6-derivatives" id="toc-weeks-5-6-derivatives" class="nav-link" data-scroll-target="#weeks-5-6-derivatives">Weeks 5-6: Derivatives</a></li>
+  <li><a href="#weeks-7-8-optimization" id="toc-weeks-7-8-optimization" class="nav-link" data-scroll-target="#weeks-7-8-optimization">Weeks 7-8: Optimization</a></li>
+  <li><a href="#weeks-9-10-integration-intro" id="toc-weeks-9-10-integration-intro" class="nav-link" data-scroll-target="#weeks-9-10-integration-intro">Weeks 9-10: Integration Intro</a></li>
+  <li><a href="#weeks-11-12-continuous-distributions" id="toc-weeks-11-12-continuous-distributions" class="nav-link" data-scroll-target="#weeks-11-12-continuous-distributions">Weeks 11-12: Continuous Distributions</a></li>
+  <li><a href="#week-13-synthesis" id="toc-week-13-synthesis" class="nav-link" data-scroll-target="#week-13-synthesis">Week 13: Synthesis</a></li>
+  </ul></li>
+  <li><a href="#r-functions-reference" id="toc-r-functions-reference" class="nav-link" data-scroll-target="#r-functions-reference">R Functions Reference</a>
+  <ul class="collapse">
+  <li><a href="#by-first-use" id="toc-by-first-use" class="nav-link" data-scroll-target="#by-first-use">By First Use</a></li>
+  </ul></li>
+  <li><a href="#mathematica-functions-reference" id="toc-mathematica-functions-reference" class="nav-link" data-scroll-target="#mathematica-functions-reference">Mathematica Functions Reference</a>
+  <ul class="collapse">
+  <li><a href="#by-first-use-1" id="toc-by-first-use-1" class="nav-link" data-scroll-target="#by-first-use-1">By First Use</a></li>
+  </ul></li>
+  <li><a href="#related-resources" id="toc-related-resources" class="nav-link" data-scroll-target="#related-resources">Related Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -391,7 +483,7 @@ window.MathJax = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Math 119 — Applied Calculus for Data Analysis</h1>
+<h1 class="title">Topic Index</h1>
 </div>
 
 
@@ -408,12 +500,333 @@ window.MathJax = {
 </header>
 
 
-<section id="no-class-today." class="level2">
-<h2 class="anchored" data-anchor-id="no-class-today.">No class today.</h2>
-<p><strong>Next class:</strong> <a href="class/class-1.html">Class 1</a> — Monday, Sep 14</p>
+<!-- Enhancement #4: Topic Index - 2026-08-17 -->
+<!-- To remove: delete this file and remove Topics from navbar in _quarto.yml -->
+<p>Find which class sessions cover specific topics. Use Ctrl+F to search for your topic.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Quick Navigation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Click on class numbers to jump directly to that day’s content.</p>
+</div>
+</div>
 <hr>
-<p>Welcome to the Math 119 course site for BYU-Idaho.</p>
-<p>Use the navigation above to browse <strong>Class Sessions</strong>, <strong>Definitions</strong>, and the <strong>Schedule</strong>.</p>
+<section id="a-d" class="level2">
+<h2 class="anchored" data-anchor-id="a-d">A-D</h2>
+<section id="chain-rule" class="level3">
+<h3 class="anchored" data-anchor-id="chain-rule">Chain Rule</h3>
+<p>Differentiating composite functions: <span class="math inline">\(\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)\)</span></p>
+<p><strong>Classes</strong>: <a href="class/class-12.html">12</a>, <a href="class/class-18.html">18</a>, <a href="class/class-19.html">19</a>, <a href="class/class-20.html">20</a>, <a href="class/class-21.html">21</a>, <a href="class/class-22.html">22</a>, <a href="class/class-23.html">23</a></p>
+</section>
+<section id="conditional-probability" class="level3">
+<h3 class="anchored" data-anchor-id="conditional-probability">Conditional Probability</h3>
+<p><span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></p>
+<p><strong>Classes</strong>: <a href="class/class-35.html">35</a>, <a href="class/class-37.html">37</a></p>
+</section>
+<section id="critical-points" class="level3">
+<h3 class="anchored" data-anchor-id="critical-points">Critical Points</h3>
+<p>Finding where <span class="math inline">\(f'(x) = 0\)</span> or <span class="math inline">\(f'(x)\)</span> is undefined</p>
+<p><strong>Classes</strong>: <a href="class/class-24.html">24</a>, <a href="class/class-26.html">26</a>, <a href="class/class-27.html">27</a>, <a href="class/class-31.html">31</a></p>
+</section>
+<section id="cumulative-distribution-function-cdf" class="level3">
+<h3 class="anchored" data-anchor-id="cumulative-distribution-function-cdf">Cumulative Distribution Function (CDF)</h3>
+<p><span class="math inline">\(F(x) = P(X \leq x)\)</span></p>
+<p><strong>Classes</strong>: <a href="class/class-40.html">40</a>, <a href="class/class-41.html">41</a>, <a href="class/class-42.html">42</a>, <a href="class/class-44.html">44</a></p>
+</section>
+<section id="derivatives-basic-rules" class="level3">
+<h3 class="anchored" data-anchor-id="derivatives-basic-rules">Derivatives (Basic Rules)</h3>
+<p>Power rule, sum rule, constant multiple</p>
+<p><strong>Classes</strong>: <a href="class/class-11.html">11</a>, <a href="class/class-16.html">16</a>, <a href="class/class-17.html">17</a>, <a href="class/class-18.html">18</a>, <a href="class/class-19.html">19</a></p>
+<hr>
+</section>
+</section>
+<section id="e-l" class="level2">
+<h2 class="anchored" data-anchor-id="e-l">E-L</h2>
+<section id="expected-value" class="level3">
+<h3 class="anchored" data-anchor-id="expected-value">Expected Value</h3>
+<ul>
+<li>Discrete: <span class="math inline">\(E[X] = \sum x_i p(x_i)\)</span></li>
+<li>Continuous: <span class="math inline">\(E[X] = \int x \cdot f(x) \, dx\)</span></li>
+</ul>
+<p><strong>Classes</strong>: <a href="class/class-35.html">35</a>, <a href="class/class-38.html">38</a>, <a href="class/class-39.html">39</a>, <a href="class/class-40.html">40</a>, <a href="class/class-41.html">41</a></p>
+</section>
+<section id="exponential-functions" class="level3">
+<h3 class="anchored" data-anchor-id="exponential-functions">Exponential Functions</h3>
+<p><span class="math inline">\(f(x) = ae^{bx}\)</span> and properties</p>
+<p><strong>Classes</strong>: <a href="class/class-3.html">3</a>, <a href="class/class-9.html">9</a>, <a href="class/class-11.html">11</a>, <a href="class/class-13.html">13</a></p>
+</section>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
+<p>Evaluation, composition, domain, range</p>
+<p><strong>Classes</strong>: <a href="class/class-1.html">1</a>, <a href="class/class-2.html">2</a>, <a href="class/class-6.html">6</a>, <a href="class/class-7.html">7</a>, <a href="class/class-12.html">12</a></p>
+</section>
+<section id="integration" class="level3">
+<h3 class="anchored" data-anchor-id="integration">Integration</h3>
+<p>Definite and indefinite integrals, Riemann sums</p>
+<p><strong>Classes</strong>: <a href="class/class-36.html">36</a>, <a href="class/class-37.html">37</a>, <a href="class/class-38.html">38</a>, <a href="class/class-43.html">43</a>, <a href="class/class-44.html">44</a></p>
+</section>
+<section id="intermediate-value-theorem-ivt" class="level3">
+<h3 class="anchored" data-anchor-id="intermediate-value-theorem-ivt">Intermediate Value Theorem (IVT)</h3>
+<p>Existence of zeros for continuous functions</p>
+<p><strong>Classes</strong>: <a href="class/class-11.html">11</a></p>
+</section>
+<section id="least-squares-regression" class="level3">
+<h3 class="anchored" data-anchor-id="least-squares-regression">Least Squares Regression</h3>
+<p>Minimizing squared residuals</p>
+<p><strong>Classes</strong>: <a href="class/class-31.html">31</a>, <a href="class/class-32.html">32</a></p>
+</section>
+<section id="linearization" class="level3">
+<h3 class="anchored" data-anchor-id="linearization">Linearization</h3>
+<p><span class="math inline">\(L(x) = f(a) + f'(a)(x-a)\)</span></p>
+<p><strong>Classes</strong>: <a href="class/class-16.html">16</a></p>
+</section>
+<section id="logarithms" class="level3">
+<h3 class="anchored" data-anchor-id="logarithms">Logarithms</h3>
+<p>Properties and solving logarithmic equations</p>
+<p><strong>Classes</strong>: <a href="class/class-9.html">9</a>, <a href="class/class-10.html">10</a>, <a href="class/class-12.html">12</a>, <a href="class/class-26.html">26</a></p>
+<hr>
+</section>
+</section>
+<section id="m-p" class="level2">
+<h2 class="anchored" data-anchor-id="m-p">M-P</h2>
+<section id="maximum-likelihood" class="level3">
+<h3 class="anchored" data-anchor-id="maximum-likelihood">Maximum Likelihood</h3>
+<p>Finding parameters that maximize likelihood/loglikelihood</p>
+<p><strong>Classes</strong>: <a href="class/class-14.html">14</a>, <a href="class/class-15.html">15</a>, <a href="class/class-24.html">24</a>, <a href="class/class-25.html">25</a>, <a href="class/class-26.html">26</a>, <a href="class/class-27.html">27</a>, <a href="class/class-28.html">28</a>, <a href="class/class-29.html">29</a>, <a href="class/class-30.html">30</a></p>
+</section>
+<section id="optimization" class="level3">
+<h3 class="anchored" data-anchor-id="optimization">Optimization</h3>
+<p>Finding maximum/minimum values using derivatives</p>
+<p><strong>Classes</strong>: <a href="class/class-24.html">24</a>, <a href="class/class-26.html">26</a>, <a href="class/class-27.html">27</a>, <a href="class/class-31.html">31</a></p>
+</section>
+<section id="partial-derivatives" class="level3">
+<h3 class="anchored" data-anchor-id="partial-derivatives">Partial Derivatives</h3>
+<p><span class="math inline">\(\frac{\partial f}{\partial x}\)</span> for multivariable functions</p>
+<p><strong>Classes</strong>: <a href="class/class-23.html">23</a>, <a href="class/class-28.html">28</a>, <a href="class/class-31.html">31</a></p>
+</section>
+<section id="percentiles" class="level3">
+<h3 class="anchored" data-anchor-id="percentiles">Percentiles</h3>
+<p>Finding <span class="math inline">\(x_p\)</span> such that <span class="math inline">\(P(X \leq x_p) = p/100\)</span></p>
+<p><strong>Classes</strong>: <a href="class/class-40.html">40</a>, <a href="class/class-41.html">41</a>, <a href="class/class-42.html">42</a></p>
+</section>
+<section id="plotting-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-in-r">Plotting (in R)</h3>
+<p>Using <code>plot()</code>, <code>lines()</code>, <code>abline()</code></p>
+<p><strong>Classes</strong>: <a href="class/class-3.html">3</a>, <a href="class/class-4.html">4</a>, <a href="class/class-11.html">11</a>, <a href="class/class-26.html">26</a></p>
+</section>
+<section id="probability" class="level3">
+<h3 class="anchored" data-anchor-id="probability">Probability</h3>
+<p>Basic rules, sample spaces, events</p>
+<p><strong>Classes</strong>: <a href="class/class-7.html">7</a>, <a href="class/class-8.html">8</a>, <a href="class/class-13.html">13</a>, <a href="class/class-14.html">14</a>, <a href="class/class-34.html">34</a>, <a href="class/class-37.html">37</a>, <a href="class/class-39.html">39</a></p>
+</section>
+<section id="probability-density-function-pdf" class="level3">
+<h3 class="anchored" data-anchor-id="probability-density-function-pdf">Probability Density Function (PDF)</h3>
+<p><span class="math inline">\(f(x)\)</span> such that <span class="math inline">\(\int f(x) \, dx = 1\)</span></p>
+<p><strong>Classes</strong>: <a href="class/class-38.html">38</a>, <a href="class/class-39.html">39</a>, <a href="class/class-40.html">40</a>, <a href="class/class-41.html">41</a>, <a href="class/class-42.html">42</a></p>
+</section>
+<section id="product-rule" class="level3">
+<h3 class="anchored" data-anchor-id="product-rule">Product Rule</h3>
+<p><span class="math inline">\(\frac{d}{dx}[f(x) \cdot g(x)] = f'(x) \cdot g(x) + f(x) \cdot g'(x)\)</span></p>
+<p><strong>Classes</strong>: <a href="class/class-17.html">17</a>, <a href="class/class-18.html">18</a></p>
+<hr>
+</section>
+</section>
+<section id="q-z" class="level2">
+<h2 class="anchored" data-anchor-id="q-z">Q-Z</h2>
+<section id="quotient-rule" class="level3">
+<h3 class="anchored" data-anchor-id="quotient-rule">Quotient Rule</h3>
+<p><span class="math inline">\(\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}\)</span></p>
+<p><strong>Classes</strong>: <a href="class/class-17.html">17</a>, <a href="class/class-18.html">18</a></p>
+</section>
+<section id="random-variables" class="level3">
+<h3 class="anchored" data-anchor-id="random-variables">Random Variables</h3>
+<p>Discrete and continuous random variables</p>
+<p><strong>Classes</strong>: <a href="class/class-34.html">34</a>, <a href="class/class-38.html">38</a>, <a href="class/class-39.html">39</a>, <a href="class/class-42.html">42</a></p>
+</section>
+<section id="second-derivative-test" class="level3">
+<h3 class="anchored" data-anchor-id="second-derivative-test">Second Derivative Test</h3>
+<p>Classifying critical points as maxima or minima using <span class="math inline">\(f''(x)\)</span></p>
+<p><strong>Classes</strong>: <a href="class/class-23.html">23</a>, <a href="class/class-26.html">26</a>, <a href="class/class-27.html">27</a></p>
+</section>
+<section id="solving-equations-uniroot" class="level3">
+<h3 class="anchored" data-anchor-id="solving-equations-uniroot">Solving Equations (uniroot)</h3>
+<p>Using <code>uniroot()</code> in R to solve equations numerically</p>
+<p><strong>Classes</strong>: <a href="class/class-10.html">10</a>, <a href="class/class-11.html">11</a>, <a href="class/class-12.html">12</a>, <a href="class/class-17.html">17</a></p>
+</section>
+<section id="variance" class="level3">
+<h3 class="anchored" data-anchor-id="variance">Variance</h3>
+<ul>
+<li>Discrete: <span class="math inline">\(\text{Var}(X) = E[X^2] - (E[X])^2\)</span></li>
+<li>Continuous: Same formula with integrals</li>
+</ul>
+<p><strong>Classes</strong>: <a href="class/class-39.html">39</a>, <a href="class/class-40.html">40</a>, <a href="class/class-41.html">41</a>, <a href="class/class-42.html">42</a></p>
+</section>
+<section id="visual-model-fitting" class="level3">
+<h3 class="anchored" data-anchor-id="visual-model-fitting">Visual Model Fitting</h3>
+<p>Selecting parameters to match data visually</p>
+<p><strong>Classes</strong>: <a href="class/class-6.html">6</a>, <a href="class/class-11.html">11</a>, <a href="class/class-12.html">12</a></p>
+<hr>
+</section>
+</section>
+<section id="by-project" class="level2">
+<h2 class="anchored" data-anchor-id="by-project">By Project</h2>
+<section id="project-1-led-bulb-lifetime-modeling" class="level3">
+<h3 class="anchored" data-anchor-id="project-1-led-bulb-lifetime-modeling">Project 1: LED Bulb Lifetime Modeling</h3>
+<p><strong>Relevant Classes</strong>: <a href="class/class-5.html">5</a>, <a href="class/class-6.html">6</a>, <a href="class/class-8.html">8</a>, <a href="class/class-11.html">11</a>, <a href="class/class-12.html">12</a>, <a href="class/class-13.html">13</a></p>
+<p><strong>Key Topics</strong>: - Function modeling and evaluation - Solving equations with uniroot() - Visual parameter fitting - Plotting in R</p>
+</section>
+<section id="project-2-maximum-likelihood" class="level3">
+<h3 class="anchored" data-anchor-id="project-2-maximum-likelihood">Project 2: Maximum Likelihood</h3>
+<p><strong>Relevant Classes</strong>: <a href="class/class-14.html">14-15</a>, <a href="class/class-24.html">24-30</a></p>
+<p><strong>Key Topics</strong>: - Likelihood and loglikelihood - Derivatives (chain rule, product rule) - Partial derivatives - Optimization (finding maxima) - Second derivative test</p>
+</section>
+<section id="project-3-probability-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="project-3-probability-distributions">Project 3: Probability Distributions</h3>
+<p><strong>Relevant Classes</strong>: <a href="class/class-34.html">34-45</a></p>
+<p><strong>Key Topics</strong>: - PDF and CDF - Expected value and variance - Percentiles - Integration (definite integrals) - Probability calculations</p>
+<hr>
+</section>
+</section>
+<section id="by-week" class="level2">
+<h2 class="anchored" data-anchor-id="by-week">By Week</h2>
+<section id="weeks-1-2-functions-and-modeling" class="level3">
+<h3 class="anchored" data-anchor-id="weeks-1-2-functions-and-modeling">Weeks 1-2: Functions and Modeling</h3>
+<p><strong>Classes</strong>: 1-8 <strong>Topics</strong>: Function evaluation, plotting, visual fitting, probability basics</p>
+</section>
+<section id="weeks-3-4-solving-equations" class="level3">
+<h3 class="anchored" data-anchor-id="weeks-3-4-solving-equations">Weeks 3-4: Solving Equations</h3>
+<p><strong>Classes</strong>: 9-15 <strong>Topics</strong>: Logarithms, uniroot(), IVT, likelihood, exponential functions</p>
+</section>
+<section id="weeks-5-6-derivatives" class="level3">
+<h3 class="anchored" data-anchor-id="weeks-5-6-derivatives">Weeks 5-6: Derivatives</h3>
+<p><strong>Classes</strong>: 16-22 <strong>Topics</strong>: Linearization, power rule, product rule, quotient rule, chain rule</p>
+</section>
+<section id="weeks-7-8-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="weeks-7-8-optimization">Weeks 7-8: Optimization</h3>
+<p><strong>Classes</strong>: 23-30 <strong>Topics</strong>: Partial derivatives, critical points, second derivative test, maximum likelihood, least squares</p>
+</section>
+<section id="weeks-9-10-integration-intro" class="level3">
+<h3 class="anchored" data-anchor-id="weeks-9-10-integration-intro">Weeks 9-10: Integration Intro</h3>
+<p><strong>Classes</strong>: 31-37 <strong>Topics</strong>: Riemann sums, definite integrals, probability rules, conditional probability</p>
+</section>
+<section id="weeks-11-12-continuous-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="weeks-11-12-continuous-distributions">Weeks 11-12: Continuous Distributions</h3>
+<p><strong>Classes</strong>: 38-43 <strong>Topics</strong>: PDF, CDF, expected value, variance, percentiles, integration with Mathematica</p>
+</section>
+<section id="week-13-synthesis" class="level3">
+<h3 class="anchored" data-anchor-id="week-13-synthesis">Week 13: Synthesis</h3>
+<p><strong>Classes</strong>: 44-46 <strong>Topics</strong>: Connecting CDFs and PDFs, change of variables, review</p>
+<hr>
+</section>
+</section>
+<section id="r-functions-reference" class="level2">
+<h2 class="anchored" data-anchor-id="r-functions-reference">R Functions Reference</h2>
+<section id="by-first-use" class="level3">
+<h3 class="anchored" data-anchor-id="by-first-use">By First Use</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>R Function</th>
+<th>First Used</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>plot()</code></td>
+<td><a href="class/class-3.html">Class 3</a></td>
+<td>Basic plotting</td>
+</tr>
+<tr class="even">
+<td><code>lines()</code></td>
+<td><a href="class/class-3.html">Class 3</a></td>
+<td>Add curves to plots</td>
+</tr>
+<tr class="odd">
+<td><code>uniroot()</code></td>
+<td><a href="class/class-10.html">Class 10</a></td>
+<td>Solve equations numerically</td>
+</tr>
+<tr class="even">
+<td><code>exp()</code></td>
+<td><a href="class/class-11.html">Class 11</a></td>
+<td>Exponential function</td>
+</tr>
+<tr class="odd">
+<td><code>log()</code>, <code>log2()</code></td>
+<td><a href="class/class-9.html">Class 9</a></td>
+<td>Logarithm functions</td>
+</tr>
+<tr class="even">
+<td><code>abline()</code></td>
+<td><a href="class/class-11.html">Class 11</a></td>
+<td>Add reference lines</td>
+</tr>
+<tr class="odd">
+<td><code>sum()</code></td>
+<td><a href="class/class-26.html">Class 26</a></td>
+<td>Sum vectors</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="mathematica-functions-reference" class="level2">
+<h2 class="anchored" data-anchor-id="mathematica-functions-reference">Mathematica Functions Reference</h2>
+<section id="by-first-use-1" class="level3">
+<h3 class="anchored" data-anchor-id="by-first-use-1">By First Use</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Mathematica Function</th>
+<th>First Used</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Integrate[]</code></td>
+<td><a href="class/class-36.html">Class 36</a></td>
+<td>Symbolic integration</td>
+</tr>
+<tr class="even">
+<td><code>NIntegrate[]</code></td>
+<td><a href="class/class-37.html">Class 37</a></td>
+<td>Numerical integration</td>
+</tr>
+<tr class="odd">
+<td><code>Solve[]</code></td>
+<td><a href="class/class-40.html">Class 40</a></td>
+<td>Solve equations symbolically</td>
+</tr>
+<tr class="even">
+<td><code>NSolve[]</code></td>
+<td><a href="class/class-42.html">Class 42</a></td>
+<td>Solve equations numerically</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="related-resources" class="level2">
+<h2 class="anchored" data-anchor-id="related-resources">Related Resources</h2>
+<ul>
+<li><a href="resources.html">Quick Reference</a> - R, Mathematica, and math formula syntax</li>
+<li><a href="common-errors.html">Common Errors FAQ</a> - Debugging help for frequent issues</li>
+<li><a href="class/class-1.html">Class Sessions</a> - Browse all daily class content</li>
+<li><a href="projects/">Projects</a> - Project instructions and resources</li>
+<li><a href="schedule.html">Schedule</a> - Full semester calendar</li>
+</ul>
+<hr>
+<p><strong>Last updated</strong>: August 17, 2026 <strong>Can’t find a topic?</strong> Search this page with Ctrl+F or ask on Canvas discussion board.</p>
 
 
 </section>
