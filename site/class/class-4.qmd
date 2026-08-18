@@ -214,8 +214,8 @@ As a group, discuss each question below.
 - How was the $ symbol used?
 - What does the head() command do?
 
-### Activity - RStudio Practice
-Help each other use RStudio to calculate each value, by first defining a function, and then evaluating the function at various inputs.  Practice putting your work in a Quarto document and writing a cohesive analysis to introduce each computation in a code chunk.
+### Activity - R Practice
+Help each other use R (in Positron) to calculate each value, by first defining a function, and then evaluating the function at various inputs. Practice putting your work in a Quarto document and writing a cohesive analysis to introduce each computation in a code chunk.
 
 - Let $w(v) = v^2 - 5v -6$ Compute the following values.
     - $w(-1)$

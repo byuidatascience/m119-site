@@ -55,10 +55,9 @@ Our first Unit is focused on expanding our knowledge and understanding of functi
 ### (3) Start working with R
 
 1. Install [R](https://www.r-project.org/){target="_blank"}.
-2. Install an editor to work with R (pick one):
-    - [**RStudio**](https://www.rstudio.com/products/rstudio/download/){target="_blank"} — the long-standing R IDE. Course examples, screenshots, and troubleshooting assume RStudio. Setup: [Install RStudio](../projects/rstudio_install.html){target="_blank"}.
-    - [**Positron**](https://positron.posit.co/){target="_blank"} — Posit's newer IDE (same company as RStudio). Similar layout, single installer, R and Python support built in. Setup: [Install Positron](../projects/positron_install.html){target="_blank"}.
-    - [**VS Code**](https://code.visualstudio.com/){target="_blank"} — fine if you already use VS Code for other courses, but requires extra setup. See the VS Code setup note at the end of this section.
+2. Install **[Positron](https://positron.posit.co/){target="_blank"}** — the recommended IDE for this course. It has R and Python support built in and works seamlessly with Quarto. Setup: [Install Positron](../projects/positron_install.html){target="_blank"}.
+    - If you already have RStudio installed and working, you may continue using it.
+    - If you prefer VS Code, see the setup note at the end of this section.
 3. Open a new file and use it to perform a few computations in R. One option is to repeat some of the computations you did during class in groups, but this time using R. Or pick something else of interest. Feel free to search the web for a short R tutorial.
 4. Construct the plot of a function (either one from part 2 above, from class, or one of your choice).
 

@@ -201,7 +201,7 @@ plot(x,y,pch=16,xlab='weight (1000 lbs)',ylab='Miles per US gallon',main='Our 1s
 
 We can examine the mtcars dataset with head(mtcars), and then construct scatterplots that compare other quantitative (numerical) variables. 
 
-### RStudio Practice
+### R Practice
 **Evaluate Functions**
 - Given $h(x) = \sqrt{3-x}$, compute $h(-4)$ and $h(5)$.
 
@@ -211,7 +211,7 @@ We can examine the mtcars dataset with head(mtcars), and then construct scatterp
     - Not required in Math 119 (You can insert an image with handwritten math.)
     - But you can copy Latex from our Wiki or Project Instructions.
 
-We'll now use RStudio to calculate each value.
+We'll now use R (in Positron) to calculate each value.
 
 - Let $w(v) = v^2 - 5v -6$ Compute the following values.
     - $w(-1)$
