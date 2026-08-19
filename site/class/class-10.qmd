@@ -79,7 +79,7 @@ a. $m=3,b=-60$
 - Continue working on Project 1 Task 3
 
 
-# During Class - Day 10
+# During Class
 ## Brain Gains
 - Write in expanded form.
     - $\sum_{i=5}^{10} 3i^2$

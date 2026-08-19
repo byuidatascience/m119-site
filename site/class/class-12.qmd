@@ -62,7 +62,7 @@ All algebraic functions can be built using only **power functions** and **the 4 
 - Start Project 1 Task 4
 
 
-# During Class - Day 12
+# During Class
 ## Brain Gains
 - For the function $f(x) = -2\sqrt[3]{x+6}$, identify some power functions and then use appropriate operations to show how to construct $f$ from these power functions. (There are many correct ways to do this.) 
 - Let $f(t) = \log_2(3t-2)$.

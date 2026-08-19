@@ -120,7 +120,7 @@ uniroot(f.new,c(a,b))$root
 - Continue working on Project 1 Task 3
 
 
-# During Class - Day 11
+# During Class
 ## Brain Gains
 1. Suppose $f(x;a,b) = a e^{b x}$. If $f(0)=7$, then what must $a$ equal?
 

@@ -49,7 +49,7 @@ Start working on
 - Work on Project 1 Task 2
 
 
-# During Class - Day 8
+# During Class
 ## Brain Gains
 1. Consider the function $f(x; a,b) = a + bx^2$. If we know $f(0) = 10$ and $f(5) = 510$, what are the values of $a$ and $b$.
 

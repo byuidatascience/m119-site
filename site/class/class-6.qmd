@@ -61,7 +61,7 @@ Then complete the following:
 - Begin Project 1 Task 2.
 
 
-# During Class - Day 6
+# During Class
 ## Brain Gains
 Consider the function $T(x) = \frac{1}{2}(3(x+2))^2 - 10$. 
 

@@ -54,7 +54,7 @@ Continue working on the following assignments.
     - Watch the [video](https://www.loom.com/share/e719841d54624db9b22ada1e85b7f85d?sharedAppSource=personal_library){target="_blank"} example of visually fitting f2. The link for this video is also in the Project 1 (Task 3) Instructions.
 
 
-# During Class - Day 9
+# During Class
 ## Brain Gains
 1. The local elvish population is modeled by the function $P(x;a,b) = ax+b$, where $x$ is the number of years since 2000 (this means the domain is $x \geq 0$).
 
