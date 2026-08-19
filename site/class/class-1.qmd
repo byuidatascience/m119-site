@@ -5,8 +5,8 @@ title: "Class 1"
 # During Class
 ## Welcome! 
 
-- The address for this Wiki is [site](https://byuimath.com/bmw/all/119/){target="_blank"}.  
-![](../assets/uploads/Class/119-bmw.png){height="100px"}
+- The address for this Wiki is [site](https://byuimath.com/bmw/all/119/){target="_blank"}.
+![Math 119 course logo](../assets/uploads/Class/119-bmw.png){height="100px"}
 
 - First Day Challenge: Exchange name and contact information with at least 1 other student in this class during our work today.
 

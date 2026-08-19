@@ -28,6 +28,7 @@ project:
 
 website:
   title: "Math 119 — Applied Calculus for Data Analysis"
+  description: "Applied Calculus for Data Analysis using R and Mathematica. Learn function modeling, derivatives, optimization, and probability distributions through hands-on projects at BYU-Idaho."
   favicon: assets/uploads/Class/119-bmw.png
   navbar:
     right:
