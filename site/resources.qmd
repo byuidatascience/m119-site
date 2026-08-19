@@ -12,8 +12,6 @@ This page provides quick syntax lookups for R, Mathematica, and common math form
 You'll reference these syntax patterns frequently during projects and assignments. Bookmark or print for quick access.
 :::
 
----
-
 ::: {.callout-note}
 ## Stuck on an Error?
 See the [Common Errors FAQ](common-errors.html) for copy-paste fixes to frequent issues.
@@ -21,7 +19,9 @@ See the [Common Errors FAQ](common-errors.html) for copy-paste fixes to frequent
 
 ---
 
-## R Syntax Quick Reference
+::: {.panel-tabset}
+
+## R Syntax
 
 ### Solving Equations with uniroot()
 
@@ -135,9 +135,7 @@ Same as above - define the function first.
 Missing opening brace `{` or mismatched braces. Check your function definition.
 :::
 
----
-
-## Mathematica Syntax Quick Reference
+## Mathematica
 
 ### Integration
 
@@ -221,9 +219,7 @@ Use `*` explicitly: `3*x` not `3x`
 Use `==` for equations: `x^2 == 4`, not `x^2 = 4`
 :::
 
----
-
-## Math Formulas Reference
+## Math Formulas
 
 ### Derivative Rules
 
@@ -311,6 +307,8 @@ $$\text{Var}(X) = E[X^2] - (E[X])^2$$
 **Continuous random variable**:
 $$E[X] = \int x \cdot f(x) \, dx$$
 $$\text{Var}(X) = \int x^2 \cdot f(x) \, dx - \left(\int x \cdot f(x) \, dx\right)^2$$
+
+:::
 
 ---
 
