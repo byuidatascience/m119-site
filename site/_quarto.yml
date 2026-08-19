@@ -54,38 +54,43 @@ website:
           href: projects/QuartoHints.qmd
       - text: "Definitions"
         menu:
-        - text: "ConditionalProbability"
-          href: definitions/conditionalprobability.qmd
-        - text: "ConstantOnTheIntervalI"
+        - text: "**Function Behavior**"
+        - text: "Constant on Interval I"
           href: definitions/constantontheintervali.qmd
-        - text: "DecreasingOnTheIntervalI"
-          href: definitions/decreasingontheintervali.qmd
-        - text: "Definition"
-          href: definitions/definition.qmd
-        - text: "ExponentialFunction"
-          href: definitions/exponentialfunction.qmd
-        - text: "IncreasingOnTheIntervalI"
+        - text: "Increasing on Interval I"
           href: definitions/increasingontheintervali.qmd
-        - text: "IndependentEvents"
-          href: definitions/independentevents.qmd
+        - text: "Decreasing on Interval I"
+          href: definitions/decreasingontheintervali.qmd
+        - text: "Positive on Interval I"
+          href: definitions/positiveontheintervali.qmd
+        - text: "Negative on Interval I"
+          href: definitions/negativeontheintervali.qmd
+        - text: "Nonnegative on Interval I"
+          href: definitions/nonnegativeontheintervali.qmd
+        - text: "---"
+        - text: "**Calculus**"
+        - text: "Partial Derivative"
+          href: definitions/partialderivative.qmd
+        - text: "---"
+        - text: "**Functions**"
+        - text: "Exponential Function"
+          href: definitions/exponentialfunction.qmd
         - text: "Logarithm"
           href: definitions/logarithm.qmd
-        - text: "LogarithmicFunction"
+        - text: "Logarithmic Function"
           href: definitions/logarithmicfunction.qmd
-        - text: "NegativeOnTheIntervalI"
-          href: definitions/negativeontheintervali.qmd
-        - text: "NonnegativeOnTheIntervalI"
-          href: definitions/nonnegativeontheintervali.qmd
-        - text: "PartialDerivative"
-          href: definitions/partialderivative.qmd
-        - text: "PositiveOnTheIntervalI"
-          href: definitions/positiveontheintervali.qmd
+        - text: "---"
+        - text: "**Probability**"
         - text: "Probability"
           href: definitions/probability.qmd
-        - text: "RandomVariable"
-          href: definitions/randomvariable.qmd
-        - text: "RulesOfProbabilty"
+        - text: "Rules of Probability"
           href: definitions/rulesofprobabilty.qmd
+        - text: "Conditional Probability"
+          href: definitions/conditionalprobability.qmd
+        - text: "Independent Events"
+          href: definitions/independentevents.qmd
+        - text: "Random Variable"
+          href: definitions/randomvariable.qmd
       - text: "Schedule"
         href: schedule.qmd
   page-navigation: true
@@ -137,6 +142,7 @@ website:
         - class/class-41.qmd
         - class/class-42.qmd
         - class/class-43.qmd
+        - class/class-43b.qmd
         - class/class-44.qmd
         - class/class-45.qmd
         - class/class-46.qmd
