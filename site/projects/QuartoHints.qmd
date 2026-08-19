@@ -2,9 +2,9 @@
 title: "Quarto Hints"
 ---
 
-Think of a **Quarto file** (`.qmd`) as a command center. You write commands and prose, then render the file, and an HTML (or PDF, Word, etc.) output file is created according to your commands.[^thanks]
+Think of a **Quarto document** (`.qmd`) as a command center. You write commands and prose, then render the file, and an HTML (or PDF, Word, etc.) output file is created according to your commands.[^thanks]
 
-## Rendering a Quarto File
+## Rendering a Quarto Document
 
 In Positron, click the **Render** button at the top of the editor (or use `Cmd+Shift+K` / `Ctrl+Shift+K`). From the terminal:
 

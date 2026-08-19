@@ -54,7 +54,7 @@ The probability density function for the exponential distribution is
 The exponential distribution is often thought of as a "waiting time" model. The command `?dexp` or `?rexp` in your R console will access the R documentation for the exponential distribution.
 
 ## Task 1: Data and General Models
-- Create a Quarto file. In the YAML header, include `embed-resources: true` so your rendered `.html` inlines all plots — required so the file you upload to Canvas displays your charts. See [Quarto Hints](QuartoHints.qmd) for a working YAML template.
+- Create a Quarto document. In the YAML header, include `embed-resources: true` so your rendered `.html` inlines all plots — required so the file you upload to Canvas displays your charts. See [Quarto Hints](QuartoHints.qmd) for a working YAML template.
 - Use the code below to read in the soil data.
 
 ```{r}
@@ -114,7 +114,7 @@ This is called the exponential distribution. Use the command `?dexp` or `?rexp` 
 
 
 ## Task 2: Find the Expected Value and Variance of each **Stochastic Variable** to Fit the Model ("Modified Method of Moments" Method)
-- Create a new Quarto file.
+- Create a new Quarto document.
 - For each model (uniform distribution, normal distribution, gamma distribution, and exponential distribution) write down the definite integral required to calculate the expected value of the distribution (or model). 
     - Use Mathematica to compute the definite integrals (find the expected value of $f_0$, $f_1$, $f_2$ and $f_3$) as a function the model's parameters. Include your work from Mathematica as an image.
 - For each model (uniform distribution, normal distribution, gamma distribution, and exponential distribution) write down the definite integral required to calculate the variance of the model (or distribution). 
@@ -128,7 +128,7 @@ This is called the exponential distribution. Use the command `?dexp` or `?rexp` 
 
 
 ## Project 3: Bringing it All Together (and answer a question)
-- Create a new Quarto file.
+- Create a new Quarto document.
 - Answer the question, "What is the amount of explosives in the soil?"
     - Begin with background and an introduction to the question(s) you will be answering with the explosives data.
     - Introduce the given data.

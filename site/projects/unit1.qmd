@@ -29,7 +29,7 @@ In this project, we'll be fitting the data to deterministic models, functions $f
 
 
 ## Task 1: Background and Data
-- Create a Quarto file. In the YAML header, include `embed-resources: true` so your rendered `.html` inlines all plots — required so the file you upload to Canvas displays your charts. See [Quarto Hints](QuartoHints.qmd) for a working YAML template.
+- Create a Quarto document. In the YAML header, include `embed-resources: true` so your rendered `.html` inlines all plots — required so the file you upload to Canvas displays your charts. See [Quarto Hints](QuartoHints.qmd) for a working YAML template.
 - Use the `seed=` argument in the `led_bulb()` function to set the seed and use the following code to read in the light bulb data.
 
 ```{r}
@@ -71,7 +71,7 @@ This code creates a data frame called "bulb". The bulb data frame contains measu
 You'll see the instructions "Organize your work into a **cohesive analysis**" at the end of every task. Imagine that you are submitting a report to a boss. Your work needs to be readable. Your job is to analyze the task at hand for your boss.
 
 ## Task 2: Models and Parameter Exploration
-- Create a new Quarto file.
+- Create a new Quarto document.
 - Consider the following general models.
     - $f_0(x; a_0) = a_0$
     - $f_1(x; a_0,a_1) = a_0 + a_1x$
@@ -94,7 +94,7 @@ You'll see the instructions "Organize your work into a **cohesive analysis**" at
 - Organize your work into a **cohesive analysis** and submit it to Canvas.
      
 ## Task 3: Fit the Models ("Visual" Method)
-- Create a new Quarto file.
+- Create a new Quarto document.
 - Consider the following general models.
     - $f_0(x; a_0) = a_0$
     - $f_1(x; a_0,a_1) = a_0 + a_1x$
@@ -128,7 +128,7 @@ Use the fact that the percent of original lumens at $t=0$ is 100%, $f_i(0) = 100
 - Organize your work into a **cohesive analysis** and submit it to Canvas.
 
 ## Task 4: Use the Fitted Models to Answer Questions
-- Create a new Quarto file.
+- Create a new Quarto document.
 - Find the exact solution, or state why this cannot be done by hand, for where each of your six fitted models is at 80% of the initial intensity, $f_i(t) = 80$.
 *Write out your solutions and include a picture of each of your calculations (or you can use the Latex Cheat Sheet if you would like to try to type out your calculations).*
 - Use the `uniroot()` function in R to find the approximate solution for where each of your six fitted models is at 0% of the initial intensity, $f_i(t) = 0$.
@@ -142,7 +142,7 @@ Use the fact that the percent of original lumens at $t=0$ is 100%, $f_i(0) = 100
 - Organize your work into a **cohesive analysis** and submit it to Canvas.
 
 ## Project 1: Bringing it All Together
-- Create a new Quarto file.
+- Create a new Quarto document.
 - Answer the question, "How long does an LED light bulb last?" Organize your work from Tasks 1-4 into a **cohesive analysis** and submit it to Canvas. Your narrative should stand alone apart from the "instructions" (meaning your reader should not need the instructions for the project to understand what you are doing or explaining) and separate from the individual Tasks (meaning you should not assume your reader has read any of your previous narratives). You do not need to include everything from every task rather use only the important and relevant plots, calculations, and information to lead your reader from the background and question, to being given data and 6 general models, fitting those models, and answering a question about the data using those fitted models.
     - Begin with background and an introduction to the question(s) you will be answering with the light bulb data.
     - Introduce the given data.

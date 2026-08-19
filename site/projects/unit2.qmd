@@ -27,7 +27,7 @@ When you first turn on an LED bulb, the lumen output slightly increases for a wh
 In this project, we'll be fitting the data to deterministic models by maximizing the loglikelihood of the errors. Each of the deterministic models are functions $f(t)$ that describe the average behavior of lumen output of LED bulbs (as a percent of the initial lumens) after $t$ hours.
 
 ## Task 1: Determine the Objective Function
-- Create a Quarto file. In the YAML header, include `embed-resources: true` so your rendered `.html` inlines all plots — required so the file you upload to Canvas displays your charts. See [Quarto Hints](QuartoHints.qmd) for a working YAML template.
+- Create a Quarto document. In the YAML header, include `embed-resources: true` so your rendered `.html` inlines all plots — required so the file you upload to Canvas displays your charts. See [Quarto Hints](QuartoHints.qmd) for a working YAML template.
 - Consider the following general models.
     - $f_1(t; a_1) = 100 + a_1t$
     - $f_2(t; a_1,a_2) = 100 + a_1t + a_2t^2$
@@ -38,14 +38,14 @@ In this project, we'll be fitting the data to deterministic models by maximizing
 - Organize your work into a **cohesive analysis** and submit it to Canvas.
 
 ## Task 2: Derivatives
-- Create a new Quarto file.
+- Create a new Quarto document.
 - Find the first and second derivatives of $\ell_1(a_1; \mathbf{t}, \mathbf{y})$, the loglikelihood function for errors from the general model $f_1$, with respect to $a_1$.
 - Find all the first partials and second partials of $\ell_4(a_1, a_2; \mathbf{t}, \mathbf{y})$, the loglikelihood function for errors from the general model $f_4$.
 - Find the first and second derivatives of $\ell_5(a_1; \mathbf{t}, \mathbf{y})$, the loglikelihood function for errors from the general model $f_5$, with respect to $a_1$.
 - Organize your work into a **cohesive analysis** and submit it to Canvas.
 
 ## Task 3: Fit the Model ("Maximum Likelihood" Method)
-- Create a new Quarto file.
+- Create a new Quarto document.
 - Use the `seed=` argument in the `led_bulb()` function to set the seed and use the following code to read in the light bulb data.
 
 ```{r}
@@ -220,7 +220,7 @@ lines(x, f6(x), col = 2)
 The fitted function provides a good visual fit. The light bulb will burn out (hit 80% intensity) somewhere around 30,000 hours.
 
 ## Project 2: Bringing it All Together (and answer a question)
-- Create a new Quarto file.
+- Create a new Quarto document.
 - Answer the question, "How long does an LED light bulb last?" 
     - Begin with background and an introduction to the question(s) you will be answering with the light bulb data.
     - Introduce the given data.
