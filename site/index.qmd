@@ -6,6 +6,75 @@ title: "Math 119 — Applied Calculus for Data Analysis"
 
 ---
 
-Welcome to the Math 119 course site for BYU-Idaho.
+This course connects calculus concepts to real-world data analysis using R and Mathematica. You'll model LED bulb degradation, fit data using maximum likelihood, and analyze probability distributions — building mathematical intuition through hands-on computation.
 
-Use the navigation above to browse **Class Sessions**, **Definitions**, and the **Schedule**.
+---
+
+## Getting Started (Week 1)
+
+::: {.callout-tip}
+## First Week Checklist
+
+**Before Class 1:**
+1. Read the [Syllabus](https://byui.instructure.com){target="_blank"} on Canvas
+2. Complete the Background Survey (Canvas)
+3. Open KnewtonAlta and try a few questions
+
+**Before Class 2:**
+1. Install [R](https://www.r-project.org/){target="_blank"} and [Positron](projects/positron_install.qmd) (our IDE)
+2. Plot a simple function in R (see [Class 2](class/class-2.qmd) prep)
+3. Review equation-solving strategies
+
+**First Two Weeks:**
+- Work through [Example Project](projects/project1_practice.qmd) to learn the workflow
+- Start [Project 1](projects/unit1.qmd) (due Week 6)
+:::
+
+---
+
+## Course Structure
+
+### Class Sessions (46 total)
+Daily class pages guide your learning with prep work, in-class activities, and practice problems. Use the **Class Sessions** sidebar to navigate by day.
+
+**Need help finding a topic?** Use [**Help → Topic Index**](topics.qmd) to search by concept (e.g., "chain rule", "uniroot", "maximum likelihood").
+
+### Three Major Projects
+1. **[Project 1: LED Bulb Lifetime](projects/unit1.qmd)** (Weeks 1-6) — Function modeling, visual fitting, uniroot
+2. **[Project 2: Maximum Likelihood](projects/unit2.qmd)** (Weeks 7-10) — Derivatives, optimization, calculus-based fitting
+3. **[Project 3: Probability Distributions](projects/unit3.qmd)** (Weeks 11-13) — Integration, expected value, variance
+
+Projects use **specifications grading**: your work earns "Complete" when it meets all five specs. Revise and resubmit until it does.
+
+### Weekly Practice
+**KnewtonAlta homework** reinforces skills. Complete assignments by their due dates to stay on track.
+
+---
+
+## Essential Resources
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+### Get Unstuck
+- **[Common Errors FAQ](common-errors.qmd)** — Copy-paste fixes for frequent R and Mathematica errors
+- **[Quick Reference](resources.qmd)** — R, Mathematica, and math formula syntax at a glance
+- **[Topic Index](topics.qmd)** — Find which classes cover specific concepts
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### Tools & Guides
+- **[Install Positron](projects/positron_install.qmd)** — Setup instructions for the recommended IDE
+- **[R Commands](projects/RCommands.qmd)** — Interactive guide to R basics
+- **[Quarto Hints](projects/QuartoHints.qmd)** — Format your project reports
+:::
+
+:::
+
+---
+
+## Course Calendar
+
+View the full [**Schedule**](schedule.qmd) to see daily topics, exam dates, and holidays.
+
+**Questions?** Ask on Canvas discussions or visit office hours.
