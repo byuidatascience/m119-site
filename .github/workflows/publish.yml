@@ -31,6 +31,8 @@ jobs:
           use-public-rspm: true
 
       - name: Install R packages (minimal set for project QMDs)
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
           install.packages(c('remotes', 'knitr', 'rmarkdown'))
           remotes::install_github("byuidatascience/data4led")
