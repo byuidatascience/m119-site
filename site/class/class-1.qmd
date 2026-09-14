@@ -5,7 +5,9 @@ title: "Class 1"
 # During Class
 ## Welcome! 
 
-![Math 119 course logo](../assets/uploads/Class/119-bmw.png){height="100px"}
+<!-- TODO: add the new course QR code here, e.g.
+![Math 119 course QR code](../assets/uploads/Class/NEW-QR.png){height="100px"}
+-->
 
 - First Day Challenge: Exchange name and contact information with at least 1 other student in this class during our work today.
 
