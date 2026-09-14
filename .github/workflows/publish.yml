@@ -36,6 +36,7 @@ jobs:
         run: |
           install.packages(c('remotes', 'knitr', 'rmarkdown', 'tidyverse'))
           remotes::install_github("byuidatascience/data4led")
+          remotes::install_github("byuidatascience/data4soils")
         shell: Rscript {0}
 
       - name: Publish to GitHub Pages
