@@ -2,9 +2,7 @@
 title: "Install Positron Instructions"
 ---
 
-Positron is Posit's data-science IDE (made by the same company that makes RStudio). It has R and Python support built in, a familiar RStudio-style layout (console, environment, plots, viewer), and works for Quarto documents.
-
-If you already have RStudio working, you don't need Positron — they do the same job. Pick one.
+Positron is Posit's data-science IDE. It has R and Python support built in, an intuitive layout (console, environment, plots, viewer), and works seamlessly with Quarto documents. **Positron is the recommended IDE for this course.**
 
 ## Step 1: Install R
 
@@ -29,5 +27,5 @@ When you open Positron, it should detect your R installation automatically. If i
 
 ## Notes
 
-- Course examples and screenshots were written for RStudio. Positron's layout is close but not identical — pane names and menu items match about 90% of the time. If a step in a tutorial says "Plots pane," Positron has one too; if it says "Files pane," that's the Explorer on the left.
 - Positron handles Quarto rendering without extra setup. You don't need to install the Quarto CLI separately.
+- If you encounter any issues, check that Positron detected your R installation correctly: **Preferences** → search for "R" → verify the interpreter path.

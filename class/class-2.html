@@ -85,9 +85,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3c9c489b3365030a08823a85c71cd1a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-4de2da5e8af8a56ca594d71261300eb6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-3c9c489b3365030a08823a85c71cd1a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-65ab6f6afcc98c2005f3bec1c5e98b7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a515e054079012129989d5397ee3c9c1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-65ab6f6afcc98c2005f3bec1c5e98b7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -347,46 +347,83 @@ window.Quarto = {
     <a class="nav-link" href="../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../resources.html"> 
-<span class="menu-text">Resources</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Help</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-help">    
+        <li>
+    <a class="dropdown-item" href="../resources.html">
+ <span class="dropdown-text">Quick Reference</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../topics.html"> 
-<span class="menu-text">Topics</span></a>
+        <li>
+    <a class="dropdown-item" href="../common-errors.html">
+ <span class="dropdown-text">Common Errors FAQ</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../topics.html">
+ <span class="dropdown-text">Topic Index</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../projects/positron_install.qmd">
+ <span class="dropdown-text">Install Positron</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../projects/RCommands.qmd">
+ <span class="dropdown-text">R Commands</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../projects/RCheatSheets.qmd">
+ <span class="dropdown-text">R Cheat Sheets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../projects/QuartoHints.html">
+ <span class="dropdown-text">Quarto Hints</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-definitions" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Definitions</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-definitions">    
-        <li>
-    <a class="dropdown-item" href="../definitions/conditionalprobability.html">
- <span class="dropdown-text">ConditionalProbability</span></a>
-  </li>  
+        <li class="dropdown-header"><strong>Function Behavior</strong></li>
         <li>
     <a class="dropdown-item" href="../definitions/constantontheintervali.html">
- <span class="dropdown-text">ConstantOnTheIntervalI</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/decreasingontheintervali.html">
- <span class="dropdown-text">DecreasingOnTheIntervalI</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/definition.html">
- <span class="dropdown-text">Definition</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/exponentialfunction.html">
- <span class="dropdown-text">ExponentialFunction</span></a>
+ <span class="dropdown-text">Constant on Interval I</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../definitions/increasingontheintervali.html">
- <span class="dropdown-text">IncreasingOnTheIntervalI</span></a>
+ <span class="dropdown-text">Increasing on Interval I</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../definitions/independentevents.html">
- <span class="dropdown-text">IndependentEvents</span></a>
+    <a class="dropdown-item" href="../definitions/decreasingontheintervali.html">
+ <span class="dropdown-text">Decreasing on Interval I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../definitions/positiveontheintervali.html">
+ <span class="dropdown-text">Positive on Interval I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../definitions/negativeontheintervali.html">
+ <span class="dropdown-text">Negative on Interval I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../definitions/nonnegativeontheintervali.html">
+ <span class="dropdown-text">Nonnegative on Interval I</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header"><strong>Calculus</strong></li>
+        <li>
+    <a class="dropdown-item" href="../definitions/partialderivative.html">
+ <span class="dropdown-text">Partial Derivative</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header"><strong>Functions</strong></li>
+        <li>
+    <a class="dropdown-item" href="../definitions/exponentialfunction.html">
+ <span class="dropdown-text">Exponential Function</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../definitions/logarithm.html">
@@ -394,35 +431,29 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="../definitions/logarithmicfunction.html">
- <span class="dropdown-text">LogarithmicFunction</span></a>
+ <span class="dropdown-text">Logarithmic Function</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/negativeontheintervali.html">
- <span class="dropdown-text">NegativeOnTheIntervalI</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/nonnegativeontheintervali.html">
- <span class="dropdown-text">NonnegativeOnTheIntervalI</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/partialderivative.html">
- <span class="dropdown-text">PartialDerivative</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/positiveontheintervali.html">
- <span class="dropdown-text">PositiveOnTheIntervalI</span></a>
-  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header"><strong>Probability</strong></li>
         <li>
     <a class="dropdown-item" href="../definitions/probability.html">
  <span class="dropdown-text">Probability</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../definitions/randomvariable.html">
- <span class="dropdown-text">RandomVariable</span></a>
+    <a class="dropdown-item" href="../definitions/rulesofprobabilty.html">
+ <span class="dropdown-text">Rules of Probability</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../definitions/rulesofprobabilty.html">
- <span class="dropdown-text">RulesOfProbabilty</span></a>
+    <a class="dropdown-item" href="../definitions/conditionalprobability.html">
+ <span class="dropdown-text">Conditional Probability</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../definitions/independentevents.html">
+ <span class="dropdown-text">Independent Events</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../definitions/randomvariable.html">
+ <span class="dropdown-text">Random Variable</span></a>
   </li>  
     </ul>
   </li>
@@ -714,6 +745,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../class/class-43b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">43B</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../class/class-44.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Class 44</span></a>
   </div>
@@ -932,12 +969,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="start-working-with-r">(3) Start working with R</h3>
 <ol type="1">
 <li>Install <a href="https://www.r-project.org/" target="_blank">R</a>.</li>
-<li>Install an editor to work with R (pick one):
-<ul>
-<li><a href="https://www.rstudio.com/products/rstudio/download/" target="_blank"><strong>RStudio</strong></a> — the long-standing R IDE. Course examples, screenshots, and troubleshooting assume RStudio. Setup: <a href="../projects/rstudio_install.html" target="_blank">Install RStudio</a>.</li>
-<li><a href="https://positron.posit.co/" target="_blank"><strong>Positron</strong></a> — Posit’s newer IDE (same company as RStudio). Similar layout, single installer, R and Python support built in. Setup: <a href="../projects/positron_install.html" target="_blank">Install Positron</a>.</li>
-<li><a href="https://code.visualstudio.com/" target="_blank"><strong>VS Code</strong></a> — fine if you already use VS Code for other courses, but requires extra setup. See the VS Code setup note at the end of this section.</li>
-</ul></li>
+<li>Install <strong><a href="https://positron.posit.co/" target="_blank">Positron</a></strong> — the recommended IDE for this course. It has R and Python support built in and works seamlessly with Quarto. Setup: <a href="../projects/positron_install.html" target="_blank">Install Positron</a>.</li>
 <li>Open a new file and use it to perform a few computations in R. One option is to repeat some of the computations you did during class in groups, but this time using R. Or pick something else of interest. Feel free to search the web for a short R tutorial.</li>
 <li>Construct the plot of a function (either one from part 2 above, from class, or one of your choice).</li>
 </ol>
@@ -947,9 +979,9 @@ window.Quarto = {
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">'l'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <details>
 <summary>
-Note for step 2 — Setting up R in VS Code (click to expand)
+Note for step 2 — Setting up R in VS Code (optional, click to expand)
 </summary>
-<p>If you pick VS Code instead of RStudio, here’s what you’ll need beyond the editor itself:</p>
+<p>If you prefer VS Code instead of Positron, here’s what you’ll need beyond the editor itself:</p>
 <ol type="1">
 <li><p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=REditorSupport.r" target="_blank"><strong>R Extension for VS Code</strong></a> (publisher: REditorSupport).</p></li>
 <li><p>In the R console, install the <code>languageserver</code> package — this powers autocomplete and inline help inside VS Code:</p>
@@ -960,7 +992,7 @@ Note for step 2 — Setting up R in VS Code (click to expand)
 <li><p>For rendering Quarto documents, install the <a href="https://quarto.org/docs/get-started/" target="_blank"><strong>Quarto CLI</strong></a> plus the Quarto VS Code extension — then run <code>quarto render file.qmd</code> (or use the Quarto preview command from VS Code’s command palette).</p></li>
 <li><p>Open an <code>.R</code> or <code>.qmd</code> file and use <strong>Cmd/Ctrl + Enter</strong> to run the line at your cursor.</p></li>
 </ol>
-<p>Because course materials assume RStudio, if you’re on VS Code you’ll sometimes need to translate pane names (e.g.&nbsp;“Plots tab” → the httpgd browser window, “Environment” → the R Side Bar).</p>
+<p>Because course materials assume Positron, if you’re on VS Code you’ll sometimes need to translate pane names (e.g.&nbsp;“Plots tab” → the httpgd browser window, “Environment” → the R Side Bar).</p>
 </details>
 </section>
 <section id="pick-something-to-share" class="level3">
@@ -969,7 +1001,7 @@ Note for step 2 — Setting up R in VS Code (click to expand)
 <ul>
 <li>Did you encounter any issues with KnewtonAlta or have questions? Was there a problem in what you attempted that helped you remember something.</li>
 <li>As you plotted functions from (2), were there any tricky parts? Did you use Desmos or something else? Do you have any tips for plotting?</li>
-<li>How did installing R and RStudio go? If there were any hiccups along the way, what did you do to resolve them? Did you plot a function and are you willing to share the code you used? Were there any bits of code that didn’t make sense? Did you ask AI for help to plot a function and have a record of your chat history you can share?</li>
+<li>How did installing R and Positron go? If there were any hiccups along the way, what did you do to resolve them? Did you plot a function and are you willing to share the code you used? Were there any bits of code that didn’t make sense? Did you ask AI for help to plot a function and have a record of your chat history you can share?</li>
 <li>Something else. Remember that questions can be just as valuable as solutions. If you worked on something and know it’s wrong, sometimes the most valuable thing you can share is that wrong attempt. This will generate discussion and help all grow.</li>
 </ul>
 </section>

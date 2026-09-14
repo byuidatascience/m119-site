@@ -85,9 +85,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3c9c489b3365030a08823a85c71cd1a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-4de2da5e8af8a56ca594d71261300eb6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-3c9c489b3365030a08823a85c71cd1a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-65ab6f6afcc98c2005f3bec1c5e98b7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a515e054079012129989d5397ee3c9c1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-65ab6f6afcc98c2005f3bec1c5e98b7d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -347,46 +347,83 @@ window.Quarto = {
     <a class="nav-link" href="../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../resources.html"> 
-<span class="menu-text">Resources</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Help</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-help">    
+        <li>
+    <a class="dropdown-item" href="../resources.html">
+ <span class="dropdown-text">Quick Reference</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../topics.html"> 
-<span class="menu-text">Topics</span></a>
+        <li>
+    <a class="dropdown-item" href="../common-errors.html">
+ <span class="dropdown-text">Common Errors FAQ</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../topics.html">
+ <span class="dropdown-text">Topic Index</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../projects/positron_install.qmd">
+ <span class="dropdown-text">Install Positron</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../projects/RCommands.qmd">
+ <span class="dropdown-text">R Commands</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../projects/RCheatSheets.qmd">
+ <span class="dropdown-text">R Cheat Sheets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../projects/QuartoHints.html">
+ <span class="dropdown-text">Quarto Hints</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-definitions" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Definitions</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-definitions">    
-        <li>
-    <a class="dropdown-item" href="../definitions/conditionalprobability.html">
- <span class="dropdown-text">ConditionalProbability</span></a>
-  </li>  
+        <li class="dropdown-header"><strong>Function Behavior</strong></li>
         <li>
     <a class="dropdown-item" href="../definitions/constantontheintervali.html">
- <span class="dropdown-text">ConstantOnTheIntervalI</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/decreasingontheintervali.html">
- <span class="dropdown-text">DecreasingOnTheIntervalI</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/definition.html">
- <span class="dropdown-text">Definition</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/exponentialfunction.html">
- <span class="dropdown-text">ExponentialFunction</span></a>
+ <span class="dropdown-text">Constant on Interval I</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../definitions/increasingontheintervali.html">
- <span class="dropdown-text">IncreasingOnTheIntervalI</span></a>
+ <span class="dropdown-text">Increasing on Interval I</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../definitions/independentevents.html">
- <span class="dropdown-text">IndependentEvents</span></a>
+    <a class="dropdown-item" href="../definitions/decreasingontheintervali.html">
+ <span class="dropdown-text">Decreasing on Interval I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../definitions/positiveontheintervali.html">
+ <span class="dropdown-text">Positive on Interval I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../definitions/negativeontheintervali.html">
+ <span class="dropdown-text">Negative on Interval I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../definitions/nonnegativeontheintervali.html">
+ <span class="dropdown-text">Nonnegative on Interval I</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header"><strong>Calculus</strong></li>
+        <li>
+    <a class="dropdown-item" href="../definitions/partialderivative.html">
+ <span class="dropdown-text">Partial Derivative</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header"><strong>Functions</strong></li>
+        <li>
+    <a class="dropdown-item" href="../definitions/exponentialfunction.html">
+ <span class="dropdown-text">Exponential Function</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../definitions/logarithm.html">
@@ -394,35 +431,29 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="../definitions/logarithmicfunction.html">
- <span class="dropdown-text">LogarithmicFunction</span></a>
+ <span class="dropdown-text">Logarithmic Function</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/negativeontheintervali.html">
- <span class="dropdown-text">NegativeOnTheIntervalI</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/nonnegativeontheintervali.html">
- <span class="dropdown-text">NonnegativeOnTheIntervalI</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/partialderivative.html">
- <span class="dropdown-text">PartialDerivative</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../definitions/positiveontheintervali.html">
- <span class="dropdown-text">PositiveOnTheIntervalI</span></a>
-  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header"><strong>Probability</strong></li>
         <li>
     <a class="dropdown-item" href="../definitions/probability.html">
  <span class="dropdown-text">Probability</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../definitions/randomvariable.html">
- <span class="dropdown-text">RandomVariable</span></a>
+    <a class="dropdown-item" href="../definitions/rulesofprobabilty.html">
+ <span class="dropdown-text">Rules of Probability</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../definitions/rulesofprobabilty.html">
- <span class="dropdown-text">RulesOfProbabilty</span></a>
+    <a class="dropdown-item" href="../definitions/conditionalprobability.html">
+ <span class="dropdown-text">Conditional Probability</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../definitions/independentevents.html">
+ <span class="dropdown-text">Independent Events</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../definitions/randomvariable.html">
+ <span class="dropdown-text">Random Variable</span></a>
   </li>  
     </ul>
   </li>
@@ -537,7 +568,7 @@ window.Quarto = {
 <section id="task-1-data-and-general-models" class="level2">
 <h2 class="anchored" data-anchor-id="task-1-data-and-general-models">Task 1: Data and General Models</h2>
 <ul>
-<li>Create a Quarto file. In the YAML header, include <code>embed-resources: true</code> so your rendered <code>.html</code> inlines all plots — required so the file you upload to Canvas displays your charts. See <a href="../projects/QuartoHints.html">Quarto Hints</a> for a working YAML template.</li>
+<li>Create a Quarto document. In the YAML header, include <code>embed-resources: true</code> so your rendered <code>.html</code> inlines all plots — required so the file you upload to Canvas displays your charts. See <a href="../projects/QuartoHints.html">Quarto Hints</a> for a working YAML template.</li>
 <li>Use the code below to read in the soil data.</li>
 </ul>
 <div class="cell">
@@ -611,7 +642,7 @@ This is called the exponential distribution. Use the command <code>?dexp</code> 
 <section id="task-2-find-the-expected-value-and-variance-of-each-stochastic-variable-to-fit-the-model-modified-method-of-moments-method" class="level2">
 <h2 class="anchored" data-anchor-id="task-2-find-the-expected-value-and-variance-of-each-stochastic-variable-to-fit-the-model-modified-method-of-moments-method">Task 2: Find the Expected Value and Variance of each <strong>Stochastic Variable</strong> to Fit the Model (“Modified Method of Moments” Method)</h2>
 <ul>
-<li>Create a new Quarto file.</li>
+<li>Create a new Quarto document.</li>
 <li>For each model (uniform distribution, normal distribution, gamma distribution, and exponential distribution) write down the definite integral required to calculate the expected value of the distribution (or model).
 <ul>
 <li>Use Mathematica to compute the definite integrals (find the expected value of <span class="math inline">\(f_0\)</span>, <span class="math inline">\(f_1\)</span>, <span class="math inline">\(f_2\)</span> and <span class="math inline">\(f_3\)</span>) as a function the model’s parameters. Include your work from Mathematica as an image.</li>
@@ -632,7 +663,7 @@ This is called the exponential distribution. Use the command <code>?dexp</code> 
 <section id="project-3-bringing-it-all-together-and-answer-a-question" class="level2">
 <h2 class="anchored" data-anchor-id="project-3-bringing-it-all-together-and-answer-a-question">Project 3: Bringing it All Together (and answer a question)</h2>
 <ul>
-<li><p>Create a new Quarto file.</p></li>
+<li><p>Create a new Quarto document.</p></li>
 <li><p>Answer the question, “What is the amount of explosives in the soil?”</p>
 <ul>
 <li>Begin with background and an introduction to the question(s) you will be answering with the explosives data.</li>
