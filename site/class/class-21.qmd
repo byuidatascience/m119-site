@@ -66,7 +66,7 @@ The above is sufficient, though we can also write this as
 
 3.  Given the graph of a function $h(x)$ below, draw $h'(x)$.
 
-![Draw the derivative](https://byuimath.com/bmw/all/119/uploads/Class/Draw-Derivative.png)
+![Draw the derivative](../assets/uploads/Class/Draw-Derivative.png)
 
 <details>
 <summary>Solution</summary>
@@ -128,7 +128,7 @@ Assume the residuals (errors) are independent and normally distributed (with mea
 ## Discussion 
 Let's sketch the derivative of
 
-![Desmos graph](https://byuimath.com/bmw/all/119/uploads/Class/Desmos-Graph-Together.png)
+![Desmos graph](../assets/uploads/Class/Desmos-Graph-Together.png)
 
 <details>
 <summary>Solution</summary>

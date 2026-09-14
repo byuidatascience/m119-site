@@ -76,7 +76,7 @@ Let's look at an example that includes the chain rule. Consider the function $S(
 
 2. Use the information about $f$ and $f'$ in the table and $g$ to find each of the following values.
 
-    ![Chain rule exercise](http://byuimath.com/bmw/all/119/uploads/Class/chain_rule_exercise.png)
+    ![Chain rule exercise](../assets/uploads/Class/chain_rule_exercise.png)
 
     - Given $h(x) = g(f(x))$, find $h'(3)$.
     - Given $k(x) = f(g(x))$, find $k'(1)$.
@@ -152,7 +152,7 @@ For each function $g(x)$, identify two functions $f(u)$ and $u(x)$ so that $g(x)
 ### Activity - Graphing a Second Derivative
 For the function below, graph the first and second derivative.
 
-![Second derivative exercise](https://byuimath.com/bmw/all/119/uploads/Class/Second-Derivative-Exercise.png)
+![Second derivative exercise](../assets/uploads/Class/Second-Derivative-Exercise.png)
 
 <details>
 <summary>Solution</summary>

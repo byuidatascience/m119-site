@@ -134,8 +134,8 @@ Consider the 6 functions you have been fitting in Project 1.
 # During Class
 ## Brain Gains
 - Critique the following visual fits for $f_5$.
-    - ![Visual fit 1 for f5](https://byuimath.com/bmw/all/119/uploads/Class/f5-fit1.png)
-    - ![Visual fit 2 for f5](https://byuimath.com/bmw/all/119/uploads/Class/f5-fit2.png)
+    - ![Visual fit 1 for f5](../assets/uploads/Class/f5-fit1.png)
+    - ![Visual fit 2 for f5](../assets/uploads/Class/f5-fit2.png)
 
 - Write down a formula for the residual, $y - \hat{y}$, given the model $f(x) = b + mx$ and data point $(x,y) = (4,7)$
 - Write down a formula for the residual, $y - \hat{y}$, given the model $g(x) = c + bx + a\ln(4x)$ and data point $(x,y) = (x_3,y_3)$ 
