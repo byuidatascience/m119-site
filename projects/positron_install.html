@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Definition: DecreasingOnTheIntervalI – Math 119 — Applied Calculus for Data Analysis</title>
+<title>Install Positron Instructions – Math 119 — Applied Calculus for Data Analysis</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -90,35 +90,6 @@ window.MathJax = {
 };
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -436,8 +407,17 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#step-1-install-r" id="toc-step-1-install-r" class="nav-link active" data-scroll-target="#step-1-install-r">Step 1: Install R</a></li>
+  <li><a href="#step-2-install-positron" id="toc-step-2-install-positron" class="nav-link" data-scroll-target="#step-2-install-positron">Step 2: Install Positron</a></li>
+  <li><a href="#step-3-try-it" id="toc-step-3-try-it" class="nav-link" data-scroll-target="#step-3-try-it">Step 3: Try it</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -445,7 +425,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Definition: DecreasingOnTheIntervalI</h1>
+<h1 class="title">Install Positron Instructions</h1>
 </div>
 
 
@@ -462,15 +442,43 @@ window.Quarto = {
 </header>
 
 
-<details open="">
-<summary>
-Definition: <strong>Decreasing</strong> on the Interval <span class="math inline">\(I\)</span> (from OpenStax textbook)
-</summary>
-<p>We say a function <span class="math inline">\(f\)</span> is decreasing on the interval <span class="math inline">\(I\)</span> if for all <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> in the interval, <span class="math inline">\(f(x_1) \geq f(x_2)\)</span> when <span class="math inline">\(x_1 &lt; x_2\)</span>.</p>
-<p>Note: We say a function <span class="math inline">\(f\)</span> is strictly decreasing on the interval <span class="math inline">\(I\)</span> if for all <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> in the interval, <span class="math inline">\(f(x_1) &gt; f(x_2)\)</span> when <span class="math inline">\(x_1 &lt; x_2\)</span>.</p>
-</details>
+<p>Positron is Posit’s data-science IDE. It has R and Python support built in, an intuitive layout (console, environment, plots, viewer), and works seamlessly with Quarto documents. <strong>Positron is the recommended IDE for this course.</strong></p>
+<section id="step-1-install-r" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-install-r">Step 1: Install R</h2>
+<p>Positron uses R that’s installed on your machine, so install R first.</p>
+<ul>
+<li>Go to <a href="https://cran.rstudio.com/">https://cran.rstudio.com/</a>.</li>
+<li>At the top of the page, select the download for your operating system:
+<ul>
+<li><strong>macOS</strong> — click the latest <code>R-x.y.z.pkg</code> installer. Download and run it.</li>
+<li><strong>Windows</strong> — click <strong>base</strong>, then <strong>Download R for Windows</strong>. Download and run the installer.</li>
+</ul></li>
+</ul>
+</section>
+<section id="step-2-install-positron" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-install-positron">Step 2: Install Positron</h2>
+<ul>
+<li>Go to <a href="https://positron.posit.co/" target="_blank">https://positron.posit.co/</a> and click the download for your operating system.</li>
+<li>Download and run the installer.</li>
+</ul>
+<p>When you open Positron, it should detect your R installation automatically. If it doesn’t, open <strong>Preferences</strong> → search for “R” → set the interpreter path.</p>
+</section>
+<section id="step-3-try-it" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-try-it">Step 3: Try it</h2>
+<ul>
+<li><strong>File → New File → R File.</strong> Type <code>plot(1:10)</code> and press <strong>Cmd/Ctrl + Enter</strong>. A plot should appear in the Plots pane on the right.</li>
+<li><strong>File → New File → Quarto Document.</strong> Use the <strong>Render</strong> button (top toolbar) to produce an HTML file.</li>
+</ul>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<ul>
+<li>Positron handles Quarto rendering without extra setup. You don’t need to install the Quarto CLI separately.</li>
+<li>If you encounter any issues, check that Positron detected your R installation correctly: <strong>Preferences</strong> → search for “R” → verify the interpreter path.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
