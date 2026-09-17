@@ -20,6 +20,10 @@ gh-issues-agent/
 handoff/
 make-ai-agents/
 
+# Orphaned — no longer linked from anywhere since RStudio references
+# were replaced with Positron site-wide. Kept locally, not tracked.
+site/projects/rstudio_install.qmd
+
 # macOS
 .DS_Store
 
