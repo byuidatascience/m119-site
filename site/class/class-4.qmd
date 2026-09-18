@@ -189,8 +189,8 @@ plot(x,f(x,0,-2), type = "l")
 </details>
 
 ## Discussion - Create and render a Quarto document
-- Click the New File icon OR Click File -> New File -> Quarto Document
-- Render the document, so verify you can get HTML output.
+- File -> New File -> Quarto Document
+- Render the document (Render button, top toolbar), and verify you can get HTML output.
     - Typing Math
       - Not required in Math 119 (You can insert an image with handwritten math.)
       - But you can copy Latex from our Wiki or Project Instructions.
