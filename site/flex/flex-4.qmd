@@ -165,9 +165,9 @@ Calculate each of the following indefinite integrals using Mathematica. When you
     - To learn more about another use for likelihood with Probability distributions, watch this [video](https://www.youtube.com/watch?v=XepXtl9YKwc){target="_blank"} about Maximum Likelihood. (~6 minutes)
 
 # End of Semester Announcements
-- Last day of classes is December 15
-    - Last day to work on Knewton Alta Homework is December 15.
-    - Last day to submit Project work is December 15.
+- Last day of classes is December 14
+    - Last day to work on Knewton Alta Homework is December 14.
+    - Last day to submit Project work is December 14.
 - No Final Exam
 
 <a id="PP"></a>
