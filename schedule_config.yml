@@ -12,8 +12,6 @@ semester:
   class_days: [Mon, Tue, Thu, Fri]  # MTRF
 
 holidays:
-  - date: "2026-10-12"
-    name: "Instructor Travel (TA covers Tue 10/13)"
   - date: "2026-11-26"
     name: "Thanksgiving"
   - date: "2026-11-27"
@@ -49,8 +47,8 @@ sessions:
   - class-15
   # OPTIONAL (FA26 teacher choice — remove if you don't want open lab days):
   - open-lab     # Week 6 — students finish Project 1 tasks in class
-  - class-16
-  - class-17
+  - class-16     # Instructor travel — covered by substitute teacher
+  - class-17     # Instructor travel — covered by substitute teacher
   - class-18
   - class-19
   - class-20
