@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Definition: IndependentEvents – Math 119 — Applied Calculus for Data Analysis</title>
+<title>R Cheat Sheets – Math 119 — Applied Calculus for Data Analysis</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -90,35 +90,6 @@ window.MathJax = {
 };
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -436,8 +407,17 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#core-r-positron" id="toc-core-r-positron" class="nav-link active" data-scroll-target="#core-r-positron">Core R &amp; Positron</a></li>
+  <li><a href="#data-import-manipulation-plotting" id="toc-data-import-manipulation-plotting" class="nav-link" data-scroll-target="#data-import-manipulation-plotting">Data import, manipulation &amp; plotting</a></li>
+  <li><a href="#quarto-authoring" id="toc-quarto-authoring" class="nav-link" data-scroll-target="#quarto-authoring">Quarto authoring</a></li>
+  <li><a href="#math-notation" id="toc-math-notation" class="nav-link" data-scroll-target="#math-notation">Math notation</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -445,7 +425,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Definition: IndependentEvents</h1>
+<h1 class="title">R Cheat Sheets</h1>
 </div>
 
 
@@ -462,15 +442,36 @@ window.Quarto = {
 </header>
 
 
-<details open="">
-<summary>
-Definition: Independent Events
-</summary>
-<p>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if the knowledge that one occurred does not affect the chance the other occurs. This means: - <span class="math inline">\(P(A | B) = P(A)\)</span> - <span class="math inline">\(P(B | A) = P(B)\)</span> - <span class="math inline">\(P(A \text{ and } B) = P(A)P(B)\)</span></p>
-<p><em>Source: This definition is taken from OpenStax Introductory Statistics.</em></p>
-</details>
+<p>Printable one- or two-page references hosted alongside this site.</p>
+<section id="core-r-positron" class="level2">
+<h2 class="anchored" data-anchor-id="core-r-positron">Core R &amp; Positron</h2>
+<ul>
+<li><a href="cheatsheets/base-r.pdf">Base R cheat sheet</a></li>
+<li><a href="https://docs.posit.co/ide/user/ide/reference/shortcuts.html">Positron keyboard shortcuts</a></li>
+<li><a href="https://r-charts.com/colors/">R colors reference (r-charts.com)</a></li>
+</ul>
+</section>
+<section id="data-import-manipulation-plotting" class="level2">
+<h2 class="anchored" data-anchor-id="data-import-manipulation-plotting">Data import, manipulation &amp; plotting</h2>
+<ul>
+<li><a href="cheatsheets/data-import.pdf">Data import cheat sheet</a></li>
+<li><a href="cheatsheets/data-visualization.pdf">Data visualization (ggplot2) cheat sheet</a></li>
+</ul>
+</section>
+<section id="quarto-authoring" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-authoring">Quarto authoring</h2>
+<ul>
+<li><a href="cheatsheets/quarto.pdf">Quarto cheat sheet</a></li>
+</ul>
+</section>
+<section id="math-notation" class="level2">
+<h2 class="anchored" data-anchor-id="math-notation">Math notation</h2>
+<ul>
+<li><a href="cheatsheets/latexsheet.pdf">LaTeX math cheat sheet</a></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
