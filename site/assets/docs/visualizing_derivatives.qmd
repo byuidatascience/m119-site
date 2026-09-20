@@ -239,7 +239,7 @@ plot_derivs(x, f, fp = fp, fpp = fpp,
 
 # Example F — $f(x) = x^3 - 3x$
 
-Now the zeros of $f$, $f'$, and $f''$ don't line up at all. This is closer to what you'll see on the [Graphing Using Signs worksheet](https://chaz-clark.github.io/m119-site/assets/docs/GraphingUsingSigns.pdf) — a function with **one local max**, **one local min**, and **one inflection point**, all at different $x$ values.
+Now the zeros of $f$, $f'$, and $f''$ don't line up at all. This is closer to what you'll see on the [Graphing Using Signs worksheet](https://byuidatascience.github.io/m119-site/assets/docs/GraphingUsingSigns.pdf){target="_blank"} — a function with **one local max**, **one local min**, and **one inflection point**, all at different $x$ values.
 
 **Step 1 — zeros of $f$.** $f(x) = x(x^2 - 3) = 0$ at $x = 0, \pm\sqrt{3} \approx \pm 1.732$.
 
@@ -329,7 +329,7 @@ The **blue** $f''$ is the parabola $12x^2 - 8$. It crosses zero at both open-dot
 
 Once the pattern feels natural:
 
-- Compare Examples F and G to the [Graphing Using Signs worksheet](https://chaz-clark.github.io/m119-site/assets/docs/GraphingUsingSigns.pdf). Pick a graph from that PDF and apply the same workflow — sketch first, then verify with `plot_derivs()` if you can write down a formula.
+- Compare Examples F and G to the [Graphing Using Signs worksheet](https://byuidatascience.github.io/m119-site/assets/docs/GraphingUsingSigns.pdf){target="_blank"}. Pick a graph from that PDF and apply the same workflow — sketch first, then verify with `plot_derivs()` if you can write down a formula.
 - Sketch $f'''$ as well — for $x^n$ each derivative drops a power; for $e^x$ everything stays the same; for $\ln(x)$ the signs alternate.
 - Try a **quintic** like $f(x) = x^5 - 5x^3 + 4x$ — multiple zeros, multiple extrema, multiple inflections. Predict the shape of $f'$ before plotting.
 - Combine your examples: $f(x) = x^2 \ln(x)$ or $f(x) = e^x - x$ — much richer behavior.

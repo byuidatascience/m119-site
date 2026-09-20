@@ -13,7 +13,7 @@ Printable one- or two-page references hosted alongside this site.
 ## Data import, manipulation & plotting
 
 - [Data import cheat sheet](cheatsheets/data-import.pdf)
-- [Data visualization (ggplot2) cheat sheet](cheatsheets/data-visualization-2.1.pdf)
+- [Data visualization (ggplot2) cheat sheet](cheatsheets/data-visualization.pdf)
 
 ## Quarto authoring
 

@@ -118,9 +118,9 @@ Use the fact that the percent of original lumens at $t=0$ is 100%, $f_i(0) = 100
     - In your cohesive analysis, clearly state your six fitted models with the chosen parameters (not just in the code chunks). This helps make your work reproducible.
     - See the following links for help getting started finding the visual fits. There is a video showing an example of fitting $f_2$ when the seed is 2021, and a few accompanying html files.
         - [Video: Visually Fitting $f_2$ Example](https://www.loom.com/share/e719841d54624db9b22ada1e85b7f85d?sharedAppSource=personal_library)
-        - [Project 1 Task 1 html file referenced in video](m119-docs/Project1_Task1_example.qmd)
-        - [Project 1 Task 2 html file referenced in video](m119-docs/Project1_Task2_f2_example.qmd)
-        - [Project 1 Task 3 html file using the information from the video](m119-docs/Project1_Task3_f2_example.qmd)
+        - [Project 1 Task 1 html file referenced in video](m119-docs/Project1_Task1_example.html)
+        - [Project 1 Task 2 html file referenced in video](m119-docs/Project1_Task2_f2_example.html)
+        - [Project 1 Task 3 html file using the information from the video](m119-docs/Project1_Task3_f2_example.html)
 - Use the `plot()` and `lines()` commands in R (or the `plot()` and `points()` commands in R) to plot each fitted function and the scatter plot of the data. You should have **6 plots**, each with one fitted function and the data. Make sure the viewing window for each plot is `xlim = c(-10,80000)` and `ylim = c(-10,120)`.
     - **CHECK YOUR WORK:** When you evaluate your fitted function at 0, do you get 100? When you plot your function is it a good fit to the data?
     - **CHECK YOUR WORK:** Use this [Shiny App](https://posit.byui.edu/content/3a8973e5-fdc3-479e-8f0c-30d7fa7d2f19) to check your work.
