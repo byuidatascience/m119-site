@@ -24,6 +24,10 @@ make-ai-agents/
 # were replaced with Positron site-wide. Kept locally, not tracked.
 site/projects/rstudio_install.qmd
 
+# tools/check_links.py output — regenerate with `python tools/check_links.py`;
+# external link status is a live network snapshot, not durable content.
+link_check_report.csv
+
 # macOS
 .DS_Store
 

@@ -214,6 +214,7 @@ _Last updated: 2026-07-12_
 | `quarto preview` (in `site/`) | Live-reload preview server | While editing `.qmd` files |
 | `.github/workflows/publish.yml` | CI render + GitHub Pages deploy | Triggered automatically; do not run by hand |
 | `.github/workflows/daily_update.yml` | Refresh `_today.qmd` pointer | Triggered automatically (daily); regenerates the front-page "today" line |
+| `tools/check_links.py` | Find every link in `site/**/*.qmd`, check external ones over HTTP and internal ones against the filesystem, report broken ones | Periodically, or after a content migration/URL change; run manually (`uv run python tools/check_links.py`), not wired into CI |
 
 Upstream tools (in the sibling **`m119-master`** repo, not here) — if a content or schedule problem traces upstream, switch to that repo:
 - `pull_wiki.py` — SFTP sync of PMWiki source
