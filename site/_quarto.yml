@@ -10,7 +10,6 @@ project:
     - "!assets/**/*.qmd"
     - "!projects/m119-docs/**/*.Rmd"
     - "!projects/RCommands.qmd"
-    - "!projects/RCheatSheets.qmd"
     - "!projects/rstudio_install.qmd"
   resources:
     - assets/docs/**
@@ -19,7 +18,6 @@ project:
     - projects/**/*_files/**
     - projects/m119-docs/**/*.Rmd
     - projects/RCommands.qmd
-    - projects/RCheatSheets.qmd
     - projects/rstudio_install.qmd
     - projects/Images/**
     - projects/refs/**
