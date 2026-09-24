@@ -275,16 +275,16 @@ Start by discussing any questions from the prep. The complete the following with
 1. Compute $1+3+5+\cdots+97+99$.
 
 ### Systems of Equations (videos)
-Solve each system of equations for $x$ and $y$. The variables $a,b,c,d,e,f$ below are constants. 
+Solve each system of equations for $x$ and $y$. The variables $a,b,c,d,e,f$ below are constants.
 
-- $3x + 2y = -4, -x + 7y = 9$
-- $x+2y=3, 4x+5y=6$
-- $x+by=3, 4x+5y=6$
-- $x+by=c, 4x+5y=6$
-- $x+by=c, dx+5y=6$
-- $x+by=c, dx+ey=6$
-- $x+by=c, dx+ey=f$
-- $ax+by=c, dx+ey=f$
+1. $3x + 2y = -4, -x + 7y = 9$
+1. $x+2y=3, 4x+5y=6$
+1. $x+by=3, 4x+5y=6$
+1. $x+by=c, 4x+5y=6$
+1. $x+by=c, dx+5y=6$
+1. $x+by=c, dx+ey=6$
+1. $x+by=c, dx+ey=f$
+1. $ax+by=c, dx+ey=f$
 
 ## Discussion
 - Reminder of what the parameters in the general transformation form do.
