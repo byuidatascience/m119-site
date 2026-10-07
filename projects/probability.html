@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ben Woodruff with special thanks to Katrina Johnson">
-<meta name="dcterms.date" content="2026-10-06">
+<meta name="dcterms.date" content="2026-10-07">
 
 <title>Rectangles, Targets, and Sums – Math 119 — Applied Calculus for Data Analysis</title>
 <style>
@@ -80,9 +80,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-7100700a5d4657facf49b32369185e6d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -586,7 +586,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 6, 2026</p>
+      <p class="date">October 7, 2026</p>
     </div>
   </div>
   
@@ -1572,8 +1572,8 @@ Not sure if needed anymore.  Or this can be wrapped up into an exercise. Leave h
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1.1104449 3.5950250 1.0592011 0.4723599 3.3490087 4.8355818 4.7513922
- [8] 3.6752636 0.2828181 4.7836788</code></pre>
+<pre><code> [1] 1.0809757 3.2344790 2.0757924 2.0164317 2.3919015 2.5373033 3.8290204
+ [8] 0.9987143 2.3543065 3.5162902</code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -1581,7 +1581,7 @@ Not sure if needed anymore.  Or this can be wrapped up into an exercise. Leave h
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.50336</code></pre>
+<pre><code>[1] 2.528444</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -1593,7 +1593,7 @@ Not sure if needed anymore.  Or this can be wrapped up into an exercise. Leave h
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.501056</code></pre>
+<pre><code>[1] 2.499376</code></pre>
 </div>
 </div>
 <p>We computed the mean <span class="math inline">\(x\)</span>-value in several samples. As the sample size increases, the mean approaches a limit, which we call the expected value of the random variable, and denote using <span class="math inline">\(\text{E}[X]\)</span> (or <span class="math inline">\(\mu\)</span>). The expected value gives us a way of discussing a theoretical mean when the possible outcomes is infinite.</p>
