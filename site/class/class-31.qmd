@@ -108,7 +108,7 @@ Consider the model $f_5(x; a) = ae^{-x}$ and data set given below.
 
 ```r
 rm(list=ls())
-data <- read.csv(url("https://chaz-clark.github.io/M119/data3_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data3_ls.csv"))
 x <- data$x
 y <- data$y
 ```
@@ -151,7 +151,7 @@ Using R, we can compute $a$ (as well as plot the original data) as given below.
 
 ```r
 rm(list=ls())
-data <- read.csv(url("https://chaz-clark.github.io/M119/data3_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data3_ls.csv"))
 x <- data$x
 y <- data$y
 plot(x,y)
@@ -190,7 +190,7 @@ Data Set 1
 
 ```r
 rm(list=ls())
-data <- read.csv(url("https://chaz-clark.github.io/M119/data1_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data1_ls.csv"))
 x <- data$x
 y <- data$y
 ```
@@ -199,7 +199,7 @@ Data Set 2
 
 ```r
 rm(list=ls())
-data <- read.csv(url("https://chaz-clark.github.io/M119/data2_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data2_ls.csv"))
 x <- data$x
 y <- data$y
 ```
@@ -208,7 +208,7 @@ Data Set 3
 
 ```r
 rm(list=ls())
-data <- read.csv(url("https://chaz-clark.github.io/M119/data3_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data3_ls.csv"))
 x <- data$x
 y <- data$y
 ```
@@ -217,7 +217,7 @@ Data Set 4
 
 ```r
 rm(list=ls())
-data <- read.csv(url("https://chaz-clark.github.io/M119/data4_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data4_ls.csv"))
 x <- data$x
 y <- data$y
 ```
@@ -226,7 +226,7 @@ Data Set 5
 
 ```r
 rm(list=ls())
-data <- read.csv(url("https://chaz-clark.github.io/M119/data5_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data5_ls.csv"))
 x <- data$x
 y <- data$y
 ```
