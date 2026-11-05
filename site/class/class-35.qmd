@@ -233,7 +233,3 @@ We're ready to apply what we're learning now to any function.
 
 ## Discussion
 We'll have a wrap up discussion.
-
----
-
-*Source: [Class.35 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.35)*

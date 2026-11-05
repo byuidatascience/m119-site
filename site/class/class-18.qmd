@@ -158,7 +158,3 @@ Below is a list of derivative rules (most of which we have seen) that you are we
 
 1. For $r(y) = \frac{6y^2e^y}{5\sqrt{y}}$, find $\frac{dr}{dy}$.
 1. For $q(t) = (3x+1)(x^2-4)(5x-3\sqrt{x})(1-e^x)$ find $D_t q$.
-
----
-
-*Source: [Class.18 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.18)*

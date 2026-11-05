@@ -312,7 +312,3 @@ Work through the computations of the maximum likelihood method for $f_6$. As you
 When you finish, start working on $f_4$.
 
 ## Discussion
-
----
-
-*Source: [Class.29 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.29)*

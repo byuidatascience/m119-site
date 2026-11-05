@@ -244,7 +244,3 @@ Use Mathematica to perform any definite integrals.
 
 1. Use Mathematica to compute the cumulative distribution function $\int_2^x g(x)dx$. 
 1. Compute $P(3\leq X\leq 4)$ using the function $G(x)$.
-
----
-
-*Source: [Class.43b on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.43b)*

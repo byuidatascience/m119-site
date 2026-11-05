@@ -348,7 +348,3 @@ abline(v=best.l,col=2)
 best.l
 mean(storms)
 ```
-
----
-
-*Source: [Class.28 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.28)*

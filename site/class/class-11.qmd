@@ -305,7 +305,3 @@ lines(x,yM,col=2)
 6. What story is told by the visual fit you found for $f_4$? 
 
 7. With any time remaining, tackle the other models together, obtaining reasonable fits using the seed 123.
-
----
-
-*Source: [Class.11 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.11)*

@@ -220,7 +220,3 @@ f5(25000)
 ```
 
 </details>
-
----
-
-*Source: [Class.17 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.17)*

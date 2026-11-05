@@ -217,7 +217,3 @@ The PDF is given by the following.
 ```mathematica
 f = 1/Sqrt[2 Pi \[Sigma]^2] Exp[-1/2 ((x - \[Mu])/ \[Sigma])^2]
 ```
-
----
-
-*Source: [Class.42 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.42)*

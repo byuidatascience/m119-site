@@ -360,7 +360,3 @@ f(x)
 [Project 1](../projects/index.html){target="_blank"}
 
 We'll have a brief discussion about the project work, and start looking at the example project.
-
----
-
-*Source: [Class.4 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.4)*

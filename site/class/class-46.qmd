@@ -181,7 +181,3 @@ Calculate each of the following indefinite integrals using Mathematica. When you
 - $\int_1^2 e^{-x^2} dx$ (After typing this in and getting a wierd answer, try using N[ ] to get an approximate answer.)
 - $\int \frac{5}{\sqrt{x^2 + 25}} dx$
 - $\int_{-2}^2 \frac{5}{\sqrt{x^2 + 25}} dx$
-
----
-
-*Source: [Class.46 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.46)*

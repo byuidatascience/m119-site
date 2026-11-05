@@ -301,7 +301,3 @@ Turn back in your notes (or use the following link) to get the first partials.
 - $\frac{\partial^2 \ell}{\partial k \partial b} = \sum_{i=1}^{50} -At_ie^{bt_i}$
 
 </details>
-
----
-
-*Source: [Class.25 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.25)*
