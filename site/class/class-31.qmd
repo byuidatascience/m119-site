@@ -259,7 +259,3 @@ plot(x,y,pch=16)
 1.  Select another model and corresponding data set and **repeat**.
 
 ## Discussion
-
----
-
-*Source: [Class.31 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.31)*

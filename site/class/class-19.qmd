@@ -224,7 +224,3 @@ Suppose we know that $f_i(x)$ is a differentiable function and $c_i$ is a consta
 
 1. Compute $\frac{d}{dx}\left(\prod_{i=1}^{4}c_if_i(x)\right)$.
 1. Let $n$ be a positive integer, and then repeat both of the above after replacing 4 with $n$.
-
----
-
-*Source: [Class.19 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.19)*

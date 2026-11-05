@@ -396,7 +396,3 @@ lines(X,Y2)
 ```
 
 </details>
-
----
-
-*Source: [Class.3 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.3)*

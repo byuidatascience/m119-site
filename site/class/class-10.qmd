@@ -363,7 +363,3 @@ x0
 ```
 
 </details>
-
----
-
-*Source: [Class.10 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.10)*

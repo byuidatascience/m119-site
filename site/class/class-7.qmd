@@ -344,7 +344,3 @@ y <- f0(x,a,b)
 plot(x,y,type='l',xlim=c(90,110), ylim = c(0,1))
 mtext('change a=100 (keep b=102)', side = 3, line = 0)
 ```
-
----
-
-*Source: [Class.7 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.7)*

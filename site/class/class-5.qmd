@@ -227,7 +227,3 @@ We will complete Example Project Task 1 together and then put together a cohesiv
 
 1. Give an example of a transformed exponential function. 
 1. Let's use this [Desmos calculator](https://www.desmos.com/calculator/v4yeg616jq) and create some examples, exploring how parameters transform a function.
-
----
-
-*Source: [Class.5 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.5)*

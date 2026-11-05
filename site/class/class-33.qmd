@@ -451,7 +451,3 @@ p <- lambda^x *exp(-lambda)/factorial(x)
 ```
 
 1.  Make up your own probability questions about how many tropical storms there might be, and answer them.
-
----
-
-*Source: [Class.33 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.33)*

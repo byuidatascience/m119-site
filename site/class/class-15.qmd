@@ -460,7 +460,3 @@ Measurements have variation. There is always some uncertainty in measurement. Ev
     - Gamma distribution (continuous)
 
 Our focus in Math 119 will be fitting models (extracting information from data and encoding it into parameter values) and using fitted models to answer questions. We will only touch briefly the lowest level of evaluating models (does the story the fitted model tells match already known information).
-
----
-
-*Source: [Class.15 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.15)*

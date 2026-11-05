@@ -329,7 +329,3 @@ If you finish early, swap to the function $g(x) = 7-x$ for $0\leq x\leq 4$ and 0
 
 ## Discussion
 We'll discuss some of the above, if/as needed.
-
----
-
-*Source: [Class.37 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.37)*

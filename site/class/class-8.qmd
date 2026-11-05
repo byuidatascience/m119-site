@@ -409,7 +409,3 @@ y <- f2(L,h,a,b)
 plot(L,y,type='l',xlim=c(80,120))
 mtext('Changing b in f2', side = 3, line = 0, outer = TRUE)
 ```
-
----
-
-*Source: [Class.8 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.8)*

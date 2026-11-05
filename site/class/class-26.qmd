@@ -468,7 +468,3 @@ a1 <- 0.0002 #Will need to be updated
 x <- seq(0,5000,10)
 lines(x,f1(x,a1))
 ```
-
----
-
-*Source: [Class.26 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.26)*

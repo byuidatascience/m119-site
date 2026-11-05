@@ -242,7 +242,3 @@ and compute the two first partial derivatives as well as all second partial deri
 The solutions are provided in the task instructions.
 
 ## Discussion
-
----
-
-*Source: [Class.24 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.24)*

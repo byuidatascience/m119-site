@@ -312,7 +312,3 @@ Assume the residuals (errors) are independent and normally distributed (with mea
 - Write the likelihood function for the residuals in this situation.
 - Write the loglikelihood function for the errors in this situation.
 - Rewrite the loglikelihood function using the properties of logs and sums.
-
----
-
-*Source: [Class.20 on byuimath.com](https://byuimath.com/clarkc/all/119/index.php?n=Class.20)*
