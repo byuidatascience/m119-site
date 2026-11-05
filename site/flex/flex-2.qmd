@@ -35,7 +35,7 @@ dist <- led_time(2100)
 
 Use the hist() command in R to create a density histogram for the light bulb intensity as a percent of initial lumens.
 
-This completes [Example Project Task 1](../assets/docs/example_project.html){target="_blank"}. Here is [an example](https://chaz-clark.github.io/M119/Projects/m119-docs/ExampleProject_Task1.html){target="_blank"} of a cohesive analysis of this task.
+This completes [Example Project Task 1](../assets/docs/example_project.html){target="_blank"}. Here is [an example](../projects/m119-docs/ExampleProject_Task1.html){target="_blank"} of a cohesive analysis of this task.
 
 ### Activity - Exploring some Probability Models using Desmos (Example Project Task 2) and Visually Fitting a Model (Example Project Task 3)
 - Open the [Example Project Instructions](../assets/docs/example_project.html){target="_blank"}, and briefly read Task 2
@@ -52,7 +52,7 @@ dist <- led_time(2100)
 hist(dist$percent_intensity,probability = TRUE)
 ```
 
-Consider the function $ f_2(x; h,a,b) = \frac{b^a}{\Gamma(a)}(x-h)^{a-1}e^{-b(x-h)} $ where $x \geq h$. Read this [cohesive analysis](https://chaz-clark.github.io/M119/Projects/m119-docs/ExampleProject_Task1.html){target="_blank"} describing how the parameters $a$, $b$ and $h$ change the behavior of the function $f_2$.
+Consider the function $ f_2(x; h,a,b) = \frac{b^a}{\Gamma(a)}(x-h)^{a-1}e^{-b(x-h)} $ where $x \geq h$. Read this [cohesive analysis](../projects/m119-docs/ExampleProject_Task1.html){target="_blank"} describing how the parameters $a$, $b$ and $h$ change the behavior of the function $f_2$.
 
 Starting with the parameter values $a = 10$, $b=4.8$, and $h=101$ use what you learned from the cohesive analysis to adapt the following code to find a visual fit of the function $f_2$ to the data (visualized with the histogram).
 

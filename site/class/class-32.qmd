@@ -182,7 +182,7 @@ Start by reading in the data below.
 
 ```r
 rm(list=ls())
-data <- read.csv(url("https://chaz-clark.github.io/M119/data4_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data4_ls.csv"))
 x <- data$x
 y <- data$y
 ```
@@ -244,7 +244,7 @@ lines(t,f(t))
 The same fit using the systematic `c11`/`b1` framework from the maximum-likelihood / least-squares system — handy because the same skeleton works for any model of the form $f(x) = a \cdot g(x)$ (just swap $g(x)$).
 
 ```r
-data <- read.csv(url("https://chaz-clark.github.io/M119/data4_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data4_ls.csv"))
 x <- data$x
 y <- data$y
 
@@ -272,7 +272,7 @@ Reading in the data below.
 
 ```r
 rm(list=ls())
-data <- read.csv(url("https://chaz-clark.github.io/M119/data2_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data2_ls.csv"))
 x <- data$x
 y <- data$y
 ```
@@ -290,7 +290,7 @@ The code below gives $y = 2.79 + 6.48x$ (rounded to 3 sig figures) as the model,
 
 ```r
 rm(list=ls())
-data <- read.csv(url("https://chaz-clark.github.io/M119/data2_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data2_ls.csv"))
 x <- data$x
 y <- data$y
 
@@ -325,11 +325,11 @@ uniroot(function(x){f(x)-5},c(-2,2))$root # 0.3402777
 <details>
 <summary>Solution (R)</summary>
 
-The same fit, verbatim from [03-09.R](https://github.com/bmwoodruff/m119-w26/blob/main/03-09.R) (URL updated to the current `chaz-clark.github.io/M119` data host). Yields the same $f(4) \approx 28.728$ and root $\approx 0.340$. OK to use this on the related homework.
+The same fit, verbatim from [03-09.R](https://github.com/bmwoodruff/m119-w26/blob/main/03-09.R) (URL updated to the current `byuidatascience.github.io/m119-site` data host). Yields the same $f(4) \approx 28.728$ and root $\approx 0.340$. OK to use this on the related homework.
 
 ```r
 rm(list=ls())
-data <- read.csv(url("https://chaz-clark.github.io/M119/data2_ls.csv"))
+data <- read.csv(url("https://byuidatascience.github.io/m119-site/assets/data/data2_ls.csv"))
 x <- data$x
 y <- data$y
 
