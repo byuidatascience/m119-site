@@ -26,7 +26,7 @@ For this Unit, the reading as well as many practice exercises appear in the docu
 <details>
 <summary>Solutions for 4 and 5</summary>
 
-Using <https://en.wikipedia.org/wiki/List_of_centroids,> we get $\bar x = \frac{5}{3}$.   The area under function $g$ is $A = \frac{1}{2}(10)(5) = 25$, which means we can divide the function by 25 (so let $k=\frac{1}{10}$) to get $f(x) = \frac{1}{25}(10-2x)$ and then have the area under $f$ be 1, instead of 25.
+Using [this list of centroids](https://en.wikipedia.org/wiki/List_of_centroids) we get $\bar x = \frac{5}{3}$.   The area under function $g$ is $A = \frac{1}{2}(10)(5) = 25$, which means we can divide the function by 25 (so let $k=\frac{1}{10}$) to get $f(x) = \frac{1}{25}(10-2x)$ and then have the area under $f$ be 1, instead of 25.
 
 </details>
 
