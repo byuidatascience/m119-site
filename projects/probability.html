@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ben Woodruff with special thanks to Katrina Johnson">
-<meta name="dcterms.date" content="2026-11-19">
+<meta name="dcterms.date" content="2026-11-20">
 
 <title>Rectangles, Targets, and Sums – Math 119 — Applied Calculus for Data Analysis</title>
 <style>
@@ -86,9 +86,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1895d770650154722f7722018adbf507.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-32280d01ff3a7ff5cbe701a37ed6ca11.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-1895d770650154722f7722018adbf507.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ea5cf2a5e90c3ae677599e21642e315d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b348d5b559a602027a1f18095d1d555f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-ea5cf2a5e90c3ae677599e21642e315d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -595,7 +595,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 19, 2026</p>
+      <p class="date">November 20, 2026</p>
     </div>
   </div>
   
@@ -1581,8 +1581,8 @@ Not sure if needed anymore.  Or this can be wrapped up into an exercise. Leave h
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1.1215838 4.8956120 1.1102072 1.1995038 2.5479507 1.8632155 3.4710277
- [8] 0.8844819 2.0381430 1.8745048</code></pre>
+<pre><code> [1] 4.714900 1.939791 1.512868 4.772248 2.117948 4.529969 4.159066 4.565805
+ [9] 3.759995 1.539476</code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -1590,7 +1590,7 @@ Not sure if needed anymore.  Or this can be wrapped up into an exercise. Leave h
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.591777</code></pre>
+<pre><code>[1] 2.471196</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -1602,7 +1602,7 @@ Not sure if needed anymore.  Or this can be wrapped up into an exercise. Leave h
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.502948</code></pre>
+<pre><code>[1] 2.499951</code></pre>
 </div>
 </div>
 <p>We computed the mean <span class="math inline">\(x\)</span>-value in several samples. As the sample size increases, the mean approaches a limit, which we call the expected value of the random variable, and denote using <span class="math inline">\(\text{E}[X]\)</span> (or <span class="math inline">\(\mu\)</span>). The expected value gives us a way of discussing a theoretical mean when the possible outcomes is infinite.</p>
