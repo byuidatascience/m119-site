@@ -1,25 +1,24 @@
 # Canvas → Projects site URLs
 
-**When to read:** editing Canvas project links, Module items, assignment descriptions, or planning the reversal when the upstream `byuistats/M119` PR merges.
+**When to read:** editing Canvas project links, Module items, assignment descriptions, or adding new links from Canvas into this site.
 
-All Canvas references to the project site now point at Chaz's fork (`chaz-clark.github.io/M119`). Scope: 12 Project Links pages, Project assignments' descriptions, Project Instructions module items, Additional Resources module items, the MATH 119 Frontpage, and the Math 119 Weekly Rhythm page.
+All Canvas references to the project pages point at this site: `https://byuidatascience.github.io/m119-site/projects/`. The old hosts (`chaz-clark.github.io/M119` and `byuistats.github.io/M119`) are dead and return 404s. Don't link to them.
 
-## Mappings applied
+Scope (course 425166, FA26): 13 pages (the 12 "Project N Task N / Final Links" pages plus Math 119 Weekly Rhythm), 12 assignment descriptions, and 11 module external-URL items (Project 1/2/3 Instructions plus 8 Additional Resources). m119-master's `tools/url_swap_log_2026-11-23.md` lists every location.
 
-| Upstream (byuistats) | Fork (chaz-clark) |
+## Mapping applied (2026-11-23)
+
+| Old (dead) | Current |
 |---|---|
-| `projectN.html` | `Projects/unitN.html` |
-| `project.html` | `Projects/index.html` |
-| `specs_detail.html` | `Projects/specs_detail.html` |
-| `m119-docs/FILE.html` | `Projects/m119-docs/FILE.html` |
-| `index.html` | `index.html` |
+| `chaz-clark.github.io/M119/Projects/unitN.html` | `byuidatascience.github.io/m119-site/projects/unitN.html` |
+| `chaz-clark.github.io/M119/Projects/index.html` | `byuidatascience.github.io/m119-site/projects/index.html` |
+| `chaz-clark.github.io/M119/Projects/specs_detail.html` | `byuidatascience.github.io/m119-site/projects/specs_detail.html` |
+| `chaz-clark.github.io/M119/Projects/m119-docs/FILE.html` | `byuidatascience.github.io/m119-site/projects/m119-docs/FILE.html` |
 
-## Anchor asymmetry (P1 Final only)
+It's a prefix swap. `Projects` became lowercase `projects`, and `#anchors` carried over unchanged.
 
-| Fork | Upstream |
-|---|---|
-| `unit1.html#project-1-bringing-it-all-together` | `project1.html#project-1-bringing-it-all-together-and-answer-a-question` |
+## Gotchas
 
-## Reversal
-
-When the upstream `byuistats/M119` PR is merged, flip URLs back by running `/tmp/swap_to_fork.py` and `/tmp/swap_remaining_byuistats.py` in reverse (invert FORK/SRC). Both scripts are idempotent and use the mapping table above.
+- **Canvas links to `m119-docs/*.html` pages that no site page links to** (e.g. `GreekLetters.html`, `ExampleProject_Task2.html`). Quarto only publishes static HTML that a rendered page links to, unless it's in `resources`. `_quarto.yml` lists `projects/m119-docs/**/*.html` under `resources` for this reason (PR #29). Don't remove it.
+- **Renaming a project heading changes its anchor** and breaks the Canvas deep links (e.g. `unit3.html#task-1-data-and-general-models`). After a heading change, repoint Canvas through m119-master.
+- **Canvas writes belong to m119-master.** Send link changes there as a handoff. Its `tools/swap_pages_url.py` updates only the matching items (dry run by default). Avoid a full `canvas_sync --push`, which sends every locally changed file.
