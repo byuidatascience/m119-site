@@ -17,6 +17,7 @@ project:
     - projects/**/*.pdf
     - projects/**/*_files/**
     - projects/m119-docs/**/*.Rmd
+    - projects/m119-docs/**/*.html
     - projects/RCommands.qmd
     - projects/rstudio_install.qmd
     - projects/Images/**
