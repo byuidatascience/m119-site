@@ -1,7 +1,7 @@
 **Date:** 2026-11-23
 **Author:** Claude (agent) + m119-site
 **Direction:** request
-**Status:** delivered
+**Status:** applied
 **Origin:** A student reported that the Project 3 links in Canvas are broken (`https://chaz-clark.github.io/M119/Projects/unit3.html` and `...unit3.html#task-1-data-and-general-models` both return 404).
 **Origin-Commit:** eded15e
 **Topic:** canvas-project-links-old-host
@@ -70,3 +70,4 @@ Instead, **update only the 36 items above.** `tools/swap_pages_url.py` already d
 ## Lifecycle marker
 
 - 2026-11-23: authored and delivered (m119-site).
+- 2026-11-23: applied by m119-master (PR #9, `cd21d53`). All 36 items / 48 links repointed. A re-scan from m119-site found 0 old links in course 425166. `.claude/knowledge/urls-canvas.md` updated.
